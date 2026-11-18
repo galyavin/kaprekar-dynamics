@@ -26,7 +26,7 @@
 \title{Cycles of the four-digit Kaprekar map in even bases}
 \author{Rustem Galyavin}
 \thanks{Contact: \href{mailto:rustem@galyavin.com}{rustem@galyavin.com}. ORCID: \href{https://orcid.org/0009-0006-6875-9170}{0009-0006-6875-9170}.}
-\date{17 November 2026}
+\date{17 November 2026; revised 18 November 2026}
 \subjclass[2020]{Primary 11A63; Secondary 37P99}
 \keywords{Kaprekar routine, digit dynamics, periodic orbits, formal verification}
 
@@ -82,7 +82,7 @@ The even bases with exactly one cycle are
 and the cycle has length $6(k+1)$, $1$ and $3$, respectively.
 \end{corollary}
 
-Base ten is the case $k=0$ of the second family. Its unique cycle is the lift of the fixed point $(3,1)$ of $\T_5$, namely the difference pair $(6,2)$, which corresponds to $6174$. For $m=5$, Theorem~\ref{thm:main}(a) recovers the classification of Hasse and Prichett \cite[Theorem~4.1]{HP}, who credit the two additional cycles to observations of Brillhart \cite[p.~123]{HP}. Corollary~\ref{cor:unique} proves the pattern recorded in \cite[Remark~28]{COST}, and the remaining cases answer the question left open in \cite[Section~9]{KSL}.
+Base ten is the case $k=0$ of the second family. Its unique cycle is the lift of the fixed point $(3,1)$ of $\T_5$, namely the difference pair $(6,2)$, which corresponds to $6174$. For $m=5$, Theorem~\ref{thm:main}(a) recovers the classification of Hasse and Prichett \cite[Theorem~4.1]{HP}, who credit the two additional cycles to observations of Brillhart \cite[p.~123]{HP}. For $m=3$, Theorem~\ref{thm:main}(b) was obtained earlier by Kahramanlar \cite[Section~5]{Kah}, by a reduction to the borrow wall. Corollary~\ref{cor:unique} proves the pattern recorded in \cite[Remark~28]{COST} (its first family also follows from \cite{Kah}), and the remaining cases answer the question left open in \cite[Section~9]{KSL}.
 
 \subsection*{Why the answer has this form}
 Sort the four digits as $a\ge b\ge c\ge d$. The result of one step depends only on the pair $(u,v)=(a-d,b-c)$. Away from three boundary lines ($v=0$, $u=v$ and $u+v=B$), the next pair is $\sort(|2u-B|,|2v-B|)$: each coordinate is doubled and folded. Since $B=m2^n$, along an orbit that avoids the boundary the power of $2$ dividing each coordinate settles at exactly $2^n$ within $n+1$ steps (Lemma~\ref{lem:valuation}). So such an orbit lands, within $n+1$ steps, on a lift of a cycle of $\T_m$. On the boundary lines borrowing changes the formula, and the next pair always has an odd coordinate: the clock restarts. A cycle that is not a lift must therefore return to the boundary again and again. A complete table of these returns (Proposition~\ref{prop:table}) shows that for $m\ge3$ only three boundary states can lie on such a cycle, namely $S=(2^n,0)$, $E=(2^{n+1},0)$ and $U=(h2^n,(h-1)2^n)$, and that each return between them takes exactly $n+1$ steps. Which returns occur depends only on $\sigma\equiv2^n\pmod m$ (Figure~\ref{fig:graph}). The state $S$ returns to itself exactly when $\sigma\equiv1$. The states $E$ and $U$ alternate exactly when $4\sigma\equiv1$ and $\sigma\equiv\pm1$, which forces $m=3$ or $m=5$. This explains the lengths $n+1$ and $2(n+1)$, and why the odd parts $3$ and $5$ are exceptional. For $m=3$ there are no lifts at all, and every orbit meets the boundary.
@@ -102,7 +102,7 @@ In base $20=5\cdot2^2$, a case covered by \cite{HP}, the lift of the fixed point
 Theorem~\ref{thm:main} and Corollary~\ref{cor:unique} are also verified in Lean~4 (Section~\ref{sec:verification}).
 
 \subsection*{Relation to earlier work}
-Hasse and Prichett \cite{HP} determined the four-digit fixed points, the bases in which all inputs reach a single fixed point, and all cycles in the bases $5\cdot2^n$ \cite[Theorem~4.1]{HP}. Devlin and Zeng \cite{DZ} determined the maximum number of steps needed to reach the fixed point and studied its basin. Kay and Downes-Ward studied cycles through digit multiplicities in odd bases \cite{KD22} and in even bases \cite{KD24}; the latter proves completeness for base~$4$, for every number of digits. A public draft of Korea Superintelligence Labs \cite{KSL} transports cycles that stay in the generic region under scaling of the base \cite[Theorem~3.2]{KSL}, proves that a base with an odd divisor between $9$ and $51$ has more than one cycle, proves the pattern of \cite[Remark~28]{COST} for even bases up to $200$, using formal cycle checks and inspection of the listed states, and reports a computational check up to $6200$ \cite[Theorem~7.1, Remark~7.2 and Section~10]{KSL}. It leaves the general exponent conditions open \cite[Section~9]{KSL}; the table of boundary returns used here settles them. A companion paper treats the distribution of the number of steps needed to reach a cycle.
+Hasse and Prichett \cite{HP} determined the four-digit fixed points, the bases in which all inputs reach a single fixed point, and all cycles in the bases $5\cdot2^n$ \cite[Theorem~4.1]{HP}. Devlin and Zeng \cite{DZ} determined the maximum number of steps needed to reach the fixed point and studied its basin. Kay and Downes-Ward studied cycles through digit multiplicities in odd bases \cite{KD22} and in even bases \cite{KD24}; the latter proves completeness for base~$4$, for every number of digits. A public draft of Korea Superintelligence Labs \cite{KSL} transports cycles that stay in the generic region under scaling of the base \cite[Theorem~3.2]{KSL}, proves that a base with an odd divisor between $9$ and $51$ has more than one cycle, proves the pattern of \cite[Remark~28]{COST} for even bases up to $200$, using formal cycle checks and inspection of the listed states, and reports a computational check up to $6200$ \cite[Theorem~7.1, Remark~7.2 and Section~10]{KSL}. It leaves the general exponent conditions open \cite[Section~9]{KSL}; the table of boundary returns used here settles them. Kahramanlar classified the cycles in the bases $3\cdot2^k$ \cite{Kah}, and an anonymous preprint posted on GitHub states the classification of the additional cycles for general odd parts as a conjecture, proving the part concerning lifted cycles and giving a decomposition for the bases $2^k$ \cite{Sky}. A companion paper treats the distribution of the number of steps needed to reach a cycle.
 
 \section{The difference map}\label{sec:map}
 
@@ -328,8 +328,14 @@ A.~Kay and K.~Downes-Ward, \emph{Fixed points and cycles of the Kaprekar transfo
 \bibitem[KD24]{KD24}
 A.~Kay and K.~Downes-Ward, \emph{Fixed points and cycles of the Kaprekar transformation: 2. Even bases}, preprint (2024), \href{https://arxiv.org/abs/2408.12257}{arXiv:2408.12257}.
 
+\bibitem[Kah]{Kah}
+M.~Kahramanlar, \emph{Wall deflections in four-digit Kaprekar dynamics: folded doubling and the even-base $3\cdot2^k$ towers}, preprint (21 July 2026), \href{https://doi.org/10.5281/zenodo.21472450}{doi:10.5281/zenodo.21472450}.
+
 \bibitem[KSL]{KSL}
 Korea Superintelligence Labs, \emph{Base scaling in four-digit Kaprekar dynamics, and an infinite family of bases with no unique terminating cycle}, public draft, version~1, \url{https://lean.up.railway.app/papers/kaprekar-v1.pdf}, accessed 17 November 2026.
+
+\bibitem[Sky]{Sky}
+SKYMEADOWSTUDIOS (anonymous), \emph{The four-digit Kaprekar map in even bases}, preprint and verification record, GitHub repository \url{https://github.com/SKYMEADOWSTUDIOS/even-base-kaprekar}, dated 20 August 2026, accessed 18 November 2026.
 
 \end{thebibliography}
 
