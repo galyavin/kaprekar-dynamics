@@ -44,7 +44,7 @@ Fix a base $B\ge2$ and let $K_B$ be the map just described on the integers $0\le
 \[
 B=m\,2^n\qquad(m\ \text{odd}),\qquad s=2^n,\qquad h=\tfrac{m+1}{2}.
 \]
-For odd $m\ge5$ let $\T_m=\{(u,v)\in\mathbb Z^2:\ m>u>v>0,\ u,v\ \text{odd}\}$. The map $(u,v)\mapsto\sort(|2u-m|,|2v-m|)$, where $\sort$ lists two numbers in decreasing order, is a permutation of $\T_m$. By \cite[Theorem~1]{COST}, its cycles correspond to the cycles of $K_m$. In Section~\ref{sec:map} we see that each of its cycles gives a cycle of $K_B$ of the same length, its \emph{lift}, obtained by multiplying the differences by $s$.
+For odd $m\ge5$ let $\T_m=\{(u,v)\in\mathbb Z^2:\ m>u>v>0,\ u,v\ \text{odd}\}$. The map $(u,v)\mapsto\sort(|2u-m|,|2v-m|)$, where $\sort$ lists two numbers in decreasing order, is a permutation of $\T_m$. By \cite[Theorem~1]{COST}, the cycles of $K_m$ correspond, through their difference pairs, to the cycles of this permutation; we use this only to describe the lifts as the cycles of the odd base $m$ and in the proof of Corollary~\ref{cor:unique}. In Section~\ref{sec:map} we see that each of its cycles gives a cycle of $K_B$ of the same length, its \emph{lift}, obtained by multiplying the differences by $s$.
 
 \begin{theorem}\label{thm:main}
 Let $B=m2^n$ with $m$ odd and $n\ge1$.
@@ -139,7 +139,7 @@ Thus each cycle of $\phi$ gives, through $(u,v)\mapsto(su,sv)$ and $F_B$, a cycl
 
 Write $\vt(x)$ for the exponent of $2$ in a nonzero integer $x$, and $g(x)=|2x-B|$.
 
-\begin{lemma}\label{lem:valuation}
+\begin{lemma}[Valuation clock]\label{lem:valuation}
 Let $0<x<B$ with $x\ne B/2$. Then $\vt(g(x))=\vt(x)+1$ if $\vt(x)\le n-2$; $\vt(g(x))>n$ if $\vt(x)=n-1$; and $\vt(g(x))=n$ if $\vt(x)\ge n$. Consequently, along an orbit of $g$ that avoids $B/2$, the valuation equals $n$ from step
 \[
 \rho_n(x)=\begin{cases}0,&\vt(x)=n,\\ 1,&\vt(x)>n,\\ n-\vt(x)+1,&\vt(x)<n\end{cases}
@@ -151,9 +151,23 @@ on, and differs from $n$ before.
 Write $x=2^ko$ with $o$ odd, so $2x-B=2^{k+1}o-2^nm$. If $k\le n-2$ this has valuation $k+1$. If $k=n-1$ it equals $2^n(o-m)$, and $o-m$ is even and nonzero because $x\ne B/2$. If $k\ge n$ it equals $2^n(2^{k+1-n}o-m)$ with an odd second factor. The formula for $\rho_n$ follows by counting steps.
 \end{proof}
 
+The same doubling gives a direct test for when an orbit first meets the boundary.
+
+\begin{lemma}[First boundary visit]\label{lem:visit}
+Let $x,y\in[1,B-1]$ be such that the pair formed by $x$ and $y$ is not a boundary state, and put
+\[
+k^*=\min\{\,n-\vt(z):\ z\in\{x,\,y,\,x+y,\,x-y\},\ z\ne0,\ m\mid z\,\},
+\]
+with $k^*=\infty$ if no such $z$ exists. Then the first $k^*-1$ images of this pair under $f_B$ are not boundary states, and the $k^*$-th image is a boundary state in which a coordinate vanishes or the two coordinates sum to $B$.
+\end{lemma}
+
+\begin{proof}
+Since the pair is not a boundary state, none of $x$, $y$, $x+y$, $x-y$ is a multiple of $B$, so $k^*\ge1$. While the images are not boundary states, $f_B$ applies $g$ to each coordinate. By induction, for $k\ge1$ and each coordinate $c\in\{x,y\}$, the number $g^k(c)$ is the unique element of $[0,B]$ congruent to $\pm(2^kc-B)$ modulo $2B$. Two elements $a,b$ of $[0,B]$ are equal exactly when $a\equiv\pm b\pmod{2B}$. Hence, for $k\ge1$, a coordinate of $(g^k(x),g^k(y))$ vanishes exactly when $2^kx$ or $2^ky$ is congruent to $B$ modulo $2B$; the coordinates sum to $B$ exactly when $2^k(x+y)$ or $2^k(x-y)$ is congruent to $B$; and they are equal exactly when $2^k(x+y)$ or $2^k(x-y)$ is congruent to $0$. Each of these conditions requires $B\mid 2^kz$ for some nonzero $z\in\{x,y,x+y,x-y\}$, that is, $m\mid z$ and $k\ge n-\vt(z)$. So no boundary state occurs before step $k^*$. At step $k^*$, a minimizing $z$ satisfies $m\mid z$ and $\vt(2^{k^*}z)=n$, so $2^{k^*}z$ is an odd multiple of $B$ and is congruent to $B$ modulo $2B$. Thus a coordinate vanishes or the coordinates sum to $B$.
+\end{proof}
+
 Call a pair $(u,v)\in X_B$ \emph{regular} if none of $u$, $v$, $u-v$, $u+v$ is divisible by $m$. There are no regular pairs when $m\le3$: for $m=3$ the nonzero residues are $\pm1$, so $u\equiv\pm v$.
 
-\begin{lemma}\label{lem:regular}
+\begin{lemma}[Regular orbits]\label{lem:regular}
 \begin{enumerate}
 \item[(a)] A regular pair is generic, its image is regular, and its coordinates are never $B/2$.
 \item[(b)] Let $m\ge5$. The pairs of $s\T_m=\{(su,sv):(u,v)\in\T_m\}$ are regular, and a regular pair $(u,v)$ enters $s\T_m$ after exactly $\max(\rho_n(u),\rho_n(v))$ steps and stays there. In particular, the regular pairs on cycles are exactly those of $s\T_m$.
@@ -166,7 +180,7 @@ Call a pair $(u,v)\in X_B$ \emph{regular} if none of $u$, $v$, $u-v$, $u+v$ is d
 
 (b) A pair $(su',sv')$ with $(u',v')\in\T_m$ is regular, since $0<v'<u'<m$ and $u'+v'$ is even. By (a) and Lemma~\ref{lem:valuation}, applied to each coordinate, both valuations of a regular orbit equal $n$ from step $\max(\rho_n(u),\rho_n(v))$ on, and not both before. A regular pair whose two coordinates have valuation $n$ is $(su',sv')$ with $u',v'$ odd and $m>u'>v'>0$, that is, an element of $s\T_m$. By Lemma~\ref{lem:lift}, $f_B$ permutes $s\T_m$. A regular periodic pair returns to itself after entering $s\T_m$, so it lies in $s\T_m$.
 
-(c) On generic pairs the property of not being regular is preserved, as in (a). If a coordinate equals $B/2$, the next pair has a zero coordinate and is a boundary state. Otherwise, if the orbit stays generic for $n$ steps, Lemma~\ref{lem:valuation} shows that both coordinates are then divisible by $s$: the pair is $(su',sv')$ with $0\le v'\le u'<m$. As $s$ is invertible modulo $m$, one of $u'$, $v'$, $u'-v'$, $u'+v'$ is divisible by $m$. This forces $v'=0$, $u'=v'$ or $u'+v'=m$, so the pair is a boundary state. (For $m=1$ no such pair exists, so the boundary is reached earlier.)
+(c) If $(u,v)$ is generic and not regular, some $z\in\{u,v,u+v,u-v\}$ is a nonzero multiple of $m$, so $k^*\le n$ in Lemma~\ref{lem:visit}.
 \end{proof}
 
 By Lemma~\ref{lem:regular}, a cycle of $f_B$ either lies in $s\T_m$, which happens only for $m\ge5$, or contains a boundary state. The cycles of the first kind are the lifts.
@@ -187,7 +201,7 @@ and $D(u)$ or $A(u)$ is seeded exactly when $u\bmod m$ lies in
 \]
 Both sets are empty for $m=3$. For instance, $f_B(Z(u))=\sort(u-1,B-u)$ is regular exactly when $u\not\equiv1$, $u\not\equiv0$ and $2u-1\not\equiv0\pmod m$, while the sum of its coordinates is $B-1\not\equiv0$.
 
-\begin{proposition}\label{prop:table}
+\begin{proposition}[First returns]\label{prop:table}
 Let $m\ge3$ be odd and $n\ge1$. A boundary state is the next boundary state of some boundary state only if it is one of the \emph{critical states} in the left column of Table~\ref{tab:returns}. For each critical state, the table lists all boundary states of which it is the next boundary state, and the elapsed time.
 \end{proposition}
 
@@ -210,27 +224,20 @@ $A(hs)$ & $Z(u)$ with $u\equiv h\pmod m$ & $n+1$\\
 \end{table}
 
 \begin{proof}
-Run the generic branch of \eqref{eq:map} backwards. A coordinate $a$ of a generic image has the preimages $(B\pm a)/2$, so a generic inverse coordinate $t\ge1$ steps back has the form
-\begin{equation}\label{eq:inverse}
-\frac{B}{2^t}\,i\pm\frac{a}{2^t},\qquad i\ \text{odd},\ 1\le i<2^t.
-\end{equation}
-By \eqref{eq:map}, the image of a zero-boundary state has coordinates with sum $B-1$, and the image of a diagonal or anti-diagonal state has odd coordinates differing by $2$, except for the image $(1,1)$ of $D(B/2)$.
+The first images of $Z(1)$ and $D(B/2)$ are $Z(B-1)$ and $D(1)$. For every other boundary state $q$, apply Lemma~\ref{lem:visit} to the first image $(x,y)$ of $q$ given by \eqref{eq:map}, before sorting. That image is a boundary state only in the case $t=0$ of the diagonal and anti-diagonal case (ii) below.
 
-Consider $Z(u)$, and let $d=\min(\vt(u),n)$. Generic inverse paths from $Z(u)$ have depth at most $d$. At each depth $t$ with $0<t<d$, both coordinates of every inverse pair are even, so no such pair is the image of a boundary state. Let $d\ge1$, and put $L=B/2^d$ and $c=u/2^d$, so $0<c<L$. By \eqref{eq:inverse}, the two coordinates of an inverse pair at depth $d$ are congruent modulo $2L$ to $L\pm c$ and $L$, and $B\equiv0\pmod{2L}$.
+\emph{Zero-boundary states $Z(u)$, $u\ge2$.} Here $x=u-1$ and $y=B-u$. The sum $x+y=B-1$ is not divisible by $m$, while $x$, $y$ and $x-y=2u-1-B$ are divisible by $m$ exactly when $u\equiv1$, $u\equiv0$ and $u\equiv h\pmod m$, respectively. These cases are disjoint, and if none occurs $q$ is seeded.
 \begin{itemize}
-\item If $d<n$, then $L$ is even and $c$ is odd, so the pair has mixed parity and can only be the image of a zero-boundary state. Its coordinates can sum to $B-1$ only if $\pm c\equiv-1\pmod{2L}$, that is, $c=1$ and $u=2^d$. In that case solving for the zero-boundary predecessor gives $Z(Li)$ and $Z(Li+1)$.
-\item If $d=n$, then $L=m$ and $u=cs$. For odd $c$ the pair has mixed parity, and a sum $B-1$ forces $c=1$. For even $c$ both coordinates are odd, and a difference of $2$ forces $c=2$; the predecessors are then $D(u)$ and $A(u)$ with $u\equiv h-1$ or $h\pmod m$.
+\item[(i)] If $u\equiv0$ or $u\equiv1$, the relevant $z$ is $y$ or $x$, a nonzero multiple of $m$ below $B$, so $t=n-\vt(z)$ lies in $[1,n]$. At step $t$ a coordinate vanishes. Since $2^t(x+y)\equiv-2^t\pmod{2B}$, the other coordinate is congruent to $\pm2^t$, so it equals $2^t$. The next boundary state is $Z(2^t)$, after $t+1$ steps. Write $z=Li'$ with $L=B/2^t$ and $i'$ odd. Then $u=Li'+1$ if $z=x$, and $u=L(2^t-i')$ if $z=y$; in both cases $u$ is $Li$ or $Li+1$ with $i$ odd and $1\le i<2^t$.
+\item[(ii)] If $u\equiv h$, then $z=x-y$ is odd, and the coordinates sum to $B$ at step $n$. The coordinate coming from $x$ is congruent modulo $2B$ to $\pm s(u-1-m)$, which depends only on $u-1-m\bmod 2m$, namely $h-1$ or $h-1+m$. Since $s(h-1+m)=s(h-1)+B\equiv-sh\pmod{2B}$, this coordinate is $s(h-1)$ or $sh$, and the other coordinate is $B$ minus it. So the coordinates are $s(h-1)$ and $sh$: the next boundary state is $A(hs)$, after $n+1$ steps.
 \end{itemize}
-At depth zero the only boundary predecessor of a zero-boundary state is $Z(1)$, of $Z(B-1)$.
 
-Consider $A(u)$ with $B/2<u<B$. Again let $d=\min(\vt(u),n)$, $L=B/2^d$ and $c=u/2^d$, so $L/2<c<L$. At depths $0<t<d$ both coordinates of every inverse pair are even. At depth $d\ge1$ the two coordinates are congruent modulo $2L$ to $L\pm c$ and $L\pm(L-c)$.
+\emph{Diagonal and anti-diagonal states $D(u)$, $A(u)$, $u\ne B/2$.} Put $w=|2u-B|$, an even number with $2\le w\le B-2$, so that $x=w+1$ and $y=w-1$. The difference $x-y=2$ is not divisible by $m$. Since $w\equiv\pm2u\pmod m$, $x$ or $y$ is divisible by $m$ exactly when $u\equiv h-1$ or $u\equiv h$, and $x+y=2w$ is divisible by $m$ exactly when $m\mid u$. These cases are disjoint, and if none occurs $q$ is seeded.
 \begin{itemize}
-\item If $d<n$, then $c$ and $L-c$ are odd, so both coordinates are odd and only a diagonal or anti-diagonal state can map to the pair. A difference of $2$ is possible exactly when $2c=L+2$, that is, $u=B/2+2^d$. Since $\vt(u)=d$, this forces $d\le n-2$. Solving for the preceding diagonal or anti-diagonal parameter gives the multiples of $m$ of valuation $n-d-2$.
-\item If $d=n$, then $c$ and $m-c$ have opposite parity, so only a zero-boundary state can map to the pair. A sum $B-1$ is possible exactly when $2c=m+1$, that is, $u=hs$; the predecessors are then $Z(u)$ with $u\equiv h\pmod m$.
+\item[(i)] If $u\equiv h-1$ or $u\equiv h$, the relevant $z$ is odd, and a coordinate vanishes at step $n$. The other coordinate differs from $z$ by $2$ before folding, so it is congruent to $\pm2s$ and equals $2s$. The next boundary state is $Z(2s)$, after $n+1$ steps.
+\item[(ii)] If $m\mid u$, then $\vt(u)\le n-2$, since $0<u<B$ and $u\ne B/2$. So $\vt(w)=\vt(u)+1$, and $t=n-\vt(2w)=n-\vt(u)-2$ lies in $[0,n-2]$. If $t=0$, the first image is already $A(B/2+1)$. Otherwise, at step $t$ the number $2^tw$ is an odd multiple of $B/2$, so the two coordinates are congruent modulo $2B$ to $\pm(B/2\pm2^t)$. Each is therefore $B/2+2^t$ or $B/2-2^t$, and since they sum to $B$, they are $B/2+2^t$ and $B/2-2^t$. The next boundary state is $A(B/2+2^t)$, after $t+1$ steps.
 \end{itemize}
-If $d=0$, then $u$ is odd, and $A(u)$ itself is the image of a boundary state only when its coordinates differ by $2$, that is, $u=B/2+1$. Its predecessors are then those of the first item with $d=0$, at elapsed time one.
-
-Finally, a diagonal state has no generic predecessor, and its only boundary predecessor is $D(B/2)$, of $D(1)$. These cases exhaust the three branches of \eqref{eq:map}. For $n=1$ the fifth row is empty, and the arguments at full depth still apply.
+These cases determine the next boundary state of every boundary state. Grouping them by target gives Table~\ref{tab:returns}, and the targets are exactly its critical states.
 \end{proof}
 
 \section{The return graph and the proof of Theorem~\ref{thm:main}}
@@ -241,7 +248,7 @@ S=Z(s),\qquad E=Z(2s),\qquad U=A(hs).
 \]
 These are critical states (Table~\ref{tab:returns}, rows three with $t=n$, four and six).
 
-\begin{lemma}\label{lem:graph}
+\begin{lemma}[Return graph]\label{lem:graph}
 Let $m\ge3$ be odd. No critical state has residue $0$ modulo $m$, and every critical state that is not seeded has next boundary state $S$, $E$ or $U$, after exactly $n+1$ steps. More precisely:
 \begin{itemize}
 \item a critical zero-boundary state $Z(u)$ that is not seeded has $u\equiv h$, and then its next boundary state is $U$, or $u\equiv1$, and then it is $S$;
@@ -285,7 +292,7 @@ Let $m=3$, so $h=2$ and there are no seeded states and no lifts. Every residue t
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:main}\textup{(c)}]
-Let $B=2^n$. For $n=1$ the pairs $(1,0)$ and $(1,1)$ are fixed and are the only pairs. Let $n\ge2$. By Lemma~\ref{lem:regular}(c) every cycle meets the boundary. The proof of Proposition~\ref{prop:table} applies, except that critical states outside $X_B$, namely $Z(2^n)$, $Z(2^{n+1})$ and $A(2^n)$, do not occur. The remaining critical states on which cycles can lie are $Z(2^t)$ for $1\le t\le n-1$ and $A(B/2+2^t)$ for $0\le t\le n-2$; the states $D(1)$ and $Z(B-1)$ lead into these families, since by rows five and three their next boundary states are $A(B/2+2^{n-2})$ and $Z(2^{n-1})$. Row three, with $L=2^{n-t'}$, shows that the next boundary state of $Z(2^t)$ is $Z(2^{n-t})$, after $n-t+1$ steps. Row five shows that the next boundary state of $A(B/2+2^t)$ is $A(B/2+2^{n-t-2})$, after $n-t-1$ steps, since $\vt(B/2+2^t)=t$. These are involutions of the index sets. A two-element orbit $\{t,n-t\}$ of the first gives a cycle of length $(n-t+1)+(t+1)=n+2$, and one of the second gives a cycle of length $n$. For even $n$ the fixed index $t=n/2$ of the first gives a cycle of length $n/2+1$, and the fixed index $t=(n-2)/2$ of the second gives a cycle of length $n/2$. Counting orbits gives Table~\ref{tab:powers}.
+Let $B=2^n$. For $n=1$ the pairs $(1,0)$ and $(1,1)$ are fixed and are the only pairs. Let $n\ge2$. By Lemma~\ref{lem:regular}(c) every cycle meets the boundary. Every integer is divisible by $m=1$, so Lemma~\ref{lem:visit} applies with all four choices of $z$. The evaluation at step $k^*$ in the proof of Proposition~\ref{prop:table} carries over in two cases: zero-boundary case (i) with $t\le n-1$, and diagonal and anti-diagonal case (ii) with $t\le n-2$. For $Z(u)$ with $u\ge2$, exactly one of $u-1$ and $B-u$ is even, while $x+y=B-1$ and $x-y$ are odd. So the next boundary state is $Z(2^{n-j})$, where $j$ is the valuation of the even one. For $D(u)$ or $A(u)$ with $u\ne B/2$, the coordinates $x,y$ are odd and $x-y=2$, while $x+y=2w$ has valuation at least $2$. So the next boundary state is $A(B/2+2^{t})$ with $t=n-\vt(2w)$. In particular, the next boundary state of $Z(2^t)$, for $1\le t\le n-1$, is $Z(2^{n-t})$, after $n-t+1$ steps. That of $A(B/2+2^t)$, for $0\le t\le n-2$, is $A(B/2+2^{n-t-2})$, after $n-t-1$ steps. The states $D(1)$ and $Z(B-1)$ lead into these families, to $A(B/2+2^{n-2})$ and $Z(2^{n-1})$. They lie on no cycle, since their only boundary predecessors $D(B/2)$ and $Z(1)$ are not the next boundary state of any state. These are involutions of the index sets. A two-element orbit $\{t,n-t\}$ of the first gives a cycle of length $(n-t+1)+(t+1)=n+2$, and one of the second gives a cycle of length $n$. For even $n$ the fixed index $t=n/2$ of the first gives a cycle of length $n/2+1$, and the fixed index $t=(n-2)/2$ of the second gives a cycle of length $n/2$. Counting orbits gives Table~\ref{tab:powers}.
 \end{proof}
 
 \begin{proof}[Proof of Corollary~\ref{cor:unique}]
