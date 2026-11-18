@@ -1,0 +1,1 @@
+gate characterisation (odd: two of v',w,z equal a; even: u=a,v'>=a-1,z<a) and first-coordinate formula: 18592861 positive sources over B=40..65,101,102; mismatches=0

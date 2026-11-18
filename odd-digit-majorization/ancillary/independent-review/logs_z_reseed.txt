@@ -1,0 +1,90 @@
+--- z_entry with SolverFor(QF_LRA), seed 7
+L1b first image f(x)=C(sort|2x-1|)                      unsat    OK      0.1s
+L1  f(C r) = C(H r)                                     unsat    OK      0.1s
+L2a f(y)=R(y) on C(core)                                unsat    OK      0.0s
+L2b core invariant under H                              unsat    OK      0.0s
+L2c H^3 = id on core                                    unsat    OK      0.0s
+L2d [info] core meets a=1 (boundary; excluded by a_4<1) sat      OK      0.0s
+   model: [r1 = 1/3, r3 = 1/3, r0 = 1, r2 = 1/3]
+L3  E phases cycle 1->2->3->1                           unsat    OK      0.0s
+L4  H(P0)==P0: True  H(P1)==P2: True  H(P2)==P1: True  zero gaps: [Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)]
+(i)  limit-cycle classification                         unsat    OK      2.7s
+(ii)  a_6 = a_3                                         unsat    OK      0.7s
+(iii) nu(r_6) >= nu(r_3)                                unsat    OK      0.4s
+(iv)  r_9 - r_6 = r_6 - r_3 outside the core            unsat    OK     13.3s
+ALL ENTRY CHECKS OK
+--- z_clock with SolverFor(QF_LIA), seed 7
+Z1 column subtraction == borrow digits (all ranks, B>=2)       unsat    OK      0.0s
+Z2 S_1(g(Fq)) <= S_1(g(q))+1  (q4>0, B>=2)                     unsat    OK      0.4s
+Z2 S_2(g(Fq)) <= S_2(g(q))+1  (q4>0, B>=2)                     unsat    OK      1.2s
+Z2 S_3(g(Fq)) <= S_3(g(q))+1  (q4>0, B>=2)                     unsat    OK      3.6s
+Z2 S_4(g(Fq)) <= S_4(g(q))+1  (q4>0, B>=2)                     unsat    OK      8.5s
+Z3 q0..q3 positive => q4 positive  (B>=40, B%2=0)              unsat    OK      9.6s
+Z3 q0..q3 positive => q4 positive  (B>=40, B%2=1)              unsat    OK     17.6s
+Z3b same for odd B>=33 (paper: a>=16)                          unsat    OK     18.5s
+Z3c even B>=40: positive->positive->zero impossible            unsat    OK      0.9s
+Z4 rank 2 zero state, first return at j=1, B%2=0, outside cover unsat    OK      0.0s
+Z4 rank 2 zero state, first return at j=1, B%2=1, outside cover unsat    OK      0.0s
+Z4 rank 2 zero state, first return at j=2, B%2=0, outside cover unsat    OK      0.0s
+Z4 rank 2 zero state, first return at j=2, B%2=1, outside cover unsat    OK      0.0s
+Z4 rank 2 zero state, first return at j=3, B%2=0, outside cover unsat    OK      0.5s
+Z4 rank 2 zero state, first return at j=3, B%2=1, outside cover unsat    OK      0.5s
+Z4 rank 2 zero state, first return at j=4, B%2=0, outside cover unsat    OK      2.3s
+Z4 rank 2 zero state, first return at j=4, B%2=1, outside cover unsat    OK      2.2s
+Z4 rank 3 zero state, first return at j=1, B%2=0, outside cover unsat    OK      0.0s
+Z4 rank 3 zero state, first return at j=1, B%2=1, outside cover unsat    OK      0.0s
+Z4 rank 3 zero state, first return at j=2, B%2=0, outside cover unsat    OK      0.3s
+Z4 rank 3 zero state, first return at j=2, B%2=1, outside cover unsat    OK      0.4s
+Z4 rank 3 zero state, first return at j=3, B%2=0, outside cover unsat    OK      1.3s
+Z4 rank 3 zero state, first return at j=3, B%2=1, outside cover unsat    OK      1.7s
+Z4 rank 3 zero state, first return at j=4, B%2=0, outside cover unsat    OK     11.3s
+Z4 rank 3 zero state, first return at j=4, B%2=1, outside cover unsat    OK      5.2s
+Z5 F^3 q = q+(-3,-2,-1,-1) when all 12 integer core slacks >= 40 unsat    OK      0.4s
+Z5 F^3 q = q+(-3,-2,-1,-1) when all 12 integer core slacks >= 24 unsat    OK      0.3s
+Z5 F^3 q = q+(-3,-2,-1,-1) when all 12 integer core slacks >= 16 unsat    OK      0.4s
+ALL OK
+--- z_entry with SolverFor(QF_LRA), seed 12345
+L1b first image f(x)=C(sort|2x-1|)                      unsat    OK      0.1s
+L1  f(C r) = C(H r)                                     unsat    OK      0.1s
+L2a f(y)=R(y) on C(core)                                unsat    OK      0.0s
+L2b core invariant under H                              unsat    OK      0.0s
+L2c H^3 = id on core                                    unsat    OK      0.0s
+L2d [info] core meets a=1 (boundary; excluded by a_4<1) sat      OK      0.0s
+   model: [r1 = 1/3, r3 = 1/3, r0 = 1, r2 = 1/3]
+L3  E phases cycle 1->2->3->1                           unsat    OK      0.0s
+L4  H(P0)==P0: True  H(P1)==P2: True  H(P2)==P1: True  zero gaps: [Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)]
+(i)  limit-cycle classification                         unsat    OK      2.2s
+(ii)  a_6 = a_3                                         unsat    OK      0.8s
+(iii) nu(r_6) >= nu(r_3)                                unsat    OK      0.3s
+(iv)  r_9 - r_6 = r_6 - r_3 outside the core            unsat    OK      9.6s
+ALL ENTRY CHECKS OK
+--- z_clock with SolverFor(QF_LIA), seed 12345
+Z1 column subtraction == borrow digits (all ranks, B>=2)       unsat    OK      0.0s
+Z2 S_1(g(Fq)) <= S_1(g(q))+1  (q4>0, B>=2)                     unsat    OK      0.3s
+Z2 S_2(g(Fq)) <= S_2(g(q))+1  (q4>0, B>=2)                     unsat    OK      1.1s
+Z2 S_3(g(Fq)) <= S_3(g(q))+1  (q4>0, B>=2)                     unsat    OK      4.1s
+Z2 S_4(g(Fq)) <= S_4(g(q))+1  (q4>0, B>=2)                     unsat    OK      8.3s
+Z3 q0..q3 positive => q4 positive  (B>=40, B%2=0)              unsat    OK     12.6s
+Z3 q0..q3 positive => q4 positive  (B>=40, B%2=1)              unsat    OK     44.9s
+Z3b same for odd B>=33 (paper: a>=16)                          unsat    OK     30.0s
+Z3c even B>=40: positive->positive->zero impossible            unsat    OK      1.0s
+Z4 rank 2 zero state, first return at j=1, B%2=0, outside cover unsat    OK      0.0s
+Z4 rank 2 zero state, first return at j=1, B%2=1, outside cover unsat    OK      0.0s
+Z4 rank 2 zero state, first return at j=2, B%2=0, outside cover unsat    OK      0.0s
+Z4 rank 2 zero state, first return at j=2, B%2=1, outside cover unsat    OK      0.0s
+Z4 rank 2 zero state, first return at j=3, B%2=0, outside cover unsat    OK      0.9s
+Z4 rank 2 zero state, first return at j=3, B%2=1, outside cover unsat    OK      0.5s
+Z4 rank 2 zero state, first return at j=4, B%2=0, outside cover unsat    OK      3.0s
+Z4 rank 2 zero state, first return at j=4, B%2=1, outside cover unsat    OK      3.1s
+Z4 rank 3 zero state, first return at j=1, B%2=0, outside cover unsat    OK      0.0s
+Z4 rank 3 zero state, first return at j=1, B%2=1, outside cover unsat    OK      0.0s
+Z4 rank 3 zero state, first return at j=2, B%2=0, outside cover unsat    OK      0.3s
+Z4 rank 3 zero state, first return at j=2, B%2=1, outside cover unsat    OK      0.3s
+Z4 rank 3 zero state, first return at j=3, B%2=0, outside cover unsat    OK      1.5s
+Z4 rank 3 zero state, first return at j=3, B%2=1, outside cover unsat    OK      1.2s
+Z4 rank 3 zero state, first return at j=4, B%2=0, outside cover unsat    OK     23.0s
+Z4 rank 3 zero state, first return at j=4, B%2=1, outside cover unsat    OK     20.4s
+Z5 F^3 q = q+(-3,-2,-1,-1) when all 12 integer core slacks >= 40 unsat    OK      0.4s
+Z5 F^3 q = q+(-3,-2,-1,-1) when all 12 integer core slacks >= 24 unsat    OK      0.4s
+Z5 F^3 q = q+(-3,-2,-1,-1) when all 12 integer core slacks >= 16 unsat    OK      0.4s
+ALL OK

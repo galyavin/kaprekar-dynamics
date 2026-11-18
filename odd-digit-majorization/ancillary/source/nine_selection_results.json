@@ -1,0 +1,343 @@
+{
+  "guard_replay": {
+    "bridge_count": 384,
+    "replayed_guards": 275184,
+    "continuation_counts": {
+      "42": 344,
+      "9": 40
+    }
+  },
+  "arithmetic": {
+    "finite_images": 6,
+    "tested_line_indices": 75
+  },
+  "comparison": {
+    "AB_full_lattice_comparisons": 48,
+    "line_full_lattice_comparisons": 112,
+    "examples": [
+      {
+        "base": 1000000,
+        "phase": [
+          -2,
+          -5
+        ],
+        "ordinary": {
+          "32": "1/6",
+          "37": "37/72",
+          "9": "1/12",
+          "stationary": "17/72"
+        },
+        "released": {
+          "32": "1/12",
+          "37": "2/3",
+          "9": "1/12",
+          "stationary": "1/6"
+        }
+      },
+      {
+        "base": 1000001,
+        "phase": [
+          -2,
+          -4
+        ],
+        "ordinary": {
+          "32": "1/6",
+          "37": "17/36",
+          "9": "1/12",
+          "stationary": "5/18"
+        },
+        "released": {
+          "32": "5/24",
+          "37": "1/2",
+          "9": "1/12",
+          "stationary": "5/24"
+        }
+      },
+      {
+        "base": 1000004,
+        "phase": [
+          -2,
+          -3
+        ],
+        "ordinary": {
+          "32": "29/144",
+          "37": "1/2",
+          "9": "1/12",
+          "stationary": "31/144"
+        },
+        "released": {
+          "32": "5/24",
+          "37": "11/24",
+          "9": "1/12",
+          "stationary": "1/4"
+        }
+      }
+    ],
+    "line_distinctions": [
+      {
+        "base": 1000000,
+        "phase": [
+          0,
+          -2,
+          -5
+        ],
+        "U": 820001,
+        "kernels": {
+          "1": {
+            "32": "1/6",
+            "37": "1/3",
+            "stationary": "1/2"
+          },
+          "2": {
+            "32": "1/3",
+            "37": "1/3",
+            "stationary": "1/3"
+          },
+          "3": {
+            "stationary": "1"
+          },
+          "6": {
+            "stationary": "1"
+          },
+          "18": {
+            "stationary": "1"
+          },
+          "25": {
+            "32": "1/6",
+            "37": "1/3",
+            "stationary": "1/2"
+          },
+          "54": {
+            "stationary": "1"
+          }
+        }
+      },
+      {
+        "base": 1000009,
+        "phase": [
+          0,
+          -2,
+          -4
+        ],
+        "U": 820008,
+        "kernels": {
+          "1": {
+            "32": "1/6",
+            "37": "1/3",
+            "stationary": "1/2"
+          },
+          "2": {
+            "32": "1/3",
+            "37": "1/3",
+            "stationary": "1/3"
+          },
+          "3": {
+            "stationary": "1"
+          },
+          "6": {
+            "stationary": "1"
+          },
+          "18": {
+            "stationary": "1"
+          },
+          "25": {
+            "32": "1/6",
+            "37": "1/3",
+            "stationary": "1/2"
+          },
+          "54": {
+            "stationary": "1"
+          }
+        }
+      },
+      {
+        "base": 1000003,
+        "phase": [
+          0,
+          -2,
+          -3
+        ],
+        "U": 820003,
+        "kernels": {
+          "1": {
+            "32": "1/6",
+            "37": "1/3",
+            "stationary": "1/2"
+          },
+          "2": {
+            "32": "1/3",
+            "37": "1/3",
+            "stationary": "1/3"
+          },
+          "3": {
+            "stationary": "1"
+          },
+          "6": {
+            "stationary": "1"
+          },
+          "18": {
+            "stationary": "1"
+          },
+          "25": {
+            "32": "1/6",
+            "37": "1/3",
+            "stationary": "1/2"
+          },
+          "54": {
+            "stationary": "1"
+          }
+        }
+      }
+    ]
+  },
+  "distinctions": {
+    "base_progression": [
+      600,
+      401
+    ],
+    "U_progression": [
+      492,
+      331
+    ],
+    "phase": [
+      -2,
+      -2,
+      -5
+    ],
+    "selection_word": [
+      "32",
+      "37",
+      "37",
+      "37",
+      "32",
+      "37"
+    ],
+    "gcd_class_kernels": {
+      "1": {
+        "32": "1/3",
+        "37": "2/3"
+      },
+      "2": {
+        "32": "2/3",
+        "37": "1/3"
+      },
+      "3": {
+        "32": "1/2",
+        "37": "1/2"
+      },
+      "6": {
+        "32": "1"
+      }
+    },
+    "correlation_witness": {
+      "base": 1000001,
+      "q": [
+        840003,
+        680007,
+        490000,
+        260007
+      ],
+      "generator": [
+        5,
+        2
+      ],
+      "joint_weights": {
+        "32": "1/24",
+        "37": "5/8",
+        "9": "1/12",
+        "stationary": "1/4"
+      },
+      "product_weights": {
+        "37": "13/24",
+        "32": "7/36",
+        "9": "1/12",
+        "stationary": "13/72"
+      }
+    }
+  },
+  "actual": {
+    "raw_pair_steps": 514592,
+    "captures": [
+      {
+        "kind": "32",
+        "base": 1000000,
+        "source": [
+          835001,
+          670004,
+          475006,
+          252505
+        ],
+        "pair_time": 153365,
+        "period": 21,
+        "first_cycle_state": [
+          800000,
+          600000,
+          400000,
+          199999
+        ],
+        "joint_error": "281/12000000"
+      },
+      {
+        "kind": "37",
+        "base": 1000000,
+        "source": [
+          835001,
+          670004,
+          475007,
+          252505
+        ],
+        "pair_time": 141136,
+        "period": 21,
+        "first_cycle_state": [
+          800000,
+          600000,
+          400000,
+          199999
+        ],
+        "joint_error": "71/4500000"
+      },
+      {
+        "kind": "9",
+        "base": 1000000,
+        "source": [
+          835001,
+          670004,
+          475004,
+          252505
+        ],
+        "pair_time": 120020,
+        "period": 21,
+        "first_cycle_state": [
+          800000,
+          600000,
+          400000,
+          199999
+        ],
+        "joint_error": "67/4000000"
+      },
+      {
+        "kind": "stationary",
+        "base": 1000000,
+        "source": [
+          835003,
+          670008,
+          475012,
+          252508
+        ],
+        "pair_time": 100006,
+        "period": 2,
+        "first_cycle_state": [
+          803336,
+          606670,
+          410006,
+          196667
+        ],
+        "joint_error": "21/4000000"
+      }
+    ]
+  },
+  "rejected_controls": [
+    "missing bridge",
+    "wrong bridge shift"
+  ]
+}

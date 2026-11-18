@@ -1,0 +1,1 @@
+family neighbourhood: checked=100000 violations=0 first-descent-step histogram (1..9)=[61203, 0, 6525, 8838, 22998, 267, 141, 25, 3]

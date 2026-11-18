@@ -1,0 +1,250 @@
+Running odd_base_covariance_checks
+{
+  "symbolic_guard_checks": {
+    "1": 4,
+    "2": 16,
+    "3": 48,
+    "4": 128,
+    "5": 320,
+    "6": 768,
+    "7": 1792,
+    "8": 4096
+  },
+  "formulas": {
+    "exhaustive_paired_inputs": {
+      "2": 48,
+      "3": 182,
+      "4": 301,
+      "5": 208,
+      "6": 190
+    },
+    "centered_coset_checks": 2700,
+    "noninvariance_witnesses": [
+      {
+        "k": 2,
+        "base": 14,
+        "q": [
+          10,
+          1
+        ],
+        "image": [
+          13,
+          8
+        ]
+      },
+      {
+        "k": 3,
+        "base": 14,
+        "q": [
+          13,
+          1,
+          1
+        ],
+        "image": [
+          13,
+          12,
+          11
+        ]
+      },
+      {
+        "k": 4,
+        "base": 14,
+        "q": [
+          13,
+          7,
+          1,
+          1
+        ],
+        "image": [
+          13,
+          12,
+          11,
+          6
+        ]
+      },
+      {
+        "k": 5,
+        "base": 10,
+        "q": [
+          9,
+          8,
+          1,
+          1,
+          1
+        ],
+        "image": [
+          9,
+          8,
+          7,
+          7,
+          7
+        ]
+      },
+      {
+        "k": 6,
+        "base": 10,
+        "q": [
+          9,
+          8,
+          5,
+          1,
+          1,
+          1
+        ],
+        "image": [
+          9,
+          8,
+          7,
+          7,
+          7,
+          4
+        ]
+      }
+    ]
+  },
+  "nine_digit_inventory": {
+    "certificates": {
+      "nine_ab": 0,
+      "nine_aa": 0,
+      "nine_aab": 6,
+      "nine_aaa": 6,
+      "nine_a_facet": 0,
+      "nine_b_facet": 0,
+      "nine_bb": 0,
+      "nine_bbb": 6,
+      "nine_releases": 6
+    },
+    "distinct_orders": 6,
+    "orders": [
+      [
+        4,
+        0,
+        5,
+        1,
+        6,
+        2,
+        7,
+        3,
+        8
+      ],
+      [
+        4,
+        0,
+        5,
+        1,
+        6,
+        2,
+        7,
+        8,
+        3
+      ],
+      [
+        4,
+        0,
+        5,
+        6,
+        1,
+        7,
+        2,
+        3,
+        8
+      ],
+      [
+        4,
+        0,
+        5,
+        6,
+        1,
+        7,
+        2,
+        8,
+        3
+      ],
+      [
+        4,
+        5,
+        0,
+        1,
+        6,
+        2,
+        7,
+        8,
+        3
+      ],
+      [
+        4,
+        5,
+        0,
+        6,
+        1,
+        7,
+        2,
+        8,
+        3
+      ]
+    ],
+    "independent_guard_checks": 78
+  },
+  "actual": {
+    "raw_pair_steps": 1029184,
+    "translated_captures": [
+      {
+        "kind": "32",
+        "base": 1000000,
+        "translated_base": 1000005,
+        "pair_time": 153365,
+        "period": 21,
+        "translated_first_cycle_state": [
+          800004,
+          600003,
+          400002,
+          200000
+        ]
+      },
+      {
+        "kind": "37",
+        "base": 1000000,
+        "translated_base": 1000005,
+        "pair_time": 141136,
+        "period": 21,
+        "translated_first_cycle_state": [
+          800004,
+          600003,
+          400002,
+          200000
+        ]
+      },
+      {
+        "kind": "9",
+        "base": 1000000,
+        "translated_base": 1000005,
+        "pair_time": 120020,
+        "period": 21,
+        "translated_first_cycle_state": [
+          800004,
+          600003,
+          400002,
+          200000
+        ]
+      },
+      {
+        "kind": "stationary",
+        "base": 1000000,
+        "translated_base": 1000005,
+        "pair_time": 100006,
+        "period": 2,
+        "translated_first_cycle_state": [
+          803340,
+          606673,
+          410008,
+          196668
+        ]
+      }
+    ]
+  },
+  "rejected_controls": [
+    "wrong anchor",
+    "missing sorting branch"
+  ]
+}
+All selected checks passed.

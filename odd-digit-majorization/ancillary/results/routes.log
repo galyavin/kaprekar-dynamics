@@ -1,0 +1,79 @@
+Running nine_entry_checks
+exit A0 one-step mass 0.011895682468515108
+exit A1 one-step mass 0.011851303247654592
+exit A2 one-step mass 0.01007308699266123
+exit B0 one-step mass 0.016129757546154658
+exit B1 one-step mass 0.015416815681392491
+exit B2 one-step mass 0.013615787253029801
+PASS: 45 rational guard identities; three corruptions rejected.
+Core original-input mass 0.00867982434459; one-step preimage mass 0.0789824331894.
+PASS: 640 inverse checks; 20 exact timed segments, 90956 independent subtraction steps.
+Running nine_phase_checks
+PASS: 3913 return guards, 107926 terminal guards, 186 safe-capture checks; 3 corruption controls.
+PASS: 8 independent full clocks, 649570 numeric subtraction steps.
+Each phase family has exact limiting input mass 4248327391661563633899/24414062500000000000000000000000 = 1.74011489962e-10.
+All affine guards hold for unbounded bases in the stated domain; no solver is used.
+Running nine_a_facet_checks
+PASS: 356 rational identities; 3 corruptions rejected.
+All 1025 incoming integer phases absorbed in at most 390 steps.
+30 full facet paths and 60 absorption paths: 187599 independent subtraction steps.
+Leading facet elapsed error at most 38 steps.
+240 transfers across three A faces, sixteen inverse branches and five bases.
+Running nine_b_facet_checks
+PASS: 212 rational guard identities; 3 corruptions rejected.
+All 1025 incoming integer phases absorbed in at most 513 steps.
+20 full facet paths and 60 absorption paths: 312870 independent subtraction steps.
+240 incoming transfers across three faces, sixteen inverse branches and five bases.
+Unique old linear clock has new closed-phase residual 647/60.
+No first-capture, global-entry, full arrival-law or seven-digit tail conclusion.
+Running nine_aa_checks
+PASS: 906 rational identities; 4 corrupted proofs rejected.
+Every integer phase reaches one of two cycles, with distinct nine- and forty-two-step velocities.
+85 complete corner segments and 12 absorption paths: 749733 independent subtraction steps.
+Leading elapsed errors: {9: '36', 42: '546/5'}; unique relative-interior exit is A0.
+Running nine_ab_checks
+PASS: 595 rational identities; 3 corrupted proofs rejected.
+Every integer phase absorbs; three cycles share the twenty-four-step drift (-12,-24,-12,-18).
+80 complete corner segments and 12 absorption paths: 480186 independent subtraction steps.
+Leading elapsed error at most 62 steps; unique relative-interior exit is A1.
+Running nine_bb_checks
+PASS: 420 rational guard identities; 3 corrupted proofs rejected.
+Three recurrent phase cycles share the twelve-step displacement (-12,-2,2,-7).
+60 full corner segments and 12 absorption paths: 481584 independent subtraction steps.
+Leading corner elapsed error at most 57 steps.
+Global phase absorption uses the accompanying elementary fold argument.
+Running nine_b_routes_checks
+PASS: 117 rational polytope reductions; 2 corruptions rejected.
+Six route cells integrate identically by barycentric expansion and exact cubature.
+Original-input mass 234391778/38443359375 = 0.00609706804531829.
+480 captures cover every inverse branch and five bases; 12 full numeric orbits
+verify first pair and number capture over 2450386 subtraction steps.
+Running nine_bbb_checks
+PASS: 384 exact contraction identities; 26 one-step strip guards; 117 edge guards.
+154375 terminal guards cover all fifteen base/entry regimes.
+Every integer strip phase converges to one nine-cycle; 440 finite-core starts visit 453 states.
+15 complete independent clocks, 1350405 subtraction steps; 3 corruptions rejected.
+Pair-clock correction range: ['6/5', '158/5'].
+Running nine_aaa_checks
+PASS: 39 strip guards, 1230 incoming transverse guards, 897 edge guards and 1146158 terminal guards.
+All 435 AA exit states reach the five proved phase cycles; 25 terminal families cover every base residue.
+2175 compressed captures; 16 independent full pair paths over 2833628 subtraction steps; 3 corruptions rejected.
+14754 symbolic seam comparisons and 101 independent joined captures prove all eight earlier-capture corrections; four full joined drifting paths add to 729358 joined independent steps.
+Running nine_aab_checks
+PASS: 768 incoming transverse guards and 275184 transition guards.
+All 384 AB exits reach an outgoing word within 42 steps: 344 select length 42 and 40 select length 9.
+1920 independent complete transitions over 31800 steps; 80 complete AB captures; 4 corruptions rejected.
+468 edge and 305552 terminal guards cover all twenty nine-step regimes.
+Ten complete independent captures: 1521101 further subtraction steps.
+Two original-number captures independently verify T=h+1 over 311476 steps.
+Running nine_releases_checks
+PASS: 86879 exact guard checks; both complete release inventories (32 and 192 states).
+Maximum prefix lengths: {'BA0': 4, 'BBA1': 23}.
+1120 independent complete releases over 8455 steps; 3 corruptions rejected.
+Running nine_core_checks
+PASS: all 33 leading routes, 16 inverse branches and five base residues: 2640 compressed first captures.
+33 complete independent pair paths over 4524703 subtraction steps.
+Two full original-number paths over 274777 steps verify the actual clock.
+3 corrupted route inventories rejected.
+Generic all-base capture now covers the existing 0.0789824331894 predecessor population.
+All selected checks passed.

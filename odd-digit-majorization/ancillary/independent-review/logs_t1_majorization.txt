@@ -1,0 +1,22 @@
+(a) real majorization g1(fx) < g1(x): 21000 exact rational inputs, k=1..7, violations=0
+(b) circle inequality g_L(D_C x) < g_L(x), C<=L: 18000 inputs, k=1..6, violations=0
+(c) n=3: exhaustive B=2..60, 1770 positive sources, max_j [S_j(g(Fq))-S_j(g(q))] = 0
+(c) n=5: exhaustive B=2..40, 10660 positive sources, max_j [S_j(g(Fq))-S_j(g(q))] = 1
+(c) n=7: exhaustive B=2..22, 10626 positive sources, max_j [S_j(g(Fq))-S_j(g(q))] = 1
+(c) n=9: exhaustive B=2..16, 11628 positive sources, max_j [S_j(g(Fq))-S_j(g(q))] = 1
+(c) n=3: 20000 random sources (B up to 1e9), max excess = 0
+(c) n=5: 20000 random sources (B up to 1e9), max excess = 1
+(c) n=7: 20000 random sources (B up to 1e9), max excess = 1
+(c) n=9: 20000 random sources (B up to 1e9), max excess = 1
+(c) n=11: 20000 random sources (B up to 1e9), max excess = 1
+(c) n=13: 20000 random sources (B up to 1e9), max excess = 1
+(c) n=15: 20000 random sources (B up to 1e9), max excess = 1
+(d) k=1: eventual periods {1: 300}  (bound (k+1)!=2) OK
+(d) k=2: eventual periods {1: 9, 2: 291}  (bound (k+1)!=6) OK
+(d) k=3: eventual periods {1: 4, 3: 296}  (bound (k+1)!=24) OK
+(d) k=4: eventual periods {1: 7, 3: 293}  (bound (k+1)!=120) OK
+(d) k=5: eventual periods {5: 300}  (bound (k+1)!=720) OK
+(d) k=6: eventual periods {1: 1, 4: 5, 5: 1, 6: 93}  (bound (k+1)!=5040) OK
+(d) k=4 positive gaps, 4000 random rationals: (period, limit location) -> {(1, 'core-int'): 8, (3, 'core-bdry'): 40, (3, 'core-int'): 3952}
+    entry time e into int(core): max=4871, mean=12.42, histogram up to 10: [155, 372, 644, 652, 522, 376, 245, 153, 108, 94, 80]
+THEOREM 1/2-REAL TESTS OK

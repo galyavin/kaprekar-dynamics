@@ -1,0 +1,6 @@
+(iv) mutated: min D >= 0 (no gap bound), W<=eta             sat  0.8s
+    r = [185/248, 185/248, 185/248, 65/124] eta = 323/248
+(iv) mutated: min D >= 100 eta, no W bound                  sat  1.4s
+    r = [27723/46210, 27723/46210, 120193/207945, 9229/41589] eta = 1/9242
+(iv) mutated: min D >= eta/10, W<=eta                       sat  0.9s
+    r = [607/1155, 274/1155, 274/1155, 59/1155] eta = 430/231

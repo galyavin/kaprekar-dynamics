@@ -1,0 +1,20 @@
+Running nine_global_entry_audit
+{'key': 'periodic_four_step_classification', 'z3': 'unsat', 'cvc5': 'unsat', 'z3_seconds': 2.304762125015259, 'cvc5_seconds': 16.226813077926636, 'sha256': '2d656228a52c41665495f9d413a4f66c36b3fb145a2530b8fd070bb0d277d1e3'}
+{'key': 'exceptional_first_stabilization', 'z3': 'unsat', 'cvc5': 'unsat', 'z3_seconds': 0.7151238918304443, 'cvc5_seconds': 3.659466028213501, 'sha256': 'd759300904207405671c122cf3f4d4546ccaa1ef04e8b4edb2fc6b3f14783455'}
+{'key': 'exceptional_transverse_persistence', 'z3': 'unsat', 'cvc5': 'unsat', 'z3_seconds': 0.1979057788848877, 'cvc5_seconds': 2.8280222415924072, 'sha256': 'f5e6253a8044539461c6965e132a34c4cd83502711d844fa5ae5de7a6aefffd0'}
+{'key': 'core_neighborhood_affine_progression', 'z3': 'unsat', 'cvc5': 'unsat', 'z3_seconds': 8.545468091964722, 'cvc5_seconds': 46.69785690307617, 'sha256': 'f58a84c42505807306b9d6ba69a990cf2ee234ea7f618e4158ee1e0f91447946'}
+false_three_step_classification sat sat
+false_unprepared_affine_progression sat sat
+PASS: four universal lemmas in both solvers, two independently replayed SAT controls, three rejected corruptions.
+Running nine_global_checks
+Leading controls {'grid_states': 5985, 'independent_grid_steps': 44948, 'zero_loss_blocks': 380, 'positive_gap_noncore_grid_orbits': 32, 'noncore_grid_periods': [3], 'exceptional_grid_sources': [['4/9', '5/18', '5/18', '0'], ['13/18', '13/18', '5/9', '0'], ['4/9', '1/3', '2/9', '1/18'], ['13/18', '4/9', '4/9', '1/18'], ['13/18', '13/18', '1/2', '1/18'], ['7/18', '1/6', '1/6', '1/9']]}
+Local controls passed
+Exact irrational controls passed
+Actual center 0 all branches and base classes passed
+Actual center 1 all branches and base classes passed
+Actual center 2 all branches and base classes passed
+Actual center 3 all branches and base classes passed
+Independent full first capture 1000000 224637
+Independent full first capture 1000001 95984
+PASS: independent leading and local controls, complete joint-prefix checks, actual captures and negative controls.
+All selected checks passed.

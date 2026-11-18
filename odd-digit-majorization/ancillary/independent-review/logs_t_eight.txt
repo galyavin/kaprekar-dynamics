@@ -1,0 +1,5 @@
+t=4: B=127 P=8 all positive=True first descent step=5
+t=10: B=331 P=20 all positive=True first descent step=9
+t=100: B=3391 P=200 all positive=True first descent step=9
+t=1000: B=33991 P=2000 all positive=True first descent step=9
+t=100000: B=3399991 P=200000 all positive=True first descent step=9

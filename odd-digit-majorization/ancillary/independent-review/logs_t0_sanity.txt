@@ -1,0 +1,10 @@
+86530 -> [8, 2, 9, 6, 2] (7, 6)
+F(8,3) = (7, 6) gaps src [2, 5, 3] image [3, 1, 6]
+borrow formula == column subtraction: n=3,5,7 (B<14), n=9 (B<11), all q incl. lower ranks
+F well defined on q (all strings checked for (5,6),(7,4),(9,3))
+batcher 3 3 comparators OK
+batcher 5 9 comparators OK
+batcher 7 16 comparators OK
+batcher 9 28 comparators OK
+batcher 11 38 comparators OK
+batcher 13 48 comparators OK

@@ -1,0 +1,10 @@
+Z1 column subtraction == borrow digits (all ranks, B>=2)       unsat    OK      0.0s
+Z2 S_1(g(Fq)) <= S_1(g(q))+1  (q4>0, B>=2)                     unsat    OK      0.2s
+Z2 S_2(g(Fq)) <= S_2(g(q))+1  (q4>0, B>=2)                     unsat    OK      0.7s
+Z2 S_3(g(Fq)) <= S_3(g(q))+1  (q4>0, B>=2)                     unsat    OK      2.3s
+Z2 S_4(g(Fq)) <= S_4(g(q))+1  (q4>0, B>=2)                     unsat    OK      4.8s
+Z3 q0..q3 positive => q4 positive  (B>=40, B%2=0)              unsat    OK     40.9s
+Z3 q0..q3 positive => q4 positive  (B>=40, B%2=1)              unsat    OK      8.9s
+Z3b same for odd B>=33 (paper: a>=16)                          unsat    OK      8.3s
+Z3c even B>=40: positive->positive->zero impossible            unsat    OK      0.5s
+ALL OK

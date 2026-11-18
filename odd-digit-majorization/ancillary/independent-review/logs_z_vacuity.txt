@@ -1,0 +1,30 @@
+(i) hypotheses satisfiable                                             sat    OK    0.1s
+(i) hypotheses + outside core satisfiable (E points exist)             sat    OK    0.6s
+(i) mutated: E range starts at 0.72 instead of 5/7 -> SAT              sat    OK    0.0s
+(ii) hypotheses satisfiable                                            sat    OK    0.0s
+(ii) hypotheses allow a_3 > a_0 (statement not trivial)                sat    OK    0.2s
+(ii) mutated: eta<=1/10, d>=0 -> SAT                                   sat    OK    0.4s
+(iii) hypotheses satisfiable                                           sat    OK    0.0s
+(iii) nu can strictly increase (non-trivial)                           sat    OK    0.3s
+(iv) hypotheses satisfiable (with r_9 outside core)                    sat    OK    3.1s
+(iv) mutated: min D >= 2 eta instead of 100 eta -> SAT                 unsat  **UNEXPECTED**    8.0s
+Z2 mutated: S_1 with +0 -> SAT (the +1 is attained)                    sat    OK    0.1s
+Z2 mutated: S_2 with +0 -> SAT (the +1 is attained)                    sat    OK    0.2s
+Z2 mutated: S_3 with +0 -> SAT (the +1 is attained)                    sat    OK    0.2s
+Z2 mutated: S_4 with +0 -> SAT (the +1 is attained)                    sat    OK    0.5s
+Z3 hypotheses (four positive states) satisfiable                       sat    OK    0.3s
+Z3 mutated: B>=2 instead of B>=40 -> SAT (bound matters)               sat    OK    1.2s
+     witness B = 7 [5, 5, 2, 2]
+   cover row 5 needed: j=3 witness B=43 q0=[33, 31, 19, 0]
+Z4 mutated: rank-3 cover without row 5 -> SAT for some j               OK
+   Z4 hypotheses rank 2, j=1: sat
+   Z4 hypotheses rank 2, j=2: sat
+   Z4 hypotheses rank 2, j=3: sat
+   Z4 hypotheses rank 2, j=4: unsat
+   Z4 hypotheses rank 3, j=1: sat
+   Z4 hypotheses rank 3, j=2: sat
+   Z4 hypotheses rank 3, j=3: sat
+   Z4 hypotheses rank 3, j=4: unsat
+Z5 hypotheses (slacks>=16) satisfiable                                 sat    OK    0.0s
+Z5 mutated: slack margin 0 -> SAT (faces stop the bulk drift)          sat    OK    0.4s
+SOME UNEXPECTED

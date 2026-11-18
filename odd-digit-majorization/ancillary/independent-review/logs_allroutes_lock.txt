@@ -1,0 +1,1 @@
+[lock acquired after 31.7s]

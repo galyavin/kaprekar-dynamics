@@ -16,6 +16,10 @@ For every even base B = m·2ⁿ with m ≥ 5 odd, the paper gives the exact dist
 
 With five digit slots and a growing base B, the number of steps needed to reach a cycle, divided by B, converges through all integer bases to one explicit continuous law. Along each residue class of B modulo 3 the limiting time is independent of the terminal cycle. The paper also determines the exact basin of the even-base two-cycle, proves that the maximum arrival time is B/3 + √B/3 + O(1), and identifies the overshoot behind the square-root term. Its finite integer-affine checks are verified by SMT encodings and in Lean 4.
 
+**Majorization in odd-digit Kaprekar dynamics and the nine-digit arrival law** (2026), in [`odd-digit-majorization/`](odd-digit-majorization/) as [PDF](odd-digit-majorization/kaprekar-odd-digit-majorization.pdf) and [LaTeX source](odd-digit-majorization/kaprekar-odd-digit-majorization.tex). Archived at Zenodo: [doi:10.5281/zenodo.24342270](https://doi.org/10.5281/zenodo.24342270).
+
+For every odd number of digits, the continuous large-base map decreases the vector of successive gaps in majorization order, so every real orbit approaches a periodic orbit. For nine digits, periodicity is reached in finite time, and the initial differences, arrival time and terminal differences, all divided by the base, have five pairwise distinct joint limits indexed by the base modulo 5. A covariance principle under change of base explains the modulus. The nine-digit proofs use computer-assisted affine inequalities and exact lattice counts.
+
 ## Reproducing the results
 
 ```sh
@@ -33,6 +37,11 @@ bash reproduce.sh            # numerical checks (Python 3 and a C++17 compiler)
 ```sh
 cd five-digit-arrival-law/ancillary
 bash reproduce.sh            # numerical checks, SMT audits and the Lean build
+```
+
+```sh
+cd odd-digit-majorization/ancillary
+bash reproduce.sh            # solver audits and exact calculations (stages in ancillary/README.md)
 ```
 
 Each `ancillary/README.md` gives the expected outputs and versions.

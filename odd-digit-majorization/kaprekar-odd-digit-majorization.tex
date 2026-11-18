@@ -1,0 +1,818 @@
+\documentclass[11pt,reqno]{amsart}
+\usepackage{amssymb,booktabs}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Majorization in odd-digit Kaprekar dynamics and the nine-digit arrival law},pdfauthor={Rustem Galyavin}}
+\usepackage[margin=1.15in]{geometry}
+\setlength{\emergencystretch}{1.3em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\sort}{\operatorname{sort}}
+\newcommand{\ii}{\operatorname{int}}
+\newcommand{\law}{\mathcal L}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\runcheck}[1]{\texttt{./reproduce.sh\ #1}}
+\newcommand{\file}[1]{\nolinkurl{#1}}
+\title[Majorization and nine-digit Kaprekar dynamics]{Majorization in odd-digit Kaprekar dynamics\protect\\ and the nine-digit arrival law}
+\author{Rustem Galyavin}
+\thanks{Contact: \href{mailto:rustem@galyavin.com}{rustem@galyavin.com}.
+ORCID \href{https://orcid.org/0009-0006-6875-9170}{0009-0006-6875-9170}.}
+\date{18 November 2026}
+\subjclass[2020]{Primary 11A63; Secondary 37E99, 26D15, 60F05}
+\keywords{Kaprekar map, majorization, digit differences, first arrival time, lattice index}
+\begin{document}
+\begin{abstract}
+Arrange a string of digits in decreasing and increasing order, subtract, and repeat.
+For any odd number of digits the continuous large-base map decreases the vector
+of successive gaps in majorization order. Every real orbit approaches a periodic
+orbit. For nine digits and strictly positive gaps, periodicity is reached in finite
+time, with period one or three. For a uniformly chosen nonconstant string, the
+initial differences, the time to the first cyclic number and the differences of
+that number, all divided by the base, have five distinct joint limits, indexed by
+the base modulo five. A uniform linear bound on the arrival time gives convergence
+of all fixed positive moments and exponential moments. The nine-digit proofs use
+computer-assisted affine inequalities and exact lattice counts.
+\end{abstract}
+\maketitle
+\section{Introduction}
+How much can the large-base limit of digit subtraction tell us about the time
+to reach a cycle, or about the first number one reaches on that cycle?
+Fix $n=2k+1$ slots, $k\ge1$, and retain leading zeros. At base $B\ge2$
+let $K_B$ subtract the ascending arrangement of a string from the descending
+one. For sorted digits $d_1\ge\cdots\ge d_n$, put
+$q_i=d_i-d_{n+1-i}$. The resulting number is
+$\sum_{i=1}^k q_i(B^{n-i}-B^{i-1})$, so there is an induced map $F_B$
+on integer difference vectors $q$. For an ordered vector $x$ in $[0,L]^k$ put
+\[
+ g_L(x)=(L-x_1,x_1-x_2,\ldots,x_{k-1}-x_k,x_k).
+\]
+Write $S_j(g)$ for the sum of its $j$ largest entries. For equal-sum vectors
+$h\prec g$ means $S_j(h)\le S_j(g)$ at every rank.
+
+The continuous leading map $f$ sorts the list $1,x_1,\ldots,x_k,
+1-x_1,\ldots,1-x_k$ and takes its symmetric differences. This is the
+normalized limit of the positive-inner subtraction formula below, extended
+continuously to the closed simplex.
+\pagebreak[3]
+\begin{theorem}\label{th:odd}
+For every ordered $x\in[0,1]^k$, $g_1(fx)\prec g_1(x)$. Every orbit of $f$ approaches
+a periodic orbit of period at most $(k+1)!$. For integer inputs with $q_k>0$,
+\[
+ S_j(g_B(F_Bq))\le S_j(g_B(q))+2\qquad(1\le j\le k).
+\]
+\end{theorem}
+
+Choose the initial string $N$ uniformly among the $B^n-B$ nonconstant
+ordered strings. Let $T_B=\min\{t\ge0:K_B^tN\text{ is cyclic}\}$,
+$X_B=q(N)/B$, and $Z_B=q(K_B^{T_B}N)/B$. The last variable retains the
+phase at which the original number first enters its cycle.
+\begin{theorem}\label{th:nine}
+In nine digits every real leading orbit whose initial gaps are all positive
+becomes exactly periodic after finitely many steps, with period one or three.
+For Lebesgue-almost every initial point, the leading orbit, written in the
+radius coordinates $r=\sort(|2x_i-1|)$, enters the interior of the core
+polytope $\mathcal C$ of Section~\ref{sec:entry}.
+For each $\beta\in\{0,1,2,3,4\}$, as $B\to\infty$ through $B\equiv\beta\pmod5$,
+\[
+ (X_B,T_B/B,Z_B)\ \Longrightarrow\ \mu_\beta .
+\]
+The five probability measures, given by \eqref{eq:law} with rational coefficients determined by the finite calculation of Section~\ref{sec:law} and listed in full in the ancillary material, are pairwise distinct.
+Their terminal coordinates lie on the segment
+$Q(s)=(s,2s-1,3s-2,1-s)$, $4/5\le s\le5/6$.
+\end{theorem}
+\begin{theorem}\label{th:clock}
+In nine digits $\max_N T_B=\Theta(B)$. Along each of the five base classes,
+for every bounded continuous $b(x,z)$,
+\[\mathbb E[b(X_B,Z_B)\varphi(T_B/B)]\longrightarrow \int b(x,z)\varphi(t)\,d\mu_\beta\]
+for
+$\varphi(t)=t^p$, $p>0$, or $\varphi(t)=e^{\theta t}$, $\theta\in\RR$.
+\end{theorem}
+The upper bound behind $\max_N T_B=O(B)$ is explicit
+(Section~\ref{sec:capture}), but its constant, of order $10^9$, is far
+from sharp.
+
+A base translation, which Thakur proposes for sufficiently large cyclic states \cite[Remark~4.3]{thakur}, explains which finite periods can occur. Put $m=k+1$,
+$v=(k,k-1,\ldots,1)$. In the paired region, defined in
+Section~\ref{sec:cov}, the borrowed digits occur in $k$ successive
+two-digit levels below the largest digit.
+\begin{theorem}\label{th:cov}
+For $q$ in the paired region and every integer $j\ge0$,
+$F_{B+jm}(q+jv)=F_B(q)+jv$, and the translated source is again paired.
+Condition the original population on $q/B$ in a fixed Jordan-measurable
+subset of the strict simplex of positive limiting weight. Suppose all but
+vanishing mass have their entire difference orbit in the paired region.
+If $(X_B,T_B/B,Z_B)$, so conditioned, converges in law along every residue
+class of $B$ modulo $M$, then the limits depend only on the base modulo
+$\gcd(M,k+1)$.
+\end{theorem}
+
+The geometry behind Theorem~\ref{th:odd} can be seen on a circle. Place
+the differences and their reflections around it. Recolor the combined
+points alternately. Long empty arcs become scarcer for either color, and
+the new gaps are exactly the output gaps. This orders all the partial
+sums at once. In nine digits it confines almost every leading orbit to
+a family of three-cycles and fixed points. An actual subtraction changes two endpoint digits by one. A
+three-step return that closes in the real map can therefore translate
+the integer state a few units. Repetition over a distance proportional
+to the base accounts for the arrival time.
+
+When such a translation reaches a face of the periodic region, its last
+step leaves a remainder. Two inputs that agree to leading order can have
+different remainders and hence different speeds or different destinations.
+Their proportions come from the lattice of all inputs that reached the face.
+A change of base by five preserves the ordering of the levels of the nine borrowed
+digits after a matching translation of the four differences. Congruences at
+individual faces can have larger moduli, but this common translation survives
+them all. The separation calculation in Section~\ref{sec:law} shows that the
+five remaining classes really occur. Theorem~\ref{th:cov} thus explains the
+modulus; it is not a further limit theorem. Thakur also exhibits nine-digit cycle
+families in all five base classes \cite[Section~4.4]{thakur}.
+What is new here is the paired condition, an explicit sufficient condition for
+exact covariance along an orbit, and the resulting gcd restriction on
+distributional limits. How far arbitrary cycles satisfy the paired condition
+is left open.
+
+Section~2 proves Theorem~\ref{th:odd}. Section~\ref{sec:entry} proves finite
+entry in nine digits, Section~\ref{sec:law} derives the five laws from face
+exits and lattice remainders and exhibits, in Section~4.4, one route on which
+they differ explicitly, Section~\ref{sec:capture} proves the uniform
+bound, and Section~\ref{sec:cov} proves Theorem~\ref{th:cov}. The appendices
+state every computer-assisted step.
+
+The difference coordinates and the borrowed digit formula appear in
+Thakur \cite[Section 2.7]{thakur}. Kay and Downes-Ward studied fixed points
+and cycles in odd bases \cite{kay}, and Dahl studied convergence distances,
+basin statistics and projected drift for three through six slots
+\cite{Dahl}. The majorization argument for a finite limit set is also used
+for doubly stochastic maps by Abdulghafor et al.\ \cite[Theorem 3.3 and
+Remark 3.4]{major}. The four-digit cycles and arrival times in even bases
+are treated in \cite{G1,G2}. The five-digit cycle weights in \cite{G3} have
+period three,
+in keeping with $k+1=3$.
+
+\section{Reflection on a circle}
+For $0\le x_k\le\cdots\le x_1\le C\le L$, $L>0$, let $D_C(x)$ take
+symmetric differences after sorting $C,x_i,C-x_i$. We claim
+\begin{equation}\label{eq:circle}
+ g_L(D_Cx)\prec g_L(x).
+\end{equation}
+On the circle of length $L$ consider $A=\{0,x_1,\ldots,x_k\}$ and its
+reflection $C-A$, with multiplicities. Both have gaps $g_L(x)$, up to order.
+Write their union as $0=p_0\le\cdots\le p_{2k+1}=C$, so
+$p_i+p_{2k+1-i}=C$. Dropping $p_0$ and folding the sorted list gives
+$y_j=p_{2k+2-j}-p_j$. Thus $L-y_1=L-p_{2k}$, and the remaining
+gaps equal the two-step spacings $p_{i+2}-p_i$ with $0\le i\le k-1$
+in some order. Indeed $y_j=C-p_{j-1}-p_j$, whence
+$y_j-y_{j+1}=p_{j+1}-p_{j-1}$ and $y_k=p_{k+1}-p_{k-1}$.
+Reflection identifies the spacing at $i$ with that at $2k-1-i$,
+so each of these $k$ spacings occurs once among the even initial indices.
+The colors of the alternate points therefore both have the gap multiset
+$g_L(y)$, including their wrapping gaps. Coincidences follow by continuity.
+
+A forward arc of length $t$ misses a set of points with gaps $h$ on
+a set of starting positions of length $\sum_i(h_i-t)_+$.
+An arc containing no combined point misses both colors under either coloring.
+One containing exactly one misses one color. Two consecutive points already
+give both alternate colors. Integration yields the inequality between these
+sums for $h=g_L(y)$ and $h=g_L(x)$, for every $t$. Minimizing
+$jt+\sum_i(h_i-t)_+$ gives $S_j(h)$ and proves \eqref{eq:circle}.
+
+\begin{proof}[Proof of Theorem~\ref{th:odd}]
+Take $C=L=1$. The ordered partial sums decrease to limits, so the decreasing
+rearrangement of the gaps converges. Let $\omega(x)$ be the set of accumulation
+points of the gap orbit. Each is a permutation of a single vector, so
+$\omega(x)$ is finite, and the continuous gap map sends $\omega(x)$ onto itself.
+Take disjoint small neighborhoods of its points. Eventually the orbit stays
+in their union, with successive nearest-point labels following the induced
+permutation by continuity. The error from these labels tends to zero.
+
+For integer $q_k\ge1$ the subtraction digits are
+\begin{equation}\label{eq:borrow}
+ q_1,\ldots,q_{k-1},q_k-1,\ B-1,\ B-1-q_k,\ldots,B-1-q_2,B-q_1 .
+\end{equation}
+Here the reflected list before the final $B-q_1$ consists of indices
+$k,k-1,\ldots,2$ and is empty for $k=1$. Relative to the list for $C=B-1$
+two entries change by one. Sorting minimizes the sum of matching distances,
+and each digit enters at most one symmetric difference, so the difference
+vectors change by at most two in $\ell^1$. For a change $w$ of difference
+vector the gap change has sum zero and norm at most $2\|w\|_1$. The sum
+over any subset of gaps changes by at most $\|w\|_1$. Maximize over subsets
+and apply \eqref{eq:circle} with $L=B$.
+\end{proof}
+
+\paragraph{Example.}
+In base $10$ with five digits take $q=(8,3)$, realized by the string
+$86530$. Its subtraction is $86530-03568=82962$.
+The reflection with span $9$ gives the list $9,8,3,6,1$ and differences
+$(8,5)$. The two digit changes replace $3,1$ by $2,2$ and give actual
+differences $(7,6)$. The respective ambient gap vectors of the source,
+reflection and actual image are $(2,5,3),(2,3,5),(3,1,6)$. The largest
+gap rises by one under borrowing.
+
+\section{Finite entry in nine digits}\label{sec:entry}
+Write $r=(a,b,c,d)=\sort(|2x_i-1|)$ in decreasing order. The first image is
+$C(r)=\tfrac12(1+a,a+b,b+c,c+d)$. Indeed the four larger members of the
+complementary pairs are $(1+r_i)/2$, in that order. Thereafter $fC=CH$, where
+\begin{align*}
+ H(r)&=\sort(a,|a+b-1|,|b+c-1|,|c+d-1|),\\
+ D(r)&=2g_1(Cr)=(1-a,1-b,a-c,b-d,c+d).
+\end{align*}
+The core is the region on which the leading map becomes a rotation of
+order three. Precisely, the core $\mathcal C$ is the polytope $A(r,1)^t\ge0$ with rows
+\begin{equation}\label{eq:core}
+\begin{pmatrix}
+-2&0&2&1&1\\-1&-1&-1&-1&2\\-1&-1&1&1&1\\0&-1&-1&0&1\\
+0&0&0&1&0\\0&0&1&-1&0\\0&1&-1&0&0\\1&-1&0&0&0\\
+1&0&1&1&-1\\1&2&1&0&-2\\2&0&-1&0&-1\\2&1&-2&-2&-1
+\end{pmatrix}.
+\end{equation}
+On $C(\mathcal C)$ the update is $R(u,v',w,z)=(u,u-z,v'-z,v'-w)$,
+with $R^3=I$. Put $W=\max(0,-\min_i A_i(r,1)^t)$.
+Write $\mathcal E$ for the following three-cycle family, expressed in
+its three successive phases:
+\begin{align*}
+ &(a,2a-1,2a-1,d),\quad (a,2-2a-d,3a-2,3-4a),\\
+ &(a,a,1-a+d,1-a-d),\qquad 5/7\le a\le3/4,\quad 0<d\le1-a .
+\end{align*}
+The four affine implications of Appendix~\ref{app:entry} are the only
+computer-assisted local assertions needed to prove finite entry.
+
+By Theorem~\ref{th:odd} and invertibility of $C$, each radius orbit approaches
+a periodic orbit. Its first radius is nondecreasing since $(Hr)_1=\max(a,1-c-d)$,
+and the smallest gap is nondecreasing by majorization. On the limiting cycle
+the sorted gaps and the first radius stay constant. Implication (i) leaves the
+core, $\mathcal E$, and two exceptional orbits having a zero gap. An initially
+positive minimum gap excludes the last two orbits and bounds $a$ away from one.
+
+For a limit in $\mathcal E$, take every third point with the phase of the first
+displayed vector. Write $p=b-c$, $s=c-2a+1$, $\nu=p+|s|$. The sections
+eventually satisfy the inequalities of (ii), for one fixed sufficiently small
+$\eta>0$, since $d$ tends to a positive value and $a$ increases to its limit.
+Thus $a$ is eventually constant, including at intervening steps. Implication
+(iii) now makes $\nu$ nondecreasing on late sections. Its limit is zero, so
+eventually $b=c=2a-1$. Only $d$ can still vary. With $a$ fixed, its third
+iterate on this plane is a continuous, finitely piecewise-affine function
+of $d$ with integer slopes. Near its limit $d_*$ each applicable piece
+satisfies $d'-d_*=l(d-d_*)$ with $l\in\ZZ$. A nonzero $l$ cannot shorten
+the distance, so convergence forces an exact hit in finite time.
+
+For a limit in the core, $W$ tends to zero. If the orbit never entered,
+(iv) would give an arithmetic progression on every sufficiently late third
+section, since the minimum of $D$ is bounded below. Boundedness forces
+its displacement to vanish, contradicting convergence of the positive $W$
+to zero. Thus entry is finite. Every branch of $H$ is unimodular: before
+sorting it has the first coordinate row and three signed adjacent-sum rows.
+The exceptional plane has codimension two, and the core boundary and sorting
+ties lie on finitely many hyperplanes. Their finite preimages are null.
+The same holds after pulling back under the signed folds of the initial $x$.
+This proves the geometric assertions of Theorem~\ref{th:nine}.
+
+\section{Arithmetic on the periodic family}\label{sec:law}
+Let $\Omega=\{1>x_1>x_2>x_3>x_4>0\}$. For $x\in\Omega$, take the first
+$r_*=H^e\sort(|2x_i-1|)$ in $\ii\mathcal C$ and put $y=C(r_*)$. The
+previous section proves that $e$ is finite almost everywhere. A finite
+polyhedral partition of the core, constructed below, assigns $y$ a route
+$j$. On route $j$ let $(p_{j\beta l},t_{jl},U_{jl})$ denote the probabilities,
+clock rows and terminal matrices obtained by the integer calculation below.
+Here rows and matrices act on $\bar y=(y,1)^t$. The joint law is
+\begin{equation}\label{eq:law}
+ \mu_\beta=\int_\Omega 9!\prod_{i=1}^{5}g_1(x)_i
+ \sum_l p_{j\beta l}\,\delta_{(x,t_{jl}\bar y,U_{jl}\bar y)}\,dx .
+\end{equation}
+In this formula the five gap entries are numbered from one.
+The supplement gives all coefficients as rational numbers.
+
+\subsection{Motion up to the first cycle}
+In the core write $y=(u,v',w,z)$. From the interior one can reach six faces, with slacks
+\[
+\begin{array}{ll}
+ A_0=u+z-1,&B_0=v'+w-1,\\
+ A_1=u+v'-w-1,&B_1=u+v'-2z-1,\\
+ A_2=2u-v'-1,&B_2=2u-2v'+2w-z-1 .
+\end{array}
+\]
+For integer states replace the constant $1$ by $B$. In the bulk the
+three-step return translates by $(-3,-2,-1,-1)$, so the $A$ slacks
+decrease by four and the $B$ slacks by three. For any translation
+$\delta$ with word length $\ell$, the first face hit minimizes $h/s$ over
+all decreasing slacks $h$, with $s=-h_{\rm lin}\delta$. The limiting move
+is $y\mapsto y+(h/s)\delta$ and its clock is $\ell h/s$. A bounded number
+of ordinary steps rotates the exit to a canonical face. At the first
+exit $A_i$ apply $R^{i+1\bmod3}$ and at $B_i$ apply $R^i$.
+
+\begin{table}[ht]
+\centering\small
+\caption{Returns on the canonical faces. The parenthesized exponent is the
+number of rotations $R$ before the next return.}\label{tab:routes}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Face & Return $(\ell,\delta)$ & Exit $\longrightarrow$ next face\\
+\midrule
+$A_2$ & $12,(-6,-12,-6,-4)$ & $A_0(1),A_1(0)\to AA$; $B_1(0)\to AB$\\
+$B_0$ & $6,(-6,-1,1,-2)$ & $A_0(1)\to A_2$; $A_1(2)\to AB$\\
+      & & $B_1(0),B_2(2)\to BB$\\
+$BB$ & $12,(-12,-2,2,-7)$ & $A_1(2)\to AB$; $B_2(0)\to BBB$\\
+$AA$ & $42,(-10,-20,-30,-20)$ & $A_0\to AAA$\\
+     & $9,(-2,-4,-6,-3)$ & $A_0\to AAA$\\
+$AB$ & $24,(-12,-24,-12,-18)$ & $A_1\to AAB$\\
+\bottomrule
+\end{tabular}
+\end{table}
+Here $AA=A_1\cap A_2$, $AB=A_2\cap B_1$, $BB=B_0\cap B_1$, with each
+letter denoting the zero set of the indicated slack. The last letter of
+$AAA,AAB,BBB$ indicates the additional active face, as specified by the
+incoming exit. At $AAB$ the integer remainders select a release to the
+$AA$ return or a nine-step drift to its endpoint. At $AAA$ they select a
+stationary cycle on $Q$ or a moving return with time per unit longitudinal
+decrease $16$ or $37/3$. At $BBB$ the corresponding rate is one.
+These decisions and the first-capture inequalities are finite affine
+calculations specified in Appendix~\ref{app:routes}.
+Pulling back the strict first-exit comparisons gives 33 nonempty route
+domains: twelve end at $AA$, fifteen at $AB$, and six at $BBB$ before the
+terminal computations. For almost every source on these routes the
+conditional joint law has respectively five, four and one distinct atoms; on an
+exceptional hyperplane two of them can coincide.
+
+\subsection{Counting incoming remainders}
+Suppose the incoming states at base $B=5b+\beta$ form the affine lattice
+$q=q_0(b)+M\ZZ^d$. For a return as above, reconstructing the sorting
+inequalities gives a threshold $m_0$: after $N$ completed returns, at the first state where the return word fails, the slack
+$h(q+N\delta,B)=e'$ lies in $[m_0-s,m_0)\cap\ZZ$. Thus
+\[
+ (h_{\rm lin}M)z-sN=e'-h(q_0(b),B).
+\]
+If $g$ is the gcd of the entries on the left, including $s$, this equation
+is soluble exactly when $g$ divides its right-hand side. The residue classes
+of $h_{\rm lin}Mz\pmod s$ have image of size $s/g$. Every accessible
+$e'$ has conditional weight $g/s$. Unimodular column operations give a
+particular solution and an integer basis for the kernel. Applying
+$[M\mid\delta]$ gives the outgoing lattice with its full index.
+For example, an exit from $AB$ ordinarily reaches the direction
+$d_0=(2,4,6,3)$ with primitive step. After the release from $BB$ the
+incoming step is $d_1=(4,8,7,6)$. Since $(A_1)_{\rm lin}d_1=5$
+and $(A_1)_{\rm lin}\delta_{AB}=-24$, the outgoing step is
+$24d_1+5\delta_{AB}=18d_0$. This changes the subsequent count.
+
+On a fixed strict route each earlier remainder choice restricts the original
+integer inputs to a coset of finite index. The map to the current lattice
+is onto by construction. Preimages of equal-index classes therefore have
+equal index, even when the current lattice has lower rank. Weighted lattice
+sums on compact polytopes give equal limiting masses of these classes
+locally at each macroscopic input. This proves the product rule for
+conditional weights. Checking divisibility of the coefficient of $b$ at
+each split proves that $B\bmod5$ suffices on every route.
+
+\subsection{From core sources to original numbers}
+The ordered-input multiplicity has leading term
+$B^{k+1}\rho_n(q/B)$, where $\rho_n(x)=n!\prod_i g_1(x)_i$.
+Indeed the first gap counts translations of the sorted string. Each
+other gap is split into two adjacent digit spacings. When both are positive
+an integer gap $d$ permits $d-1$ splits, and each resulting sorted string
+has $n!$ orders. Choosing a zero spacing costs a power of $B$.
+This gives an $O_n(B^k)$ remainder on the strict simplex and the density
+in \eqref{eq:law}. Boundary strings have vanishing weight; equivalently
+the gaps are sums of pairs of adjacent uniform order-statistic spacings.
+
+On any compact subset of a cell prescribing a strict finite entry word and
+subsequent strict route, all the prefix sorting margins are positive.
+For sufficiently large $B$ borrowing changes only the affine constants
+in that prefix. At each step the linear part has determinant $\pm1$:
+the four signed factors of two in the radius coordinates cancel the four
+halves in $C$, whose numerator matrix has determinant one. Hence the
+incoming lattice for the core is $\ZZ^4$. The prefix costs bounded time and
+the ensuing core trajectory has a transient state, which precludes capture
+earlier in the prefix.
+
+Let $h$ be the first cyclic difference time. Always $h\le T_B\le h+1$,
+because the number following a cyclic difference is cyclic. The number
+map from differences is injective: if $r$ is the final positive index,
+the last digit below $B-1$ among the leading $k$ output slots is $q_r-1$
+at position $r$, and the preceding digits recover $q_1,\ldots,q_{r-1}$.
+For a transient difference input this gives $T_B=h+1$. Thus at finite base
+the requested terminal vector is the successor of the first cyclic difference.
+Every computed first cyclic difference divided by $B$ tends to some $Q(s)$.
+On this compact segment the inner difference is positive, $f(Q(s))=Q(s)$
+by direct sorting, and the normalized one-step borrowing error is $O(B^{-1})$.
+The two phase conventions therefore have the same limiting terminal
+coordinate. Compact exhaustion of the countably many strict entry cells
+proves \eqref{eq:law}; their complement has Lebesgue measure zero.
+No uniform bound on the entry word length is required.
+
+\subsection{Five different measures}
+For the route $A_0,B_1,AB$, put
+\[
+ L=7u/4-v'-z/4-3/4,\qquad s=-u/4+v'/2-z/4+3/4.
+\]
+Here $4/5<s<5/6$. The four elapsed times are $L+c(s-4/5)$ with the
+following coefficients and probabilities. Only the first column ends at
+$Q((s+4)/6)$, the remaining three end at $Q(4/5)$.
+\[
+\begin{array}{c|rrrr}
+\beta\ \backslash\ c&7/2&9/2&50/9&37/6\\\hline
+0&11/48&5/48&137/288&55/288\\
+1&29/128&5/48&47/96&23/128\\
+2&29/144&5/48&607/1152&193/1152\\
+3&107/576&5/48&69/128&197/1152\\
+4&233/1152&5/48&73/144&215/1152
+\end{array}
+\]
+The radius $(18,14,6,3)/25$ is strictly inside the route.
+A continuous test function can localize $x$ in one small inverse image
+there and select the moving terminal component, which stays a positive
+distance from $Q(4/5)$. The five integrals are distinct since the first
+column has five distinct entries and the input density is positive. The
+five base classes also differ in the probability of the third clock value; for
+instance, its weights for $\beta=2$ and $\beta=4$ differ by $23/1152$. This
+completes the proof of Theorem~\ref{th:nine}. A compact subcell here has a
+clock bounded below by a positive constant for every class, giving the
+lower bound in Theorem~\ref{th:clock}.
+
+\section{Uniform time to capture}\label{sec:capture}
+Write $g=g_B(q)$, $m_g=\min g_i$, $M_g=\max g_i$, and set
+\[
+ G(q)=\sum_{i<j}|g_i-g_j|,\qquad P(q)=B-4m_g-\min(M_g,2m_g).
+\]
+At a positive source in nine digits,
+$S_i(g_B(F_Bq))\le S_i(g)+1$ for $1\le i\le4$
+(Appendix~\ref{app:clock}). Thus $0\le G\le4B$ and $G(F_Bq)\le G(q)+8$,
+using $G=2\sum_{i=1}^4 S_i-4B$. The descent assertion is
+\begin{equation}\label{eq:descent}
+ \min_{1\le i\le9}G(F_B^iq)<G(q)
+\end{equation}
+if $B\ge40$, $P(q)>100$, and all ten states have positive inner
+difference. The step at which the decrease occurs may vary with $q$.
+
+Assume from now on that $B\ge40$. A first visit from positive inner
+difference to zero inner difference occurs within three steps, if it occurs at
+all. From a state with zero inner difference its first positive-time return to
+zero inner difference therefore takes at most four steps. The cover in
+Appendix~\ref{app:clock} has at most $308B$ returning zero states. Until
+capture none can recur. Allowing one final visit, by time $1232B+7$
+the orbit is cyclic or permanently positive.
+
+If $P\le100$, choose one maximal gap, write the other four as $m_g+e_i$,
+and observe that $\sum e_i\le100$. Their positions, offsets and $m_g$
+determine all five gaps. Hence there are at most $M=5(B+1)\binom{104}{4}$
+such states. In the permanently positive orbit, take a single step at
+each of these exceptional states. Elsewhere choose a decreasing block
+of at most nine steps by \eqref{eq:descent}. Until capture there are at
+most $M$ exceptional starts, and telescoping bounds the completed
+decreasing blocks by $4B+8M$. A final partial block costs at most nine
+steps. Adding preparation and one step for the original number gives
+\[
+ T_B\le1268B+17+365(B+1)\binom{104}{4}\qquad(B\ge40).
+\]
+Together with the lower bound above this proves the order of the maximum.
+The normalized clocks now lie in one fixed compact interval. Each stated
+moment follows from the joint weak limit by bounded continuous extension,
+proving Theorem~\ref{th:clock}.
+
+\section{Covariance under a change of base}\label{sec:cov}
+For $q_k>0$ set $a_i=q_i-\boldsymbol1_{i=k}$ and
+$b_i=B-q_{k+1-i}-\boldsymbol1_{i<k}$. The paired region is defined by
+$\min(a_i,b_i)\ge\max(a_{i+1},b_{i+1})$ for $i<k$.
+\begin{proof}[Proof of Theorem~\ref{th:cov}]
+(Compare \cite[Remark~4.3]{thakur}.) Both entries at level $i$ increase by $jv_i$ under the stated translation,
+and each adjacent level separation increases by $j$. Starting with $B-1$,
+the increments of the descending digits are $j(m,k,k,k-1,k-1,\ldots,1,1)$.
+Their symmetric differences give $jv$. Induction along an entirely paired
+orbit translates every state, preserves the first cyclic difference time,
+and preserves its successor. Initially cyclic differences have the same
+translated phase convention except for inputs already cyclic as numbers;
+these number at most $O(B^k)$, negligible in the original population.
+
+Match $q$ with $q+v$ at base $B+m$. Normalized initial and terminal vectors
+differ by $O(B^{-1})$. Jordan measurability and the local multiplicity
+formula imply that the normalized weights of unmatched or excess inputs
+tend to zero, by Riemann sums; the exceptional unpaired mass also tends
+to zero. The two normalized difference clocks differ by $mh/[B(B+m)]$.
+Proper limits on finitely many classes make $h/B$ tight, so this difference
+vanishes in probability. The number clocks differ from the difference clocks
+by at most one. Thus the limiting laws agree under a shift of $m$ modulo
+$M$, proving the gcd assertion.
+\end{proof}
+On the nine-digit core every sorting word used in Table~\ref{tab:routes},
+including its boundary and terminal words, respects these paired levels.
+The direction $v/5=Q(4/5)$ lies on all six decreasing faces. The covariance
+therefore explains the period allowed on the core; finite unimodular
+prefixes carry the same five weights back to the other original sources.
+
+\appendix
+\section{Universal real entry implications}\label{app:entry}
+For each implication start with real $1>a\ge b\ge c\ge d\ge0$,
+write $r_i=H^ir$, $a_i=(r_i)_1$, and impose the defining equations for
+each iterate. Encode an absolute value by its two linear
+branches and implement descending sort by successive min/max comparisons.
+The statements below can be tested by adjoining the negated conclusion.
+\begin{enumerate}
+\item[(i)] If $a_0=\cdots=a_4$, $a_4<1$, and the decreasing sorts of
+$D(r_i)$ agree for $0\le i\le4$, then $r_4$ belongs to $\mathcal C$,
+to $\mathcal E$, or to the finite set
+$\{(1,1,1,1)/3,(3,3,3,1)/5,(3,1,1,1)/5\}$.
+The last two points form a two-cycle and the first is fixed.
+\item[(ii)] Let $0<\eta\le10^{-4}$, $5/7-\eta\le a\le3/4$,
+$0\le b-c\le\eta$, $|c-2a+1|\le\eta$ and
+$100\eta\le d\le1-a+\eta$. Then $a_6=a_3$.
+\item[(iii)] Under (ii)'s hypotheses, if also $a\ge5/7$ and $a_6=a$,
+then $\nu(r_6)\ge\nu(r_3)$, where $\nu=b-c+|c-2a+1|$.
+\item[(iv)] If $\eta>0$, $W(r)\le\eta$, $\min D(r)\ge100\eta$, and
+$r_9\notin\mathcal C$, then $r_9-r_6=r_6-r_3$.
+\end{enumerate}
+Membership of each exceptional phase is a linear predicate, obtained
+by eliminating its displayed parameters. For example, on the second
+phase require $5/7\le a\le3/4$, $c=3a-2$, $d=3-4a$, and
+$1-a\le b<2-2a$. On the third require the same range for $a$,
+$b=a$, $c+d=2-2a$, and $0\le d<1-a$.
+The encoding is \file{nine_global_entry_audit.py}. In the ancillary
+directory run \runcheck{entry}. The four negations must be
+unsatisfiable in both Z3 5.4.1 and cvc5 1.4.2. Direct substitution
+verifies the cycles and the identity of the third iterate on the core;
+\file{nine_entry_checks.py} also certifies the core inequalities.
+
+\section{Finite core and lattice calculations}\label{app:routes}
+The affine checks use \runcheck{routes}. The probability tables use
+\runcheck{weights}. These calculations
+use Python exact integers and rational numbers; SymPy 1.14.0 handles
+symbolic arithmetic and Z3 5.4.1 supplies rational witnesses for
+implications that are subsequently checked by exact identities.
+
+\paragraph{Sorting words.}
+Start with the ordered list in \eqref{eq:borrow}, indexed from zero.
+For a permutation $\pi$, impose each adjacent inequality
+$d_{\pi_i}-d_{\pi_{i+1}}\ge\boldsymbol1_{\pi_i>\pi_{i+1}}$.
+Subtract symmetric sorted slots to form the new affine vector. Compose
+both guards and output matrices along a word. If on a phase the result
+is $q+\delta$, all guards at repetition $j$ have the form
+$g(q,B)+jg_{\rm lin}\delta\ge0$. Over the integers the maximal number
+of repetitions is the minimum of $1+\lfloor g(q,B)/(-g_{\rm lin}\delta)\rfloor$
+over guards with negative slope. Restrict homogeneous guards to vertices
+of the incoming face, enumerated by four independent equality rows of
+\eqref{eq:core}. For an identically zero leading guard, substitute the
+integer phase offsets; a positive leading margin absorbs every bounded
+error on compact relative interiors. Equivalently a nonnegative rational
+combination of the defining inequalities certifies a guard. Apply these
+tests to every intervening step of the word.
+
+\paragraph{Facet and corner calculations.}
+Intersect each decreasing facet with the current face. Enumerate its vertices
+as above, retain intersections of relative codimension one, and pull back
+the first-exit comparisons $h/s<h'/s'$ through the preceding moves. This
+gives Table~\ref{tab:routes}. The two releases out of a higher-codimension
+intersection require the following extra statements. At $B_0=A_0$ the
+four recurrent $B_0$ offsets each have eight successive stopping remainders.
+Each reaches the $A_2$ return in at most four steps and that return increases
+$B_2$ by four. At $B_0=B_1=A_1$ the twelve recurrent offsets each have
+sixteen successive remainders; each reaches $AB$ within 23 steps and its
+return increases $B_2$ by eighteen. These are the two points where
+additional vanishing leading guards must be checked along the released
+direction.
+
+For clarity, the integer iteration producing the return words can be
+reconstructed without a list of input strings. Use exact slack coordinates
+$p=A_2$, $r=A_1$ at $AA$, $p=A_2$, $r=B_1$ at $AB$, and $p=B_0$,
+$r=B_1$ at $BB$. Infer each three-step affine update by the sorting rules
+above on the relative interior, retaining constant guards on $p,r$. On an
+$A_2$ face, $p$ maps to $2-p$ if $p<0$, $2-2p$ if $0\le p<2$, and $p-4$
+otherwise. Its recurrent states are $-2,-1,0,2,3,4$. On a $B_0$ face
+$p'=|p+1|-4$, entering the cycle set $\{-4,-3,-2,-1\}$.
+At $AB$ the $A_2$ update drives $r'=|r+2|-5+(-p)_+$ into $[-5,0]$.
+At $BB$, $r'=|r+(-p-1)_++2|-5$. After $p$ is recurrent, the increment
+on the upper branch is nonpositive over a full $p$ period with strictly
+negative total, and the lower branch folds upward to at least $-5$.
+At $AA$ both coordinates after a return are at least $-2$ and
+$\max(p,r)\le M$, $M\ge5$, implies that their maximum two returns later
+is at most $M-1$ on $p,r\ge-2$. These last inequalities are verified
+on all pairs of three-step sorting cells by nonnegative linear combinations
+of their guards. Iterating the resulting finite sets gives the return
+lengths and displacements in the table.
+The encodings for these assertions are \file{nine_entry_checks.py},
+\file{nine_a_facet_checks.py}, \file{nine_b_facet_checks.py},
+\file{nine_aa_checks.py}, \file{nine_ab_checks.py}, \file{nine_bb_checks.py},
+\file{nine_b_routes_checks.py}, and \file{nine_releases_checks.py}.
+
+\paragraph{End of each return.}
+For each recurrent phase compute the first failed guard as above. At
+$AA$ the outgoing $A_0$ remainders occupy intervals of length $30$ or
+$5$ on the two phase cycles, giving $435$ possible terminal inputs.
+In the chart $q=BQ(U/B)+(0,i,j,l)$ the terminal update is
+\[
+ (i',j',l')=(2t+(-l-1)_+-(l-1)_+,\,3t+\min(0,-l-1)+i+1,\,i-j-t).
+\]
+Here $t=\min(l,1)$ and $U'=U-t$. Iterate the reached triples to their first repeats.
+The periods are $1,2,6,32,37$, with respective longitudinal shifts $0,0,0,-2,-3$. At $AAB$ there are sixteen input phases with $24$ possible remainders
+each. The chart is
+\[
+ q=(U,2U-B-p,3U-2B-p-e,(3U-2B-p-s)/2)
+\]
+with $p=A_2$, $e=A_1$, $s=B_1$ and $U\equiv p+s\pmod2$.
+Follow the digits until either a recurrent $AA$ word starts or a
+nine-step translation starts on
+\[
+ (U,2U-B+1,3U-2B+3,(3U-2B+1-s)/2),
+ \qquad s\in\{-2,-1,0,1\}.
+\]
+It decreases $U$ by two. On the moving $AAA$ and $AAB$ returns check
+all word inequalities on $4B/5+252\le U\le5B/6-256$, $B\ge10^6$.
+Write $B=5b+\beta$ and stop at the unique $U=4b+e$ with
+$256\le e<256+|\Delta U|$ in the reached congruence class.
+Every remaining step is affine in $b$ with fixed bounded offset.
+Follow the offsets to their first repeat and check their sorting
+inequalities for every integer $b\ge200000$.
+
+At $BBB$ write
+$q=(3V-B+i,V,B-V+j,2V-B+l)$ for $3B/5<V<2B/3$.
+The first coordinate falls by one per step. In the coordinates
+$(x,y_0,z_0)=(j+1,i-2l+3,2i+2j-l+4)$ the offset map is
+\[
+ (x,y_0,z_0)\longmapsto(y_0-\min(x,0)-1,z_0-1,|x|-1).
+\]
+The sum is $2$ modulo three. Three steps suffice for the lower bounds
+$(-3,-2,-1)$, which are invariant. In that orthant, for $M\ge9$ a
+maximum at most $M$ becomes at most $M-1$ after six steps, while a
+maximum at most eight remains at most eight after six. Verify these
+inequalities on all six-sign words by nonnegative combinations of affine
+guards. Iterate the resulting finite integer box through intervening
+steps to a nine-cycle of offsets. The representative
+$(i,j,l)=(-3,2,0)$ returns with $V$ decreased by three, under
+$3B/5+256\le V\le2B/3-256$ and $B\ge10^6$. Stop at
+$V=3b+e$, $e\in\{256,257,258\}$, and verify the fifteen remaining
+affine trajectories to first repetition.
+
+To certify first capture, compare every intermediate affine state of
+the final incoming word with each member of the terminal cycle, allowing
+an arbitrary number of earlier translations. The first coordinate fixes
+the only possible repetition number; the other coordinates decide equality.
+On stationary $AAA$ cycles the offsets $(i,j,l)$ equal to
+$(2,4,-1)$, $(0,-2,-1)$, $(-2,0,-1)$, $(-2,-4,-1)$ move capture five steps
+earlier, and $(2,2,1)$, $(0,-2,1)$, $(-2,-2,3)$, $(-2,-4,3)$ move it two
+steps earlier. All other stationary arrivals occur as counted. For a
+drifting arrival, the minimum prior first coordinate exceeds the maximum
+cyclic first coordinate on compact strict source cells at sufficiently
+large $B$; minimize an affine function of the repetition count at either
+end. This also excludes capture in earlier route segments. The terminal
+encodings are \file{nine_aaa_checks.py}, \file{nine_aab_checks.py} and
+\file{nine_bbb_checks.py}, with the word reconstruction in
+\file{nine_phase_checks.py}. The full route composition and all first-exit
+competitors are checked by \file{nine_core_checks.py}.
+
+\paragraph{Weights and covariance.}
+For each route and each $\beta$, begin with the full lattice.
+At each stopping interval solve the single linear Diophantine equation
+in Section~\ref{sec:law} by column reduction, retain every soluble
+remainder and apply its exact conditional weight. Propagate the affine
+clock and terminal maps. Add weights only for coincident observables
+after retaining the full image lattice at every intermediate step.
+The checker \file{nine_kernel_checks.py} reconstructs every entry of
+\file{nine_kernel_results.json} and checks that the total on every
+route is one. The kernels have affine clocks and terminal coordinates up
+to bounded errors on compact subsets. This follows from the bounded
+remainders, finitely many returns per route and the exact terminal words.
+The paired-level hypothesis on each core sorting word is checked by
+\file{odd_base_covariance_checks.py} in \runcheck{covariance}.
+
+\section{Zero returns and the nine-step descent}\label{app:clock}
+All variables in this section are integers. Write $q=(u,v',w,z)$.
+For an input with only $r$ positive differences, use the borrowed
+formula for the first $r$ coordinates with $9-2r$ copies of the
+central digit $B-1$. Sort and take four outer differences; at the zero
+vector the update is zero. Thus every step can be encoded using integer
+linear arithmetic, comparisons and conditional expressions.
+
+\paragraph{First access.}
+Zero at the next step means that the three central sorted digits agree.
+Group the digits of a positive source into $B-1$ and the pairs of sums
+$B,B-1,B-1,B-2$ from \eqref{eq:borrow}. The common digit must lie
+between $(B-2)/2$ and $B/2$, by counting the entries on either side.
+For $B=2a+1$, counting above and below $a$ gives at least two coordinates
+equal to $a$ among $v',w,z$ as the necessary and sufficient condition.
+For $a\ge16$ the negation of the following implication is unsatisfiable:
+after three updates through positive states from a positive source, this
+gate is false. The encoding is \file{odd_zero_access_audit.py}
+(Z3 5.4.1 and cvc5 1.4.2).
+For $B=2a$, the common value must be $a$; at $a-1$ the outer and two
+middle pairs and central digit already supply four larger entries.
+Counting at $a$ gives the gate $u=a, v'\ge a-1,z<a$.
+The first output coordinate equals $\max(u-1+\boldsymbol1_{u=v'},B-z)$.
+For a positive predecessor with output first coordinate $a$ the source
+can therefore only be $(a,a,a,a)$ or $(a+1,a,a,a)$, whose outputs
+have second coordinate one or two. For $B\ge40$ neither is in the gate.
+
+\paragraph{Cover of returning zero states.}
+Require $B\ge40$, $0<u<B$, $u\ge v'\ge w\ge z=0$. Rank one is included
+in full. At rank two ($v'>0=w$) the cover is the union of
+\[
+ |u-v'|\le3,\quad |u+v'-B|\le3,\quad |2u-B|\le4,\quad
+ |2v'-B|\le4,\quad B-u\le3 .
+\]
+At rank three take the union of the following five rows. A comma inside
+the right column separates alternatives.
+\begin{center}\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+Required & Additional condition\\\midrule
+$v'=w$ & $|u-v'|\le2$, $|u+v'-B|\le2$, $|2v'-B|\le3$\\
+$u=v'$ & $|u+w-B|\le2$, $|2u-B|\le3$\\
+$|2u-B|\le3$ & $|2v'-B|\le3$\\
+$B-u\le3$ & $|2v'-B|\le3$, $v'=w$, $|v'+w-B|\le3$\\
+$|4u-3B|\le8$ & $|4y-jB|\le12$ for some $y\in\{v',w\}$, $1\le j\le3$\\
+\bottomrule
+\end{tabular}
+\end{center}
+At a fixed base the rank bounds are $B,24B$ and
+$(12+9+16+36+210)B$, by fixing an unrestricted coordinate and counting
+integers in each restricted interval. For both parities and ranks two
+and three impose a first return at time $j=1,2,3,4$ with all intermediate
+inner differences positive. Add the negation of the indicated union.
+Every such query is unsatisfiable. In the same encoding require $q_4>0$,
+$B\ge2$ and test the four negations of $S_i(g_B(F_Bq))\le S_i(g_B(q))+1$.
+The file \file{nine_zero_return_audit.py} runs these checks with
+Z3 5.4.1 and cvc5 1.4.2, including a direct test of the $+8$ dispersion
+bound. Run \runcheck{zeros} for the access, cover and dispersion
+calculations.
+
+\paragraph{Nine-step descent.}
+Fix one of the $5!$ weak ascending orders of the source gaps, and impose
+one of $B-M_g-4m_g>100$, $B-6m_g>100$. These alternatives cover $P>100$.
+At a node of depth $i$ retain the ancestral guards, positivity,
+and $G(q_0)\le G(q_i)\le G(q_0)+8i$. A child supplies descending orders
+for the eight digits other than the largest $B-1$ and for the five output
+gaps. Using the integer tie rule of Appendix~\ref{app:routes} gives the
+child's affine state, guards and dispersion. For freshly sorted
+eight digits $d_0\ge\cdots\ge d_7$ the successor is
+$(B-1-d_7,d_0-d_6,d_1-d_5,d_2-d_4)$. For each node ask whether a
+positive successor with $G\ge G(q_0)$ can avoid all listed child cells;
+at a leaf ask whether any such successor exists. Sorting in this query
+uses min/max comparators independently of the child orders.
+The upper bound used in pruning follows from the one-step $+8$ inequality.
+
+The trees in \file{nine_clock_certificates.json} have 29,534 coverage nodes
+and depth at most eight. The verifier rebuilds the states from parent
+indices and sorting permutations, checks connectivity and the full inventory
+of source cases, and requires unsatisfiability of every coverage query
+in Z3 5.4.1 and Yices 2.7.0. Induction down a tree excludes a nine-step
+counterexample to \eqref{eq:descent}. Run \runcheck{descent}
+(\file{nine_clock_audit.py} and \file{nine_clock_checks.py}).
+
+\section*{Verification}
+The supplementary programs reconstruct the rational and integer calculations
+from the digit rule. Solver replays use two decision procedures on each
+universal query. A separate direct column-subtraction test on one inverse
+branch of the distinguishing route uses five fresh consecutive bases and
+compares the original-number time and terminal differences with all four
+predicted atoms. Each observed trajectory matched a unique atom. The largest
+absolute frequency discrepancy over the five bases was below $0.012$; the
+largest normalized clock error was below $0.00014$. The finite tests concern
+the indicated branch; the argument
+for arbitrary bases is the lattice and entry proof above.
+
+An independent re-derivation of every reduction from the text of an earlier
+draft of this paper was also carried out, with a separately written transition
+model (column subtraction and a sorting network) and separate Z3 encodings.
+Z3 found no counterexample to the four real entry implications, the core and
+three-cycle identities, or the stated one-step bounds, first-access and sixteen
+zero-return implications; the integer queries imposed no upper bound on $B$.
+Direct subtraction at bases not used here tested the separating route of
+Section~4.4 and the 165 kernels on about 2.6 million conditional draws, and
+the differences between the five laws on 1.6 million uniform strings; the
+pooled comparisons and targeted replications were consistent with the
+predictions. These tests are statistical. The nine-step descent \eqref{eq:descent} held at every
+qualifying state for $101\le B\le160$ and at five larger bases, and on
+3.1 million sampled states with $B$ up to $2\cdot10^9$. These encodings and
+their logs are part of the ancillary material.
+
+\section*{Data availability}
+The ancillary material is archived at Zenodo as version~1.3 of \href{https://doi.org/10.5281/zenodo.24325109}{doi:10.5281/zenodo.24325109}, and maintained at \url{https://github.com/galyavin/kaprekar-dynamics}.
+
+\section*{Tools}
+The research, computations and drafting were carried out with substantial
+assistance from AI systems (OpenAI Codex and Anthropic Claude), under the
+author's direction and close supervision. The computations use Python, SymPy,
+Z3, cvc5, Yices and C++. The author takes responsibility for the contents.
+
+\begingroup\raggedright
+\begin{thebibliography}{Thak}
+
+\bibitem[AbSZT]{major}
+R.~Abdulghafor, F.~Shahidi, A.~Zeki and S.~Turaev, \emph{Dynamics of doubly stochastic quadratic operators on a finite-dimensional simplex}, Open Math. \textbf{14} (2016), 509--519; \href{https://doi.org/10.1515/math-2016-0045}{doi:10.1515/math-2016-0045}.
+
+\bibitem[Dah]{Dahl}
+C.~D. Dahl, \emph{Coarse-grained drift fields and attractor-basin entropy in Kaprekar's routine}, Entropy \textbf{28} (2026), 92; \href{https://doi.org/10.3390/e28010092}{doi:10.3390/e28010092}.
+
+\bibitem[G1]{G1}
+R.~Galyavin, \emph{Cycles of the four-digit Kaprekar map in even bases}, preprint (2026), \href{https://doi.org/10.5281/zenodo.24325110}{doi:10.5281/zenodo.24325110}.
+
+\bibitem[G2]{G2}
+R.~Galyavin, \emph{Arrival times for the four-digit Kaprekar map in even bases}, preprint (2026), \href{https://doi.org/10.5281/zenodo.24329321}{doi:10.5281/zenodo.24329321}.
+
+\bibitem[G3]{G3}
+R.~Galyavin, \emph{A common arrival-time law for five-digit Kaprekar dynamics}, preprint (2026), \href{https://doi.org/10.5281/zenodo.24330159}{doi:10.5281/zenodo.24330159}.
+
+\bibitem[KD]{kay}
+A.~Kay and K.~Downes-Ward, \emph{Fixed points and cycles of the Kaprekar transformation: 1. Odd bases}, J. Integer Seq. \textbf{25} (2022), Article 22.6.7.
+
+\bibitem[Thak]{thakur}
+D.~S. Thakur, \emph{Kaprekar phenomena}, in: Topics in Number Theory, RMS Lecture Notes Series \textbf{26}, Ramanujan Mathematical Society, 2020, 61--70.
+
+\end{thebibliography}
+\endgroup
+\end{document}

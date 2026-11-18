@@ -1,0 +1,302 @@
+[
+  {
+    "edge_period": 9,
+    "base_residue": 0,
+    "offset": 257,
+    "arrival": 1169,
+    "period": 21,
+    "capture_offsets": [
+      2,
+      1,
+      3,
+      2
+    ],
+    "cycle_u_max": 3,
+    "phase_s": -2
+  },
+  {
+    "edge_period": 9,
+    "base_residue": 1,
+    "offset": 257,
+    "arrival": 1174,
+    "period": 1,
+    "capture_offsets": [
+      1,
+      1,
+      1,
+      0
+    ],
+    "cycle_u_max": 1,
+    "phase_s": -2
+  },
+  {
+    "edge_period": 9,
+    "base_residue": 2,
+    "offset": 257,
+    "arrival": 1172,
+    "period": 2,
+    "capture_offsets": [
+      2,
+      2,
+      0,
+      -1
+    ],
+    "cycle_u_max": 3,
+    "phase_s": -2
+  },
+  {
+    "edge_period": 9,
+    "base_residue": 3,
+    "offset": 257,
+    "arrival": 1147,
+    "period": 4,
+    "capture_offsets": [
+      3,
+      3,
+      4,
+      3
+    ],
+    "cycle_u_max": 4,
+    "phase_s": -2
+  },
+  {
+    "edge_period": 9,
+    "base_residue": 4,
+    "offset": 257,
+    "arrival": 1157,
+    "period": 23,
+    "capture_offsets": [
+      4,
+      2,
+      3,
+      1
+    ],
+    "cycle_u_max": 6,
+    "phase_s": -2
+  },
+  {
+    "edge_period": 9,
+    "base_residue": 0,
+    "offset": 256,
+    "arrival": 1161,
+    "period": 21,
+    "capture_offsets": [
+      0,
+      0,
+      0,
+      -1
+    ],
+    "cycle_u_max": 3,
+    "phase_s": -1
+  },
+  {
+    "edge_period": 9,
+    "base_residue": 1,
+    "offset": 256,
+    "arrival": 1155,
+    "period": 6,
+    "capture_offsets": [
+      2,
+      3,
+      2,
+      0
+    ],
+    "cycle_u_max": 3,
+    "phase_s": -1
+  },
+  {
+    "edge_period": 9,
+    "base_residue": 2,
+    "offset": 256,
+    "arrival": 1167,
+    "period": 2,
+    "capture_offsets": [
+      2,
+      2,
+      0,
+      -1
+    ],
+    "cycle_u_max": 3,
+    "phase_s": -1
+  },
+  {
+    "edge_period": 9,
+    "base_residue": 3,
+    "offset": 256,
+    "arrival": 1146,
+    "period": 17,
+    "capture_offsets": [
+      3,
+      5,
+      2,
+      1
+    ],
+    "cycle_u_max": 5,
+    "phase_s": -1
+  },
+  {
+    "edge_period": 9,
+    "base_residue": 4,
+    "offset": 256,
+    "arrival": 1148,
+    "period": 23,
+    "capture_offsets": [
+      4,
+      2,
+      3,
+      1
+    ],
+    "cycle_u_max": 6,
+    "phase_s": -1
+  },
+  {
+    "edge_period": 9,
+    "base_residue": 0,
+    "offset": 257,
+    "arrival": 1175,
+    "period": 21,
+    "capture_offsets": [
+      0,
+      0,
+      0,
+      -1
+    ],
+    "cycle_u_max": 3,
+    "phase_s": 0
+  },
+  {
+    "edge_period": 9,
+    "base_residue": 1,
+    "offset": 257,
+    "arrival": 1164,
+    "period": 6,
+    "capture_offsets": [
+      2,
+      3,
+      2,
+      0
+    ],
+    "cycle_u_max": 3,
+    "phase_s": 0
+  },
+  {
+    "edge_period": 9,
+    "base_residue": 2,
+    "offset": 257,
+    "arrival": 1183,
+    "period": 2,
+    "capture_offsets": [
+      2,
+      2,
+      0,
+      -1
+    ],
+    "cycle_u_max": 3,
+    "phase_s": 0
+  },
+  {
+    "edge_period": 9,
+    "base_residue": 3,
+    "offset": 257,
+    "arrival": 1150,
+    "period": 17,
+    "capture_offsets": [
+      3,
+      5,
+      2,
+      1
+    ],
+    "cycle_u_max": 5,
+    "phase_s": 0
+  },
+  {
+    "edge_period": 9,
+    "base_residue": 4,
+    "offset": 257,
+    "arrival": 1165,
+    "period": 23,
+    "capture_offsets": [
+      4,
+      2,
+      3,
+      1
+    ],
+    "cycle_u_max": 6,
+    "phase_s": 0
+  },
+  {
+    "edge_period": 9,
+    "base_residue": 0,
+    "offset": 256,
+    "arrival": 1183,
+    "period": 21,
+    "capture_offsets": [
+      0,
+      0,
+      0,
+      -1
+    ],
+    "cycle_u_max": 3,
+    "phase_s": 1
+  },
+  {
+    "edge_period": 9,
+    "base_residue": 1,
+    "offset": 256,
+    "arrival": 1159,
+    "period": 6,
+    "capture_offsets": [
+      2,
+      3,
+      2,
+      0
+    ],
+    "cycle_u_max": 3,
+    "phase_s": 1
+  },
+  {
+    "edge_period": 9,
+    "base_residue": 2,
+    "offset": 256,
+    "arrival": 1154,
+    "period": 2,
+    "capture_offsets": [
+      2,
+      2,
+      0,
+      -1
+    ],
+    "cycle_u_max": 3,
+    "phase_s": 1
+  },
+  {
+    "edge_period": 9,
+    "base_residue": 3,
+    "offset": 256,
+    "arrival": 1157,
+    "period": 17,
+    "capture_offsets": [
+      3,
+      5,
+      2,
+      1
+    ],
+    "cycle_u_max": 5,
+    "phase_s": 1
+  },
+  {
+    "edge_period": 9,
+    "base_residue": 4,
+    "offset": 256,
+    "arrival": 1160,
+    "period": 23,
+    "capture_offsets": [
+      4,
+      2,
+      3,
+      1
+    ],
+    "cycle_u_max": 6,
+    "phase_s": 1
+  }
+]

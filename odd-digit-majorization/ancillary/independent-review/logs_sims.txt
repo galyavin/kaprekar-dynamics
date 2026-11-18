@@ -1,0 +1,43 @@
+[lock acquired after 266.1s]
+=== route A0,B1,AB table: B=120010+beta (n=200000) and 290015+beta (n=100000), R=0.001B
+B=120010 beta=0 R=120 n=200000 unmatched=0 notpaired=0 freq=[0.229, 0.1035, 0.4769, 0.1906] pred=[0.2292, 0.1042, 0.4757, 0.191] z=[-0.18, -1.01, 1.11, -0.44] maxdt=3.81e-04 maxdz=4.37e-05
+B=120011 beta=1 R=120 n=200000 unmatched=0 notpaired=0 freq=[0.225, 0.1049, 0.4909, 0.1792] pred=[0.2266, 0.1042, 0.4896, 0.1797] z=[-1.71, 1.14, 1.19, -0.59] maxdt=3.29e-04 maxdz=6.35e-05
+B=120012 beta=2 R=120 n=200000 unmatched=0 notpaired=0 freq=[0.2023, 0.1049, 0.5259, 0.167] pred=[0.2014, 0.1042, 0.5269, 0.1675] z=[0.98, 1.1, -0.94, -0.69] maxdt=4.74e-04 maxdz=4.33e-05
+B=120013 beta=3 R=120 n=200000 unmatched=0 notpaired=0 freq=[0.1856, 0.1037, 0.5406, 0.17] pred=[0.1858, 0.1042, 0.5391, 0.171] z=[-0.17, -0.63, 1.42, -1.2] maxdt=3.05e-04 maxdz=3.96e-05
+B=120014 beta=4 R=120 n=200000 unmatched=0 notpaired=0 freq=[0.2024, 0.1053, 0.5064, 0.186] pred=[0.2023, 0.1042, 0.5069, 0.1866] z=[0.19, 1.61, -0.52, -0.78] maxdt=3.68e-04 maxdz=3.96e-05
+B=290015 beta=0 R=290 n=100000 unmatched=0 notpaired=0 freq=[0.2284, 0.1065, 0.4759, 0.1892] pred=[0.2292, 0.1042, 0.4757, 0.191] z=[-0.59, 2.46, 0.15, -1.47] maxdt=1.50e-04 maxdz=1.81e-05
+B=290016 beta=1 R=290 n=100000 unmatched=0 notpaired=0 freq=[0.226, 0.1052, 0.4868, 0.182] pred=[0.2266, 0.1042, 0.4896, 0.1797] z=[-0.46, 1.08, -1.76, 1.94] maxdt=1.89e-04 maxdz=1.98e-05
+B=290017 beta=2 R=290 n=100000 unmatched=0 notpaired=0 freq=[0.2018, 0.1038, 0.5276, 0.1668] pred=[0.2014, 0.1042, 0.5269, 0.1675] z=[0.36, -0.4, 0.42, -0.61] maxdt=1.99e-04 maxdz=1.64e-05
+B=290018 beta=3 R=290 n=100000 unmatched=0 notpaired=0 freq=[0.1858, 0.1034, 0.5412, 0.1695] pred=[0.1858, 0.1042, 0.5391, 0.171] z=[0.06, -0.75, 1.38, -1.27] maxdt=1.26e-04 maxdz=1.64e-05
+B=290019 beta=4 R=290 n=100000 unmatched=0 notpaired=0 freq=[0.2021, 0.1039, 0.5057, 0.1883] pred=[0.2023, 0.1042, 0.5069, 0.1866] z=[-0.12, -0.3, -0.76, 1.33] maxdt=1.52e-04 maxdz=1.64e-05
+=== uniform strings: two bases per class, same residue mod 5, different parity and mod 3
+B=60010 beta=0 n=160000 meanT/B=0.18724 sdT/B=0.0639 q10/50/90=0.1124/0.1802/0.2778 maxT/B=0.5008 max seg-dist*B=3.9 P(terminal at Q(4/5))=0.7777 mean s=0.80117
+B=60011 beta=1 n=160000 meanT/B=0.18694 sdT/B=0.0636 q10/50/90=0.1120/0.1802/0.2771 maxT/B=0.5027 max seg-dist*B=2.4 P(terminal at Q(4/5))=0.7799 mean s=0.80118
+B=60012 beta=2 n=160000 meanT/B=0.18732 sdT/B=0.0637 q10/50/90=0.1124/0.1806/0.2776 maxT/B=0.4957 max seg-dist*B=4.4 P(terminal at Q(4/5))=0.7876 mean s=0.80117
+B=60013 beta=3 n=160000 meanT/B=0.18724 sdT/B=0.0637 q10/50/90=0.1126/0.1804/0.2774 maxT/B=0.5043 max seg-dist*B=2.9 P(terminal at Q(4/5))=0.7918 mean s=0.80116
+B=60014 beta=4 n=160000 meanT/B=0.18716 sdT/B=0.0635 q10/50/90=0.1120/0.1804/0.2773 maxT/B=0.5009 max seg-dist*B=2.8 P(terminal at Q(4/5))=0.7864 mean s=0.80116
+B=60035 beta=0 n=160000 meanT/B=0.18721 sdT/B=0.0638 q10/50/90=0.1121/0.1804/0.2775 maxT/B=0.4993 max seg-dist*B=3.9 P(terminal at Q(4/5))=0.7756 mean s=0.80118
+B=60036 beta=1 n=160000 meanT/B=0.18718 sdT/B=0.0637 q10/50/90=0.1121/0.1803/0.2773 maxT/B=0.4961 max seg-dist*B=2.4 P(terminal at Q(4/5))=0.7796 mean s=0.80117
+B=60037 beta=2 n=160000 meanT/B=0.18720 sdT/B=0.0636 q10/50/90=0.1121/0.1807/0.2771 maxT/B=0.5026 max seg-dist*B=4.4 P(terminal at Q(4/5))=0.7878 mean s=0.80117
+B=60038 beta=3 n=160000 meanT/B=0.18737 sdT/B=0.0637 q10/50/90=0.1124/0.1806/0.2777 maxT/B=0.4962 max seg-dist*B=2.9 P(terminal at Q(4/5))=0.7924 mean s=0.80115
+B=60039 beta=4 n=160000 meanT/B=0.18740 sdT/B=0.0638 q10/50/90=0.1127/0.1804/0.2781 maxT/B=0.5099 max seg-dist*B=2.8 P(terminal at Q(4/5))=0.7854 mean s=0.80116
+=== exact max_N T_B
+B=40 states=123410 cyclic=24 max_h=39 maxT=40 maxT/B=1.00000 argmax q=(36,34,7,0)
+B=41 states=135751 cyclic=19 max_h=43 maxT=44 maxT/B=1.07317 argmax q=(29,27,26,15)
+B=42 states=148995 cyclic=31 max_h=47 maxT=48 maxT/B=1.14286 argmax q=(27,16,13,10)
+B=43 states=163185 cyclic=40 max_h=36 maxT=37 maxT/B=0.86047 argmax q=(29,29,15,14)
+B=44 states=178365 cyclic=28 max_h=43 maxT=44 maxT/B=1.00000 argmax q=(6,1,0,0)
+B=45 states=194580 cyclic=29 max_h=48 maxT=49 maxT/B=1.08889 argmax q=(22,21,4,1)
+B=46 states=211876 cyclic=20 max_h=46 maxT=47 maxT/B=1.02174 argmax q=(23,22,21,12)
+B=47 states=230300 cyclic=31 max_h=52 maxT=53 maxT/B=1.12766 argmax q=(12,12,11,0)
+B=48 states=249900 cyclic=41 max_h=35 maxT=36 maxT/B=0.75000 argmax q=(30,20,18,12)
+B=49 states=270725 cyclic=33 max_h=44 maxT=45 maxT/B=0.91837 argmax q=(29,24,24,3)
+B=50 states=292825 cyclic=30 max_h=47 maxT=48 maxT/B=0.96000 argmax q=(36,33,33,18)
+B=64 states=766480 cyclic=35 max_h=54 maxT=55 maxT/B=0.85938 argmax q=(22,22,20,20)
+B=97 states=3921225 cyclic=48 max_h=72 maxT=73 maxT/B=0.75258 argmax q=(48,48,48,24)
+B=128 states=11716640 cyclic=62 max_h=72 maxT=73 maxT/B=0.57031 argmax q=(17,17,17,17)
+B=150 states=21947850 cyclic=63 max_h=97 maxT=98 maxT/B=0.65333 argmax q=(73,59,44,0)
+B=173 states=38630900 cyclic=77 max_h=95 maxT=96 maxT/B=0.55491 argmax q=(114,85,54,0)
+B=199 states=67331650 cyclic=78 max_h=121 maxT=122 maxT/B=0.61307 argmax q=(134,99,99,33)
+B=223 states=105835800 cyclic=94 max_h=118 maxT=119 maxT/B=0.53363 argmax q=(147,111,111,70)
+B=251 states=169362501 cyclic=82 max_h=144 maxT=145 maxT/B=0.57769 argmax q=(166,124,80,0)

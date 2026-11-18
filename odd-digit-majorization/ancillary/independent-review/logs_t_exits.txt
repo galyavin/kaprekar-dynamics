@@ -1,0 +1,6 @@
+A2      zero=['A2'] decreasing (s): {'A0': 10, 'B0': 18, 'A1': 12, 'B1': 10}  strict first exits: ['A0', 'A1', 'B1']
+B0      zero=['B0'] decreasing (s): {'A0': 8, 'A1': 8, 'B1': 3, 'A2': 11, 'B2': 6}  strict first exits: ['A0', 'A1', 'B1', 'B2']
+BB      zero=['B0', 'B1'] decreasing (s): {'A0': 19, 'A1': 16, 'A2': 22, 'B2': 9}  strict first exits: ['A1', 'B2']
+AA(42)  zero=['A1', 'A2'] decreasing (s): {'A0': 30, 'B0': 50, 'B2': 20}  strict first exits: ['A0']
+AA(9)   zero=['A1', 'A2'] decreasing (s): {'A0': 5, 'B0': 10, 'B2': 5}  strict first exits: ['A0']
+AB      zero=['A2', 'B1'] decreasing (s): {'A0': 30, 'B0': 36, 'A1': 24}  strict first exits: ['A1']

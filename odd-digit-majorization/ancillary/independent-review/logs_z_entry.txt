@@ -1,0 +1,14 @@
+L1b first image f(x)=C(sort|2x-1|)                      unsat    OK      0.0s
+L1  f(C r) = C(H r)                                     unsat    OK      0.1s
+L2a f(y)=R(y) on C(core)                                unsat    OK      0.0s
+L2b core invariant under H                              unsat    OK      0.0s
+L2c H^3 = id on core                                    unsat    OK      0.0s
+L2d core has no point with a>=1 (within ordered cube)   sat      **FAIL**      0.0s
+   model: [r1 = 1/3, r3 = 1/3, r0 = 1, r2 = 1/3]
+L3  E phases cycle 1->2->3->1                           unsat    OK      0.0s
+L4  H(P0)==P0: True  H(P1)==P2: True  H(P2)==P1: True  zero gaps: [Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)]
+(i)  limit-cycle classification                         unsat    OK      1.9s
+(ii)  a_6 = a_3                                         unsat    OK      0.5s
+(iii) nu(r_6) >= nu(r_3)                                unsat    OK      0.3s
+(iv)  r_9 - r_6 = r_6 - r_3 outside the core            unsat    OK      7.1s
+SOME ENTRY CHECK FAILED

@@ -1,0 +1,33 @@
+analyze_allroutes.py:68: RuntimeWarning: divide by zero encountered in matmul
+  inside = (rr @ DOM[rname].T).min(axis=1) > 0
+analyze_allroutes.py:68: RuntimeWarning: overflow encountered in matmul
+  inside = (rr @ DOM[rname].T).min(axis=1) > 0
+analyze_allroutes.py:68: RuntimeWarning: invalid value encountered in matmul
+  inside = (rr @ DOM[rname].T).min(axis=1) > 0
+analyze_allroutes.py:71: RuntimeWarning: divide by zero encountered in matmul
+  tpred = np.stack([yb @ np.array([float(Fr(t)) for t in at["clock"]]) for at in kern["atoms"]], axis=1)
+analyze_allroutes.py:71: RuntimeWarning: overflow encountered in matmul
+  tpred = np.stack([yb @ np.array([float(Fr(t)) for t in at["clock"]]) for at in kern["atoms"]], axis=1)
+analyze_allroutes.py:71: RuntimeWarning: invalid value encountered in matmul
+  tpred = np.stack([yb @ np.array([float(Fr(t)) for t in at["clock"]]) for at in kern["atoms"]], axis=1)
+analyze_allroutes.py:72: RuntimeWarning: divide by zero encountered in matmul
+  zpred = np.stack([yb @ np.array([[float(Fr(t)) for t in g] for g in at["terminal"]]).T
+analyze_allroutes.py:72: RuntimeWarning: overflow encountered in matmul
+  zpred = np.stack([yb @ np.array([[float(Fr(t)) for t in g] for g in at["terminal"]]).T
+analyze_allroutes.py:72: RuntimeWarning: invalid value encountered in matmul
+  zpred = np.stack([yb @ np.array([[float(Fr(t)) for t in g] for g in at["terminal"]]).T
+[allroutes_raw_300k.npz] kernels=165 matched=495000 unmatched=0 outside-box=0 not-paired=0 max matched error=47.4 steps; kernels with merged atoms=85
+[allroutes_raw_300k.npz] total chi2=291.4 df=323 p=0.896
+   lowest p=0.0133 B2/B:A0/A:A1/AA beta=0 counts=[48, 581, 583, 1788] weights=[np.float64(0.0208), np.float64(0.209), np.float64(0.1792), np.float64(0.591)] groups=[[0], [1], [3], [2, 4]]
+   lowest p=0.0146 B2/B:A0/A:A1/AA beta=2 counts=[50, 654, 587, 1709] weights=[np.float64(0.0208), np.float64(0.209), np.float64(0.1792), np.float64(0.591)] groups=[[0], [1], [3], [2, 4]]
+   lowest p=0.0482 B2/B:A0/A:B1/AB beta=3 counts=[468, 1647, 343, 542] weights=[np.float64(0.171), np.float64(0.5391), np.float64(0.1042), np.float64(0.1858)] groups=[[0], [1], [2], [3]]
+   lowest p=0.0789 A1/A:B1/AB beta=4 counts=[599, 289, 1501, 611] weights=[np.float64(0.2023), np.float64(0.1042), np.float64(0.5069), np.float64(0.1866)] groups=[[0], [1], [2], [3]]
+   lowest p=0.1061 A2/A:A1/AA beta=2 counts=[49, 664, 514, 1773] weights=[np.float64(0.0208), np.float64(0.209), np.float64(0.1792), np.float64(0.591)] groups=[[0], [1], [3], [2, 4]]
+[allroutes_raw_450k.npz] kernels=165 matched=495000 unmatched=0 outside-box=0 not-paired=0 max matched error=47.3 steps; kernels with merged atoms=82
+[allroutes_raw_450k.npz] total chi2=382.0 df=340 p=0.058
+   lowest p=0.0033 A2/A:A0/AA beta=2 counts=[564, 46, 1817, 573] weights=[np.float64(0.2158), np.float64(0.015), np.float64(0.5842), np.float64(0.185)] groups=[[0], [1], [2, 3], [4]]
+   lowest p=0.0038 A0/A:A0/AA beta=4 counts=[478, 1820, 656, 46] weights=[np.float64(0.185), np.float64(0.5842), np.float64(0.2158), np.float64(0.015)] groups=[[1], [0, 2], [3], [4]]
+   lowest p=0.0045 B1/B:A0/A:A1/AA beta=3 counts=[544, 1724, 643, 89] weights=[np.float64(0.1792), np.float64(0.591), np.float64(0.209), np.float64(0.0208)] groups=[[1], [0, 2], [3], [4]]
+   lowest p=0.0070 A2/A:B1/AB beta=1 counts=[594, 1404, 288, 714] weights=[np.float64(0.1797), np.float64(0.4896), np.float64(0.1042), np.float64(0.2266)] groups=[[0], [1], [2], [3]]
+   lowest p=0.0126 B1/B:A0/A:A0/AA beta=3 counts=[66, 663, 540, 1731] weights=[np.float64(0.015), np.float64(0.2158), np.float64(0.185), np.float64(0.5842)] groups=[[0], [1], [3], [2, 4]]
+homogeneity of the two base families (same B mod 5, opposite parity): chi2=314.0 df=311 p=0.441

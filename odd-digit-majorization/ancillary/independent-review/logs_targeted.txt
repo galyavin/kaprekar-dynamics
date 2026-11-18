@@ -1,0 +1,15 @@
+saved 48000 samples to targeted_sameB.npz
+saved 48000 samples to targeted_bigB.npz
+[targeted_sameB.npz] kernels=4 matched=48000 unmatched=0 outside-box=0 not-paired=0 max matched error=43.0 steps; kernels with merged atoms=4
+[targeted_sameB.npz] total chi2=12.3 df=12 p=0.419
+   lowest p=0.1250 B1/B:A0/A:A1/AA beta=3 counts=[2178, 7118, 2428, 276] weights=[np.float64(0.1792), np.float64(0.591), np.float64(0.209), np.float64(0.0208)] groups=[[1], [0, 2], [3], [4]]
+   lowest p=0.4383 A0/A:A0/AA beta=4 counts=[2186, 6977, 2661, 176] weights=[np.float64(0.185), np.float64(0.5842), np.float64(0.2158), np.float64(0.015)] groups=[[1], [0, 2], [3], [4]]
+   lowest p=0.5553 B1/B:A0/A:A0/AA beta=3 counts=[161, 2588, 2232, 7019] weights=[np.float64(0.015), np.float64(0.2158), np.float64(0.185), np.float64(0.5842)] groups=[[0], [1], [3], [2, 4]]
+   lowest p=0.6147 A2/A:A0/AA beta=2 counts=[2595, 183, 7058, 2164] weights=[np.float64(0.2158), np.float64(0.015), np.float64(0.5842), np.float64(0.185)] groups=[[0], [1], [2, 3], [4]]
+[targeted_bigB.npz] kernels=4 matched=48000 unmatched=0 outside-box=0 not-paired=0 max matched error=44.3 steps; kernels with merged atoms=4
+[targeted_bigB.npz] total chi2=7.8 df=12 p=0.800
+   lowest p=0.4663 B1/B:A0/A:A1/AA beta=3 counts=[2139, 7164, 2462, 235] weights=[np.float64(0.1792), np.float64(0.591), np.float64(0.209), np.float64(0.0208)] groups=[[1], [0, 2], [3], [4]]
+   lowest p=0.5278 A2/A:A0/AA beta=2 counts=[2537, 190, 7068, 2205] weights=[np.float64(0.2158), np.float64(0.015), np.float64(0.5842), np.float64(0.185)] groups=[[0], [1], [2, 3], [4]]
+   lowest p=0.6314 B1/B:A0/A:A0/AA beta=3 counts=[179, 2647, 2192, 6982] weights=[np.float64(0.015), np.float64(0.2158), np.float64(0.185), np.float64(0.5842)] groups=[[0], [1], [3], [2, 4]]
+   lowest p=0.7253 A0/A:A0/AA beta=4 counts=[2267, 6963, 2591, 179] weights=[np.float64(0.185), np.float64(0.5842), np.float64(0.2158), np.float64(0.015)] groups=[[1], [0, 2], [3], [4]]
+homogeneity of the two base families (same B mod 5, opposite parity): chi2=9.7 df=12 p=0.640

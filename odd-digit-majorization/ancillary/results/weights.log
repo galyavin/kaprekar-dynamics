@@ -1,0 +1,40 @@
+Running nine_kernel_checks
+Actual route 0 passed
+Actual route 1 passed
+Actual route 2 passed
+Actual route 3 passed
+Actual route 4 passed
+Actual route 5 passed
+Actual route 6 passed
+Actual route 7 passed
+Actual route 8 passed
+Actual route 9 passed
+Actual route 10 passed
+Actual route 11 passed
+Actual route 12 passed
+Actual route 13 passed
+Actual route 14 passed
+Actual route 15 passed
+Actual route 16 passed
+Actual route 17 passed
+Actual route 18 passed
+Actual route 19 passed
+Actual route 20 passed
+Actual route 21 passed
+Actual route 22 passed
+Actual route 23 passed
+Actual route 24 passed
+Actual route 25 passed
+Actual route 26 passed
+Actual route 27 passed
+Actual route 28 passed
+Actual route 29 passed
+Actual route 30 passed
+Actual route 31 passed
+Actual route 32 passed
+PASS: 165 exact weighted kernels on all 33 core routes and five base classes.
+200 integer basis changes; 600 complete residue-grid points.
+16 unimodular first-image branches; four corrupt kernel tables rejected.
+15840 independent actual compressed first captures agree with a unique joint atom.
+Maximum joint error 29651/720000000000; frequencies are diagnostics only.
+All selected checks passed.
