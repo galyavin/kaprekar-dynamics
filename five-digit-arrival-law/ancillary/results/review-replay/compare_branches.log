@@ -1,0 +1,4 @@
+project branches: 26
+[PASS] branches cover every valid pair, all B>=2: unsat
+[PASS] branches pairwise disjoint (0 overlaps)
+[PASS] each branch image equals the sorting-network image (0 mismatches)

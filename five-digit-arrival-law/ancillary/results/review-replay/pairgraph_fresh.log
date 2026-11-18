@@ -1,0 +1,110 @@
+B 997 pairs 497502 total_weight_ok 1 cycles 2 cyclic_pairs 7
+cycle 0 label T4 len 4 rep (664,332) (a,b)=(-1,-1) mass 0.333343303523 count 328373064999470
+cycle 1 label T3 len 3 rep (664,331) (a,b)=(-2,0) mass 0.666656696477 count 656716665404290
+cdf t=0.040000 P(T<=tB)=0.0159213466 | T4 joint 0.0060107164 cond 0.0180316100 | T3 joint 0.0099106301 cond 0.0148661675
+cdf t=0.100000 P(T<=tB)=0.1224529262 | T4 joint 0.0429648376 cond 0.1288906575 | T3 joint 0.0794880886 cond 0.1192339161
+cdf t=0.200000 P(T<=tB)=0.5747296743 | T4 joint 0.1960097404 cond 0.5880116334 | T3 joint 0.3787199340 cond 0.5680883969
+cdf t=0.300000 P(T<=tB)=0.9641901176 | T4 joint 0.3229996541 cond 0.9689699798 | T3 joint 0.6411904635 cond 0.9618000792
+cdf t=0.333333 P(T<=tB)=0.9993125633 | T4 joint 0.3332693162 cond 0.9997780448 | T3 joint 0.6660432470 cond 0.9990798121
+moments E[T/B]=0.1850333125 E[(T/B)^2]=0.0388629317
+maxT 345 at pair (30,1)  maxT-B/3-sqrtB/3 = 2.1416  bound3 B/3+ceil(sqrtB)+20 = 384.33 ok3 1  lower9 337.858 upper9 402.858 ok9 1
+witness37 n 32 pair (996,994) T 345  T-B/3-sqrtB/3 = 2.1416  lower_claim(B/3+sqrtB/3-4) ok 1  maxT-T 0
+check23 3h-2M in [-9,9] (claim [-9,18]) ok 1
+checksix max steps J_B->H_B u T2 = 6 (claim <=6) ok 1
+checkglobal max steps ->H_B u T2 = 35  ceil(sqrtB)+13 = 45 ok 1 never 0
+check36 max of 2max(a_j,b_j)-(2u0-B) = -1 (claim <=40) ok 1
+
+B 1500 pairs 1125749 total_weight_ok 1 cycles 2 cyclic_pairs 3
+cycle 0 label T1 len 1 rep (1000,500) (a,b)=(0,0) mass 0.999999988164 count 7593749910118510
+cycle 1 label T2 len 2 rep (750,749) (a,b)=(-1,-749) mass 0.000000011836 count 89879990
+cdf t=0.040000 P(T<=tB)=0.0167746254 | T1 joint 0.0167746136 cond 0.0167746138
+cdf t=0.100000 P(T<=tB)=0.1248375073 | T1 joint 0.1248374954 cond 0.1248374969
+cdf t=0.200000 P(T<=tB)=0.5775773908 | T1 joint 0.5775773790 cond 0.5775773858
+cdf t=0.300000 P(T<=tB)=0.9646748236 | T1 joint 0.9646748117 cond 0.9646748232
+cdf t=0.333333 P(T<=tB)=0.9995035531 | T1 joint 0.9995035413 cond 0.9995035531
+moments E[T/B]=0.1847518645 E[(T/B)^2]=0.0387555585
+maxT 518 at pair (6,1)  maxT-B/3-sqrtB/3 = 5.0901  bound3 B/3+ceil(sqrtB)+20 = 559.00 ok3 1  lower9 507.910 upper9 572.910 ok9 1
+witness37 n 39 pair (1499,1490) T 517  T-B/3-sqrtB/3 = 4.0901  lower_claim(B/3+sqrtB/3-4) ok 1  maxT-T 1
+check23 3h-2M in [-3,16] (claim [-9,18]) ok 1
+checksix max steps J_B->H_B u T2 = 5 (claim <=6) ok 1
+checkglobal max steps ->H_B u T2 = 43  ceil(sqrtB)+13 = 52 ok 1 never 0
+check36 max of 2max(a_j,b_j)-(2u0-B) = -2 (claim <=40) ok 1
+rare T2 basin_pairs 3 N0 2 N1 78637488 N2 11242500 Nother 0 | formula N0 2 N1 78637488 N2 11242500 | match 1
+
+B 2401 pairs 2883600 total_weight_ok 1 cycles 2 cyclic_pairs 7
+cycle 0 label T4 len 4 rep (1600,800) (a,b)=(-1,-1) mass 0.333334620063 count 26597524770297032
+cycle 1 label T3 len 3 rep (1600,799) (a,b)=(-2,0) mass 0.666665379937 count 53194741527312568
+cdf t=0.040000 P(T<=tB)=0.0175302036 | T4 joint 0.0062186446 cond 0.0186558619 | T3 joint 0.0113115589 cond 0.0169673711
+cdf t=0.100000 P(T<=tB)=0.1268434761 | T4 joint 0.0433901414 cond 0.1301699217 | T3 joint 0.0834533347 cond 0.1251802437
+cdf t=0.200000 P(T<=tB)=0.5816440009 | T4 joint 0.1958741333 cond 0.5876201315 | T3 joint 0.3857698676 cond 0.5786559183
+cdf t=0.300000 P(T<=tB)=0.9664542730 | T4 joint 0.3228399518 cond 0.9685161166 | T3 joint 0.6436143212 cond 0.9654233452
+cdf t=0.333333 P(T<=tB)=0.9997810630 | T4 joint 0.3333003877 cond 0.9998973033 | T3 joint 0.6664806753 cond 0.9997229426
+moments E[T/B]=0.1836817682 E[(T/B)^2]=0.0383570929
+maxT 819 at pair (21,1)  maxT-B/3-sqrtB/3 = 2.3333  bound3 B/3+ceil(sqrtB)+20 = 869.33 ok3 1  lower9 811.667 upper9 876.667 ok9 1
+witness37 n 49 pair (2400,2376) T 818  T-B/3-sqrtB/3 = 1.3333  lower_claim(B/3+sqrtB/3-4) ok 1  maxT-T 1
+check23 3h-2M in [-9,9] (claim [-9,18]) ok 1
+checksix max steps J_B->H_B u T2 = 6 (claim <=6) ok 1
+checkglobal max steps ->H_B u T2 = 53  ceil(sqrtB)+13 = 62 ok 1 never 0
+check36 max of 2max(a_j,b_j)-(2u0-B) = -1 (claim <=40) ok 1
+
+B 2999 pairs 4498499 total_weight_ok 1 cycles 1 cyclic_pairs 4
+cycle 0 label T5 len 4 rep (1999,999) (a,b)=(-1,0) mass 1.000000000000 count 242595269910012000
+cdf t=0.040000 P(T<=tB)=0.0179395813 | T5 joint 0.0179395813 cond 0.0179395813
+cdf t=0.100000 P(T<=tB)=0.1282355728 | T5 joint 0.1282355728 cond 0.1282355728
+cdf t=0.200000 P(T<=tB)=0.5848103595 | T5 joint 0.5848103595 cond 0.5848103595
+cdf t=0.300000 P(T<=tB)=0.9677676032 | T5 joint 0.9677676032 cond 0.9677676032
+cdf t=0.333333 P(T<=tB)=0.9998852770 | T5 joint 0.9998852770 cond 0.9998852770
+moments E[T/B]=0.1828359452 E[(T/B)^2]=0.0380459029
+maxT 1018 at pair (12,1)  maxT-B/3-sqrtB/3 = 0.0790  bound3 B/3+ceil(sqrtB)+20 = 1074.67 ok3 1  lower9 1012.921 upper9 1077.921 ok9 1
+witness37 n 55 pair (2998,2984) T 1017  T-B/3-sqrtB/3 = -0.9210  lower_claim(B/3+sqrtB/3-4) ok 1  maxT-T 1
+check23 3h-2M in [-7,13] (claim [-9,18]) ok 1
+checksix max steps J_B->H_B u T2 = 6 (claim <=6) ok 1
+checkglobal max steps ->H_B u T2 = 59  ceil(sqrtB)+13 = 68 ok 1 never 0
+check36 max of 2max(a_j,b_j)-(2u0-B) = -1 (claim <=40) ok 1
+
+B 3000 pairs 4501499 total_weight_ok 1 cycles 2 cyclic_pairs 3
+cycle 0 label T1 len 1 rep (2000,1000) (a,b)=(0,0) mass 0.999999998520 count 242999999640237024
+cycle 1 label T2 len 2 rep (1500,1499) (a,b)=(-1,-1499) mass 0.000000001480 count 359759990
+cdf t=0.040000 P(T<=tB)=0.0175260587 | T1 joint 0.0175260572 cond 0.0175260572
+cdf t=0.100000 P(T<=tB)=0.1269836493 | T1 joint 0.1269836478 cond 0.1269836480
+cdf t=0.200000 P(T<=tB)=0.5818382377 | T1 joint 0.5818382362 cond 0.5818382371
+cdf t=0.300000 P(T<=tB)=0.9665796710 | T1 joint 0.9665796695 cond 0.9665796709
+cdf t=0.333333 P(T<=tB)=0.9998102262 | T1 joint 0.9998102247 cond 0.9998102262
+moments E[T/B]=0.1837210867 E[(T/B)^2]=0.0383709172
+maxT 1024 at pair (13,1)  maxT-B/3-sqrtB/3 = 5.7426  bound3 B/3+ceil(sqrtB)+20 = 1075.00 ok3 1  lower9 1013.257 upper9 1078.257 ok9 1
+witness37 n 55 pair (2999,2984) T 1017  T-B/3-sqrtB/3 = -1.2574  lower_claim(B/3+sqrtB/3-4) ok 1  maxT-T 7
+check23 3h-2M in [-3,16] (claim [-9,18]) ok 1
+checksix max steps J_B->H_B u T2 = 5 (claim <=6) ok 1
+checkglobal max steps ->H_B u T2 = 59  ceil(sqrtB)+13 = 68 ok 1 never 0
+check36 max of 2max(a_j,b_j)-(2u0-B) = -2 (claim <=40) ok 1
+rare T2 basin_pairs 3 N0 2 N1 314774988 N2 44985000 Nother 0 | formula N0 2 N1 314774988 N2 44985000 | match 1
+
+B 5003 pairs 12517505 total_weight_ok 1 cycles 1 cyclic_pairs 4
+cycle 0 label T5 len 4 rep (3335,1667) (a,b)=(-1,0) mass 1.000000000000 count 3134386256752020480
+cdf t=0.040000 P(T<=tB)=0.0183080091 | T5 joint 0.0183080091 cond 0.0183080091
+cdf t=0.100000 P(T<=tB)=0.1291435260 | T5 joint 0.1291435260 cond 0.1291435260
+cdf t=0.200000 P(T<=tB)=0.5856711007 | T5 joint 0.5856711007 cond 0.5856711007
+cdf t=0.300000 P(T<=tB)=0.9679711264 | T5 joint 0.9679711264 cond 0.9679711264
+cdf t=0.333333 P(T<=tB)=0.9999344447 | T5 joint 0.9999344447 cond 0.9999344447
+moments E[T/B]=0.1827798639 E[(T/B)^2]=0.0380240750
+maxT 1691 at pair (84,1)  maxT-B/3-sqrtB/3 = -0.2440  bound3 B/3+ceil(sqrtB)+20 = 1758.67 ok3 1  lower9 1686.244 upper9 1751.244 ok9 1
+witness37 n 71 pair (5002,4986) T 1689  T-B/3-sqrtB/3 = -2.2440  lower_claim(B/3+sqrtB/3-4) ok 1  maxT-T 2
+check23 3h-2M in [-7,13] (claim [-9,18]) ok 1
+checksix max steps J_B->H_B u T2 = 6 (claim <=6) ok 1
+checkglobal max steps ->H_B u T2 = 75  ceil(sqrtB)+13 = 84 ok 1 never 0
+check36 max of 2max(a_j,b_j)-(2u0-B) = -1 (claim <=40) ok 1
+
+B 10007 pairs 50075027 total_weight_ok 1 cycles 1 cyclic_pairs 4
+cycle 0 label T5 len 4 rep (6671,3335) (a,b)=(-1,0) mass 1.000000000000 count 100350490343120060416
+cdf t=0.040000 P(T<=tB)=0.0182788322 | T5 joint 0.0182788322 cond 0.0182788322
+cdf t=0.100000 P(T<=tB)=0.1290297046 | T5 joint 0.1290297046 cond 0.1290297046
+cdf t=0.200000 P(T<=tB)=0.5858769950 | T5 joint 0.5858769950 cond 0.5858769950
+cdf t=0.300000 P(T<=tB)=0.9683325779 | T5 joint 0.9683325779 cond 0.9683325779
+cdf t=0.333333 P(T<=tB)=0.9999684215 | T5 joint 0.9999684215 cond 0.9999684215
+moments E[T/B]=0.1827397714 E[(T/B)^2]=0.0380083854
+maxT 3369 at pair (51,1)  maxT-B/3-sqrtB/3 = -0.0117  bound3 B/3+ceil(sqrtB)+20 = 3456.67 ok3 1  lower9 3364.012 upper9 3429.012 ok9 1
+witness37 n 100 pair (10006,9953) T 3368  T-B/3-sqrtB/3 = -1.0117  lower_claim(B/3+sqrtB/3-4) ok 1  maxT-T 1
+check23 3h-2M in [-7,13] (claim [-9,18]) ok 1
+checksix max steps J_B->H_B u T2 = 6 (claim <=6) ok 1
+checkglobal max steps ->H_B u T2 = 104  ceil(sqrtB)+13 = 114 ok 1 never 0
+check36 max of 2max(a_j,b_j)-(2u0-B) = -1 (claim <=40) ok 1

@@ -1,0 +1,6 @@
+name = "five_digit"
+version = "0.1.0"
+defaultTargets = ["FiveDigit"]
+
+[[lean_lib]]
+name = "FiveDigit"

@@ -1,0 +1,7 @@
+26 branch guards, all B >= 30: uncovered state UNSAT; overlapping guards UNSAT.
+Without Z0 an uncovered state is SAT: {'B': 31, 'u': 16, 'v': 0}
+Core map and forward invariance: all B >= 30; branches ['0213', '0231', '2031']
+First nonzero-coordinate step: universal strip bounds verified.
+Strip entry into H or T2 within six steps: UNSAT for all B >= 30.
+144 terminal starts: max tail 10; clock discrepancy [-3, 16/3].
+Bulk maximum drops by 3, or by 2 at the sole -2 correction.

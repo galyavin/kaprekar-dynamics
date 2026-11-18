@@ -1,0 +1,7 @@
+F(1/25) = 713903/39062500 = 0.018275916800   [cutoff N=1, retained mass == 1-R(eps): True, max shear count used 0] (0.0s)
+   paper (2): 713903/39062500; equal: True; tail 1-F = 38348597/39062500 = 0.9817240832
+F(1/10) = 51653/400000 = 0.129132500000   [cutoff N=2, retained mass == 1-R(eps): True, max shear count used 1] (0.0s)
+F(1/5) = 31645397267/54000000000 = 0.586025875315   [cutoff N=3, retained mass == 1-R(eps): True, max shear count used 2] (0.0s)
+F(3/10) = 430102558494119377593841787/444140127977914368000000000 = 0.968393827534   [cutoff N=14, retained mass == 1-R(eps): True, max shear count used 13] (0.1s)
+E[L] enclosure with cutoff N=300: [0.182701146507, 0.182701166802] width 2.030e-08; retained mass ok True (4.0s)
+   paper (5): (0.1827011465, 0.1827011669); paper interval contains ours: True; intervals overlap: True

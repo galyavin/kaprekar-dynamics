@@ -1,0 +1,36 @@
+Lake version 5.0.0-src+7e01a1b (Lean version 4.28.0)
+Lean (version 4.28.0, arm64-apple-darwin24.6.0, commit 7e01a1bf5c70fc6167d49c345d3bf80596e9a79b, Release)
+✔ [2/9] Built FiveDigit.Map (1.4s)
+ℹ [3/9] Built FiveDigit.Core (2.2s)
+info: FiveDigit/Core.lean:51:0: 'FiveDigit.pair_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiveDigit/Core.lean:52:0: 'FiveDigit.core_pair_rule' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiveDigit/Core.lean:53:0: 'FiveDigit.core_rule' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiveDigit/Core.lean:54:0: 'FiveDigit.strip_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiveDigit/Core.lean:55:0: 'FiveDigit.two_step_descent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiveDigit/Core.lean:56:0: 'FiveDigit.rare_predecessors' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiveDigit/Core.lean:57:0: 'FiveDigit.rare_images' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiveDigit/Core.lean:58:0: 'FiveDigit.core_residue' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [4/9] Built FiveDigit.Box (2.1s)
+info: FiveDigit/Box.lean:108:0: 'FiveDigit.box_transient' depends on axioms: [propext, Quot.sound]
+info: FiveDigit/Box.lean:109:0: 'FiveDigit.box_invariance' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiveDigit/Box.lean:110:0: 'FiveDigit.listed_cycles' does not depend on any axioms
+info: FiveDigit/Box.lean:111:0: 'FiveDigit.arrival_first' depends on axioms: [propext, Quot.sound]
+info: FiveDigit/Box.lean:112:0: 'FiveDigit.box_bounds' depends on axioms: [propext, Quot.sound]
+info: FiveDigit/Box.lean:113:0: 'FiveDigit.box_extrema' depends on axioms: [propext, Quot.sound]
+ℹ [5/9] Built FiveDigit.Branches (1.1s)
+info: FiveDigit/Branches.lean:56:0: 'FiveDigit.step_cases' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [6/9] Built FiveDigit.Digits (15s)
+info: FiveDigit/Digits.lean:157:0: 'FiveDigit.constant_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiveDigit/Digits.lean:158:0: 'FiveDigit.iterated_subtraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiveDigit/Digits.lean:159:0: 'FiveDigit.sort_ordered' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiveDigit/Digits.lean:160:0: 'FiveDigit.sort_multiset' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiveDigit/Digits.lean:161:0: 'FiveDigit.subtraction_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiveDigit/Digits.lean:162:0: 'FiveDigit.subtraction_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiveDigit/Digits.lean:163:0: 'FiveDigit.borrowed_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiveDigit/Digits.lean:164:0: 'FiveDigit.subtraction_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [7/9] Built FiveDigit.Entry (17s)
+info: FiveDigit/Entry.lean:113:0: 'FiveDigit.six_step_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiveDigit/Entry.lean:114:0: 'FiveDigit.high_first_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiveDigit/Entry.lean:115:0: 'FiveDigit.first_entry_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [8/9] Built FiveDigit (264ms)
+Build completed successfully (9 jobs).

@@ -1,0 +1,92 @@
+z3 5.4.1 python 3.9.6
+[PASS] bubble network sorts all 0-1 inputs (0-1 principle)
+[PASS] symbolic step == numeric subtraction on 1275 concrete points (mismatches 0)
+[PASS] (17) borrowed-digit value identity: unsat (0.11s)
+[PASS] (17) borrowed digits lie in [0,B-1] (v>0): unsat (0.00s)
+[PASS] (17) borrowed digits lie in [0,B-1] (v=0): unsat (0.00s)
+[PASS] A1 core: f_B(H_B) in H_B and margins obey (20): unsat (0.00s)
+[PASS] A1' core: (u,v)-form of the three rules: unsat (0.00s)
+[PASS] A1'' core implies 2u>=B and v>0: unsat (0.00s)
+[PASS] A1''' on H_B, max(a,b) <= (B-3)/2: unsat (0.00s)
+[PASS] A2 v>0 => 2u'>=B-1, 2(u'-v')<=B+2, valid pair: unsat (0.00s)
+[PASS] A2' every pair maps to a valid pair (all B>=2): unsat (0.00s)
+[PASS] A2'' v=0 => v' = min(u-1, B-u): unsat (0.00s)
+[PASS] A3 high off-diagonal branch (u-1, u+v-B+1): unsat (0.00s)
+[PASS] A3' high diagonal branch (u, 2u-B): unsat (0.00s)
+[PASS] A3'' high off-diag step makes a diagonal only from (B-1,B-2): unsat (0.00s)
+[PASS] A3''' high steps keep 2u>=B-1, 2(u-v)<=B+2, v>0: unsat (0.00s)
+[PASS] A3'''' branch (u-1,u+v-B+1) already valid for 2v>=B+1, u>v: unsat (0.00s)
+[PASS] A4 J_B reaches H_B u T2 within 6 steps: unsat (0.14s)
+[PASS] A5 two-step descent identity (21): unsat (0.00s)
+[PASS] A5' base-free rule keeps both margins >= -2: unsat (0.00s)
+[PASS] A5'' exceptional block outputs minimum 3: unsat (0.00s)
+[PASS] A5''' block-start minimum in {0,3} is inductive for M>=10: unsat (0.00s)
+[PASS] A5'''' odd-time state inside an M>=10 block is not cyclic (max>3): unsat (0.00s)
+[PASS] A6 even B: no pair outside R_B maps into R_B: unsat (0.00s)
+[PASS] A6' even B: r1->r2: unsat (0.00s)
+[PASS] A6' even B: r2->r1: unsat (0.00s)
+[PASS] A6' even B: r3->r1: unsat (0.00s)
+[PASS] A6'' R_B is disjoint from H_B: unsat (0.00s)
+[PASS] A7 B=1 mod 3, H_B: u+v=0 => u'+v'=0 (mod 3): unsat (0.02s)
+[PASS] A7' B=1 mod 3, H_B: u'+v'=0 => u+v=0 (mod 3): unsat (0.01s)
+[PASS] A8 (36) first core entry at j=0: 2max(a,b) <= 2u0-B+40: unsat (0.00s)
+[PASS] A8 (36) first core entry at j=1: 2max(a,b) <= 2u0-B+40: unsat (0.00s)
+[PASS] A8 (36) first core entry at j=2: 2max(a,b) <= 2u0-B+40: unsat (0.00s)
+[PASS] A8 (36) first core entry at j=3: 2max(a,b) <= 2u0-B+40: unsat (0.01s)
+[PASS] A8 (36) first core entry at j=4: 2max(a,b) <= 2u0-B+40: unsat (0.02s)
+[PASS] A8 (36) first core entry at j=5: 2max(a,b) <= 2u0-B+40: unsat (0.09s)
+[PASS] A8 (36) first core entry at j=6: 2max(a,b) <= 2u0-B+40: unsat (0.15s)
+[PASS] A9 (43) even: (2k-R,k) -> (2k-R-1,k-R+1) in H_B: unsat (0.00s)
+[PASS] A9' (43) odd: (2k+1-R,k+1) -> (2k-R,k+2-R) in H_B: unsat (0.00s)
+[PASS] A9'' exit (B-R, H-nu) in H_B for 1<=nu<=R-3: unsat (0.00s)
+box: two-step stays in [-2,9]^2: True; max intermediate coordinate 10; max transient 10; h-2M/3 in [-3, 16/3]
+   cycle ((0, 0),) len 1 a+b mod 3 = {0}
+   cycle ((-2, 0), (1, 3), (3, -2)) len 3 a+b mod 3 = {1}
+   cycle ((-1, 0), (0, 2), (2, 0), (0, -1)) len 4 a+b mod 3 = {2}
+   cycle ((-1, -1), (-1, 2), (2, 2), (2, -1)) len 4 a+b mod 3 = {1}
+[PASS] box enumeration matches (22) and the four listed cycles
+[PASS] T4 cycle inside (2,2) residue class, T3 cycle outside
+[PASS] A10 every listed cycle state lies in H_B for all B>=30: unsat (0.00s)
+   leading cell x<1/2: matrix ((0, -1), (-1, -1)) det -1 permutes (Z/3)^2: True
+   leading cell x>=1/2,x+y<1: matrix ((0, -1), (1, -1)) det 1 permutes (Z/3)^2: True
+   leading cell x+y>=1,y<1/2: matrix ((1, 0), (1, -1)) det -1 permutes (Z/3)^2: True
+   leading cell y>=1/2: matrix ((1, 0), (1, 1)) det 1 permutes (Z/3)^2: True
+[PASS] leading matrices unimodular
+=== 43 checks, 0 failures ===
+--- informational tightness probes (SAT expected) ---
+[PASS] A4 J_B reaches H_B u T2 within 5 steps: sat (0.16s) model: p=1, u0=16, m=15, B=31, v0=0
+    5-step counterexample: B = 31 q0 = (16, 0)
+    (36) with +20 in place of +20: holds
+    (36) with +15 in place of +20: holds
+    (36) with +10 in place of +20: holds
+    (36) with +8 in place of +20: holds
+    (36) with +6 in place of +20: holds
+    (36) with +5 in place of +20: holds
+    (36) with +4 in place of +20: holds
+    (36) with +3 in place of +20: holds
+    (36) with +2 in place of +20: holds
+    (36) with +1 in place of +20: holds
+    (36) with +0 in place of +20: holds
+--- non-vacuity / mutation probes (each line states expectation) ---
+   [ok] H_B nonempty: sat e.g. u=23, B=33, v=8
+   [ok] J_B minus (H_B u T2) nonempty: sat e.g. u0=29, m=15, v0=15, B=30, p=0
+   [ok] 5 steps do NOT suffice for J_B -> H_B u T2: sat e.g. u0=16, B=31, p=1, m=15, v0=0
+   [ok] dropping T2 from the target breaks six-step entry: sat e.g. u0=15, B=30, v0=14
+   [ok] 2-cycle alone is not predecessor-closed (r3 enters): sat e.g. m=15, u=15, v=0, B=30
+   [UNEXPECTED] (36) hypotheses with first entry j=0 satisfiable: sat e.g. u0=23, v0=10, B=30
+   [UNEXPECTED] (36) hypotheses with first entry j=1 satisfiable: sat e.g. u0=24, v0=16, B=31
+   [UNEXPECTED] (36) hypotheses with first entry j=2 satisfiable: sat e.g. v0=14, B=30, u0=28
+   [UNEXPECTED] (36) hypotheses with first entry j=3 satisfiable: sat e.g. u0=28, B=30, v0=12
+   [UNEXPECTED] (36) hypotheses with first entry j=4 satisfiable: unsat
+   [UNEXPECTED] (36) hypotheses with first entry j=5 satisfiable: unsat
+   [UNEXPECTED] (36) hypotheses with first entry j=6 satisfiable: unsat
+   [ok] B=1 mod 3, H_B, u+v=0 mod 3 nonempty: sat e.g. k=10, u=22, v=8, B=31
+   [info] core rule/invariance with B>=2: sat (B=5)
+   [info] core rule/invariance with B>=8: sat (B=8)
+   [info] core rule/invariance with B>=10: sat (B=13)
+   [info] core rule/invariance with B>=16: sat (B=17)
+   [info] core rule/invariance with B>=20: sat (B=20)
+   [info] core rule/invariance with B>=24: unsat
+   [info] core rule/invariance with B>=26: unsat
+   [info] core rule/invariance with B>=28: unsat
+   [info] core rule/invariance with B>=29: unsat

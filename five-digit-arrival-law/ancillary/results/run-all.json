@@ -1,0 +1,42 @@
+[
+  {
+    "file": "five_clock_audit.py",
+    "returncode": 0,
+    "seconds": 0.298
+  },
+  {
+    "file": "five_joint_audit.py",
+    "returncode": 0,
+    "seconds": 0.114
+  },
+  {
+    "file": "five_quantitative_audit.py",
+    "returncode": 0,
+    "seconds": 0.174
+  },
+  {
+    "file": "five_limit_checks.py",
+    "returncode": 0,
+    "seconds": 15.492
+  },
+  {
+    "file": "five_joint_checks.py",
+    "returncode": 0,
+    "seconds": 2.322
+  },
+  {
+    "file": "five_quantitative_checks.py",
+    "returncode": 0,
+    "seconds": 0.311
+  },
+  {
+    "file": "p2_overshoot_checks.py",
+    "returncode": 0,
+    "seconds": 4.334
+  },
+  {
+    "file": "p2_numbers.py",
+    "returncode": 0,
+    "seconds": 4.316
+  }
+]

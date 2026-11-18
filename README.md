@@ -12,6 +12,10 @@ The paper determines every cycle of the four-digit Kaprekar map in every even ba
 
 For every even base B = m·2ⁿ with m ≥ 5 odd, the paper gives the exact distribution of the number of steps needed to reach any union of the cycles inherited from base m. As n grows, the number of steps divided by n converges to a law with at most five atoms. In the bases 5·2ⁿ the proportion of inputs reaching the fixed point tends to 1033/1125 for n ≡ 0 and to 94/125 for n ≡ 2 (mod 4), against the values 3/4 and 15/16 conjectured by Devlin and Zeng. As m grows, the number of steps to reach any cycle obeys a total-variation law that is uniform in n.
 
+**A common arrival-time law for five-digit Kaprekar dynamics** (2026), in [`five-digit-arrival-law/`](five-digit-arrival-law/) as [PDF](five-digit-arrival-law/kaprekar-five-digit-arrival-law.pdf) and [LaTeX source](five-digit-arrival-law/kaprekar-five-digit-arrival-law.tex). Archived at Zenodo: [doi:10.5281/zenodo.24330159](https://doi.org/10.5281/zenodo.24330159).
+
+With five digit slots and a growing base B, the number of steps needed to reach a cycle, divided by B, converges through all integer bases to one explicit continuous law. Along each residue class of B modulo 3 the limiting time is independent of the terminal cycle. The paper also determines the exact basin of the even-base two-cycle, proves that the maximum arrival time is B/3 + √B/3 + O(1), and identifies the overshoot behind the square-root term. Its finite integer-affine checks are verified by SMT encodings and in Lean 4.
+
 ## Reproducing the results
 
 ```sh
@@ -24,6 +28,11 @@ lake env lean TheoremC.lean  # prints the axioms used
 ```sh
 cd arrival-times-even-bases/ancillary
 bash reproduce.sh            # numerical checks (Python 3 and a C++17 compiler)
+```
+
+```sh
+cd five-digit-arrival-law/ancillary
+bash reproduce.sh            # numerical checks, SMT audits and the Lean build
 ```
 
 Each `ancillary/README.md` gives the expected outputs and versions.

@@ -1,0 +1,25 @@
+bases 1201..3000: failing bases []; label mismatches []
+  3h-2M on H_B ranges over [-9,16] (claim [-9,18])
+  max J_B->H_B u T2 steps 6 (claim 6)
+  min slack of global entry vs ceil(sqrtB)+13: 9
+  max 2max(a_j,b_j)-(2u0-B) in (36): -1 (claim 40)
+  maxT - B/3 - sqrt(B)/3: min -0.830 at B=2969, max 7.479 at B=2763  (claim in [-5, 60])
+    B=1201: maxT-B/3-sqrtB/3 = 3.115
+    B=1300: maxT-B/3-sqrtB/3 = 2.648
+    B=1400: maxT-B/3-sqrtB/3 = -0.139
+    B=1500: maxT-B/3-sqrtB/3 = 5.090
+    B=1600: maxT-B/3-sqrtB/3 = 3.333
+    B=1700: maxT-B/3-sqrtB/3 = -0.410
+    B=1800: maxT-B/3-sqrtB/3 = 4.858
+    B=1900: maxT-B/3-sqrtB/3 = 3.137
+    B=2000: maxT-B/3-sqrtB/3 = 0.426
+    B=2100: maxT-B/3-sqrtB/3 = 5.725
+    B=2200: maxT-B/3-sqrtB/3 = 3.032
+    B=2300: maxT-B/3-sqrtB/3 = 0.347
+    B=2400: maxT-B/3-sqrtB/3 = 5.670
+    B=2500: maxT-B/3-sqrtB/3 = 3.000
+    B=2600: maxT-B/3-sqrtB/3 = 0.337
+    B=2700: maxT-B/3-sqrtB/3 = 5.679
+    B=2800: maxT-B/3-sqrtB/3 = 3.028
+    B=2900: maxT-B/3-sqrtB/3 = 0.383
+    B=3000: maxT-B/3-sqrtB/3 = 5.743

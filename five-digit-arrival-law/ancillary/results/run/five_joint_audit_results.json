@@ -1,0 +1,124 @@
+{
+  "solver": "5.4.1",
+  "domain": "all integer B >= 30; parity/residue restrictions as stated",
+  "branch_checks": {
+    "0123": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "0132": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "0213": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "0231": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "0312": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "0321": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "1023": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "1032": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "1203": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "1230": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "1302": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "1320": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "2013": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "2031": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "2103": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "2130": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "2301": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "2310": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "3012": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "3021": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "3102": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "3120": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "3201": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "3210": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "Z0": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    },
+    "Z1": {
+      "outside_rare_predecessor": "unsat",
+      "core_residue_change": "unsat"
+    }
+  },
+  "terminal_margin_starts": 144,
+  "strict_leading_cell_determinants": [
+    -1,
+    1,
+    -1,
+    1
+  ],
+  "rare_basin_input_weight": "40*B^2-80*B-10",
+  "rare_actual_histogram": {
+    "0": "2",
+    "1": "35*B^2-75*B-12",
+    "2": "5*B^2-5*B"
+  },
+  "scope": "Encoded residue/predecessor implications and terminal checks; weighted equidistribution and limit proof are analytic, not SMT or Lean."
+}

@@ -1,0 +1,13 @@
+Passed direct subtraction: 223344 pairs, 18606 core labels, complete rare basins and actual histograms.
+Checked fresh reference B=431: ['T5']; exact rare histogram agrees.
+Checked fresh reference B=432: ['T1', 'T2']; exact rare histogram agrees.
+Checked fresh reference B=433: ['T3', 'T4']; exact rare histogram agrees.
+Checked fresh reference B=434: ['T2', 'T5']; exact rare histogram agrees.
+Checked fresh reference B=435: ['T1']; exact rare histogram agrees.
+Checked fresh reference B=436: ['T2', 'T3', 'T4']; exact rare histogram agrees.
+Checked fresh reference B=1973: ['T5']; exact rare histogram agrees.
+Checked fresh reference B=1974: ['T1', 'T2']; exact rare histogram agrees.
+Checked fresh reference B=1975: ['T3', 'T4']; exact rare histogram agrees.
+Checked fresh reference B=1976: ['T2', 'T5']; exact rare histogram agrees.
+Checked fresh reference B=1977: ['T1']; exact rare histogram agrees.
+Checked fresh reference B=1978: ['T2', 'T3', 'T4']; exact rare histogram agrees.

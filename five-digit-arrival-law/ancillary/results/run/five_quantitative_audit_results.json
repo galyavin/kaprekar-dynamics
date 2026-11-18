@@ -1,0 +1,24 @@
+{
+  "solver": "5.4.1",
+  "domain": "all integer B >= 30; q0 in J_B; 4*u0 >= 3*B",
+  "first_core_entry_times_checked": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "results": [
+    "unsat",
+    "unsat",
+    "unsat",
+    "unsat",
+    "unsat",
+    "unsat",
+    "unsat"
+  ],
+  "bound": "max(a_entry,b_entry) <= u0-B/2+20",
+  "scope": "Additional strip-clock implication only. Entry within six steps and rare-basin exclusion are proved in the existing audits."
+}

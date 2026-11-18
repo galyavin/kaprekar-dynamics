@@ -1,0 +1,464 @@
+\documentclass[11pt]{amsart}
+\usepackage{amssymb}
+\usepackage[margin=1.15in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\emergencystretch=2em
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\begin{document}
+
+\title{A common arrival-time law for five-digit Kaprekar dynamics}
+\author{Rustem Galyavin}
+\thanks{Contact: \href{mailto:rustem@galyavin.com}{rustem@galyavin.com}. ORCID: \href{https://orcid.org/0009-0006-6875-9170}{0009-0006-6875-9170}.}
+\date{18 November 2026}
+\subjclass[2020]{Primary 11A63; Secondary 37P99, 60F05}
+\keywords{Kaprekar routine, digit dynamics, arrival times, scaling limits, piecewise-affine maps}
+
+\begin{abstract}
+Fix five digit slots and let the integer base tend to infinity. For a uniformly chosen nonconstant ordered input, the first arrival time at a terminal cycle, divided by the base, converges, as the base grows through all integers, to one continuous law. We express that law through a fold and a counted shear on two digit differences, give a finite rational algorithm for its distribution function at rational arguments, and obtain certified moment bounds. Along each residue class of the base modulo three, the limiting time is independent of the terminal-cycle label, whose weights depend on that class. We determine the exact basin of the additional even-base two-cycle and prove that the maximum arrival time is \(B/3+\sqrt B/3+O(1)\). A conditional limit in a band of probability of order \(B^{-1}\) identifies the overshoot responsible for the square-root scale. The proofs separate the limiting geometry and weighted lattice arguments from explicit finite integer-affine checks, which are supplied with executable encodings; the reduction to the pair map, the core finite claims and the terminal enumeration are also verified in Lean~4.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+\subsection{Fixed digit count, growing base}
+
+Kaprekar's routine sorts a fixed number of digits in decreasing and increasing order and subtracts the second number from the first, retaining leading zeros. This paper studies the regime in which the number of slots is fixed and the integer base \(B\) grows. Dividing digit differences by \(B\) gives a compact state space and a piecewise-affine limiting map. Integer borrowing contributes bounded corrections to one step; on a region where the limiting map merely permutes coordinates, these corrections accumulate over order \(B\) steps. The limiting map determines entry and the geometric clock, while the integer corrections determine the speed and the terminal residue class.
+
+Five slots give a complete example: a two-dimensional map yields an explicit arrival-time distribution common to all bases, together with a second scale near the edge of its support. Ordered digit strings are the sampling units; uniform sampling of difference pairs would give a different law.
+
+\subsection{Related work}
+
+Prichett classified five-digit terminal cycles in arbitrary bases and developed the difference-coordinate algorithm \cite[Sections~1--4, especially Tables~4.1--4.3]{Pri}. We retain his cycle labels, with explicit definitions below. Devlin and Zeng determine maximum distances to the nonzero four-digit fixed point and study its basin as the base varies \cite[Theorems~1 and~2]{DZ}. Chen, Ono, Schwartz and Thakur prove a projective-doubling description of four-digit dynamics in odd bases greater than \(3\) \cite[Theorems~1 and~24]{COST}. For four digits in even bases, the companion papers classify the cycles \cite{G1} and give exact arrival-time distributions for unions of lifted cycles when the odd part is at least five \cite{G2}. These concern different observables or digit counts from the five-digit population law proved here.
+
+Dahl's exhaustive finite-base study examines convergence distances, basin statistics and projected drift for three through six slots \cite[Sections~2--3 and Appendix~A]{Dahl}. We cite the published article in \emph{Entropy}; its related preprint \cite{DahlPre} has a different title. The present results concern the limit as the base grows, rather than fixed-base statistical descriptions. Difference coordinates and affine sorting formulas are classical; our results are the weighted growing-base arrival law, its joint and conditional refinements, and the sharp maximum asymptotic.
+
+\subsection{Main results}
+
+In integer base \(B\), retain five digit slots, including leading zeros, and subtract the increasing digit arrangement from the decreasing arrangement. Choose uniformly among the \(B^5-B\) nonconstant ordered inputs. Let \(T_B\) be first arrival at any terminal cycle, counting an input already on a cycle at time zero. For sorted digits \(d_1\ge\cdots\ge d_5\), put \(u=d_1-d_5\) and \(v=d_2-d_4\).
+
+\begin{theorem}[Common arrival law]\label{thm:1}
+There is an explicit continuous distribution \(F\), with support exactly \([0,1/3]\), such that \[T_B/B\Rightarrow L\qquad(B\longrightarrow\infty)\] through all integer bases, without a congruence restriction. It has no atoms, including at zero. Here \(L=\tau(X,Y)\), where \(\tau\) is the function given by \eqref{eq:13}--\eqref{eq:15} in Section~\ref{sec:limitvar} and \((X,Y)\) has density \begin{equation}\label{eq:1}
+\rho(x,y)=120(1-x)y(x-y),\qquad 0<y<x<1.
+\end{equation}
+
+For rational \(t<1/3\), \(F(t)\) is an exactly computable rational number given by a finite polygon sum. In particular, \begin{equation}\label{eq:2}
+F(1/25)=\frac{713903}{39062500},\qquad
+ \Pr(T_B\ge B/25)\longrightarrow
+ \frac{38348597}{39062500}=0.9817240832.
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[Uniform bound and moments]\label{thm:2}
+For every \(B\ge30\) and every nonconstant input, \begin{equation}\label{eq:3}
+T_B\le B/3+\lceil\sqrt B\rceil+20.
+\end{equation} Consequently all positive integer moments converge: \begin{equation}\label{eq:4}
+\mathbb E[(T_B/B)^k]\longrightarrow\mathbb E[L^k],
+ \qquad
+ \frac{\max T_B}{B}\longrightarrow\frac13.
+\end{equation} Certified integration bounds give \begin{equation}\label{eq:5}
+0.1827011465<\mathbb E[L]<0.1827011669.
+\end{equation}
+\end{theorem}
+
+\begin{theorem}[Joint time/cycle law]\label{thm:3}
+Let \(C_B\) be the terminal-cycle label, in Prichett's notation \cite[Tables~4.1--4.3]{Pri}; the cycles are listed after \eqref{eq:22}. For every real \(t\), along each indicated sequence of bases, \begin{equation}\label{eq:6}
+\begin{array}{c|c}
+ B\pmod3&\displaystyle\lim\Pr(T_B/B\le t,C_B=C)\\\hline
+ 0&F(t)\quad(C=T_1),\\
+ 1&\tfrac23F(t)\quad(C=T_3),\qquad
+       \tfrac13F(t)\quad(C=T_4),\\
+ 2&F(t)\quad(C=T_5).
+\end{array}
+\end{equation} Every unlisted label has limiting probability zero. Here \(T_1\) is the regular fixed point, \(T_3\) a three-cycle, and \(T_4,T_5\) distinct classical four-cycle families. Thus along \(B\equiv1\pmod3\), scaled time and destination are asymptotically independent. Conditional on any label of positive limiting mass, the arrival law is the same \(F\). For every positive integer \(k\), the corresponding mixed moments converge to the displayed cycle weight times \(\mathbb E[L^k]\).
+
+For every even \(B\ge30\), the additional two-cycle \(T_2\) has exactly three difference pairs in its entire basin. Its exact ordered-input arrival histogram is \begin{equation}\label{eq:7}
+N_{T_2}(0)=2,\quad
+ N_{T_2}(1)=35B^2-75B-12,\quad
+ N_{T_2}(2)=5B^2-5B.
+\end{equation} There are no other arrival times in that basin, whose probability is \begin{equation}\label{eq:8}
+\Pr(C_B=T_2)=\frac{40B^2-80B-10}{B^5-B}\sim\frac{40}{B^3}.
+\end{equation} For odd \(B\ge30\), this cycle is absent.
+\end{theorem}
+
+\begin{theorem}[Sharp second-order maximum and an effective rate]\label{thm:4}
+For every \(B\ge30\), \begin{equation}\label{eq:9}
+\frac B3+\frac{\sqrt B}{3}-5
+ \ \le\ \max T_B\ \le\
+ \frac B3+\frac{\sqrt B}{3}+60.
+\end{equation} In particular the coefficient of the second-order term is exactly \(1/3\).
+
+The full CDF also has the effective, deliberately non-sharp bound, for each integer \(N\ge1\), \begin{equation}\label{eq:10}
+\begin{aligned}
+ \sup_t\left|\Pr(T_B/B\le t)-F(t)\right|
+ &\le \min\left\{1,\ \Omega\!\left(\frac1{2(N+1)}\right)\right.\\
+ &\qquad\left. +\frac{10^5(N+4)^2(2^{N+5}+N+10)}{B}
+ +\frac1{B^4-1}\right\}.
+ \end{aligned}
+\end{equation} Here \(\Omega\) is the omitted-mass polynomial in \eqref{eq:25}. Choosing \(N=\max(1,\lfloor(\log_2 B)/2\rfloor)\) gives \begin{equation}\label{eq:11}
+\sup_t\left|\Pr(T_B/B\le t)-F(t)\right|
+       =O((\log B)^{-2}).
+\end{equation}
+\end{theorem}
+
+The explicit rate bound is conservative and can be trivial at practical bases.
+
+\begin{theorem}[Conditional overshoot law]\label{thm:5}
+Fix \[0<\alpha<\beta<\infty,\qquad \tfrac12<\gamma<\zeta<1.\] Condition on the event \[E_B=\left\{\alpha\le\Lambda_B=\frac{B-u}{\sqrt B}\le \beta,
+                 \quad \gamma\le Z_B=\frac vB\le \zeta\right\}.\] Put \(Y_B=(T_B-B/3)/\sqrt B\) and \[\kappa=\int_\alpha^\beta\int_\gamma^\zeta120\lambda z(1-z)\,dz\,d\lambda.\] Then \(\Pr(E_B)=\kappa/B+O(B^{-3/2})\), and the conditional joint law satisfies \begin{equation}\label{eq:12}
+(\Lambda_B,Z_B,Y_B)\mid E_B\ \Rightarrow\
+ \frac{120\lambda z(1-z)}{\kappa}\,d\lambda\,dz\;
+ \operatorname{Unif}\left[
+ -\lambda,\frac{\sqrt{\lambda^2+2z-1}}3-\lambda
+ \right](dy).
+\end{equation} The convergence holds through all integer bases. Conditional moments of every nonnegative integer order converge. More generally, the joint expectation error is \(O(B^{-1/2})\) for any fixed Lipschitz test function on the uniformly bounded joint support; the constant may depend on the band and the test function.
+\end{theorem}
+
+\subsection{The limiting random variable}\label{sec:limitvar}
+
+Given \(0<y<x<1\), define \((U,V)\) by \begin{equation}\label{eq:13}
+\begin{array}{c|c}
+\text{initial region}&(U,V)\\\hline
+x<1/2 &(1-y,1-x-y)\\
+x\ge1/2,\ x+y<1 &(1-y,x-y)\\
+x+y\ge1,\ y<1/2 &(x,x-y)\\
+y\ge1/2 &(x,x+y-1).
+\end{array}
+\end{equation} Shared edges can be assigned consistently to either adjacent formula. Put \begin{equation}\label{eq:14}
+\delta=1-U=\min(y,1-x),\qquad
+ n=\max\left(0,\left\lceil\frac{V-1/2}{\delta}\right\rceil\right),
+ \qquad w=V-n\delta.
+\end{equation} Finally set \begin{equation}\label{eq:15}
+A=U+w-1,\quad C=2U-w-1,\qquad
+ \tau(x,y)=\frac23\bigl[\max(0,A,C)-\min(0,A,C)\bigr].
+\end{equation} The law in Theorem~\ref{thm:1} is \begin{equation}\label{eq:16}
+F(t)=\int_{0<y<x<1}\mathbf1\{\tau(x,y)\le t\}\rho(x,y)\,dx\,dy.
+\end{equation} This specifies the observable directly: one fold, one counted shear, and a range calculation. The polygon integration below makes \eqref{eq:16} an effective distribution formula.
+
+\section{Setup: difference coordinates and input weights}
+
+For sorted digits \(d_1\ge\cdots\ge d_5\), use the differences \(u=d_1-d_5\), \(v=d_2-d_4\). Their domain is \(1\le u<B\), \(0\le v\le u\). One subtraction is the function \[K_B(u,v)=(B^4-1)u+(B^3-B)v.\] It is injective: the coefficient of \(u\) exceeds \(B-1\) times the coefficient of \(v\). Thus equal output values force equal \(u\), then equal \(v\). For \(v>0\), its borrowed digits are \begin{equation}\label{eq:17}
+(u,v-1,B-1,B-v-1,B-u).
+\end{equation} For \(v=0\), they are \((u-1,B-1,B-1,B-1,B-u)\). Sorting these digits defines the pair map \(f_B\). Write \(h_B(q)\) for the first pair-cycle arrival. If \(D\) sends a digit string to its pair, then \(f_B=D\circ K_B\), while numerical subtraction is \(K_B\circ D\). Injectivity of \(K_B\) identifies the two kinds of cycle. For an input not already on a numerical cycle, its first cycle value is therefore reached at time \(h_B+1\). Cycle inputs have time zero, so \(|T_B-h_B|\le1\).
+
+The number of ordered inputs represented by a pair is \begin{equation}\label{eq:18}
+w_B(u,v)=(B-u)
+ \begin{cases}
+ 20u-10,&v=0,\\
+ 30u-10,&u=v>0,\\
+ 120v(u-v)-20,&0<v<u.
+ \end{cases}
+\end{equation} To count, subtract the smallest digit, leaving sorted digits \((u,k+v,c,k,0)\), with \(0\le k\le u-v\) and \(k\le c\le k+v\). There are \(B-u\) choices of the subtracted digit. For \(0<v<u\), each interior \(k\) contributes \(120(v-1)+60+60=120v\) ordered permutations; each endpoint contributes \(60(v-1)+20+30=60v-10\). For \(u=v>0\), the contribution is \(30(v-1)+10+10\); for \(v=0\), it is \(20(u-1)+5+5\). These give \eqref{eq:18}, and partitioning the nonconstant inputs gives total weight \(B^5-B\). Dividing by \(B^3\) on interior pairs yields \eqref{eq:1}. Equivalently, sort five independent uniform points on \([0,1]\). Their outer and next-outer differences have density \eqref{eq:1}. Rounding the five points down to base-\(B\) digits couples the discrete pair divided by \(B\) to this continuous pair almost surely. Conditioning out constant inputs changes probabilities by only \(B^{-4}\).
+
+The difference representation is classical \cite[Section~1]{Pri}. The preceding count fixes the population measure used throughout this paper.
+
+\section{A uniform remaining-time certificate on the core}
+
+For \(B\ge30\), define the forward core \begin{equation}\label{eq:19}
+H_B=\{(u,v):2v\le B-1,\ 2(u-v)\le B-3,
+                  \ a=u+v-B\ge-2,\ b=2u-v-B\ge-2\}.
+\end{equation} All regions in integer coordinates are intersected with \(1\le u<B,\ 0\le v\le u\). Write \(W_B=H_B\cap\{a,b\ge1\}\).
+
+Sorting \eqref{eq:17} gives exactly three rules on \(H_B\): \begin{equation}\label{eq:20}
+(a,b)\longmapsto
+ \begin{cases}
+ (b,a-3),&a\ge1,\\
+ (b,-2a),&a=-1,0,\\
+ (b+1,3),&a=-2.
+ \end{cases}
+\end{equation} In \((u,v)\) these are respectively \((u-1,u-v+1)\), \((B-v,2u-B)\), and \((B-v,u-v-1)\). The core inequalities imply \(2u\ge B\) and \(v>0\); the only remaining sorting comparison is controlled by \(a\). Substitution in \eqref{eq:19} shows that each image remains in \(H_B\). The restrictions \(B\ge30\) leave enough margin for both small exceptional rows. Appendix A specifies a reproducible check of these sorting identities and inequalities.
+
+Write \(M=\max(a,b)\). When \(M\ge10\), two steps of \eqref{eq:20} give \begin{equation}\label{eq:21}
+M_{j+2}=M_j-3+\mathbf1\{\min(a_j,b_j)=-2\}.
+\end{equation} Among the disjoint two-step blocks starting at \(j=0,2,4,\ldots\), the exceptional indicator occurs at most once before \(M<10\). Indeed, that two-step block produces \((3,M-2)\) or its transpose. If another two-step block is needed, its smaller coordinate becomes zero, and all subsequent two-step blocks keep that smaller coordinate zero. Before the exceptional block, positive minima decrease by three; the other boundary class alternates between minima \(-1\) and 2.
+
+Starting with \(-2\le a,b\le9\), the two-step map stays in that box; intermediate coordinates are at most 10. Direct enumeration of these 144 starts under the base-free rule \eqref{eq:20} gives maximum transient 10 and \begin{equation}\label{eq:22}
+-3\le h-\tfrac23\max(a,b)\le16/3.
+\end{equation} For reproducibility, its four cycles, up to rotation, are \[\begin{gathered}
+ (0,0);\\
+ (-2,0)\to(1,3)\to(3,-2);\\
+ (-1,-1)\to(-1,2)\to(2,2)\to(2,-1);\\
+ (-1,0)\to(0,2)\to(2,0)\to(0,-1).
+\end{gathered}\] In this order label the cycles \(T_1,T_3,T_4,T_5\), respectively. Their pair coordinates are recovered by \(u=(a+b+2B)/3\), \(v=(2a-b+B)/3\), so only those with \(a+b\equiv B\pmod3\) occur in a given base. These agree with Prichett's labels \cite[Tables~4.1--4.3]{Pri}. The additional even-base two-cycle lies outside \(H_B\). No cycle has \(M>3\); a two-step block starting with \(M\ge10\) cannot skip first capture.
+
+If \(k\) two-step blocks precede the terminal square, then \(M_{2k}=M_0-3k+e\) with \(e\in\{0,1\}\). Combining this identity with \eqref{eq:22} proves the uniform certificate \begin{equation}\label{eq:23}
+-3\le h_B(u,v)-\Phi_B(u,v)\le6,\qquad
+ \Phi_B=\frac23\max(u+v-B,2u-v-B),\quad (u,v)\in H_B.
+\end{equation} This controls cumulative error, even when the orbit enters and leaves \(W_B\) many times. It does not assert that \(\Phi_B\) drops by one on every single step.
+
+\section{Entry and convergence of the full population}
+
+Away from the zero-coordinate boundary, dividing \eqref{eq:17} by \(B\) gives the leading map \eqref{eq:13}. Its four affine pieces have determinant \(\pm1\). Call this map \(f_0\).
+
+After one step, \(U\ge1/2\) and \(U-V\le1/2\). If \(V>1/2\), the only leading branch is \((U,V)\mapsto(U,V-(1-U))\). Exactly the number of repetitions in \eqref{eq:14} puts the point in the strip \[S=\{U\ge1/2,\ 0\le w\le1/2,\ 0\le U-w\le1/2\}.\] The count is finite because \(\delta>0\), and at most \(1/(2\delta)\). Throughout these repetitions the second coordinate remains positive.
+
+The strip is forward invariant. In its margins \((A,C)=(U+w-1,2U-w-1)\), its leading map is \begin{equation}\label{eq:24}
+(A,C)\mapsto
+ \begin{cases}(C,A),&A\ge0,\\(C-A,-A),&A<0.\end{cases}
+\end{equation} The range of the triple \((0,A,C)\) is invariant: the first rule permutes two entries, and the second permutes the triple and translates all three entries by \(-A\). In at most two steps both margins are nonnegative. For example, if \(A<0\) and \(C-A<0\), the two successive lower branches give \((-C,A-C)\), both positive. If \(A\ge0>C\), a swap followed by the lower branch gives positive margins.
+
+Except on a countable union of affine lines, the final inequalities are strict: the point is in the interior \[D=\{y<1/2,\ x-y<1/2,\ x+y>1,\ 2x-y>1\}\] of the scaled drift region. Exceptional lines include sorting equalities, shear-count endpoints and zero terminal margins. Their preimages under every finite branch word are again affine lines because the linear parts are invertible. They therefore have zero probability under \eqref{eq:1}.
+
+For almost every coupled continuous input, this is a finite itinerary into \(D\). The corresponding rounded digit input follows a convergent finite itinerary; strict terminal margins put its pair in \(W_B\subset H_B\) for all sufficiently large \(B\). Its finite entry time divided by \(B\) vanishes. Apply \eqref{eq:23}, divide by \(B\), and use the range invariance in \eqref{eq:24}. This proves almost-sure convergence of the scaled clocks in the coupling to \eqref{eq:15}, hence Theorem~\ref{thm:1}. It also proves vanishing input weight of paths that fail to enter the core, without assuming that a small initial boundary has a small basin.
+
+On each of the countably many open branch cells, \(\tau\) is a nonconstant affine function: \eqref{eq:24} reduces its range to a nonzero linear form after an invertible affine change. Thus every level set has probability zero. On \(D\), \(0<\tau<1/3\); each value in this interval occurs along \(y=x/2\), where \(\tau=x-2/3\), with positive-density neighbourhoods. Invariance establishes the same bounds on the entire almost-everywhere entry domain. This proves the asserted continuity, absence of an atom at zero and exact support.
+
+\section{Finite exact CDF calculation and moment enclosures}
+
+Use coordinates \(d=1-x\), \(y\), and \(z=x-y\). They are positive and sum to one, and \eqref{eq:1} becomes \(120dyz\). For \(0\le\epsilon\le1/2\), direct polynomial integration gives \begin{equation}\label{eq:25}
+\Omega(\epsilon)=\Pr(\min(d,y)<\epsilon)
+     =20\epsilon^2-40\epsilon^3+32\epsilon^5.
+\end{equation} For cutoff \(N\ge1\), take \(\epsilon=1/[2(N+1)]\) and retain the polygon \(d,y\ge\epsilon\). It requires at most \(N\) shear steps. Intersect this polygon with each initial cell in \eqref{eq:13}, and with the shear-count guards \begin{equation}\label{eq:26}
+n=0:\ V\le1/2;\qquad
+ n\ge1:\ V-(n-1)\delta>1/2,\quad V-n\delta\le1/2.
+\end{equation} On each resulting polygon, \(A,C\) are affine. For \(r=3t/2\), the event \(\tau\le t\) is exactly the six half-plane conditions \begin{equation}\label{eq:27}
+|A|\le r,\qquad |C|\le r,\qquad |A-C|\le r.
+\end{equation} Integrate the polynomial density over these clipped rational polygons. Their mass before the time cut is exactly \(1-\Omega(\epsilon)\), and the omitted CDF contribution is at most \(\Omega(\epsilon)\).
+
+There is a stronger termination fact. If \(\delta<\epsilon\le1/4\), then \(U>3/4\), and the strip point is already in the closure of \(D\), with both margins positive. Its second coordinate lies between \(1/2-\delta\) and \(1/2\), so \begin{equation}\label{eq:28}
+\frac13-\delta\le\tau\le\frac13-\frac23\delta.
+\end{equation} Therefore, when \(\epsilon\le1/3-t\), the omitted CDF contribution is \textbf{zero}. For every fixed rational \(t<1/3\), choosing \[N\ge\max\left(1,\left\lceil\frac1{2(1/3-t)}\right\rceil-1\right)\] makes \eqref{eq:26}--\eqref{eq:27} an exact finite rational formula for \(F(t)\). Values at and outside the endpoints are 0 and 1 as appropriate. The implementation uses rational polygon clipping and Green's theorem for polynomial integrals; the four initial cells at \(N=1\) already give \eqref{eq:2}.
+
+For the \(k\)-th moment, split each retained cell according to the six orderings of \(0,A,C\), then integrate \(\rho\,[2(\max-\min)/3]^k\). Bound its omitted part using \eqref{eq:28}. In particular, the lower and upper omitted integrals are \begin{equation}\label{eq:29}
+\int_0^\epsilon(1/3-s)^k \Omega'(s)\,ds,
+ \qquad \int_0^\epsilon(1/3-2s/3)^k \Omega'(s)\,ds.
+\end{equation} These are rational polynomial integrals. For the first moment the enclosure width is \[\frac13\left(\frac{40}3\epsilon^3-30\epsilon^4
+                         +\frac{80}3\epsilon^6\right).\] Cutoff 300 gives \eqref{eq:5}.
+
+\section{Global entry bound, moments, and maximum}
+
+It remains to control rare discrete inputs for Theorem~\ref{thm:2}. Define the larger strip \begin{equation}\label{eq:30}
+J_B=\{2u\ge B-1,\ 2v\le B+1,\ 2(u-v)\le B+2\}.
+\end{equation} Again intersect with the state domain. The two even-base cycle pairs are \[\mathcal T_{2,B}=\{(B/2,B/2-1),(B/2+1,0)\},\] with the set empty for odd \(B\).
+
+\begin{lemma}[Finite affine entry]\label{lem:entry}
+For every integer \(B\ge30\), each point of \(J_B\) reaches \(H_B\cup\mathcal T_{2,B}\) within six pair steps.
+\end{lemma}
+
+Here is the full certificate specification. Express the four digits other than \(B-1\) as integer affine forms \(u,v-1,B-v-1,B-u\). Their 24 orders, with ties assigned to increasing original index, give exhaustive disjoint linear guards. On order \(i_1i_2i_3i_4\), the next pair is \((B-1-d_{i_4},d_{i_1}-d_{i_3})\). Add the two orders for \(v=0\). Introduce seven pairs \(q_0,\ldots,q_6\); require \(q_0\in J_B\), all six guarded transitions, and \(q_j\notin H_B\cup\mathcal T_{2,B}\) for every \(j\). This integer linear formula is unsatisfiable. \texttt{five\_clock\_audit.py} constructs this formula and Z3 returns UNSAT (Appendix A). There is no upper bound on \(B\) in this check.
+
+For completeness, reaching this strip takes only \(O(\sqrt B)\) steps uniformly. From any pair with \(v>0\), one sorted subtraction gives \(2u'\ge B-1\) and \(2(u'-v')\le B+2\). These affine inequalities are also verified over every sorting cell in the audit. When initially \(v=0\), the next second coordinate is \(\min(u-1,B-u)\), which vanishes only at \(u=1\). That state maps to \((B-1,0)\), whose next second coordinate is 1. Thus at most two steps give a positive second coordinate, after which the preceding observation applies.
+
+If the new second coordinate exceeds \((B+1)/2\), the high branch with \(u>v\) is \[(u,v)\mapsto(u-1,u+v-B+1).\] Prichett already uses this recurrence to force exit from the high region \cite{Pri}. At a high diagonal \(u=v\), it is \((u,2u-B)\). Both preserve the first and difference bounds needed for \(J_B\). There can be at most two diagonal steps before the high region is left: an off-diagonal step can produce a diagonal only from \((B-1,B-2)\), and the resulting diagonal at \(B-2\) cannot lead to another one. Each off-diagonal high step decreases \(u\) by one; diagonal steps do not increase either coordinate. After \(k\) off-diagonal steps, \[v\le B-1-k(k-1)/2.\] Hence at most \(\lceil\sqrt B\rceil+2\) off-diagonal and two diagonal steps are needed to enter \(J_B\). Together with the at most three preparatory steps and the six-step entry lemma, every pair reaches \(H_B\) or the additional cycle within \(\lceil\sqrt B\rceil+13\) steps.
+
+On \(H_B\), \eqref{eq:19} and \(u\le B-1\) imply \(\max(a,b)\le(B-3)/2\). Its remaining pair time is therefore at most \(B/3+5\), by \eqref{eq:23}. Including the actual-input clock correction proves \eqref{eq:3}, with slack. Uniform boundedness of \(T_B/B\), combined with the almost-sure coupling above, proves all positive integer moment limits. The upper maximum limit follows from \eqref{eq:3}; the lower follows from the limiting law's positive mass in every interval immediately below \(1/3\). This proves Theorem~\ref{thm:2}.
+
+\section{Residue transport and the joint law}
+
+First identify the destination inside \(H_B\). Its margins satisfy \(a+b=3u-2B\equiv B\pmod3\). The four terminal cycles listed after \eqref{eq:22} give \(T_1\) when \(B\equiv0\), and \(T_5\) when \(B\equiv2\). When \(B\equiv1\), \begin{equation}\label{eq:31}
+C_B=T_4\ \Longleftrightarrow\ a\equiv b\equiv2\pmod3
+          \ \Longleftrightarrow\ u+v\equiv0\pmod3;
+\end{equation} all other core states reach \(T_3\). To verify the first equivalence for the whole core, the first row of \eqref{eq:20} swaps residues. In the second row, \(a=-1\) maps to \((b,2)\), and \(a=0\) maps to \((b,0)\); membership in the class \((2,2)\) is preserved in both directions. In the third row, \(a=-2\) is outside that class and its image has second residue zero, so it remains outside. Finally, the terminal \(T_4\) cycle is wholly in \((2,2)\), and the terminal \(T_3\) cycle wholly outside. The core descent just proved supplies eventual arrival in that terminal list. This proves \eqref{eq:31} without an assumption about mixing.
+
+We need the following elementary weighted lattice fact. Let \(E\) be a bounded Jordan-measurable subset of the open pair triangle, and fix a residue \(r\in(\mathbb Z/3\mathbb Z)^2\). Then \begin{equation}\label{eq:32}
+\frac1{B^5-B}\sum_{\substack{(u/B,v/B)\in E\\(u,v)\equiv r\ (3)}}
+ w_B(u,v)\longrightarrow\frac19\int_E\rho(x,y)\,dx\,dy.
+\end{equation} On strict interior pairs, \eqref{eq:18} gives \(w_B/B^3=\rho(u/B,v/B)+O(B^{-2})\), uniformly on the triangle. A residue coset has mesh \(3/B\) in each direction, so its Riemann sum has one ninth of the full limiting integral. Boundary pairs have total normalized weight tending to zero. There are only nine cosets, making convergence uniform over their choice and over any union of three cosets.
+
+Fix a strict finite leading itinerary into \(D\), restricted to a compact polygon inside its continuity cell and away from all encountered sorting equalities. For sufficiently large \(B\), every lattice pair in this polygon follows the same exact branch word. Its endpoint has the form \begin{equation}\label{eq:33}
+q_{\rm end}=Gq+B b+c,\qquad G\in\operatorname{GL}_2(\mathbb Z),
+\end{equation} where \(G,b,c\) are fixed on that word and \(\det G=\pm1\). This follows from the four strict leading-cell linear parts, whose corresponding exact integer maps differ only by constant borrow offsets. Products remain unimodular. Thus \eqref{eq:33} permutes the nine residue classes; exactly three initial classes satisfy \eqref{eq:31} at the endpoint. The classes may depend on the word and on the base residue, but their number does not.
+
+On this compact polygon the entry length is fixed, the scaled endpoint error is \(O(B^{-1})\), and \eqref{eq:23} gives uniform convergence \(T_B/B\to\tau\). For a fixed \(t\), first restrict to \(\tau\le t-\eta\) or \(\tau\le t+\eta\). These are Jordan-measurable sets, since on a finite itinerary cell the clock is piecewise affine with finitely many linear boundaries. Apply \eqref{eq:32} to the three qualifying residue cosets and to their six-class complement, then let \(\eta\downarrow0\). The no-atoms result for \(\tau\) removes the difference between the two restrictions. The joint contributions are one third and two thirds of the same marginal integral.
+
+To pass to all inputs, the entry proof supplies a countable, full-measure cover by strict finite itinerary cells. For each \(\epsilon>0\), choose finitely many disjoint compact polygonal subsets of these cells with total continuous weight at least \(1-\epsilon\). Such subsets exist by absolute continuity and inner regularity, since cell boundaries have measure zero. The weighted lattice convergence also bounds the discrete mass of their complement by \(\epsilon+o(1)\). Sum the preceding argument over this finite collection, then let \(\epsilon\downarrow0\). This order of limits handles the unbounded shear count without a uniform itinerary-length assumption. It proves the \(B\equiv1\) assertion of \eqref{eq:6}. In the other two residue classes, the regular core label is deterministic, and the same exhaustion proves their assertions. Inputs that never enter the core have vanishing mass by this argument, irrespective of the exact rare-basin calculation.
+
+Division by the positive limiting basin mass proves the conditional laws. For mixed moments, the global uniform bound in Theorem~\ref{thm:2} makes every fixed power of \(T_B/B\) uniformly bounded for \(B\ge30\). Joint weak convergence then gives the asserted moment limits.
+
+\section{Exact additional two-cycle basin}
+
+Write \(B=2m\ge30\). The three pairs are \begin{equation}\label{eq:34}
+r_1=(m,m-1),\quad r_2=(m+1,0),\quad r_3=(m,0).
+\end{equation} Direct sorting of the borrowed digits gives \(r_1\mapsto r_2\mapsto r_1\) and \(r_3\mapsto r_1\). Their multiplicities from \eqref{eq:18} are respectively \begin{equation}\label{eq:35}
+30B^2-70B,\qquad 5B^2-5B-10,\qquad 5B^2-5B.
+\end{equation}
+
+To prove that no other pair enters this set, use the same exhaustive 24 positive-coordinate sort branches and two zero-coordinate branches as in the global entry audit. On each branch impose \(B\ge30\), \(B\equiv0\pmod2\), all branch guards, \(q\notin\{r_1,r_2,r_3\}\), and \(f_B(q)\in\{r_1,r_2,r_3\}\). Each of these 26 integer linear formulas is unsatisfiable. The executable specification is \texttt{five\_joint\_audit.py} (Appendix A). There is no upper cutoff on the base. Direct forward closure plus this predecessor closure proves that \eqref{eq:34} is the entire basin, not merely the initial boundary intersection of a larger basin.
+
+The two numerical cycle inputs have actual time zero. All other ordered inputs represented by \(r_1,r_2\) have time one, and every input represented by \(r_3\) has time two. Subtract the two numerical cycle inputs from the first two weights in \eqref{eq:35}; their sum and the third weight give \eqref{eq:7}--\eqref{eq:8}.
+
+\section{Sharp maximum and finite-base convergence}
+
+\subsection{Entry and remaining time must be bounded together}
+
+We refine the strip estimate used in Theorem~\ref{thm:2}. If \(q_0=(u_0,v_0)\in J_B\) and \(4u_0\ge3B\), then its first core entry \(q_j\), \(0\le j\le6\), satisfies \begin{equation}\label{eq:36}
+\max(a_j,b_j)\le u_0-B/2+20.
+\end{equation} The set cannot enter \(T_2\), since \eqref{eq:34} is its complete basin and none of those three pairs has \(4u_0\ge3B\) for \(B\ge30\). Thus the six-step lemma guarantees core entry. For each possible first-entry time \(j\), impose the sort-branch transitions, avoidance of \(H_B\) before \(j\), membership in \(H_B\) at \(j\), and violation of \eqref{eq:36}. These seven formulas are UNSAT over all integer \(B\ge30\). Appendix A specifies this check in \texttt{five\_quantitative\_audit.py}.
+
+After the at most three preparatory steps from Theorem~\ref{thm:2}, let \(n\) be the number of off-diagonal high steps and \(d\le2\) the number of diagonal high steps before entry into \(J_B\). The preceding estimate gives \(n\le\lceil\sqrt B\rceil+2\). Only off-diagonal high steps decrease the first coordinate, each by one. Write the strip-entry first coordinate as \(u_*\); then \(u_*\le B-1-n\).
+
+If \(u_*\ge3B/4\), \eqref{eq:36} and \eqref{eq:23} bound the remaining core time by \[\tfrac23(u_*-B/2+20)+6
+ \le B/3-\tfrac23(n+1)+58/3.\] Adding the preparatory steps, \(n+d\), at most six strip steps and the actual-input correction gives \(T_B\le B/3+n/3+92/3\le B/3+\sqrt B/3+32\).
+
+If \(u_*<3B/4\), there were at most 34 off-diagonal high steps. For \(B<1024\) this follows directly from the preceding square-root bound. For \(B\ge1024\), let \(r=B-u_{\rm start}\) at the start of the high segment. Since \(u_*=u_{\rm start}-n\), \[r>B/4-n\ge B/4-\sqrt B-3\ge B/8.\] Each off-diagonal high step decreases the second coordinate by at least \(r-1>B/8-1\), and diagonal steps do not increase it. Its initial value is less than \(B\), so there are fewer than ten such steps. The old uniform core bound now gives \(T_B\le B/3+51\). This proves the upper half of \eqref{eq:9}, including paths with no high segment.
+
+For a matching witness, put \begin{equation}\label{eq:37}
+\begin{gathered}
+ v_* =\lfloor(B-1)/2\rfloor,\qquad
+ n=\max\{j\ge1:j(j-1)/2\le B-3-v_*\},\\
+ (u_0,v_0)=(B-1,v_*+n(n-1)/2).
+ \end{gathered}
+\end{equation} Here \(n\ge\sqrt B-2\). The high recurrence is exact for all \(n\) steps: \[u_j=B-1-j,\qquad v_j=v_0-j(j-1)/2.\] Indeed \(u_0-v_0\ge2\), and \(u_j-v_j=(u_0-v_0)+j(j-3)/2\ge1\), so no diagonal step occurs. For \(j<n\), \(v_j>(B+1)/2\); at \(j=n\), \((u_n,v_n)=(B-1-n,v_*)\in H_B\). No earlier state lies on a regular core cycle or on \(T_2\). The maximum core margin is \(a_n=v_*-1-n\). Its lower clock bound gives an actual input time at least \[n+\tfrac23(v_*-1-n)-3+1
+ \ge B/3+n/3-10/3
+ \ge B/3+\sqrt B/3-4.\] Every valid pair has an ordered input representative, so this proves the stated lower bound with slack. The witness is constructed for every base, rather than chosen from a sampled maximum.
+
+\subsection{A uniform, conservative CDF error}
+
+Couple continuous digits and rounded base-\(B\) digits as before, initially without conditioning out constants. Restrict to \(\delta=\min(y,1-x)\ge\epsilon=1/[2(N+1)]\). Its omitted probability is exactly \(\Omega(\epsilon)\), and the leading entry itinerary has at most \(N+3\) steps.
+
+The positive-coordinate leading map is 2-Lipschitz in the maximum norm: sorting is 1-Lipschitz and taking a difference costs at most a factor two. The exact borrowed-digit map divided by \(B\) differs from it by at most \(2/B\) whenever the second integer coordinate is positive. Initial rounded pair error is at most \(2/B\). Hence, while positive coordinates are maintained, all errors through this itinerary are at most \begin{equation}\label{eq:38}
+E_N=2^{N+5}/B.
+\end{equation} Exclude the continuous inputs for which any required positive-coordinate or sorting guard, or a final strict drift-region guard, is within \(\eta=8E_N+8/B\) of zero. On the complement, induction validates positivity, the exact itinerary and core entry. The final four drift inequalities have more than enough slack for the integer offsets in \eqref{eq:19}.
+
+Here are explicit bounds on the exclusions. There are at most \(16(N+1)\) finite entry words: four initial cells, \(N+1\) shear counts and at most four choices for two final folds. Pulling the local comparison and terminal guards back through these words requires fewer than \(200(N+1)(N+4)\) affine forms. Every relevant nonconstant form has an integer linear part of norm at least one: the word matrices are unimodular. Constant guards either impose no boundary or define an empty strict word. In the unit square a strip \(|\ell|\le\eta\) for such a form has area at most \(2\sqrt2\eta\). The density \(\rho\le40/9<5\), so each exclusion costs at most \(15\eta\). Since \(\eta\le9E_N\), the total guard exclusion is at most \(27000(N+1)(N+4)E_N\).
+
+On the remaining inputs, the core clock and initial clock correction give \begin{equation}\label{eq:39}
+|T_B/B-\tau|\le\Delta_N=(N+10)/B+2E_N.
+\end{equation} On each entry word the range expression for \(\tau\) has at most six affine pieces. Each nonconstant gradient has norm at least \(2/3\), again by unimodularity and \eqref{eq:15}. Thus the probability, on the retained domain, of a clock strip \(|\tau-t|\le\Delta_N\) is at most \(22\cdot96(N+1)\Delta_N\), uniformly in \(t\). This avoids assuming a globally bounded limiting density at the endpoint.
+
+Combine the omitted mass, guard exclusions and clock strip. Conditioning out constant strings changes any event probability by at most \(1/(B^4-1)\). The two geometric error terms are bounded by the middle term in \eqref{eq:10}. If that expression exceeds one, the clipped bound is automatic. This proves \eqref{eq:10}, and its stated choice of \(N\) proves \eqref{eq:11}. The estimate is for the finite-base population CDF, distinct from the exact-integration truncation bounds \eqref{eq:25}--\eqref{eq:29}.
+
+\section{The conditional overshoot law}
+
+Set \(r=B-u\), \(\bar v=\lfloor(B+1)/2\rfloor\). On the high off-diagonal region \(u>v>\bar v\), direct sorting gives \[(u,v)\mapsto(u-1,u+v-B+1).\] Consequently, after \(j\) such steps, \begin{equation}\label{eq:40}
+u_j=B-r-j,\qquad v_j=v-D_r(j),\qquad
+ D_r(j)=j(r-1)+j(j-1)/2.
+\end{equation} Moreover \(u_j-v_j=(u-v)+j(r-2)+j(j-1)/2>0\) when \(r\ge2\). Thus no diagonal step intervenes. Let \[n=\min\{j:D_r(j)\ge v-\bar v\},\quad R=r+n,\quad
+ \nu=\bar v-v_n.\] Since \(D_r(n)-D_r(n-1)=R-2\), minimality gives exactly \begin{equation}\label{eq:41}
+0\le\nu\le R-3.
+\end{equation}
+
+All the following guards hold uniformly on the band of Theorem~\ref{thm:5} for sufficiently large \(B\). One explicit sufficient threshold is \begin{equation}\label{eq:42}
+\sqrt B\ge\max\left(32,\frac{16}\alpha,
+             \frac{16(\beta+2)}{\min(\gamma-1/2,1-\zeta)}\right).
+\end{equation} Indeed \(r\ge16\), initially \(u>v>\bar v\), and \eqref{eq:40} remains off diagonal until exit. Since \(D_r(j)\ge j(j-1)/2\), one has \(n\le\sqrt B+2\), hence \(R\le(\beta+2)\sqrt B\le B/32\). In particular all subsequent core margins used below are positive and large.
+
+If \(\nu\ge1\), the exit \((B-R,\bar v-\nu)\) is in \(H_B\). The first inequality follows from \(\bar v-1=\lfloor(B-1)/2\rfloor\). For even \(B=2k\), the difference inequality follows from \(\nu\le R-3\); for odd \(B=2k+1\) it is weaker still. Both margins are at least \(B/2-2R-1\). At \(\nu=0\), one more sorted step gives \begin{equation}\label{eq:43}
+\begin{array}{ll}
+ B=2k:&(2k-R,k)\mapsto(2k-R-1,k-R+1),\\
+ B=2k+1:&(2k+1-R,k+1)\mapsto(2k-R,k+2-R).
+ \end{array}
+\end{equation} Substitution shows that these states also lie in \(H_B\). Their maximum margins are respectively \(k-R-3\) and \(k-R-3\), using \(R\ge16\).
+
+Every reached core state is transient, since \eqref{eq:23} gives a positive remaining time. Hence none of its predecessors on the verified high segment can have been cyclic: a cycle state cannot later become transient. Elapsed time therefore adds exactly to the core time. Applying \eqref{eq:23}, \eqref{eq:43} and the actual-input correction proves the uniform formula \begin{equation}\label{eq:44}
+T_B=n+\frac23\left[B/2-R-\min(\nu,R-\nu)\right]+e_B,
+ \qquad |e_B|\le8.
+\end{equation} For \(\nu\ge1\), the difference \(\bar v-B/2\in\{0,1/2\}\) changes the displayed maximum margin by at most \(1/2\); the core error and the actual correction then give the bound. At \(\nu=0\), \eqref{eq:43} gives errors in \([-3,6]\) for even bases and \([-10/3,17/3]\) for odd bases. Thus \eqref{eq:44} also covers the endpoints, rather than discarding them for moment estimates.
+
+Writing \(\lambda=r/\sqrt B\), \(z=v/B\) and \(s=\sqrt{\lambda^2+2z-1}\), quadratic inversion of \eqref{eq:40} gives, uniformly on the compact band, \begin{equation}\label{eq:45}
+n/\sqrt B=s-\lambda+O(B^{-1/2}),\qquad
+ R/\sqrt B=s+O(B^{-1/2}).
+\end{equation} For \(\theta=\nu/(R-2)\), equations \eqref{eq:44}--\eqref{eq:45} yield \begin{equation}\label{eq:46}
+Y_B=\frac{s}3-\lambda-\frac{2s}3\min(\theta,1-\theta)
+                      +O(B^{-1/2}).
+\end{equation} In particular \(Y_B\) is uniformly bounded on the whole band.
+
+\subsection{Weighted exit blocks}
+
+The exact ordered-input multiplicity on \(0<v<u\) is \begin{equation}\label{eq:47}
+w_B(u,v)=(B-u)\,[120v(u-v)-20].
+\end{equation} It follows by splitting the sorted adjacent gaps and summing multinomial weights, as proved in the setup. This exact polynomial controls the probability of the shrinking band.
+
+Substitute \(u=B-r\), \(r=\lambda\sqrt B\), \(v=zB\). Uniformly on the band, \[w_B(B-r,v)=120\lambda z(1-z)B^{5/2}+O(B^2).\] The lattice spacings in \((\lambda,z)\) are \(B^{-1/2}\) and \(B^{-1}\). Dividing by \(B^5-B\) and summing proves \(\Pr(E_B)=\kappa/B+O(B^{-3/2})\), including the floor/ceiling errors on the compact rectangle. It also gives the limiting conditioned \((\lambda,z)\) density.
+
+For fixed \(r,n\), the complete set of initial \(v\)'s yielding that exit time is \[\bar v+D_r(n-1)<v\le \bar v+D_r(n).\] It consists of \(R-2\) consecutive integers, and \(\nu\) runs once through \(0,\ldots,R-3\). The block length is bounded above and below by positive band-dependent multiples of \(\sqrt B\). Within the block, \(z\) varies by \(O(B^{-1/2})\); the relative variation of the positive weight \eqref{eq:47} is also \(O(B^{-1/2})\), since \(v\) and \(B-r-v\) are uniformly comparable to \(B\).
+
+There are at most two incomplete blocks for each \(r\) at the conditioning boundaries. Their total relative weight is \(O(B^{-1/2})\): they contain \(O(B)\) pairs in total, each of weight \(O(B^{5/2})\), while the entire band has weight of order \(B^4\). On each complete block, the uniform grid \(\theta=\nu/(R-2)\) is a Riemann sum for Lebesgue measure on \([0,1]\). Thus, conditioned on \(E_B\), \begin{equation}\label{eq:48}
+(\Lambda_B,Z_B,\theta_B)\Rightarrow
+ \frac{120\lambda z(1-z)}{\kappa}\,d\lambda\,dz\,d\theta.
+\end{equation} For Lipschitz tests, the block-weight, incomplete-block and Riemann errors are all \(O(B^{-1/2})\). The same rate holds after the Lipschitz transformation \eqref{eq:46}, whose square root is bounded away from zero on the compact band.
+
+For uniform \(\theta\in[0,1]\), \(\min(\theta,1-\theta)\) is uniform on \([0,1/2]\). Applying \eqref{eq:46} to \eqref{eq:48} proves \eqref{eq:12}. The uniform bound on \(Y_B\) proves convergence of every conditional moment. This completes Theorem~\ref{thm:5}.
+
+\section{Computations and formal verification}\label{sec:verification}
+
+The distributional argument uses exact sorting, weighted counting and the finite terminal calculation. The uniform moment bound additionally uses the six-step integer strip-entry implication; the exact two-cycle basin uses predecessor closure; the sharp maximum uses a further strip-clock implication. The finite-base CDF estimate and overshoot limit are analytic consequences of the stated reductions. Finite-base trajectory checks corroborate these reductions but do not prove an asymptotic statement. The reduction to the pair map, the five claims of Appendix~\ref{app:claims} and the terminal enumeration are also formally verified in Lean, as described at the end of this section.
+
+The supplied checks were rerun on 17 November 2026 in an isolated source copy. All three integer-SMT audits passed. Direct subtraction checked the clock on 121,024 pairs, the joint labels and rare basins on 223,344 pairs, and the closed limiting clock on 4,560 rational points. Exact integration reproduced the displayed CDF and mean bounds. The maximum witness passed at 241 bases, including large bases; the overshoot formula passed on 9,208 starts and 3,971 high steps. Complete C++ reference graphs were regenerated for the recorded limit and joint comparison bases. The ancillary README maps each numerical statement to its command and records versions and source hashes.
+
+An independent re-derivation of each reduction from the text of an earlier draft of this paper was also carried out, with separately written Z3 encodings that use a total sorting-network transition model in place of the 26 guarded branches. All 43 of its checks passed: each of its 39 integer counterexample queries returned UNSAT under its stated hypotheses, with no upper bound on \(B\), and a separate comparison confirmed that the 26 branch guards partition the state domain. An independent exact integration reproduced \eqref{eq:2} and \eqref{eq:5}. Fresh bases from \(B=997\) to \(B=2{,}560{,}009\) were used to test the distribution function, the maximum, the cycle weights, the overshoot law, and \eqref{eq:7}. The last was checked by enumerating every ordered string for even \(8\le B\le36\). No discrepancy was found. These encodings and the review report are part of the ancillary material.
+
+\emph{Formal verification.} The reduction from five-digit subtraction to the pair map \(f_B\), the five claims of Appendix~\ref{app:claims} and the terminal enumeration behind \eqref{eq:22} are machine-checked in Lean~4 (version~4.28.0), with no external packages. The formal statements concern positional five-slot words with leading zeros: they prove that the formal step subtracts the ascending arrangement from the descending one, and that the difference pairs of every nonconstant word follow the iterates of \(f_B\) in every base \(B\ge2\). The statements about \(f_B\) hold for every integer base \(B\ge30\), restricted to even bases or to \(B\equiv1\pmod3\) where the paper is, with no upper bound. The main theorems depend only on Lean's standard axioms (propositional extensionality, choice and quotient soundness), and a fresh kernel replay of the compiled development succeeds. The global and joint probability laws, the asymptotic estimates and the basin multiplicities are proved in the text above and are not formalized. The Lean sources and build instructions are in the ancillary directory \texttt{lean/}.
+
+\appendix
+
+\section{Computer-assisted steps}\label{app:steps}
+
+\subsection{Exact transition encoding}
+
+All variables below are integers. Unless otherwise stated the domain is \(B\ge30\), \(1\le u<B\), \(0\le v\le u\). The following construction specifies the whole transition relation, including ties, without access to source code. For \(v>0\), set \[(d_0,d_1,d_2,d_3)=(u,v-1,B-v-1,B-u).\] For each permutation \(i_1i_2i_3i_4\) of \(0,1,2,3\), require \(d_{i_j}\ge d_{i_{j+1}}\), strengthened to \(d_{i_j}\ge d_{i_{j+1}}+1\) if \(i_j>i_{j+1}\). The image is \[(u',v')=(B-1-d_{i_4},\ d_{i_1}-d_{i_3}).\] These guards assign equal digits to increasing original index and partition the positive-coordinate domain. For \(v=0\), let \(p=u-1\), \(q=B-u\). The two cases are \[p\ge q:\quad(u',v')=(B-1-q,B-1-p),\qquad
+ q\ge p+1:\quad(u',v')=(B-1-p,B-1-q).\] Thus there are 26 disjoint guarded affine branches. They are encoded in \texttt{five\_excursions.py}, shared by the three audits. A reviewer can instead encode sorting directly, provided the five borrowed digits and tie handling agree with these formulas.
+
+\subsection{Claims and counterexample formulas}\label{app:claims}
+
+For an implication, the solver receives its hypotheses and the negation of its conclusion. Every formula below was UNSAT under Z3 5.4.1 (\texttt{z3-solver} package 5.4.1.0), using Python 3.9.6. No upper bound is imposed on \(B\). A SAT or UNKNOWN response is a failing check. Each claim is also a theorem of the Lean development described in Section~\ref{sec:verification}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Core rule and invariance.} On each guarded branch with input in \(H_B\), the output is in \(H_B\) and its margins obey \eqref{eq:20}. The same file checks that every input with \(v>0\) has \(2u'\ge B-1\), \(2(u'-v')\le B+2\), and a valid output pair. Encoding: \texttt{five\_clock\_audit.py}.
+\item
+  \textbf{Six-step entry.} Require \(q_0\in J_B\), six consecutive transitions, and \(q_j\notin H_B\cup\mathcal T_{2,B}\) for all \(0\le j\le6\). This conjunction is UNSAT. Encoding: \texttt{five\_clock\_audit.py}.
+\item
+  \textbf{Two-step descent.} For arbitrary \(a,b\ge-2\), \(\max(a,b)\ge10\), compose the three-row margin map twice. Its maximum equals \(\max(a,b)-3+\mathbf1_{\{\min(a,b)=-2\}}\). Encoding: \texttt{five\_clock\_audit.py}. The proof that the exceptional correction occurs at most once is the analytic argument in the core section.
+\item
+  \textbf{Rare predecessors.} In even bases, define \(R_B=\{(B/2,B/2-1),(B/2+1,0),(B/2,0)\}\). On each branch, \(q\notin R_B\), \(f_B(q)\in R_B\) is impossible. The same file checks, for \(B\equiv1\pmod3\) and \(q\in H_B\), \(u+v\equiv0\pmod3\) if and only if \(u'+v'\equiv0\pmod3\). Encoding: \texttt{five\_joint\_audit.py}.
+\item
+  \textbf{Entry margin bound.} For each \(0\le j\le6\), require \(q_0\in J_B\), \(4u_0\ge3B\), \(j\) transitions, \(q_i\notin H_B\) for \(i<j\), and \(q_j\in H_B\). Neither \(2a_j>2u_0-B+40\) nor \(2b_j>2u_0-B+40\) can hold. Encoding: \texttt{five\_quantitative\_audit.py}.
+\end{enumerate}
+
+From inside the ancillary directory, run all of these with
+
+\begin{verbatim}
+bash reproduce.sh audit
+\end{verbatim}
+
+The finite terminal calculation uses the 144 integer starts \((a,b)\in[-2,9]^2\). Iterate \eqref{eq:20}; at the first repeated state, the arrival time is the index of its first occurrence. The two-step map stays in this box, intermediate coordinates are at most 10, the maximum transient is 10, the four cycles are precisely the listed ones, and the extrema of \(h-2\max(a,b)/3\) are \(-3\) and \(16/3\). \texttt{five\_clock\_audit.py} enumerates these statements exactly. \texttt{five\_joint\_audit.py} checks the terminal periods and residue criterion on all 144 starts, and verifies that each of the four strict leading matrices has determinant \(\pm1\) and permutes all nine residue pairs. These enumerations use integer and rational arithmetic, not a solver.
+
+\subsection{Exact integration and finite comparisons}
+
+\texttt{five\_limit\_law.py} implements the polygon construction in the proof. For completeness, an oriented edge from \((x,y)\) to \((x+h,y+k)\) contributes \[\frac{k}{p+1}\sum_{i=0}^{p+1}\sum_{j=0}^{q}
+ \binom{p+1}{i}\binom qj
+ \frac{x^{p+1-i}h^i y^{q-j}k^j}{i+j+1}\] to the area integral of \(x^p y^q\), by Green's theorem. Summing edges and monomials gives exact rational integrals. With cutoff 300, the first moment's lower and upper endpoints lie strictly inside the displayed decimal bounds; decimal rounding is checked against exact rationals. \texttt{five\_limit\_checks.py} tests the monomial integrals, normalized cell masses, CDF clipping and nested moment enclosures. \texttt{p2\_numbers.py} reproduces the quoted CDF, tail and mean numbers, and independently enumerates input weights in small bases. Run \texttt{bash\ reproduce.sh\ limit} and \texttt{bash\ reproduce.sh\ numbers} in the same directory.
+
+The numerical comparison programs use ordinary digit subtraction to build complete pair graphs, then translate pair times to actual input times with the exact weights. The separate C++ implementation \texttt{five\_holdout.cpp} writes weighted histograms with the numerical cycle inputs moved from time one to time zero. The \texttt{joint}, \texttt{maximum}, and \texttt{overshoot} stages run \texttt{five\_joint\_checks.py}, \texttt{five\_quantitative\_checks.py}, and \texttt{p2\_overshoot\_checks.py}, respectively. The last calls only the five-digit part of \texttt{arithmetic\_scaling\_checks.py} and checks the stated error bound 8. None requires an additional solver. All outputs are generated in a private verification directory; the original research records are not overwritten.
+
+
+\section*{Data availability}
+The ancillary material, including the Lean development, is archived at Zenodo as version~1.2 of \href{https://doi.org/10.5281/zenodo.24325109}{doi:10.5281/zenodo.24325109}, and maintained at \url{https://github.com/galyavin/kaprekar-dynamics}.
+
+\section*{Tools}
+The research, computations and drafting were carried out with substantial assistance from AI systems (OpenAI Codex and Anthropic Claude), under the author's direction and close supervision. The computations use exact rational arithmetic in Python, a C++ reference implementation and the Z3 solver, and the formal verification uses Lean~4. The author takes responsibility for the contents.
+
+\begingroup\raggedright
+\begin{thebibliography}{DahlP}
+
+\bibitem[COST]{COST}
+E.~Chen, K.~Ono, R.~E. Schwartz and D.~Thakur, \emph{Four-digit Kaprekar dynamics in odd bases}, J. Integer Seq. \textbf{29} (2026), Article 26.4.7; \href{https://arxiv.org/abs/2606.20439}{arXiv:2606.20439}.
+
+\bibitem[Dah1]{Dahl}
+C.~D. Dahl, \emph{Coarse-grained drift fields and attractor-basin entropy in Kaprekar's routine}, Entropy \textbf{28} (2026), 92; \href{https://doi.org/10.3390/e28010092}{doi:10.3390/e28010092}.
+
+\bibitem[Dah2]{DahlPre}
+C.~D. Dahl, \emph{Information funnels and multiscale gap-space dynamics in Kaprekar's routine}, preprint (2025), \href{https://arxiv.org/abs/2512.05124}{arXiv:2512.05124}.
+
+\bibitem[DZ]{DZ}
+P.~Devlin and T.~Zeng, \emph{Maximum distances in the four-digit Kaprekar process}, Integers \textbf{21} (2021), Paper A97.
+
+\bibitem[G1]{G1}
+R.~Galyavin, \emph{Cycles of the four-digit Kaprekar map in even bases}, preprint (2026), \href{https://doi.org/10.5281/zenodo.24325110}{doi:10.5281/zenodo.24325110}.
+
+\bibitem[G2]{G2}
+R.~Galyavin, \emph{Arrival times for the four-digit Kaprekar map in even bases}, preprint (2026), \href{https://doi.org/10.5281/zenodo.24329321}{doi:10.5281/zenodo.24329321}.
+
+\bibitem[Pri]{Pri}
+G.~D. Prichett, \emph{Terminating cycles for iterated difference values of five digit integers}, J. Reine Angew. Math. \textbf{303/304} (1978), 379--388.
+
+\end{thebibliography}
+\endgroup
+
+\end{document}

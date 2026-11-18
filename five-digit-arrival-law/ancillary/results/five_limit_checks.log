@@ -1,0 +1,15 @@
+Direct subtraction: 121024 pairs; 10080 core states; identities and bounds agree.
+Closed limiting clock equals direct leading digit sorting at 4560 rational points.
+Exact polynomial integrals, normalization, CDF enclosures, and moment refinement agree.
+Holdout 313: mean/B=0.189810824, max CDF discrepancy on stated grid=0.034287
+Holdout 314: mean/B=0.184763577, max CDF discrepancy on stated grid=0.007187
+Holdout 315: mean/B=0.192870097, max CDF discrepancy on stated grid=0.051380
+Holdout 316: mean/B=0.189761994, max CDF discrepancy on stated grid=0.042780
+Holdout 317: mean/B=0.184723074, max CDF discrepancy on stated grid=0.013194
+Holdout 318: mean/B=0.192782775, max CDF discrepancy on stated grid=0.045938
+Holdout 1553: mean/B=0.182977723, max CDF discrepancy on stated grid=0.002227
+Holdout 1554: mean/B=0.184679866, max CDF discrepancy on stated grid=0.009772
+Holdout 1555: mean/B=0.184207782, max CDF discrepancy on stated grid=0.007303
+Holdout 1556: mean/B=0.182977705, max CDF discrepancy on stated grid=0.001328
+Holdout 1557: mean/B=0.184675432, max CDF discrepancy on stated grid=0.011636
+Holdout 1558: mean/B=0.184205497, max CDF discrepancy on stated grid=0.009166

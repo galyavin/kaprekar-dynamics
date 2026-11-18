@@ -1,0 +1,11 @@
+B 10009 pairs 50095044 total_weight_ok 1 cycles 2 cyclic_pairs 7
+cycle 0 label T4 len 4 rep (6672,3336) (a,b)=(-1,-1) mass 0.333333408973 count 33483611174529908736
+cycle 1 label T3 len 3 rep (6672,3335) (a,b)=(-2,0) mass 0.666666591027 count 66967199554798190592
+cdf t=0.040000 P(T<=tB)=0.0180598259 | T4 joint 0.0061124044 cond 0.0183372090 | T3 joint 0.0119474215 cond 0.0179211342
+cdf t=0.100000 P(T<=tB)=0.1283550491 | T4 joint 0.0430535992 cond 0.1291607682 | T3 joint 0.0853014500 cond 0.1279521894
+cdf t=0.200000 P(T<=tB)=0.5846863318 | T4 joint 0.1953395539 cond 0.5860185286 | T3 joint 0.3893467780 cond 0.5840202332
+cdf t=0.300000 P(T<=tB)=0.9678515476 | T4 joint 0.3227828934 cond 0.9683484605 | T3 joint 0.6450686542 cond 0.9676030911
+cdf t=0.333333 P(T<=tB)=0.9999603617 | T4 joint 0.3333243587 cond 0.9999728493 | T3 joint 0.6666360030 cond 0.9999541179
+moments E[T/B]=0.1829382090 E[(T/B)^2]=0.0380809668
+maxT 3372 at pair (51,1)  maxT-B/3-sqrtB/3 = 2.3183  bound3 B/3+ceil(sqrtB)+20 = 3457.33 ok3 1  lower9 3364.682 upper9 3429.682 ok9 1
+witness37 n 100 pair (10008,9954) T 3371  T-B/3-sqrtB/3 = 1.3183  lower_claim(B/3+sqrtB/3-4) ok 1  maxT-T 1

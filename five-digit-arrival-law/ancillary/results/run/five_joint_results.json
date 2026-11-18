@@ -1,0 +1,304 @@
+{
+  "direct_subtraction_pairs": 223344,
+  "core_labels": 18606,
+  "small_bases": [
+    30,
+    110
+  ],
+  "references": [
+    {
+      "base": 431,
+      "pair_count": 93095,
+      "cycles": {
+        "T5": {
+          "basin_probability": 1.0,
+          "limiting_probability": "1",
+          "joint_cdf_minus_limit": {
+            "1/25": -0.0015709696810273942,
+            "1/6": -0.011470978927106992,
+            "3/10": -0.00397904404358019
+          },
+          "conditional_mean_over_base": 0.18402430045953458
+        }
+      }
+    },
+    {
+      "base": 432,
+      "pair_count": 93527,
+      "cycles": {
+        "T1": {
+          "basin_probability": 0.9999995061524822,
+          "limiting_probability": "1",
+          "joint_cdf_minus_limit": {
+            "1/25": -0.006194710520947878,
+            "1/6": -0.03171177457375942,
+            "3/10": -0.017749136473332268
+          },
+          "conditional_mean_over_base": 0.1900204310759413
+        },
+        "T2": {
+          "basin_probability": 4.938475177297682e-07,
+          "limiting_probability": "0",
+          "joint_cdf_minus_limit": {
+            "1/25": 4.938475177297682e-07,
+            "1/6": 4.938475177297682e-07,
+            "3/10": 4.938475177297682e-07
+          },
+          "conditional_mean_over_base": 0.002604839345205598
+        }
+      }
+    },
+    {
+      "base": 433,
+      "pair_count": 93960,
+      "cycles": {
+        "T3": {
+          "basin_probability": 0.6666221578828636,
+          "limiting_probability": "2/3",
+          "joint_cdf_minus_limit": {
+            "1/25": -0.0039257459488484005,
+            "1/6": -0.029167164589743746,
+            "3/10": -0.012684593937684284
+          },
+          "conditional_mean_over_base": 0.19087552426760995
+        },
+        "T4": {
+          "basin_probability": 0.33337784211713634,
+          "limiting_probability": "1/3",
+          "joint_cdf_minus_limit": {
+            "1/25": 0.0002188426633102788,
+            "1/6": 0.0035556876364838774,
+            "3/10": -0.0005989453297008512
+          },
+          "conditional_mean_over_base": 0.18204440783696993
+        }
+      }
+    },
+    {
+      "base": 434,
+      "pair_count": 94394,
+      "cycles": {
+        "T5": {
+          "basin_probability": 0.9999995129380076,
+          "limiting_probability": "1",
+          "joint_cdf_minus_limit": {
+            "1/25": -0.0018132283360197722,
+            "1/6": -0.002298972761007446,
+            "3/10": -0.003397953936949041
+          },
+          "conditional_mean_over_base": 0.18401939770031822
+        },
+        "T2": {
+          "basin_probability": 4.870619924361759e-07,
+          "limiting_probability": "0",
+          "joint_cdf_minus_limit": {
+            "1/25": 4.870619924361759e-07,
+            "1/6": 4.870619924361759e-07,
+            "3/10": 4.870619924361759e-07
+          },
+          "conditional_mean_over_base": 0.0025928323784127783
+        }
+      }
+    },
+    {
+      "base": 435,
+      "pair_count": 94829,
+      "cycles": {
+        "T1": {
+          "basin_probability": 1.0,
+          "limiting_probability": "1",
+          "joint_cdf_minus_limit": {
+            "1/25": -0.0063687900243607305,
+            "1/6": -0.037824937997846225,
+            "3/10": -0.01678502934198977
+          },
+          "conditional_mean_over_base": 0.18996049661325273
+        }
+      }
+    },
+    {
+      "base": 436,
+      "pair_count": 95265,
+      "cycles": {
+        "T3": {
+          "basin_probability": 0.6666693507766628,
+          "limiting_probability": "2/3",
+          "joint_cdf_minus_limit": {
+            "1/25": -0.0040445307742113055,
+            "1/6": -0.033125272457187084,
+            "3/10": -0.012465157726062175
+          },
+          "conditional_mean_over_base": 0.19082774211813763
+        },
+        "T4": {
+          "basin_probability": 0.33333016882312566,
+          "limiting_probability": "1/3",
+          "joint_cdf_minus_limit": {
+            "1/25": 0.000127618224391358,
+            "1/6": 0.001195338222929458,
+            "3/10": -0.0004561979250911998
+          },
+          "conditional_mean_over_base": 0.1820592418432608
+        },
+        "T2": {
+          "basin_probability": 4.804002115682611e-07,
+          "limiting_probability": "0",
+          "joint_cdf_minus_limit": {
+            "1/25": 4.804002115682611e-07,
+            "1/6": 4.804002115682611e-07,
+            "3/10": 4.804002115682611e-07
+          },
+          "conditional_mean_over_base": 0.002580935595698772
+        }
+      }
+    },
+    {
+      "base": 1973,
+      "pair_count": 1947350,
+      "cycles": {
+        "T5": {
+          "basin_probability": 1.0,
+          "limiting_probability": "1",
+          "joint_cdf_minus_limit": {
+            "1/25": -0.00034406645219922535,
+            "1/6": -0.0017332511116318892,
+            "3/10": -0.0011654292449078244
+          },
+          "conditional_mean_over_base": 0.18291314347264653
+        }
+      }
+    },
+    {
+      "base": 1974,
+      "pair_count": 1949324,
+      "cycles": {
+        "T1": {
+          "basin_probability": 0.999999994805087,
+          "limiting_probability": "1",
+          "joint_cdf_minus_limit": {
+            "1/25": -0.0015899008511134876,
+            "1/6": -0.007710245144178821,
+            "3/10": -0.0029853928615080354
+          },
+          "conditional_mean_over_base": 0.18425542471301648
+        },
+        "T2": {
+          "basin_probability": 5.194913023314782e-09,
+          "limiting_probability": "0",
+          "joint_cdf_minus_limit": {
+            "1/25": 5.194913023314782e-09,
+            "1/6": 5.194913023314782e-09,
+            "3/10": 5.194913023314782e-09
+          },
+          "conditional_mean_over_base": 0.0005699409233086789
+        }
+      }
+    },
+    {
+      "base": 1975,
+      "pair_count": 1951299,
+      "cycles": {
+        "T4": {
+          "basin_probability": 0.33333293443780704,
+          "limiting_probability": "1/3",
+          "joint_cdf_minus_limit": {
+            "1/25": 0.00010330825544131337,
+            "1/6": 0.0005997843870675734,
+            "3/10": -1.1881276510499565e-05
+          },
+          "conditional_mean_over_base": 0.18255422926588274
+        },
+        "T3": {
+          "basin_probability": 0.666667065562193,
+          "limiting_probability": "2/3",
+          "joint_cdf_minus_limit": {
+            "1/25": -0.0009318750738294539,
+            "1/6": -0.006376228090135436,
+            "3/10": -0.0025345051959876326
+          },
+          "conditional_mean_over_base": 0.18455924368602633
+        }
+      }
+    },
+    {
+      "base": 1976,
+      "pair_count": 1953275,
+      "cycles": {
+        "T5": {
+          "basin_probability": 0.9999999948208397,
+          "limiting_probability": "1",
+          "joint_cdf_minus_limit": {
+            "1/25": -7.997774588330163e-05,
+            "1/6": -0.0007789115790309008,
+            "3/10": -0.0010244498766798006
+          },
+          "conditional_mean_over_base": 0.18291315357946927
+        },
+        "T2": {
+          "basin_probability": 5.179160273308173e-09,
+          "limiting_probability": "0",
+          "joint_cdf_minus_limit": {
+            "1/25": 5.179160273308173e-09,
+            "1/6": 5.179160273308173e-09,
+            "3/10": 5.179160273308173e-09
+          },
+          "conditional_mean_over_base": 0.0005693640275297348
+        }
+      }
+    },
+    {
+      "base": 1977,
+      "pair_count": 1955252,
+      "cycles": {
+        "T1": {
+          "basin_probability": 1.0,
+          "limiting_probability": "1",
+          "joint_cdf_minus_limit": {
+            "1/25": -0.0013347980757335523,
+            "1/6": -0.009185182476790107,
+            "3/10": -0.0029329119808772703
+          },
+          "conditional_mean_over_base": 0.18425268387323634
+        }
+      }
+    },
+    {
+      "base": 1978,
+      "pair_count": 1957230,
+      "cycles": {
+        "T4": {
+          "basin_probability": 0.3333357681426632,
+          "limiting_probability": "1/3",
+          "joint_cdf_minus_limit": {
+            "1/25": 8.350624192239528e-05,
+            "1/6": 9.708030528501371e-05,
+            "3/10": 5.035159679125231e-06
+          },
+          "conditional_mean_over_base": 0.18255478667269256
+        },
+        "T3": {
+          "basin_probability": 0.6666642266938656,
+          "limiting_probability": "2/3",
+          "joint_cdf_minus_limit": {
+            "1/25": -0.0009677971809159167,
+            "1/6": -0.0073508644063600345,
+            "3/10": -0.0024344007589989017
+          },
+          "conditional_mean_over_base": 0.18455683772923023
+        },
+        "T2": {
+          "basin_probability": 5.16347114925967e-09,
+          "limiting_probability": "0",
+          "joint_cdf_minus_limit": {
+            "1/25": 5.16347114925967e-09,
+            "1/6": 5.16347114925967e-09,
+            "3/10": 5.16347114925967e-09
+          },
+          "conditional_mean_over_base": 0.0005687882984409279
+        }
+      }
+    }
+  ],
+  "reference_pair_count": 12278800,
+  "scope": "Core and rare formulas checked exactly against direct sorting; finite joint CDF discrepancies are observations, not rate bounds."
+}

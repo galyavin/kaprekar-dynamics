@@ -1,0 +1,17 @@
+[
+  {
+    "file": "five_clock_audit.py",
+    "returncode": 0,
+    "seconds": 0.29
+  },
+  {
+    "file": "five_joint_audit.py",
+    "returncode": 0,
+    "seconds": 0.106
+  },
+  {
+    "file": "five_quantitative_audit.py",
+    "returncode": 0,
+    "seconds": 0.153
+  }
+]

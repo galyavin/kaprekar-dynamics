@@ -1,0 +1,96 @@
+{
+  "solver": "5.4.1",
+  "base_domain": "all integer B >= 30",
+  "branch_count": 26,
+  "uncovered_state": "unsat",
+  "overlapping_guards": "unsat",
+  "coverage_negative_control": {
+    "omitted": "Z0",
+    "uncovered_state": "sat",
+    "witness": {
+      "B": 31,
+      "u": 16,
+      "v": 0
+    }
+  },
+  "core_branches": [
+    "0213",
+    "0231",
+    "2031"
+  ],
+  "core_map_and_invariance": true,
+  "first_step_strip_bounds": true,
+  "strip_entry_steps": 6,
+  "strip_entry_unbounded_smt": "unsat",
+  "terminal_starts": 144,
+  "terminal_cycles_in_margin_coordinates": [
+    [
+      [
+        -2,
+        0
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        3,
+        -2
+      ]
+    ],
+    [
+      [
+        -1,
+        -1
+      ],
+      [
+        -1,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    [
+      [
+        -1,
+        0
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        0,
+        -1
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ]
+    ]
+  ],
+  "terminal_max_tail": 10,
+  "terminal_error_range": [
+    "-3",
+    "16/3"
+  ],
+  "bulk_decrement_verified": true,
+  "pair_clock_error_bound_on_core": [
+    "-3",
+    "6"
+  ],
+  "actual_time_upper_bound": "B/3 + ceil(sqrt(B)) + 20",
+  "scope": "SMT certifies the stated affine implications; analytic and counting arguments are in the proof note. Not a Lean formalization."
+}

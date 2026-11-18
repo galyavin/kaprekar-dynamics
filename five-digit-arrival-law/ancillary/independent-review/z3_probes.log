@@ -1,0 +1,37 @@
+--- informational tightness probes (SAT expected) ---
+[PASS] A4 J_B reaches H_B u T2 within 5 steps: sat (0.16s) model: p=1, u0=16, m=15, B=31, v0=0
+    5-step counterexample: B = 31 q0 = (16, 0)
+    (36) with +20 in place of +20: holds
+    (36) with +15 in place of +20: holds
+    (36) with +10 in place of +20: holds
+    (36) with +8 in place of +20: holds
+    (36) with +6 in place of +20: holds
+    (36) with +5 in place of +20: holds
+    (36) with +4 in place of +20: holds
+    (36) with +3 in place of +20: holds
+    (36) with +2 in place of +20: holds
+    (36) with +1 in place of +20: holds
+    (36) with +0 in place of +20: holds
+--- non-vacuity / mutation probes (each line states expectation) ---
+   [ok] H_B nonempty: sat e.g. u=23, B=33, v=8
+   [ok] J_B minus (H_B u T2) nonempty: sat e.g. u0=29, m=15, v0=15, B=30, p=0
+   [ok] 5 steps do NOT suffice for J_B -> H_B u T2: sat e.g. u0=16, B=31, p=1, m=15, v0=0
+   [ok] dropping T2 from the target breaks six-step entry: sat e.g. u0=15, B=30, v0=14
+   [ok] 2-cycle alone is not predecessor-closed (r3 enters): sat e.g. m=15, u=15, v=0, B=30
+   [UNEXPECTED] (36) hypotheses with first entry j=0 satisfiable: sat e.g. u0=23, v0=10, B=30
+   [UNEXPECTED] (36) hypotheses with first entry j=1 satisfiable: sat e.g. u0=24, v0=16, B=31
+   [UNEXPECTED] (36) hypotheses with first entry j=2 satisfiable: sat e.g. v0=14, B=30, u0=28
+   [UNEXPECTED] (36) hypotheses with first entry j=3 satisfiable: sat e.g. u0=28, B=30, v0=12
+   [UNEXPECTED] (36) hypotheses with first entry j=4 satisfiable: unsat
+   [UNEXPECTED] (36) hypotheses with first entry j=5 satisfiable: unsat
+   [UNEXPECTED] (36) hypotheses with first entry j=6 satisfiable: unsat
+   [ok] B=1 mod 3, H_B, u+v=0 mod 3 nonempty: sat e.g. k=10, u=22, v=8, B=31
+   [info] core rule/invariance with B>=2: sat (B=5)
+   [info] core rule/invariance with B>=8: sat (B=8)
+   [info] core rule/invariance with B>=10: sat (B=13)
+   [info] core rule/invariance with B>=16: sat (B=17)
+   [info] core rule/invariance with B>=20: sat (B=20)
+   [info] core rule/invariance with B>=24: unsat
+   [info] core rule/invariance with B>=26: unsat
+   [info] core rule/invariance with B>=28: unsat
+   [info] core rule/invariance with B>=29: unsat

@@ -1,0 +1,59 @@
+{
+  "exact_clock_starts": 9208,
+  "raw_high_steps": 3971,
+  "clock_checks": [
+    {
+      "base": 199,
+      "checked_starts": 320,
+      "max_actual_center_error": "11/3"
+    },
+    {
+      "base": 200,
+      "checked_starts": 328,
+      "max_actual_center_error": "16/3"
+    },
+    {
+      "base": 401,
+      "checked_starts": 880,
+      "max_actual_center_error": "5"
+    },
+    {
+      "base": 402,
+      "checked_starts": 880,
+      "max_actual_center_error": "19/3"
+    },
+    {
+      "base": 997,
+      "checked_starts": 3383,
+      "max_actual_center_error": "11/3"
+    },
+    {
+      "base": 1000,
+      "checked_starts": 3417,
+      "max_actual_center_error": "4"
+    }
+  ],
+  "weighted_phase_checks": [
+    {
+      "base": 10000,
+      "B_times_band_probability": 1.84804154369235,
+      "target_mass": "93/50",
+      "phase_mean": 0.49573307620378726,
+      "phase_second_moment": 0.3291052563149847
+    },
+    {
+      "base": 40000,
+      "B_times_band_probability": 1.8540614777717566,
+      "target_mass": "93/50",
+      "phase_mean": 0.49783510112991264,
+      "phase_second_moment": 0.3311683643850754
+    },
+    {
+      "base": 160000,
+      "B_times_band_probability": 1.8570404993932599,
+      "target_mass": "93/50",
+      "phase_mean": 0.4989349362346113,
+      "phase_second_moment": 0.3322707372598188
+    }
+  ]
+}

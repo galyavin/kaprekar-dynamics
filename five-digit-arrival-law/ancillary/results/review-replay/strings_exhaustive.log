@@ -1,0 +1,140 @@
+B 4 strings 1024 nonconstant 1020 weights18_ok 1 maxT 4 cycles 1
+  cycle period 2 minval 570 pair(min) (3,0) inputs 1020 frac 1.000000e+00 maxT 4 hist: 2 248 190 220 360
+  T2-formula(7): N0 2 N1 248 N2 60 total 310 | observed N0 2 N1 248 N2 190 total 1020 | match 0
+
+B 5 strings 3125 nonconstant 3120 weights18_ok 1 maxT 3 cycles 1
+  cycle period 4 minval 1992 pair(min) (4,1) inputs 3120 frac 1.000000e+00 maxT 3 hist: 4 1276 1700 140
+
+B 6 strings 7776 nonconstant 7770 weights18_ok 1 maxT 6 cycles 2
+  cycle period 1 minval 5600 pair(min) (4,2) inputs 5440 frac 7.001287e-01 maxT 6 hist: 1 919 420 1160 1780 870 290
+  cycle period 2 minval 4305 pair(min) (4,0) inputs 2330 frac 2.998713e-01 maxT 3 hist: 2 798 830 700
+  T2-formula(7): N0 2 N1 798 N2 150 total 950 | observed N0 2 N1 798 N2 830 total 2330 | match 0
+
+B 7 strings 16807 nonconstant 16800 weights18_ok 1 maxT 6 cycles 1
+  cycle period 5 minval 9936 pair(min) (6,2) inputs 16800 frac 1.000000e+00 maxT 6 hist: 5 4655 4680 3080 1420 2520 440
+
+B 8 strings 32768 nonconstant 32760 weights18_ok 1 maxT 8 cycles 2
+  cycle period 4 minval 21483 pair(min) (6,2) inputs 30850 frac 9.416972e-01 maxT 8 hist: 4 7956 4450 3640 4550 1890 3280 2600 2480
+  cycle period 2 minval 17892 pair(min) (5,0) inputs 1910 frac 5.830281e-02 maxT 2 hist: 2 1628 280
+  T2-formula(7): N0 2 N1 1628 N2 280 total 1910 | observed N0 2 N1 1628 N2 280 total 1910 | match 1
+
+B 9 strings 59049 nonconstant 59040 weights18_ok 1 maxT 7 cycles 2
+  cycle period 5 minval 34960 pair(min) (6,1) inputs 54870 frac 9.293699e-01 maxT 7 hist: 5 11615 13170 13680 8910 4180 2950 360
+  cycle period 1 minval 41520 pair(min) (6,3) inputs 4170 frac 7.063008e-02 maxT 2 hist: 1 3179 990
+
+B 10 strings 100000 nonconstant 99990 weights18_ok 1 maxT 6 cycles 3
+  cycle period 4 minval 62964 pair(min) (7,2) inputs 48320 frac 4.832483e-01 maxT 6 hist: 4 15116 7880 8220 12900 4110 90
+  cycle period 2 minval 53955 pair(min) (6,0) inputs 3190 frac 3.190319e-02 maxT 2 hist: 2 2738 450
+  T2-formula(7): N0 2 N1 2738 N2 450 total 3190 | observed N0 2 N1 2738 N2 450 total 3190 | match 1
+  cycle period 4 minval 61974 pair(min) (8,3) inputs 48480 frac 4.848485e-01 maxT 6 hist: 4 13176 10000 12780 4680 4340 3500
+
+B 11 strings 161051 nonconstant 161040 weights18_ok 1 maxT 8 cycles 1
+  cycle period 4 minval 106440 pair(min) (8,3) inputs 161040 frac 1.000000e+00 maxT 8 hist: 4 22036 19520 19940 37230 26380 15820 6810 13300
+
+B 12 strings 248832 nonconstant 248820 weights18_ok 1 maxT 12 cycles 2
+  cycle period 1 minval 172744 pair(min) (8,4) inputs 244030 frac 9.807491e-01 maxT 12 hist: 1 7599 8220 18880 28280 27520 21590 29080 26950 35920 30990 8890 110
+  cycle period 2 minval 132990 pair(min) (7,0) inputs 4790 frac 1.925086e-02 maxT 2 hist: 2 4128 660
+  T2-formula(7): N0 2 N1 4128 N2 660 total 4790 | observed N0 2 N1 4128 N2 660 total 4790 | match 1
+
+B 13 strings 371293 nonconstant 371280 weights18_ok 1 maxT 12 cycles 1
+  cycle period 4 minval 237216 pair(min) (9,3) inputs 371280 frac 1.000000e+00 maxT 12 hist: 4 35556 21680 22720 48750 23910 15730 27750 35890 63800 55460 17730 2300
+
+B 14 strings 537824 nonconstant 537810 weights18_ok 1 maxT 11 cycles 2
+  cycle period 4 minval 356655 pair(min) (10,4) inputs 531100 frac 9.875235e-01 maxT 11 hist: 4 46676 47450 77700 130130 93000 38580 12690 16370 33240 33530 1730
+  cycle period 2 minval 285285 pair(min) (8,0) inputs 6710 frac 1.247653e-02 maxT 2 hist: 2 5798 910
+  T2-formula(7): N0 2 N1 5798 N2 910 total 6710 | observed N0 2 N1 5798 N2 910 total 6710 | match 1
+
+B 15 strings 759375 nonconstant 759360 weights18_ok 1 maxT 13 cycles 1
+  cycle period 1 minval 523040 pair(min) (10,5) inputs 759360 frac 1.000000e+00 maxT 13 hist: 1 14899 27650 58090 106850 102340 55660 44670 41240 87240 129560 63560 24490
+
+B 16 strings 1048576 nonconstant 1048560 weights18_ok 1 maxT 10 cycles 3
+  cycle period 3 minval 671670 pair(min) (12,5) inputs 719230 frac 6.859216e-01 maxT 10 hist: 3 48177 35200 23800 50640 65440 141360 212580 111870 30010 150
+  cycle period 4 minval 675750 pair(min) (11,4) inputs 320380 frac 3.055428e-01 maxT 6 hist: 4 68476 49480 56600 90990 52520 2310
+  cycle period 2 minval 552840 pair(min) (9,0) inputs 8950 frac 8.535515e-03 maxT 2 hist: 2 7748 1200
+  T2-formula(7): N0 2 N1 7748 N2 1200 total 8950 | observed N0 2 N1 7748 N2 1200 total 8950 | match 1
+
+B 17 strings 1419857 nonconstant 1419840 weights18_ok 1 maxT 11 cycles 1
+  cycle period 4 minval 943200 pair(min) (12,5) inputs 1419840 frac 1.000000e+00 maxT 11 hist: 4 84756 97460 138060 263080 259730 130640 71980 85310 154830 112350 21640
+
+B 18 strings 1889568 nonconstant 1889550 weights18_ok 1 maxT 13 cycles 2
+  cycle period 1 minval 1294584 pair(min) (12,6) inputs 1878040 frac 9.939086e-01 maxT 13 hist: 1 25799 45940 94500 160740 192340 176130 162040 108550 216150 339270 245840 93460
+  cycle period 2 minval 991287 pair(min) (10,0) inputs 11510 frac 6.091397e-03 maxT 2 hist: 2 9978 1530
+  T2-formula(7): N0 2 N1 9978 N2 1530 total 11510 | observed N0 2 N1 9978 N2 1530 total 11510 | match 1
+
+B 19 strings 2476099 nonconstant 2476080 weights18_ok 1 maxT 12 cycles 2
+  cycle period 3 minval 1598040 pair(min) (14,6) inputs 1731050 frac 6.991091e-01 maxT 12 hist: 3 83757 77450 38640 83010 129200 304840 452970 350340 149210 52590 8860 180
+  cycle period 4 minval 1604880 pair(min) (13,5) inputs 745030 frac 3.008909e-01 maxT 6 hist: 4 116756 101560 112900 216740 166470 30600
+
+B 20 strings 3200000 nonconstant 3199980 weights18_ok 1 maxT 13 cycles 2
+  cycle period 4 minval 2127867 pair(min) (14,6) inputs 3185590 frac 9.955031e-01 maxT 13 hist: 4 139156 180490 262320 439790 501660 473250 298980 195830 219850 239800 145230 85520
+  cycle period 2 minval 1671810 pair(min) (11,0) inputs 14390 frac 4.496903e-03 maxT 2 hist: 2 12488 1900
+  T2-formula(7): N0 2 N1 12488 N2 1900 total 14390 | observed N0 2 N1 12488 N2 1900 total 14390 | match 1
+
+B 21 strings 4084101 nonconstant 4084080 weights18_ok 1 maxT 15 cycles 1
+  cycle period 1 minval 2787400 pair(min) (14,7) inputs 4084080 frac 1.000000e+00 maxT 15 hist: 1 41019 70230 105550 214240 297260 418420 396430 326810 549070 563150 527580 358840
+
+B 22 strings 5153632 nonconstant 5153610 weights18_ok 1 maxT 11 cycles 3
+  cycle period 4 minval 3353952 pair(min) (15,6) inputs 1799380 frac 3.491494e-01 maxT 9 hist: 4 183276 188940 277660 452090 350540 213890 123810 8960 210
+  cycle period 3 minval 3343326 pair(min) (16,7) inputs 3336640 frac 6.474374e-01 maxT 11 hist: 3 133017 152580 123640 271960 279320 365660 652980 593670 486590 217200 60020
+  cycle period 2 minval 2683065 pair(min) (12,0) inputs 17590 frac 3.413141e-03 maxT 2 hist: 2 15278 2310
+  T2-formula(7): N0 2 N1 15278 N2 2310 total 17590 | observed N0 2 N1 15278 N2 2310 total 17590 | match 1
+
+B 23 strings 6436343 nonconstant 6436320 weights18_ok 1 maxT 13 cycles 1
+  cycle period 4 minval 4282608 pair(min) (16,7) inputs 6436320 frac 1.000000e+00 maxT 13 hist: 4 212756 308760 414750 792650 989290 978090 762640 468280 394480 352950 425640 286210
+
+B 24 strings 7962624 nonconstant 7962600 weights18_ok 1 maxT 16 cycles 2
+  cycle period 1 minval 5418800 pair(min) (16,8) inputs 7941490 frac 9.973489e-01 maxT 16 hist: 1 61279 101240 156040 316480 583300 971810 855310 692090 738800 801480 997880 812390
+  cycle period 2 minval 4133100 pair(min) (13,0) inputs 21110 frac 2.651144e-03 maxT 2 hist: 2 18348 2760
+  T2-formula(7): N0 2 N1 18348 N2 2760 total 21110 | observed N0 2 N1 18348 N2 2760 total 21110 | match 1
+
+B 25 strings 9765625 nonconstant 9765600 weights18_ok 1 maxT 13 cycles 2
+  cycle period 4 minval 6374784 pair(min) (17,7) inputs 3303200 frac 3.382485e-01 maxT 10 hist: 4 270916 323040 414540 770590 533820 539540 368160 77260 5090 240
+  cycle period 3 minval 6359184 pair(min) (18,8) inputs 6462400 frac 6.617515e-01 maxT 13 hist: 3 198117 273510 332390 620650 483910 449110 693440 1119950 1098350 728020 342340 113650
+
+B 26 strings 11881376 nonconstant 11881350 weights18_ok 1 maxT 15 cycles 2
+  cycle period 4 minval 7908975 pair(min) (18,8) inputs 11856400 frac 9.979001e-01 maxT 15 hist: 4 308436 431050 582300 1139130 1522980 1890350 1520510 1168550 873460 750080 633510 507470
+  cycle period 2 minval 6151275 pair(min) (14,0) inputs 24950 frac 2.099930e-03 maxT 2 hist: 2 21698 3250
+  T2-formula(7): N0 2 N1 21698 N2 3250 total 24950 | observed N0 2 N1 21698 N2 3250 total 24950 | match 1
+
+B 27 strings 14348907 nonconstant 14348880 weights18_ok 1 maxT 18 cycles 1
+  cycle period 1 minval 9742824 pair(min) (18,9) inputs 14348880 frac 1.000000e+00 maxT 18 hist: 1 87299 139690 219730 520400 1071040 1399100 1204590 1282210 1256830 1378760 1732030 1627990
+
+B 28 strings 17210368 nonconstant 17210340 weights18_ok 1 maxT 13 cycles 3
+  cycle period 4 minval 11261106 pair(min) (19,8) inputs 5845290 frac 3.396383e-01 maxT 12 hist: 4 382556 437660 464520 848430 995780 1176880 803430 454860 250040 25110 5750 270
+  cycle period 3 minval 11239182 pair(min) (20,9) inputs 11335940 frac 6.586703e-01 maxT 13 hist: 3 281217 372940 363480 707420 765000 891680 1440080 1749600 1893550 1285720 1017820 448870
+  cycle period 2 minval 8890182 pair(min) (15,0) inputs 29110 frac 1.691425e-03 maxT 2 hist: 2 25328 3780
+  T2-formula(7): N0 2 N1 25328 N2 3780 total 29110 | observed N0 2 N1 25328 N2 3780 total 29110 | match 1
+
+B 29 strings 20511149 nonconstant 20511120 weights18_ok 1 maxT 15 cycles 1
+  cycle period 4 minval 13657560 pair(min) (20,9) inputs 20511120 frac 1.000000e+00 maxT 15 hist: 4 429076 579420 693850 1554780 2355020 2855470 2708220 2509320 2138930 1394300 1076100 730640
+
+B 30 strings 24300000 nonconstant 24299970 weights18_ok 1 maxT 17 cycles 2
+  cycle period 1 minval 16469680 pair(min) (20,10) inputs 24266380 frac 9.986177e-01 maxT 17 hist: 1 119799 186300 298060 706200 1332140 1935290 2061860 2198260 2128240 2538580 2973650 2469910
+  cycle period 2 minval 12527565 pair(min) (16,0) inputs 33590 frac 1.382306e-03 maxT 2 hist: 2 29238 4350
+  T2-formula(7): N0 2 N1 29238 N2 4350 total 33590 | observed N0 2 N1 29238 N2 4350 total 33590 | match 1
+
+B 31 strings 28629151 nonconstant 28629120 weights18_ok 1 maxT 15 cycles 2
+  cycle period 4 minval 18768000 pair(min) (21,9) inputs 9314920 frac 3.253652e-01 maxT 12 hist: 4 521076 573720 506740 1133560 1620720 2014910 1075600 1031520 680100 150260 6410 300
+  cycle period 3 minval 18738240 pair(min) (22,10) inputs 19314200 frac 6.746348e-01 maxT 15 hist: 3 384477 491810 469200 966770 1347170 1626170 2309300 2386650 2839750 2195640 2085220 1390260
+
+B 32 strings 33554432 nonconstant 33554400 weights18_ok 1 maxT 17 cycles 2
+  cycle period 4 minval 22347435 pair(min) (22,10) inputs 33516010 frac 9.988559e-01 maxT 17 hist: 4 577556 756030 924680 2065470 3167540 4322110 4188390 4028990 3366140 3244850 2197620 1467060
+  cycle period 2 minval 17268240 pair(min) (17,0) inputs 38390 frac 1.144112e-03 maxT 2 hist: 2 33428 4960
+  T2-formula(7): N0 2 N1 33428 N2 4960 total 38390 | observed N0 2 N1 33428 N2 4960 total 38390 | match 1
+
+B 33 strings 39135393 nonconstant 39135360 weights18_ok 1 maxT 19 cycles 1
+  cycle period 1 minval 26485184 pair(min) (22,11) inputs 39135360 frac 1.000000e+00 maxT 19 hist: 1 159499 241790 392470 928480 1584650 2177800 3262860 3882160 3301490 3711930 4495710 3846360
+
+B 34 strings 45435424 nonconstant 45435390 weights18_ok 1 maxT 15 cycles 3
+  cycle period 4 minval 29831340 pair(min) (23,10) inputs 15613310 frac 3.436376e-01 maxT 13 hist: 4 689356 732660 665600 1492710 2327740 2845300 1935470 2092570 1468980 863820 450530 48240
+  cycle period 3 minval 29792070 pair(min) (24,11) inputs 29778570 frac 6.554047e-01 maxT 15 hist: 3 510057 631560 448280 981660 1747900 2140370 3081100 3736460 4144120 3339700 3816240 2409010
+  cycle period 2 minval 23346015 pair(min) (18,0) inputs 43510 frac 9.576236e-04 maxT 2 hist: 2 37898 5610
+  T2-formula(7): N0 2 N1 37898 N2 5610 total 43510 | observed N0 2 N1 37898 N2 5610 total 43510 | match 1
+
+B 35 strings 52521875 nonconstant 52521840 weights18_ok 1 maxT 17 cycles 1
+  cycle period 4 minval 34985592 pair(min) (24,11) inputs 52521840 frac 1.000000e+00 maxT 17 hist: 4 756756 963040 1199430 2835840 4449310 5713920 5814290 6282780 5581970 5631950 4625920 2731030
+
+B 36 strings 60466176 nonconstant 60466140 weights18_ok 1 maxT 21 cycles 2
+  cycle period 1 minval 40870200 pair(min) (24,12) inputs 60417190 frac 9.991905e-01 maxT 21 hist: 1 207119 306880 504400 1190120 1861200 3138410 4657960 5551290 4432240 6340440 6690760 5477800
+  cycle period 2 minval 31025610 pair(min) (19,0) inputs 48950 frac 8.095440e-04 maxT 2 hist: 2 42648 6300
+  T2-formula(7): N0 2 N1 42648 N2 6300 total 48950 | observed N0 2 N1 42648 N2 6300 total 48950 | match 1
