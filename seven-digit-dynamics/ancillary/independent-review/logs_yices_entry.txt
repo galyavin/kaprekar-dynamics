@@ -1,0 +1,12 @@
+entry_S-ii-strict.smt2       yices: sat
+entry_S-iv-Z.smt2            yices: sat
+entry_S-v-wide.smt2          yices: sat
+entry_S-vi-short.smt2        yices: sat
+entry_i-1.smt2               yices: unsat
+entry_i-2.smt2               yices: unsat
+entry_ii.smt2                yices: unsat
+entry_iii-1.smt2             yices: unsat
+entry_iii-2.smt2             yices: unsat
+entry_iv.smt2                yices: unsat
+entry_v.smt2                 yices: unsat
+entry_vi.smt2                yices: unsat

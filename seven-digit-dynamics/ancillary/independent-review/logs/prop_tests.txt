@@ -1,0 +1,7 @@
+Prop 4: 324 cases (fresh B in [1e5,4e5) + corners/extremes); h - r(u-3B/4) in [-37/2, 343/8] = [-18.500, 42.875]; Lemma A.2 interval [-43/2, 343/8]; inside=True
+Prop 5 side +1: 150 fresh source states; max |T - B t_r| = 23.25 (claim <= 216); min distance to the other clock = 1003.8
+Prop 5 side -1: 150 fresh source states; max |T - B t_r| = 20.50 (claim <= 216); min distance to the other clock = 2019.0
+   side -1 beta=0: fast-rate fraction 58/74 = 0.784
+   side -1 beta=1: fast-rate fraction 30/76 = 0.395
+   side +1 beta=0: fast-rate fraction 36/66 = 0.545
+   side +1 beta=1: fast-rate fraction 23/84 = 0.274

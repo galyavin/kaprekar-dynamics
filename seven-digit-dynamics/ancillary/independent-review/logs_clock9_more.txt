@@ -1,0 +1,9 @@
+[lock acquired after 0.0s]
+yices clock9 aux:
+real 900.01
+user 891.81
+sys 6.86
+z3 clock9 plain:
+./run_clock9_more.sh: line 6: 45024 Terminated: 15          $PY smt_clock9.py plain - 900
+[lock released, rc=143, 912.8s]
+z3 plain: stopped manually after <1 min to free the compute lock (not needed: the aux query is a sound reduction)

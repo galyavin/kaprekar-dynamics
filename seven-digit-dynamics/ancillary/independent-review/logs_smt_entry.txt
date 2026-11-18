@@ -1,0 +1,15 @@
+[lock acquired after 0.0s]
+A1 i-1          unsat  expected unsat  0.01s
+A1 i-2          unsat  expected unsat  0.00s
+A1 ii           unsat  expected unsat  0.04s
+A1 iii-1        unsat  expected unsat  0.00s
+A1 iii-2        unsat  expected unsat  0.14s
+A1 iv           unsat  expected unsat  0.32s
+A1 v            unsat  expected unsat  0.13s
+A1 vi           unsat  expected unsat  0.02s
+A1 S-ii-strict  sat    expected sat    0.01s  model (a,b,c)=(13/14,15/28,0) W0=9/28 W3=9/28 W6=3/28 a6=13/14
+A1 S-iv-Z       sat    expected sat    0.10s  model (a,b,c)=(7/12,7/12,1/6) W0=1/6 W3=1/6 W6=1/6 a6=7/12
+A1 S-vi-short   sat    expected sat    0.00s  model (a,b,c)=(138/251,703/2008,201/2008) W0=201/2008 W3=25/251 W6=199/2008 a6=1105/2008
+A1 S-v-wide     sat    expected sat    0.03s  model (a,b,c)=(7/12,7/12,1/6) W0=1/6 W3=1/6 W6=1/6 a6=7/12
+ALL AS EXPECTED
+[lock released, rc=0, 1.0s]

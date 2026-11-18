@@ -1,0 +1,84 @@
+Collecting z3-solver==5.4.1.0
+  Using cached z3_solver-5.4.1.0-py3-none-macosx_13_0_arm64.whl (45.5 MB)
+Collecting cvc5==1.4.2
+  Using cached cvc5-1.4.2-cp39-cp39-macosx_11_0_arm64.whl (10.5 MB)
+Collecting sympy==1.14.0
+  Using cached sympy-1.14.0-py3-none-any.whl (6.3 MB)
+Collecting mpmath<1.4,>=1.1.0
+  Using cached mpmath-1.3.0-py3-none-any.whl (536 kB)
+Installing collected packages: mpmath, z3-solver, sympy, cvc5
+Successfully installed cvc5-1.4.2 mpmath-1.3.0 sympy-1.14.0 z3-solver-5.4.1.0
+Python 3.9.6 Z3 5.4.1 cvc5 1.4.2 SymPy 1.14.0
+Yices 2.7.0
+Copyright SRI International.
+Linked with GMP 6.3.0
+Copyright Free Software Foundation, Inc.
+Build date: 2026-09-11
+Platform: arm-apple-darwin27.0.0 (release)
+Revision: unknown
+Running seven_clock_audit
+{'key': 'one_step_increase', 'z3': 'unsat', 'yices': 'unsat', 'z3_seconds': 0.04058475, 'yices_seconds': 0.01627541699999996, 'sha256': '5e8fd3fcbaa559ecf06e73c8cb77755582391099e7a6aa505db0f6bfa40f3f3f'}
+{'key': 'nine_step_0000', 'z3': 'unsat', 'yices': 'unsat', 'z3_seconds': 0.057011416999999995, 'yices_seconds': 0.005322708999999995, 'sha256': '6b6599fe04c02daddf38324667b9f79f23a16d023cdac77ad1938f4481704b17'}
+{'key': 'nine_step_0001', 'z3': 'unsat', 'yices': 'unsat', 'z3_seconds': 5.260906791, 'yices_seconds': 20.229027416, 'sha256': '892e9cda987d2d414560aa3d50394680126d9ea2d3c47774fb8e0569b83def5e'}
+{'key': 'nine_step_0101', 'z3': 'unsat', 'yices': 'unsat', 'z3_seconds': 6.973784041000002, 'yices_seconds': 34.618114250000005, 'sha256': '52e8a59c61d1feba0e485ee86c9a956ae9e3d397184614eb3d6c2f037dae0b1e'}
+{'key': 'nine_step_0011', 'z3': 'unsat', 'yices': 'unsat', 'z3_seconds': 7.827812208, 'yices_seconds': 72.50615866700001, 'sha256': '3d8c3d70e2b53e354b38aa7615ed5aa8b6d65b7dd22e16e021bc7275d7eacdeb'}
+{'key': 'nine_step_0111', 'z3': 'unsat', 'yices': 'unsat', 'z3_seconds': 4.28892725, 'yices_seconds': 1.536716124999998, 'sha256': 'cc8418e22bd32c415b570bb8a5f5c6c80551d22410f5f2e8b4d34da3835070f8'}
+{'key': 'nine_step_0110', 'z3': 'unsat', 'yices': 'unsat', 'z3_seconds': 3.8948448329999934, 'yices_seconds': 15.318383416000003, 'sha256': 'c3427f38d1ecbefe52ba03b1cab36599b107d9500409983a5107d376776af195'}
+{'key': 'nine_step_0100', 'z3': 'unsat', 'yices': 'unsat', 'z3_seconds': 11.230510084, 'yices_seconds': 83.767262375, 'sha256': 'f6e49b40d22145e2b63b2f922061dafdcb48787b04992bfa03eb458288416cb9'}
+{'key': 'nine_step_0010', 'z3': 'unsat', 'yices': 'unsat', 'z3_seconds': 4.428829875, 'yices_seconds': 113.381274334, 'sha256': '96267c6a4d4527ce06ef87f4da2dd943783ec506d9c672cf3efe11b7e079f564'}
+{'key': 'nine_step_1010', 'z3': 'unsat', 'yices': 'unsat', 'z3_seconds': 13.130835167, 'yices_seconds': 42.96641579099999, 'sha256': '18165a2f4088fe9214d149779e7a346b7f948988161643ffd45d8cf6811b1436'}
+{'key': 'nine_step_1000', 'z3': 'unsat', 'yices': 'unsat', 'z3_seconds': 11.395086082999995, 'yices_seconds': 64.00001091700001, 'sha256': '76e7e41dba571e4803f0a6b9d4860cf7b70f5a9208bb2fcec5d129a4b57cfc42'}
+{'key': 'nine_step_1011', 'z3': 'unsat', 'yices': 'unsat', 'z3_seconds': 13.942995542000006, 'yices_seconds': 34.895175041000016, 'sha256': 'def9d278a5870677e23fa2b0f81093be6550aa443885b7ea5b21dde23d77bfe3'}
+{'key': 'nine_step_1110', 'z3': 'unsat', 'yices': 'unsat', 'z3_seconds': 4.381528750000001, 'yices_seconds': 2.9523034579999887, 'sha256': 'f6847ecc51ff54785e81132ba0c6ccf88e0ab5a30c1f21baa8d403efe7b1cd29'}
+{'key': 'nine_step_1111', 'z3': 'unsat', 'yices': 'unsat', 'z3_seconds': 0.000667999999990343, 'yices_seconds': 0.005945875000008982, 'sha256': 'd5a63335459777d956d8d5fa301359c9d006da9d62f5c61b01fb5cbc1f6aff85'}
+{'key': 'nine_step_1001', 'z3': 'unsat', 'yices': 'unsat', 'z3_seconds': 17.404961708000002, 'yices_seconds': 86.38695, 'sha256': '505f9bccf9d972f8fd52fa1020403790d15bc701578f187e85c59273765f3740'}
+{'key': 'nine_step_1101', 'z3': 'unsat', 'yices': 'unsat', 'z3_seconds': 5.305447208999993, 'yices_seconds': 26.91799279099999, 'sha256': '9862851e6abf634ac0ca292a626fd389abf92382cb8443bec6c1854428a4ec28'}
+{'key': 'nine_step_1100', 'z3': 'unsat', 'yices': 'unsat', 'z3_seconds': 5.965870416999991, 'yices_seconds': 40.380266250000005, 'sha256': 'cd65e0285408bb7185ade3482572cdff4673012c5fc2894c9041c8c94e0e5675'}
+PASS: seventeen universal integer obligations in both solvers; two independently replayed false strengthenings; three rejected record corruptions.
+Running seven_entry_audit
+low_preparation unsat unsat
+low_recurrence unsat unsat
+three_step_defect unsat unsat
+high_top_stabilization unsat unsat
+high_plateau_descent unsat unsat
+six_step_equality unsat unsat
+near_core_absorption unsat unsat
+two_cycle_neighborhood unsat unsat
+8 universal real-affine obligations UNSAT in both Z3 and CVC5; 18 actual solver calls; 3 rejected acceptance controls.
+Running seven_first_access
+Three positive sources followed by a zero, B >= 18: unsat unsat
+Running seven_zero_transience_audit
+{'key': 'even_first_positive', 'z3': 'unsat', 'cvc5': 'unsat', 'z3_seconds': 0.0019918329999999984, 'cvc5_seconds': 0.012056374999999994, 'sha256': 'e700f0e310dee84c5992e06910f37fcbda562f2a9109932c8d25968d12cee37a'}
+{'key': 'even_second_zero', 'z3': 'unsat', 'cvc5': 'unsat', 'z3_seconds': 0.010249500000000009, 'cvc5_seconds': 0.082568375, 'sha256': 'ecd369da6db364dba7fbe36a6a26ba81a9fbf4528b2d8424b62bf6d73705c643'}
+{'key': 'even_no_third_return', 'z3': 'unsat', 'cvc5': 'unsat', 'z3_seconds': 0.04730395800000001, 'cvc5_seconds': 0.641528625, 'sha256': '857866f83260f567e91e8af3aa0a72f14c36fc4403daacd3a8f9cdd54ce7b013'}
+{'key': 'odd_first_positive', 'z3': 'unsat', 'cvc5': 'unsat', 'z3_seconds': 0.0024471249999999944, 'cvc5_seconds': 0.02723312500000008, 'sha256': '33481269c79e1c81223326e53daa8ff03db91e2e5624eafa85d618aeadcdf24a'}
+{'key': 'odd_second_zero', 'z3': 'unsat', 'cvc5': 'unsat', 'z3_seconds': 0.014334416000000072, 'cvc5_seconds': 0.3583066669999999, 'sha256': '6d1b9d4573b4bec7052225ae615dd49b9e8c78d2b8bd6f7a067bcc0183bf53b6'}
+{'key': 'odd_no_third_return', 'z3': 'unsat', 'cvc5': 'unsat', 'z3_seconds': 0.17124129200000016, 'cvc5_seconds': 0.6112074170000001, 'sha256': 'bdfe9612bb2727e323eaf37cdaf1763eab90cf028ccc24949afc6b3dd74c051e'}
+{'key': 'rank_one_formula', 'z3': 'unsat', 'cvc5': 'unsat', 'z3_seconds': 0.001502541000000246, 'cvc5_seconds': 0.005875917000000008, 'sha256': 'adab19c10947713b8c25c731fc54ae6cfa63402b3b709e4ee7345581f63def39'}
+PASS: seven zero-return identities in both solvers and six clearance controls.
+Running seven_boundary_audit
+Both offset graphs certified for all bases in scope; 140 terminal families; clock error [-43/2, 343/8].
+Running seven_facet_checks
+338 rational guard certificates replayed without a solver; 2 negative controls rejected.
+41107 phase iterates; exact source mass 109859671/18662400000.
+36 independent full digit trajectories, 1564192 raw steps.
+180 independent compressed exploratory first-capture checks.
+Conditional fast/slow weights: even bases 1/2,1/2; odd bases 3/8,5/8.
+Facet replay complete.
+Running seven_return_checks
+490 rational guards; 3 corruption controls; 952 maximal bulk exits; 12 independent full clocks, 1599853 digit steps; 288 prefix/capture checks.
+Running seven_tables
+Canonical polyhedra and all 96 residue entries agree.
+Running seven_global_checks
+finite population 96 152095 0.175123952833079
+finite population 97 156848 0.22225464184904223
+finite population 192 1198143 0.1572211469521337
+finite population 193 1216864 0.18244083797923866
+12 independent leading-prefix clocks, 1643929 digit steps; 2723950 complete pair states in four bases; 4000 rational quadrature samples.
+Running seven_clock_checks
+Whole graph {'base': 129, 'states': 366144, 'raw_column_updates': 3661440, 'cycle_states': 8, 'maximum_pair_time': 56, 'maximum_cycle_potential': 22, 'maximum_time_source': [64, 16, 0], 'positive_nine_prefixes': 357695, 'all_prefixes_checked': True}
+Whole graph {'base': 130, 'states': 374659, 'raw_column_updates': 3746590, 'cycle_states': 4, 'maximum_pair_time': 49, 'maximum_cycle_potential': 20, 'maximum_time_source': [65, 0, 0], 'positive_nine_prefixes': 366017, 'all_prefixes_checked': True}
+Whole graph {'base': 400, 'states': 10746799, 'raw_column_updates': 10746799, 'cycle_states': 20, 'maximum_pair_time': 113, 'maximum_cycle_potential': 24, 'maximum_time_source': [200, 22, 0], 'positive_nine_prefixes': 0, 'all_prefixes_checked': False}
+Whole graph {'base': 401, 'states': 10827400, 'raw_column_updates': 10827400, 'cycle_states': 8, 'maximum_pair_time': 127, 'maximum_cycle_potential': 22, 'maximum_time_source': [200, 21, 0], 'positive_nine_prefixes': 0, 'all_prefixes_checked': False}
+PASS: global clock primitives, unbounded six-step counterexample, complete finite graphs and optimization rejection.
+All seven-digit checks passed.

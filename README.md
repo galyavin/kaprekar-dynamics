@@ -20,6 +20,10 @@ With five digit slots and a growing base B, the number of steps needed to reach 
 
 For every odd number of digits, the continuous large-base map decreases the vector of successive gaps in majorization order, so every real orbit approaches a periodic orbit. For nine digits, periodicity is reached in finite time, and the initial differences, arrival time and terminal differences, all divided by the base, have five pairwise distinct joint limits indexed by the base modulo 5. A covariance principle under change of base explains the modulus. The nine-digit proofs use computer-assisted affine inequalities and exact lattice counts.
 
+**Seven-digit Kaprekar dynamics: global law, two clocks, parity** (2026), in [`seven-digit-dynamics/`](seven-digit-dynamics/) as [PDF](seven-digit-dynamics/kaprekar-seven-digit-dynamics.pdf) and [LaTeX source](seven-digit-dynamics/kaprekar-seven-digit-dynamics.tex). Archived at Zenodo: [doi:10.5281/zenodo.24346853](https://doi.org/10.5281/zenodo.24346853).
+
+With seven digit slots and a growing base B, the normalized starting differences and the arrival time divided by B have a joint limit along the bases of each parity. At almost every starting point the limiting time takes one of two values; the faster one has probability 3/8 in odd bases and 1/2 or 3/4 in even bases. Every arrival time is at most 54B + 614132 for B ≥ 400, and at first arrival the normalized differences lie within 34/B of (3/4, 1/2, 1/4). The proofs use computer-assisted affine inequalities and exact rational calculations.
+
 ## Reproducing the results
 
 ```sh
@@ -42,6 +46,11 @@ bash reproduce.sh            # numerical checks, SMT audits and the Lean build
 ```sh
 cd odd-digit-majorization/ancillary
 bash reproduce.sh            # solver audits and exact calculations (stages in ancillary/README.md)
+```
+
+```sh
+cd seven-digit-dynamics/ancillary
+bash reproduce.sh            # solver audits, exact calculations and graph replays (about five minutes)
 ```
 
 Each `ancillary/README.md` gives the expected outputs and versions.

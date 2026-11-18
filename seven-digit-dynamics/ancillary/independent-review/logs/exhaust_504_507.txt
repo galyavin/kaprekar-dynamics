@@ -1,0 +1,16 @@
+B=504 states=21464519 int128mismatch=0 | A5 one-step fails=0 (max dV=8) | A5 nine-step cases=21281457 fails=0 (max dV9=-16) | A4 i/ii/iii fails=0/0/0 | last zero time=2
+B=504 max h=142 at (481,252,0)  max T=143  T/B=0.28373  cyclic states=20  max|X| on cycles=12 (bound 136) => max dist*B=3.00 (bound 34)
+B=504 weights total=8.260641e+18 expected=8.260641e+18 rel=5.32e-12  mean(T/B)=0.146592 var=0.002932  E e^{4T/B}=1.839384 E e^{-4T/B}=0.569682
+B=504 CDF 0.00000 0.00015 0.00174 0.00775 0.02050 0.04094 0.06886 0.10269 0.14141 0.18305 0.22608 0.27131 0.32183 0.37633 0.43501 0.49742 0.56202 0.62713 0.68939 0.74918 0.80795 0.86203 0.91068 0.94982 0.97763 0.99534
+B=505 states=21592284 int128mismatch=0 | A5 one-step fails=0 (max dV=8) | A5 nine-step cases=21412167 fails=0 (max dV9=-8) | A4 i/ii/iii fails=0/0/0 | last zero time=3
+B=505 max h=154 at (15,6,1)  max T=155  T/B=0.30693  cyclic states=8  max|X| on cycles=10 (bound 136) => max dist*B=2.50 (bound 34)
+B=505 weights total=8.376057e+18 expected=8.376057e+18 rel=1.24e-14  mean(T/B)=0.157300 var=0.003122  E e^{4T/B}=1.922724 E e^{-4T/B}=0.546648
+B=505 CDF 0.00000 0.00007 0.00093 0.00441 0.01235 0.02646 0.04727 0.07409 0.10664 0.14393 0.18313 0.22537 0.27106 0.31940 0.37321 0.43051 0.49019 0.55149 0.61329 0.67664 0.74964 0.80637 0.85889 0.90561 0.94402 0.97181
+B=506 states=21720555 int128mismatch=0 | A5 one-step fails=0 (max dV=8) | A5 nine-step cases=21537831 fails=0 (max dV9=-16) | A4 i/ii/iii fails=0/0/0 | last zero time=2
+B=506 max h=148 at (17,6,1)  max T=149  T/B=0.29447  cyclic states=4  max|X| on cycles=10 (bound 136) => max dist*B=2.50 (bound 34)
+B=506 weights total=8.492853e+18 expected=8.492853e+18 rel=5.24e-12  mean(T/B)=0.156580 var=0.002959  E e^{4T/B}=1.914774 E e^{-4T/B}=0.547495
+B=506 CDF 0.00000 0.00003 0.00038 0.00231 0.00841 0.02098 0.04106 0.06849 0.10204 0.14019 0.18171 0.22480 0.26996 0.31969 0.37318 0.43107 0.49295 0.56983 0.63384 0.69633 0.75552 0.81276 0.86677 0.91372 0.95157 0.97806
+B=507 states=21849333 int128mismatch=0 | A5 one-step fails=0 (max dV=8) | A5 nine-step cases=21668197 fails=0 (max dV9=-8) | A4 i/ii/iii fails=0/0/0 | last zero time=3
+B=507 max h=159 at (288,253,0)  max T=160  T/B=0.31558  cyclic states=8  max|X| on cycles=14 (bound 136) => max dist*B=3.50 (bound 34)
+B=507 weights total=8.611042e+18 expected=8.611042e+18 rel=9.50e-14  mean(T/B)=0.157577 var=0.003077  E e^{4T/B}=1.924188 E e^{-4T/B}=0.545842
+B=507 CDF 0.00000 0.00006 0.00078 0.00380 0.01124 0.02471 0.04486 0.07132 0.10333 0.14017 0.17895 0.22008 0.26454 0.31249 0.36451 0.43329 0.49539 0.55933 0.62293 0.68528 0.74613 0.80489 0.85846 0.90516 0.94301 0.96980

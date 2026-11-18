@@ -1,0 +1,8 @@
+B=129 states=366144 int128mismatch=0 | A5 one-step fails=0 (max dV=8) | A5 nine-step cases=305595 fails=0 (max dV9=-24) | A4 i/ii/iii fails=0/0/0 | last zero time=3
+B=129 max h=56 at (64,16,0)  max T=57  T/B=0.44186  cyclic states=8  max|X| on cycles=10 (bound 136) => max dist*B=2.50 (bound 34)
+B=130 states=374659 int128mismatch=0 | A5 one-step fails=0 (max dV=8) | A5 nine-step cases=312067 fails=0 (max dV9=-24) | A4 i/ii/iii fails=0/0/0 | last zero time=2
+B=130 max h=49 at (65,0,0)  max T=50  T/B=0.38462  cyclic states=4  max|X| on cycles=10 (bound 136) => max dist*B=2.50 (bound 34)
+B=400 states=10746799 int128mismatch=0 | A5 one-step fails=0 (max dV=8) | A5 nine-step cases=10610901 fails=0 (max dV9=-16) | A4 i/ii/iii fails=0/0/0 | last zero time=2
+B=400 max h=113 at (200,22,0)  max T=114  T/B=0.28500  cyclic states=20  max|X| on cycles=12 (bound 136) => max dist*B=3.00 (bound 34)
+B=401 states=10827400 int128mismatch=0 | A5 one-step fails=0 (max dV=8) | A5 nine-step cases=10694499 fails=0 (max dV9=-8) | A4 i/ii/iii fails=0/0/0 | last zero time=3
+B=401 max h=127 at (200,21,0)  max T=128  T/B=0.31920  cyclic states=8  max|X| on cycles=10 (bound 136) => max dist*B=2.50 (bound 34)

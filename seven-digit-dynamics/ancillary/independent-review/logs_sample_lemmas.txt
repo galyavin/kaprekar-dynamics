@@ -1,0 +1,1 @@
+sampled: one-step 39958, A4(i) premises 39958, nine-step premises 39324, failures 0, max V9-V0 = -20

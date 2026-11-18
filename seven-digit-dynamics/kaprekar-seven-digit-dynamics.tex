@@ -1,0 +1,865 @@
+\documentclass[11pt,reqno]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amssymb,booktabs}
+\usepackage[margin=1.15in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}{Lemma}[section]
+\newcommand{\D}{\mathcal D}
+\newcommand{\R}{\mathbb R}
+\newcommand{\ord}{\operatorname{sort}_{\downarrow}}
+\newcommand{\E}{\mathbb E}
+
+\title[Seven-digit Kaprekar dynamics]{Seven-digit Kaprekar dynamics:\\ global law, two clocks, parity}
+\author{Rustem Galyavin}
+\thanks{Contact: \href{mailto:rustem@galyavin.com}{rustem@galyavin.com}.
+ORCID: \href{https://orcid.org/0009-0006-6875-9170}{0009-0006-6875-9170}.}
+\date{18 November 2026}
+\subjclass[2020]{Primary 11A63; Secondary 37P99, 60F05}
+\keywords{Kaprekar map, digit dynamics, arrival times, weak convergence}
+\begin{document}
+\begin{abstract}
+Choose a nonconstant ordered word of seven base-$B$ digits uniformly, allowing
+leading zeros. Under repeated Kaprekar subtraction let $T_B$ be its first arrival
+time at a cycle. Along the bases of either parity, the normalized starting differences
+and $T_B/B$ have a joint weak limit. At almost every starting point the
+conditional time has two atoms. The faster time has probability $3/8$ in odd
+bases and either $1/2$ or $3/4$ in even bases. Both marginal laws have support
+$[0,1/4]$, and the even law has strictly smaller mean. We prove that every
+arrival time is at most $54B+614132$ for $B\ge400$. All positive moments
+and all fixed exponential moments converge along each parity. At first
+arrival the normalized differences converge uniformly to $(3/4,1/2,1/4)$.
+The proof combines an almost-everywhere entry theorem for a piecewise affine
+map with exact integer returns and a computer-assisted potential inequality.
+\end{abstract}
+\maketitle
+\section{Introduction}
+In integer base $B\ge2$, arrange the seven digits of a word in decreasing
+and increasing order and subtract the second number from the first.
+Regard the result as another word of length seven. We write $\kappa_B$ for
+this map and count time from the original word, so a word already on a cycle
+has time zero. If $d_1\ge\cdots\ge d_7$ are its sorted digits, put
+\[
+ q=(u,v,w)=(d_1-d_7,d_2-d_6,d_3-d_5),\qquad X_B=q/B.
+\]
+Give each of the $B^7-B$ nonconstant ordered words equal probability. Let
+$T_B$ be the first time $\kappa_B^{T_B}$ is on any cycle, and let $D_B$ be
+the difference vector of that first cyclic word, divided by $B$.
+
+\begin{theorem}[Global arrival law]\label{th:law}
+Let $\D=\{(x,y,z):1>x>y>z>0\}$ and
+$\rho(x,y,z)=5040(1-x)(x-y)(y-z)z$.
+For $\beta=0,1$, as $B\to\infty$ with $B\equiv\beta\bmod 2$,
+\[
+ (X_B,T_B/B)\ \Longrightarrow\
+ \rho(\xi)\,d\xi\,\bigl[p_\beta(\xi)\delta_{t_f(\xi)}
+                    +(1-p_\beta(\xi))\delta_{t_s(\xi)}\bigr].
+\]
+The following construction defines the clocks and the probabilities for
+Lebesgue-almost every $\xi\in\D$. Put
+\[
+ C(a,b,c)=\tfrac12(1+a,a+b,b+c),\qquad f(\xi)=C(\ord |2\xi_i-1|).
+\]
+In the ordered simplex $1\ge a\ge b\ge c\ge0$ put
+\[
+ K=\{2a\ge1,\ a+b\ge1,\ b+c\le a,\ b+2c\ge2a-1,\ 2b+c\le2-a\}.
+\]
+Iterate $f$ to the first visit to $C(K)$. Of that point and its next
+two iterates exactly one, $(x,y,z)$, satisfies $x+z>2y$ and $x>y+z$.
+Write $d=x-3z$. The clocks and weights at the original point $\xi$ are
+\[
+\begin{array}{c|cc|cc}
+ &t_f&t_s&p_0&p_1\\ \hline
+ d>0 &(9x-3z-6)/8&(5x-3z-3)/4&1/2&3/8\\
+ d<0 &3(x+z-1)/4&(2x+6z-3)/4&3/4&3/8 .
+\end{array}
+\]
+Almost everywhere $0<t_f<t_s<1/4$. Each marginal time law is absolutely
+continuous with support $[0,1/4]$. The even-base limiting time is
+stochastically smaller and has strictly smaller mean.
+\end{theorem}
+
+\begin{theorem}[Uniform capture and destination]\label{th:clock}
+For every integer $B\ge400$ and every nonconstant seven-digit word,
+\[
+ T_B\le54B+614132,\qquad
+ \|D_B-(3/4,1/2,1/4)\|_\infty\le 34/B .
+\]
+The same distance bound holds throughout each nonconstant cycle. The triple $(X_B,T_B/B,D_B)$ has the limit of Theorem~\ref{th:law}
+with the constant destination appended. Write $\nu_\beta$ for the marginal
+limiting time law. Along the same bases,
+\[
+ \begin{aligned}
+ \E (T_B/B)^p&\longrightarrow\int t^p\,d\nu_\beta(t) &&(p>0),\\
+ \E e^{\theta T_B/B}&\longrightarrow\int e^{\theta t}\,d\nu_\beta(t) &&(\theta\in\R).
+ \end{aligned}
+\]
+In particular the normalized means and variances converge, and the
+maximum arrival time among all words is $\Theta(B)$.
+\end{theorem}
+
+The conditional law in Theorem~\ref{th:law} is a statement about the joint
+limit. At a given integer state the entire trajectory is deterministic.
+Averaging over microscopic congruence classes near a starting point leaves
+two possible times. The limit distinguishes the two base parities even after
+the starting point is forgotten. For example, the point
+$(0.84,0.51,0.24)$ is already on the positive canonical branch. There
+the two times are $0.105$ and $0.12$. The shorter time receives half the
+mass along even bases and three eighths along odd bases.
+
+The proof has three parts. Section~3 shows that the real map $f$ almost
+surely enters the region $C(K)$, where it is a rotation of order three
+(Proposition~\ref{pr:entry}); the global law turns on this step.
+Section~\ref{sec:facet} follows the exact integer map from there: three-step
+returns carry the differences to the facet $2v=B$ and along it to the edge
+$(x,1/2,1-x)$. Section~4 treats the final stretch near that edge, where the
+time grows at one of two rates decided by residues modulo eight (Propositions~\ref{pr:edge}
+and~\ref{pr:facet}). Section~6 transports these residues back to the start,
+which gives the weights. Section~\ref{sec:uniform} proves the uniform bounds
+with a potential that strictly decreases over nine steps while above $200$.
+
+\subsection*{Earlier work}
+Walden used symmetric differences in his node graph and constructed
+seven-digit cycles near $(3B/4,B/2,B/4)$ for all large bases. He proved
+that base four is the only base with a seven-digit globally attracting
+fixed point and conjectured completeness of his list of cycles
+\cite[\S3, Lemma 4.1, Theorem 4.2 and Conjecture 4.3]{Wa}.
+Thakur gave another proof of the fixed-point result and observed the
+shift $(3,2,1)$ in differences when the base increases by four
+\cite[Theorem 4 and \S4.3]{Th}; on an explicit paired region of states
+this shift is the seven-digit case of a covariance principle for every odd
+number of digits \cite[Theorem~4]{G4}.
+For every odd number of digits the continuous large-base map also decreases
+the vector of successive spacings of the normalized differences, endpoint
+spacings included, in majorization order \cite[Theorem~1]{G4}; the seven-digit
+entry theorem below is proved separately. Hetmaniok, Pleszczy\'nski, Sobstyl and
+Witu{\l}a tabulated the decimal seven-digit eight-cycle and its basin
+\cite[entry $n=7$]{Het}; Nuez describes its $219$ difference classes
+\cite[\S6]{Nu}. Kay and Downes-Ward studied fixed points and cycles for
+any number of digits in odd and in even bases \cite{KD22,KD24}, and
+Kahramanlar reduced the routine for any number of digits and any base to
+the ordered opposite-position digit gaps \cite[\S2]{Kah} and computed the
+determinants of its strict branches \cite[\S5]{Kah}, without seven-digit
+asymptotics. Chen, Ono,
+Schwartz and Thakur described four-digit dynamics in odd bases \cite{COST}.
+For four digits in even bases, the difference
+map yields cycle classifications \cite[\S2 and Theorem 1]{G1} and
+arrival distributions \cite[\S2 and Theorems 1--2]{G2}. For five digits
+a single normalized time at almost every starting point gives a common law
+through all bases \cite[Theorem 1 and \S2]{G3}. Here the object is the
+seven-digit joint distribution of position and first arrival as the base
+grows. The proofs below require no classification of seven-digit cycles.
+
+\section{Difference coordinates and input measure}
+One subtraction of any word with differences $q$ produces the number
+\[
+ L_B(q)=(B^6-1)u+(B^5-B)v+(B^4-B^2)w .
+\]
+This is the seven-digit case of the gap-closure formula \cite[\S2]{Kah}.
+The coefficients are positive, and each exceeds $(B-1)$ times the sum
+of those to its right; thus $L_B$ is injective. Let $F_Bq$ be the differences
+of $L_B(q)$ and $h_B(q)$ the first cyclic index for $F_B$. A cyclic word
+has cyclic differences, and $L_B$ takes a cyclic difference vector to a
+cyclic word. Therefore $h_B(q)\le T_B\le h_B(q)+1$.
+More precisely, if the initial word is transient then $T_B=h_B(q)+1$:
+for a transient difference vector its image under $L_B$ cannot be a
+cyclic word, since a cyclic word has a cyclic predecessor and $L_B$ is
+injective. This also shows that exactly one cyclic word has each cyclic
+difference vector.
+For $w>0$ column subtraction gives, from high digit to low,
+\begin{equation}\label{eq:borrow}
+ (u,v,w-1,B-1,B-w-1,B-v-1,B-u).
+\end{equation}
+Sorting this list and taking symmetric differences computes $F_B$,
+including ties. At scale $B$ the corresponding real digits are $1$ and
+the three pairs $(\xi_i,1-\xi_i)$. Sorting these pairs around $1/2$
+gives the map $f$ in Theorem~\ref{th:law}. Let $\Gamma$ be a compact set
+inside an open region on which the seven real digits have a fixed strict
+order, so that $f$ is given there by a single sorting branch. On
+$\Gamma$ the separations between the seven real digits are bounded below, so
+for all sufficiently large $B$ they exceed the unit borrow corrections in
+\eqref{eq:borrow} after scaling, and every integer $q$ with $q/B\in\Gamma$
+follows the same branch. There $F_B$ is affine in $(q,B,1)$, differs from
+$Bf(q/B)$ by a bounded vector, and has the linear part of $f$. This linear
+part is integral of determinant $\pm1$: the diagonal factors $2$ in the
+three signed radii cancel the factor $1/8$ in $\det C$. Compositions along
+a fixed itinerary of such branches therefore permute the residues modulo
+every integer bijectively (Section~6 carries out the induction). The
+restriction to branches of the limiting map matters. A strict order of
+the seven integer digits can have determinant $2$ where the limiting digits
+tie: at $B=8k$ and $q=(6k,3k,2k)$ the seven digits are distinct, the branch is
+$q\mapsto(B-w,2u-B,B-v-w-1)$ with determinant $2$, and the limiting
+digits tie because $u+w=B$ (compare the odd central-axis restoration
+theorem of \cite[\S5]{Kah}). Such walls are null.
+
+Here is the population measure, including its lattice residues. For distinct
+digits and prescribed $u>v>w>0$, there are $B-u$ choices of the smallest
+digit. The two outermost adjacent gaps together sum to $u-v$, the next
+two to $v-w$, and the inner two to $w$. A positive split of $g$ has $g-1$
+choices. Each resulting sorted word has $7!$ orders. Words having two equal
+digits number at most $\binom72 B^6$ in total. It follows by Riemann sums
+that for every fixed Jordan measurable subset of $\D$, with a continuous
+bounded weight, the limiting measure is $\rho(\xi)\,d\xi$. Within any one
+residue class $q\bmod 8$ the limit is $1/512$ times this integral. The
+same conclusion on the full simplex also shows $\int\rho=1$.
+
+\section{Entry of the real map}
+Define $H(a,b,c)=\ord(a,|a+b-1|,|b+c-1|)$. Direct substitution gives
+$fC=CH$. The first coordinate of $H$ is $\max(a,1-b-c)$ and never
+decreases. Each strict branch of $H$ has determinant of absolute value one:
+before sorting its rows are $(1,0,0)$, $\pm(1,1,0)$ and $\pm(0,1,1)$.
+Hence all finite inverse images of null sets are null. The initial map to
+ordered radii has the same nonsingularity property. We may discard all
+finite inverse images of the boundaries of branches, $K$, the planes
+$a=1/2,1$, and the planes used for rotation and sign in the theorem.
+
+\begin{proposition}\label{pr:entry}
+Almost every point of the ordered radius simplex enters the interior of
+$K$ after finitely many iterates of $H$.
+\end{proposition}
+\begin{proof}
+Write $a_n$ for the first coordinate after $n$ steps. Below $a=1/2$,
+one step either crosses the midpoint or gives $2a+b\ge1$. In this latter
+region set $r=a-b$, $s=a+b+c-1$. By Lemma~\ref{l:entry}(i),
+\[
+ a'=a+(-s)_+,\qquad (r',s')=(|s|,r-s),\qquad t_+=\max(t,0).
+\]
+If $s$ stays nonnegative, the iterated matrix has rows $(0,1),(1,-1)$
+and eigenvalues $\lambda=(\sqrt5-1)/2$ and $-1/\lambda$. Boundedness
+on the simplex forces the expanding component to vanish, whence
+$s=\lambda r$. Exclude this plane and all its finite inverse images.
+Starting with $s=-t<0$, two further steps take $(r,t)$ to $(r+t,r)$
+and increase $a$ by $t$, provided both steps remain below the midpoint.
+This formula includes $t=0$. The Fibonacci recurrence from a nonzero
+nonnegative pair makes the accumulated increments unbounded. Thus the
+midpoint is crossed in finite time.
+
+For $a\ge1/2$ measure the failure of the four remaining inequalities of $K$ by
+\[
+ W=(1-a-b)_++(b+c-a)_++(2a-1-b-2c)_++(2b+c+a-2)_+ .
+\]
+Write $Z$ for the union of the two segments with points $(a,2-3a,2a-1)$
+and $(a,a,2a-1)$, $1/2\le a\le3/5$. Here $H$ interchanges the two indicated
+points and $W=2a-1$. Exclude their finite inverse images also. We apply the
+remaining parts of Lemma~\ref{l:entry}. If any $a_n>3/5$, stabilization
+makes $a_n$ constant two steps later: apply the three-step equality at every
+subsequent start. This constant is below one. On that plateau the six-step
+decrement $\min(5a-3,1-a)$ is positive until $W$ reaches zero.
+
+Otherwise $a_n\uparrow A\in(1/2,3/5]$ after passage above the midpoint.
+Suppose the orbit avoids $K$. The sequence of six-step samples of $W$
+decreases to a limit $w_0$. If $w_0=0$, the absorption inequality forces
+entry since $\min(2a_n-1,1-a_n)$ is bounded away from zero. If $w_0>0$,
+every accumulation point $p$ of the samples satisfies
+$W(p)=W(H^6p)=w_0$. Equality places it among the two points of $Z$
+over $A$. Compactness and continuity of the first five iterates give
+$\operatorname{dist}(H^nq,Z\cap\{a=A\})\to0$ for the full orbit and
+$W(H^nq)\to2A-1$. There are arbitrarily late visits near the first member
+of the pair, taking an extra iterate from the second if necessary. The
+neighborhood inequality in Lemma~\ref{l:entry} then supplies a later
+state with $W<2a_n-1\le2A-1$, since crossing $3/5$ is excluded. Every third
+subsequent value is at most this strictly smaller number. This contradicts
+the full-orbit limit. Removing the finite inverse images of $\partial K$
+turns entry into interior entry.
+\end{proof}
+
+On $K$ the sorted radius map is $H(a,b,c)=(a,1-b-c,a+b-1)$:
+the ordering follows from $a+b+c\ge1$ and $a+2b+c\le2$. Substitution
+in the inequalities gives $H(K)\subset K$ and $H^3=\mathrm{id}$ there.
+On $C(K)$ the induced rotation is $R(x,y,z)=(x,x-z,y-z)$. It permutes
+the three positive quantities $2y-1,\,2x-2y+2z-1,\,2x-2z-1$ cyclically
+in the interior. The first is smallest at a unique rotation off their
+equality planes. This is exactly the pair of strict inequalities in
+Theorem~\ref{th:law}. The first $f$ step gives a point in the image of $C$,
+so Proposition~\ref{pr:entry} applies to the original initial coordinates.
+\section{Integer returns near the edge}
+Consider the edge $(x,1/2,1-x)$ of the sorting regions. Measure distance
+from it by the integer offsets $m=2v-B$, $S=u+w-B$.
+\begin{proposition}[Edge clock]\label{pr:edge}
+If $B\ge100000$, $|m|,|S|\le20$ and
+$3B/4+1000\le u\le5B/6-1000$, there is a rate
+$r\in\{3/2,2\}$ determined by $(B\bmod2,m,S)$ with
+\[
+ |h_B(q)-r(u-3B/4)|\le200 .
+\]
+\end{proposition}
+\begin{proof}
+A three-step return sends the two offsets to new offsets and shifts $u$
+by a constant. To compute the transition for any reachable offsets use
+\eqref{eq:borrow} three times at $B=100000+(m\bmod2)$, $u=80000$.
+Lemma~\ref{l:edge} makes this calculation valid over the entire strip
+$3B/4+128\le u\le5B/6-128$. The initial path reaches one of the following
+offset cycles; each entry shows offsets $(m,S)$ in cyclic order. Write
+$\ell$ for the number of three-step returns, and $D$ for their total
+decrease of $u$.
+\[
+\begin{array}{c|l|rr}
+ B\bmod2&\text{cycle}&\ell&D\\\hline
+0&(0,-2),(4,2)&2&3\\
+0&(2,-1),(6,1),(2,0)&3&6\\
+0&(4,0)&1&2\\
+1&(-1,-3),(3,3),(-1,-1),(3,1)&4&6\\
+1&(-1,-2),(3,2)&2&3\\
+1&(1,-2),(5,2)&2&3\\
+1&(1,-1),(5,1)&2&4
+\end{array}
+\]
+Set $r=3\ell/D$. The transient endpoints and one further circuit move
+$u$ by at most $30$ from its initial value, with intermediate excursions
+at most $20$ in a block. After the transient, repeat whole circuits until
+the first endpoint below $H_B=\lceil3B/4\rceil+256$. It lies in
+$[H_B-D,H_B-1]$. At any point within a circuit the displacement from its
+start has absolute value at most $2\cdot30+20=80$. Since circuit starts
+decrease, the margins at initial entry and at the threshold justify every
+return used. Every skipped word in difference coordinates has $u-3B/4\ge128$.
+
+For every possible endpoint, direct subtraction followed by affine lifting
+gives the rest of the path and its first cyclic index $h_{\rm end}$
+(Lemma~\ref{l:edge}). Its cycle has $u-3B/4<128$ throughout. Hence the
+first capture belongs to the final path. If the initial transient takes
+$k$ blocks and shifts $u$ by $e$, the time minus $r(u-3B/4)$ is
+\[
+ 3k+re+h_{\rm end}-r(u_{\rm end}-3B/4).
+\]
+The interval in Lemma~\ref{l:edge} bounds all these discrepancies.
+\end{proof}
+
+\section{From the period-three region to the edge}\label{sec:facet}
+With exact digits, the interleaving order of the seven entries in
+\eqref{eq:borrow} (indices $0,\ldots,6$) is $(3,0,4,1,5,2,6)$ on
+one sorting region. Its step is $(u-1,u-w+1,v-w)$.
+Three successive such steps translate $q$ by $\Delta=(-3,-2,-1)$.
+In particular the three inner gaps $(u-v,v-w,w)$ themselves change
+in one step to $(w-2,u-v+1,v-w)$ there. If an itinerary starts with
+these three orders, the exact number of complete repetitions is
+\[
+ \min_{g_{\rm lin}(\Delta)<0}
+ \left(1+\left\lfloor g(q)/[-g_{\rm lin}(\Delta)]\right\rfloor\right).
+\]
+Here $g$ ranges over all input and pulled-back sorting inequalities
+$g\ge0$ of that three-step word, including $w\ge1$; at a tie the
+smaller index comes first, so a strict comparison has integer margin one.
+The formula follows by evaluating $g(q+j\Delta)$ for consecutive $j$.
+The bound on $w$ supplies a negative slope. For the global law we also
+need the change of sorting order at the facet $2v=B$.
+
+Besides $S,m$, use the forms
+\[
+ \begin{gathered}
+ E=2u-2w-B=S+d,\qquad d=u-3w,\\
+ J=B-u-v+2w,\qquad K_1=B-2u+2v-w,\qquad L=B-v-w .
+ \end{gathered}
+\]
+Consider integer states satisfying
+\begin{align}
+ &B\ge100000,\quad u\le B-1000,\quad w\ge1000,\quad m\ge0,\notag\\
+ &S-m,\ E-m,\ J,\ K_1,\ L\ \ge1000. \label{eq:source}
+\end{align}
+The positive source also requires $d\ge8000$, $3d\le B-24000$; the
+negative source requires $-d\ge8000$, $B+6d\ge24000$.
+
+\begin{proposition}[Facet transit]\label{pr:facet}
+For any original word with differences in either source,
+$|T_B-Bt_r(q/B)|\le216$, where $t_r$ is the clock of the corresponding
+sign in Theorem~\ref{th:law}, evaluated directly there: $r=3/2$ selects
+$t_f$ and $r=2$ selects $t_s$. The rate is determined by the residue
+table below.
+\end{proposition}
+\begin{proof}
+Lemma~\ref{l:facet} gives, under its weaker guards, the three-step
+update
+\[
+ (u,w,m)\mapsto(u-3,w-1,|m+1|-5).
+\]
+Let $m_j$ denote the last coordinate after $j$ such returns. Starting at
+$m\ge0$ it decreases by four until entering $-4\leftrightarrow-2$
+(even base), or $-3$ or $-5\leftrightarrow-1$ (odd base), in at most
+$\lfloor m/4\rfloor+1$ steps. Thus $m_j\ge m-4j$, $-5\le m_j\le m$.
+Both $S$ and $E$ fall by four each time and $d$ is fixed. For $d>0$
+take $N=\lfloor(S-16)/4\rfloor$, $s=S-4N\in[16,19]$. For $d<0$ take
+$N=\lfloor(E-12)/4\rfloor$, $e=E-4N\in[12,15]$. The margins in
+\eqref{eq:source} put $m_N$ on its cycle. At every $j<N$ both $S_j,E_j$
+are at least $16$. Before the bounded phase $S_j-m_j,E_j-m_j$ are
+constant, and in that phase $m_j\le0$. Furthermore
+\[
+ J_j-J=L_j-L=j+(m-m_j)/2,\qquad (K_1)_j-K_1=7j+m_j-m\ge3j .
+\]
+The first coordinate never exceeds its starting value. The final $w_N$
+in the formulas below exceeds $B/6$; all earlier values are larger.
+These facts verify the guards throughout, so the elapsed time is exactly
+$3N$ up to this point.
+
+For $d>0$ the endpoint has
+\[
+ u_N=(3B+d+3s)/4,\quad w_N=(B-d+s)/4,\quad (m,S)=(m_N,s).
+\]
+It satisfies Proposition~\ref{pr:edge} by the two bounds on $d$.
+For $d<0$ the endpoint instead has
+\[
+ u_N=(3B+3e-2d)/4,\qquad w_N=(B+e-2d)/4 .
+\]
+One more subtraction has first coordinate $u_N-1$ and offsets
+\begin{equation}\label{eq:neg}
+ m'=e+2,\qquad S'=
+ \begin{cases}(e+m_N)/2-1&m_N\ge-1,\\
+               (e-m_N)/2-2&m_N\le-2.
+ \end{cases}
+\end{equation}
+Lemma~\ref{l:facet} places this image in the edge strip. In both cases
+the edge clock is positive, so no preceding difference state was cyclic.
+Adding the elapsed time and the edge clock, with the possible extra step
+from $h_B$ to $T_B$, gives $T_B$ as the leading term
+\[
+ \tfrac34S+\tfrac r4d\quad(d>0),\qquad
+ \tfrac34E-\tfrac r2d\quad(d<0),
+\]
+which equals $Bt_r(q/B)$ in both cases, plus the edge error and the
+bounded terms $3s(r-1)/4+\epsilon$ and $3e(r-1)/4+1-r+\epsilon$,
+respectively, where $0\le\epsilon\le1$. These terms have absolute value
+below $16$, and the edge error is at most $200$.
+
+For completeness, the following table lists the fast columns. Columns
+are indexed $0,1,2,3$ for the four increasing values of $m\bmod8$
+compatible with the base parity. A dash means the empty set. The row
+variable is $S\bmod8$ on the positive side and $E\bmod8$ on the
+negative side. A dot indicates a parity-incompatible row.
+\[
+\begin{array}{c|cc|cc}
+ &\multicolumn{2}{c|}{d>0}&\multicolumn{2}{c}{d<0}\\
+ \text{row}& B\text{ even}&B\text{ odd}&B\text{ even}&B\text{ odd}\\ \hline
+ 0&12&02&0123&\cdot\\
+ 1&03&02&\cdot&-\\
+ 2&03&-&03&\cdot\\
+ 3&03&02&\cdot&023\\
+ 4&03&02&0123&\cdot\\
+ 5&12&02&\cdot&-\\
+ 6&12&-&12&\cdot\\
+ 7&12&02&\cdot&012
+\end{array}
+\]
+Indeed, the residue of $S$ or $E$ determines its endpoint remainder
+and the parity of $N$. The eventual value $m_N$ depends only on that
+parity and $m\bmod8$: increasing $m$ by eight adds two initial
+subtractions of four. Evaluating the indicated edge graph at $(m_N,s)$
+or \eqref{eq:neg} gives the table (Lemma~\ref{l:facet}).
+\end{proof}
+
+\subsection*{Which sources are reached}
+In coordinates $\xi=(x,y,z)$ put $a=2x-1$, $b=2y-a$,
+$c=2z-b$. Substitute these in the ordered simplex, the inequalities of
+$K$, and the two inequalities selecting the canonical rotation.
+The resulting closed polyhedron is described by the homogeneous limits
+of \eqref{eq:source} (with $B=1$ and all additive margins removed),
+ordered normalized coordinates, and the relevant sign of $x-3z$.
+Its vertices on either side are given by the two lists
+\[
+ \begin{array}{c|l}
+ + & A,\ U,\ G,\ D,\ V\\
+ - & A,\ G,\ F,\ V
+ \end{array}
+ \quad
+ \begin{aligned}
+ A&=(3/4,1/2,1/4), & U&=(5/6,1/2,1/6),\\
+ G&=(6/7,1/2,2/7), & D&=(9/10,1/2,1/5),\\
+ F&=(5/6,1/2,1/3), & V&=(1,2/3,1/3).
+ \end{aligned}
+\]
+The vertex calculation is specified in Lemma~\ref{l:facet}. In particular
+$0<d/B<1/3$ on the interior of the positive side and
+$-1/6<d/B<0$ on the negative side. Thus every compact set in a
+canonical source interior satisfies all integer buffers after scaling by
+sufficiently large $B$, even with bounded additive errors in its coordinates.
+
+\section{Passage to the population law}
+Partition the full-measure set of strict entry points by the finite
+sequence of sorting branches needed to enter $C(K)$, by the subsequent
+rotation, and by sign. Refine along the finitely many relevant comparison
+planes in each fixed itinerary. This gives countably many open polyhedra
+up to null boundaries. On any compact polytope inside one, the rescaled
+digits along the itinerary have strict separations bounded below. By
+induction over the fixed itinerary, as in Section~2, the exact map for all
+sufficiently large $B$ follows that prefix. Its
+endpoint is $B$ times the canonical image plus a bounded offset depending
+only on the branch sequence. It lies in \eqref{eq:source} with the
+prescribed sign. The positive remaining time there justifies adding the
+prefix length. For example the positive remaining time follows already
+from the transient edge reached in Proposition~\ref{pr:facet}. Both the
+prefix length and the discrepancy in the unnormalized affine clocks are
+bounded on this compact set.
+
+Fix $B\bmod8$. The affine prefix permutes all $512$ input residues, and
+each has the same limiting conditional frequency in any subpolytope.
+On the positive side, $(u,v,w)\mapsto(S,m)\bmod8$ has $16$ preimages for
+each of its $32$ admissible outputs. On the negative side,
+$(u,v,w)\mapsto(E,m)\bmod8$ has $32$ preimages for each of $16$ outputs.
+Indeed $u+w$ has eight representations modulo eight, while $2v$ has
+two; for $2(u-w)$ there are sixteen representations per admissible
+value. The table consequently gives $16/32$ and $12/32$ on the positive
+side, $12/16$ and $6/16$ on the negative side. These proportions depend
+only on $B\bmod2$.
+
+For each bounded continuous joint test, the residue Riemann sums give the
+asserted integral on the compact polytope: the affine clocks are continuous
+there, and the normalized error vanishes uniformly. Exhaust the entry set
+by finite unions of such interior polytopes, using disjoint interiors.
+The limiting and discrete omitted masses can both be made arbitrarily small
+by the input Riemann sum. The size of the test bounds their contribution,
+regardless of entry lengths outside the chosen polytopes. This proves the
+weak convergence along each residue modulo eight and hence, by the equality
+of the four limits, along each parity.
+
+The two times differ by $d/(8B)$ or $-d/(4B)$ in the notation of the
+integer facet (equivalently by $(x-3z)/8$ or $(3z-x)/4$ in canonical
+coordinates). Both affine forms are nonconstant on every entry cell
+since the prefix is invertible there. Hyperplane slicing gives an absolutely
+continuous pushforward of the restricted density on each cell, and hence
+of their countable sum. Evaluating at the listed vertices gives the
+range $[0,1/4]$ as an upper and lower bound, strict in the interiors.
+On the segment $AV$ both clocks increase linearly from $0$ to $1/4$.
+Every open subinterval is reached on an open set by perturbation into
+the positive interior; this set has positive $\rho$-mass. This proves
+the support assertion. Coupling the two laws using the same initial
+point and a common uniform choice of atom orders them, since $p_0>p_1$.
+Their mean difference (odd minus even) is
+$\int_{\D}\rho(p_0-p_1)(t_s-t_f)>0$.
+This completes the proof of Theorem~\ref{th:law}.
+\begin{corollary}[The period-three region and its preimage]\label{cor:regional}
+Let $Q=C(K)$ and $P=f^{-1}(Q)$ in the ordered initial simplex. For
+$S=Q$ or $P$, conditioning on $X_B\in S$ gives the law of
+Theorem~\ref{th:law} restricted to $S$ and divided by $M_S=\int_S\rho$,
+where
+\[
+ M_Q=1339759/43200000,\qquad M_P=937297/5400000 .
+\]
+\end{corollary}
+\begin{proof}
+Both boundaries have zero limiting mass, so restriction follows by weak
+convergence. To compute $M_Q$, take the two positive tetrahedra
+$(V,A,U,D),(V,A,D,G)$ and the negative tetrahedron $(V,A,G,F)$
+from Section~\ref{sec:facet}. Their three rotations partition $Q$ up to faces.
+The eight inverse branches of $f$ send $C(a,b,c)$ to the decreasing sort
+of $( (1\pm a)/2,(1\pm b)/2,(1\pm c)/2 )$, with signs chosen
+independently. Each is affine on the ordered cone and their interiors are
+disjoint. Their images of the nine tetrahedra cover $P$. The two
+integrals follow by the rational calculation in Lemma~\ref{l:facet}.
+\end{proof}
+
+\section{Uniform bounds on the integer trajectory}\label{sec:uniform}
+A positive state in this section means $w>0$. For $B\ge18$ a positive
+start either stays positive or reaches zero in the next two steps. Indeed,
+three consecutive positive states cannot have a zero successor by
+Lemma~\ref{l:zero}(i); apply this to the last three states before a
+putative later first zero.
+
+For a zero start $(u,v,0)$ with $v>0$ write $B=2b+\beta$.
+Lemma~\ref{l:zero}(ii) gives a positive image. A second-step return
+to zero occurs only from $(b,b,0)$ in even bases and from
+$(b,b,0),(b+1,b,0),(b+1,b+1,0)$ in odd bases. Its image at that
+second step is $(b+1,1,0)$ in all cases. Otherwise the second and third
+images are positive. The first-access bound applied to the first image
+now excludes any subsequent zero in this latter case. The exceptional
+return point lies outside the list for $b\ge9$, so it leaves permanently
+on the next step. Finally, the exact first image of $(u,0,0)$ is
+\[
+ (\max(B-u,u-1),\min(B-u,u-1),0).
+\]
+When $u=1$ two steps give $(B-2,1,0)$, which leaves permanently on the
+next step. In the other cases the middle difference of the image is
+positive and its first two coordinates sum to $B-1$. Among the exceptional
+sources this can only be $(b,b,0)$ in an odd base. Thus any zero start
+is permanently positive by step four; an arbitrary start is permanently
+positive by step six.
+
+For $g=(B-u,u-v,v-w,w)$ introduce
+\[
+ V(q)=\sum_{i=1}^4|4g_i-B|,\qquad X=(4u-3B,4v-2B,4w-B).
+\]
+The gaps are nonnegative with sum $B$, giving $0\le V\le6B$ by convexity
+on the simplex. The four centered gaps are $-X_1,X_1-X_2,X_2-X_3,X_3$.
+Since these sum to zero, every partial sum has absolute value at most
+half their total absolute sum. Thus $\|X\|_\infty\le V/2$.
+
+On any permanently positive orbit, Lemma~\ref{l:clock} gives
+$V(F_Bq)\le V(q)+8$ and a strict decrease at time nine whenever $V(q)>200$.
+At times $0,9,18,\ldots$ integer descent yields a sample with $V\le200$
+within $54B$ steps. All subsequent sample values are at most $272$:
+a sample at most $200$ gains at most $72$ and a larger one strictly
+decreases. Intermediate values are therefore at most $336$. From this
+point on $X$ lies in $[-168,168]^3$, with each coordinate in one fixed
+residue class modulo four. There are at most $85^3=614125$ possible
+states there. Determinism forces a repeat within that many steps.
+Adding six initial steps and at most one to pass to the original word
+gives the bound of Theorem~\ref{th:clock}.
+
+On a cycle take a maximum of $V$ and go nine steps backwards on the
+same cycle. If the predecessor has $V>200$, its value strictly exceeds
+the maximum, an impossibility. Otherwise the maximum is at most $272$.
+Thus $\|X\|_\infty\le136$ on every cycle. The differences of the first
+cyclic word are cyclic, yielding the asserted uniform destination bound.
+This also shows that the destination can be appended to the weak limit.
+The family $T_B/B$ is uniformly bounded for $B\ge400$, so every fixed
+power $p>0$ and every exponential with fixed real parameter is a bounded
+continuous test on the common range. Finally, the support of each limiting
+law gives $\liminf_{B\to\infty}\max T_B/B\ge1/4$ by testing the open set
+$(1/4-\epsilon,\infty)$ along both parities and then decreasing $\epsilon$.
+This proves Theorem~\ref{th:clock}.
+
+\section{Computations and verification}
+The accompanying directory runs from a fresh copy with
+\texttt{bash reproduce.sh}. It regenerates the real and integer solver
+queries, checks rational combinations of sorting inequalities exactly,
+and follows terminal paths by digit subtraction. The appendix specifies
+the finite assertions used in the proof. Z3 5.4.1 and cvc5 1.4.2 were
+used for real entry and zero-face assertions. Z3 5.4.1 and Yices 2.7.0
+were used for the potential. The two unbounded longitudinal-strip
+checks used Z3 5.4.1. Python 3.9.6 with exact fractions performs the
+rational and finite graph replays. Numerical checks additionally use
+SymPy 1.14.0 and a C++17 compiler.
+
+The independent column-subtraction implementation visits all $22\,315\,002$
+nonconstant difference vectors in bases $129,130,400,401$. The maximal
+observed difference arrival times are $56,49,113,127$, respectively.
+Whole-integer subtraction also checks twelve trajectories selected by
+their finite leading prefixes, totaling $1\,643\,929$ digit updates.
+Exact weighted distributions in bases $96,97,192,193$ account for all
+$B^7-B$ words at each base. Finite examples check the implementations.
+The conclusions for unbounded bases use the appendix and the preceding
+analytic arguments. The time integrals in the theorem specify limiting
+moments without a numerical quadrature claim. Neither a sharp maximum nor
+an exact list of all cycles is needed here.
+
+An independent re-derivation of every reduction from the text of an earlier
+draft of this paper was also carried out, with separately written encodings.
+Z3 found no counterexample to the entry, facet, zero-face and potential
+assertions, with no upper bound on $B$, and Yices confirmed the entry
+assertions. The edge graphs, the $140$ terminal families and both regional
+masses were recomputed independently and agree exactly. Word-level
+subtraction at the bases $200000$--$200007$, $1000003$ and $1000004$ placed
+all $440\,320$ sampled arrival times within $99$ steps of one of the two
+predicted clocks. In each box of $512$ words, one per residue, the fast
+share was $1/2$ on the positive side and $3/4$ on the negative side in even
+bases, and $3/8$ on both sides in odd bases. A separate exhaustive
+enumeration at the bases $18$--$300$, $400$, $401$, $500$--$507$, $1000$
+and $1001$ found every nonconstant cyclic state within $3.5/B$ of
+$(3/4,1/2,1/4)$ in the sup norm. These encodings and their logs are part of the ancillary
+material.
+
+\appendix
+\section{Finite assertions and their encodings}\label{sec:appendix}
+In the following lemmas an integer state always satisfies
+$B>u\ge v\ge w\ge0$, $u>0$. On reals write $q_j=H^j(a,b,c)$ and
+$a_j=(q_j)_1$. Real absolute values, maxima, minima and sorting use
+piecewise affine expressions with non-strict comparisons at equality.
+
+\begin{lemma}[Eight real inequalities]\label{l:entry}
+For $0\le c\le b\le a<1$ the following assertions hold.
+\begin{enumerate}
+\item[(i)] If $a,a_1<1/2$, then $2a_1+(q_1)_2\ge1$. If $a<1/2$
+and $2a+b\ge1$, then, with $s=a+b+c-1$,
+$q_1=(a+(-s)_+,a-s_+,1-a-b)$.
+\item[(ii)] For $a\ge1/2$, $W(q_3)\le W(q_0)$.
+\item[(iii)] For $a>3/5$, $a_3=a_2$. If additionally $a_6=a$,
+then $W(q_6)\le\max(0,W(q_0)-\min(5a-3,1-a))$.
+\item[(iv)] If $a>1/2$, $a_6<1$ and $W(q_6)=W(q_0)>0$, then $q_0\in Z$.
+\item[(v)] If $a>1/2$ and $W(q_0)<\tfrac12\min(2a-1,1-a)$,
+then $W(q_6)=0$.
+\item[(vi)] If $1/2<a\le3/5$, $(b,c)\ne(2-3a,2a-1)$ and
+$\max(|b-2+3a|,|c-2a+1|)<(2a-1)/100$, then some $0\le j\le4$
+has $a_j>3/5$ or $W(q_j)<2a_j-1$.
+\end{enumerate}
+\end{lemma}
+\noindent
+\texttt{seven\_entry\_audit.py} takes a triple of real variables, forms
+six iterates, and negates the eight claims in quantifier-free linear real
+arithmetic. A sorted triple is encoded by its maximum, its sum less the
+maximum and minimum, and its minimum. For the stabilization query it
+suffices to exclude $a_3>a_2$, by monotonicity. Each negation is UNSAT in
+both Z3 and cvc5.
+
+\begin{lemma}[Edge graph and terminal lifts]\label{l:edge}
+For $\beta=0,1$ start with all offsets $|m|,|S|\le20$,
+$m\equiv\beta\pmod2$, and close under the representative three-step rule
+in Proposition~\ref{pr:edge}. On every reachable node, for all bases
+$B\equiv\beta\bmod2$, $B\ge100000$, and every integer $u$ with
+$3B/4+128\le u\le5B/6-128$, the representative rule gives the exact
+three-step offsets and displacement in $u$. Every partial step of a block
+moves $u$ by at most $20$ from its value at the start of the block.
+The graphs have $884,845$ nodes and precisely the cycles listed in that
+proposition. Starting in the indicated offset square, the transient lengths
+in blocks are at most $10,11$. The cumulative displacement at each
+block endpoint through the transient and one circuit has absolute value
+at most $24,30$, respectively.
+
+For each reachable cycle phase, compatible $B\bmod4$, and
+$u_{\rm end}=H_B-j$ with $1\le j\le D$, the whole path from the endpoint
+to first repetition is the translate of its path in the representative
+base $100000+(B\bmod4)$ by $(3,2,1)(B-100000-(B\bmod4))/4$.
+Every terminal cycle on these paths has $u-3B/4<128$. The discrepancy
+$3k+re+h_{\rm end}-r(u_{\rm end}-3B/4)$ over all admissible initial
+offsets and terminal choices lies in $[-43/2,343/8]$.
+\end{lemma}
+\noindent
+In \texttt{seven\_boundary\_audit.py} write $B=2b+\beta$ and start at
+$(u,b+(\beta+m)/2,2b+\beta-u+S)$. Sort the seven affine forms in
+$(u,b,1)$ at the representative; retain every comparison and each
+intermediate state-validity inequality. A reversed index in a tie-broken
+comparison requires a margin of one. Composing the three steps gives
+constants for both offsets and all partial first-coordinate displacements.
+The disjunction that any of $328$ or $330$ distinct guards fails on the
+given strip is UNSAT in Z3 for each parity. Traversing the resulting finite
+graphs from $861$ even and $820$ odd initial nodes yields the cycle and
+excursion data. For the $140$ endpoint families, compute up to first
+repetition at the representative and check descending order of both digit
+values and their slopes $(3,2,1,4,3,2,1)$ under $B\mapsto B+4$. The
+borrowed digit comparisons thus persist for all nonnegative shifts.
+The symmetric slope differences give $(3,2,1)$ at every step. Translation
+preserves all equalities and inequalities between entire states, and hence
+the index of the first repetition. The finite enumeration of the discrepancy
+uses these first cyclic indices.
+
+\begin{lemma}[Facet returns, exits and residue tables]\label{l:facet}
+Use $m,S,E,d,J,K_1,L$ as in Section~\ref{sec:facet}. If
+\[
+ \begin{gathered}
+ B\ge100000,\quad u\le B-1000,\quad w\ge1000,\quad m\ge-6,\\
+ S,\ S-m,\ E,\ E-m\ge16,\qquad J,\ K_1,\ L\ge8 ,
+ \end{gathered}
+\]
+then three steps give $u'=u-3,\ w'=w-1,\ m'=|m+1|-5$.
+For $B\ge100000$, $-d\ge8000$, $B+6d\ge24000$, $E=e\in\{12,13,14,15\}$
+and $m\in\{-5,-4,-3,-2,-1\}$ of the same parity as $e$, the next state
+has $u'=u-1$, offsets \eqref{eq:neg} with $m_N=m$, and meets the full
+domain of Proposition~\ref{pr:edge}.
+The closed canonical sign regions have precisely the vertices listed
+in Section~\ref{sec:facet}, and applying the edge rule to each endpoint residue gives
+precisely the fast columns in that section. Integrating $\rho$ over the
+nine tetrahedra for $Q$ and their $72$ inverse images gives respectively
+the two rational numbers in Corollary~\ref{cor:regional}.
+\end{lemma}
+\noindent
+\texttt{seven\_return\_checks.py} reconstructs thirteen three-step
+sorting words ($m=-6,\ldots,5$ and $m\ge6$) and ten one-step exit words.
+Each retained affine guard is supplied as a nonnegative rational linear
+combination of the hypotheses, branch constraints and $1\ge0$. The
+replay reconstructs all rows and final matrices, checks $490$ identities
+over $\mathbb Q$, and rejects missing rows, changed coefficients or a
+changed domain. Vertex checks intersect every independent triple of
+bounding planes and retain exactly the feasible points. The replay does
+this for the limiting integer source domains (including their sign
+bounds); \texttt{seven\_tables.py} repeats it starting directly from the
+defining inequalities of the canonical $C(K)$ regions. For the positive
+table one evaluates the bounded phase $m_N$ at residues of $(S,m)$; for
+the negative table one evaluates \eqref{eq:neg} at residues of $(E,m)$.
+The edge graph supplies the rate at each resulting offset. Both the column
+lists and their counts are checked. For the integrals, expand the four
+linear factors of $\rho/5040$ in barycentric coordinates. For a tetrahedron
+with affine Jacobian $J_T$, each degree-four monomial with exponents
+$k_0,\ldots,k_3$ has integral $|J_T|\prod k_i!/7!$. Summing these exact
+terms gives the masses. The older, restricted positive source
+also has a separate $338$-identity replay in \texttt{seven\_facet\_checks.py};
+the two-sided return above suffices for the theorem.
+
+\begin{lemma}[First access and zero-origin returns]\label{l:zero}
+For every integer base $B\ge18$ the following hold.
+\begin{enumerate}
+\item[(i)] If $q,F_Bq,F_B^2q$ are positive then $F_B^3q$ is positive.
+\item[(ii)] For $q=(u,v,0)$, $v>0$, $F_Bq$ is positive. The second
+image lies on $w=0$ exactly at the sources listed in Section~\ref{sec:uniform}, and then
+equals $(\lfloor B/2\rfloor+1,1,0)$. If the second image is positive,
+so is the third.
+\item[(iii)] For $q=(u,0,0)$ the first image is the sorted pair
+$\max(B-u,u-1),\min(B-u,u-1)$ followed by zero.
+\end{enumerate}
+\end{lemma}
+\noindent
+For (i) \texttt{seven\_first\_access.py} encodes three positive sources
+by \eqref{eq:borrow} and asks for a final $w=0$ with $B\ge18$.
+For (ii) the borrowed digits are
+$(u,v-1,B-1,B-1,B-1,B-v-1,B-u)$, and for (iii) they are
+$(u-1,B-1,B-1,B-1,B-1,B-1,B-u)$. The routine
+\texttt{seven\_zero\_transience\_audit.py} writes $B=2b+\beta$,
+$b\ge9$, and negates the three assertions in (ii) separately in each
+parity. It checks the formula in (iii) for every $B\ge18$. These seven
+and the first-access negation are UNSAT in both Z3 and cvc5. Sorting uses
+the same network as the next lemma.
+
+\begin{lemma}[Potential inequalities]\label{l:clock}
+For every integer $B\ge2$ and every positive source,
+$V(F_Bq)\le V(q)+8$. If all ten states $q,F_Bq,\ldots,F_B^9q$ are
+positive and $V(q)>200$, then $V(F_B^9q)<V(q)$.
+\end{lemma}
+\noindent
+\texttt{seven\_clock\_audit.py} removes one maximal digit $B-1$ from
+\eqref{eq:borrow} and sorts the remaining six using the following
+comparators in order, placing the larger digit in the lower index:
+\[
+ (1,2),(4,5),(0,2),(3,5),(0,1),(3,4),
+ (2,5),(0,3),(1,4),(2,4),(1,3),(2,3).
+\]
+For the resulting list $d_0,\ldots,d_5$, the image is
+$(B-1-d_5,d_0-d_4,d_1-d_3)$. The network is checked on every permutation
+of distinct ranks and every binary input. In the unbounded integer
+encoding each comparator imposes $h=\max(x,y)$ and $l=x+y-h$.
+First exclude a one-step increase greater than eight. For depth nine,
+partition by the sixteen sign choices $4g_i\ge B$ or $4g_i<B$ at the
+source. In seeking $V_9\ge V_0>200$, the first inequality permits adding
+$V_0-8(9-j)\le V_j\le V_0+8j$ and $V_j\le V_{j-1}+8$ for $j\ge1$.
+There is no upper bound on $B$ in any query. All seventeen negations
+are UNSAT in Z3 and Yices. Two false strengthenings yield SAT, and their
+paths are checked by ordinary digit subtraction.
+
+\section*{Data availability}
+The ancillary material is archived at Zenodo as version~1.5 of \href{https://doi.org/10.5281/zenodo.24325109}{doi:10.5281/zenodo.24325109}, and maintained at \url{https://github.com/galyavin/kaprekar-dynamics}.
+
+\section*{Tools}
+The research, computations and drafting were carried out with substantial
+assistance from AI systems (OpenAI Codex and Anthropic Claude), under the
+author's direction and close supervision. The main software was Python,
+Z3, cvc5, Yices and a C++ compiler. The author takes responsibility for
+the contents.
+
+\begin{thebibliography}{HPSW}
+\raggedright
+\bibitem[COST]{COST} E. Chen, K. Ono, R. E. Schwartz and D. Thakur,
+\emph{Four-digit Kaprekar dynamics in odd bases}, J. Integer Seq. \textbf{29}
+(2026), Article 26.4.7; \href{https://arxiv.org/abs/2606.20439}{arXiv:2606.20439}.
+\bibitem[G1]{G1} R. Galyavin, \emph{Cycles of the four-digit Kaprekar map in
+even bases}, 2026, in \emph{Kaprekar dynamics: papers, verification code
+and data}, v1.4, \href{https://doi.org/10.5281/zenodo.24343078}{doi:10.5281/zenodo.24343078}.
+\bibitem[G2]{G2} R. Galyavin, \emph{Arrival times for the four-digit Kaprekar
+map in even bases}, 2026, ibid., v1.1,
+\href{https://doi.org/10.5281/zenodo.24329321}{doi:10.5281/zenodo.24329321}.
+\bibitem[G3]{G3} R. Galyavin, \emph{A common arrival-time law for five-digit
+Kaprekar dynamics}, 2026, ibid., v1.2,
+\href{https://doi.org/10.5281/zenodo.24330159}{doi:10.5281/zenodo.24330159}.
+\bibitem[G4]{G4} R. Galyavin, \emph{Majorization in odd-digit Kaprekar
+dynamics and the nine-digit arrival law}, 2026, ibid., v1.3,
+\href{https://doi.org/10.5281/zenodo.24342270}{doi:10.5281/zenodo.24342270}.
+\bibitem[HPSW]{Het} E. Hetmaniok, M. Pleszczy\'nski, I. Sobstyl and
+R. Witu{\l}a, \emph{Kaprekar's transformations. Part II---numerical results
+and intriguing corollaries}, Position Papers of the Federated Conference on
+Computer Science and Information Systems, ACSIS \textbf{6} (2015), 97--104,
+\href{https://doi.org/10.15439/2015F15}{doi:10.15439/2015F15}.
+\bibitem[Kah]{Kah} M. Kahramanlar, \emph{An ordered-gap simplex reduction
+for Kaprekar dynamics in arbitrary digit length and base}, preprint (21 July
+2026), \href{https://doi.org/10.5281/zenodo.21472305}{doi:10.5281/zenodo.21472305}.
+\bibitem[KD22]{KD22} A. Kay and K. Downes-Ward, \emph{Fixed points and cycles
+of the Kaprekar transformation: 1. Odd bases}, J. Integer Seq. \textbf{25}
+(2022), Article 22.6.7.
+\bibitem[KD24]{KD24} A. Kay and K. Downes-Ward, \emph{Fixed points and cycles
+of the Kaprekar transformation: 2. Even bases}, preprint (2024),
+\href{https://arxiv.org/abs/2408.12257}{arXiv:2408.12257}.
+\bibitem[N]{Nu} F. Nuez, \emph{Symmetries in generalized Kaprekar's
+routine}, Symmetry \textbf{14} (2022), no.~1, article 37,
+\href{https://doi.org/10.3390/sym14010037}{doi:10.3390/sym14010037}.
+\bibitem[T]{Th} D. S. Thakur, \emph{Kaprekar phenomena}, in: Topics in
+Number Theory, RMS Lecture Notes Series \textbf{26}, Ramanujan Mathematical
+Society, 2020, 61--70.
+\bibitem[W]{Wa} B. L. Walden, \emph{Searching for Kaprekar's constants:
+algorithms and results}, International Journal of Mathematics and
+Mathematical Sciences \textbf{2005} (2005), no.~18, 2999--3004,
+\href{https://doi.org/10.1155/IJMMS.2005.2999}{doi:10.1155/IJMMS.2005.2999}.
+\end{thebibliography}
+\end{document}

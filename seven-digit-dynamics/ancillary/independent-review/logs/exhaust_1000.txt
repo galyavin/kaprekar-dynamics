@@ -1,0 +1,4 @@
+B=1000 states=167166999 int128mismatch=0 | A5 one-step fails=0 (max dV=8) | A5 nine-step cases=166610201 fails=0 (max dV9=-16) | A4 i/ii/iii fails=0/0/0 | last zero time=2
+B=1000 max h=271 at (499,457,0)  max T=272  T/B=0.27200  cyclic states=20  max|X| on cycles=12 (bound 136) => max dist*B=3.00 (bound 34)
+B=1000 weights total=1.000000e+21 expected=1.000000e+21 rel=8.08e-13  mean(T/B)=0.143527 var=0.003005  E e^{4T/B}=1.817960 E e^{-4T/B}=0.577066
+B=1000 CDF 0.00000 0.00024 0.00328 0.01236 0.02866 0.05249 0.08293 0.11831 0.15934 0.20060 0.24413 0.29122 0.34247 0.39798 0.45768 0.51950 0.58333 0.64677 0.70872 0.76830 0.82576 0.87926 0.92603 0.96279 0.98695 0.99814

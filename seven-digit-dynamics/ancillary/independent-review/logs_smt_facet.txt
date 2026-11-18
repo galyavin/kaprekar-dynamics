@@ -1,0 +1,25 @@
+A3 return: guards & not (u-3, w-1, |m+1|-5)                  unsat  expected unsat  0.3s
+sanity: guards satisfiable with m=-6                         sat    expected sat    0.0s  model B=100000 q=(89993, 49997, 19999) -> F^3=(89990, 50000, 19998)
+sanity: guards satisfiable with m>=6                         sat    expected sat    0.0s  model B=100000 q=(99000, 65008, 32008) -> F^3=(98997, 65006, 32007)
+sanity: weaker J>=0 instead of J>=8 breaks the rule          sat    expected sat    1.8s  model B=100000 q=(89995, 49999, 19997) -> F^3=(89992, 49997, 19997)
+A3 exit e=12 m_N=-4 -> m'=14 S'=6                            unsat  expected unsat  0.0s
+  sanity: exit hypotheses satisfiable e=12 m=-4              sat    expected sat    0.0s  model B=100000 q=(79009, 49998, 29003) -> F^3=(79006, 49999, 29002)
+A3 exit e=12 m_N=-2 -> m'=14 S'=5                            unsat  expected unsat  0.0s
+  sanity: exit hypotheses satisfiable e=12 m=-2              sat    expected sat    0.0s  model B=100000 q=(79009, 49999, 29003) -> F^3=(79006, 49998, 29002)
+A3 exit e=13 m_N=-5 -> m'=15 S'=7                            unsat  expected unsat  0.0s
+  sanity: exit hypotheses satisfiable e=13 m=-5              sat    expected sat    0.0s  model B=100003 q=(79012, 49999, 29004) -> F^3=(79009, 50001, 29003)
+A3 exit e=13 m_N=-3 -> m'=15 S'=6                            unsat  expected unsat  0.0s
+  sanity: exit hypotheses satisfiable e=13 m=-3              sat    expected sat    0.0s  model B=100003 q=(79012, 50000, 29004) -> F^3=(79009, 50000, 29003)
+A3 exit e=13 m_N=-1 -> m'=15 S'=5                            unsat  expected unsat  0.0s
+  sanity: exit hypotheses satisfiable e=13 m=-1              sat    expected sat    0.0s  model B=100003 q=(79012, 50001, 29004) -> F^3=(79009, 49999, 29003)
+A3 exit e=14 m_N=-4 -> m'=16 S'=7                            unsat  expected unsat  0.0s
+  sanity: exit hypotheses satisfiable e=14 m=-4              sat    expected sat    0.0s  model B=100002 q=(79012, 49999, 29004) -> F^3=(79009, 50000, 29003)
+A3 exit e=14 m_N=-2 -> m'=16 S'=6                            unsat  expected unsat  0.0s
+  sanity: exit hypotheses satisfiable e=14 m=-2              sat    expected sat    0.0s  model B=100002 q=(79012, 50000, 29004) -> F^3=(79009, 49999, 29003)
+A3 exit e=15 m_N=-5 -> m'=17 S'=8                            unsat  expected unsat  0.0s
+  sanity: exit hypotheses satisfiable e=15 m=-5              sat    expected sat    0.0s  model B=100001 q=(79012, 49998, 29004) -> F^3=(79009, 50000, 29003)
+A3 exit e=15 m_N=-3 -> m'=17 S'=7                            unsat  expected unsat  0.0s
+  sanity: exit hypotheses satisfiable e=15 m=-3              sat    expected sat    0.0s  model B=100001 q=(79012, 49999, 29004) -> F^3=(79009, 49999, 29003)
+A3 exit e=15 m_N=-1 -> m'=17 S'=6                            unsat  expected unsat  0.0s
+  sanity: exit hypotheses satisfiable e=15 m=-1              sat    expected sat    0.0s  model B=100001 q=(79012, 50000, 29004) -> F^3=(79009, 49998, 29003)
+ALL AS EXPECTED

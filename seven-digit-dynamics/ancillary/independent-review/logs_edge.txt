@@ -1,0 +1,16 @@
+beta=0 families=52  translation certificates=True  terminal cycles u-3B/4<128: True  far-base spot checks: True
+   discrepancy range [-19, 131/4] = [-19.0000, 32.7500]; max h_end=520; argmax ((-20, -20), 6, 3, (2, 0), 2, 2, 392, Fraction(509, 2))
+beta=1 families=88  translation certificates=True  terminal cycles u-3B/4<128: True  far-base spot checks: True
+   discrepancy range [-43/2, 343/8] = [-21.5000, 42.8750]; max h_end=532; argmax ((-19, -20), 7, 1, (1, -1), 3, 3, 401, Fraction(1015, 4))
+total endpoint families: 140 ALL OK
+beta=0 initial nodes=861 reachable nodes=884 guard failures=0
+   cycle [(0, -2), (4, 2)] ell=2 D=3 r=3l/D=2
+   cycle [(2, -1), (6, 1), (2, 0)] ell=3 D=6 r=3l/D=3/2
+   cycle [(4, 0)] ell=1 D=2 r=3l/D=3/2
+   max transient blocks=10  max |cum. displacement| (transient+1 circuit)=24  max partial/blk |du|=20
+beta=1 initial nodes=820 reachable nodes=845 guard failures=0
+   cycle [(-1, -3), (3, 3), (-1, -1), (3, 1)] ell=4 D=6 r=3l/D=2
+   cycle [(-1, -2), (3, 2)] ell=2 D=3 r=3l/D=2
+   cycle [(1, -2), (5, 2)] ell=2 D=3 r=3l/D=2
+   cycle [(1, -1), (5, 1)] ell=2 D=4 r=3l/D=3/2
+   max transient blocks=11  max |cum. displacement| (transient+1 circuit)=30  max partial/blk |du|=20

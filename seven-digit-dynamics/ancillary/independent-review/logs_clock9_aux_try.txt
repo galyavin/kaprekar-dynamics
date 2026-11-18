@@ -1,0 +1,3 @@
+[lock acquired after 0.0s]
+clock9 mode=aux part=None -> unsat (115.7s)
+[lock released, rc=0, 115.8s]

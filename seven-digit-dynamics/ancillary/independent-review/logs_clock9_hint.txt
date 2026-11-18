@@ -1,0 +1,11 @@
+[lock acquired after 0.0s]
+part 1 yices+implied-order: real 450.02 user 414.56 sys 3.25 
+part 2 yices+implied-order: real 450.02 user 414.63 sys 3.25 
+part 3 yices+implied-order: real 450.02 user 414.54 sys 3.24 
+part 4 yices+implied-order: real 450.01 user 414.26 sys 3.26 
+part 5 yices+implied-order: real 450.02 user 414.81 sys 3.24 
+part 8 yices+implied-order: real 450.02 user 414.56 sys 3.24 
+part 9 yices+implied-order: real 450.02 user 414.60 sys 3.23 
+part 12 yices+implied-order: unsat real 156.61 user 135.34 sys 1.52 
+part 13 yices+implied-order: real 450.01 user 414.33 sys 3.25 
+[lock released, rc=0, 450.2s]

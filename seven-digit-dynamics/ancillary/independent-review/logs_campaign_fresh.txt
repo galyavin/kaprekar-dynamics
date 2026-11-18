@@ -1,0 +1,4 @@
+[lock acquired after 0.0s]
+Wed Nov 18 07:32:10 CST 2026
+Wed Nov 18 07:36:22 CST 2026
+[lock released, rc=0, 252.1s]

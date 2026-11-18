@@ -1,0 +1,23 @@
+[lock acquired after 0.0s]
+A4(i) q,Fq,F2q positive & F3q zero, B>=18        unsat   expected unsat     0.2s
+sanity: A4(i) without B>=18 (B>=2)               sat     expected sat       0.2s  replay: B=4 orbit [(3, 3, 2), (3, 2, 2), (2, 2, 1), (3, 1, 0)]
+A4(ii)a beta=0: F(u,v,0) not positive            unsat   expected unsat     0.0s
+A4(ii)b1 beta=0: F2 zero but source not listed   unsat   expected unsat     0.1s
+A4(ii)b2 beta=0: listed source but F2 positive   unsat   expected unsat     0.1s
+A4(ii)b3 beta=0: F2 zero but F2 != (b+1,1,0)     unsat   expected unsat     0.1s
+A4(ii)c beta=0: F2 positive but F3 not           unsat   expected unsat     0.4s
+A4(ii)x beta=0: (b+1,1,0) in list                unsat   expected unsat     0.0s
+A4(ii)a beta=1: F(u,v,0) not positive            unsat   expected unsat     0.0s
+A4(ii)b1 beta=1: F2 zero but source not listed   unsat   expected unsat     0.1s
+A4(ii)b2 beta=1: listed source but F2 positive   unsat   expected unsat     0.1s
+A4(ii)b3 beta=1: F2 zero but F2 != (b+1,1,0)     unsat   expected unsat     0.1s
+A4(ii)c beta=1: F2 positive but F3 not           unsat   expected unsat     0.4s
+A4(ii)x beta=1: (b+1,1,0) in list                unsat   expected unsat     0.0s
+A4(iii) F(u,0,0) formula, B>=2                   unsat   expected unsat     0.0s
+A5 one-step V(Fq)>V(q)+8 (net6)                  unsat   expected unsat     0.0s
+A5 one-step V(Fq)>V(q)+8 (oet7)                  unsat   expected unsat     0.1s
+sanity: V(Fq)>V(q)+7 (false strengthening)       sat     expected sat       0.0s  replay: B=5 q=(4, 2, 2) V=12 V(Fq)=20
+net6 vs oet7 positive step disagree              unsat   expected unsat     0.0s
+B-1 not maximal digit                            unsat   expected unsat     0.0s
+ALL AS EXPECTED
+[lock released, rc=0, 2.2s]

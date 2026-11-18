@@ -1,0 +1,25 @@
+sign +1: vertices from C(K) description ['A', 'D', 'G', 'U', 'V'] ; from source description ['A', 'D', 'G', 'U', 'V'] ; paper ['A', 'D', 'G', 'U', 'V'] ; match=True
+   d=x-3z over vertices: min 0 max 1/3
+   t_f over vertices [Fraction(0, 1), Fraction(3, 28), Fraction(1, 8), Fraction(3, 16), Fraction(1, 4)] ; t_s over vertices [Fraction(0, 1), Fraction(3, 28), Fraction(1, 6), Fraction(9, 40), Fraction(1, 4)]
+sign -1: vertices from C(K) description ['A', 'F', 'G', 'V'] ; from source description ['A', 'F', 'G', 'V'] ; paper ['A', 'F', 'G', 'V'] ; match=True
+   d=x-3z over vertices: min -1/6 max 0
+   t_f over vertices [Fraction(0, 1), Fraction(3, 28), Fraction(1, 8), Fraction(1, 4)] ; t_s over vertices [Fraction(0, 1), Fraction(3, 28), Fraction(1, 6), Fraction(1, 4)]
+row | d>0 even | d>0 odd | d<0 even | d<0 odd   (mine vs paper)
+  0 |    12    02  0123     .  OK
+  1 |    03    02     .     -  OK
+  2 |    03     -    03     .  OK
+  3 |    03    02     .   023  OK
+  4 |    03    02  0123     .  OK
+  5 |    12    02     .     -  OK
+  6 |    12     -    12     .  OK
+  7 |    12    02     .   012  OK
+  side -1 beta=0: fast 12 / 16 = 3/4
+  side -1 beta=1: fast 6 / 16 = 3/8
+  side +1 beta=0: fast 16 / 32 = 1/2
+  side +1 beta=1: fast 12 / 32 = 3/8
+sanity: int_D rho = 1  vol(D) = 1/6
+sanity: sum over the 48 sign/order pieces of D of int rho = 1
+M_Q = 1339759/43200000  (paper 1339759/43200000)  match=True   [6 tetrahedra]
+M_P = 937297/5400000  (paper 937297/5400000)   match=True   [8 nonempty pieces]
+Monte Carlo (2000000 pts): M_Q ~ 0.03101 (exact 0.03101), M_P ~ 0.17363 (exact 0.17357)
+GEOMETRY OK
