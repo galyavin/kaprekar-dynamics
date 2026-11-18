@@ -1,0 +1,22 @@
+{
+  "LICENSE.md": "3c3521faa4ad548895ddd7f86dc2d8724b17c655c6272967110fa6540ba46de0",
+  "README.md": "f874dc3577f0a23a2eb3255725982edcbe94d4b245251ef7ec951819922c757f",
+  "graph_check.cpp": "2eb1d74e25c484659ae73acb55ac409163d97af208e06d04cf523000a792c226",
+  "independent.py": "47ca35c4c6fedb42a974e7e6be58ac10bbcb33d01962e89a36878682dd9425a4",
+  "reproduce.sh": "f1d7318688c9c2fa0ddf852ff2a8f79ff9807aad5f4f446cea11b270f43d579c",
+  "results/independent.json": "34f62f8f5c3377faab961d514f4286afe612712ffbfa77d2dcc285555d8a6d6d",
+  "results/section8.json": "de0e7134e282c41d65dfb8292f12cd26cbff68dad7d0a3b97406e1baad52c72f",
+  "run_checks.py": "b8e4876dad187f89e60ea142ef75ff14845ba823c86c2388b93fadc61c63ef49",
+  "source/arithmetic_scaling_checks.py": "294eabde96f8d71aabc1ed0856d0592c03c40428a6b6e7bb534a937100fbdc01",
+  "source/arrival_checks.py": "3184f96780e97f4c5129c61c491277d987b0b19db7754328f3ff3a16f80956af",
+  "source/arrival_holdout.cpp": "a89462e8ce5ac87f399b6d9eca25a09183a1006501454030fbfbc0102fd3a5ea",
+  "source/arrival_limits.py": "9854cef6209287b1931bf04ee17b68f1f85a0291e1fae3d59ed2447cb3dbc804",
+  "source/basin_formula.py": "3590d495b58ae03a9481639a67a3728c9a2857b67bf74395309051136df7df0a",
+  "source/cycle_model.py": "d3f6fc808710795830847fd2aa76674f7d7ae24250ae94b7502b1154841f0b69",
+  "source/doubling_checks.py": "b40f9aa321638ebd71751803a291aa020d1aa14e1bccdbc6ac798b6b4b5c4ebf",
+  "source/four_uniform.py": "561ccca5a59a4350d6e78833a3527d2332cb579b98b0802177a904336ec6b410",
+  "source/investigate.py": "f5bbbdb223af0ef39ebf4bdc0d3241a3f381933186534734c998fbf4abc99226",
+  "source/modular_checks.py": "4ce70779dab4360c208af0ef486013d14e8eb91cfb9fe69bb5147ae7f42076ee",
+  "source/predecessor_model.py": "7c6f09449396810ca362dc77f32ff508ffcebf5182d6c958385f1135203d90fe",
+  "source/symbolic_arrivals.py": "c8af33c1a2e1b421e4b5e428e8770c27083b7a36f11bebfc873ba8fe16498208"
+}

@@ -1,0 +1,402 @@
+\documentclass[11pt]{amsart}
+\usepackage{amssymb}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{booktabs}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\DeclareMathOperator{\sort}{sort}
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\R}{\mathcal{R}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\Zs}{\mathcal{Z}}
+\newcommand{\Ds}{\mathcal{D}}
+\newcommand{\vt}{\nu}
+\newcommand{\dtv}{d_{\mathrm{TV}}}
+
+\begin{document}
+
+\title{Arrival times for the four-digit Kaprekar map in even bases}
+\author{Rustem Galyavin}
+\thanks{Contact: \href{mailto:rustem@galyavin.com}{rustem@galyavin.com}. ORCID: \href{https://orcid.org/0009-0006-6875-9170}{0009-0006-6875-9170}.}
+\date{18 November 2026}
+\subjclass[2020]{Primary 11A63; Secondary 37P99, 60F05}
+\keywords{Kaprekar routine, digit dynamics, arrival times, limit laws}
+
+\begin{abstract}
+For the four-digit Kaprekar map in base $B=m\cdot2^n$ with $m\ge5$ odd and $n\ge1$, we determine the exact distribution of the number of steps an input needs to reach a given union of the cycles inherited from base $m$, which include all cycles but at most one. Its generating polynomial is an explicit sum over $O_m(n)$ arithmetic progressions. As $n$ grows through a residue class modulo the order of $2$ modulo $m$, the arrival time divided by $n$ converges to a law with atoms only at $1,2,3,4,5$ and at infinity. For the bases $5\cdot2^n$, the proportion of inputs reaching the fixed point tends to $1033/1125$ when $n\equiv0$ and to $94/125$ when $n\equiv2\pmod4$; Devlin and Zeng had conjectured $3/4$ and $15/16$. When instead the odd part grows, the number of steps needed to reach any cycle is within total variation $26/m$ of $\max(1,n+2-G)$, where $G$ is geometric with ratio $1/4$, uniformly in $n$ and for every $m$.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+Arrange the four digits of a number in decreasing and in increasing order, leading zeros allowed, and subtract. Iterating this operation $K_B$ in base $B$ eventually reaches a cycle. In base ten every input whose digits are not all equal reaches the fixed point $6174$, after at most seven steps. Devlin and Zeng determined the maximal number of steps needed to reach the four-digit fixed points \cite[Theorem~1]{DZ}, studied the proportion of inputs that reach them, which they computed exactly for the bases $5m\cdot2^n$ with $m>1$ odd \cite[Theorem~2]{DZ}, and asked about the full distribution of the number of steps \cite[Section~5]{DZ}. This paper determines that distribution exactly in every even base with odd part at least $5$, for arrival at any prescribed union of lifted cycles (defined below), and describes it asymptotically as the power of $2$ grows; as the odd part grows, it describes the number of steps needed to reach any cycle.
+
+Write $B=m2^n$ with $m$ odd, $s=2^n$ and $h=(m+1)/2$, and let $\ell$ be the order of $2$ modulo $m$. Inputs are the $B^4-B$ digit strings that are not constant, chosen uniformly. We use the description of the cycles from the companion paper \cite{G1}. For odd $m\ge5$, the cycles of $K_B$ are the \emph{lifts} of the cycles of the permutation $\phi(u,v)=\sort(|2u-m|,|2v-m|)$ of
+\[
+\T_m=\{(u,v):m>u>v>0,\ u,v\ \text{odd}\},
+\]
+together with at most one more cycle \cite[Theorem~1]{G1}. Here a lift multiplies the digit differences by $s$; that cycles avoiding the boundary survive such scaling of the base is also shown in \cite[Theorem~3.2]{KSL}. Theorems~\ref{thm:exact} and~\ref{thm:limit} concern arrival at lifts; the additional cycle, when it exists, meets the boundary lines of Section~\ref{sec:prelim} and is not considered as a target. Fix a union $\C$ of cycles of $\phi$, possibly empty, and let $T$ be the number of steps an input needs to reach the lift of $\C$, with $T=0$ on that lift and $T=\infty$ outside its basin.
+
+\begin{theorem}[Exact distribution]\label{thm:exact}
+For odd $m\ge5$ and $n\ge1$, the generating polynomial $P(z)=\sum_{T(x)<\infty}z^{T(x)}$ is given by the explicit formula \eqref{eq:P} below. The sum in \eqref{eq:P} runs over $O_m(n)$ arithmetic progressions of boundary parameters; each progression contributes a power of $z$ times a polynomial of degree at most $n$ whose coefficients are sums of quadratic polynomials over the progression.
+\end{theorem}
+
+For example, base ten is the case $m=5$, $n=1$. For the fixed point $\C=\{(3,1)\}$, formula \eqref{eq:P} gives
+\[
+P(z)=1+383z+576z^2+2400z^3+1272z^4+1518z^5+1656z^6+2184z^7,
+\]
+whose coefficients count the inputs that reach $6174$ after exactly $k$ steps; direct subtraction gives the same counts.
+
+\begin{theorem}[Five-point limit]\label{thm:limit}
+For odd $m\ge5$ and each residue $r$ modulo $\ell$ there are rational numbers $a_{r,1},\dots,a_{r,5}\ge0$, given by \eqref{eq:atoms}, such that as $n\to\infty$ with $n\equiv r\pmod\ell$,
+\[
+\operatorname{Law}(T/n)\Longrightarrow\sum_{j=1}^5a_{r,j}\,\delta_j+(1-b_r)\,\delta_\infty,\qquad b_r=\sum_{j=1}^5a_{r,j},
+\]
+in the one-point compactification of $[0,\infty)$. The basin proportion is $b_r+O_m(2^{-n})$. If $\C\ne\varnothing$, then $b_r>0$ and
+\[
+\mathbb E[T\mid T<\infty]=\alpha_rn+O_m(1),\qquad
+\mathbb E[T^2\mid T<\infty]=\beta_rn^2+O_m(n),
+\]
+where $\alpha_r=\sum_jja_{r,j}/b_r$ and $\beta_r=\sum_jj^2a_{r,j}/b_r$.
+\end{theorem}
+
+\begin{corollary}[Fixed-point basins in bases $5\cdot2^n$]\label{cor:basin}
+Let $S_B$ be the set of inputs that reach the fixed point in base $B=5\cdot2^n$. Then
+\[
+\lim_{k\to\infty}\frac{|S_{5\cdot2^{4k}}|}{(5\cdot2^{4k})^4}=\frac{1033}{1125}\approx0.918,\qquad
+\lim_{k\to\infty}\frac{|S_{5\cdot2^{4k+2}}|}{(5\cdot2^{4k+2})^4}=\frac{94}{125}=0.752,
+\]
+with error $O(2^{-n})$; the limits are the same with denominator $B^4-B$. For odd $n$ every input reaches the fixed point.
+\end{corollary}
+
+With the normalization $C_b=|S_b|/b^4$, Devlin and Zeng wrote that ``a somewhat bold conjecture might be that $C_b\to3/4$ for $b=5\cdot2^{4n}$ and that $C_b\to15/16$ for $b=5\cdot2^{4n+2}$'' \cite[p.~5]{DZ}. Their values are close to the true limits, but attached to the opposite classes: $15/16\approx0.938$ against $0.918$, and $3/4$ against $0.752$. The limits are approached quickly: the exact proportions, to four decimal places, are $0.7608$ and $0.7522$ in the bases $20$ and $320$, and $0.9200$ and $0.9183$ in the bases $80$ and $1280$.
+
+When the odd part grows instead, borrowing becomes rare and the arrival time is governed by the $2$-adic valuation alone. Let $T^{\mathrm{all}}$ be the number of steps needed to reach any cycle, and let $G$ be a random variable with $\Pr(G=j)=3/4^{j+1}$ for $j\ge0$.
+
+\begin{theorem}[Uniform law]\label{thm:uniform}
+For every base $B=m2^n\ge2$ with $m$ odd,
+\[
+\dtv\bigl(\operatorname{Law}(T^{\mathrm{all}}),\ \operatorname{Law}(\max(1,n+2-G))\bigr)<\frac{26}m.
+\]
+\end{theorem}
+
+The bound is uniform in $n$, and it is trivial for $m\le25$; for $n=0$ it concerns odd bases. For the full target $\C=\T_m$, the mass at ratio $1$ in Theorem~\ref{thm:limit} is $(m-1)(m-3)/m^2$, which tends to $1$ as $m$ grows, in agreement with Theorem~\ref{thm:uniform}.
+
+\subsection*{How the arrival time is computed}
+Away from three boundary lines the map doubles and folds the two digit differences, and the power of $2$ dividing each difference works as a clock: it settles at exactly $2^n$ within $n+1$ steps \cite[Lemma~4]{G1}. Inputs whose differences avoid the boundary therefore reach a lift after a number of steps read off from their $2$-adic valuations. This gives a short explicit polynomial (Section~\ref{sec:generic}). Every other input reaches the boundary, and the companion paper's table of first returns \cite[Proposition~7]{G1} determines what happens next. The inputs that reach a given boundary state form a tree of generic predecessors whose weighted depth profile is a quadratic polynomial in the state's parameter (Section~\ref{sec:trees}). Summing these profiles over arithmetic progressions of boundary states gives Theorem~\ref{thm:exact}. Only boundary states of large $2$-adic valuation carry positive limiting mass, and most inputs in their trees arrive after $(k+1)n+O(1)$ steps, with $k\in\{1,2,3,4\}$ read off from the return graph of \cite{G1}. Together with the generic basin at ratio $1$, this gives the five atoms of Theorem~\ref{thm:limit}.
+
+\subsection*{Relation to earlier work}
+Hasse and Prichett \cite{HP} determined the four-digit fixed points, the bases in which every input reaches a single fixed point, and all cycles in the bases $5\cdot2^n$ \cite[Theorem~4.1]{HP}. Devlin and Zeng \cite{DZ} determined the maximal distances to the fixed points and studied basin proportions; their results already determine the distribution of the number of steps to the fixed point in the bases $10q$ with $q>1$ odd, where it is at most $3$ \cite[Theorems~1 and~2 and Lemmas~1 and~2]{DZ}. Chen, Ono, Schwartz and Thakur \cite{COST} described the dynamics in odd bases, a public draft of Korea Superintelligence Labs \cite{KSL} studies scaling of the base, and \cite{G1} classifies the cycles in even bases.
+
+\section{Preliminaries from the cycle classification}\label{sec:prelim}
+
+We use the notation and results of \cite{G1}. For sorted digits $a\ge b\ge c\ge d$ put $(u,v)=(a-d,b-c)\in X_B=\{1\le u<B,\ 0\le v\le u\}$. One step of $K_B$ acts on pairs by the map $f_B$ of \cite[(1)]{G1}, and the number produced from a pair is $F_B(u,v)=(B-1)((B^2+B+1)u+Bv)$, which is injective. The \emph{boundary states} are the pairs with $v=0$, $u=v$ or $u+v=B$, written $Z(u)=(u,0)$, $D(u)=(u,u)$ and, for $B/2<u<B$, $A(u)=(u,B-u)$. On the other, \emph{generic}, pairs $f_B(u,v)=\sort(|2u-B|,|2v-B|)$.
+
+\emph{Weights.} The number of ordered nonconstant digit strings with pair $(u,v)$ is
+\begin{equation}\label{eq:weight}
+w_B(u,v)=\begin{cases}(B-u)(12u-4),&v=0,\\6(B-u),&u=v>0,\\24(B-u)(u-v),&u>v>0.\end{cases}
+\end{equation}
+Choose the smallest digit in $B-u$ ways. When $v=0$ the two equal inner digits take $u-1$ interior values with $12$ arrangements each and the two endpoint values with $4$ each. When $u=v>0$ there are $6$ arrangements. When $u>v>0$ the $u-v-1$ interior values give $24$ arrangements each and the two endpoints $12$ each.
+
+\emph{The numerical clock.} Let $L_0$ be the lift of $\C$, a set of pairs on which $f_B$ is a permutation, and let $L_{j+1}=f_B^{-1}(L_j)\setminus\bigcup_{i\le j}L_i$. Put $Q(z)=\sum_jz^j\sum_{q\in L_j}w_B(q)$. Then
+\begin{equation}\label{eq:clock}
+P(z)=|L_0|(1-z)+zQ(z).
+\end{equation}
+Indeed, the $|L_0|$ numbers on the target cycles have time $0$. Any other input whose pair first reaches $L_0$ after $j$ steps needs $j+1$ subtractions, because the injectivity of $F_B$ prevents an earlier arrival.
+
+\emph{The valuation clock.} Write $\vt$ for the $2$-adic valuation, with $\vt(0)=\infty$, and put
+\[
+\rho_n(x)=\begin{cases}0,&\vt(x)=n,\\1,&\vt(x)>n,\\n-\vt(x)+1,&\vt(x)<n.\end{cases}
+\]
+A pair is \emph{regular} if none of $u$, $v$, $u-v$, $u+v$ is divisible by $m$. A regular pair never meets the boundary and enters the set $s\T_m$ of lifted cycle states after exactly $\max(\rho_n(u),\rho_n(v))$ steps \cite[Lemma~6]{G1}. A generic pair that is not regular reaches the boundary within $n$ steps \cite[Lemma~6(c)]{G1}.
+
+\emph{Seeded states and first returns.} Following \cite{G1}, a boundary state is \emph{seeded} if its image is regular; then its orbit never meets the boundary again. This happens for $Z(u)$ exactly when $u\bmod m\notin\{0,1,h\}$, and for $D(u)$ and $A(u)$ exactly when $u\bmod m\notin\{0,h-1,h\}$. If a boundary state is not seeded, its image is a boundary state or a generic pair that is not regular, so its orbit meets the boundary again; its next boundary state and the elapsed time are given by \cite[Proposition~7 and Table~2]{G1}. We recall the table.
+
+\begin{table}[ht]
+\centering
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}lp{6.9cm}c@{}}
+\toprule
+critical state & its boundary predecessors & elapsed time\\
+\midrule
+$D(1)$ & $D(B/2)$ & $1$\\
+$Z(B-1)$ & $Z(1)$ & $1$\\
+$Z(2^t)$, $1\le t\le n$ & $Z(Li)$ and $Z(Li+1)$, where $L=B/2^t$, $i$ odd, $1\le i<2^t$ & $t+1$\\
+$Z(2s)$ & $D(u)$ and $A(u)$ with $u\equiv h-1$ or $u\equiv h\pmod m$ & $n+1$\\
+$A(B/2+2^t)$, $0\le t\le n-2$ & $D(u)$ and $A(u)$ with $m\mid u$ and $\vt(u)=n-t-2$ & $t+1$\\
+$A(hs)$ & $Z(u)$ with $u\equiv h\pmod m$ & $n+1$\\
+\bottomrule
+\end{tabular}
+\caption{First returns to the boundary, from \cite{G1}.}\label{tab:returns}
+\end{table}
+
+\section{The generic basin}\label{sec:generic}
+
+From here to the end of Section~\ref{sec:five}, $m\ge5$ is odd and $n\ge1$.
+
+For a nonzero residue $a$ modulo $m$, let $o(a)$ be the odd one of its representatives $a$ and $m-a$ in $[1,m-1]$. Put
+\[
+\R=\{(a,b)\in(\mathbb Z/m)^2:\ a,b\ne0,\ a\ne\pm b,\ \sort(o(a),o(b))\in\C\}
+\]
+and let $\G$ be the set of pairs in $X_B$ whose residues modulo $m$ lie in $\R$. The set $\R$ has $8|\C|$ elements and is invariant under changes of sign, exchange of the coordinates, and multiplication by $2$, because $\C$ is invariant under $\phi$.
+
+\begin{lemma}[Generic clock]\label{lem:generic}
+Every pair in $\G$ is regular and reaches $L_0$, without meeting the boundary, after exactly $\tau(u,v)=\max(\rho_n(u),\rho_n(v))$ steps.
+\end{lemma}
+
+\begin{proof}
+Pairs in $\G$ are regular by definition of $\R$. By \cite[Lemma~6]{G1}, a regular pair stays generic and enters $s\T_m$ after exactly $\tau$ steps. Along the way its residues stay in $\R$, by the invariance of $\R$. The entry state is $(su',sv')$ with $u',v'$ odd, $m>u'>v'>0$ and $(su',sv')\bmod m\in\R$; since $\R$ is invariant under multiplication by $s$, also $(u',v')\bmod m\in\R$, that is, $(u',v')\in\C$.
+\end{proof}
+
+Put
+\[
+\gamma_4=|\R|\,m^2,\qquad
+\gamma_2=6\sum_{(a,b)\in\R}\bigl(m|a-b|-(a-b)^2\bigr)-\gamma_4,\qquad
+W=\sum_{q\in\C}w_m(q),
+\]
+where in the sum $a$ and $b$ denote their representatives in $[1,m-1]$.
+
+\begin{proposition}[Generic polynomial]\label{prop:generic}
+The contribution of $\G$ to $Q$ is
+\begin{equation}\label{eq:generic}
+Q_\G(z)=4^n\Bigl[W+(\gamma_4+\gamma_2-W)z+3\gamma_4\sum_{t=2}^{n+1}4^{t-2}z^t\Bigr].
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+First, the total weight of $\G$ is $\gamma_4\,16^n+\gamma_2\,4^n$. By reflection in $B/2$, and halving for the exchange of coordinates, the weight sum over $\G$ is six times the sum of $B|x-y|-(x-y)^2$ over pairs $(x,y)$ in $[1,B-1]^2$ with residues in $\R$. Writing $x=a+mj$ and $y=b+mk$ with $0\le j,k<s$, the identities
+\[
+\sum_{j,k}|a-b+m(j-k)|=s|a-b|+\frac{ms(s^2-1)}3,\qquad
+\sum_{j,k}(a-b+m(j-k))^2=s^2(a-b)^2+\frac{m^2s^2(s^2-1)}6
+\]
+give this total. At time $0$ the weight is that of $L_0$, which is $4^nW$ because $w_B(su,sv)=4^nw_m(u,v)$. For $1\le t\le n+1$, Lemma~\ref{lem:generic} shows that arrival by time $t$ means that both coordinates are divisible by $2^k$, where $k=n-t+1$. These pairs are $2^k$ times the pairs of $\G$ in base $B/2^k$, and by \eqref{eq:weight} their total weight is $4^k$ times that of the latter, namely $4^n(\gamma_4 4^{t-1}+\gamma_2)$. Taking differences in $t$ gives the coefficients.
+\end{proof}
+
+\section{Boundary trees and the exact distribution}\label{sec:trees}
+
+\emph{Seeds for the target.} Define
+\[
+\Zs_\C=\{r\in\mathbb Z/m:\ (r-1,-r)\in\R\},\qquad
+\Ds_\C=\{r\in\mathbb Z/m:\ (2r+1,2r-1)\in\R\}.
+\]
+The images of $Z(u)$ and of $D(u)$, $A(u)$ are $\sort(u-1,B-u)$ and $\sort(|2u-B+1|,|2u-B-1|)$ \cite[(1)]{G1}, with residues $(u-1,-u)$ and $(\pm(2u+1),\pm(2u-1))$, with independent signs, up to order. Since $\R$ is invariant under changes of sign and exchange of coordinates, $Z(u)$ maps into $\G$ exactly when $u\bmod m\in\Zs_\C$, and $D(u)$ or $A(u)$ exactly when $u\bmod m\in\Ds_\C$. These states are seeded, and we call them \emph{$\C$-seeded}.
+
+\emph{Return coefficients.} Let $\sigma$ be the residue of $2^n$ modulo $m$, and let $S=Z(s)$, $E=Z(2s)$ and $U=A(hs)$. Assign coefficients $k_S,k_E,k_U\in\{1,2,3,\infty\}$ as follows. For $S$ and $E$, with residues $\sigma$ and $2\sigma$: a residue in $\Zs_\C$ gives coefficient $1$; residue $h$ gives an arrow to $U$; residue $1$ gives an arrow to $S$; any other residue gives $\infty$. For $U$, with residue $h\sigma$: membership in $\Ds_\C$ gives $1$; residue $h-1$ or $h$ gives an arrow to $E$; otherwise $\infty$. An arrow from $X$ to $Y$ gives $k_X=1+k_Y$, and a cycle of arrows, or a path ending at $\infty$, gives $\infty$. For all integers $t\ge1$ and $t\ge0$ respectively, put
+\[
+k_Z(t)=\begin{cases}1,&2^t\bmod m\in\Zs_\C,\\1+k_U,&2^t\equiv h,\\1+k_S,&2^t\equiv1,\\\infty,&\text{otherwise},\end{cases}\qquad
+k_A(t)=\begin{cases}1,&2^t\bmod m\in\Ds_\C,\\1+k_E,&2^t\equiv h-1\text{ or }h,\\\infty,&\text{otherwise},\end{cases}
+\]
+where the congruences are modulo $m$. These cases are disjoint, and both sequences are periodic in $t$ with period dividing $\ell$. Lemma~\ref{lem:H} uses them for the states $Z(2^t)$ with $1\le t\le n$ and $A(B/2+2^t)$ with $0\le t\le n-2$.
+
+\begin{lemma}[Arrival times of boundary states]\label{lem:H}
+Write $H(q)$ for the number of steps of $f_B$ from a boundary state $q$ to $L_0$, with $H(q)=\infty$ if the orbit of $q$ misses $L_0$. A seeded state has $H=n+2$ if it is $\C$-seeded and $H=\infty$ otherwise. Moreover $H(S)=k_S(n+1)+1$, $H(E)=k_E(n+1)+1$, $H(U)=k_U(n+1)+1$, $H(Z(2^t))=k_Z(t)(n+1)+1$ and $H(A(B/2+2^t))=k_A(t)(n+1)+1$, with $H=\infty$ when the coefficient is infinite. Every finite arrival time of an input is at most $5n+7$.
+\end{lemma}
+
+\begin{proof}
+The set $L_0\subseteq s\T_m$ consists of regular pairs. Boundary states are not regular, and neither are the generic states strictly between two boundary states of an orbit, by \cite[Lemma~6(a)]{G1}. So an orbit can reach $L_0$ only after its last boundary state.
+
+Let $q$ be seeded. Its image is regular, so by \cite[Lemma~6]{G1} its orbit ends in $s\T_m$, and by the invariance of $\R$ it reaches $L_0$ exactly when the residues of the image lie in $\R$, that is, when $q$ is $\C$-seeded. In that case the image has an odd coordinate, because the coordinates of the image of $Z(u)$ sum to $B-1$ and those of the images of $D(u)$ and $A(u)$ are odd. By Lemma~\ref{lem:generic} it reaches $L_0$ after $n+1$ further steps.
+
+Let $q$ be critical and not seeded. By \cite[Lemma~8]{G1}, its next boundary state is reached after exactly $n+1$ steps, and it is $U$ or $S$ if $q$ is a zero-boundary state with residue $h$ or $1$, and $E$ if $q$ is a diagonal or anti-diagonal state, whose residue is then $h-1$ or $h$. Hence $H(q)=n+1+H(q')$ for the next boundary state $q'$. Applied to $S$, $E$ and $U$, this gives the rules defining $k_S,k_E,k_U$: along a cycle of arrows the orbit returns to the boundary forever, and a path ending at a seeded state that is not $\C$-seeded never reaches $L_0$. Applied to $Z(2^t)$ and to $A(B/2+2^t)$, whose residues are both $2^t$ because $m\mid B/2$, it gives $k_Z$ and $k_A$.
+
+For the bound, a finite path in the three-vertex graph has at most two arrows, so $k_S,k_E,k_U\le3$ and $k_Z(t),k_A(t)\le4$. An input whose pair lies at depth $j$ in the generic predecessor tree of a boundary state $q$ (see \eqref{eq:trees} below) has $T=j+H(q)+1$, by \eqref{eq:clock}. If $q$ belongs to a family of Table~\ref{tab:returns} attached to a critical state $q^*$ with elapsed time $e$, then $H(q)=e+H(q^*)$ and $j\le\min(\vt(u),n)$ for the parameter $u$ of $q$. In row three with $t<n$ and in row five, $j+e\le n+1$ and $H(q^*)\le4(n+1)+1$. In row three with $t=n$ and in rows four and six, $j+e\le2n+1$ and $H(q^*)\le3(n+1)+1$, since $q^*\in\{S,E,U\}$. Rows one and two give $j+e=1$ and $H(q^*)\le n+2$, since $D(1)$ and $Z(B-1)$, with residues $1$ and $-1$, are seeded when $m\ge5$. A $\C$-seeded root gives $j+H(q)\le2n+2$, and $\G$ gives at most $n+1$. In every case $T\le5n+7$.
+\end{proof}
+
+\emph{Tree polynomials.} Every state whose orbit meets the boundary has a unique first boundary state, so the generic predecessor trees of distinct boundary states are disjoint. Let $d=\min(\vt(u),n)$. The weighted depth profiles of these trees, with depth measured to the root, are
+\begin{equation}\label{eq:trees}
+\begin{aligned}
+K_Z(u,z)&=(B-u)(12u-4)+\sum_{t=1}^d\bigl[B^2(4^t-4)+12Bu-6u^2\bigr]z^t,\\
+K_A(u,z)&=24(B-u)(2u-B)+\sum_{t=1}^d\bigl[2B^2(4^t-10)+48Bu-24u^2\bigr]z^t,\\
+K_D(u,z)&=6(B-u).
+\end{aligned}
+\end{equation}
+\emph{Derivation of \eqref{eq:trees}.} Put $g(x)=|2x-B|$, $M=2^t$ and $L=B/M$. While an orbit avoids the boundary, $g^t(x)\equiv\pm(2^tx-B)\pmod{2B}$ (see the proof of \cite[Lemma~5]{G1}), so $g^t(x)=y$ exactly when $2^tx\equiv B\pm y\pmod{2B}$. A generic pair that meets the boundary does so within $n$ steps, so $t\le n$ and $M\mid B$; the congruence is then solvable exactly when $M\mid y$, and its solutions in $(0,B)$ are $x=Li\pm y/M$ with $i$ odd and $1\le i<M$. For the root coordinates $u,0$ of $Z(u)$ and $u,B-u$ of $A(u)$ this requires $t\le d$. With $c=u/M$, the depth-$t$ coordinates are $Li\pm c$ and $Lj$ for $Z(u)$, and $Li\pm c$ and $Lj\pm(L-c)$ for $A(u)$, with $i,j$ odd in $[1,M-1]$. Every such pair is a generic predecessor whose first boundary state is the root. Indeed, if a pair along the way had a zero coordinate, the next fold would produce the coordinate $B$, which is then fixed; if it had equal coordinates or coordinate sum $B$, all later pairs would have equal coordinates; neither ends at $Z(u)$ or at $A(u)$ with $u>B/2$. The same argument shows that the two coordinate sets are disjoint, so each sorted pair is counted once. A diagonal state has no generic predecessor, since $g(x)=g(y)$ forces $x=y$ or $x+y=B$.
+
+Both coordinate sets are invariant under reflection in $B/2$, which turns the weight $24(B-\max(x,y))|x-y|$ into $12(B|x-y|-(x-y)^2)$ on average. Summing over the two sets, with the terms grouped by $i-j$, gives
+\[
+\begin{array}{c|c|c}
+&\sum|x-y|&\sum(x-y)^2\\ \hline
+Z&B(M^2-4)/6+u&B^2(M^2-4)/12+u^2/2\\
+A&B(M^2-4)/3+2u&B^2(M^2-4)/6+u^2+(B-u)^2.
+\end{array}
+\]
+Multiplying $B\sum|x-y|-\sum(x-y)^2$ by $12$ gives \eqref{eq:trees}.
+
+\emph{The formula.} Combining \eqref{eq:clock}, Proposition~\ref{prop:generic} and the trees,
+\begin{equation}\label{eq:P}
+P(z)=|L_0|(1-z)+z\Bigl[Q_\G(z)+\sum_{q\ \text{boundary},\ H(q)<\infty}z^{H(q)}K_q(z)\Bigr].
+\end{equation}
+By Lemma~\ref{lem:H} and \cite[Proposition~7]{G1}, the boundary states with $H(q)<\infty$ are the $\C$-seeded states, with $H=n+2$, and the members of the predecessor families of Table~\ref{tab:returns} attached to critical states $q^*$ with $H(q^*)<\infty$, each family with the constant time $H(q^*)+e$, where $e$ is its elapsed time. Apart from the two single states $Z(1)$ and $D(B/2)$ of rows one and two, these states, split by the exact valuation of their parameter, form arithmetic progressions of parameters $u$:
+\begin{itemize}
+\item the residue classes of $\Zs_\C$ and $\Ds_\C$, split by valuation;
+\item the zero-boundary families $Z(Li)$, of valuation $n-t$, and $Z(Li+1)$, of valuation $0$ when $t<n$; for $t=n$ the even parameters congruent to $1$ modulo $m$, split by valuation;
+\item the two exceptional diagonal residues $h-1,h$ and the exceptional zero residue $h$, split by valuation; the multiples of $m$ in row five already have fixed valuation.
+\end{itemize}
+Each coefficient in \eqref{eq:trees} is quadratic in $u$, and over a progression $u=a+qj$, $0\le j<N$, one uses
+\begin{gather*}
+\sum1=N,\qquad\sum u=Na+\tfrac12qN(N-1),\\
+\sum u^2=Na^2+aqN(N-1)+\tfrac16q^2N(N-1)(2N-1).
+\end{gather*}
+There are $O_m(n)$ progressions, and each contributes at most $n+1$ coefficients. This proves Theorem~\ref{thm:exact}.
+
+\begin{remark}
+Generating the powers $4^t$ for $t\le2n+2$ once, by repeated multiplication, the whole polynomial is computed in $O_m(n^2)$ arithmetic operations, without enumerating the $O(B^2)$ pairs. This is an operation count, not a bit-complexity bound. The basin size and the sums of $T$ and of $T^2$ over the basin are $P(1)$, $P'(1)$ and $P''(1)+P'(1)$.
+\end{remark}
+
+\section{The five-point limit}\label{sec:limit}
+
+Let $M_\ell=2^\ell-1$. Omitting terms with an infinite index, define the measure
+\begin{equation}\label{eq:atoms}
+\begin{aligned}
+\mu_r={}&\frac{|\R|}{m^2}\,\delta_1+\frac{2(|\Zs_\C|+|\Ds_\C|)}{m^2}\,\delta_2+\frac{2}{m^2}\,\delta_{k_U+2}+\frac{4}{m^2}\,\delta_{k_E+2}+\frac{2}{m^2}\,\delta_{k_S+2}\\
+&+\frac{2}{3m^2M_\ell}\sum_{t=1}^{\ell}2^{\ell-t}\,\delta_{k_Z(t)+1}+\frac{1}{6m^2M_\ell}\sum_{t=0}^{\ell-1}2^{\ell-t}\,\delta_{k_A(t)+1},
+\end{aligned}
+\end{equation}
+where the coefficients are computed with $\sigma\equiv2^r$, and set $a_{r,j}=\mu_r(\{j\})$. Every atom lies in $\{1,2,3,4,5\}$.
+
+\begin{proof}[Proof of Theorem~\ref{thm:limit}]
+In \eqref{eq:generic}, the total mass of $\G$ divided by $B^4$ tends to $|\R|/m^2$, and the depth below the last generic layer has a geometric tail, so this mass sits at ratio $1$.
+
+For the boundary trees, \eqref{eq:trees} gives the leading total weights
+\[
+\tfrac43B^2\,4^d\quad(Z),\qquad\tfrac83B^2\,4^d\quad(A),
+\]
+and diagonal trees have negligible weight. Replacing exact tree weights by these changes the total by $O_m(B^3)$, since the remainders are $O(B^2(1+d))$ per root and $\sum_{1\le u<B}(1+\min(\vt(u),n))=O(B)$.
+
+For a set $\mathcal E$ of nonzero residues,
+\begin{equation}\label{eq:valsum}
+\lim_{n\to\infty}\sum_{\substack{1\le u<B\\u\bmod m\in\mathcal E}}4^{\min(\vt(u),n)-n}=\tfrac32|\mathcal E|.
+\end{equation}
+Indeed, the parameters with valuation at least $n$ contribute $|\mathcal E|$. For $j=n-\vt(u)\ge1$ write $u=2^{n-j}a$ with $a$ odd; there are $|\mathcal E|2^{j-1}$ such odd $a$ in $[1,m2^j-1]$, contributing $|\mathcal E|2^{-j-1}$. The tail beyond $j=n$ is $O_m(2^{-n})$. If $\mathcal E=-\mathcal E$, exactly half of the sum comes from $u>B/2$, by reflection; $\Ds_\C$ has this symmetry, since $\R$ is invariant under changes of sign and exchange of coordinates.
+
+These two facts give the masses in the following table, one row for each term of \eqref{eq:atoms}; congruences are modulo $m$.
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}llll@{}}
+\toprule
+term & states & limiting mass & ratio\\
+\midrule
+$\delta_1$ & the generic pairs $\G$ & $|\R|/m^2$ & $1$\\
+$\delta_2$ & $\C$-seeded $Z(u)$ and $A(u)$ & $2(|\Zs_\C|+|\Ds_\C|)/m^2$ & $2$\\
+$\delta_{k_U+2}$ & $Z(u)$, $u\equiv h$ & $2/m^2$ & $k_U+2$\\
+$\delta_{k_E+2}$ & $A(u)$, $u\equiv h-1$ or $h$ & $4/m^2$ & $k_E+2$\\
+$\delta_{k_S+2}$ & $Z(u)$, $u\equiv1$, $u$ even & $2/m^2$ & $k_S+2$\\
+$\delta_{k_Z(t)+1}$ & $Z(mi2^{n-t})$, $i$ odd & $2^{1-t}/(3m^2)$ & $k_Z(t)+1$\\
+$\delta_{k_A(t)+1}$ & $A(mi2^{n-t-2})$, $i$ odd, $2^{t+1}<i<2^{t+2}$ & $2^{-t}/(6m^2)$ & $k_A(t)+1$\\
+\bottomrule
+\end{tabular}
+\end{center}
+In each row the ratio is read off from $T=j+e+H(q^*)+1$ in the proof of Lemma~\ref{lem:H}: the weight of a tree concentrates within a bounded distance of its maximal depth $d$, and in a residue class on parameters with $d$ within a bounded distance of $n$. In the second row, among the diagonal and anti-diagonal classes only the trees of the states $A(u)$ with $u>B/2$ carry weight, and they account for half of the sum \eqref{eq:valsum}; the same halving gives the fourth row, since $\{h-1,h\}$ is symmetric ($2h-1=m$). In the fifth row, excluding the odd parameters costs only $O_m(2^{-n})$. In the sixth row there are $2^{t-1}$ parameters, of depth $n-t$, and their partners $u+1$, for $t<n$, have depth $0$ and total weight $O_m(B^3)$. In the last row there are $2^t$ parameters, of depth $n-t-2$. In these two families the maximal depth plus the elapsed time does not depend on $t$: it is $n+1$ and $n-1$, respectively, so the ratios hold uniformly in $t$. Summing the periodic geometric series in $t$ gives the last two terms of \eqref{eq:atoms}, and the omitted tails cost $O_m(2^{-n})$. This also proves the basin error $O_m(2^{-n})$.
+
+Within each family, the distance below the deepest generic level has a $4^{-j}$ tail and the valuation deficit a $2^{-j}$ tail, so their first and second moments are bounded independently of $n$. Replacing the actual time by its integer multiple of $n$ therefore changes the first unnormalized moment by $O_m(B^4)$ and the second by $O_m(nB^4)$. The remainder of weight $O_m(B^3)$ contributes $O_m(nB^3)$ and $O_m(n^2B^3)$, by the bound $5n+7$ of Lemma~\ref{lem:H}. Dividing by $B^4-B$, and then by $b_r>0$, proves the theorem. If $\C\ne\varnothing$, then $\R\ne\varnothing$ and $b_r\ge|\R|/m^2>0$.
+\end{proof}
+
+\section{The bases \texorpdfstring{$5\cdot2^n$}{5*2\^{}n}}\label{sec:five}
+
+Take $m=5$ and $\C=\{(3,1)\}$, the fixed point and the only cycle of $\T_5$. Then $h=3$, $\ell=4$, $|\R|=8$, $\Zs_\C=\{2,4\}$ and $\Ds_\C=\{1,4\}$. For $r=n\bmod4=0,1,2,3$, so that $\sigma=1,2,4,3$, the coefficients $(k_S,k_E,k_U)$ are
+\[
+(\infty,1,2),\qquad(1,1,1),\qquad(1,\infty,\infty),\qquad(2,3,1),
+\]
+and \eqref{eq:atoms} gives the following unconditional masses.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}ccccccc@{}}
+\toprule
+$n\bmod4$ & $1125a_{r,1}$ & $1125a_{r,2}$ & $1125a_{r,3}$ & $1125a_{r,4}$ & $1125a_{r,5}$ & basin limit $b_r$\\
+\midrule
+$0$ & $360$ & $394$ & $185$ & $94$ & $0$ & $1033/1125$\\
+$1$ & $360$ & $394$ & $371$ & $0$ & $0$ & $1$\\
+$2$ & $360$ & $394$ & $92$ & $0$ & $0$ & $94/125$\\
+$3$ & $360$ & $394$ & $94$ & $92$ & $185$ & $1$\\
+\bottomrule
+\end{tabular}
+\caption{Limit masses for the fixed point in the bases $5\cdot2^n$.}\label{tab:five}
+\end{table}
+
+\begin{proof}[Proof of Corollary~\ref{cor:basin}]
+The row sums of Table~\ref{tab:five} are the basin limits, by Theorem~\ref{thm:limit}. Changing the denominator from $B^4$ to $B^4-B$ changes a proportion by $O(B^{-3})$. For odd $n$, every input reaches the fixed point, since by \cite[Theorem~1]{G1} (or \cite[Theorem~4.1]{HP}) the fixed point is then the only cycle.
+\end{proof}
+
+\begin{remark}
+For $r=0,1,2,3$ the coefficients of the conditional moments in Theorem~\ref{thm:limit} are
+\[
+(\alpha_r)=\Bigl(\frac{2079}{1033},\ \frac{2261}{1125},\ \frac{712}{423},\ \frac{2723}{1125}\Bigr),\qquad
+(\beta_r)=\Bigl(\frac{5105}{1033},\ \frac{211}{45},\ \frac{1382}{423},\ \frac{8879}{1125}\Bigr).
+\]
+\end{remark}
+
+\section{The uniform law}\label{sec:uniform}
+
+\begin{proof}[Proof of Theorem~\ref{thm:uniform}]
+We may assume $m\ge27$. The law of $\max(1,n+2-G)$ is
+\[
+D_n(1)=4^{-(n+1)},\qquad D_n(t)=3\cdot4^{t-n-3}\quad(2\le t\le n+2).
+\]
+
+\emph{Irregular inputs are rare.} Draw four independent uniform digits, before discarding constant strings. If $m\mid u$ or $m\mid v$, two of the four digits agree modulo $m$, which is one of six events. If $m\mid u-v$ or $m\mid u+v$, the four positions split into two pairs with equal digit sums modulo $m$, one of three events. Each of the nine events has probability $1/m$, so
+\[
+\Pr(\text{not regular})\le9/m,\qquad\Pr(\text{not regular}\mid\text{nonconstant})\le\frac9{m(1-B^{-3})}.
+\]
+The union bound covers every sorting order.
+
+\emph{The clock on regular inputs.} A regular orbit stays regular, and the regular pairs on cycles are exactly those of $s\T_m$ \cite[Lemma~6]{G1}. Hence a regular input that is not on a cycle needs exactly $V=1+\max(\rho_n(u),\rho_n(v))$ steps, by \cite[Lemma~6(b)]{G1} and \eqref{eq:clock} applied to the set of all pairs on cycles. For $n=0$, where $B=m$ is odd, this holds directly. A regular pair is generic and its image is regular, as in \cite[Lemma~6(a)]{G1}. The image coordinates $|2x-m|$ are odd, and $x\mapsto|2x-m|$ permutes the odd integers in $[1,m-1]$ (see the proof of \cite[Lemma~3]{G1}). So a regular pair with two odd coordinates lies in $\T_m$, on a cycle, and every other regular pair enters the invariant set $\T_m$ after one step and therefore lies on no cycle: here $V=1+\max(\rho_0(u),\rho_0(v))$, with $\rho_0(x)=0$ for odd $x$ and $1$ for even $x$. The quantity $V$ depends only on $(u,v)$ modulo $N=2^{n+1}$.
+
+\emph{Coupling with uniform residues.} The range of a digit consists of $(m-1)/2$ complete blocks of length $N$ and one half block. Let $F$ be the event that the four digits lie in four distinct complete blocks. A digit falls in the half block with probability $1/m$, and two given digits fall in the same block with probability $\frac{m-1}2(\frac2m)^2+(\frac1m)^2=\frac{2m-1}{m^2}<\frac2m$. Hence $\Pr(F^c)<4/m+12/m=16/m$. On $F$ the block indices alone determine the sorting order, and the four positions within blocks are independent and uniform. Since $u$ and $v$ use disjoint pairs of digits, $u$ and $v$ modulo $N$ are then independent and uniform. For a uniform residue $R$ modulo $N$,
+\[
+\Pr(\rho_n(R)\le j)=2^{j-n-1}\qquad(0\le j\le n+1),
+\]
+because $\vt(R)=n$ and $\vt(R)>n$ each have probability $2^{-n-1}$. Squaring this distribution function and adding $1$ gives exactly $D_n$. So, for raw digits, $V$ has law within $16/m$ of $D_n$ in total variation, and conditioning on nonconstant strings changes any law by at most $B^{-3}$.
+
+\emph{Conclusion.} There are fewer than $B^2$ inputs on cycles, since $F_B$ maps the pairs on cycles bijectively onto them and $|X_B|<B^2$. Combining the three estimates,
+\[
+\dtv\bigl(\operatorname{Law}(T^{\mathrm{all}}),D_n\bigr)\le\frac{16}m+\frac9{m(1-B^{-3})}+B^{-3}+\frac1{B^2(1-B^{-3})}<\frac{26}m,
+\]
+where the last inequality uses $B\ge m\ge27$.
+\end{proof}
+
+\begin{remark}
+If $m$ and $n$ both tend to infinity, Theorem~\ref{thm:uniform} gives $T^{\mathrm{all}}-n\Rightarrow2-G$, with no condition on their relative growth. If the base is chosen uniformly from $2,\dots,X$ and then an input uniformly in that base, the arrival time converges in law, as $X\to\infty$, to a variable $T_*$ with $\Pr(T_*=1)=1/7$ and $\Pr(T_*=t)=3/(7\cdot2^{t-2})$ for $t\ge2$, obtained by averaging $D_n$ with weights $2^{-n-1}$: the bases of valuation $n$ have density $2^{-n-1}$, and on average over them the bound of Theorem~\ref{thm:uniform} tends to $0$. The limit law has mean $19/7$; convergence of the means themselves is not claimed.
+\end{remark}
+
+\section{Computations}
+
+The proofs above are complete; the following checks were run independently of them. For every odd $m\le31$, each cycle of $\T_m$ and the union of all of them when there is more than one, and $1\le n\le3$, the polynomial \eqref{eq:P} agrees coefficient by coefficient with complete weighted enumeration of predecessors ($300$ cases). Direct digit subtraction over $146{,}904$ inputs in seven further runs checks the correction at time $0$, unions of cycles and the empty target. A separate program enumerates all $13{,}109{,}759$ pairs in base $5120=5\cdot2^{10}$ from the digits of subtraction outputs, and agrees with \eqref{eq:P} for the fixed point in every coefficient. For $B=5\cdot2^n$ with $1\le n\le40$, the largest finite arrival time agrees with \cite[Theorem~1]{DZ}. Table~\ref{tab:five} and its moments are recomputed in exact rational arithmetic from \eqref{eq:atoms}. For odd parts $27,29,31,53$ and $0\le n\le4$, the exact laws of $T^{\mathrm{all}}$, computed from pair graphs built by digit subtraction, satisfy $m\,\dtv<4$, so the constant $26$ in Theorem~\ref{thm:uniform} is far from sharp in this range. The scripts are part of the ancillary material.
+
+\section*{Data availability}
+The ancillary material is archived at Zenodo as version~1.1 of \href{https://doi.org/10.5281/zenodo.24325109}{doi:10.5281/zenodo.24325109}, and maintained at \url{https://github.com/galyavin/kaprekar-dynamics}.
+
+\section*{Tools}
+The research, computations and drafting were carried out with substantial assistance from AI systems (OpenAI Codex and Anthropic Claude), under the author's direction and close supervision. The checks use Python and C++. The author takes responsibility for the contents.
+
+\begingroup\raggedright
+\begin{thebibliography}{COST}
+
+\bibitem[COST]{COST}
+E.~Chen, K.~Ono, R.~E. Schwartz and D.~Thakur, \emph{Four-digit Kaprekar dynamics in odd bases}, J. Integer Seq. \textbf{29} (2026), Article 26.4.7; \href{https://arxiv.org/abs/2606.20439}{arXiv:2606.20439}.
+
+\bibitem[DZ]{DZ}
+P.~Devlin and T.~Zeng, \emph{Maximum distances in the four-digit Kaprekar process}, Integers \textbf{21} (2021), Paper A97.
+
+\bibitem[G1]{G1}
+R.~Galyavin, \emph{Cycles of the four-digit Kaprekar map in even bases}, preprint (2026), \href{https://doi.org/10.5281/zenodo.24325110}{doi:10.5281/zenodo.24325110}.
+
+\bibitem[HP]{HP}
+H.~Hasse and G.~D. Prichett, \emph{The determination of all four-digit Kaprekar constants}, J. Reine Angew. Math. \textbf{299/300} (1978), 113--124.
+
+\bibitem[KSL]{KSL}
+Korea Superintelligence Labs, \emph{Base scaling in four-digit Kaprekar dynamics, and an infinite family of bases with no unique terminating cycle}, public draft, version~1, \url{https://lean.up.railway.app/papers/kaprekar-v1.pdf}, accessed 17 November 2026.
+
+\end{thebibliography}
+\endgroup
+
+\end{document}

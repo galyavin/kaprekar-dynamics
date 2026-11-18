@@ -1,0 +1,459 @@
+{
+  "base5120": {
+    "base": 5120,
+    "basin_input_count": 516775488914976,
+    "basin_pairs": 9858185,
+    "checked_pairs": 13109759,
+    "complement_input_count": 170419278439904,
+    "core": 5,
+    "exponent": 10,
+    "first_moment_sum": 9739735197846871,
+    "input_arrival_counts": {
+      "0": 1,
+      "1": 100663295,
+      "10": 10307921510400,
+      "11": 41231686041600,
+      "12": 164926744166400,
+      "13": 161071775744,
+      "14": 241607836664,
+      "15": 443319586808,
+      "16": 867242344432,
+      "17": 1726495555584,
+      "18": 3458023391232,
+      "19": 6956104646528,
+      "2": 150994944,
+      "20": 14076037971712,
+      "21": 28804506476544,
+      "22": 60241489293312,
+      "23": 112716122544128,
+      "24": 11032707794944,
+      "25": 53702842368,
+      "26": 107421364224,
+      "27": 214732726272,
+      "28": 429449527296,
+      "29": 859854798784,
+      "3": 629145600,
+      "30": 1718874537984,
+      "31": 3439316631552,
+      "32": 6885323636736,
+      "33": 13811025132544,
+      "34": 27716008710144,
+      "35": 912682291200,
+      "4": 2516582400,
+      "5": 10066329600,
+      "6": 40265318400,
+      "7": 161061273600,
+      "8": 644245094400,
+      "9": 2576980377600
+    },
+    "second_moment_sum": 209450721534027799
+  },
+  "comparisons": 300,
+  "inputs": [
+    {
+      "eligible": 620,
+      "histogram": {
+        "0": 1,
+        "1": 95,
+        "2": 248,
+        "3": 212,
+        "4": 64
+      },
+      "m": 5,
+      "n": 0,
+      "target": "all"
+    },
+    {
+      "eligible": 9990,
+      "histogram": {
+        "0": 1,
+        "1": 383,
+        "2": 576,
+        "3": 2400,
+        "4": 1272,
+        "5": 1518,
+        "6": 1656,
+        "7": 2184
+      },
+      "m": 5,
+      "n": 1,
+      "target": "all"
+    },
+    {
+      "eligible": 2394,
+      "histogram": {
+        "0": 3,
+        "1": 477,
+        "2": 1032,
+        "3": 750,
+        "4": 132
+      },
+      "m": 7,
+      "n": 0,
+      "target": "all"
+    },
+    {
+      "eligible": 38402,
+      "histogram": {
+        "0": 3,
+        "1": 1917,
+        "2": 3456,
+        "3": 14112,
+        "4": 4928,
+        "5": 7226,
+        "6": 1936,
+        "7": 1536,
+        "8": 1320,
+        "9": 1968
+      },
+      "m": 7,
+      "n": 1,
+      "target": "all"
+    },
+    {
+      "eligible": 28548,
+      "histogram": {
+        "0": 6,
+        "1": 2586,
+        "2": 7824,
+        "3": 924
+      },
+      "m": 13,
+      "n": 0,
+      "target": "first"
+    },
+    {
+      "eligible": 28548,
+      "histogram": {
+        "0": 15,
+        "1": 6705,
+        "2": 17160,
+        "3": 4188,
+        "4": 480
+      },
+      "m": 13,
+      "n": 0,
+      "target": "all"
+    },
+    {
+      "eligible": 38402,
+      "histogram": {},
+      "m": 7,
+      "n": 1,
+      "target": "empty"
+    }
+  ],
+  "limits": [
+    {
+      "atoms": {
+        "1": "8/25",
+        "2": "394/1125",
+        "3": "37/225",
+        "4": "94/1125"
+      },
+      "basin_limit": "1033/1125",
+      "complement_limit": "92/1125",
+      "conditional_mean_coefficient": "2079/1033",
+      "conditional_second_moment_coefficient": "5105/1033",
+      "conditional_variance_coefficient": "951224/1067089",
+      "core": 5,
+      "critical_coefficients": {
+        "A": 2,
+        "E": 1,
+        "S": null
+      },
+      "period": 4,
+      "phase": 0
+    },
+    {
+      "atoms": {
+        "1": "8/25",
+        "2": "394/1125",
+        "3": "371/1125"
+      },
+      "basin_limit": "1",
+      "complement_limit": "0",
+      "conditional_mean_coefficient": "2261/1125",
+      "conditional_second_moment_coefficient": "211/45",
+      "conditional_variance_coefficient": "822254/1265625",
+      "core": 5,
+      "critical_coefficients": {
+        "A": 1,
+        "E": 1,
+        "S": 1
+      },
+      "period": 4,
+      "phase": 1
+    },
+    {
+      "atoms": {
+        "1": "8/25",
+        "2": "394/1125",
+        "3": "92/1125"
+      },
+      "basin_limit": "94/125",
+      "complement_limit": "31/125",
+      "conditional_mean_coefficient": "712/423",
+      "conditional_second_moment_coefficient": "1382/423",
+      "conditional_variance_coefficient": "77642/178929",
+      "core": 5,
+      "critical_coefficients": {
+        "A": null,
+        "E": null,
+        "S": 1
+      },
+      "period": 4,
+      "phase": 2
+    },
+    {
+      "atoms": {
+        "1": "8/25",
+        "2": "394/1125",
+        "3": "94/1125",
+        "4": "92/1125",
+        "5": "37/225"
+      },
+      "basin_limit": "1",
+      "complement_limit": "0",
+      "conditional_mean_coefficient": "2723/1125",
+      "conditional_second_moment_coefficient": "8879/1125",
+      "conditional_variance_coefficient": "2574146/1265625",
+      "core": 5,
+      "critical_coefficients": {
+        "A": 1,
+        "E": 3,
+        "S": 2
+      },
+      "period": 4,
+      "phase": 3
+    }
+  ],
+  "maxima": [
+    7,
+    10,
+    21,
+    22,
+    20,
+    23,
+    41,
+    38,
+    32,
+    35,
+    61,
+    54,
+    44,
+    47,
+    81,
+    70,
+    56,
+    59,
+    101,
+    86,
+    68,
+    71,
+    121,
+    102,
+    80,
+    83,
+    141,
+    118,
+    92,
+    95,
+    161,
+    134,
+    104,
+    107,
+    181,
+    150,
+    116,
+    119,
+    201,
+    166
+  ],
+  "uniform": {
+    "finite_distributions": [
+      {
+        "base": 5,
+        "excluded_probability": "19/31",
+        "exponent": 0,
+        "odd_part": 5,
+        "pairs": 14,
+        "tv": "277/620",
+        "tv_float": 0.4467741935483871
+      },
+      {
+        "base": 10,
+        "excluded_probability": "221/333",
+        "exponent": 1,
+        "odd_part": 5,
+        "pairs": 54,
+        "tv": "6631/9990",
+        "tv_float": 0.6637637637637638
+      },
+      {
+        "base": 20,
+        "excluded_probability": "5407/7999",
+        "exponent": 2,
+        "odd_part": 5,
+        "pairs": 209,
+        "tv": "317557/639920",
+        "tv_float": 0.4962448431053882
+      },
+      {
+        "base": 40,
+        "excluded_probability": "14485/21333",
+        "exponent": 3,
+        "odd_part": 5,
+        "pairs": 819,
+        "tv": "1738201/2559960",
+        "tv_float": 0.6789953749277332
+      },
+      {
+        "base": 80,
+        "excluded_probability": "348031/511999",
+        "exponent": 4,
+        "odd_part": 5,
+        "pairs": 3239,
+        "tv": "101536933/163839680",
+        "tv_float": 0.6197334674970069
+      },
+      {
+        "base": 9,
+        "excluded_probability": "31/91",
+        "exponent": 0,
+        "odd_part": 9,
+        "pairs": 44,
+        "tv": "113/468",
+        "tv_float": 0.24145299145299146
+      },
+      {
+        "base": 18,
+        "excluded_probability": "2279/5831",
+        "exponent": 1,
+        "odd_part": 9,
+        "pairs": 170,
+        "tv": "6838/17493",
+        "tv_float": 0.390899216829589
+      },
+      {
+        "base": 36,
+        "excluded_probability": "3763/9331",
+        "exponent": 2,
+        "odd_part": 9,
+        "pairs": 665,
+        "tv": "112891/279930",
+        "tv_float": 0.4032829635980424
+      },
+      {
+        "base": 72,
+        "excluded_probability": "151679/373247",
+        "exponent": 3,
+        "odd_part": 9,
+        "pairs": 2627,
+        "tv": "1820149/4478964",
+        "tv_float": 0.4063772336638562
+      },
+      {
+        "base": 144,
+        "excluded_probability": "1215743/2985983",
+        "exponent": 4,
+        "odd_part": 9,
+        "pairs": 10439,
+        "tv": "29177833/71663592",
+        "tv_float": 0.40715002117114085
+      },
+      {
+        "base": 31,
+        "excluded_probability": "97/993",
+        "exponent": 0,
+        "odd_part": 31,
+        "pairs": 495,
+        "tv": "4285/61566",
+        "tv_float": 0.06960010395348082
+      },
+      {
+        "base": 62,
+        "excluded_probability": "28327/238327",
+        "exponent": 1,
+        "odd_part": 31,
+        "pairs": 1952,
+        "tv": "1756379/14776274",
+        "tv_float": 0.1188648098972718
+      },
+      {
+        "base": 124,
+        "excluded_probability": "78901/635541",
+        "exponent": 2,
+        "odd_part": 31,
+        "pairs": 7749,
+        "tv": "3261253/26269028",
+        "tv_float": 0.12414821743689945
+      },
+      {
+        "base": 248,
+        "excluded_probability": "1913791/15252991",
+        "exponent": 3,
+        "odd_part": 31,
+        "pairs": 30875,
+        "tv": "474620273/3782741768",
+        "tv_float": 0.125469911008739
+      },
+      {
+        "base": 496,
+        "excluded_probability": "1023377/8134929",
+        "exponent": 4,
+        "odd_part": 31,
+        "pairs": 123255,
+        "tv": "169198333/1344974928",
+        "tv_float": 0.12580036213136012
+      },
+      {
+        "base": 53,
+        "excluded_probability": "163/2863",
+        "exponent": 0,
+        "odd_part": 53,
+        "pairs": 1430,
+        "tv": "23341/606956",
+        "tv_float": 0.0384558353488556
+      },
+      {
+        "base": 106,
+        "excluded_probability": "5561/79401",
+        "exponent": 1,
+        "odd_part": 53,
+        "pairs": 5670,
+        "tv": "93077/1328922",
+        "tv_float": 0.07003947560503927
+      },
+      {
+        "base": 212,
+        "excluded_probability": "698527/9528127",
+        "exponent": 2,
+        "odd_part": 53,
+        "pairs": 22577,
+        "tv": "148088049/2019962924",
+        "tv_float": 0.07331226095316193
+      },
+      {
+        "base": 424,
+        "excluded_probability": "627847/8469447",
+        "exponent": 3,
+        "odd_part": 53,
+        "pairs": 90099,
+        "tv": "2395864477/32319409752",
+        "tv_float": 0.07413082402755633
+      },
+      {
+        "base": 848,
+        "excluded_probability": "3486907/46907707",
+        "exponent": 4,
+        "odd_part": 53,
+        "pairs": 359975,
+        "tv": "2956897161/39777735536",
+        "tv_float": 0.07433548242895634
+      }
+    ],
+    "pair_states": 662357,
+    "regular_pairs": 596068
+  }
+}
