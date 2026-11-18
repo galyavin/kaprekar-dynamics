@@ -1,0 +1,45 @@
+name = "kaprekar_boundary"
+version = "0.1.0"
+defaultTargets = ["TheoremC"]
+
+[[lean_lib]]
+name = "Boundary"
+
+[[lean_lib]]
+name = "Digits"
+
+[[lean_lib]]
+name = "Generic"
+
+[[lean_lib]]
+name = "Clock"
+
+[[lean_lib]]
+name = "Critical"
+
+[[lean_lib]]
+name = "SmallCores"
+
+[[lean_lib]]
+name = "PowerRows"
+
+[[lean_lib]]
+name = "Exhaustion"
+
+[[lean_lib]]
+name = "Cycles"
+
+[[lean_lib]]
+name = "OddGraph"
+
+[[lean_lib]]
+name = "PowerCycles"
+
+[[lean_lib]]
+name = "CoreCounts"
+
+[[lean_lib]]
+name = "Unique"
+
+[[lean_lib]]
+name = "TheoremC"

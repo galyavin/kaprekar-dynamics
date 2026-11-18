@@ -1,0 +1,329 @@
+\documentclass[11pt]{amsart}
+\usepackage{amssymb}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem*{example}{Example}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\DeclareMathOperator{\sort}{sort}
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\Zs}{\mathcal{Z}}
+\newcommand{\Ds}{\mathcal{D}}
+\newcommand{\vt}{\nu}
+
+\begin{document}
+
+\title{Cycles of the four-digit Kaprekar map in even bases}
+\author{Rustem Galyavin}
+\thanks{Contact: \href{mailto:rustem@galyavin.com}{rustem@galyavin.com}. ORCID: \href{https://orcid.org/0009-0006-6875-9170}{0009-0006-6875-9170}.}
+\date{17 November 2026}
+\subjclass[2020]{Primary 11A63; Secondary 37P99}
+\keywords{Kaprekar routine, digit dynamics, periodic orbits, formal verification}
+
+\begin{abstract}
+In base ten, repeatedly subtracting the ascending arrangement of four digits from the descending one sends every input whose digits are not all equal to Kaprekar's constant $6174$. We determine all cycles of this map in every even base. Writing the base as $m\cdot 2^n$ with $m$ odd and $m\ge5$, the cycles are the lifts of the cycles of the odd base $m$, obtained by scaling their difference pairs by $2^n$, together with at most one more: a cycle of length $n+1$ when $2^n\equiv1\pmod m$, and a cycle of length $2(n+1)$ when $m=5$ and $n\equiv2\pmod 4$; for $m=5$ this recovers a theorem of Hasse and Prichett. The cases $m=1$ and $m=3$ are described completely. In particular, the even bases with exactly one cycle are $3\cdot2^{2k+1}$, $5\cdot2^{2k+1}$ and $7\cdot2^n$ with $3\nmid n$, as recorded from numerical evidence by Chen, Ono, Schwartz and Thakur. The classification is verified in Lean~4.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+Take a four-digit number, leading zeros allowed, whose digits are not all equal. Arrange the digits in decreasing order and in increasing order, and subtract the second number from the first. In base ten, repeating this operation always leads to $6174$, which is fixed: $7641-1467=6174$. This observation of Kaprekar has a long literature; see \cite{DZ} and the references there. In other bases the operation can end in several cycles. For odd bases greater than three, Chen, Ono, Schwartz and Thakur \cite{COST} described the map on an invariant region as simultaneous doubling on unordered pairs of nonzero residues modulo sign, which determines all its cycles, and they recorded, as numerical evidence, which even bases have exactly one cycle \cite[Remark~28]{COST}. This paper determines all cycles in every even base.
+
+Fix a base $B\ge2$ and let $K_B$ be the map just described on the integers $0\le x<B^4$, written with four digits. Constant inputs go to the fixed point $0$, which we exclude: a \emph{cycle} always means a cycle of $K_B$ on inputs that are not constant, and a fixed point is a cycle of length one. Write
+\[
+B=m\,2^n\qquad(m\ \text{odd}),\qquad s=2^n,\qquad h=\tfrac{m+1}{2}.
+\]
+For odd $m\ge5$ let $\T_m=\{(u,v)\in\mathbb Z^2:\ m>u>v>0,\ u,v\ \text{odd}\}$. The map $(u,v)\mapsto\sort(|2u-m|,|2v-m|)$, where $\sort$ lists two numbers in decreasing order, is a permutation of $\T_m$. By \cite[Theorem~1]{COST}, its cycles correspond to the cycles of $K_m$. In Section~\ref{sec:map} we see that each of its cycles gives a cycle of $K_B$ of the same length, its \emph{lift}, obtained by multiplying the differences by $s$.
+
+\begin{theorem}\label{thm:main}
+Let $B=m2^n$ with $m$ odd and $n\ge1$.
+\begin{enumerate}
+\item[(a)] If $m\ge5$, the cycles of $K_B$ are the lifts of the cycles of $\T_m$, together with
+\begin{itemize}
+\item one cycle of length $n+1$ if $2^n\equiv1\pmod m$, and
+\item one cycle of length $2(n+1)$ if $m=5$ and $n\equiv2\pmod4$,
+\end{itemize}
+and no others. The two conditions are never satisfied together.
+\item[(b)] If $m=3$, there is exactly one cycle, of length $3(n+1)$, when $n$ is odd, and there are exactly two cycles, of lengths $n+1$ and $2(n+1)$, when $n$ is even.
+\item[(c)] If $m=1$, the cycles are given in Table~\ref{tab:powers}.
+\end{enumerate}
+\end{theorem}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lp{9.2cm}@{}}
+\toprule
+$B=2^n$ & cycles of $K_B$ \\
+\midrule
+$n=1$ & two fixed points \\
+$n\ge3$ odd & $\tfrac{n-1}{2}$ of length $n$ and $\tfrac{n-1}{2}$ of length $n+2$ \\
+$n\ge2$ even & $\tfrac{n-2}{2}$ of length $n$, $\tfrac{n-2}{2}$ of length $n+2$, one of length $\tfrac n2$ and one of length $\tfrac n2+1$ \\
+\bottomrule
+\end{tabular}
+\caption{Cycles in the bases $2^n$.}\label{tab:powers}
+\end{table}
+
+\begin{corollary}\label{cor:unique}
+The even bases with exactly one cycle are
+\[
+3\cdot2^{2k+1},\qquad 5\cdot2^{2k+1}\quad(k\ge0),\qquad\text{and}\qquad 7\cdot2^n\quad(n\ge1,\ 3\nmid n),
+\]
+and the cycle has length $6(k+1)$, $1$ and $3$, respectively.
+\end{corollary}
+
+Base ten is the case $k=0$ of the second family. Its unique cycle is the lift of the fixed point $(3,1)$ of $\T_5$, namely the difference pair $(6,2)$, which corresponds to $6174$. For $m=5$, Theorem~\ref{thm:main}(a) recovers the classification of Hasse and Prichett \cite[Theorem~4.1]{HP}, who credit the two additional cycles to observations of Brillhart \cite[p.~123]{HP}. Corollary~\ref{cor:unique} proves the pattern recorded in \cite[Remark~28]{COST}, and the remaining cases answer the question left open in \cite[Section~9]{KSL}.
+
+\subsection*{Why the answer has this form}
+Sort the four digits as $a\ge b\ge c\ge d$. The result of one step depends only on the pair $(u,v)=(a-d,b-c)$. Away from three boundary lines ($v=0$, $u=v$ and $u+v=B$), the next pair is $\sort(|2u-B|,|2v-B|)$: each coordinate is doubled and folded. Since $B=m2^n$, along an orbit that avoids the boundary the power of $2$ dividing each coordinate settles at exactly $2^n$ within $n+1$ steps (Lemma~\ref{lem:valuation}). So such an orbit lands, within $n+1$ steps, on a lift of a cycle of $\T_m$. On the boundary lines borrowing changes the formula, and the next pair always has an odd coordinate: the clock restarts. A cycle that is not a lift must therefore return to the boundary again and again. A complete table of these returns (Proposition~\ref{prop:table}) shows that for $m\ge3$ only three boundary states can lie on such a cycle, and that each return between them takes exactly $n+1$ steps. Which returns occur depends only on $\sigma\equiv2^n\pmod m$ (Figure~\ref{fig:graph}). The state $S$ returns to itself exactly when $\sigma\equiv1$. The states $E$ and $U$ alternate exactly when $4\sigma\equiv1$ and $\sigma\equiv\pm1$, which forces $m=3$ or $m=5$. This explains the lengths $n+1$ and $2(n+1)$, and why the odd parts $3$ and $5$ are exceptional. For $m=3$ there are no lifts at all, and every orbit meets the boundary.
+
+\begin{example}
+In base $56=7\cdot2^3$ the lift of the $3$-cycle of $\T_7$ is the cycle $(24,7,47,32)\to(40,7,47,16)\to(40,23,31,16)$ of digit strings. Since $2^3\equiv1\pmod7$, there is one more cycle, of length $4=n+1$:
+\[
+(7,55,55,48)\to(48,6,48,8)\to(42,39,15,14)\to(28,23,31,28)\to(7,55,55,48).
+\]
+In base $20=5\cdot2^2$, a case covered by \cite{HP}, the lift of the fixed point of $\T_5$ is the fixed point with digits $(12,3,15,8)$. Since $2^2\equiv-1\pmod5$, there is one more cycle, of length $6=2(n+1)$:
+\begin{multline*}
+(7,19,19,12)\to(12,6,12,8)\to(6,3,15,14)\to(12,7,11,8)\\
+\to(5,2,16,15)\to(14,9,9,6)\to(7,19,19,12).
+\end{multline*}
+\end{example}
+
+Theorem~\ref{thm:main} and Corollary~\ref{cor:unique} are also verified in Lean~4 (Section~\ref{sec:verification}).
+
+\subsection*{Relation to earlier work}
+Hasse and Prichett \cite{HP} determined the four-digit fixed points, the bases in which all inputs reach a single fixed point, and all cycles in the bases $5\cdot2^n$ \cite[Theorem~4.1]{HP}. Devlin and Zeng \cite{DZ} determined the maximum number of steps needed to reach the fixed point and studied its basin. Kay and Downes-Ward studied cycles through digit multiplicities in odd bases \cite{KD22} and in even bases \cite{KD24}; the latter proves completeness for base~$4$, for every number of digits. A public draft of Korea Superintelligence Labs \cite{KSL} transports cycles that stay in the generic region under scaling of the base \cite[Theorem~3.2]{KSL}, proves that a base with an odd divisor between $9$ and $51$ has more than one cycle, proves the pattern of \cite[Remark~28]{COST} for even bases up to $200$, using formal cycle checks and inspection of the listed states, and reports a computational check up to $6200$ \cite[Theorem~7.1, Remark~7.2 and Section~10]{KSL}. It leaves the general exponent conditions open \cite[Section~9]{KSL}; the table of boundary returns used here settles them. A companion paper treats the distribution of the number of steps needed to reach a cycle.
+
+\section{The difference map}\label{sec:map}
+
+For sorted digits $a\ge b\ge c\ge d$ put $u=a-d$ and $v=b-c$. Nonconstant inputs give pairs in
+\[
+X_B=\{(u,v)\in\mathbb Z^2:\ 1\le u<B,\ 0\le v\le u\}.
+\]
+Subtraction produces the number
+\[
+F_B(u,v)=(B-1)\bigl((B^2+B+1)u+Bv\bigr).
+\]
+The map $F_B$ is injective on $X_B$: equal values force $u\equiv u'\pmod B$, hence $u=u'$, hence $v=v'$. Let $f_B(u,v)$ be the pair of $F_B(u,v)$. Then $K_B=F_B\circ\pi$ on nonconstant inputs, where $\pi$ assigns to a number its pair, and $f_B=\pi\circ F_B$. Every element of a cycle of $K_B$ is a value of $K_B$, hence of $F_B$. It follows that $F_B$ maps the cycles of $f_B$ bijectively onto the cycles of $K_B$, preserving lengths. From now on we work with $f_B$ on $X_B$. Borrowing gives the explicit formula \cite[Section~2]{DZ}
+\begin{equation}\label{eq:map}
+f_B(u,v)=
+\begin{cases}
+\sort(u-1,\,B-u), & v=0,\\
+\sort(|2u-B+1|,\,|2u-B-1|), & u=v\ \text{or}\ u+v=B,\\
+\sort(|2u-B|,\,|2v-B|), & \text{otherwise},
+\end{cases}
+\end{equation}
+where the case $v=0$ takes precedence. A pair is a \emph{boundary state} if $v=0$, $u=v$ or $u+v=B$, and \emph{generic} otherwise.
+
+\begin{lemma}\label{lem:lift}
+Let $m\ge5$ be odd. The map $\phi(u,v)=\sort(|2u-m|,|2v-m|)$ is a permutation of $\T_m$, and $f_B(su,sv)=s\,\phi(u,v)$ for $(u,v)\in\T_m$.
+\end{lemma}
+
+\begin{proof}
+The map $x\mapsto|2x-m|$ sends odd integers in $[1,m-1]$ to odd integers in $[1,m-2]$ and is injective there, since $|2x-m|=|2y-m|$ forces $x=y$ or $x+y=m$, and the second is impossible for odd $x,y$. Hence $\phi$ maps $\T_m$ injectively into itself, and so it is a permutation. For $(u,v)\in\T_m$ the pair $(su,sv)$ is generic, since $v>0$, $u\ne v$ and $u+v\ne m$. So \eqref{eq:map} gives $f_B(su,sv)=\sort(|2su-sm|,|2sv-sm|)=s\,\phi(u,v)$.
+\end{proof}
+
+Thus each cycle of $\phi$ gives, through $(u,v)\mapsto(su,sv)$ and $F_B$, a cycle of $K_B$ of the same length: its lift.
+
+\section{The valuation clock}
+
+Write $\vt(x)$ for the exponent of $2$ in a nonzero integer $x$, and $g(x)=|2x-B|$.
+
+\begin{lemma}\label{lem:valuation}
+Let $0<x<B$ with $x\ne B/2$. Then $\vt(g(x))=\vt(x)+1$ if $\vt(x)\le n-2$; $\vt(g(x))>n$ if $\vt(x)=n-1$; and $\vt(g(x))=n$ if $\vt(x)\ge n$. Consequently, along an orbit of $g$ that avoids $B/2$, the valuation equals $n$ from step
+\[
+\rho_n(x)=\begin{cases}0,&\vt(x)=n,\\ 1,&\vt(x)>n,\\ n-\vt(x)+1,&\vt(x)<n\end{cases}
+\]
+on, and differs from $n$ before.
+\end{lemma}
+
+\begin{proof}
+Write $x=2^ko$ with $o$ odd, so $2x-B=2^{k+1}o-2^nm$. If $k\le n-2$ this has valuation $k+1$. If $k=n-1$ it equals $2^n(o-m)$, and $o-m$ is even and nonzero because $x\ne B/2$. If $k\ge n$ it equals $2^n(2^{k+1-n}o-m)$ with an odd second factor. The formula for $\rho_n$ follows by counting steps.
+\end{proof}
+
+Call a pair $(u,v)\in X_B$ \emph{regular} if none of $u$, $v$, $u-v$, $u+v$ is divisible by $m$. There are no regular pairs when $m\le3$: for $m=3$ the nonzero residues are $\pm1$, so $u\equiv\pm v$.
+
+\begin{lemma}\label{lem:regular}
+\begin{enumerate}
+\item[(a)] A regular pair is generic, its image is regular, and its coordinates are never $B/2$.
+\item[(b)] Let $m\ge5$. The pairs of $s\T_m=\{(su,sv):(u,v)\in\T_m\}$ are regular, and a regular pair $(u,v)$ enters $s\T_m$ after exactly $\max(\rho_n(u),\rho_n(v))$ steps and stays there. In particular, the regular pairs on cycles are exactly those of $s\T_m$.
+\item[(c)] For every odd $m$, the orbit of a generic pair that is not regular contains a boundary state within $n$ steps.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) Since $m\mid B$ and $m\mid B/2$, a regular pair has $v\ne0$, $u\ne v$, $u+v\ne B$ and coordinates different from $B/2$. On generic pairs \eqref{eq:map} changes the residues modulo $m$ of the coordinates by factors $\pm2$, possibly exchanging them, and $2$ is invertible modulo $m$. So regularity is preserved.
+
+(b) A pair $(su',sv')$ with $(u',v')\in\T_m$ is regular, since $0<v'<u'<m$ and $u'+v'$ is even. By (a) and Lemma~\ref{lem:valuation}, applied to each coordinate, both valuations of a regular orbit equal $n$ from step $\max(\rho_n(u),\rho_n(v))$ on, and not both before. A regular pair whose two coordinates have valuation $n$ is $(su',sv')$ with $u',v'$ odd and $m>u'>v'>0$, that is, an element of $s\T_m$. By Lemma~\ref{lem:lift}, $f_B$ permutes $s\T_m$. A regular periodic pair returns to itself after entering $s\T_m$, so it lies in $s\T_m$.
+
+(c) On generic pairs the property of not being regular is preserved, as in (a). If a coordinate equals $B/2$, the next pair has a zero coordinate and is a boundary state. Otherwise, if the orbit stays generic for $n$ steps, Lemma~\ref{lem:valuation} shows that both coordinates are then divisible by $s$: the pair is $(su',sv')$ with $0\le v'\le u'<m$. As $s$ is invertible modulo $m$, one of $u'$, $v'$, $u'-v'$, $u'+v'$ is divisible by $m$. This forces $v'=0$, $u'=v'$ or $u'+v'=m$, so the pair is a boundary state. (For $m=1$ no such pair exists, so the boundary is reached earlier.)
+\end{proof}
+
+By Lemma~\ref{lem:regular}, a cycle of $f_B$ either lies in $s\T_m$, which happens only for $m\ge5$, or contains a boundary state. The cycles of the first kind are the lifts.
+
+\section{Returns to the boundary}
+
+Write
+\[
+Z(u)=(u,0),\qquad D(u)=(u,u),\qquad A(u)=(u,B-u)\quad(B/2<u<B).
+\]
+For a boundary state $q$ whose orbit meets the boundary again, its \emph{next boundary state} is the first boundary state after $q$ on its orbit; the number of steps is the \emph{elapsed time}. For the rest of this section assume $m\ge3$. A boundary state is \emph{seeded} if its image is regular. By Lemma~\ref{lem:regular}(a), the orbit of a seeded state never meets the boundary again. Directly from \eqref{eq:map}, $Z(u)$ is seeded exactly when $u\bmod m$ lies in
+\[
+\Zs=\mathbb Z/m\setminus\{0,1,h\},
+\]
+and $D(u)$ or $A(u)$ is seeded exactly when $u\bmod m$ lies in
+\[
+\Ds=\mathbb Z/m\setminus\{0,h-1,h\}.
+\]
+Both sets are empty for $m=3$. For instance, $f_B(Z(u))=\sort(u-1,B-u)$ is regular exactly when $u\not\equiv1$, $u\not\equiv0$ and $2u-1\not\equiv0\pmod m$, while the sum of its coordinates is $B-1\not\equiv0$.
+
+\begin{proposition}\label{prop:table}
+Let $m\ge3$ be odd and $n\ge1$. A boundary state is the next boundary state of some boundary state only if it is one of the \emph{critical states} in the left column of Table~\ref{tab:returns}. For each critical state, the table lists all boundary states of which it is the next boundary state, and the elapsed time.
+\end{proposition}
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}lp{6.9cm}c@{}}
+\toprule
+critical state & its boundary predecessors & elapsed time\\
+\midrule
+$D(1)$ & $D(B/2)$ & $1$\\
+$Z(B-1)$ & $Z(1)$ & $1$\\
+$Z(2^t)$, $1\le t\le n$ & $Z(Li)$ and $Z(Li+1)$, where $L=B/2^t$, $i$ odd, $1\le i<2^t$ & $t+1$\\
+$Z(2s)$ & $D(u)$ and $A(u)$ with $u\equiv h-1$ or $u\equiv h\pmod m$ & $n+1$\\
+$A(B/2+2^t)$, $0\le t\le n-2$ & $D(u)$ and $A(u)$ with $m\mid u$ and $\vt(u)=n-t-2$ & $t+1$\\
+$A(hs)$ & $Z(u)$ with $u\equiv h\pmod m$ & $n+1$\\
+\bottomrule
+\end{tabular}
+\caption{First returns to the boundary.}\label{tab:returns}
+\end{table}
+
+\begin{proof}
+Run the generic branch of \eqref{eq:map} backwards. A coordinate $a$ of a generic image has the preimages $(B\pm a)/2$, so a generic inverse coordinate $t\ge1$ steps back has the form
+\begin{equation}\label{eq:inverse}
+\frac{B}{2^t}\,i\pm\frac{a}{2^t},\qquad i\ \text{odd},\ 1\le i<2^t.
+\end{equation}
+By \eqref{eq:map}, the image of a zero-boundary state has coordinates with sum $B-1$, and the image of a diagonal or anti-diagonal state has odd coordinates differing by $2$, except for the image $(1,1)$ of $D(B/2)$.
+
+Consider $Z(u)$, and let $d=\min(\vt(u),n)$. Generic inverse paths from $Z(u)$ have depth at most $d$. At each depth $t$ with $0<t<d$, both coordinates of every inverse pair are even, so no such pair is the image of a boundary state. Let $d\ge1$, and put $L=B/2^d$ and $c=u/2^d$, so $0<c<L$. By \eqref{eq:inverse}, the two coordinates of an inverse pair at depth $d$ are congruent modulo $2L$ to $L\pm c$ and $L$, and $B\equiv0\pmod{2L}$.
+\begin{itemize}
+\item If $d<n$, then $L$ is even and $c$ is odd, so the pair has mixed parity and can only be the image of a zero-boundary state. Its coordinates can sum to $B-1$ only if $\pm c\equiv-1\pmod{2L}$, that is, $c=1$ and $u=2^d$. In that case solving for the zero-boundary predecessor gives $Z(Li)$ and $Z(Li+1)$.
+\item If $d=n$, then $L=m$ and $u=cs$. For odd $c$ the pair has mixed parity, and a sum $B-1$ forces $c=1$. For even $c$ both coordinates are odd, and a difference of $2$ forces $c=2$; the predecessors are then $D(u)$ and $A(u)$ with $u\equiv h-1$ or $h\pmod m$.
+\end{itemize}
+At depth zero the only boundary predecessor of a zero-boundary state is $Z(1)$, of $Z(B-1)$.
+
+Consider $A(u)$ with $B/2<u<B$. Again let $d=\min(\vt(u),n)$, $L=B/2^d$ and $c=u/2^d$, so $L/2<c<L$. At depths $0<t<d$ both coordinates of every inverse pair are even. At depth $d\ge1$ the two coordinates are congruent modulo $2L$ to $L\pm c$ and $L\pm(L-c)$.
+\begin{itemize}
+\item If $d<n$, then $c$ and $L-c$ are odd, so both coordinates are odd and only a diagonal or anti-diagonal state can map to the pair. A difference of $2$ is possible exactly when $2c=L+2$, that is, $u=B/2+2^d$. Since $\vt(u)=d$, this forces $d\le n-2$. Solving for the preceding diagonal or anti-diagonal parameter gives the multiples of $m$ of valuation $n-d-2$.
+\item If $d=n$, then $c$ and $m-c$ have opposite parity, so only a zero-boundary state can map to the pair. A sum $B-1$ is possible exactly when $2c=m+1$, that is, $u=hs$; the predecessors are then $Z(u)$ with $u\equiv h\pmod m$.
+\end{itemize}
+If $d=0$, then $u$ is odd, and $A(u)$ itself is the image of a boundary state only when its coordinates differ by $2$, that is, $u=B/2+1$. Its predecessors are then those of the first item with $d=0$, at elapsed time one.
+
+Finally, a diagonal state has no generic predecessor, and its only boundary predecessor is $D(B/2)$, of $D(1)$. These cases exhaust the three branches of \eqref{eq:map}. For $n=1$ the fifth row is empty, and the arguments at full depth still apply.
+\end{proof}
+
+\section{The return graph and the proof of Theorem~\ref{thm:main}}
+
+Let $\sigma$ be the residue of $2^n$ modulo $m$, and put
+\[
+S=Z(s),\qquad E=Z(2s),\qquad U=A(hs).
+\]
+These are critical states (Table~\ref{tab:returns}, rows three with $t=n$, four and six).
+
+\begin{lemma}\label{lem:graph}
+Let $m\ge3$ be odd. No critical state has residue $0$ modulo $m$, and every critical state that is not seeded has next boundary state $S$, $E$ or $U$, after exactly $n+1$ steps. More precisely:
+\begin{itemize}
+\item a critical zero-boundary state $Z(u)$ that is not seeded has $u\equiv h$, and then its next boundary state is $U$, or $u\equiv1$, and then it is $S$;
+\item a critical diagonal or anti-diagonal state that is not seeded has residue $h-1$ or $h$, and its next boundary state is $E$.
+\end{itemize}
+For the three states $S,E,U$ this gives the arrows of Figure~\ref{fig:graph}.
+\end{lemma}
+
+\begin{proof}
+The residues of the critical states modulo $m$ are $1$, $-1$, $2^t$, $2\sigma$, $2^t$ and $h\sigma$, row by row, since $m\mid B/2$; none is $0$. A critical zero-boundary state is either seeded or has residue $1$ or $h$. In the second case row six of Table~\ref{tab:returns} gives $U$. In the first case, $u-1$ is odd, because the critical zero-boundary states other than $Z(B-1)$ are $Z(2^t)$ for $1\le t\le n$ and $E=Z(2s)$, while $Z(B-1)$ has residue $-1\not\equiv1$. So $u=mi+1$ with $i$ odd, and row three with $t=n$ and $L=m$ gives $S$. A critical diagonal or anti-diagonal state that is not seeded has residue $h-1$ or $h$, and row four gives $E$. In each case the elapsed time is $n+1$. For the arrows of Figure~\ref{fig:graph}, use the residues $\sigma$ of $S$, $2\sigma$ of $E$ and $h\sigma$ of $U$, together with $2h\equiv1$. For example, $h\sigma\equiv h-1$ exactly when $\sigma\equiv-1$.
+\end{proof}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[>={Stealth[length=2.6mm]},every node/.style={font=\small}]
+\node[draw,circle,minimum size=9mm] (S) at (0,0) {$S$};
+\node[draw,circle,minimum size=9mm] (U) at (5,0) {$U$};
+\node[draw,circle,minimum size=9mm] (E) at (2.5,-2.8) {$E$};
+\draw[->] (S) to[out=145,in=215,looseness=7] node[left] {$\sigma\equiv1$} (S);
+\draw[->] (S) -- node[above] {$\sigma\equiv h$} (U);
+\draw[->] (E) -- node[left,xshift=-2pt] {$\sigma\equiv h$} (S);
+\draw[->] (U) to[bend left=18] node[right,xshift=2pt] {$\sigma\equiv\pm1$} (E);
+\draw[->] (E) to[bend left=18] node[pos=0.42,left=3pt] {$4\sigma\equiv1$} (U);
+\end{tikzpicture}
+\caption{The returns among $S=Z(2^n)$, $E=Z(2^{n+1})$ and $U=A(h2^n)$, with $\sigma\equiv2^n$ and $h=(m+1)/2$ modulo $m$. Each arrow takes exactly $n+1$ steps. A state with no applicable arrow is seeded, and its orbit ends on a lift.}\label{fig:graph}
+\end{figure}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}\textup{(a)} and \textup{(b)}]
+Let $\gamma$ be a cycle of $f_B$ that is not a lift. By Lemma~\ref{lem:regular} it contains a boundary state, and its boundary states $q_0,\dots,q_{k-1}$, in order along $\gamma$, satisfy: $q_{j+1}$ is the next boundary state of $q_j$, indices modulo $k$. By Proposition~\ref{prop:table} each $q_j$ is critical, and no $q_j$ is seeded. By Lemma~\ref{lem:graph} each $q_j$ lies in $\{S,E,U\}$, and the length of $\gamma$ is $k(n+1)$. So the cycles that are not lifts are the cycles of the graph in Figure~\ref{fig:graph}. Since a cycle visits each of its states once per period, each such cycle has length $n+1$ times its number of vertices.
+
+Let $m\ge5$, so that $h\not\equiv\pm1\pmod m$. The arrows depend only on $\sigma$, which is never $0$.
+\begin{itemize}
+\item If $\sigma\equiv1$: $S\to S$ and $U\to E$, while $E$ is seeded, since $2\sigma\not\equiv1$ and $4\sigma\not\equiv1$. The only cycle is the loop at $S$.
+\item If $\sigma\equiv-1$: $U\to E$, $S$ is seeded, and $E\to S$ is absent since $\sigma\not\equiv h$. The arrow $E\to U$ is present exactly when $-4\equiv1$, that is, when $m=5$. The only possible cycle is $E\leftrightarrow U$, and it occurs exactly when $m=5$.
+\item If $\sigma\equiv h$: $S\to U$ and $E\to S$, while $U$ is seeded. There is no cycle.
+\item Otherwise: $S$ and $U$ are seeded, and there is no cycle.
+\end{itemize}
+The loop at $S$ has length $n+1$, and the alternation $E\leftrightarrow U$ has length $2(n+1)$. Modulo $5$, $2^n\equiv-1$ exactly when $n\equiv2\pmod4$, and $\sigma\equiv1$ and $\sigma\equiv-1$ cannot hold together. Lifts contain no boundary state, so these cycles are different from the lifts. This proves (a).
+
+Let $m=3$, so $h=2$ and there are no seeded states and no lifts. Every residue that occurs is $1=h-1$ or $2=h$, so no critical state is seeded, $U\to E$ always, and $S$ and $E$ each have exactly one arrow. If $n$ is odd, then $\sigma=2=h$ and $2\sigma\equiv1$, which gives the single cycle $S\to U\to E\to S$ of length $3(n+1)$. If $n$ is even, then $\sigma=1$, which gives the loop at $S$ and the alternation $E\leftrightarrow U$, since $4\sigma\equiv1$. This proves (b).
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}\textup{(c)}]
+Let $B=2^n$. For $n=1$ the pairs $(1,0)$ and $(1,1)$ are fixed and are the only pairs. Let $n\ge2$. By Lemma~\ref{lem:regular}(c) every cycle meets the boundary. The proof of Proposition~\ref{prop:table} applies, except that critical states outside $X_B$, namely $Z(2^n)$, $Z(2^{n+1})$ and $A(2^n)$, do not occur. The remaining critical states on which cycles can lie are $Z(2^t)$ for $1\le t\le n-1$ and $A(B/2+2^t)$ for $0\le t\le n-2$; the states $D(1)$ and $Z(B-1)$ lead into these families, since by rows five and three their next boundary states are $A(B/2+2^{n-2})$ and $Z(2^{n-1})$. Row three, with $L=2^{n-t'}$, shows that the next boundary state of $Z(2^t)$ is $Z(2^{n-t})$, after $n-t+1$ steps. Row five shows that the next boundary state of $A(B/2+2^t)$ is $A(B/2+2^{n-t-2})$, after $n-t-1$ steps, since $\vt(B/2+2^t)=t$. These are involutions of the index sets. A two-element orbit $\{t,n-t\}$ of the first gives a cycle of length $(n-t+1)+(t+1)=n+2$, and one of the second gives a cycle of length $n$. For even $n$ the fixed index $t=n/2$ of the first gives a cycle of length $n/2+1$, and the fixed index $t=(n-2)/2$ of the second gives a cycle of length $n/2$. Counting orbits gives Table~\ref{tab:powers}.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:unique}]
+By \cite[Corollary~27]{COST}, $\phi$ has exactly one cycle on $\T_m$ for $m=5$ and for $m=7$, and at least two for every odd $m\ge9$. The one cycle of $\T_5$ is the fixed point $(3,1)$, and that of $\T_7$ is $(3,1)\to(5,1)\to(5,3)\to(3,1)$. For $m\ge9$ there are always at least two lifts. For $m=7$ an additional cycle occurs exactly when $2^n\equiv1\pmod7$, that is, when $3\mid n$. For $m=5$ an additional cycle occurs exactly when $n$ is even, since $2^n\equiv1$ for $n\equiv0$ and $2^n\equiv-1$ for $n\equiv2\pmod4$. For $m=3$ there is one cycle exactly when $n$ is odd, of length $3(n+1)=6(k+1)$ for $n=2k+1$. For $m=1$ there is never exactly one cycle, by Table~\ref{tab:powers}.
+\end{proof}
+
+\section{Computations and formal verification}\label{sec:verification}
+
+The proofs above are complete. As independent checks, the cycles predicted by Theorem~\ref{thm:main}, with their lengths, agree with all cycles computed by direct subtraction in every even base from $2$ to $1000$. Table~\ref{tab:returns}, with its elapsed times, agrees with forward iteration from every boundary state for all odd $3\le m\le31$ and $1\le n\le4$.
+
+Theorem~\ref{thm:main}, in all three cases, and Corollary~\ref{cor:unique} are formally verified in Lean~4 (version~4.28.0), using only its core library. The formal statement concerns positional four-digit subtraction itself. It proves that the formal step subtracts the ascending arrangement from the descending one, it quantifies over every even base, and it determines every nonconstant periodic digit word, the exact least periods, and the uniqueness criterion. The main theorems depend only on Lean's standard axioms (propositional extensionality, choice and quotient soundness). The formal proof locates first returns to the boundary by a divisibility test and a folding formula for residues, instead of translating Table~\ref{tab:returns} row by row. The Lean sources and the computational scripts are part of the ancillary material.
+
+\section*{Data availability}
+The ancillary material, including the Lean development and the reproduction scripts, is archived at Zenodo, \href{https://doi.org/10.5281/zenodo.24325110}{doi:10.5281/zenodo.24325110}, and maintained at \url{https://github.com/galyavin/kaprekar-dynamics}.
+
+\section*{Tools}
+The research, computations and drafting were carried out with substantial assistance from AI systems (OpenAI Codex and Anthropic Claude), under the author's direction and close supervision. The checks use Python and C++, and the formal verification uses Lean~4. The author takes responsibility for the contents.
+
+\begin{thebibliography}{KD24}
+
+\bibitem[COST]{COST}
+E.~Chen, K.~Ono, R.~E. Schwartz and D.~Thakur, \emph{Four-digit Kaprekar dynamics in odd bases}, J. Integer Seq. \textbf{29} (2026), Article 26.4.7; \href{https://arxiv.org/abs/2606.20439}{arXiv:2606.20439}.
+
+\bibitem[DZ]{DZ}
+P.~Devlin and T.~Zeng, \emph{Maximum distances in the four-digit Kaprekar process}, Integers \textbf{21} (2021), Paper A97.
+
+\bibitem[HP]{HP}
+H.~Hasse and G.~D. Prichett, \emph{The determination of all four-digit Kaprekar constants}, J. Reine Angew. Math. \textbf{299/300} (1978), 113--124.
+
+\bibitem[KD22]{KD22}
+A.~Kay and K.~Downes-Ward, \emph{Fixed points and cycles of the Kaprekar transformation: 1. Odd bases}, J. Integer Seq. \textbf{25} (2022), Article 22.6.7.
+
+\bibitem[KD24]{KD24}
+A.~Kay and K.~Downes-Ward, \emph{Fixed points and cycles of the Kaprekar transformation: 2. Even bases}, preprint (2024), \href{https://arxiv.org/abs/2408.12257}{arXiv:2408.12257}.
+
+\bibitem[KSL]{KSL}
+Korea Superintelligence Labs, \emph{Base scaling in four-digit Kaprekar dynamics, and an infinite family of bases with no unique terminating cycle}, public draft, version~1, \url{https://lean.up.railway.app/papers/kaprekar-v1.pdf}, accessed 17 November 2026.
+
+\end{thebibliography}
+
+\end{document}

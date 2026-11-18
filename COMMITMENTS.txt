@@ -1,0 +1,11 @@
+Priority commitments, 17 November 2026
+
+The SHA-256 digests below identify research materials that are not yet
+released: the full working research record of this project, and the source
+texts of two companion papers in preparation. The files are preserved
+unchanged. Releasing them later allows anyone to check that they match the
+digests and therefore existed on this date.
+
+c98a88815b3b44a865271437e456e76621ffaafd9a3ef8e70523497c47a64511  kaprekar-research-archive-1.0.zip
+dc4b5aa46180aee83a3b3136b6ada2bd07ab3f3e69b19cc771b43b36fb0755c7  four-digit-arrival-laws-source-2026-11-17.md
+7cf9fb7c32ef8b9e2b2f2a8201ae7c5939f0113618add18b04f6497dec10d6a9  five-digit-law-source-2026-11-17.md

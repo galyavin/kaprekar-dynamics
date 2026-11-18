@@ -1,0 +1,1692 @@
+{
+  "digit_examples": 5,
+  "paper_range_boundaries": 18945,
+  "totals": {
+    "boundaries": 138240,
+    "returns": 18540,
+    "critical": 1200,
+    "critical_seeded": 1053
+  },
+  "cases": [
+    {
+      "m": 3,
+      "n": 1,
+      "base": 6,
+      "boundaries": 12,
+      "returns": 12,
+      "critical": 5,
+      "critical_seeded": 0,
+      "arrows": {
+        "S": "U",
+        "E": "S",
+        "U": "E"
+      }
+    },
+    {
+      "m": 3,
+      "n": 2,
+      "base": 12,
+      "boundaries": 27,
+      "returns": 27,
+      "critical": 7,
+      "critical_seeded": 0,
+      "arrows": {
+        "S": "S",
+        "E": "U",
+        "U": "E"
+      }
+    },
+    {
+      "m": 3,
+      "n": 3,
+      "base": 24,
+      "boundaries": 57,
+      "returns": 57,
+      "critical": 9,
+      "critical_seeded": 0,
+      "arrows": {
+        "S": "U",
+        "E": "S",
+        "U": "E"
+      }
+    },
+    {
+      "m": 3,
+      "n": 4,
+      "base": 48,
+      "boundaries": 117,
+      "returns": 117,
+      "critical": 11,
+      "critical_seeded": 0,
+      "arrows": {
+        "S": "S",
+        "E": "U",
+        "U": "E"
+      }
+    },
+    {
+      "m": 3,
+      "n": 5,
+      "base": 96,
+      "boundaries": 237,
+      "returns": 237,
+      "critical": 13,
+      "critical_seeded": 0,
+      "arrows": {
+        "S": "U",
+        "E": "S",
+        "U": "E"
+      }
+    },
+    {
+      "m": 3,
+      "n": 6,
+      "base": 192,
+      "boundaries": 477,
+      "returns": 477,
+      "critical": 15,
+      "critical_seeded": 0,
+      "arrows": {
+        "S": "S",
+        "E": "U",
+        "U": "E"
+      }
+    },
+    {
+      "m": 5,
+      "n": 1,
+      "base": 10,
+      "boundaries": 22,
+      "returns": 12,
+      "critical": 5,
+      "critical_seeded": 5,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 5,
+      "n": 2,
+      "base": 20,
+      "boundaries": 47,
+      "returns": 27,
+      "critical": 7,
+      "critical_seeded": 5,
+      "arrows": {
+        "S": null,
+        "E": "U",
+        "U": "E"
+      }
+    },
+    {
+      "m": 5,
+      "n": 3,
+      "base": 40,
+      "boundaries": 97,
+      "returns": 57,
+      "critical": 9,
+      "critical_seeded": 6,
+      "arrows": {
+        "S": "U",
+        "E": "S",
+        "U": null
+      }
+    },
+    {
+      "m": 5,
+      "n": 4,
+      "base": 80,
+      "boundaries": 197,
+      "returns": 117,
+      "critical": 11,
+      "critical_seeded": 7,
+      "arrows": {
+        "S": "S",
+        "E": null,
+        "U": "E"
+      }
+    },
+    {
+      "m": 5,
+      "n": 5,
+      "base": 160,
+      "boundaries": 397,
+      "returns": 237,
+      "critical": 13,
+      "critical_seeded": 9,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 5,
+      "n": 6,
+      "base": 320,
+      "boundaries": 797,
+      "returns": 477,
+      "critical": 15,
+      "critical_seeded": 9,
+      "arrows": {
+        "S": null,
+        "E": "U",
+        "U": "E"
+      }
+    },
+    {
+      "m": 7,
+      "n": 1,
+      "base": 14,
+      "boundaries": 32,
+      "returns": 12,
+      "critical": 5,
+      "critical_seeded": 4,
+      "arrows": {
+        "S": null,
+        "E": "U",
+        "U": null
+      }
+    },
+    {
+      "m": 7,
+      "n": 2,
+      "base": 28,
+      "boundaries": 67,
+      "returns": 27,
+      "critical": 7,
+      "critical_seeded": 5,
+      "arrows": {
+        "S": "U",
+        "E": "S",
+        "U": null
+      }
+    },
+    {
+      "m": 7,
+      "n": 3,
+      "base": 56,
+      "boundaries": 137,
+      "returns": 57,
+      "critical": 9,
+      "critical_seeded": 6,
+      "arrows": {
+        "S": "S",
+        "E": null,
+        "U": "E"
+      }
+    },
+    {
+      "m": 7,
+      "n": 4,
+      "base": 112,
+      "boundaries": 277,
+      "returns": 117,
+      "critical": 11,
+      "critical_seeded": 7,
+      "arrows": {
+        "S": null,
+        "E": "U",
+        "U": null
+      }
+    },
+    {
+      "m": 7,
+      "n": 5,
+      "base": 224,
+      "boundaries": 557,
+      "returns": 237,
+      "critical": 13,
+      "critical_seeded": 8,
+      "arrows": {
+        "S": "U",
+        "E": "S",
+        "U": null
+      }
+    },
+    {
+      "m": 7,
+      "n": 6,
+      "base": 448,
+      "boundaries": 1117,
+      "returns": 477,
+      "critical": 15,
+      "critical_seeded": 9,
+      "arrows": {
+        "S": "S",
+        "E": null,
+        "U": "E"
+      }
+    },
+    {
+      "m": 9,
+      "n": 1,
+      "base": 18,
+      "boundaries": 42,
+      "returns": 12,
+      "critical": 5,
+      "critical_seeded": 5,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 9,
+      "n": 2,
+      "base": 36,
+      "boundaries": 87,
+      "returns": 27,
+      "critical": 7,
+      "critical_seeded": 7,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 9,
+      "n": 3,
+      "base": 72,
+      "boundaries": 177,
+      "returns": 57,
+      "critical": 9,
+      "critical_seeded": 8,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": "E"
+      }
+    },
+    {
+      "m": 9,
+      "n": 4,
+      "base": 144,
+      "boundaries": 357,
+      "returns": 117,
+      "critical": 11,
+      "critical_seeded": 9,
+      "arrows": {
+        "S": null,
+        "E": "U",
+        "U": null
+      }
+    },
+    {
+      "m": 9,
+      "n": 5,
+      "base": 288,
+      "boundaries": 717,
+      "returns": 237,
+      "critical": 13,
+      "critical_seeded": 10,
+      "arrows": {
+        "S": "U",
+        "E": "S",
+        "U": null
+      }
+    },
+    {
+      "m": 9,
+      "n": 6,
+      "base": 576,
+      "boundaries": 1437,
+      "returns": 477,
+      "critical": 15,
+      "critical_seeded": 11,
+      "arrows": {
+        "S": "S",
+        "E": null,
+        "U": "E"
+      }
+    },
+    {
+      "m": 11,
+      "n": 1,
+      "base": 22,
+      "boundaries": 52,
+      "returns": 12,
+      "critical": 5,
+      "critical_seeded": 5,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 11,
+      "n": 2,
+      "base": 44,
+      "boundaries": 107,
+      "returns": 27,
+      "critical": 7,
+      "critical_seeded": 7,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 11,
+      "n": 3,
+      "base": 88,
+      "boundaries": 217,
+      "returns": 57,
+      "critical": 9,
+      "critical_seeded": 9,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 11,
+      "n": 4,
+      "base": 176,
+      "boundaries": 437,
+      "returns": 117,
+      "critical": 11,
+      "critical_seeded": 11,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 11,
+      "n": 5,
+      "base": 352,
+      "boundaries": 877,
+      "returns": 237,
+      "critical": 13,
+      "critical_seeded": 12,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": "E"
+      }
+    },
+    {
+      "m": 11,
+      "n": 6,
+      "base": 704,
+      "boundaries": 1757,
+      "returns": 477,
+      "critical": 15,
+      "critical_seeded": 14,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 13,
+      "n": 1,
+      "base": 26,
+      "boundaries": 62,
+      "returns": 12,
+      "critical": 5,
+      "critical_seeded": 5,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 13,
+      "n": 2,
+      "base": 52,
+      "boundaries": 127,
+      "returns": 27,
+      "critical": 7,
+      "critical_seeded": 7,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 13,
+      "n": 3,
+      "base": 104,
+      "boundaries": 257,
+      "returns": 57,
+      "critical": 9,
+      "critical_seeded": 9,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 13,
+      "n": 4,
+      "base": 208,
+      "boundaries": 517,
+      "returns": 117,
+      "critical": 11,
+      "critical_seeded": 11,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 13,
+      "n": 5,
+      "base": 416,
+      "boundaries": 1037,
+      "returns": 237,
+      "critical": 13,
+      "critical_seeded": 13,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 13,
+      "n": 6,
+      "base": 832,
+      "boundaries": 2077,
+      "returns": 477,
+      "critical": 15,
+      "critical_seeded": 14,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": "E"
+      }
+    },
+    {
+      "m": 15,
+      "n": 1,
+      "base": 30,
+      "boundaries": 72,
+      "returns": 12,
+      "critical": 5,
+      "critical_seeded": 5,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 15,
+      "n": 2,
+      "base": 60,
+      "boundaries": 147,
+      "returns": 27,
+      "critical": 7,
+      "critical_seeded": 6,
+      "arrows": {
+        "S": null,
+        "E": "U",
+        "U": null
+      }
+    },
+    {
+      "m": 15,
+      "n": 3,
+      "base": 120,
+      "boundaries": 297,
+      "returns": 57,
+      "critical": 9,
+      "critical_seeded": 7,
+      "arrows": {
+        "S": "U",
+        "E": "S",
+        "U": null
+      }
+    },
+    {
+      "m": 15,
+      "n": 4,
+      "base": 240,
+      "boundaries": 597,
+      "returns": 117,
+      "critical": 11,
+      "critical_seeded": 8,
+      "arrows": {
+        "S": "S",
+        "E": null,
+        "U": "E"
+      }
+    },
+    {
+      "m": 15,
+      "n": 5,
+      "base": 480,
+      "boundaries": 1197,
+      "returns": 237,
+      "critical": 13,
+      "critical_seeded": 10,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 15,
+      "n": 6,
+      "base": 960,
+      "boundaries": 2397,
+      "returns": 477,
+      "critical": 15,
+      "critical_seeded": 11,
+      "arrows": {
+        "S": null,
+        "E": "U",
+        "U": null
+      }
+    },
+    {
+      "m": 17,
+      "n": 1,
+      "base": 34,
+      "boundaries": 82,
+      "returns": 12,
+      "critical": 5,
+      "critical_seeded": 5,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 17,
+      "n": 2,
+      "base": 68,
+      "boundaries": 167,
+      "returns": 27,
+      "critical": 7,
+      "critical_seeded": 7,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 17,
+      "n": 3,
+      "base": 136,
+      "boundaries": 337,
+      "returns": 57,
+      "critical": 9,
+      "critical_seeded": 9,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 17,
+      "n": 4,
+      "base": 272,
+      "boundaries": 677,
+      "returns": 117,
+      "critical": 11,
+      "critical_seeded": 10,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": "E"
+      }
+    },
+    {
+      "m": 17,
+      "n": 5,
+      "base": 544,
+      "boundaries": 1357,
+      "returns": 237,
+      "critical": 13,
+      "critical_seeded": 12,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 17,
+      "n": 6,
+      "base": 1088,
+      "boundaries": 2717,
+      "returns": 477,
+      "critical": 15,
+      "critical_seeded": 13,
+      "arrows": {
+        "S": null,
+        "E": "U",
+        "U": null
+      }
+    },
+    {
+      "m": 19,
+      "n": 1,
+      "base": 38,
+      "boundaries": 92,
+      "returns": 12,
+      "critical": 5,
+      "critical_seeded": 5,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 19,
+      "n": 2,
+      "base": 76,
+      "boundaries": 187,
+      "returns": 27,
+      "critical": 7,
+      "critical_seeded": 7,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 19,
+      "n": 3,
+      "base": 152,
+      "boundaries": 377,
+      "returns": 57,
+      "critical": 9,
+      "critical_seeded": 9,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 19,
+      "n": 4,
+      "base": 304,
+      "boundaries": 757,
+      "returns": 117,
+      "critical": 11,
+      "critical_seeded": 11,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 19,
+      "n": 5,
+      "base": 608,
+      "boundaries": 1517,
+      "returns": 237,
+      "critical": 13,
+      "critical_seeded": 13,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 19,
+      "n": 6,
+      "base": 1216,
+      "boundaries": 3037,
+      "returns": 477,
+      "critical": 15,
+      "critical_seeded": 15,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 21,
+      "n": 1,
+      "base": 42,
+      "boundaries": 102,
+      "returns": 12,
+      "critical": 5,
+      "critical_seeded": 5,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 21,
+      "n": 2,
+      "base": 84,
+      "boundaries": 207,
+      "returns": 27,
+      "critical": 7,
+      "critical_seeded": 7,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 21,
+      "n": 3,
+      "base": 168,
+      "boundaries": 417,
+      "returns": 57,
+      "critical": 9,
+      "critical_seeded": 9,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 21,
+      "n": 4,
+      "base": 336,
+      "boundaries": 837,
+      "returns": 117,
+      "critical": 11,
+      "critical_seeded": 10,
+      "arrows": {
+        "S": null,
+        "E": "U",
+        "U": null
+      }
+    },
+    {
+      "m": 21,
+      "n": 5,
+      "base": 672,
+      "boundaries": 1677,
+      "returns": 237,
+      "critical": 13,
+      "critical_seeded": 11,
+      "arrows": {
+        "S": "U",
+        "E": "S",
+        "U": null
+      }
+    },
+    {
+      "m": 21,
+      "n": 6,
+      "base": 1344,
+      "boundaries": 3357,
+      "returns": 477,
+      "critical": 15,
+      "critical_seeded": 12,
+      "arrows": {
+        "S": "S",
+        "E": null,
+        "U": "E"
+      }
+    },
+    {
+      "m": 23,
+      "n": 1,
+      "base": 46,
+      "boundaries": 112,
+      "returns": 12,
+      "critical": 5,
+      "critical_seeded": 5,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 23,
+      "n": 2,
+      "base": 92,
+      "boundaries": 227,
+      "returns": 27,
+      "critical": 7,
+      "critical_seeded": 7,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 23,
+      "n": 3,
+      "base": 184,
+      "boundaries": 457,
+      "returns": 57,
+      "critical": 9,
+      "critical_seeded": 9,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 23,
+      "n": 4,
+      "base": 368,
+      "boundaries": 917,
+      "returns": 117,
+      "critical": 11,
+      "critical_seeded": 11,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 23,
+      "n": 5,
+      "base": 736,
+      "boundaries": 1837,
+      "returns": 237,
+      "critical": 13,
+      "critical_seeded": 13,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 23,
+      "n": 6,
+      "base": 1472,
+      "boundaries": 3677,
+      "returns": 477,
+      "critical": 15,
+      "critical_seeded": 15,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 25,
+      "n": 1,
+      "base": 50,
+      "boundaries": 122,
+      "returns": 12,
+      "critical": 5,
+      "critical_seeded": 5,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 25,
+      "n": 2,
+      "base": 100,
+      "boundaries": 247,
+      "returns": 27,
+      "critical": 7,
+      "critical_seeded": 7,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 25,
+      "n": 3,
+      "base": 200,
+      "boundaries": 497,
+      "returns": 57,
+      "critical": 9,
+      "critical_seeded": 9,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 25,
+      "n": 4,
+      "base": 400,
+      "boundaries": 997,
+      "returns": 117,
+      "critical": 11,
+      "critical_seeded": 11,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 25,
+      "n": 5,
+      "base": 800,
+      "boundaries": 1997,
+      "returns": 237,
+      "critical": 13,
+      "critical_seeded": 13,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 25,
+      "n": 6,
+      "base": 1600,
+      "boundaries": 3997,
+      "returns": 477,
+      "critical": 15,
+      "critical_seeded": 15,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 27,
+      "n": 1,
+      "base": 54,
+      "boundaries": 132,
+      "returns": 12,
+      "critical": 5,
+      "critical_seeded": 5,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 27,
+      "n": 2,
+      "base": 108,
+      "boundaries": 267,
+      "returns": 27,
+      "critical": 7,
+      "critical_seeded": 7,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 27,
+      "n": 3,
+      "base": 216,
+      "boundaries": 537,
+      "returns": 57,
+      "critical": 9,
+      "critical_seeded": 9,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 27,
+      "n": 4,
+      "base": 432,
+      "boundaries": 1077,
+      "returns": 117,
+      "critical": 11,
+      "critical_seeded": 11,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 27,
+      "n": 5,
+      "base": 864,
+      "boundaries": 2157,
+      "returns": 237,
+      "critical": 13,
+      "critical_seeded": 13,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 27,
+      "n": 6,
+      "base": 1728,
+      "boundaries": 4317,
+      "returns": 477,
+      "critical": 15,
+      "critical_seeded": 15,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 29,
+      "n": 1,
+      "base": 58,
+      "boundaries": 142,
+      "returns": 12,
+      "critical": 5,
+      "critical_seeded": 5,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 29,
+      "n": 2,
+      "base": 116,
+      "boundaries": 287,
+      "returns": 27,
+      "critical": 7,
+      "critical_seeded": 7,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 29,
+      "n": 3,
+      "base": 232,
+      "boundaries": 577,
+      "returns": 57,
+      "critical": 9,
+      "critical_seeded": 9,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 29,
+      "n": 4,
+      "base": 464,
+      "boundaries": 1157,
+      "returns": 117,
+      "critical": 11,
+      "critical_seeded": 11,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 29,
+      "n": 5,
+      "base": 928,
+      "boundaries": 2317,
+      "returns": 237,
+      "critical": 13,
+      "critical_seeded": 13,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 29,
+      "n": 6,
+      "base": 1856,
+      "boundaries": 4637,
+      "returns": 477,
+      "critical": 15,
+      "critical_seeded": 15,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 31,
+      "n": 1,
+      "base": 62,
+      "boundaries": 152,
+      "returns": 12,
+      "critical": 5,
+      "critical_seeded": 5,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 31,
+      "n": 2,
+      "base": 124,
+      "boundaries": 307,
+      "returns": 27,
+      "critical": 7,
+      "critical_seeded": 7,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 31,
+      "n": 3,
+      "base": 248,
+      "boundaries": 617,
+      "returns": 57,
+      "critical": 9,
+      "critical_seeded": 8,
+      "arrows": {
+        "S": null,
+        "E": "U",
+        "U": null
+      }
+    },
+    {
+      "m": 31,
+      "n": 4,
+      "base": 496,
+      "boundaries": 1237,
+      "returns": 117,
+      "critical": 11,
+      "critical_seeded": 9,
+      "arrows": {
+        "S": "U",
+        "E": "S",
+        "U": null
+      }
+    },
+    {
+      "m": 31,
+      "n": 5,
+      "base": 992,
+      "boundaries": 2477,
+      "returns": 237,
+      "critical": 13,
+      "critical_seeded": 10,
+      "arrows": {
+        "S": "S",
+        "E": null,
+        "U": "E"
+      }
+    },
+    {
+      "m": 31,
+      "n": 6,
+      "base": 1984,
+      "boundaries": 4957,
+      "returns": 477,
+      "critical": 15,
+      "critical_seeded": 12,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 33,
+      "n": 1,
+      "base": 66,
+      "boundaries": 162,
+      "returns": 12,
+      "critical": 5,
+      "critical_seeded": 5,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 33,
+      "n": 2,
+      "base": 132,
+      "boundaries": 327,
+      "returns": 27,
+      "critical": 7,
+      "critical_seeded": 7,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 33,
+      "n": 3,
+      "base": 264,
+      "boundaries": 657,
+      "returns": 57,
+      "critical": 9,
+      "critical_seeded": 9,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 33,
+      "n": 4,
+      "base": 528,
+      "boundaries": 1317,
+      "returns": 117,
+      "critical": 11,
+      "critical_seeded": 11,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 33,
+      "n": 5,
+      "base": 1056,
+      "boundaries": 2637,
+      "returns": 237,
+      "critical": 13,
+      "critical_seeded": 12,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": "E"
+      }
+    },
+    {
+      "m": 33,
+      "n": 6,
+      "base": 2112,
+      "boundaries": 5277,
+      "returns": 477,
+      "critical": 15,
+      "critical_seeded": 14,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 35,
+      "n": 1,
+      "base": 70,
+      "boundaries": 172,
+      "returns": 12,
+      "critical": 5,
+      "critical_seeded": 5,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 35,
+      "n": 2,
+      "base": 140,
+      "boundaries": 347,
+      "returns": 27,
+      "critical": 7,
+      "critical_seeded": 7,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 35,
+      "n": 3,
+      "base": 280,
+      "boundaries": 697,
+      "returns": 57,
+      "critical": 9,
+      "critical_seeded": 9,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 35,
+      "n": 4,
+      "base": 560,
+      "boundaries": 1397,
+      "returns": 117,
+      "critical": 11,
+      "critical_seeded": 11,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 35,
+      "n": 5,
+      "base": 1120,
+      "boundaries": 2797,
+      "returns": 237,
+      "critical": 13,
+      "critical_seeded": 13,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 35,
+      "n": 6,
+      "base": 2240,
+      "boundaries": 5597,
+      "returns": 477,
+      "critical": 15,
+      "critical_seeded": 15,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 37,
+      "n": 1,
+      "base": 74,
+      "boundaries": 182,
+      "returns": 12,
+      "critical": 5,
+      "critical_seeded": 5,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 37,
+      "n": 2,
+      "base": 148,
+      "boundaries": 367,
+      "returns": 27,
+      "critical": 7,
+      "critical_seeded": 7,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 37,
+      "n": 3,
+      "base": 296,
+      "boundaries": 737,
+      "returns": 57,
+      "critical": 9,
+      "critical_seeded": 9,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 37,
+      "n": 4,
+      "base": 592,
+      "boundaries": 1477,
+      "returns": 117,
+      "critical": 11,
+      "critical_seeded": 11,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 37,
+      "n": 5,
+      "base": 1184,
+      "boundaries": 2957,
+      "returns": 237,
+      "critical": 13,
+      "critical_seeded": 13,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 37,
+      "n": 6,
+      "base": 2368,
+      "boundaries": 5917,
+      "returns": 477,
+      "critical": 15,
+      "critical_seeded": 15,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 39,
+      "n": 1,
+      "base": 78,
+      "boundaries": 192,
+      "returns": 12,
+      "critical": 5,
+      "critical_seeded": 5,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 39,
+      "n": 2,
+      "base": 156,
+      "boundaries": 387,
+      "returns": 27,
+      "critical": 7,
+      "critical_seeded": 7,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 39,
+      "n": 3,
+      "base": 312,
+      "boundaries": 777,
+      "returns": 57,
+      "critical": 9,
+      "critical_seeded": 9,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 39,
+      "n": 4,
+      "base": 624,
+      "boundaries": 1557,
+      "returns": 117,
+      "critical": 11,
+      "critical_seeded": 11,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 39,
+      "n": 5,
+      "base": 1248,
+      "boundaries": 3117,
+      "returns": 237,
+      "critical": 13,
+      "critical_seeded": 13,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 39,
+      "n": 6,
+      "base": 2496,
+      "boundaries": 6237,
+      "returns": 477,
+      "critical": 15,
+      "critical_seeded": 15,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 41,
+      "n": 1,
+      "base": 82,
+      "boundaries": 202,
+      "returns": 12,
+      "critical": 5,
+      "critical_seeded": 5,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 41,
+      "n": 2,
+      "base": 164,
+      "boundaries": 407,
+      "returns": 27,
+      "critical": 7,
+      "critical_seeded": 7,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 41,
+      "n": 3,
+      "base": 328,
+      "boundaries": 817,
+      "returns": 57,
+      "critical": 9,
+      "critical_seeded": 9,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 41,
+      "n": 4,
+      "base": 656,
+      "boundaries": 1637,
+      "returns": 117,
+      "critical": 11,
+      "critical_seeded": 11,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 41,
+      "n": 5,
+      "base": 1312,
+      "boundaries": 3277,
+      "returns": 237,
+      "critical": 13,
+      "critical_seeded": 13,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    },
+    {
+      "m": 41,
+      "n": 6,
+      "base": 2624,
+      "boundaries": 6557,
+      "returns": 477,
+      "critical": 15,
+      "critical_seeded": 15,
+      "arrows": {
+        "S": null,
+        "E": null,
+        "U": null
+      }
+    }
+  ]
+}
