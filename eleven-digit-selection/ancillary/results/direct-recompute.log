@@ -1,0 +1,69 @@
+Compute lock acquired
+box B=4200185, mod 12=5
+box B=4800233, mod 12=5
+box B=4300175, mod 12=11
+box B=5000159, mod 12=11
+box B=87234569, mod 12=5
+box B=87234575, mod 12=11
+u B=2934720, mod 12=0
+u B=2934721, mod 12=1
+T1 index 3317760; lower bound 2.4122390104588e-34; odd leading maximum 2222801/86400000
+T2 odd mass 155/288; phi integral 2.7719520916627e-27; contrast 1.491849215999e-27
+T1 base 12080160; q (10315582, 8466172, 6554758, 3840284, 1835986); direct word clock 362841; formula 362841
+T1 base 12080161; q (10315583, 8466173, 6554759, 3840285, 1835986); direct word clock 310552; formula 310552
+
+base 4200185 draws 5000 seed 6221953
+graph_counts 1244 478 839 235 490 1598 116
+max_nearest_error 95.406 min_runner_up_margin 410.835 min_nearest_graph_separation 555.232
+cohort 0 overlap 30 discarded 1 failures 0
+cohort 1 overlap 35 discarded 0 failures 0
+cohort 2 overlap 33 discarded 1 failures 0
+wall_seconds 146.99
+
+base 4800233 draws 5000 seed 747529
+graph_counts 1274 528 858 240 453 1521 126
+max_nearest_error 99.7108 min_runner_up_margin 502.339 min_nearest_graph_separation 637.13
+cohort 0 overlap 30 discarded 0 failures 0
+cohort 1 overlap 35 discarded 0 failures 0
+cohort 2 overlap 35 discarded 0 failures 0
+wall_seconds 274.20
+
+base 4300175 draws 5000 seed 890241
+graph_counts 1290 488 852 251 464 1529 126
+max_nearest_error 95.1653 min_runner_up_margin 425.876 min_nearest_graph_separation 569.752
+cohort 0 overlap 38 discarded 1 failures 0
+cohort 1 overlap 34 discarded 1 failures 0
+cohort 2 overlap 26 discarded 0 failures 0
+wall_seconds 189.88
+
+base 5000159 draws 5000 seed 533093
+graph_counts 1240 493 850 239 517 1531 130
+max_nearest_error 95.1854 min_runner_up_margin 531.034 min_nearest_graph_separation 664.792
+cohort 0 overlap 30 discarded 1 failures 0
+cohort 1 overlap 30 discarded 1 failures 0
+cohort 2 overlap 36 discarded 2 failures 0
+wall_seconds 273.87
+
+base 87234569 draws 16 seed 956643
+graph_counts 5 3 3 0 2 3 0
+max_nearest_error 67.2744 min_runner_up_margin 12104.8 min_nearest_graph_separation 12104.8
+cohort 0 overlap 2 discarded 0 failures 0
+cohort 1 overlap 6 discarded 0 failures 0
+cohort 2 overlap 8 discarded 0 failures 0
+wall_seconds 32.91
+
+base 87234575 draws 16 seed 643850
+graph_counts 3 2 3 0 0 8 0
+max_nearest_error 94.3498 min_runner_up_margin 11879.6 min_nearest_graph_separation 11941.9
+cohort 0 overlap 6 discarded 0 failures 0
+cohort 1 overlap 7 discarded 0 failures 0
+cohort 2 overlap 3 discarded 0 failures 0
+wall_seconds 32.80
+
+base 2934720 draws 1000 seed 521959 below_ramp 0 on_ramp 0 above_ramp 1000
+wall_seconds 9.91
+
+base 2934721 draws 1000 seed 714183 below_ramp 569 on_ramp 0 above_ramp 431
+wall_seconds 9.83
+
+total_wall_seconds 274.37

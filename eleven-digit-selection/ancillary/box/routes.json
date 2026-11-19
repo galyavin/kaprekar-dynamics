@@ -1,0 +1,911 @@
+[
+  {
+    "cohort": 0,
+    "z": 1,
+    "r1": -4,
+    "switch": "V",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 1,
+    "r1": -3,
+    "switch": "V",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 1,
+    "r1": -2,
+    "switch": "V",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 1,
+    "r1": -1,
+    "switch": "V",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 1,
+    "r1": 0,
+    "switch": "V",
+    "failures": [
+      0
+    ],
+    "paired": "USSSSWSSSSUSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 1,
+    "r1": 1,
+    "switch": "VUSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 1,
+    "r1": 2,
+    "switch": "VUSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 1,
+    "r1": 3,
+    "switch": "VUSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 1,
+    "r1": 4,
+    "switch": "VUSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 1,
+    "r1": 5,
+    "switch": "VUSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 1,
+    "r1": 6,
+    "switch": "VUSSSSUSSSV",
+    "failures": [
+      0,
+      10
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 1,
+    "r1": 7,
+    "switch": "VUSSSSUSSSV",
+    "failures": [
+      0,
+      10
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 1,
+    "r1": 8,
+    "switch": "VUSSSSUSSSV",
+    "failures": [
+      0,
+      10
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 1,
+    "r1": 9,
+    "switch": "VUSSSSUSSSV",
+    "failures": [
+      0,
+      10
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 1,
+    "r1": 10,
+    "switch": "VUSSSSUSSSV",
+    "failures": [
+      0,
+      10
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 1,
+    "r1": 11,
+    "switch": "VUSSSSUSSSV",
+    "failures": [
+      0,
+      10
+    ],
+    "paired": "USSSSWSSSSUSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 1,
+    "r1": 12,
+    "switch": "VUSSSSUSSSVUSSSS",
+    "failures": [
+      0,
+      10
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 1,
+    "r1": 13,
+    "switch": "VUSSSSUSSSVUSSSS",
+    "failures": [
+      0,
+      10
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 1,
+    "r1": 14,
+    "switch": "VUSSSSUSSSVUSSSS",
+    "failures": [
+      0,
+      10
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 1,
+    "r1": 15,
+    "switch": "VUSSSSUSSSVUSSSS",
+    "failures": [
+      0,
+      10
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 1,
+    "r1": 16,
+    "switch": "VUSSSSUSSSVUSSSS",
+    "failures": [
+      0,
+      10
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 1,
+    "r1": 17,
+    "switch": "VUSSSSUSSSVUSSSSUSSSV",
+    "failures": [
+      0,
+      10,
+      20
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 2,
+    "r1": -4,
+    "switch": "V",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 2,
+    "r1": -3,
+    "switch": "V",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 2,
+    "r1": -2,
+    "switch": "V",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 2,
+    "r1": -1,
+    "switch": "V",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 2,
+    "r1": 0,
+    "switch": "V",
+    "failures": [
+      0
+    ],
+    "paired": "USSSSWSSSSUSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 2,
+    "r1": 1,
+    "switch": "VUSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 2,
+    "r1": 2,
+    "switch": "VUSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 2,
+    "r1": 3,
+    "switch": "VUSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 2,
+    "r1": 4,
+    "switch": "VUSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 2,
+    "r1": 5,
+    "switch": "VUSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 2,
+    "r1": 6,
+    "switch": "VUSSSSUSSSV",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSUSSSSWSSSSUSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 2,
+    "r1": 7,
+    "switch": "VUSSSSUSSSV",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 2,
+    "r1": 8,
+    "switch": "VUSSSSUSSSV",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 2,
+    "r1": 9,
+    "switch": "VUSSSSUSSSV",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 2,
+    "r1": 10,
+    "switch": "VUSSSSUSSSV",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 2,
+    "r1": 11,
+    "switch": "VUSSSSUSSSV",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 2,
+    "r1": 12,
+    "switch": "VUSSSSUSSSV",
+    "failures": [
+      0
+    ],
+    "paired": "USSSSWSSSSUSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 2,
+    "r1": 13,
+    "switch": "VUSSSSUSSSVUSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 2,
+    "r1": 14,
+    "switch": "VUSSSSUSSSVUSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 2,
+    "r1": 15,
+    "switch": "VUSSSSUSSSVUSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 2,
+    "r1": 16,
+    "switch": "VUSSSSUSSSVUSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 0,
+    "z": 2,
+    "r1": 17,
+    "switch": "VUSSSSUSSSVUSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSWSSSSWSSSSWSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 1,
+    "r1": -4,
+    "switch": "V",
+    "failures": [
+      0
+    ],
+    "paired": "CSSSSWSSSSCSSSSWSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 1,
+    "r1": -3,
+    "switch": "V",
+    "failures": [
+      0
+    ],
+    "paired": "CSSSSWSSSSCSSSSWSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 1,
+    "r1": -2,
+    "switch": "V",
+    "failures": [
+      0
+    ],
+    "paired": "CSSSSWSSSSCSSSSWSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 1,
+    "r1": -1,
+    "switch": "V",
+    "failures": [
+      0
+    ],
+    "paired": "SSSSSWSSSSSSSSSWSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 1,
+    "r1": 0,
+    "switch": "VSSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSCSSSSWSSSSCSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 1,
+    "r1": 1,
+    "switch": "VSSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSCSSSSWSSSSCSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 1,
+    "r1": 2,
+    "switch": "VSSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSCSSSSWSSSSCSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 1,
+    "r1": 3,
+    "switch": "VSSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSCSSSSWSSSSCSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 1,
+    "r1": 4,
+    "switch": "VSSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSCSSSSWSSSSCSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 1,
+    "r1": 5,
+    "switch": "VSSSSSUSSSV",
+    "failures": [
+      0,
+      10
+    ],
+    "paired": "CSSSSWSSSSCSSSSWSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 1,
+    "r1": 6,
+    "switch": "VSSSSSUSSSV",
+    "failures": [
+      0,
+      10
+    ],
+    "paired": "CSSSSWSSSSCSSSSWSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 1,
+    "r1": 7,
+    "switch": "VSSSSSUSSSV",
+    "failures": [
+      0,
+      10
+    ],
+    "paired": "CSSSSWSSSSCSSSSWSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 1,
+    "r1": 8,
+    "switch": "VSSSSSUSSSV",
+    "failures": [
+      0,
+      10
+    ],
+    "paired": "CSSSSWSSSSCSSSSWSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 1,
+    "r1": 9,
+    "switch": "VSSSSSUSSSV",
+    "failures": [
+      0,
+      10
+    ],
+    "paired": "CSSSSWSSSSCSSSSWSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 1,
+    "r1": 10,
+    "switch": "VSSSSSUSSSV",
+    "failures": [
+      0,
+      10
+    ],
+    "paired": "SSSSSWSSSSSSSSSWSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 1,
+    "r1": 11,
+    "switch": "VSSSSSUSSSVSSSSS",
+    "failures": [
+      0,
+      10
+    ],
+    "paired": "WSSSSCSSSSWSSSSCSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 1,
+    "r1": 12,
+    "switch": "VSSSSSUSSSVSSSSS",
+    "failures": [
+      0,
+      10
+    ],
+    "paired": "WSSSSCSSSSWSSSSCSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 1,
+    "r1": 13,
+    "switch": "VSSSSSUSSSVSSSSS",
+    "failures": [
+      0,
+      10
+    ],
+    "paired": "WSSSSCSSSSWSSSSCSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 1,
+    "r1": 14,
+    "switch": "VSSSSSUSSSVSSSSS",
+    "failures": [
+      0,
+      10
+    ],
+    "paired": "WSSSSCSSSSWSSSSCSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 1,
+    "r1": 15,
+    "switch": "VSSSSSUSSSVSSSSS",
+    "failures": [
+      0,
+      10
+    ],
+    "paired": "WSSSSCSSSSWSSSSCSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 1,
+    "r1": 16,
+    "switch": "VSSSSSUSSSVSSSSSUSSSV",
+    "failures": [
+      0,
+      10,
+      20
+    ],
+    "paired": "CSSSSWSSSSCSSSSWSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 1,
+    "r1": 17,
+    "switch": "VSSSSSUSSSVSSSSSUSSSV",
+    "failures": [
+      0,
+      10,
+      20
+    ],
+    "paired": "CSSSSWSSSSCSSSSWSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 2,
+    "r1": -4,
+    "switch": "V",
+    "failures": [
+      0
+    ],
+    "paired": "CSSSSWSSSSCSSSSWSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 2,
+    "r1": -3,
+    "switch": "V",
+    "failures": [
+      0
+    ],
+    "paired": "CSSSSWSSSSCSSSSWSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 2,
+    "r1": -2,
+    "switch": "V",
+    "failures": [
+      0
+    ],
+    "paired": "CSSSSWSSSSCSSSSWSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 2,
+    "r1": -1,
+    "switch": "V",
+    "failures": [
+      0
+    ],
+    "paired": "SSSSSWSSSSSSSSSWSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 2,
+    "r1": 0,
+    "switch": "VSSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSCSSSSWSSSSCSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 2,
+    "r1": 1,
+    "switch": "VSSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSCSSSSWSSSSCSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 2,
+    "r1": 2,
+    "switch": "VSSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSCSSSSWSSSSCSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 2,
+    "r1": 3,
+    "switch": "VSSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSCSSSSWSSSSCSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 2,
+    "r1": 4,
+    "switch": "VSSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSCSSSSWSSSSCSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 2,
+    "r1": 5,
+    "switch": "VSSSSSUSSSV",
+    "failures": [
+      0
+    ],
+    "paired": "CSSSSUSSSSCSSSSUSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 2,
+    "r1": 6,
+    "switch": "VSSSSSUSSSV",
+    "failures": [
+      0
+    ],
+    "paired": "CSSSSWSSSSCSSSSWSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 2,
+    "r1": 7,
+    "switch": "VSSSSSUSSSV",
+    "failures": [
+      0
+    ],
+    "paired": "CSSSSWSSSSCSSSSWSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 2,
+    "r1": 8,
+    "switch": "VSSSSSUSSSV",
+    "failures": [
+      0
+    ],
+    "paired": "CSSSSWSSSSCSSSSWSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 2,
+    "r1": 9,
+    "switch": "VSSSSSUSSSV",
+    "failures": [
+      0
+    ],
+    "paired": "CSSSSWSSSSCSSSSWSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 2,
+    "r1": 10,
+    "switch": "VSSSSSUSSSV",
+    "failures": [
+      0
+    ],
+    "paired": "CSSSSWSSSSCSSSSWSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 2,
+    "r1": 11,
+    "switch": "VSSSSSUSSSV",
+    "failures": [
+      0
+    ],
+    "paired": "SSSSSWSSSSSSSSSWSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 2,
+    "r1": 12,
+    "switch": "VSSSSSUSSSVSSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSCSSSSWSSSSCSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 2,
+    "r1": 13,
+    "switch": "VSSSSSUSSSVSSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSCSSSSWSSSSCSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 2,
+    "r1": 14,
+    "switch": "VSSSSSUSSSVSSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSCSSSSWSSSSCSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 2,
+    "r1": 15,
+    "switch": "VSSSSSUSSSVSSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSCSSSSWSSSSCSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 2,
+    "r1": 16,
+    "switch": "VSSSSSUSSSVSSSSS",
+    "failures": [
+      0
+    ],
+    "paired": "WSSSSCSSSSWSSSSCSSSS"
+  },
+  {
+    "cohort": 2,
+    "z": 2,
+    "r1": 17,
+    "switch": "VSSSSSUSSSVSSSSSUSSSV",
+    "failures": [
+      0,
+      20
+    ],
+    "paired": "CSSSSWSSSSCSSSSWSSSS"
+  }
+]

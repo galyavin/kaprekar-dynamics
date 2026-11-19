@@ -28,6 +28,10 @@ With seven digit slots and a growing base B, the normalized starting differences
 
 For a uniformly random eleven-digit string in a growing base B, Kaprekar subtraction reaches a centered regime, where all six gaps between the symmetric digit differences are at least ⌈(B+1)/7⌉ + 64, within 4509B steps with probability tending to one, through all bases. Consequently the time to the first cycle is of order B, and the first cyclic word's normalized differences converge in probability to (5,4,3,2,1)/6. Exact cycles that never reach the centered regime exist for bases congruent to 0, 1 or 2 modulo 5, with vanishing probability. The proof combines almost-everywhere entry for the continuous leading map with a stopped energy estimate; its computer-assisted steps include an independent exhaustion with exact rational infeasibility certificates.
 
+**Arithmetic selection of arrival times in eleven-digit Kaprekar dynamics** (2026), in [`eleven-digit-selection/`](eleven-digit-selection/) as [PDF](eleven-digit-selection/kaprekar-eleven-digit-selection.pdf) and [LaTeX source](eleven-digit-selection/kaprekar-eleven-digit-selection.tex). Archived at Zenodo: [doi:10.5281/zenodo.24371697](https://doi.org/10.5281/zenodo.24371697). Paper record: [doi:10.5281/zenodo.24371745](https://doi.org/10.5281/zenodo.24371745).
+
+For a uniformly random eleven-digit word in a growing base B, the joint law of the normalized input and the arrival time divided by B depends on the arithmetic of B. A fixed test separates the bases congruent to 0 and 1 modulo 6, so the joint law has no limit through all bases. On a small rectangle of initial gaps the conditional law converges along each class of B modulo 6 to six distinct explicit mixtures of affine clocks, so the joint law converges along no progression whose modulus is not divisible by 6. On a second box the conditional law converges along the classes B ≡ 5 and B ≡ 11 (mod 12) to two distinct explicit laws, whose largest difference on [0,1]-valued tests is 17/7128; hence a system of limits along the classes modulo N would require 12 to divide N. Whether the full joint law converges along the classes modulo 12 is open. The proofs use computer-assisted certificates of affine routes and their lattice weights.
+
 ## Reproducing the results
 
 ```sh
@@ -60,6 +64,11 @@ bash reproduce.sh            # solver audits, exact calculations and graph repla
 ```sh
 cd eleven-digit-access/ancillary
 bash reproduce.sh            # catalogue, work, local and centered-clock checks (about 20–35 minutes)
+```
+
+```sh
+cd eleven-digit-selection/ancillary
+bash reproduce.sh            # exclusion tree, route verifiers, box matching, residual routes and guarded coverage (about 13 minutes)
 ```
 
 Each `ancillary/README.md` gives the expected outputs and versions.

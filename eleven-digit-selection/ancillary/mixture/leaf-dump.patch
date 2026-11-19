@@ -1,0 +1,21 @@
+--- verify.cpp
++++ verify_dump.cpp
+@@ -455,6 +455,18 @@
+                     Z remainder_time = tail(before);
+                     lanes[lane].add(t + (remainder_time + 1 - early_returns*length), next_index);
+                     ++leaves;
++                    if (std::getenv("KAPREKAR_DUMP_ALL") || leaves % 20000 == 7
++                        || (next_index <= 50000 && leaves % 199 == 3)) {
++                        Z offset = mod(narrow(Wide((r - remainders.residue)/remainders.g)
++                                              * remainders.inverse), remainders.index);
++                        V leaf_point = mix(1, point, offset, remainders.shift);
++                        require(mod(block->numerator.integer(leaf_point),m) == r, "dump remainder");
++                        Form total = t + (remainder_time + 1 - early_returns*length);
++                        std::cerr << "LEAF " << beta << ' ' << next_index << lane.sheet << lane.ray
++                                  << " point" << leaf_point << " basis";
++                        for (const auto &v : remainders.basis) std::cerr << v;
++                        std::cerr << " time " << total << '\n';
++                    }
+                 } else {
+                     Z offset = mod(narrow(Wide((r - remainders.residue)/remainders.g)
+                                           * remainders.inverse), remainders.index);

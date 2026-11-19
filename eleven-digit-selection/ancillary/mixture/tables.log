@@ -1,0 +1,78 @@
+== table sums and sheet marginals
+beta 0: 4 lanes, total 1, sheet marginal matches stated parity masses: True
+beta 1: 8 lanes, total 1, sheet marginal matches stated parity masses: True
+beta 2: 4 lanes, total 1, sheet marginal matches stated parity masses: True
+beta 3: 7 lanes, total 1, sheet marginal matches stated parity masses: True
+beta 4: 4 lanes, total 1, sheet marginal matches stated parity masses: True
+beta 5: 7 lanes, total 1, sheet marginal matches stated parity masses: True
+
+== clock coefficients kappa and clock forms t = P + kappa A on closed U
+A on closed U: [0.075235111, 0.075787111]  (A>0: True)
+P on closed U: [0.007964259, 0.008054259]
+A coefficients in y: ['-66', '-65', '-10', '-40', '-95'], const 46
+beta 0 lane ('16/5', '2', '24/5') kappa 7/24 = 0.291667 mass 2651/5184 t in [0.0299978,0.0300688] same-parity residues sharing kappa: [2, 4]
+beta 0 lane ('33/10', '21/10', '22/5') kappa 265/924 = 0.286797 mass 535/3024 t in [0.0296314,0.0296997] same-parity residues sharing kappa: []
+beta 0 lane ('33/10', '21/10', '24/5') kappa 95/336 = 0.282738 mass 535/4032 t in [0.0293261,0.0293922] same-parity residues sharing kappa: [2, 4]
+beta 0 lane ('18/5', '12/5', '22/5') kappa 35/132 = 0.265152 mass 29/162 t in [0.0280030,0.0280593] same-parity residues sharing kappa: []
+beta 1 lane ('18/5', '12/5', '24/5') kappa 25/96 = 0.260417 mass 55/1296 t in [0.0276467,0.0277005] same-parity residues sharing kappa: [5]
+beta 1 lane ('3', '9/5', '24/5') kappa 5/16 = 0.312500 mass 2461/10368 t in [0.0315652,0.0316477] same-parity residues sharing kappa: [3, 5]
+beta 1 lane ('3', '9/5', '114/25') kappa 215/684 = 0.314327 mass 2683/31104 t in [0.0317027,0.0317862] same-parity residues sharing kappa: []
+beta 1 lane ('3', '9/5', '117/25') kappa 110/351 = 0.313390 mass 67/15552 t in [0.0316322,0.0317152] same-parity residues sharing kappa: []
+beta 1 lane ('18/5', '9/5', 'None') kappa 5/18 = 0.277778 mass 79/864 t in [0.0289529,0.0290162] same-parity residues sharing kappa: [3, 5]
+beta 1 lane ('21/5', '12/5', '24/5') kappa 15/64 = 0.234375 mass 1571/5184 t in [0.0256875,0.0257269] same-parity residues sharing kappa: [3, 5]
+beta 1 lane ('21/5', '27/10', '24/5') kappa 25/108 = 0.231481 mass 1219/11664 t in [0.0254698,0.0255076] same-parity residues sharing kappa: [3, 5]
+beta 1 lane ('21/5', '27/10', '114/25') kappa 40/171 = 0.233918 mass 6095/46656 t in [0.0256531,0.0256922] same-parity residues sharing kappa: []
+beta 2 lane ('16/5', '2', '23/5') kappa 27/92 = 0.293478 mass 2651/6480 t in [0.0301341,0.0302061] same-parity residues sharing kappa: []
+beta 2 lane ('16/5', '2', '24/5') kappa 7/24 = 0.291667 mass 2651/25920 t in [0.0299978,0.0300688] same-parity residues sharing kappa: [0, 4]
+beta 2 lane ('33/10', '21/10', '24/5') kappa 95/336 = 0.282738 mass 535/1728 t in [0.0293261,0.0293922] same-parity residues sharing kappa: [0, 4]
+beta 2 lane ('18/5', '12/5', '24/5') kappa 25/96 = 0.260417 mass 29/162 t in [0.0276467,0.0277005] same-parity residues sharing kappa: [4]
+beta 3 lane ('18/5', '12/5', '22/5') kappa 35/132 = 0.265152 mass 55/1296 t in [0.0280030,0.0280593] same-parity residues sharing kappa: []
+beta 3 lane ('3', '9/5', '22/5') kappa 125/396 = 0.315657 mass 737/5184 t in [0.0318027,0.0318870] same-parity residues sharing kappa: []
+beta 3 lane ('3', '9/5', '24/5') kappa 5/16 = 0.312500 mass 107/576 t in [0.0315652,0.0316477] same-parity residues sharing kappa: [1, 5]
+beta 3 lane ('18/5', '9/5', 'None') kappa 5/18 = 0.277778 mass 79/864 t in [0.0289529,0.0290162] same-parity residues sharing kappa: [1, 5]
+beta 3 lane ('21/5', '12/5', '22/5') kappa 125/528 = 0.236742 mass 1571/13824 t in [0.0258656,0.0259063] same-parity residues sharing kappa: []
+beta 3 lane ('21/5', '12/5', '24/5') kappa 15/64 = 0.234375 mass 7855/41472 t in [0.0256875,0.0257269] same-parity residues sharing kappa: [1, 5]
+beta 3 lane ('21/5', '27/10', '24/5') kappa 25/108 = 0.231481 mass 1219/5184 t in [0.0254698,0.0255076] same-parity residues sharing kappa: [1, 5]
+beta 4 lane ('16/5', '2', '24/5') kappa 7/24 = 0.291667 mass 2651/12960 t in [0.0299978,0.0300688] same-parity residues sharing kappa: [0, 2]
+beta 4 lane ('16/5', '2', '47/10') kappa 55/188 = 0.292553 mass 2651/8640 t in [0.0300645,0.0301360] same-parity residues sharing kappa: []
+beta 4 lane ('33/10', '21/10', '24/5') kappa 95/336 = 0.282738 mass 535/1728 t in [0.0293261,0.0293922] same-parity residues sharing kappa: [0, 2]
+beta 4 lane ('18/5', '12/5', '24/5') kappa 25/96 = 0.260417 mass 29/162 t in [0.0276467,0.0277005] same-parity residues sharing kappa: [2]
+beta 5 lane ('18/5', '12/5', '24/5') kappa 25/96 = 0.260417 mass 55/1296 t in [0.0276467,0.0277005] same-parity residues sharing kappa: [1]
+beta 5 lane ('3', '9/5', '24/5') kappa 5/16 = 0.312500 mass 9395/31104 t in [0.0315652,0.0316477] same-parity residues sharing kappa: [1, 3]
+beta 5 lane ('3', '9/5', '51/10') kappa 95/306 = 0.310458 mass 805/31104 t in [0.0314116,0.0314929] same-parity residues sharing kappa: []
+beta 5 lane ('18/5', '9/5', 'None') kappa 5/18 = 0.277778 mass 79/864 t in [0.0289529,0.0290162] same-parity residues sharing kappa: [1, 3]
+beta 5 lane ('21/5', '12/5', '24/5') kappa 15/64 = 0.234375 mass 7855/41472 t in [0.0256875,0.0257269] same-parity residues sharing kappa: [1, 3]
+beta 5 lane ('21/5', '12/5', '51/10') kappa 95/408 = 0.232843 mass 1571/13824 t in [0.0255722,0.0256108] same-parity residues sharing kappa: []
+beta 5 lane ('21/5', '27/10', '24/5') kappa 25/108 = 0.231481 mass 1219/5184 t in [0.0254698,0.0255076] same-parity residues sharing kappa: [1, 3]
+
+== pairwise distinctness of the six limits
+(0,1): h(y,t)=max(0,1-|t-(P+7/24A)|/delta), delta<1.045e-03: E_0[h] >= 2651/5184 = 0.5114, E_1[h] = 0
+(0,2): h(y,t)=max(0,1-|t-(P+35/132A)|/delta), delta<3.562e-04: E_0[h] >= 29/162 = 0.1790, E_2[h] = 0
+(0,3): h(y,t)=max(0,1-|t-(P+7/24A)|/delta), delta<1.045e-03: E_0[h] >= 2651/5184 = 0.5114, E_3[h] = 0
+(0,4): h(y,t)=max(0,1-|t-(P+35/132A)|/delta), delta<3.562e-04: E_0[h] >= 29/162 = 0.1790, E_4[h] = 0
+(0,5): h(y,t)=max(0,1-|t-(P+7/24A)|/delta), delta<1.045e-03: E_0[h] >= 2651/5184 = 0.5114, E_5[h] = 0
+(1,2): h(y,t)=max(0,1-|t-(P+15/64A)|/delta), delta<1.959e-03: E_1[h] >= 1571/5184 = 0.3030, E_2[h] = 0
+(1,3): h(y,t)=max(0,1-|t-(P+40/171A)|/delta), delta<3.437e-05: E_1[h] >= 6095/46656 = 0.1306, E_3[h] = 0
+(1,4): h(y,t)=max(0,1-|t-(P+15/64A)|/delta), delta<1.959e-03: E_1[h] >= 1571/5184 = 0.3030, E_4[h] = 0
+(1,5): h(y,t)=max(0,1-|t-(P+40/171A)|/delta), delta<3.437e-05: E_1[h] >= 6095/46656 = 0.1306, E_5[h] = 0
+(2,3): h(y,t)=max(0,1-|t-(P+27/92A)|/delta), delta<1.181e-03: E_2[h] >= 2651/6480 = 0.4091, E_3[h] = 0
+(2,4): h(y,t)=max(0,1-|t-(P+27/92A)|/delta), delta<6.960e-05: E_2[h] >= 2651/6480 = 0.4091, E_4[h] = 0
+(2,5): h(y,t)=max(0,1-|t-(P+27/92A)|/delta), delta<1.181e-03: E_2[h] >= 2651/6480 = 0.4091, E_5[h] = 0
+(3,4): h(y,t)=max(0,1-|t-(P+25/108A)|/delta), delta<2.177e-03: E_3[h] >= 1219/5184 = 0.2351, E_4[h] = 0
+(3,5): h(y,t)=max(0,1-|t-(P+125/396A)|/delta), delta<2.375e-04: E_3[h] >= 737/5184 = 0.1422, E_5[h] = 0
+(4,5): h(y,t)=max(0,1-|t-(P+95/336A)|/delta), delta<3.732e-04: E_4[h] >= 535/1728 = 0.3096, E_5[h] = 0
+
+== fixed descending ramp psi(t)=clamp((131/5000-t)/(131/5000-13/500))
+beta 0: E[psi] = 0
+beta 1: E[psi] = 155/288
+beta 2: E[psi] = 0
+beta 3: E[psi] = 155/288
+beta 4: E[psi] = 0
+beta 5: E[psi] = 155/288
+largest fast-lane time 0.0259063; smallest other-lane time 0.0276467
+odd-minus-even conditional contrast = 155/288 (0.538194444)
+
+== m(U)
+closed form m(eps) = 2.561033631662e-26; tensor Simpson (exact) = 2.561033631662e-26; equal: True
+I_phi = 2.771952091663e-27; (155/288) I_phi = 1.491849215999e-27
+I_phi midpoint check (n=2000): 2.771952006993e-27

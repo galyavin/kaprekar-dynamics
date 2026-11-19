@@ -1,0 +1,2 @@
+arm 0 count differences ('2', '2', '2', '2', '2', '2') all six-gap projectors and congruence classes coincide
+arm 1 count differences ('2', '2', '2', '2', '2', '2') all six-gap projectors and congruence classes coincide

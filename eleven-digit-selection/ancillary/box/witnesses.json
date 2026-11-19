@@ -1,0 +1,48 @@
+[
+  {
+    "base": 1200029,
+    "source": [
+      1129061,
+      885744,
+      695744,
+      501285,
+      285429
+    ],
+    "label": [
+      0,
+      1,
+      17,
+      603
+    ],
+    "residue": 2,
+    "predicted_lane": "M2",
+    "predicted_test": 0,
+    "time": 143227,
+    "period": 24,
+    "normalized_time": "143227/1200029",
+    "observed_test": 0
+  },
+  {
+    "base": 1200065,
+    "source": [
+      1129103,
+      885768,
+      695756,
+      501309,
+      285435
+    ],
+    "label": [
+      0,
+      1,
+      17,
+      603
+    ],
+    "residue": 2,
+    "predicted_lane": "L",
+    "predicted_test": 1,
+    "time": 147707,
+    "period": 20,
+    "normalized_time": "147707/1200065",
+    "observed_test": 1
+  }
+]

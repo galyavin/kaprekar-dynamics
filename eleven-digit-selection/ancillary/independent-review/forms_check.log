@@ -1,0 +1,10 @@
+form 0: corner-enumerated min on closed rectangle = 9451/337500 = 0.028002963
+form 1: corner-enumerated min on closed rectangle = 295607/10080000 = 0.029326091
+form 2: corner-enumerated min on closed rectangle = 10371/350000 = 0.029631429
+form 3: corner-enumerated min on closed rectangle = 179987/6000000 = 0.029997833
+B=1201440: points=108 explained per form=[18, 33, 90, 80] unexplained=0 explained by >1 form=90
+   min observed T - f_k(X) per form: -3.77 (claimed constant >= -487.85), -1.55 (claimed constant >= -651.27), -370.28 (claimed constant >= -499.20), -448.50 (claimed constant >= -661.25)
+B=2000160: points=1024 explained per form=[190, 344, 692, 490] unexplained=0 explained by >1 form=692
+   min observed T - f_k(X) per form: -3.62 (claimed constant >= -487.85), -22.68 (claimed constant >= -651.27), -10.30 (claimed constant >= -499.20), -33.50 (claimed constant >= -661.25)
+B=2998560: points=7776 explained per form=[1408, 999, 1394, 3975] unexplained=0 explained by >1 form=0
+   min observed T - f_k(X) per form: -6.58 (claimed constant >= -487.85), -24.88 (claimed constant >= -651.27), -13.09 (claimed constant >= -499.20), -37.62 (claimed constant >= -661.25)

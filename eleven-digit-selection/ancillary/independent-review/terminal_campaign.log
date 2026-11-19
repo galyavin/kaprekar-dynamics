@@ -1,0 +1,26 @@
+# lock acquired after 1725.3s; cmd: ./job3.sh
+== density-weighted terminal classes
+300 classes drawn by density-weighted random descent
+SUMMARY {"classes": 300, "points": 600, "missing": 0, "visit_eq": 600, "before_cycle": 600, "resid_ok": 600, "ww_eq": 600, "above_form": 600, "above_ramp": 600, "tail_const": 300, "tail_pairs": 300, "cm_eq": 300, "cm_ramp": 300}
+worst T/B - 131/5000: 0.0018110397727272728 at B 528000000 G [77126566, 80834295, 83544037, 118644690, 87604457] T 14789829 claimed form 14789322
+form ['145/792', '65/72', '-65/132', '-65/72', '1235/792'] drawn 57 corner min 9451/337500 0.028002962962962962 certificate 9451/337500 equal True
+form ['125/672', '715/672', '-65/112', '-715/672', '1235/672'] drawn 35 corner min 295607/10080000 0.02932609126984127 certificate 295607/10080000 equal True
+form ['115/616', '185/168', '-185/308', '-185/168', '3515/1848'] drawn 58 corner min 10371/350000 0.029631428571428572 certificate 10371/350000 equal True
+form ['3/16', '55/48', '-5/8', '-55/48', '95/48'] drawn 150 corner min 179987/6000000 0.029997833333333335 certificate 179987/6000000 equal True
+== full rerun of the even exclusion certificate tree with leaf dump
+real 282.63
+user 270.36
+sys 6.00
+19273ae38c65ff685a916e4f84ed4922e5527ffe8c8a5eab0d4cf1f81e4b270a  exclusion_rerun.txt
+19273ae38c65ff685a916e4f84ed4922e5527ffe8c8a5eab0d4cf1f81e4b270a  ../parity/exclusion.txt
+rerun output identical to exclusion.txt
+leaves dumped:   361560
+== uniform sample of terminal classes from the dump
+uniform sample of 150 classes from full-tree dump with 361560 leaves
+SUMMARY {"classes": 150, "points": 300, "missing": 0, "visit_eq": 300, "before_cycle": 300, "resid_ok": 300, "ww_eq": 300, "above_form": 300, "above_ramp": 300, "tail_const": 150, "tail_pairs": 150, "cm_eq": 150, "cm_ramp": 150}
+worst T/B - 131/5000: 0.0018185037878787878 at B 528000000 G [77125969, 80834113, 83544058, 118644942, 87604527] T 14793770 claimed form 14793292
+form ['145/792', '65/72', '-65/132', '-65/72', '1235/792'] drawn 17 corner min 9451/337500 0.028002962962962962 certificate 9451/337500 equal True
+form ['125/672', '715/672', '-65/112', '-715/672', '1235/672'] drawn 31 corner min 295607/10080000 0.02932609126984127 certificate 295607/10080000 equal True
+form ['115/616', '185/168', '-185/308', '-185/168', '3515/1848'] drawn 43 corner min 10371/350000 0.029631428571428572 certificate 10371/350000 equal True
+form ['3/16', '55/48', '-5/8', '-55/48', '95/48'] drawn 59 corner min 179987/6000000 0.029997833333333335 certificate 179987/6000000 equal True
+# exit 0, wall 662.5s

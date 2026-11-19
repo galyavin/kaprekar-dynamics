@@ -1,0 +1,785 @@
+\documentclass[11pt,reqno]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{array}
+\usepackage[margin=1.15in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Arithmetic selection of arrival times in eleven-digit Kaprekar dynamics},pdfauthor={Rustem Galyavin}}
+\setlength{\emergencystretch}{1.3em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\clamp}{\operatorname{clamp}}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\one}{\boldsymbol 1}
+\newcommand{\sort}{\operatorname{sort}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\vct}{\boldsymbol v}
+\title[Eleven-digit Kaprekar arrival times]{Arithmetic selection of arrival times in eleven-digit Kaprekar dynamics}
+\author{Rustem Galyavin}
+\thanks{\href{mailto:rustem@galyavin.com}{rustem@galyavin.com}. ORCID \href{https://orcid.org/0009-0006-6875-9170}{0009-0006-6875-9170}.}
+\date{19 November 2026}
+\subjclass[2020]{37E15, 11A63, 37M99}
+\keywords{Kaprekar map, arrival times, weak convergence, residue classes}
+\begin{document}
+\begin{abstract}
+Take a uniformly random nonconstant eleven-digit word in base \(B\), allowing leading zeros, and let \(T_B\) be the number of Kaprekar subtractions to its first cyclic word. It is known that \(T_B/B\) is tight and that the normalized symmetric differences of the first cyclic word converge in probability through all bases. We show that the joint law of the normalized input and \(T_B/B\) nevertheless depends on the arithmetic of \(B\). A fixed bounded test separates the subsequential limits along bases congruent to \(0\) and \(1\) modulo \(6\), so this joint law has no limit through all bases. On a small rectangle of initial gaps the conditional joint law converges along each class of \(B\bmod 6\) to six distinct explicit mixtures of affine clock graphs; hence the joint law converges along no arithmetic progression whose modulus is not divisible by \(6\). On a second box the conditional joint law converges along each of the classes \(B\equiv5\) and \(B\equiv11\pmod{12}\), to two distinct explicit laws whose largest difference on \([0,1]\)-valued tests is \(17/7128\). Hence, if the joint law converged along every class modulo \(N\), then \(12\) would divide \(N\). On this box a translation of the input matches arrival times at bases twelve apart. Whether the full joint law converges along the classes modulo \(12\) remains open. The proofs use computer-assisted certificates of affine routes and their lattice weights.
+\end{abstract}
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+Kaprekar subtraction sorts the digits of a word in decreasing and increasing order and subtracts the second base-\(B\) integer from the first. We keep all eleven positions, allowing leading zeros at every step. Let \(W_B\) be uniform on the \(B^{11}-B\) nonconstant ordered words, write \(\Prob_B\) and \(\E_B\) for the corresponding probability and expectation, and let \(T_B\) be the time of the first cyclic word in the orbit of \(W_B\), including time zero. We write \(W_B/B\) for the ordered vector of the eleven digit fractions of \(W_B\), and use the same convention for the normalized first cyclic word. By \cite[Theorem~1]{G6}, \(T_B/B\) is tight and the symmetric differences of the first cyclic word, divided by \(B\), converge in probability to \((5,4,3,2,1)/6\) as \(B\to\infty\) through all integers. In this paper we show that the arrival time nevertheless retains a dependence on the residue of the base when it is observed jointly with the initial word.
+
+For sorted digits \(d_1\ge\cdots\ge d_{11}\) of a word, put \(q_i=d_i-d_{12-i}\) for \(1\le i\le5\), and set
+\[
+ G=(B-q_1,q_1-q_2,q_2-q_3,q_3-q_4,q_4-q_5,q_5),\qquad Y_B=G/B,
+\]
+where \(G\) is computed from \(W_B\). We use the simplex coordinates \(y_0,\ldots,y_4\), with \(y_5=1-\sum_{i=0}^4y_i\). Fix
+\[
+ y^*=\frac{(26293,27557,28481,40447,29865,27357)}{180000},
+ \qquad \epsilon=10^{-6},
+\]
+let \(U=\{y:\max_{0\le i\le4}|y_i-y^*_i|<\epsilon\}\), and write \(U'\) for the rectangle with the same centre and half the radius. Define \(\clamp(s)=\min(1,\max(0,s))\) and the fixed test
+\begin{equation}\label{eq:test}
+ \begin{gathered}
+ \phi(y)=\clamp\bigl(3-4\max_{0\le i\le4}|y_i-y^*_i|/\epsilon\bigr),\qquad
+ \psi(t)=\clamp\!\left(\frac{131/5000-t}{131/5000-13/500}\right),\\
+ \Phi(y,t)=\phi(y)\psi(t).
+ \end{gathered}
+\end{equation}
+Let \(\rho(y)=11!\prod_{i=0}^5y_i\), and let \(\Omega(a)\) be the integral of \(\rho\,dy_0\cdots dy_4\) over the rectangle of radius \(a\) centred at \(y^*\) (formula \eqref{eq:mass}).
+
+\begin{theorem}\label{th:separation}
+With the fixed test \eqref{eq:test},
+\[
+ \E_B\Phi(Y_B,T_B/B)=0
+ \quad(B\equiv0\!\!\pmod6,\ B\ge271137),\qquad
+ \liminf_{\substack{B\to\infty\\ B\equiv1\ (6)}}\E_B\Phi(Y_B,T_B/B)\ge \Omega_1,
+\]
+where \(\Omega_1=\Omega(\epsilon/2)/3317760\approx2.4122390\cdot10^{-34}\). The sets of subsequential weak limits of \((Y_B,T_B/B)\) along the two classes are nonempty and disjoint. The same holds for \((W_B/B,T_B/B)\), and for either observation with the normalized first cyclic word appended. In particular none of these joint laws converges weakly through all bases.
+\end{theorem}
+
+Theorem~\ref{th:separation} concerns the unconditional joint law. The lower bound \(\Omega_1\) is the limiting original probability of one certified set of faster inputs; it proves existence and is not a typical effect size. Theorem~\ref{th:mixture} below implies the asymptotic content of Theorem~\ref{th:separation}, with the much larger contrast \((155/288)\int_U\phi\rho\,dy\). Theorem~\ref{th:separation} is kept for three reasons: one fixed test separates the two classes without reference to any cohort of inputs, its class-\(0\) vanishing holds exactly at every \(B\ge271137\), and it rests on a smaller certificate with its own separate replay (Table~\ref{tab:verification}). The next results compute limits on two small regions of input space; Section~\ref{sec:scope} collects the conditioning, observable and quantifier of every statement in one place.
+
+\begin{itemize}
+\item \emph{Six conditional laws on \(U\)} (Theorem~\ref{th:mixture}). Along each class \(B\equiv\beta\pmod6\), the law of \((Y_B,T_B/B)\) conditioned on \(Y_B\in U\) converges weakly to an explicit finite mixture \(\Lambda^U_\beta\) of affine clock graphs over the density \(\rho\). The six limits are pairwise distinct. The time ramp \(\psi\) has conditional limit \(155/288\) along every odd class and \(0\) along every even class.
+\item \emph{Progressions} (Corollary~\ref{cor:progressions}). The unconditional joint law converges along no progression \(B\equiv a\pmod D\) whose modulus satisfies \(6\nmid D\).
+\item \emph{Two conditional laws on a second box} (Theorem~\ref{th:box}). On a box \(V\) in a chart \(\xi_B\) of the initial differences, the law of \((\xi_B,T_B/B)\) conditioned on \(\xi_B\in V\) converges weakly along \(B\equiv5\pmod{12}\) and along \(B\equiv11\pmod{12}\). The two limits are explicit mixtures of seven affine clock graphs over one spatial density, and they differ: a fixed test \(F\) has limiting contrast \(17/7128\), and for \(B\equiv5\pmod{12}\) the finite-base contrast is \(17/7128+O(B^{-1})\). Spatial localization transfers this to a six-shift obstruction for the unconditional joint law (Corollary~\ref{cor:localized}). Existence of the two limits rests on the guarded coverage of Lemma~\ref{lem:coverage}, which has been reproduced but not re-implemented; the contrast \(17/7128\) also follows from the separately checked matching and residual certificates (Lemmas~\ref{lem:box-matching} and~\ref{lem:residual}).
+\item \emph{Local twelve-shift} (Proposition~\ref{prop:twelve}). For \(B\equiv5\pmod6\) and \(w=(0,-12,18,-6,-18)\), \(T_{B+12}(q+w)=T_B(q)-10\) on the certified overlap of the two boxes, with the cohort-\(0\) alignment. This is a covariance on the box, not a symmetry of the map; it fails on sampled inputs outside the box (Section~\ref{sec:twelve}). It explains the period structurally and is not used in the proof of Theorem~\ref{th:box}.
+\item \emph{Maximal contrast} (Corollary~\ref{cor:maximal}). The test \(F\) attains the largest difference \(|\Lambda^V_5(H)-\Lambda^V_{11}(H)|\) among \([0,1]\)-valued bounded Lipschitz tests \(H\).
+\item \emph{The modulus} (Corollary~\ref{cor:modulus}, from Theorems~\ref{th:mixture} and~\ref{th:box}). If the unconditional joint law converges along every residue class modulo \(N\), then \(12\mid N\). If \(6\mid D\) and \(12\nmid D\), it converges along no progression \(B\equiv a\pmod D\) with \(a\equiv5\pmod 6\).
+\end{itemize}
+
+The three main results play different roles. The parity theorem separates two classes by a clock interval. The six laws on \(U\) give the local class weights of every route through one leading orbit. The theorem on \(V\) compares two classes with the same residue modulo \(6\): both reach the same long clock, and the excess original-word mass of that clock in one class survives the cancellation of all common routes. The twelve-shift explains why the comparison closes at modulus \(12\) on this box, and Section~\ref{sec:separation} explains why the paired heuristic, which predicts the modulus \(6\), does not apply there.
+
+The regions are small. The rectangle \(U\) has limiting original probability \(\Omega(\epsilon)\approx2.5610\cdot10^{-26}\), and the box \(V\) has limiting original probability \(\Omega_V\approx8.5124\cdot10^{-14}\). Their role is to exhibit, with exact weights, an arithmetic dependence that the joint law cannot lose. Whether the full joint law of \((Y_B,T_B/B)\) converges along the classes modulo \(12\), or along any progression, is open; so is any dependence of the time marginal \(T_B/B\) alone on the residue of \(B\).
+
+\subsection*{Related work}
+Dependence of Kaprekar dynamics on arithmetic properties of the base is classical. Hasse and Prichett determined the four-digit fixed points and all cycles in the bases \(5\cdot2^n\) \cite[Theorem~4.1]{HP}; Prichett classified the five-digit terminal cycles in arbitrary bases \cite[Sections~1--4]{Pri}; and Walden studied constants for other digit counts, including seven digits \cite{Wa}. Kay and Downes-Ward studied fixed points and cycles through digit multiplicities in odd and even bases \cite{KDO,KDE}. Chen, Ono, Schwartz and Thakur reduced four-digit dynamics in odd bases greater than three to projective doubling, so that the cycle structure depends on the projective order of \(2\) modulo \(B\) \cite[Theorem~1]{COST}. Thakur treated fixed points for general bases and lengths, proposed the odd-digit base translation, and reported eleven-digit computations in base seven \cite[Remark~4.3 and \S5.4]{Thakur}. Kahramanlar reduced the routine for any length and base to the ordered opposite-position digit gaps \cite[\S2]{Kah}.
+
+Limits that depend on a residue class of the base are also known. Devlin and Zeng determined maximal times to the nonzero four-digit fixed point and studied its basin fraction \cite[Theorems~1 and~2]{DZ}; they conjectured the limits \(3/4\) and \(15/16\) for this fraction along the bases \(5\cdot2^{4n}\) and \(5\cdot2^{4n+2}\), respectively \cite[p.~5]{DZ}. In the bases \(m\cdot2^n\) with \(m\ge5\) odd, the four-digit time to reach a given union of the cycles inherited from base \(m\), divided by \(n\), converges along each residue class of \(n\) modulo the order of \(2\) modulo \(m\) to a law with atoms at \(1,\ldots,5\) and at infinity, and in the bases \(5\cdot2^n\) the basin fraction tends to \(1033/1125\) when \(n\equiv0\) and to \(94/125\) when \(n\equiv2\pmod4\); these are close to the conjectured values but attached to the opposite classes \cite[Theorem~2 and Corollary~3]{G2}; for cycles in even bases see \cite[Theorem~1]{G1}. At five digits the growing-base arrival law is common to all bases \cite[Theorem~1]{G3}, while the terminal-cycle weights depend on \(B\bmod3\) \cite[Theorem~3]{G3}. At seven digits, arithmetic restrictions on repeated returns change the weights of two clocks according to the parity of \(B\) \cite[Theorem~1 and \S6]{G5}. At nine digits the joint law of the initial differences, the scaled time and the normalized differences of the first cyclic word has five distinct limits, one for each residue of \(B\) modulo \(5\) \cite[Theorem~2]{G4}. At eleven digits the normalized differences of the first cyclic word concentrate through all bases \cite[Theorem~1]{G6}. If the population is conditioned on a fixed Jordan-measurable region of positive limiting weight and all but vanishing conditional mass has its whole orbit in the paired region, then any system of limits along the classes modulo \(N\) depends only on \(B\bmod\gcd(N,k+1)\) for \(2k+1\) digits \cite[Theorem~4]{G4}; the observed periods at seven and nine digits divide this modulus \cite{G5,G4}. The present paper shows that the eleven-digit joint input--clock law still depends on the base, through competing returns that share a leading orbit, and that on a region of positive limiting mass whose initially paired orbits subsequently leave the paired region during the prefix this dependence involves the residue modulo \(12\), twice the modulus \(6\) of the paired dynamics.
+
+\subsection*{Organization}
+Section~\ref{sec:coordinates} sets up coordinates and original weights. Section~\ref{sec:separation} proves Theorem~\ref{th:separation} and describes the two competing returns. Section~\ref{sec:mixture} proves the six laws on \(U\) and Corollary~\ref{cor:progressions}. Section~\ref{sec:box} states and proves the two limit laws on \(V\), and Section~\ref{sec:twelve} gives the twelve-shift, the maximal contrast and the modulus. Section~\ref{sec:computation} records how each computer-assisted lemma was checked, and Section~\ref{sec:scope} collects scope and verification limits. The computer-assisted lemmas are stated in the appendices.
+
+\section{Centered dynamics and original input weights}\label{sec:coordinates}
+
+Use the centered coordinates
+\begin{equation}\label{eq:center}
+ X_i=6q_i-(6-i)B=iB-6\sum_{j<i}G_j,\qquad 1\le i\le5.
+\end{equation}
+Thus at fixed \(B\equiv\beta\pmod6\), the five free gaps parametrize the lattice \(X_i\equiv i\beta\pmod6\), restricted to the physical gap domain. Put \(x(y)=X/B\), and define \(\widehat g(X)=(-X_1,X_1-X_2,\ldots,X_4-X_5,X_5)\) and the residual \(R(X)=-\min_i\widehat g_i(X)\). Then \(G_i=(B+\widehat g_i(X))/6\).
+
+The base translation of \cite[Theorem~4]{G4}, following \cite[Remark~4.3]{Thakur}, gives the centered map on paired states. In the eleven-digit case, sort each of the following five pairs in decreasing order, put \(-6\) first, and subtract opposite ranks in the resulting list to obtain the five coordinates of \(\Psi X\):
+\begin{equation}\label{eq:pairs}
+ (X_1,-X_5-6),\ (X_2,-X_4-6),\ (X_3,-X_3-6),\ (X_4,-X_2-6),\ (X_5-6,-X_1).
+\end{equation}
+The order of the five levels is fixed throughout the trajectories from \(\overline U\). Indeed, \cite[\S6]{G6} proves that for \(B\ge3534\), if \(\min_i G_i\ge M_B\) with \(M_B=\lceil(B+1)/7\rceil+64\), the orbit stays paired and every cycle reached has \(R\le504\) (Lemma~\ref{lem:inherited}). On \(\overline U\) every coordinate, including \(y_5\), satisfies \(y_i\ge\min_jy^*_j-5\epsilon=262921/1800000>1/7\). This crude bound suffices; the exact minimum is \(y^*_0-\epsilon\). Thus \(\min_i G_i\ge B/7+66\ge M_B\) for \(B\ge20561\). The increment \(G\mapsto G+e_4\) at base \(B+1\), where \(e_4\) increments \(G_4\), preserves the same pairing requirement for all sufficiently large \(B\), uniformly on the box.
+
+Let \(\mu\) be the first cyclic time of the difference vector. Subtraction, as a function of the differences, has the value
+\[
+ \mathcal N_B(q)=B^6\sum_{i=1}^5 q_i B^{5-i}-\sum_{i=1}^5 q_i B^{i-1}.
+\]
+It is injective, since the second sum belongs to \([0,B^5-1]\) and the first sum after division by \(B^6\) encodes \(q\). The differences of a cyclic word are cyclic, and the image under \(\mathcal N_B\) of a cyclic difference vector is a cyclic word. If \(\mu>0\), injectivity rules out a cyclic word at time \(\mu\) by comparing its predecessor's differences with those of a cyclic predecessor. Thus \(T_B=\mu+1\) on the certified transient paths.
+
+For a fixed positive gap vector, the two adjacent spacings in each symmetric level sum to \(G_i\) for \(i=1,\dots,5\). If all digits are distinct there are \(G_i-1\) ways to split each such sum into two positive integers. The least digit has \(G_0\) possible values and the ordered word has \(11!\) permutations. With a tie, at least one spacing is zero and at least one factor \(G_i-1\) is eliminated. Hence on \(\overline U\), uniformly,
+\begin{equation}\label{eq:weights}
+ \Prob_B(G)=B^{-5}\rho(G/B)+O(B^{-6}),\qquad
+ \rho(y)=11!\prod_{i=0}^5 y_i .
+\end{equation}
+The same count works on any fixed neighbourhood of positive gaps; it is the local version of the input multiplicity calculation in \cite[\S4]{G4}.
+For a fixed lattice coset of index \(I\) in the five free gaps, summing \eqref{eq:weights} on a rectangle of positive gaps gives in the limit the integral of \(\rho/I\) there. Tile the free coordinates by translates of a fundamental parallelepiped scaled by \(1/B\). The boundary collar has volume \(O(B^{-1})\). For Lipschitz weights the error in the sum is \(O(B^{-1})\), and for bounded continuous weights convergence follows from uniform continuity. In particular, the original limiting mass of the rectangle of radius \(a\) centred at \(y^*\) is
+\begin{equation}\label{eq:mass}
+ \Omega(a)=11!(2a)^5\left(\prod_{i=0}^4y^*_i\right)
+       \left(y^*_5-\frac{a^2}{3}\sum_{i=0}^4(y^*_i)^{-1}\right).
+\end{equation}
+This follows by writing \(y_i=y^*_i+u_i\) and integrating over \([-a,a]^5\). The term \(y^*_5\) contributes the product of the means of \(y^*_i+u_i\), and each term \(-u_i\) contributes its second moment \(-a^2/3\) times the four remaining means. Numerically \(\Omega(\epsilon)\approx2.56103363166\cdot10^{-26}\).
+
+\section{A fixed test and two competing returns}\label{sec:separation}
+
+\begin{proof}[Proof of Theorem~\ref{th:separation}]
+The two computational inputs are Lemmas~\ref{lem:exclusion} and~\ref{lem:cohort}. The first shows that no class-\(0\) input in \(\overline U\) has \(T_B/B\le131/5000\), for \(B\ge271137\). Since \(\phi\) is supported inside \(U\) and \(\psi\) vanishes for \(t\ge131/5000\), this gives the zero expectation.
+
+For the second input, take an even base \(B_0\equiv3360\pmod{3840}\) and restrict the five free gaps to the coset of Lemma~\ref{lem:cohort}, with \(G/B_0\in U'\). At base \(B_0+1\) the partner \(G+e_4\) has centered vector \(X+(1,2,3,4,-1)\). The odd arm's linear clock row, evaluated at \(x(y)\) for \(y\in\overline U\), has maximum \(2222801/86400000<13/500\). Thus \(\psi=1\) on the odd partners for large \(B_0\). Nonnegativity of \(\Phi\) suffices for the remaining odd inputs.
+
+For an arbitrary sufficiently large base \(B\equiv0\pmod6\), write \(B=B_0+6j\) with \(B_0\equiv3360\pmod{3840}\) and \(0\le j\le639\). The translation \((B_0,G)\mapsto (B,G+j\one)\), where \(\one\) is the six-vector of ones, preserves every centered coordinate by \eqref{eq:center}. It commutes with forming the odd partner. The translated cohort at \(B+1\) therefore has the same unscaled difference and word times as at \(B_0+1\). Its lattice index is unchanged, and the normalized input and clock move by \(O(B^{-1})\), uniformly on the rectangle. Its initial gaps stay in the permanently paired region, and its population mass is \(\Omega(\epsilon/2)/3317760+O(B^{-1})\) by \eqref{eq:weights}--\eqref{eq:mass}. Since \(\phi=1\) on \(U'\) and \(\phi\) is Lipschitz, its value on each translated partner is at least \(1-O(B^{-1})\). This proves the lower limit along \(B\equiv1\pmod 6\).
+
+Tightness follows from \cite[Theorem~1]{G6} and compactness of the input space and of the space of normalized cyclic words. Every subsequential limit along class \(0\) integrates \(\Phi\) to zero, and every subsequential limit along class \(1\) integrates it to at least \(\Omega_1\). For the original word, let \(g\) send decreasing normalized digits to their six gaps; the same test is \(\Phi(g(\sort(W_B/B)),T_B/B)\). Sorting is continuous and \(g\) is affine on sorted digits, so the limit argument applies to this test. Appending the normalized first cyclic word preserves the test by projection.
+\end{proof}
+
+The next section computes the contrast from all inputs in \(U\), not only from the certified set.
+
+\subsection*{Competing returns}
+After their first four repeated blocks and intervening steps, the trajectories in Lemma~\ref{lem:cohort} reach the same five-step leading orbit in the same leading time. By a \emph{leading} state or time we mean the term linear in the base with the normalized input fixed. A phase of this orbit has the form \((a,b,0,a,b)\), with \(a=2b>0\) at entry. The two recorded words start at different phases of that orbit. The \emph{code} of a step is the sum of \(2^{i-1}\) over the levels \(i\) at which the left entry in \eqref{eq:pairs} comes first, with ties placed left first. The codes of the even and odd repeated words are
+\[
+\begin{array}{@{}c@{\quad}l@{}}
+ \text{even}&31,14,31,31,31,31,31,31,31,31,\\[-2pt]
+ &31,0,31,31,31,31,31,31,31,31,\\[-2pt]
+ &27,10,31,31,31,31,15,31,31,31\\[2pt]
+ \text{odd}&31,31,31,31,15,31,31,27,31,15,\\[-2pt]
+ &31,31,31,27,31,31,31,27,27,1
+\end{array}
+\]
+The return displacements in the recorded entry phases are
+\[
+ \Delta_e=(-96,-60,0,-96,-60),\qquad
+ \Delta_o=(-84,-168,-120,-72,-36).
+\]
+The mean decreases of the first coordinate are \(16/5\) and \(21/5\) per subtraction. Each word selects an affine map \(\mathcal F\). For the even word put \(E=\mathcal F(X)-X-\Delta_e\). Composition gives \(E_4+6E_3-14E_2=-4X_3\), so translation by \(\Delta_e\) requires \(X_3=0\). For the odd word the fourth coordinate of \(\mathcal F(X)-X-\Delta_o\) is \(-4(X_1-X_3+X_5-3)\), so its translation requires \(X_1-X_3+X_5=3\). Both linear expressions in \(X\) have residue \(3B\bmod6\), which restricts each stated return to its parity. The linear part of each return fixes its displacement, and the certificate checks the repeated guards. The leading clocks, including the final approach, are \(901/30000\) and \(22211/864000\) at the centre \(y^*\).
+
+\subsection*{Which residue is visible?}
+For an interior section \(X=(a,b,f_3,a+f_4,b+f_5)\) with bounded \(f\) and with \(b\) and \(a-2b\) growing, the five-step return acting on \(f=(X_3,X_4-X_1,X_5-X_2)\) is autonomous. To see this, suppress the bounded terms in \eqref{eq:pairs}. Starting with \((a,b,0,a,b)\), the successive leading states before return are
+\[
+ (a,a-b,0,b-a,-a),\quad
+ (a,2a,2a-b,2a-2b,a-b),\quad
+ (a,b,a+b,2b,b),\quad
+ (a,a-b,0,-b,a-b).
+\]
+At each phase the leading comparator differences have fixed signs on \(a>2b>0\) or vanish identically. In the latter case the bounded terms decide the order. Composing the five affine steps gives back the leading state, with a correction depending on \(f\) alone. On the physical lattice \(f\in(3\beta+6\Z)^3\), so the possible fibers depend only on the parity of \(B\). In particular the centre comparison can tie, at \(X_3=-3\), only at odd bases. The passage near the boundary of the section uses the exact guards in the certificates.
+
+On the terminal ray, in the phase with leading direction \((1,0,0,1,0)\), the bounded transverse coordinates \(X_2,X_3,X_5\) have residues \(2\beta,3\beta,5\beta\) modulo six and recover \(\beta\). The modulus comes from base covariance. For \(2k+1\) digits the centered choice is \(X_i=iB-(k+1)\sum_{j<i}G_j\), and the shift \((B,G)\mapsto(B+k+1,G+\one)\) preserves these coordinates, as in the paired-map translation of \cite[Theorem~4]{G4}. At seven digits the corresponding lattice modulus is four and the limiting laws distinguish parity \cite{G5}. At nine digits the five lattice classes give distinct laws \cite{G4}. At eleven digits the tables below give identical sheet weights within a parity, followed by distinct joint laws after the terminal returns.
+
+\subsection*{Why period \(12\) can occur}
+On paired states the translation \((B,G)\mapsto(B+6,G+\one)\) carries orbits to orbits with the same times. Consequently, if the original population is conditioned on a fixed Jordan-measurable region of positive limiting weight, and all but vanishing conditional mass has its whole orbit in the paired region, then any system of limits along the classes modulo \(N\) depends only on \(B\bmod\gcd(N,6)\) \cite[Theorem~4]{G4}. This applies to the rectangle \(U\) as used here: its closure lies in the permanently paired region from time zero (Section~\ref{sec:coordinates}), and the proof of Theorem~\ref{th:separation} uses exactly this translation. It does not apply to the box \(V\) of Section~\ref{sec:box}. Every input in \(V\) starts paired, but its outer gap \(1-\xi_1\), in \([0.0587,0.0596]\), misses the sufficient criterion \(\min_iG_i\ge M_B\) for permanent pairing, and the orbits do leave the paired region: each of the \(n_3\) late returns of the prefix, a number of order \(B\), contains one or two failures of the borrowed pairing before the paired block begins (recorded with the prefix certificate of Lemma~\ref{lem:box-matching} in the ancillary material). On \(V\) the matching of Lemma~\ref{lem:box-matching} still pairs \(26/27\) of the label lattices across \(B\mapsto B+6\). The remaining \(1/27\) carries the contrast of Theorem~\ref{th:box}, and Proposition~\ref{prop:twelve} is the covariance that holds there, with step \(12\).
+
+\section{Six conditional arrival laws}\label{sec:mixture}
+
+In the phase with leading state \((a,b,0,a,b)\), the first repeated word on the central sheet enters at \(b=a/2\). Define the normalized anchor and entry time by
+\begin{equation}\label{eq:anchor}
+ A(y)=\frac{x_1+55x_2-30x_3-55x_4+95x_5}{6},\qquad P(y)=\frac{x_1-A(y)}6,
+ \qquad x=x(y).
+\end{equation}
+Thus the leading anchor is \(BA(y)\) at time \(BP(y)\). A \emph{route type} \(\ell=(v_a,v_b,v_{\rm ray})\) records the mean decreases in \(a\) and \(b\) per subtraction on the central sheet and the mean decrease of the anchor on the terminal ray. The sheet uses leading time \(BA/(2v_b)\), leaving leading anchor \(BA(1-v_a/(2v_b))\). If \(v_a=2v_b\), both coordinates are exhausted on the sheet and we put \(v_{\rm ray}=\varnothing\). The resulting normalized leading clock is
+\begin{equation}\label{eq:clock}
+ t_\ell=P+\kappa_\ell A,\qquad
+ \kappa_\ell=\frac1{2v_b}+\frac{1-v_a/(2v_b)}{v_{\rm ray}},
+\end{equation}
+with the second summand taken as zero when \(v_{\rm ray}=\varnothing\). Table~\ref{tab:lanes} gives \((v_{\rm ray},p_{\beta,\ell})\) for each sheet speed and residue \(\beta\). Unlisted weights are zero.
+
+\begin{table}[htbp]
+\small
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.18}
+\centering
+\begin{tabular}{@{}c|ccc@{}}
+\((v_a,v_b)\) & \(\beta=0\) & \(\beta=2\) & \(\beta=4\)\\ \hline\noalign{\vskip 2pt}
+\((16/5,2)\) & \((24/5,2651/5184)\) & \(\begin{gathered}(23/5,2651/6480)\\(24/5,2651/25920)\end{gathered}\) & \(\begin{gathered}(24/5,2651/12960)\\(47/10,2651/8640)\end{gathered}\)\\[3pt]
+\((33/10,21/10)\) & \(\begin{gathered}(22/5,535/3024)\\(24/5,535/4032)\end{gathered}\) & \((24/5,535/1728)\) & \((24/5,535/1728)\)\\[3pt]
+\((18/5,12/5)\) & \((22/5,29/162)\) & \((24/5,29/162)\) & \((24/5,29/162)\)
+\end{tabular}
+
+\medskip
+\begin{tabular}{@{}c|ccc@{}}
+\((v_a,v_b)\) & \(\beta=1\) & \(\beta=3\) & \(\beta=5\)\\ \hline\noalign{\vskip 2pt}
+\((3,9/5)\) & \(\begin{gathered}(24/5,2461/10368)\\(114/25,2683/31104)\\(117/25,67/15552)\end{gathered}\) & \(\begin{gathered}(22/5,737/5184)\\(24/5,107/576)\end{gathered}\) & \(\begin{gathered}(24/5,9395/31104)\\(51/10,805/31104)\end{gathered}\)\\[3pt]
+\((18/5,9/5)\) & \((\varnothing,79/864)\) & \((\varnothing,79/864)\) & \((\varnothing,79/864)\)\\[3pt]
+\((18/5,12/5)\) & \((24/5,55/1296)\) & \((22/5,55/1296)\) & \((24/5,55/1296)\)\\[3pt]
+\((21/5,12/5)\) & \((24/5,1571/5184)\) & \(\begin{gathered}(22/5,1571/13824)\\(24/5,7855/41472)\end{gathered}\) & \(\begin{gathered}(24/5,7855/41472)\\(51/10,1571/13824)\end{gathered}\)\\[3pt]
+\((21/5,27/10)\) & \(\begin{gathered}(24/5,1219/11664)\\(114/25,6095/46656)\end{gathered}\) & \((24/5,1219/5184)\) & \((24/5,1219/5184)\)
+\end{tabular}
+\caption{The pairs \((v_{\rm ray},p_{\beta,\ell})\) for each sheet speed \((v_a,v_b)\) and residue \(\beta=B\bmod6\).}\label{tab:lanes}
+\end{table}
+
+\begin{theorem}\label{th:mixture}
+Along \(B\equiv\beta\pmod6\), the law of \((Y_B,T_B/B)\) conditioned on \(Y_B\in U\) converges weakly to
+\begin{equation}\label{eq:mixture}
+ \Lambda^U_\beta(dy,dt)=\frac{\one_U(y)\rho(y)}{\Omega(\epsilon)}\,dy
+ \sum_\ell p_{\beta,\ell}\,\delta_{t_\ell(y)}(dt).
+\end{equation}
+The six limits are pairwise distinct. Along the odd bases the conditional mean of \(\psi(T_B/B)\) tends to \(155/288\), and along the even bases it tends to zero. In the original population the odd-minus-even limiting contrast for \(\Phi\) is
+\[
+ \frac{155}{288}\int_U\phi(y)\rho(y)\,dy\approx1.491849216\cdot10^{-27}.
+\]
+For \(B\ge730657\) and any physical input in \(\overline U\), the certifying route assigns a type \(\ell\) and gives \(T_B=Bt_\ell(Y_B)+\eta\) for a constant \(\eta\) depending on the leaf, with \(|\eta|<144\). The offset intervals for distinct types can overlap at finite \(B\), so this bound alone need not identify the route from the observed clock.
+\end{theorem}
+
+\begin{proof}
+Lemma~\ref{lem:mixture-certificate} supplies the finite partition of each centered lattice and the exact clocks. The map from free gaps to \(X\) is affine with linear part \(-6\) times a unimodular matrix, so a leaf of relative index \(I\) has index \(I\) in the free gap lattice. For a bounded continuous test \(f\), replacing \(f(Y_B,T_B/B)\) on a leaf by \(f(Y_B,t_\ell(Y_B))\) costs \(o(1)\) uniformly on \(\overline U\). By \eqref{eq:weights} and the lattice Riemann sum, that leaf's contribution to the original expectation restricted to \(U\) tends to \(I^{-1}\int_U f(y,t_\ell(y))\rho(y)\,dy\). Summing and dividing by \(\Omega(\epsilon)\) proves \eqref{eq:mixture}.
+
+For each pair \(\beta<\gamma\), the following array gives a coefficient \(\kappa\) occurring in \(\Lambda^U_\beta\) and absent from \(\Lambda^U_\gamma\).
+\[
+\begin{array}{c|ccccc}
+ \beta\backslash\gamma &1&2&3&4&5\\ \hline
+ 0&7/24&35/132&7/24&35/132&7/24\\
+ 1&&15/64&40/171&15/64&40/171\\
+ 2&&&27/92&27/92&27/92\\
+ 3&&&&25/108&125/396\\
+ 4&&&&&95/336
+\end{array}
+\]
+For these entries, \(\min_{\overline U} A>0.07523\), and \(A(y)|\kappa-\kappa_\ell|>3\cdot10^{-5}\) for every type in \(\Lambda^U_\gamma\), by \eqref{eq:anchor} and \eqref{eq:clock}. The test \(\clamp(1-|t-P(y)-\kappa A(y)|/(3\cdot10^{-5}))\) therefore has positive mean under \(\Lambda^U_\beta\) and zero mean under \(\Lambda^U_\gamma\).
+
+On the types with sheet speeds \((21/5,12/5)\) and \((21/5,27/10)\) the clocks are below \(0.025907<13/500\) at every vertex of \(\overline U\), hence on \(\overline U\). All other types have minimum greater than \(0.027646>131/5000\). The first two sheet speeds carry total mass \(1571/5184+1219/5184=155/288\) in each odd residue and are absent in each even residue. This gives the conditional contrast. Since \(\phi\) is supported in \(U\), \eqref{eq:mixture} also gives the stated original contrast. By integrating the superlevel sets of \(\phi\), its spatial factor is
+\[
+ \int_U\phi\rho\,dy=\int_0^1 \Omega((3-s)\epsilon/4)\,ds\approx 2.771952092\cdot10^{-27}.\qedhere
+\]
+\end{proof}
+
+\begin{corollary}\label{cor:progressions}
+The joint law of \((Y_B,T_B/B)\) converges weakly along no arithmetic progression of bases whose modulus \(D\) satisfies \(6\nmid D\). The same holds for \((W_B/B,T_B/B)\) and for either observation with the normalized first cyclic word appended.
+\end{corollary}
+
+\begin{proof}
+Such a progression visits \(6/\gcd(6,D)>1\) residues modulo six infinitely often. Choose two, \(\beta<\gamma\), and the coefficient \(\kappa\) in the array. Let \(\epsilon_\kappa>0\) be smaller than the distance from \(\kappa\) to every other coefficient occurring in the two mixtures. On \(U\) use the test
+\[
+ \phi(y)\clamp\!\left(1-\frac{|(t-P(y))/A(y)-\kappa|}{\epsilon_\kappa}\right)
+\]
+and extend it by zero elsewhere. It is bounded and continuous, since \(A>0\) on \(\overline U\) and \(\phi\) vanishes on a collar of the boundary. Its original expectation tends along the two residue subsequences to the respective weights of \(\kappa\) multiplied by \(\int_U\phi\rho\,dy>0\). These limits differ. For the other joint observations, compose with the continuous gap map or with projection as in the proof of Theorem~\ref{th:separation}.
+\end{proof}
+
+\section{Two limit laws modulo twelve on a second box}\label{sec:box}
+
+\subsection{The box, the labels and the test}
+Write the initial differences as \(q=(q_1,\ldots,q_5)\) and define the normalized chart
+\[
+ \xi_B(q)=\frac{1}{B}\bigl(q_1,\ q_2,\ q_3,\ 2(q_2-q_5)-B,\ B-q_3-q_4\bigr).
+\]
+Let \(V\) be the closed box in this chart,
+\[
+ V=10^{-5}\bigl([94040,94130]\times[73770,73850]\times[57940,58015]
+             \times[20,80]\times[200,300]\bigr).
+\]
+All endpoints are exact. For \(\xi\in V\) the normalized differences are \(\bar q(\xi)=(\xi_1,\xi_2,\xi_3,1-\xi_3-\xi_5,\xi_2-(1+\xi_4)/2)\), with normalized gaps \(g(\xi)=(1-\bar q_1,\bar q_1-\bar q_2,\ldots,\bar q_4-\bar q_5,\bar q_5)\), all positive on \(V\). The chart has constant Jacobian of absolute value two as a function of \(q/B\). By \eqref{eq:weights}, \(\Prob_B(\xi_B\in V)\to\Omega_V\), where
+\[
+ \Omega_V=\frac12\int_V\rho(g(\xi))\,d\xi\approx8.51238978209\cdot10^{-14},
+\]
+and the conditional spatial law has the limit \(\nu_V(d\xi)=\rho(g(\xi))\,d\xi/(2\Omega_V)\) on \(V\). Write \(\mathcal P_B\) for the law of \((\xi_B,T_B/B)\) under \(\Prob_B\), and \(Q_B\) for the law of \((\xi_B,T_B/B)\) under \(\Prob_B\) conditioned on \(\xi_B\in V\), with the base's own word multiplicities. For a test \(H\) we write \(Q_B(H)=\int H\,dQ_B\), and similarly for \(\mathcal P_B\). For \(B\equiv5\pmod6\) with \(B\ge10^6+1\), the prefix of Lemma~\ref{lem:box-matching} shows that the initial state of every input in \(V\) is transient, so \(T_B=\mu+1\) depends only on the difference vector \(q\) (Section~\ref{sec:coordinates}); for these bases we write \(T_B(q)\).
+
+Fix \(B\equiv5\pmod6\) and \(\xi_B(q)\in V\). Lemma~\ref{lem:box-matching} describes the start of the trajectory of \(q\). It consists of \(n_1\) repetitions of a five-update word that lowers \(q\) by \(\vct=(5,4,3,2,1)\), a bounded alignment, \(n_2\) repetitions of a ten-update word with displacement \(\Delta_0=(-10,-2,0,2,-2)\), \(n_3\) repetitions of a twenty-update word with displacement \(\Delta_1=(-20,-4,-2,2,-4)\), a bounded switch, and repetitions of a twenty-update paired word, after which the orbit is permanently paired. Every word in this prefix lowers \(q_1\) by one per update. The trajectory is labelled by its \emph{cohort} \(\chi=(q_2-q_5)\bmod3\), an overshoot \(z\in\{1,2\}\), a remainder \(k_1\in[-4,17]\) of the late count, and a remainder \(k_2\in\{601,603,\ldots,671\}\) of the paired count. Let \(q^R\) be the state after the late repetitions and put \(p=q^R_3\) and \(r=q^R_2\). There are \(3\cdot2\cdot22=132\) prefixes \((\chi,z,k_1)\) and \(4752=132\cdot36\) labels.
+
+At fixed \(B\) and prefix, the input is recovered from \((p,r,n_3,n_1,n_2)\) by an affine map with determinant \(132\) (Section~\ref{sec:box-proof}). The second remainder imposes \(p\equiv p_0+2r\pmod{36}\) for an explicit \(p_0\). Splitting further by \(r\bmod6\) gives \(28512\) \emph{primary classes}; each is a full-rank coset of index \(28512\) in \(\Z^5\), and each has conditional mass \(1/28512+O(B^{-1})\) on \(V\). The precise convention defining \(k_2\) in each cohort is part of Lemma~\ref{lem:box-matching}.
+
+The limiting clocks are expressed through the leading return count and late-return coordinates
+\[
+ \hat n(\xi)=\frac{\xi_1+\xi_3-3/2-(11/2)\xi_4-5\xi_5}{22},\quad
+ \hat p(\xi)=\xi_3-\tfrac12\xi_4-2\hat n(\xi),\quad
+ \hat r(\xi)=\xi_2-\tfrac32\xi_4-\xi_5-4\hat n(\xi),
+\]
+so that \(n_3/B=\hat n(\xi_B)+O(B^{-1})\), \(p/B=\hat p(\xi_B)+O(B^{-1})\) and \(r/B=\hat r(\xi_B)+O(B^{-1})\); on \(V\), \(\hat n\ge1/55000\). For a \emph{clock profile} \(s=(s_0,s_p,s_r)\) put
+\[
+ \tau_s(\xi)=\xi_1+s_0+s_p\hat p(\xi)+s_r\hat r(\xi).
+\]
+Seven profiles occur, in four clock groups called short (S), middle~1 (M1), middle~2 (M2) and long (L); they are listed in Table~\ref{tab:box-limits}. At every point of \(V\) the groups are ordered S\(<\)M1\(<\)M2\(<\)L, with adjacent gaps at least \(5237/2112000\), \(5237/3168000\) and \(5237/1683000\).
+
+Finally define the fixed test
+\[
+ \theta(\xi)=\frac{121049}{10^6}+\sum_{i=1}^5 \omega_i\frac{\xi_i-\bar\xi_i}{\lambda_i},
+ \qquad F(\xi,t)=\clamp\bigl(500(t-\theta(\xi)+1/1000)\bigr),
+\]
+where \(10^6\bar\xi\), \(10^6\lambda\) and \(10^6\omega\) are respectively
+\[
+ (940800,738087,579763,484,2491),\quad(446,365,342,280,449),\quad
+ (590,-307,-447,127,-296).
+\]
+The test \(F\) is bounded and Lipschitz on all of \(\R^6\). On \(V\) every long profile lies above \(\theta+1/1000\) and every other profile below \(\theta-1/1000\), in each case by at least
+\[
+ \varsigma_V=53493742523569/96241171257000000,
+\]
+by exact evaluation at the \(32\) vertices. So \(F=1\) on the long graphs and \(F=0\) on the others.
+
+\begin{table}[htbp]
+\small
+\renewcommand{\arraystretch}{1.15}
+\centering
+\begin{tabular}{@{}cccrrr@{}}
+\hline
+Group & \((s_0,s_p,s_r)\) & \(F\) & \(c_{5,s}\) & \(c_{11,s}\) & \(c_{5,s}-c_{11,s}\)\\
+\hline
+S & \((-11/324,\,-133/162,\,-35/81)\) & 0 & 7202 & 7202 & 0\\
+S & \((-7/408,\,-57/68,\,-15/34)\) & 0 & 2940 & 2961 & \(-21\)\\
+S & \((1/576,\,-247/288,\,-65/144)\) & 0 & 4900 & 4935 & \(-35\)\\
+M1 & \((31/96,\,-19/16,\,-5/8)\) & 0 & 1328 & 1328 & 0\\
+M2 & \((29/54,\,-38/27,\,-20/27)\) & 0 & 2688 & 2700 & \(-12\)\\
+L & \((139/144,\,-133/72,\,-35/36)\) & 1 & 8741 & \(26032/3\) & \(191/3\)\\
+L & \((863/918,\,-836/459,\,-440/459)\) & 1 & 713 & \(2126/3\) & \(13/3\)\\
+\hline
+Total & & & 28512 & 28512 & 0\\
+\hline
+\end{tabular}
+\caption{The seven clock profiles on \(V\) and their limiting weights \(c_{\beta,s}\), in units of \(1/28512\), along \(B\equiv\beta\pmod{12}\). The column \(F\) gives the value of the test on each graph.}\label{tab:box-limits}
+\end{table}
+
+\begin{theorem}\label{th:box}
+For \(\beta\in\{5,11\}\), as \(B\to\infty\) through \(B\equiv\beta\pmod{12}\), the conditional law \(Q_B\) converges weakly to
+\begin{equation}\label{eq:box-limit}
+ \Lambda^V_\beta(d\xi,dt)=\nu_V(d\xi)\sum_s\frac{c_{\beta,s}}{28512}\,\delta_{\tau_s(\xi)}(dt),
+\end{equation}
+with the weights \(c_{\beta,s}\) of Table~\ref{tab:box-limits}. The two limits are distinct:
+\[
+ \int F\,d\Lambda^V_5-\int F\,d\Lambda^V_{11}=\frac{17}{7128}.
+\]
+Moreover, for \(B\equiv5\pmod{12}\),
+\[
+ Q_B(F)-Q_{B+6}(F)=\frac{17}{7128}+O(B^{-1}),
+\]
+in the order \(12j+5\) minus \(12j+11\). In particular the conditional joint law on \(V\) has no weak limit through \(B\equiv5\pmod6\).
+\end{theorem}
+
+The weak convergence in Theorem~\ref{th:box} is equivalent to convergence of \(Q_B(H)\) for every bounded Lipschitz test \(H\); the proof establishes it in that form. The common factor \(\nu_V\) in \eqref{eq:box-limit} records that every certified route spans the whole box. By clock group, \(\Lambda^V_5-\Lambda^V_{11}\) has masses \(-56\), \(0\), \(-12\) and \(+68\) units on S, M1, M2 and L.
+
+\begin{remark}[The common part]\label{rem:common}
+Of the \(4752\) labels, \(176\) in each class are \emph{residual}: the matching of Lemma~\ref{lem:box-matching} leaves them unpaired across \(B\mapsto B+6\). This set is the same in the two classes and in every class of \(K=(B-5)/6\) modulo six, and it is invariant under \(k_2\mapsto k_2+36\pmod{72}\). The inputs with non-residual labels define a sublaw of limiting conditional mass \(26/27\) in each class. The proof of Theorem~\ref{th:box} gives limits for these sublaws along each class modulo \(12\), and the matching of Lemma~\ref{lem:box-matching} identifies the two limits. Thus \(\Lambda^V_5\) and \(\Lambda^V_{11}\) differ only through the residual labels, of mass \(1/27\). The matching is needed only for this statement. It also gives a second derivation of the rates in Theorem~\ref{th:box} and Corollaries~\ref{cor:localized} and~\ref{cor:maximal}, which already follow from the expansion in the proof of Theorem~\ref{th:box}; the convergence and the separation of the two limits do not use it.
+\end{remark}
+
+\begin{corollary}\label{cor:localized}
+Let \(\nu\) be the limiting spatial law of \(\xi_B\) under \(\Prob_B\), and let \(h_V(\xi)=\dist(\xi,\R^5\setminus V)\). For \(B\equiv5\pmod{12}\),
+\[
+ \mathcal P_B(h_VF)-\mathcal P_{B+6}(h_VF)
+ =\frac{17}{7128}\int_V h_V\,d\nu+O(B^{-1}),
+\]
+which is positive for all large \(B\). Hence the unconditional joint law \(\mathcal P_B\), and the joint laws of \((Y_B,T_B/B)\) and \((W_B/B,T_B/B)\), have no weak limit through \(B\equiv5\pmod6\); the same holds with the normalized first cyclic word appended. The time marginal is not addressed.
+\end{corollary}
+
+\begin{proof}
+The density \(\rho\circ g\) is positive on \(V\), so \(\nu(V)=\Omega_V>0\) and \(\nu(\partial V)=0\); the weighted lattice estimate gives \(\Prob_B(\xi_B\in V)=\Omega_V+O(B^{-1})\). The product \(h_VF\) is a fixed bounded Lipschitz test of the unconditional joint observation, and it vanishes outside \(V\). In the decomposition used in the proof of Theorem~\ref{th:box}, each residual class's leading contribution under conditioning on \(V\) is multiplied by \(\int_V h_V\,d\nu_V\), and the matched terms still cancel to \(O(B^{-1})\). Multiplying each conditional expectation by its own box mass gives the display. If the unconditional joint law had a weak limit along \(B\equiv5\pmod6\), both terms would converge to the same value. The charts \(\xi_B\) and \(Y_B\) are affine bijective functions of \(q/B\); for \(W_B/B\), compose with sorting and the gap map, and for the appended cyclic word use projection, as in the proof of Theorem~\ref{th:separation}.
+\end{proof}
+
+By Theorem~\ref{th:box}, each term of the display converges along its own class \(B\equiv\beta\pmod{12}\), the limit being \(\Omega_V\int h_VF\,d\Lambda^V_\beta\); and the unconditioned contrast of the test \(\one_VF\) tends to \(\Omega_V\cdot17/7128\), which is approximately \(2.03017\cdot10^{-16}\).
+
+\subsection{Proof of Theorem~\ref{th:box}}\label{sec:box-proof}
+
+\emph{Labels and weights.} Fix \(B\equiv5\pmod6\) and a prefix \((\chi,z,k_1)\). By Lemma~\ref{lem:box-matching}, three pinned equations give
+\[
+ q^R=\bigl(3(B-1)/2+k_1-p,\ r,\ p,\ B-1+z-p,\ r-(B-1)/2+\one_{\chi\ne2}\bigr),
+\]
+and the input is \(q=q^R-n_3\Delta_1-n_2\Delta_0-\alpha_\chi+n_1\vct\), with the alignment vectors \(\alpha_\chi\) of Lemma~\ref{lem:box-matching}. In the order \((p,r,n_3,n_1,n_2)\) this map has linear part
+\[
+ \det\begin{pmatrix}
+ -1&0&20&5&10\\0&1&4&4&2\\1&0&2&3&0\\-1&0&-2&2&-2\\0&1&4&1&2
+ \end{pmatrix}=132.
+\]
+Reapplying the pinned equations and count formulas recovers the label and the counts, so the map is injective, and on \(V\) the counts are nonnegative integers for large \(B\). The switch gives \(J(q^{(2)})=2B+2p-4r+\zeta\), where \(J(q)=2q_1+2q_2-2q_4+4q_5-3B\) and \(\zeta\) is an odd constant depending on the prefix; hence the second remainder imposes \(p=p_0+36u+2r\) with \(u\in\Z\) and \(p_0=((k_2-\zeta)/2-B)\bmod36\). Conversely these formulas imply every prescribed residue when the resulting input lies in the box. Thus each label is a coset of index \(132\cdot36=4752\) in \(\Z^5\), and each primary class, fixing also \(r\bmod6\), is a coset of index \(28512\). Tile \(\Z^5\) by cells of such a lattice. Each cell has bounded diameter, and the cells meeting \(\partial(BV)\) number \(O(B^4)\). The exact multiplicity of ordered words with differences \(q\) is \(11!\prod_iG_i(q)+O(B^5)\), with the integer gaps \(G\) of Section~\ref{sec:intro}, and the normalized weight varies by \(O(B^{-1})\) across a cell. Hence, uniformly in the translate, a coset of index \(I\) has conditional mass \(1/I+O(B^{-1})\) on \(V\), and for a bounded Lipschitz spatial multiplier \(\varphi\) its conditional expectation of \(\varphi(\xi_B)\) is \(I^{-1}\int_V\varphi\,d\nu_V+O_\varphi(B^{-1})\).
+
+\emph{Finite guarded coverage.} Lemma~\ref{lem:coverage} partitions the box population, up to a collar of conditional mass \(O(B^{-1})\), into finitely many cosets in the original coordinates. It uses \(99\) checkpoint families and \(6555\) arithmetic leaves, with at most three repeated words in each continuation, and covers all \(4752\) label units. Each coset is present exactly on one of the classes \(B\equiv5\) and \(B\equiv11\pmod{12}\), and has a fixed index there. On each coset one profile \(s\) satisfies \(|T_B-B\tau_s(\xi_B)|\le201734\) for \(B\ge86496843\). The leaves split only by lattice congruences, never spatially, so every coset meets \(BV\) in a set whose normalized image fills \(V\) up to a collar of bounded thickness.
+
+\emph{Limits along the classes modulo \(12\).} By Lemma~\ref{lem:coverage}, at each base the set of present cosets and their indices depend only on \(B\bmod12\). For a bounded Lipschitz test \(H\), replacing \(H(\xi_B,T_B/B)\) by \(H(\xi_B,\tau_s(\xi_B))\) on a coset costs \(O(B^{-1})\), and the weighted lattice estimate gives
+\[
+ Q_B(H)=\sum_s c^{(B)}_s\int_V H(\xi,\tau_s(\xi))\,d\nu_V(\xi)+O_H(B^{-1}),
+\]
+where \(28512\,c^{(B)}_s\) is the sum of \(28512/I\) over the present cosets of profile \(s\). This sum depends only on \(B\bmod 12\), so \(Q_B\) converges along each of the classes \(B\equiv5\) and \(B\equiv11\pmod{12}\). No sum of errors over a growing range of bases is involved. The existence of the two limits therefore rests on Lemma~\ref{lem:coverage} alone. That certificate was reproduced exactly but not re-implemented (Section~\ref{sec:scope}); the contrast \(17/7128\) is also obtained below from Lemmas~\ref{lem:box-matching} and~\ref{lem:residual}, which have separate checks. Proposition~\ref{prop:twelve} is not used in this proof. It gives an independent, structural reason for the period: the conditional laws at \(B\) and \(B+12\) are \(O(B^{-1})\)-close in bounded Lipschitz distance, without reference to the coverage.
+
+\emph{The tables.} Summing the coset weights by profile at each residue class gives Table~\ref{tab:box-limits}, with total \(28512\) in each class, and hence \eqref{eq:box-limit}. The column differences agree with the signed weights computed independently from the residual certificate (Corollary~\ref{cor:maximal}). Since \(F=1\) on the two long graphs and \(F=0\) on the others,
+\[
+ \int F\,d\Lambda^V_5-\int F\,d\Lambda^V_{11}
+ =\frac{(8741+713)-(26032/3+2126/3)}{28512}=\frac{9454-9386}{28512}=\frac{17}{7128}.
+\]
+
+\emph{The rate.} Subtracting the expansions for \(B\) and \(B+6\) gives \(Q_B(H)-Q_{B+6}(H)=\frac{1}{28512}\sum_s(c_{5,s}-c_{11,s})\int_VH(\xi,\tau_s(\xi))\,d\nu_V+O_H(B^{-1})\) for \(B\equiv5\pmod{12}\), and specializing to \(F\) gives the rate in Theorem~\ref{th:box}. The following second derivation uses the matching and residual certificates instead of the coverage, and also identifies the common sublaw (Remark~\ref{rem:common}). Let \(B\equiv5\pmod{12}\) and compare \(B\) with \(B+6\). Lemma~\ref{lem:box-matching} gives a bijective matching of \(4576\) labels across the two classes. On a matched pair the input displacement and the clock difference are bounded uniformly: the matched centered states agree after alignment, the physical trajectory follows the centered map from the checkpoint on, and the prefix lengths are \(O(B)\). Thus the normalized inputs and times differ by \(O(B^{-1})\), and so do the test and the normalized density. The unmatched boundary collar and the difference of the normalizing box weights are also \(O(B^{-1})\). The remaining \(176\) labels per class give \(1056\) primary classes. By Lemma~\ref{lem:residual}, on each of them the clock lies in a fixed group at a fixed base. Hence for every fixed bounded Lipschitz test \(H\) taking the constant value \(H_k\) on the leading clocks of group \(k\),
+\[
+ Q_B(H)-Q_{B+6}(H)=\frac{1}{28512}\sum_k H_k\,m_k+O_H(B^{-1}),
+\]
+where \(m_k\) is the number of residual primary classes of group \(k\) in the first class minus that in the second. The counts of Lemma~\ref{lem:residual} give \((m_{\rm S},m_{\rm M1},m_{\rm M2},m_{\rm L})=(-56,0,-12,68)\). For \(H=F\) the plateau values are \((0,0,0,1)\), which gives \(68/28512=17/7128\). A common weak limit along \(B\equiv5\pmod6\) would force this difference to zero. \qed
+
+\section{The twelve-shift, the maximal contrast and the modulus}\label{sec:twelve}
+
+\subsection{The local twelve-shift}
+The following covariance is not used in the proof of Theorem~\ref{th:box}. It explains structurally why the box law is periodic with period \(12\), while the six-shift difference persists.
+
+\begin{proposition}\label{prop:twelve}
+Let \(w=(0,-12,18,-6,-18)\), and let \(B\equiv5\pmod6\) be sufficiently large; this covers both classes modulo \(12\). Suppose that \(\xi_B(q)\in V\) and \(\xi_{B+12}(q+w)\in V\). In cohort~\(0\), suppose also that the same-base aligned inputs \(q+\alpha_0\) and \(q+w+\alpha_0\) lie in their respective boxes; this condition removes at most a lattice collar of fixed thickness. Then
+\[
+ T_{B+12}(q+w)=T_B(q)-10 .
+\]
+The translation preserves the cohort, \(z\), \(k_1\), the residue \(r\bmod 6\) and the three counts, and sends \(k_2\) to \(k_2+36\pmod{72}\). Consequently, for every fixed bounded Lipschitz test \(H\),
+\[
+ Q_B(H)-Q_{B+12}(H)=O_H(B^{-1})\qquad(B\equiv5\pmod6).
+\]
+\end{proposition}
+
+The identity is a covariance on the certified overlap of the two boxes, not a symmetry of the map; it fails off the box (see \emph{Locality} below).
+
+\subsection{Derivation of the twelve-shift}
+Use the notation of the proof of Theorem~\ref{th:box}, and write the three prefix slacks at their sections as
+\[
+ \sigma_1=2(q_2-q_5)-B+1,\qquad \sigma_2=B-q_3-q_4-1,\qquad \sigma_3=q_1+q_3-3(B-1)/2.
+\]
+They determine the cohort, the overshoot, \(k_1\) and the counts \(n_1,n_2,n_3\). Hold them fixed when \(B\) increases by \(12\), and prescribe increments \(d_p\) and \(d_r\) of \(p\) and \(r\) at \(q^R\). By the formula for \(q^R\) and the fixed counts, the input changes by
+\[
+ \Delta q=(18-d_p,\ d_r,\ d_p,\ 12-d_p,\ d_r-6).
+\]
+Indeed \(\sigma_1\) is invariant because \(q_2-q_5\) increases by six, \(\sigma_2\) because \(q_3+q_4\) increases by twelve, and \(\sigma_3\) because \(q_1+q_3\) increases by eighteen. All corresponding updates through the short switch therefore take the same time at the two bases. Fixing the anchor \(q_1\) gives \(d_p=18\). In cohort~\(0\) the same-base alignment \(q\mapsto q+\alpha_0\) of Lemma~\ref{lem:box-matching} commutes with this translation.
+
+At the first paired block \(J(q^{(2)})=2B+2p-4r+\zeta\) with \(\zeta\) unchanged, so \(\Delta J=60-4d_r\). Each of the six possible twenty-update paired words is the square of a ten-update half-word with displacement \((-10,-2,0,2,-2)\) on its section. This is checked on the \(88\) short-switch rows at \(q^{(2)}\) and the two extreme remainders; the half-word map is affine and these two states differ along its displacement, so the half-word displacement holds at all intermediate remainders. Let \(\bar k_2\in\{601,603,\ldots,635\}\) represent \(J\bmod36\). A lift with \(36\mid\Delta J\) keeps the same canonical row, and its prefix through this section and into the oriented checkpoint is longer by \(n_J=10\Delta J/36\) updates. At the oriented section (Appendix~\ref{app:box}) use the centered variable \(q-B\vct/6\). Its first coordinate decreases by one per update along an oriented return, and the shift of \(B\vct/6\) adds ten to the decrease. So an equal-anchor comparison must advance the source by \(n_J+10\) updates.
+
+The checked canonical sections yield two matrices of linear coefficients of the oriented checkpoint in \((B,p,r)\), with rows \(q_1,\ldots,q_5\), together with their return velocities \(\upsilon\) per update:
+\[
+ \begin{pmatrix}
+ 17/18&-14/9&10/9\\ -4/9&-4/9&17/9\\ -2/3&1/3&4/3\\
+ 4/9&-14/9&10/9\\ -17/18&-4/9&17/9
+ \end{pmatrix},\quad \upsilon=\bigl(-1,-\tfrac{11}{10},-\tfrac35,-1,-\tfrac{11}{10}\bigr);
+\]
+\[
+ \begin{pmatrix}
+ 17/18&-14/9&10/9\\ 37/18&-31/9&8/9\\ 3&-3&-1\\
+ 25/9&-20/9&-14/9\\ 25/18&-10/9&-7/9
+ \end{pmatrix},\quad \upsilon=\bigl(-1,-\tfrac75,-\tfrac3{10},\tfrac15,\tfrac1{10}\bigr).
+\]
+The lift moves the centered checkpoint by \(\mathcal M(12,18,d_r)^{\mathsf T}-2\vct\), where \(\mathcal M\) is the relevant matrix, and an equal-anchor comparison requires this to equal \((n_J+10)\upsilon\). In the second coordinate of the first matrix this reads
+\[
+ -\frac{64}{3}+\frac{17}{9}d_r=-\frac{11}{10}\left(10+\frac{10}{36}(60-4d_r)\right),
+\]
+so \(d_r=-12\); the second matrix gives the same value. Substitution in all five rows gives \((-40,-44,-24,-40,-44)\) and \((-40,-56,-12,8,4)\), which are \(40\upsilon\) in the two cases. The checkpoint guards provide at least ten oriented returns, including the two or four used here, and exclude capture on them. These slopes and guards are checked at all \(1584\) canonical sections of cohorts \(1\) and \(2\); cohort \(0\) is aligned to cohort \(1\).
+
+Hence \(\Delta J=108\), the original remainder becomes \(k_2+36\bmod72\), and the canonical checkpoint is reached \(n_J=30\) updates later. Its centered state is the source checkpoint advanced by \(40\) updates. By permanent pairing and base covariance the two paired suffixes then coincide, so
+\[
+ B'=B+12,\qquad q'=q+(0,-12,18,-6,-18),\qquad T_{B'}(q')=T_B(q)+30-40=T_B(q)-10.
+\]
+The lift raises \(p-2r\) by \(42\), and \(p_0\) changes by \(6\) modulo \(36\), so the lattice parameter \(u\) changes by an integer. With \(r\bmod6\) and the three counts unchanged, the translation is a bijection of the original label lattices.
+
+\emph{The population estimate.} The translation discards at most a collar of bounded thickness, including the cohort-\(0\) alignment collar; each collar has \(O(B^4)\) difference states and conditional mass \(O(B^{-1})\). On the overlap each gap changes by \(O(1)\), so the transported weights differ in total variation by \(O(B^{-1})\) after normalization. Since \(T_B=O(B)\), the normalized inputs and clocks of paired inputs differ by \(O(B^{-1})\). This proves the last assertion of Proposition~\ref{prop:twelve}.
+
+\emph{Locality.} The first repeated word of the prefix, five updates long, requires the slack \(\sigma_1\) to be admissible: one update into the word, the comparison of borrowed digits \(2\) and \(8\) equals \(\sigma_1=B\xi_4+1\), which is positive on \(V\). On boxes enlarged about threefold around the centre of \(V\), \(\xi_4\) changes sign. For example, at \(B=60005\) the input \(q=(56516,44321,34724,25107,14328)\) lies in cohort \(2\) with \(\sigma_1=-18\), so the putative initial count is \(-2\). The digit comparison is negative one update into the word, and the word clocks under the translation are \(6980\) and \(6974\). Scaling the input and the base by \(1201\) keeps the normalized slack \(-19/60005\) negative; at \(B=72066005\) the comparison is again negative in both lifts, and the clocks are \(8356189\) and \(9000522\). The leading guard is negative along the entire scaled ray. The two verified pairs show that the clock identity can fail off the box even at large bases. In separate sampling at \(B=60005\) the identity held at every sampled point of \(V\) and of its immediate surroundings, at \(592\) of \(600\) points in a box enlarged threefold, at \(352\) of \(600\) in a box enlarged tenfold, and at \(29\) of \(3000\) uniformly random inputs.
+
+\subsection{Signed profiles and the maximal contrast}
+
+\begin{corollary}\label{cor:maximal}
+For every fixed bounded Lipschitz test \(H\) and \(B\equiv5\pmod{12}\),
+\[
+ Q_B(H)-Q_{B+6}(H)=\frac{1}{28512}\sum_s (c_{5,s}-c_{11,s})\int_V H(\xi,\tau_s(\xi))\,d\nu_V(\xi)+O_H(B^{-1}).
+\]
+The positive coefficients sum to \(68\) and the negative ones to \(-68\). Consequently, for every \([0,1]\)-valued bounded Lipschitz test \(H\),
+\[
+ \Bigl|\int H\,d\Lambda^V_5-\int H\,d\Lambda^V_{11}\Bigr|\le\frac{17}{7128},
+\]
+and \(F\) attains this bound.
+\end{corollary}
+
+\begin{proof}
+At a compatible base, a leaf of the residual certificate whose lattice in \((B,p,r)\) has absolute determinant \(D_*\) and base step \(b_*\) (the gcd of the base components of its columns) has fiber determinant \(D_*/b_*\), while a primary fiber has determinant \(36\cdot6=216\). The leaf therefore carries the fraction \(216b_*/D_*\) of its primary class, with spatial law \(\nu_V\). The matching removes the common part as in the proof of Theorem~\ref{th:box}, and the weighted fiber sums on the residual leaves give the display; the signed weights computed in this way agree with the columns of Table~\ref{tab:box-limits}. By Theorem~\ref{th:box} the left side tends to \(\int H\,d\Lambda^V_5-\int H\,d\Lambda^V_{11}\). The positive coefficients occur only on the long graphs and the negative ones on short and second middle graphs. These graphs are disjoint compact sets at positive distance, because the group gaps are positive on \(V\). For \(H\) with values in \([0,1]\), each profile integral lies in \([0,1]\), which gives the bound. The bound is attained by any such \(H\) that equals \(1\) on the long graphs and \(0\) on the short and middle graphs, in particular by \(F\).
+\end{proof}
+
+\subsection{The modulus}
+
+\begin{corollary}\label{cor:modulus}
+Consider the unconditional joint law of \((\xi_B,T_B/B)\), equivalently of \((Y_B,T_B/B)\).
+\begin{enumerate}
+\item If for some \(N\ge1\) this law converges weakly along every residue class modulo~\(N\), then \(12\mid N\).
+\item If \(6\mid D\) and \(12\nmid D\), then for every \(a\equiv5\pmod6\) the law does not converge weakly along \(B\equiv a\pmod D\).
+\end{enumerate}
+The same holds with \(W_B/B\) in place of the normalized gaps, and with the normalized first cyclic word appended.
+\end{corollary}
+
+Part~(1) concerns a \emph{system} of limits, one in every class modulo \(N\); part~(2) concerns individual progressions. Together with Corollary~\ref{cor:progressions}, part~(2) excludes every progression whose modulus is not divisible by \(6\), and, when \(6\mid D\) but \(12\nmid D\), every progression with \(a\equiv5\pmod6\). For \(6\mid D\), \(12\nmid D\) and \(a\not\equiv5\pmod6\), convergence along \(B\equiv a\pmod D\) is not addressed. Existence of the unconditional limits along the classes modulo \(12\) is open; if it were proved, part~(1) would make \(12\) the minimal modulus of such a system.
+
+\begin{proof}
+The charts \(\xi_B\) and \(Y_B\) are affine bijective functions of \(q/B\), so weak convergence of one joint law is equivalent to weak convergence of the other. Both \(U\) and \(V\) have positive limiting mass and null boundary for the known spatial limit, so weak convergence of the unconditional law along a progression implies convergence of the law conditioned on \(U\), or on \(V\), along the same progression, by the portmanteau theorem.
+
+(2) Write \(D=6d\) with \(d\) odd. The bases \(B\equiv a\pmod D\) take both odd residues modulo \(4\) and are \(\equiv2\pmod3\), so the progression contains infinitely many bases \(B\equiv5\pmod{12}\) and infinitely many \(B\equiv11\pmod{12}\). A weak limit along it would give, after conditioning on \(V\), a common limit along these two subsequences, contradicting \(\Lambda^V_5\ne\Lambda^V_{11}\) in Theorem~\ref{th:box}. An alternative argument, which does not use the existence of the two limits, relies instead on the twelve-shift of Proposition~\ref{prop:twelve} in the class \(11\pmod{12}\): for \(B\equiv5\pmod{12}\) in the progression, the bases \(B+6,B+18,\ldots,B+D\) are \((d-1)/2\) successive twelve-shifts apart within the class \(11\), so \(\mathcal P_B(h_VF)-\mathcal P_{B+D}(h_VF)\to(17/7128)\int_Vh_V\,d\nu>0\) by Corollary~\ref{cor:localized} and Proposition~\ref{prop:twelve}, although \(B\) and \(B+D\) both lie in the progression.
+
+(1) If \(6\nmid N\), Corollary~\ref{cor:progressions} applies. If \(N=6d\) with \(d\) odd, part~(2) applies to every class \(a\equiv5\pmod6\). There is also a proof that uses only the contrast in Theorem~\ref{th:box} and not the existence of its limits. Put \(\mathcal E_B=\mathcal P_B(\one_VF)\). The discontinuity set of \(\one_VF\) lies over \(\partial V\), which is null for every candidate limit because the spatial marginal is known. If the law converged along every class modulo \(N=6d\) with \(d\) odd, let \(\mathcal E_a\) be the limit of \(\mathcal E_B\) along \(B\equiv a\pmod N\). Every class \(a\equiv5\pmod6\) contains bases \(B\equiv5\pmod{12}\), and for those \(\mathcal E_B-\mathcal E_{B+6}\to\Omega_V\cdot17/7128\) by Theorem~\ref{th:box}, so \(\mathcal E_a-\mathcal E_{a+6}=\Omega_V\cdot17/7128\). Summing over the \(d\) classes \(a,a+6,\ldots,a+6(d-1)\) gives \(0=d\,\Omega_V\cdot17/7128\), a contradiction.
+\end{proof}
+
+\begin{remark}[A marked phase modulo \(24\)]\label{rem:marked}
+Retaining information after the prefix can expose a finer period that the conditional joint law \(Q_B\) of \((\xi_B,T_B/B)\) on \(V\) does not see. In the cohort \(\chi=0\) with \((z,k_1)=(1,17)\), take \(r\equiv2\pmod 6\) and \(k_2=603\). This primary class has conditional mass \(1/28512+O(B^{-1})\) and its trajectories pass through repeated pairing failures before the paired block. Its normalized clock lies in the second middle group for \(B\equiv5\pmod{24}\) and in the long group for \(B\equiv17\pmod{24}\); in the other class it lies in the long group for \(B\equiv11\pmod{24}\) and in the short group for \(B\equiv23\pmod{24}\). So the test \(F\), integrated against the sublaw of this marked class, has subsequential limits \(0\) and \(1/28512\) along the alternating residues modulo \(24\) within each class modulo \(12\). The partner class \(k_2=639\) reverses these phases, and the sum over the two classes does not depend on \(B\bmod24\). Recovering the label \(k_2\) from the exact input uses the base. The marked statistic has alternating limits modulo \(24\), while under conditioning on \(\xi_B\in V\) every fixed bounded continuous test of the unmarked pair \((\xi_B,T_B/B)\) has a common limit along each of the classes \(B\equiv5\) and \(B\equiv11\pmod{12}\), by Theorem~\ref{th:box}. Whole-word controls at eight inputs near \(9\cdot10^7\) agree with these predictions.
+\end{remark}
+
+\section{Computations and verification}\label{sec:computation}
+
+The verification uses integer and rational arithmetic. The certificates for \(U\) share the sorting rule \eqref{eq:pairs}. At a fixed state the five comparisons have left-minus-right differences \(\delta\) divisible by six on a physical residue class, and the slacks for the two orders are \(\delta\) and \(-\delta-6\). An affine slack \(\mathbf u\cdot X+v_0\) on a symbolic trajectory has normalized leading interval
+\begin{equation}\label{eq:interval}
+ \mathbf u\cdot x(y^*)\ \pm\ 6\epsilon\sum_{j=1}^5\Bigl|\sum_{i=j}^5\mathbf u_i\Bigr|
+\end{equation}
+over \(\overline U\). A separated interval gives a finite base bound that dominates the constant offset. For a zero row, the constant decides the sign. A required sign that these tests leave undecided stops the verifier.
+
+For a block with affine return map \(\mathcal F\), the program checks \(\mathcal F(S)=S+\Delta\) at the symbolic entry \(S\) and that the linear part of \(\mathcal F\) fixes \(\Delta\). The pulled-back slacks in successive copies are \(\gamma_i+jd_i\). If a declining slack \(\gamma\) of slope \(-d<0\) minimizes the ratio \(\gamma_i/(-d_i)\) over all declining slacks, there are exactly \(1+(\gamma-\gamma_0)/d\) legal copies, where \(\gamma_0=\gamma\bmod d\). Comparisons of the ratios also use \eqref{eq:interval}. If no substantial block is certified, a single checked primitive step is taken.
+
+At a node with lattice coset \(X^\circ+L\Z^5\), the possible remainders are exactly those congruent to \(\gamma(X^\circ)\) modulo
+\(
+ \gcd\bigl(d,\gamma_{\rm lin}(L_1),\ldots,\gamma_{\rm lin}(L_5)\bigr),
+\)
+where \(L_1,\ldots,L_5\) are the columns of \(L\). Integer column operations isolate the generator for this cyclic image. Taking one subcoset for each remainder gives a disjoint partition of the parent, and the verifier continues with an affine repeat count on every child. At a constant exit the verifier takes a cut \(30\) returns earlier, checks that the cut exists and has \(R>504\), and records its time. A centered cycle cannot have visited this cut. When an exact clock is needed, finite replay from the cut gives the remaining difference time, and one subtraction is added for the word time. The certificates for \(V\) use the same affine guards and lattice splits, with physical subtraction in the prefix and the centered map after the checkpoint (Appendices~\ref{app:box} and~\ref{app:coverage}).
+
+Table~\ref{tab:verification} lists, for each computer-assisted statement, the primary certificate and the separate checks. The separate checks were written independently of the primary programs. A dagger marks separate evidence that consists only of tests at finitely many bases or on samples.
+
+\begin{table}[htbp]
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\centering
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{.2\linewidth}>{\raggedright\arraybackslash}p{.31\linewidth}>{\raggedright\arraybackslash}p{.43\linewidth}@{}}
+\hline
+Statement & Primary certificate & Separate verification\\
+\hline
+Paired map and cycle bound (Lemma~\ref{lem:inherited}) &
+Published centered decrease and pairing checks \cite{G6}. &
+Z3 and Yices coverage in \cite{G6}, with exact witness replay.\\
+Even exclusion (Lemma~\ref{lem:exclusion}) &
+Guarded traversal and cut clocks on 361,560 leaves. &
+Leaf partition, clock integrality and bounds, and 118 cut-state tails checked from emitted data. Whole-word checks at 911,304 inputs, including an exhaustive interval\(^\dagger\), and at 900 points of 450 sampled leaves\(^\dagger\).\\
+Two guarded routes (Lemma~\ref{lem:cohort}) &
+Six repeated words per arm with affine guards and intervening steps. &
+Independent symbolic replay of 1,267 even and 1,317 odd inequalities over the closed rectangle, with exact index and tails. Recovery of the count gradients and whole-word checks at 437 paired inputs\(^\dagger\).\\
+Six route mixtures (Lemma~\ref{lem:mixture-certificate}) &
+Guarded traversal, exact clocks and index sums on 3,288,862 leaves. &
+Code review, exact table algebra and byte-identical reproduction. Whole-word clocks at 37,800 inputs drawn with density \(\rho\) and 806 inputs near the cutoff\(^\dagger\); speed checks on 2,433 trajectories\(^\dagger\); 848 clocks on 212 sampled leaves\(^\dagger\).\\
+Box prefix and matching (Lemma~\ref{lem:box-matching}) &
+Guarded prefix on the closed box for all three cohorts; affine matching of 4,576 labels per class. &
+Label lattice and weights re-derived exactly. A separate exact routine rebuilt the oriented sections of cohorts 1 and 2 and every matching witness. Consequences checked at 115 sets of locations and bases\(^\dagger\).\\
+Residual routes (Lemma~\ref{lem:residual}) &
+6,336 primary entries, 50,196 affine leaves, uniform terminal bounds. &
+Full replay of the entries and leaves with the same route generator and independently recomputed chart extrema and terminal clocks; fiber weights by separate lattice counting. Exact clocks at 60 million original-weight draws\(^\dagger\); 656,019 guards on 775 sampled leaves\(^\dagger\).\\
+Twelve-shift (Proposition~\ref{prop:twelve}) &
+Slopes and guards at all 1,584 canonical sections. &
+Independent exact algebra of \(w\), \(-10\) and \(k_2\mapsto k_2+36\). Direct dynamics on 68,922 input pairs at bases from \(60005\) to \(1.2\cdot10^8\), in both classes and all cohorts\(^\dagger\).\\
+Guarded coverage (Lemma~\ref{lem:coverage}) &
+99 families, 6,555 leaves, 99,076 pullbacks, exact weight sums. &
+Byte-identical reproduction (not a separate implementation). All 28,512 primary classes at 8 bases (11 runs) and 720 random inputs above the cutoff land on the seven profiles\(^\dagger\); the observed group counts equal Table~\ref{tab:box-limits}\(^\dagger\).\\
+\hline
+\end{tabular}
+\caption{Computer-assisted statements and their checks.}\label{tab:verification}
+\end{table}
+
+In the even audit the leaves use \(38\) sublattices of \(\Z^5\) in the coordinates \(X/6\). Within each sublattice the offsets are distinct. Across sublattices the audit tests all \(703\) pairs by reducing offsets modulo the sum of the two sublattices. The sum of reciprocal indices is exactly one, so the disjoint leaves cover the ambient lattice. The audit uses the emitted cut forms and endpoints; the universal prefix guards and the arrival at those cuts use the primary traversal. The \(911{,}304\) whole-word checks include every class-\(0\) input in \(\overline U\) for the bases from \(271137\) to \(10^6\), \(888{,}503\) inputs in all, and \(22{,}801\) further checks. The independently recovered cohort gradients came from one seed and five displacements, with two further interpolation checks; the guarded replay supplies their validity on the whole rectangle.
+
+For the box, the separate replay of the residual certificate reproduced all \(6336\) entries and \(50196\) leaves, recomputed the chart extrema, and enumerated the \(558\) distinct terminal endpoints with full borrowed-digit sorting, which gives the clock window of Lemma~\ref{lem:residual}. It reused the primary symbolic route generator, so its agreement on the leaf lattices is not independent of that generator. The independent content is the fiber formula, the chart derivation of the plateau slack, and the dynamics. In fresh-base tests, at seven pairs of bases from \(2\cdot10^6\) to \(9\cdot10^7\) covering all six synchronized pairs of residues modulo \(72\), one original-weight input per primary class gave exactly \(9454\) and \(9386\) classes with \(F=1\), and group-count differences \((-56,0,-12,68)\).
+
+\subsection*{Reproduction}
+The ancillary files run with \texttt{bash reproduce.sh} from a fresh copy. The command regenerates the even exclusion tree and checks the digest of its leaf inventory, runs the full-partition audit and the symbolic replay of the two guarded itineraries, rebuilds the six-residue route verifier output byte for byte, rebuilds the box prefix records and both affine matchings, and regenerates the residual route record byte for byte. It then regenerates the twelve-shift sections, the guarded coverage and the limit tables of Theorem~\ref{th:box}, and compares them with the archived records. The full fresh-copy run used Python~3.13.15 and Apple Clang~21.0.0 and took about 13 minutes, including about 9\(\tfrac12\) minutes through the residual routes. The individual stage times are listed in the ancillary log. The inherited centered decrease was checked in integer linear arithmetic with Z3~5.4.1 and Yices~2.7.0 \cite[Appendix~E]{G6}. The README file in the ancillary material lists the commands for the separate finite checks.
+
+\section{Scope and verification limits}\label{sec:scope}
+
+\emph{Conditioning, observable and quantifier.} Theorem~\ref{th:separation}, Corollary~\ref{cor:progressions}, Corollary~\ref{cor:localized} and Corollary~\ref{cor:modulus} concern the unconditional joint law of the normalized input and \(T_B/B\), also with the normalized first cyclic word appended. Theorem~\ref{th:mixture} concerns the joint law conditioned on \(Y_B\in U\), along each class modulo \(6\). Theorem~\ref{th:box}, Proposition~\ref{prop:twelve} and Corollary~\ref{cor:maximal} concern the joint law conditioned on \(\xi_B\in V\), along the classes \(5\) and \(11\) modulo \(12\), tested by bounded Lipschitz functions of the normalized input and the normalized clock. The twelve-shift is proved on the certified overlap of the two boxes, with the cohort-\(0\) alignment condition; it is not a symmetry of the Kaprekar map, and it fails on sampled inputs outside the box. It is not used in the proof of Theorem~\ref{th:box}. Remark~\ref{rem:marked} concerns a sublaw indexed by a post-prefix label; recovering the label from the exact input uses the base, and the marked statistic has alternating limits modulo \(24\), while, under conditioning on \(\xi_B\in V\), every fixed bounded continuous test of the unmarked pair has a common limit along each of the classes \(5\) and \(11\) modulo \(12\).
+
+\emph{Open questions.} Full-population convergence along the classes modulo \(12\) remains open. So does convergence along each progression left undecided by Corollaries~\ref{cor:progressions} and~\ref{cor:modulus}. Theorem~\ref{th:box} gives limits only after conditioning on \(V\), and Theorem~\ref{th:mixture} only after conditioning on \(U\). Whether the time marginal \(T_B/B\) alone separates residue classes is open; the localization in Corollary~\ref{cor:localized} does not control the clock outside \(V\), where cancellation is possible. For \(6\mid D\), \(12\nmid D\) and \(a\not\equiv5\pmod6\), convergence along \(B\equiv a\pmod D\) is not addressed. The limiting laws of the integer first-cycle label are not studied.
+
+\emph{Size of the regions and cutoffs.} The regions have limiting original probabilities about \(2.56\cdot10^{-26}\) and \(8.51\cdot10^{-14}\), and the certified lower bound in Theorem~\ref{th:separation} is about \(2.41\cdot10^{-34}\). The theorems therefore prove the existence of arithmetic dependence with exact weights; they say nothing about its typical size. The numerical thresholds are \(B\ge271137\) for Lemma~\ref{lem:exclusion}, \(B\ge730657\) for Lemma~\ref{lem:mixture-certificate}, \(B\ge10^6+1\) for the box prefix, \(B\ge86496744\) for the residual routes and plateaus, and \(B\ge86496843\) for the guarded coverage of the box on the charts of cohorts \(1\) and \(2\). Cohort~\(0\) is covered through an exact same-base alignment, with a collar of conditional mass \(O(B^{-1})\). Proposition~\ref{prop:twelve} is stated for all sufficiently large bases.
+
+\emph{What the separate checks cover.} The paired-map lemma and the cycle bound are imported from \cite{G6}. The universal guards of the even exclusion, of the six route partitions and of the box continuation rest on the primary traversals; the separate checks of those traversals audit emitted data or test finitely many bases and samples. The guarded coverage of the box, on which the existence part of Theorem~\ref{th:box} rests, was reproduced byte for byte, not re-implemented; its separate support is dynamical sampling of all \(28512\) primary classes below the certified cutoff and of \(720\) random inputs above it. The contrast \(17/7128\) has, in addition, the separately checked matching and residual certificates. The two checkpoint matrices of the twelve-shift come from the primary section builder, and the explicit base cutoff of Proposition~\ref{prop:twelve} is not recorded; its consequences were tested by direct dynamics. The matching of Lemma~\ref{lem:box-matching} was rebuilt by a separate exact routine for cohorts \(1\) and \(2\); cohort~\(0\) inherits it through the alignment. The completeness of the \(4752\) label units in the coverage rests on the enumeration of the canonical sections, the half-word step from each upper remainder to its canonical one, and the cohort-\(0\) alignment.
+
+\appendix
+\section{Paired dynamics used in the certificates}
+
+\begin{lemma}[{\cite[\S6 and Appendix~E]{G6}}]\label{lem:inherited}
+For every real \(X\), \(R(\Psi X)\le R(X)+12\). On \(X_i\equiv i\beta\pmod6\), \(R(X)>120\) implies \(R(\Psi^jX)\le R(X)-6\) for some \(1\le j\le32\). Every centered cycle on such a lattice has \(R\le504\). If \(B\ge3534\) and \(\min_i G_i\ge M_B\) at entry, actual subtraction follows \(\Psi\) indefinitely.
+\end{lemma}
+
+The two inequalities give repeated lower hits down to \(R\le120\), with intermediate residual at most the starting residual plus \(384\). A first step out of \(R\le120\) gives a residual at most \(132\). The next lower hit is preceded by at most \(31\) steps, giving the bound \(132+31\cdot12=504\). Repeating the argument bounds all subsequent residuals. The adjacent-level pairing condition holds at \(R\le(B-6)/7\), by the gap bound, so the entry margin and \(B\ge3534\) preserve pairing along the full centered path. See \cite{G6} for the exact lower-hit check and the pairing inequality.
+
+\section{Even exclusion and paired itineraries}
+
+\begin{lemma}[Even exclusion]\label{lem:exclusion}
+For every \(B\equiv0\pmod6\) with \(B\ge271137\) and every physical initial \(X\) with \(G/B\in\overline U\), the centered orbit reaches a state of residual greater than \(504\) at a time \(t_{\rm cut}\) satisfying
+\[
+ \frac{t_{\rm cut}}{B}\ge\frac{9451}{337500}-\frac{16099}{33B}>\frac{131}{5000}.
+\]
+Consequently \(T_B>t_{\rm cut}\).
+\end{lemma}
+
+The tree starts at the ambient lattice \(6\Z^5\). It visits \(1,6,66,642,6243,49395\) entry classes at the six long-block depths and has \(361{,}560\) terminal classes. The four leading cut-clock minima, minimized over the closed rectangle, and their smallest constant offsets are
+\[
+\begin{array}{r@{\qquad}r@{\qquad}r}
+ \text{Leading minimum}&\text{Offset}&\text{Leaves}\\
+ \hline
+ 9451/337500 & -16099/33 & 50204\\
+ 295607/10080000 & -36471/56 & 99024\\
+ 10371/350000 & -76877/154 & 90772\\
+ 179987/6000000 & -2645/4 & 121560
+\end{array}
+\]
+The first row is smallest at \(B=271137\), and the difference of each other row from it, after multiplication by \(B\), has positive slope. The first row alone crosses the ramp at \(B=3622275000/13387\approx270581.53\). The cutoff \(271137\) is the maximum required by initial pairing, guard signs and return selection, repeat counts, and terminal clock inequalities. The cut states have residuals between \(1980\) and \(2976\). Section~\ref{sec:computation} describes the finite replay and the partition audit.
+
+\begin{lemma}[Paired itineraries]\label{lem:cohort}
+Let \(B_0\equiv3360\pmod{3840}\), \(B_0\ge10^6\), and \(G/B_0\in\overline U\). Suppose \((G_0,\ldots,G_4)-(26293,27557,28481,40447,29865)\) belongs to the lattice generated by the rows of
+\[
+ \begin{pmatrix}
+ 5&5&5&11&473\\
+ 0&6&6&0&642\\
+ 0&0&12&0&120\\
+ 0&0&0&12&480\\
+ 0&0&0&0&768
+ \end{pmatrix}.
+\]
+The lattice has index \(3{,}317{,}760\) in \(\Z^5\). In terms of the even initial centered vector \(X\), the first cyclic difference times of \((B_0,G)\) and \((B_0+1,G+e_4)\) are, respectively,
+\[
+ \begin{aligned}
+ \mu_e&=(3/16,55/48,-5/8,-55/48,95/48)\cdot X+39,\\
+ \mu_o&=(205/1152,715/1152,-65/192,-715/1152,1235/1152)\cdot X+209/24 .
+ \end{aligned}
+\]
+The fifth repeated blocks are the guarded words and translations given in Section~\ref{sec:separation}. Their leading entry states are phases of the same five-step orbit, and their leading entry times agree.
+\end{lemma}
+
+The \(12\) repeat counts in the recorded itinerary have the form \(1+(\mathbf u\cdot X+v_0-\gamma_0)/d\). The coset is obtained by imposing integrality of all twelve counts. The remainders have the declared values at the seed \(B_0=180000\), \(G=180000\,y^*\), and stay fixed as the base changes by \(3840\) with the first five gaps fixed. Reducing the congruences in the five free gaps gives the displayed lattice, whose index is the product of the diagonal entries. For each repeated block the replay checks that the word has the claimed translation, that the linear part fixes it, and that the first and last copies are legal. The \(32\) corners of the normalized rectangle check each guard at \(B_0=10^6\) and its slope in \(B_0\), which extends the tests to the closed rectangle for all larger bases. On the last repeated block, a cut \(30\) returns (\(600\) subtractions) before the constant exit has residual greater than \(504\). The two constant exits are \((12,12,36,42,18)\) and \((31,50,75,82,47)\). From these exit states the remaining difference preperiods are \(58\) and \(19\), and the periods are \(12\) and \(24\); measured from the cuts, the remaining preperiods are \(658\) and \(619\). Counting all subtractions gives the two clock forms. Per unit even base, the fifth-block entry time is \((x_1-A)/6\) on both arms, and the leading states are \((A,A/2,0,A,A/2)\) and \((A,2A,3A/2,A,A/2)\), with \(A=A(G/B_0)\) as in \eqref{eq:anchor}. The maximum of the odd clock row on the rectangle follows from \eqref{eq:interval}.
+
+\section{The six route partitions}
+
+\begin{lemma}[Route certificate on \(\overline U\)]\label{lem:mixture-certificate}
+For each \(\beta=0,\ldots,5\), there is a finite disjoint partition of \(\{X:X_i\equiv i\beta\pmod6\}\) into full-rank lattice cosets. For each coset there is a route type \(\ell\) from Table~\ref{tab:lanes} and a rational constant \(\eta\) with \(|\eta|<144\) such that, on every physical input of that coset with \(Y_B\in\overline U\), \(B\equiv\beta\pmod6\) and \(B\ge730657\), the word time is exactly \(Bt_\ell(Y_B)+\eta\). For a fixed type, the sum of reciprocal relative indices is \(p_{\beta,\ell}\).
+\end{lemma}
+
+The six traversals start with the coordinate representatives \((\beta,2\beta,3\beta,4\beta,5\beta)\) and basis \(6I_5\). Their leaf counts, in order of residue, are
+\(361560\), \(393589\), \(851056\), \(328355\), \(1035718\) and \(318584\).
+They split every remainder of each repeated word by the lattice rule of Section~\ref{sec:computation}. A rotated phase of the fifth repeated word has the leading state \(B(A,A/2,0,A,A/2)\) at time \(BP\). The verifier records the two sheet speeds from the translated word, and the ray speed from the final word when there is a ray. The emitted leading time at ray entry is \(B(P+A/(2v_b))\), and the final leading times give \eqref{eq:clock}, including direct exhaustion on the sheet. For every leaf the cut \(30\) returns earlier has residual greater than \(504\). The exact centered replay determines the first cyclic difference state, and the word clock follows by adding one. The emitted index multiplicities give the table weights, and the extreme additive offsets for each type give the uniform bound.
+
+\section{The second box: prefix, matching and residual routes}\label{app:box}
+
+The prefix uses physical subtraction. When the five differences are strictly decreasing and positive, the unsorted digits of the subtracted word are
+\[
+ (q_1,q_2,q_3,q_4,q_5-1,B-1,B-1-q_5,B-1-q_4,B-1-q_3,B-1-q_2,B-q_1).
+\]
+We number these borrowed digits \(0,1,\ldots,9,\mathtt a\) in the order listed. An order of the eleven entries gives an affine map by taking the five differences of opposite ranks. The prefix checks impose the digit order and positivity at the endpoints of each repeated block. Since the displacement after a full block is constant, every guard is affine in the repetition index and the two endpoints suffice. Affine bounds on the original variables use the vertices of \(V\).
+
+\begin{lemma}[Prefix and matching on \(V\)]\label{lem:box-matching}
+Let \(B\equiv5\pmod6\), \(B\ge10^6+1\), and \(\xi_B(q)\in V\). Let \(\chi=(q_2-q_5)\bmod 3\) and put
+\[
+ \sigma_1(q)=2(q_2-q_5)-B+1,\quad \sigma_2(q)=B-q_3-q_4-1,\quad
+ \sigma_3(q)=q_1+q_3-3(B-1)/2.
+\]
+The first repeat count is \(n_1=(\sigma_1(q)-\iota_\chi)/6\) with \((\iota_0,\iota_1,\iota_2)=(-4,-2,-6)\), giving \(q^E=q-n_1\vct\). The state after alignment is \(q^A=q^E+\alpha_\chi\), reached after five alignment updates in cohorts \(0\) and \(2\) and with no alignment updates in cohort \(1\), with \(\alpha_0=(-5,0,1,2,-1)\), \(\alpha_1=0\) and \(\alpha_2=(-5,2,3,4,-1)\). The preparation count is \(n_2=(\sigma_2(q^A)+z)/2\), where \(z=2-(\sigma_2(q^A)\bmod2)\), giving \(q^F=q^A+n_2\Delta_0\). The late count is \(n_3=(\sigma_3(q^F)-k_1)/22\) with the unique \(k_1\in[-4,17]\), giving \(q^R=q^F+n_3\Delta_1\). These counts are nonnegative integers.
+
+A bounded switch takes \(q^R\) to \(q^{(2)}\), where \(J(q^{(2)})=2B+2p-4r+\zeta\) for an odd constant \(\zeta\) depending on \((\chi,z,k_1)\). The next repeated word has length \(20\) and displacement \((-20,-4,0,4,-4)\), and the certificate takes \((J(q^{(2)})-k_2)/72\) repetitions of it. From its endpoint \(q^{(3)}\), the checked additional steps give a paired checkpoint \(q^{(4)}\). The orbit is permanently paired from \(q^{(4)}\), and \(q^{(4)}\) and its first ten returns along the oriented checkpoint word are transient.
+
+Write \(K=(B-5)/6\) and \(p=p_0+36u+2r\) with \(p_0=((k_2-\zeta)/2-B)\bmod36\). For \(K\) even and the pair of bases \(B,B+6\), \(4576\) of the \(4752\) labels on each side match one-to-one. On the matched lattices an affine translation of the free variables \((u,r,n_3,n_1,n_2)\) makes the two centered checkpoint states equal after at most ten additional oriented returns of the first arm. Original differences and elapsed times to the aligned states change by bounded amounts. For each \(K\bmod6\in\{0,2,4\}\), the unmatched labels number \(176\) per arm.
+\end{lemma}
+
+\emph{The second remainder.} The label \(k_2\) is the representative in \(\{601,603,\ldots,671\}\) of \(J(q^{(2)})\bmod72\), where \(q^{(2)}\) is defined by cohort before \(k_2\) is formed. In cohorts \(0\) and \(1\), \(q^{(2)}\) is the endpoint of the switch at the first order \(\mathtt{5067182934a}\), cohort \(0\) being aligned to cohort \(1\) first. In cohort \(2\), \(q^{(2)}\) is the endpoint of the switch recorded for that cohort in the route file of the ancillary material. For \((z,k_1)=(1,-1),(1,10),(2,-1),(2,11)\) in cohort \(2\), the paired block starts with the order \(\mathtt{5061728394a}\); choosing the next alternative order there would lower \(J\) by \(18\) and permute those labels modulo \(72\). The switch endpoint of cohort \(2\) is recorded in the route file but not written out here. On each prefix, through \(p=p_0+36u+2r\), the residue \((p-2r)\bmod 36\) determines one coset of the partition. Thus the partition into label lattices can be recovered from the text using \((p-2r)\bmod36\). The switch record supplies \(\zeta\) to translate those residues to the displayed \(k_2\) convention. The count \((J(q^{(2)})-k_2)/72\) is where the certificate stops, leaving \(J\) in the window \([601,671]\). It is not the maximal number of repetitions: in all \(416\) separately checked inputs the physical word repeats exactly three more times, and these updates are among the checked additional steps. The checks cover all \(44\) pairs \((z,k_1)\) for each cohort and the full range of the second remainder.
+
+\emph{Permanent pairing.} Permanence uses the bridge to the entry condition of Lemma~\ref{lem:inherited}. In this paragraph \(g_i\) denotes the current integer gap \(G_i\), not the normalized gap \(g(\xi)\) of Section~\ref{sec:box}. At \(q^{(3)}\), with \(\delta_*=M_B-(B-q^{(3)}_1)\), the prefix checks give \(0\le \delta_*\le0.004B\), gaps in \([0.138B,0.190B]\), and non-anchor gaps at least \(M_B+\delta_*/3+3\). In the paired map the minimum gap falls and the maximum rises by at most one per update, so throughout these \(\delta_*\) steps all gaps lie in \([0.134B,0.194B]\), which verifies the comparisons keeping the borrowed pairs in their levels. Same-side comparisons have margin at least \(0.134B-1\). Before borrowing, each opposite-side comparison subtracts one gap from two, or two gaps from three; allowing one for borrowing, the margin is at least \(3(0.134B)-2(0.194B)-1>0\). Applying \eqref{eq:pairs} with \(g_5\ge g_0+1\) gives \(g'_0=g_0+1\), \(g'_1=g_5-2\), \(g'_2\ge\min(g_1,g_4)+1\), \(g'_3\ge g_4\), and \(g'_4,g'_5\ge\min(g_2,g_3)\). In the resulting bounds every \(-2\) decrement is followed, if there is a next step, by a \(+1\) increment, and successive \(-2\) decrements are at least three steps apart. Hence the non-anchor gaps are bounded below by \(M_B+\delta_*/3+3-t/3-2\) at time \(t\le \delta_*\). By induction the required \(g_5\ge g_0+1\) persists and the entry condition holds after \(\delta_*\) steps. The path to the checkpoint is also checked for pairing. The checkpoint returns retained for matching have \(q_1>5B/6+84\), which excludes cyclicity by the residual envelope.
+
+\emph{The matching.} An \emph{oriented return} is one full repetition of the repeated word of the checkpoint, with its starting digit order fixed at its first use; an oriented section is the state at the start of such a return. An oriented section has the representation \(q^{(4)}-K\vct=o(K)+uL_1+rL_2\). Sections are compared with the same word, lattice columns and lift under \(K\mapsto K+6\). With \(\Delta\) the displacement of the oriented word, a match checks
+\[
+ o_b(K+1)-o_a(K)=i_1L_1+i_2L_2+j\Delta,\qquad i_1,i_2\in\Z,\quad 0\le j\le10.
+\]
+Using \((u-i_1,r-i_2)\) on the second arm aligns the states. The other three free variables are fixed, and the residual translations change the remaining bounded switches and count formulas by \(O(1)\). The cohort-\(0\) prefix is aligned to cohort \(1\) by the same-base translation by \(\alpha_0\), with five extra updates in cohort \(0\). The checker matches \(1520\) labels each in cohorts \(0\) and \(1\), \(1512\) within cohort \(2\), and a further \(24\) between cohorts \(0\) and \(2\). The lattice condition and the equality of the lifts extend the matching from the finite list of residues of \(K\) to all the indicated bases.
+
+\begin{lemma}[Residual routes and plateaus]\label{lem:residual}
+For each synchronized comparison \((B,B+6)\) with \(B\equiv5\pmod{12}\), consider the \(176\) unmatched labels in each arm from Lemma~\ref{lem:box-matching}, split by \(r\bmod6\). For all bases at least \(86496744\), each such class has a finite affine coset refinement on which the centered continuation is certified over \(V\). On each leaf the normalized leading clock is one of the seven profiles \(\tau_s\), and
+\[
+ -\frac{21793}{792}\le T_B-B\tau_s(\xi_B)\le\frac{228161}{2244}.
+\]
+The group is constant on each primary class at a fixed base, and the counts of primary classes in the two arms are
+\[
+ \begin{array}{c|rrrr}
+ &\text{S}&\text{M1}&\text{M2}&\text{L}\\ \hline
+ B&542&52&82&380\\
+ B+6&598&52&94&312
+ \end{array}
+\]
+separately for each of the six synchronized pairs of base residues modulo \(72\). In particular, for these bases \(F=1\) exactly on the long group and \(F=0\) on the other three groups.
+\end{lemma}
+
+The residual continuation checks \(6336\) combinations of primary class, arm and synchronized pair modulo \(36\), with \(50196\) affine leaves, and both lifts modulo \(72\). Starting from \(q^{(4)}\), it composes the paired orders as affine maps and checks the first and last repeat guards on the whole closed box. The integer floor of the exit time is affine on a refinement obtained by splitting the lattice modulo its denominator, as in Section~\ref{sec:computation}. All candidate words are verified by exact affine inequalities. At the last repeated block the terminal states lie on a fixed bounded line segment after truncation. The verifier enumerates its physical integer states and checks their delays to a centered cycle. A cyclic state has \(|X_i|\le2520\) for each \(i\), since all six centered gaps are at least \(-504\) and sum to zero. The terminal word has nonzero integer displacement, so states separated by \(5041\) repeated words cannot both be cyclic. This bounds the possible lead of the cyclic time over the truncated tail. The word clock includes the extra subtraction from the first cyclic difference.
+
+The primary certificate records the conservative window \([-201734,136]\), which gives \(362941824\) as a sufficient cutoff for the plateaus by the uniform absolute-error bound. The window in Lemma~\ref{lem:residual} comes from full borrowed-digit sorting of all \(558\) distinct terminal endpoints, at a reference base where the physical domain and every between-pair inequality are checked at each update. Its absolute error is below \(102\), which is smaller than \(86496744\,\varsigma_V\); so the route cutoff already suffices for the plateaus. For the limiting contrast no numerical threshold is needed, because \(F\) is \(500\)-Lipschitz in time.
+
+\section{Guarded coverage of the second box}\label{app:coverage}
+
+\begin{lemma}[Guarded coverage]\label{lem:coverage}
+Let \(B\equiv5\pmod6\) and \(B\ge86496843\). There are \(99\) checkpoint families and \(6555\) arithmetic leaves, each leaf with at most three repeated words in its continuation, with the following properties. Every leaf is a congruence class in the variables \((B,X_1,X_j)\) of the oriented checkpoint, for a fixed pivot index \(j\). Its pullback to each compatible canonical section is a coset of a lattice in \(\Z^5\), present exactly when \(B\) lies in one residue class modulo \(12\), and of fixed index there; \(99076\) pullbacks are nonempty. Every input of cohort \(1\) or \(2\) with \(\xi_B(q)\in V\) lies in exactly one pullback, and on it
+\[
+ -201734\le T_B-B\tau_s(\xi_B)\le136
+\]
+for the profile \(s\) of the leaf. Inputs of cohort \(0\) whose aligned input \(q+\alpha_0\) lies in the box satisfy \(T_B(q)=T_B(q+\alpha_0)+5\) and inherit the leaf of \(q+\alpha_0\); the others form a collar of conditional mass \(O(B^{-1})\). Summing the weights of the pullbacks by profile and base class gives Table~\ref{tab:box-limits}.
+\end{lemma}
+
+The canonical sections are indexed by the cohort \(\chi\in\{1,2\}\), the overshoot, \(k_1\) and the canonical remainder \(\bar k_2\in\{601,\ldots,635\}\), \(1584\) in all; each upper remainder is sent to its canonical one by its guarded half-word. For each section the program records the label, the chart bounds, the affine oriented checkpoint, the paired word, its integer displacement and the elapsed time from the section. With \(X=6q-B\vct\) it takes the anchor \(X_1\) and the first coordinate \(X_j\) for which the \((p,r)\) minor is invertible, solves for \(p,r\), and rewrites the five rows in \((B,X_1,X_j)\). Rows with the same pivot index, rewritten rows, pivot maps, paired word and centered displacement form one family. The physical lattice intersects \(B\equiv5\pmod6\) with \(X_i\equiv5i\pmod6\). Each guard is tested by the leading part at the box vertices and the smallest intercept over the sources; a positive leading minimum gives a base cutoff, and a zero leading minimum requires a nonnegative intercept.
+
+The continuation uses the residual route engine of Lemma~\ref{lem:residual}. On each coset it checks every guard at the first and last repetition, updates state and clock, splits the coset so that the exit quotient has constant fractional part, and searches for two consecutive copies of a word of length at most \(100\) with the same nonzero displacement. A failed guard or a missing continuation rejects the certificate. The splits are arithmetic, so no leaf restricts the real box. The elapsed prefix is exactly \(q_1-q^{(4)}_1\) in cohorts \(1\) and \(2\). The integer truncation is earlier than the real affine clock by less than the final return length \(\ell_{\rm ret}\), and if \(d_*\) is the largest delay among the endpoint replays of a leaf, the error from the affine clock lies in \([-5042\ell_{\rm ret},1+d_*]\). Over all leaves the terminal window is \([-201680,167]\) updates; after substitution of each source chart and its intercept, every covered input satisfies the window in the lemma. In cohort \(0\) the five updates after the initial exit lead to the exit of the same-base cohort-\(1\) input \(q+\alpha_0\); the chart translation fixes the leading values \(B\hat p\) and \(B\hat r\), and its change of \(-5\) in \(q_1\) cancels the five extra updates.
+
+For a canonical remainder \(\bar k_2\) and its switch constant \(\zeta\), the parent coset in \((B,p,r)\) has point \((5,(\bar k_2-\zeta)/2-5,0)\) and columns \((6,-6,0)\), \((0,18,0)\), \((0,2,1)\). A leaf congruence in \((B,X_1,X_j)\) becomes, after substituting each source's affine expressions and clearing denominators, finitely many congruences, which are intersected with the parent one at a time by integer column operations. If a nonempty pullback has lattice \(M_*\) with \(|\det M_*|=D_*\) and base step \(b_*\), the gcd of the base components of its columns, it is present exactly on one class modulo \(b_*\), and its fixed-base fiber has covolume \(D_*/b_*\). The incoming counts remain free, so its index in the original coordinates is \(132D_*/b_*\) and its limiting conditional mass is \(b_*/(132D_*)\). The canonical parent has fixed-base covolume \(18\) and comprises twelve primary classes (two original remainders \(k_2\) and \(k_2+36\), times six residues \(r\bmod6\)). The program checks that the compatible leaf masses sum to these twelve units at every base residue for every source, and that the original labels occur exactly once. All \(99076\) nonempty pullbacks have base step \(12\) and fixed-base covolume between \(54\) and \(972\).
+
+\section*{Data availability}
+The ancillary files accompanying this paper contain the verification programs, the certificates and the records used in Section~\ref{sec:computation}, with the reproduction command and the commands for the separate checks. They are archived on Zenodo as version~1.7
+(\href{https://doi.org/10.5281/zenodo.24371697}{doi:10.5281/zenodo.24371697}) and are available in the
+\href{https://github.com/galyavin/kaprekar-dynamics/releases/tag/v1.7}{v1.7 release of the Kaprekar dynamics repository on GitHub}.
+
+\section*{Tools}
+The research, computations and drafting were carried out with substantial assistance from AI systems (OpenAI Codex and Anthropic Claude), under the author's direction and close supervision. The separate verification in Section~\ref{sec:computation} was carried out in the same way, with programs written independently of the primary ones. The computations use Python, C, C++ and exact rational arithmetic; the inherited centered decrease uses Z3 and Yices. The author takes responsibility for the contents.
+
+\begingroup\raggedright
+\begin{thebibliography}{COST}
+\bibitem[COST]{COST}
+E.~Chen, K.~Ono, R.~E.~Schwartz and D.~S.~Thakur,
+\emph{Four-digit Kaprekar dynamics in odd bases},
+J. Integer Seq. \textbf{29} (2026), Article 26.4.7,
+\url{https://cs.uwaterloo.ca/journals/JIS/VOL29/Ono/ono3.pdf};
+\href{https://arxiv.org/abs/2606.20439}{arXiv:2606.20439}.
+
+\bibitem[DZ]{DZ}
+P.~Devlin and T.~Zeng, \emph{Maximum distances in the four-digit Kaprekar process},
+Integers \textbf{21} (2021), Paper A97.
+\href{https://arxiv.org/abs/2010.11756}{arXiv:2010.11756}.
+
+\bibitem[G1]{G1}
+R.~Galyavin, \emph{Cycles of the four-digit Kaprekar map in even bases}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358739}{doi:10.5281/zenodo.24358739}.
+
+\bibitem[G2]{G2}
+R.~Galyavin, \emph{Arrival times for the four-digit Kaprekar map in even bases}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358744}{doi:10.5281/zenodo.24358744}.
+
+\bibitem[G3]{G3}
+R.~Galyavin, \emph{A common arrival-time law for five-digit Kaprekar dynamics}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358746}{doi:10.5281/zenodo.24358746}.
+
+\bibitem[G4]{G4}
+R.~Galyavin, \emph{Majorization in odd-digit Kaprekar dynamics and the nine-digit arrival law}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358748}{doi:10.5281/zenodo.24358748}.
+
+\bibitem[G5]{G5}
+R.~Galyavin, \emph{Seven-digit Kaprekar dynamics: global law, two clocks, parity}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358752}{doi:10.5281/zenodo.24358752}.
+
+\bibitem[G6]{G6}
+R.~Galyavin, \emph{Linear-time access for eleven-digit Kaprekar dynamics}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358756}{doi:10.5281/zenodo.24358756}.
+
+\bibitem[HP]{HP}
+H.~Hasse and G.~D. Prichett, \emph{The determination of all four-digit Kaprekar constants}, J. Reine Angew. Math. \textbf{299/300} (1978), 113--124.
+
+\bibitem[Kah]{Kah}
+M.~Kahramanlar, \emph{An ordered-gap simplex reduction for Kaprekar dynamics in arbitrary digit length and base}, preprint (21 July 2026).
+\href{https://doi.org/10.5281/zenodo.21472305}{doi:10.5281/zenodo.21472305}.
+
+\bibitem[KD1]{KDO}
+A.~Kay and K.~Downes-Ward, \emph{Fixed points and cycles of the Kaprekar transformation: 1. Odd bases},
+J. Integer Seq. \textbf{25} (2022), Article 22.6.7.
+\href{https://cs.uwaterloo.ca/journals/JIS/VOL25/Kay/kay5.pdf}{Journal PDF}.
+
+\bibitem[KD2]{KDE}
+A.~Kay and K.~Downes-Ward, \emph{Fixed points and cycles of the Kaprekar transformation: 2. Even bases}, 2024.
+\href{https://arxiv.org/abs/2408.12257}{arXiv:2408.12257}.
+
+\bibitem[Pri]{Pri}
+G.~D. Prichett, \emph{Terminating cycles for iterated difference values of five digit integers}, J. Reine Angew. Math. \textbf{303/304} (1978), 379--388.
+
+\bibitem[Th]{Thakur}
+D.~S.~Thakur, \emph{Kaprekar phenomena}, in Topics in Number Theory,
+RMS Lecture Notes Series \textbf{26}, Ramanujan Mathematical Society, 2020, 61--70.
+\href{https://www.sas.rochester.edu/mth/sites/dinesh-thakur/kaprekar.pdf}{Author PDF}.
+
+\bibitem[Wa]{Wa}
+B.~L. Walden, \emph{Searching for Kaprekar's constants: algorithms and results}, Int. J. Math. Math. Sci. \textbf{2005} (2005), no.~18, 2999--3004.
+\href{https://doi.org/10.1155/IJMMS.2005.2999}{doi:10.1155/IJMMS.2005.2999}.
+
+\end{thebibliography}
+\endgroup
+\end{document}

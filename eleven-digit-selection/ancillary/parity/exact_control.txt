@@ -1,0 +1,5 @@
+arm 0 base 691380000 endpoint (12, 12, 36, 42, 18) terminal replay 658 period 12 whole-word checks 922
+exact difference clock form (3/16,55/48,-5/8,-55/48,95/48,39) normalized range 179987/6000000 180413/6000000 validated difference clock 20764485
+arm 1 base 691380001 endpoint (31, 50, 75, 82, 47) terminal replay 619 period 24 whole-word checks 905
+exact difference clock form (205/1152,715/1152,-65/192,-715/1152,1235/1152,209/24) normalized range 2219399/86400000 2222801/86400000 validated difference clock 17773436
+symmetric six-gap coefficient modulus 3840

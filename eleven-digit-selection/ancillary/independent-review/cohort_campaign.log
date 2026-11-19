@@ -1,0 +1,74 @@
+# lock acquired after 2068.9s; cmd: python3 -B cohort_check.py ./cen ./ww all
+STEP1 B=4200003360 (mod 3840 = 3360); P=[613500853, 642993317, 664555841, 943762687, 696847785]; width per gap = 8399
+ even: identical token skeleton at all 8 points: True; tokens=146; long words=6
+   G=[613500853, 642993317, 664555841, 943762687, 696847785] T=126240646 mu+1(formula)=126240646 match=True period=12 T/B=0.030057273
+   G=[613504693, 642993317, 664555841, 943762687, 696847785] T=126205126 mu+1(formula)=126205126 match=True period=12 T/B=0.030048815
+   G=[613500853, 642997157, 664555841, 943762687, 696847785] T=126209446 mu+1(formula)=126209446 match=True period=12 T/B=0.030049844
+   G=[613500853, 642993317, 664559681, 943762687, 696847785] T=126235846 mu+1(formula)=126235846 match=True period=12 T/B=0.030056130
+   G=[613500853, 642993317, 664555841, 943766527, 696847785] T=126221446 mu+1(formula)=126221446 match=True period=12 T/B=0.030052701
+   G=[613500853, 642993317, 664555841, 943762687, 696851625] T=126195046 mu+1(formula)=126195046 match=True period=12 T/B=0.030046415
+   G=[613504693, 642997157, 664555841, 943762687, 696847785] T=126173926 mu+1(formula)=126173926 match=True period=12 T/B=0.030041387
+   G=[613500853, 642993317, 664559681, 943766527, 696851625] T=126171046 mu+1(formula)=126171046 match=True period=12 T/B=0.030040701
+   long words (p, delta, count at P):
+     p=5 delta=(-30,-24,-18,-12,-6) count=1242929
+     p=10 delta=(-60,-48,0,-24,-48) count=528660
+     p=10 delta=(-60,-84,-18,12,6) count=1255093
+     p=10 delta=(-60,-84,-36,-24,-48) count=945966
+     p=30 delta=(-96,-60,0,-96,-60) count=2649391
+     p=20 delta=(-96,-192,-192,-192,-96) count=662347
+   word 0: count slope per unit G_i = ['-11/6', '-5/3', '-2/3', '-7/6', '-8/3']
+   word 1: count slope per unit G_i = ['-13/12', '-5/4', '-1/3', '-3/4', '-25/12']
+   word 2: count slope per unit G_i = ['-2/3', '-3/4', '-1/2', '-1/2', '-19/12']
+   word 3: count slope per unit G_i = ['11/3', '47/12', '4/3', '5/2', '79/12']
+   word 4: count slope per unit G_i = ['-11/20', '-13/24', '-1/12', '-1/3', '-19/24']
+   word 5: count slope per unit G_i = ['-11/80', '-13/96', '-1/48', '-1/12', '-19/96']
+   affine check point 0: predicted ['1229489', '519700', '1249653', '975086', '2645199', '661299'] observed [1229489, 519700, 1249653, 975086, 2645199, 661299] match=True
+   affine check point 1: predicted ['1225649', '516500', '1245173', '985966', '2644751', '661187'] observed [1225649, 516500, 1245173, 985966, 2644751, 661187] match=True
+ odd: identical token skeleton at all 8 points: True; tokens=97; long words=6
+   G=[613500853, 642993317, 664555841, 943762687, 696847785] T=108026037 mu+1(formula)=108026037 match=True period=24 T/B=0.025720464
+   G=[613504693, 642993317, 664555841, 943762687, 696847785] T=108005037 mu+1(formula)=108005037 match=True period=24 T/B=0.025715464
+   G=[613500853, 642997157, 664555841, 943762687, 696847785] T=108009137 mu+1(formula)=108009137 match=True period=24 T/B=0.025716441
+   G=[613500853, 642993317, 664559681, 943762687, 696847785] T=108023437 mu+1(formula)=108023437 match=True period=24 T/B=0.025719845
+   G=[613500853, 642993317, 664555841, 943766527, 696847785] T=108015637 mu+1(formula)=108015637 match=True period=24 T/B=0.025717988
+   G=[613500853, 642993317, 664555841, 943762687, 696851625] T=108001337 mu+1(formula)=108001337 match=True period=24 T/B=0.025714583
+   G=[613504693, 642997157, 664555841, 943762687, 696847785] T=107988137 mu+1(formula)=107988137 match=True period=24 T/B=0.025711441
+   G=[613500853, 642993317, 664559681, 943766527, 696851625] T=107988337 mu+1(formula)=107988337 match=True period=24 T/B=0.025711488
+   long words (p, delta, count at P):
+     p=5 delta=(-30,-24,-18,-12,-6) count=1242927
+     p=10 delta=(-60,-48,0,-24,-48) count=528659
+     p=20 delta=(-120,-168,-36,24,12) count=627546
+     p=20 delta=(-120,-168,-72,-48,-96) count=472985
+     p=20 delta=(-84,-168,-120,-72,-36) count=3311738
+     p=20 delta=(-96,-192,-192,-192,-96) count=413967
+   word 0: count slope per unit G_i = ['-11/6', '-5/3', '-2/3', '-7/6', '-8/3']
+   word 1: count slope per unit G_i = ['-13/12', '-5/4', '-1/3', '-3/4', '-25/12']
+   word 2: count slope per unit G_i = ['-1/3', '-3/8', '-1/4', '-1/4', '-19/24']
+   word 3: count slope per unit G_i = ['11/6', '47/24', '2/3', '5/4', '79/24']
+   word 4: count slope per unit G_i = ['-11/16', '-65/96', '-5/48', '-5/12', '-95/96']
+   word 5: count slope per unit G_i = ['-11/128', '-65/768', '-5/384', '-5/96', '-95/768']
+   affine check point 0: predicted ['1229487', '519699', '624826', '487545', '3306498', '413312'] observed [1229487, 519699, 624826, 487545, 3306498, 413312] match=True
+   affine check point 1: predicted ['1225647', '516499', '622586', '492985', '3305938', '413242'] observed [1225647, 516499, 622586, 492985, 3305938, 413242] match=True
+ per-word index factors (even words then odd words, in route order): [6, 12, 6, 6, 10, 4, 1, 1, 2, 2, 1, 8]
+ joint cohort lattice index = 3317760   (certified index 3317760)
+ HNF diagonal [5, 6, 12, 12, 768], |det| = 3317760
+ HNF basis columns: [[5, 5, 5, 11, 473], [0, 6, 6, 0, 642], [0, 0, 12, 0, 120], [0, 0, 0, 12, 480], [0, 0, 0, 0, 768]]
+ 3840 Z^5 contained in L: True
+ whole-word at P: even T=126240646 (centered 126240646), odd T=108026037 (centered 108026037)
+STEP2 B=30005280: cohort points in closed U' = 8; simulated 8 (both arms)
+   even T != mu_e+1: 0; odd T != mu_o+1: 0; odd T/(B+1) > 13/500: 0; even T/B <= 131/5000: 0
+   max odd T/(B+1) = 0.025712040; min even T/B = 0.030026415
+STEP2 B=50004000: cohort points in closed U' = 89; simulated 89 (both arms)
+   even T != mu_e+1: 0; odd T != mu_o+1: 0; odd T/(B+1) > 13/500: 0; even T/B <= 131/5000: 0
+   max odd T/(B+1) = 0.025714282; min even T/B = 0.030026418
+STEP2 B=100000800: cohort points in closed U' = 3008; simulated 300 (both arms)
+   even T != mu_e+1: 0; odd T != mu_o+1: 0; odd T/(B+1) > 13/500: 0; even T/B <= 131/5000: 0
+   max odd T/(B+1) = 0.025713164; min even T/B = 0.030019320
+STEP2 B=1000000800: cohort points in closed U' = ~3.01e+08 (sampled); simulated 40 (both arms)
+   even T != mu_e+1: 0; odd T != mu_o+1: 0; odd T/(B+1) > 13/500: 0; even T/B <= 131/5000: 0
+   max odd T/(B+1) = 0.025712591; min even T/B = 0.030025382
+STEP3 m' closed form = 2.412239010459e-34; Simpson (exact) = 2.412239010459e-34; equal: True
+   m' exact = 58343547424185918924697550603413/241864704000000000000000000000000000000000000000000000000000000000
+   m' > 0: True
+   B=100000800: cohort points in closed U' = 3008 (expected ~ 3014.2); distinct-digit mass even = 2.407275e-34, odd partner = 2.407275e-34, ratio to m' = 0.9979
+   B=200002080: cohort points in closed U' = 96283 (expected ~ 96455.6); distinct-digit mass even = 2.407921e-34, odd partner = 2.407921e-34, ratio to m' = 0.9982
+# exit 0, wall 58.1s

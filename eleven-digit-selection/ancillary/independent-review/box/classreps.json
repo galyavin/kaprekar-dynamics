@@ -1,0 +1,123 @@
+{
+ "jobs": {
+  "A1": {
+   "B": 1200029,
+   "n_reps": 28512,
+   "F_value_counts": {
+    "0": 19058,
+    "1": 9454
+   },
+   "n_F1": 9454,
+   "n_F0": 19058,
+   "n_other": 0,
+   "T_min": 137286,
+   "T_max": 147742,
+   "T_over_B_mean": 0.11796313383893073,
+   "periods": {
+    "24": 19096,
+    "8": 6698,
+    "20": 2718
+   }
+  },
+  "A1+6": {
+   "B": 1200035,
+   "n_reps": 28512,
+   "F_value_counts": {
+    "0": 19126,
+    "1": 9386
+   },
+   "n_F1": 9386,
+   "n_F0": 19126,
+   "n_other": 0,
+   "T_min": 137286,
+   "T_max": 147742,
+   "T_over_B_mean": 0.11794576285319437,
+   "periods": {
+    "24": 18990,
+    "8": 6724,
+    "20": 2798
+   }
+  },
+  "A1+12(w-shift of A1 reps)": {
+   "B": 1200041,
+   "n_reps": 28512,
+   "F_value_counts": {
+    "0": 19058,
+    "1": 9454
+   },
+   "n_F1": 9454,
+   "n_F0": 19058,
+   "n_other": 0,
+   "T_min": 137276,
+   "T_max": 147732,
+   "T_over_B_mean": 0.11795362119927419,
+   "periods": {
+    "24": 19096,
+    "8": 6698,
+    "20": 2718
+   }
+  },
+  "A2": {
+   "B": 1200065,
+   "n_reps": 28512,
+   "F_value_counts": {
+    "1": 9454,
+    "0": 19058
+   },
+   "n_F1": 9454,
+   "n_F0": 19058,
+   "n_other": 0,
+   "T_min": 137291,
+   "T_max": 147747,
+   "T_over_B_mean": 0.11796247388545168,
+   "periods": {
+    "24": 18898,
+    "8": 6812,
+    "20": 2802
+   }
+  },
+  "A2+6": {
+   "B": 1200071,
+   "n_reps": 28512,
+   "F_value_counts": {
+    "1": 9386,
+    "0": 19126
+   },
+   "n_F1": 9386,
+   "n_F0": 19126,
+   "n_other": 0,
+   "T_min": 137291,
+   "T_max": 147747,
+   "T_over_B_mean": 0.11794570339913699,
+   "periods": {
+    "24": 18980,
+    "8": 6844,
+    "20": 2688
+   }
+  }
+ },
+ "twelve_shift_all_classes_at_A1": {
+  "T2-T histogram": {
+   "-10": 28512
+  }
+ },
+ "contrast_A1_minus_A1+6": {
+  "n_F1_diff": 68,
+  "over": 28512,
+  "as fraction": "68/28512"
+ },
+ "contrast_A2_minus_A2+6": {
+  "n_F1_diff": 68,
+  "over": 28512,
+  "as fraction": "68/28512"
+ },
+ "purity_B1200029": {
+  "pairs q,q+lambda (lambda in Lambda)": 3000,
+  "F equal and on plateau": 3000,
+  "F differ or off plateau": 0,
+  "control pairs q,q+e_i (not in Lambda)": 1500,
+  "F equal": 847,
+  "F differ": 653
+ },
+ "seconds": 1863.2
+}
