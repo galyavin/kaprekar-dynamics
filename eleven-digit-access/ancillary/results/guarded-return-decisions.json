@@ -1,0 +1,346 @@
+{
+  "status": "passed",
+  "results": [
+    {
+      "key": "primitive",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "e86bd45851c1b626e6a181bd6ffd78855bf88fb96f9646f43c03479cf180f2c1"
+    },
+    {
+      "key": "preparation",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "048ada939ca0921ffa9d26406a70025ea910af58d6ceb39e03c9530d982d72d0"
+    },
+    {
+      "key": "failure_reduction",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "a7bd745d023f70f60bd2f88b31cac500e4660b19ac82735930c416625622aeb6"
+    },
+    {
+      "key": "false_two_observations",
+      "z3": "sat",
+      "yices": "sat",
+      "sha256": "7f256bf47982e504573df0d87cae5c901bd23147375f8cbb00cd46e6a87c5919",
+      "source": [
+        9,
+        5,
+        2,
+        -2,
+        -2
+      ],
+      "independent_witness_replay": true
+    },
+    {
+      "key": "quadrant_-2_-4_0",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "6d08eeace715cd31179d2d71e3f434ef3a02564b05cac1f9532106a50fc91f93"
+    },
+    {
+      "key": "quadrant_-2_-3_-1",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "3669df50d491b4d45001f60cd2d129fa619ac7189472b197ce5a8d6827f731e3"
+    },
+    {
+      "key": "quadrant_-2_-3_0",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "dee97542fbf1bfaf7361501c5b5238b4ff99f3ac7445081fd71390ab5dadc40b"
+    },
+    {
+      "key": "quadrant_-2_-2_-2",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "a1f681f0eb3c404db95c741e5fc2a1ef6f92061fd51209343ab995edc80d6c39"
+    },
+    {
+      "key": "quadrant_-2_-2_-1",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "6a98b2e10f5abb7b136dc978828b8fbff2dbf9d05595ffe6bc119d136336e4f0"
+    },
+    {
+      "key": "quadrant_-2_-2_0",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "19597b7367ee1611b927d12b688e1354611cbfa18bb81cfd6af8d8e76efcd119"
+    },
+    {
+      "key": "quadrant_-2_-1_-3",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "787ff081b1fc489af70e519febfe187325720625765f232202f2a1a3a2d0bc30"
+    },
+    {
+      "key": "quadrant_-2_-1_-2",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "553f54f5d6c33efa4212159212ca29055d30790d7c7e5e674cf4b2c3f03b1c03"
+    },
+    {
+      "key": "quadrant_-2_-1_-1",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "664cd08a08c05ebbb62353e2e8f311964e9417fae9e1c331e30f2c73f6ad120b"
+    },
+    {
+      "key": "quadrant_-2_-1_0",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "8ebeac166e62c94127f77aa46e71748852d7fb7c6b5dfbbc2b1c6419b9eaf970"
+    },
+    {
+      "key": "quadrant_-1_-4_0",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "1b7a184a1e7daad82855229c3053c55e04339f9d7c100c7f5987be63998f534a"
+    },
+    {
+      "key": "quadrant_-1_-3_-1",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "bb7fae18cb413e0c06098b0a949fdac69e35214cc901f4bf9ff595af783aa8a2"
+    },
+    {
+      "key": "quadrant_-1_-3_0",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "a3ee0cf12b003ae0fc206f22aa83a71331e38724583f664d90884997ec9c70a8"
+    },
+    {
+      "key": "quadrant_-1_-2_-2",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "e2c77fbcb7a3573cc315252e37bc6e3ecdb57f612f6483a3bf9ab4a3f821de53"
+    },
+    {
+      "key": "quadrant_-1_-2_-1",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "cec49105b09a375e890d872b1dc737d96842eff69d794e431f9f7a73b60319d2"
+    },
+    {
+      "key": "quadrant_-1_-2_0",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "1d16aa39fa2d8319e7581f302b18027b439055609a4fcc23ce5a36654aaca5b2"
+    },
+    {
+      "key": "quadrant_-1_-1_-3",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "f6d9758d993bf6a1ecfd81174b2548d0ad6752b693ab6b3115fd02c408947ab5"
+    },
+    {
+      "key": "quadrant_-1_-1_-2",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "1c8e71855aaa939e8959ce6239588f2f669eddd791994f64b537aa43559460e5"
+    },
+    {
+      "key": "quadrant_-1_-1_-1",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "27d06872c2a7406325139703bd0c3ad19fb54f6f05289737311284e26e4a6e66"
+    },
+    {
+      "key": "quadrant_-1_-1_0",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "fd668b6cc007ed8ff9a6cb540fecde10ee54f168a58e4e3e734bdfcd4421d0ad"
+    },
+    {
+      "key": "quadrant_0_-4_0",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "15c2df853c454c8ebbdf8571a771770f5e379a18cc01ec946927e8bcb0045d3e"
+    },
+    {
+      "key": "quadrant_0_-3_-1",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "6627d95789952cf8e57374592dd56d6bbb08134fcd88f6232b41dc510615e851"
+    },
+    {
+      "key": "quadrant_0_-3_0",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "b08b23e4e72159d38820c09c4a4dd26193a5d5003cbf43a1ae2d8dcdbd78b248"
+    },
+    {
+      "key": "quadrant_0_-2_-2",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "92e506f95a2604324c592f1eb51ab3f4dafa1cfbaef669a04a1bcdb20dc08f91"
+    },
+    {
+      "key": "quadrant_0_-2_-1",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "f49feba4c7864e8ed03feba0b0af2a132caebb4b3b3d0179018f9edc2a0049f1"
+    },
+    {
+      "key": "quadrant_0_-2_0",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "8f56af5535a5fc482421e5aa4651647891c091dd7a093c7f964e70b3757a3c21"
+    },
+    {
+      "key": "quadrant_0_-1_-3",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "fa23a0f188760eefad9ffbb337b75a7260f1322036d674b5c2586b4142ddbf06"
+    },
+    {
+      "key": "quadrant_0_-1_-2",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "65bf852a1f5820198fb2b973f3bf9a0024006b65e82ab621679083402f0624a2"
+    },
+    {
+      "key": "quadrant_0_-1_-1",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "0beccf9029985704adc4a2fae6c2f0f05411ba94cd09083f7efefa5276ee2001"
+    },
+    {
+      "key": "quadrant_0_-1_0",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "80bb1c8fd034ee26df426ba86e34da7463b8e1b249f65fcd9437ce0fb6a296a9"
+    },
+    {
+      "key": "quadrant_1_-4_0",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "e39d87bde9cea68b36a551bdab5a76486ba257d4ef12a1e006e64fa77d859853"
+    },
+    {
+      "key": "quadrant_1_-3_-1",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "50e3fecf3e5f1926b470a345d0f8305ea5996243f63876e5ad023206f9bf0096"
+    },
+    {
+      "key": "quadrant_1_-3_0",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "546a34dd68aba8caac47812de583c8935727942174bd9cd9bdb88fb9b5deaf5a"
+    },
+    {
+      "key": "quadrant_1_-2_-2",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "4fb4e522e852a4c05f4c4694a876e8f7a189af55ba8f17c6ab869f54f50df6a0"
+    },
+    {
+      "key": "quadrant_1_-2_-1",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "9f2cd2a79c177c223326ff95efe92f2c175defd4014f2c8ac054c99e71cef5fb"
+    },
+    {
+      "key": "quadrant_1_-2_0",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "42473d7f279f1df90990bf7948a687a519809ec8e22a3290141e452ded35190b"
+    },
+    {
+      "key": "quadrant_1_-1_-3",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "107a5d9cb65cc7a067d3f001f8c3b8a45afca31e87eab8f8e9f8288b25020c36"
+    },
+    {
+      "key": "quadrant_1_-1_-2",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "287a6b40caf6a440db948197b22ceb8905c0ad0fd290b84ebf5f20e92bef13eb"
+    },
+    {
+      "key": "quadrant_1_-1_-1",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "855daf5880a03f4c3c54033ae063a27feef6d71a7b4424bbcc7a5f9250167bf6"
+    },
+    {
+      "key": "quadrant_1_-1_0",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "bebd20221e3879596903296f7f53d8a65023fb2b444bc366f7f362dc80b1edc0"
+    },
+    {
+      "key": "quadrant_2_-4_0",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "47cee2e359a628a22376afcbf003d607206fb247475755432b33b22575a03a74"
+    },
+    {
+      "key": "quadrant_2_-3_-1",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "c69d61e7c2d7e26151fbd997cca4295d922ef5914f5ec11bbd69451b6df94d25"
+    },
+    {
+      "key": "quadrant_2_-3_0",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "4b1c41b2f39da619d9424f70b95feb916a46f6cbc64880249d6d13c1f3d9eec3"
+    },
+    {
+      "key": "quadrant_2_-2_-2",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "851d8951eabaaed852b24afb9ddf70e577f2301f383d58928fa6cc0824679e7c"
+    },
+    {
+      "key": "quadrant_2_-2_-1",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "e6b2e66e79ec1d9476e060b50092d333f2138fbcec6637c63e94a56908098207"
+    },
+    {
+      "key": "quadrant_2_-2_0",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "51ff94c69e9499a8d27d306cc42d6b814f63f5d886004860ed7a4a570ef60c16"
+    },
+    {
+      "key": "quadrant_2_-1_-3",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "1b34331a4e15ddc24de47f4118ab96839f0b7e4a6c2739a177f4df5761e1d251"
+    },
+    {
+      "key": "quadrant_2_-1_-2",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "ede0ed9bae073a37f4d8f19866f9e897e2dd897f003c90f41f481ad9c7706a25"
+    },
+    {
+      "key": "quadrant_2_-1_-1",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "266c3d267dd91592fd21364993080d95b28be73b5ec7c47eaa0750092ce78224"
+    },
+    {
+      "key": "quadrant_2_-1_0",
+      "z3": "unsat",
+      "yices": "unsat",
+      "sha256": "e151beb15a1cd4a4ede5307e9c567bf227656db2fc6e28a23f402c7cfa921bae"
+    }
+  ],
+  "solver_calls": 108,
+  "rejected_controls": [
+    "missing",
+    "unknown",
+    "wrong_status",
+    "wrong_hash",
+    "duplicate"
+  ],
+  "scope": "Unbounded primitive two-fold identity, preparation, failure reduction and all fifty longitudinal quadrants. This is a guarded return clock, not global centered composition."
+}

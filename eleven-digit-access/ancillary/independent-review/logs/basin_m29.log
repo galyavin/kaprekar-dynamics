@@ -1,0 +1,7 @@
+B=145 m=29 states=571880029 cycle_closes=1
+  deep state d=7 q=(57,56,29,28,28) minG=0
+  deep state d=7 q=(57,56,31,28,28) minG=0
+  deep state d=7 q=(58,57,29,29,29) minG=0
+basin size=235 layers: d0:4 d1:27 d2:31 d3:38 d4:57 d5:36 d6:25 d7:17
+min-gap multiplicities: 0:141 1:48 2:30 3:16
+sum(minG+1)=391  sorted-word count=4.943727e+09  bound 391*B^5=2.506206e+13  ratio=0.0002

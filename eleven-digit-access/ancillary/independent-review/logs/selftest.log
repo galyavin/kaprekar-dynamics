@@ -1,0 +1,21 @@
+B=7 trials=2000000 q5>0:452517 q5=0:1532158
+digits_mismatch=0 track_viol=0 outer_viol=0 major_viol=0 energy_viol=0 inverse_digits_mismatch=0
+max |F-BK|=1  max gap err=2  max (E(Fq)-E(Kq))/B=1.4286
+B=10 trials=2000000 q5>0:535219 q5=0:1454519
+digits_mismatch=0 track_viol=0 outer_viol=0 major_viol=0 energy_viol=0 inverse_digits_mismatch=0
+max |F-BK|=1  max gap err=2  max (E(Fq)-E(Kq))/B=1.4000
+B=97 trials=2000000 q5>0:1270861 q5=0:726877
+digits_mismatch=0 track_viol=0 outer_viol=0 major_viol=0 energy_viol=0 inverse_digits_mismatch=0
+max |F-BK|=1  max gap err=2  max (E(Fq)-E(Kq))/B=1.8763
+B=1000 trials=2000000 q5>0:1357627 q5=0:640313
+digits_mismatch=0 track_viol=0 outer_viol=0 major_viol=0 energy_viol=0 inverse_digits_mismatch=0
+max |F-BK|=1  max gap err=2  max (E(Fq)-E(Kq))/B=1.9420
+B=3541 trials=2000000 q5>0:1360302 q5=0:637637
+digits_mismatch=0 track_viol=0 outer_viol=0 major_viol=0 energy_viol=0 inverse_digits_mismatch=0
+max |F-BK|=1  max gap err=2  max (E(Fq)-E(Kq))/B=1.8633
+B=100003 trials=2000000 q5>0:1361625 q5=0:636340
+digits_mismatch=0 track_viol=0 outer_viol=0 major_viol=0 energy_viol=0 inverse_digits_mismatch=0
+max |F-BK|=1  max gap err=2  max (E(Fq)-E(Kq))/B=1.8700
+B=1000000007 trials=2000000 q5>0:1360690 q5=0:637256
+digits_mismatch=0 track_viol=0 outer_viol=0 major_viol=0 energy_viol=0 inverse_digits_mismatch=0
+max |F-BK|=1  max gap err=2  max (E(Fq)-E(Kq))/B=1.8698

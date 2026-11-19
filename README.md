@@ -24,6 +24,10 @@ For every odd number of digits, the continuous large-base map decreases the vect
 
 With seven digit slots and a growing base B, the normalized starting differences and the arrival time divided by B have a joint limit along the bases of each parity. At almost every starting point the limiting time takes one of two values; the faster one has probability 3/8 in odd bases and 1/2 or 3/4 in even bases. Every arrival time is at most 54B + 614132 for B ≥ 400, and at first arrival the normalized differences lie within 34/B of (3/4, 1/2, 1/4). The proofs use computer-assisted affine inequalities and exact rational calculations.
 
+**Linear-time access for eleven-digit Kaprekar dynamics** (2026), in [`eleven-digit-access/`](eleven-digit-access/) as [PDF](eleven-digit-access/kaprekar-eleven-digit-access.pdf) and [LaTeX source](eleven-digit-access/kaprekar-eleven-digit-access.tex). Archived at Zenodo: [doi:10.5281/zenodo.24358476](https://doi.org/10.5281/zenodo.24358476).
+
+For a uniformly random eleven-digit string in a growing base B, Kaprekar subtraction reaches a centered regime, where all six gaps between the symmetric digit differences are at least ⌈(B+1)/7⌉ + 64, within 4509B steps with probability tending to one, through all bases. Consequently the time to the first cycle is of order B, and the first cyclic word's normalized differences converge in probability to (5,4,3,2,1)/6. Exact cycles that never reach the centered regime exist for bases congruent to 0, 1 or 2 modulo 5, with vanishing probability. The proof combines almost-everywhere entry for the continuous leading map with a stopped energy estimate; its computer-assisted steps include an independent exhaustion with exact rational infeasibility certificates.
+
 ## Reproducing the results
 
 ```sh
@@ -51,6 +55,11 @@ bash reproduce.sh            # solver audits and exact calculations (stages in a
 ```sh
 cd seven-digit-dynamics/ancillary
 bash reproduce.sh            # solver audits, exact calculations and graph replays (about five minutes)
+```
+
+```sh
+cd eleven-digit-access/ancillary
+bash reproduce.sh            # catalogue, work, local and centered-clock checks (about 20–35 minutes)
 ```
 
 Each `ancillary/README.md` gives the expected outputs and versions.

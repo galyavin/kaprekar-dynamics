@@ -1,0 +1,4 @@
+(R0) K = C o r and r o K = rho o r on 20000 random rational x: True
+(R1) ray one-step normals == F_S at 20000 random small offsets, f in (0,1/6): True
+(R3) triangle: section on plane / return identity / samples: {'interior': (True, True, 4000), 'edge12': (True, True, 4000), 'edge13': (True, True, 4000)}
+(R4) isolated: r_A period 3 under rho: True; sections [['4/5', '3/5', '3/5', '2/5', '1/5'], ['4/5', '2/5', '2/5', '1/5', '0'], ['4/5', '4/5', '2/5', '1/5', '1/5']]; energy expansion identity at 5000 offsets: True

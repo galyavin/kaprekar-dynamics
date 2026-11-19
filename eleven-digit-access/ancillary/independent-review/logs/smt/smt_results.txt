@@ -1,0 +1,9 @@
+S1_paired_return: cvc5=unsat yices=unsat expected=unsat OK
+S2_transfer_identity: cvc5=unsat yices=unsat expected=unsat OK
+S3_allow6: cvc5=unsat yices=unsat expected=unsat OK
+S3_allow12: cvc5=unsat yices=unsat expected=unsat OK
+S3_allow5_control: cvc5=sat yices=sat expected=sat OK
+S4_ray_K2: cvc5=unsat yices=unsat expected=unsat OK
+S5_isolated_eps1e-4: cvc5=unsat yices=unsat expected=unsat OK
+S5_isolated_eps1e-6: cvc5=unsat yices=unsat expected=unsat OK
+S4 bisection: min |F_S^10 xi|_inf over c>=d,|xi|=1 lies in [3.831168831, 3.831168831]; 295/77=3.831168831; at 295/77: cvc5=sat (sat expected if attained), just below: cvc5=unsat

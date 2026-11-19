@@ -1,0 +1,14 @@
+B=95 m=19 states=71523144 cycle_closes=1
+  deep state d=7 q=(37,36,19,18,18) minG=0
+  deep state d=7 q=(37,36,21,18,18) minG=0
+  deep state d=7 q=(38,37,19,19,19) minG=0
+basin size=235 layers: d0:4 d1:27 d2:31 d3:38 d4:57 d5:36 d6:25 d7:17
+min-gap multiplicities: 0:141 1:48 2:30 3:16
+sum(minG+1)=391  sorted-word count=6.544023e+08  bound 391*B^5=3.025483e+12  ratio=0.0002
+B=90 m=18 states=54891018 cycle_closes=1
+  deep state d=7 q=(35,34,18,17,17) minG=0
+  deep state d=7 q=(35,34,20,17,17) minG=0
+  deep state d=7 q=(36,35,18,18,18) minG=0
+basin size=235 layers: d0:4 d1:27 d2:31 d3:38 d4:57 d5:36 d6:25 d7:17
+min-gap multiplicities: 0:141 1:48 2:30 3:16
+sum(minG+1)=391  sorted-word count=5.063844e+08  bound 391*B^5=2.308816e+12  ratio=0.0002

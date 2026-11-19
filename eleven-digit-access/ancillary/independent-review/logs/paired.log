@@ -1,0 +1,8 @@
+(A) Psi vs P_B in centered coordinates: 200000 random positive-innermost states, mismatches=0
+(B) paired return eq.(paired-return) vs Psi^2 under the two guards: 185147 integer states (boxes 6..400), mismatches=0
+(C) displayed first output vs Psi: mismatches=0
+(D) increment formulas Delta(q4-q5), Delta(q3-q4) vs Psi^2: mismatches=0
+(E) other phase near open edge 3a+2b=1/6 (6 edge points incl. a=0, offsets up to B/2000, B~1e6): 180000 states (86394 with Delta>0), mismatches with eq.(edge)=0; canonical phase F_B=P_B: 180000 states, mismatches=0
+(F) canonical returns with guards and H_f=0: 180000 (76757 with Delta>0); actual 2-step = formula with Delta added to w' only: mismatches=0
+(G) one-unit transfer identity on 200000 physical-lattice X: mismatches=0
+(H) Section 6.2 pairing criterion (min gap m, 7m>=B+1 => F_B=P_B): 100000 random states at threshold m, mismatches=0

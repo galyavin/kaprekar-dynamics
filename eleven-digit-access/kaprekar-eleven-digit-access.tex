@@ -1,0 +1,676 @@
+\documentclass[11pt,reqno]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{array}
+\usepackage[margin=1.15in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Linear-time access for eleven-digit Kaprekar dynamics},pdfauthor={Rustem Galyavin}}
+\setlength{\emergencystretch}{1.3em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newcommand{\sort}{\operatorname{sort}}
+\newcommand{\Fix}{\operatorname{Fix}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\vct}{\boldsymbol v}
+\title[Eleven-digit Kaprekar dynamics]{Linear-time access for eleven-digit Kaprekar dynamics}
+\author{Rustem Galyavin}
+\thanks{\href{mailto:rustem@galyavin.com}{rustem@galyavin.com}. ORCID \href{https://orcid.org/0009-0006-6875-9170}{0009-0006-6875-9170}.}
+\date{19 November 2026}
+\subjclass[2020]{37E15, 11A63, 37M99}
+\keywords{Kaprekar map, arrival time, majorization, bounded variation}
+\begin{document}
+\begin{abstract}
+Apply Kaprekar subtraction to a uniformly random nonconstant eleven-digit string in base \(B\), allowing leading zeros, and let \(q_i\) be the difference between its \(i\)th largest and \(i\)th smallest digits. With probability tending to one as \(B\to\infty\) through all bases, the six gaps \(B-q_1,q_1-q_2,\ldots,q_4-q_5,q_5\) are simultaneously at least \(\lceil(B+1)/7\rceil+64\) at some step within \(4509B\) subtractions. Consequently the first cyclic-word time divided by \(B\) is tight, and the symmetric differences of that first cyclic word, divided by \(B\), converge in probability to \((5,4,3,2,1)/6\). The proof combines almost-everywhere entry for the continuous leading map with a stopped energy estimate for actual subtraction. Near one family of leading cycles, a change in the borrowed digit order contributes with the sign required for energy decrease. Exact cycles that never reach this gap condition occur in three residue classes of bases.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+
+In base \(B\ge2\), arrange the digits of an eleven-digit word in decreasing and increasing order and subtract the second arrangement from the first. Keep leading zeros and iterate. If \(d_1\ge\cdots\ge d_{11}\) are the sorted digits, write \(q_i=d_i-d_{12-i}\), \(1\le i\le5\). Subtraction depends only on these differences and so induces a map \(F_B\) on the integer states \(B>q_1\ge\cdots\ge q_5\ge0\). Every such state is realized by a word, for example by the digits \(q_1,\ldots,q_5,0,\ldots,0\).
+
+Put
+\[
+ G(q)=(B-q_1,q_1-q_2,q_2-q_3,q_3-q_4,q_4-q_5,q_5),\qquad
+ M_B=\left\lceil\frac{B+1}{7}\right\rceil+64.
+\]
+Let \(S_B=\{q:\min G(q)\ge M_B\}\). For a word with difference vector \(q\), let \(\sigma_B=\inf\{j\ge0:F_B^j(q)\in S_B\}\), with \(\inf\emptyset=\infty\). Let \(T_B\) count the subtractions from the word to its first cyclic word, and let \(Z_B\) be the differences of that cyclic word divided by \(B\). In particular \(T_B=0\) if the original word is cyclic.
+
+\begin{theorem}\label{th:main}
+Let \(\Pr_B\) be uniform on the \(B^{11}-B\) nonconstant eleven-digit strings. As \(B\to\infty\) through all integers,
+\[
+ \Pr\nolimits_B(\sigma_B>4509B)\to0,\qquad
+ (T_B/B)_{B\ge2}\ \text{is tight},\qquad
+ Z_B\xrightarrow{\Pr}(5,4,3,2,1)/6 .
+\]
+\end{theorem}
+
+The proof gives the first limit with \(4509\) replaced by any fixed \(L>10080/\sqrt5\approx4507.9\); in particular \(\sigma_B/B\) is tight as \(B\to\infty\). This constant comes from the period bound \(6!\) in Section~\ref{sec:stopped} and is far from sharp: in the samples of Section~\ref{sec:computation}, \(\sigma_B/B\) stayed below \(0.17\).
+
+\begin{remark}
+The scale \(B\) is nevertheless correct: neither \(\sigma_B/B\) nor \(T_B/B\) tends to zero in probability.
+\end{remark}
+\begin{proof}
+If \(q\) has \(h\ge1\) positive differences, the subtraction applied to it produces at least \(11-2h\ge1\) digits equal to \(B-1\) and a digit \(B-q_1\) (Appendix~\ref{ap:cycles}; for \(q_5>0\) see \eqref{eq:digits}). So the next largest difference is at least \(q_1-1\), and the outer gap \(G_0=B-q_1\) increases by at most one per subtraction, as in \eqref{eq:outer}. Hence \(\sigma_B\ge M_B-G_0(q)>B/7-G_0(q)\) and \(B(1-Z_{B,1})\le G_0(q)+T_B\), where \(Z_{B,1}\to5/6\) in probability. By Section~\ref{sec:access}, \(G_0(q)/B\) converges in law to the \(g_0\)-marginal of the density \(11!\prod_ig_i\), which gives positive mass \(\pi\) to \(\{g_0<1/14\}\). Therefore \(\Pr_B(\sigma_B>B/14)\) and \(\Pr_B(T_B>B/12)\) both have \(\liminf\) at least \(\pi\).
+\end{proof}
+
+Devlin and Zeng determine extremal times to the nonzero four-digit fixed point and study its basin fractions \cite[Theorems 1 and 2]{DZ}. Chen, Ono, Schwartz and Thakur reduce four-digit dynamics in odd bases greater than three to projective doubling after a bounded initial segment \cite[Theorem 1]{COST}. Cycle classifications for even four-digit bases and arrival distributions in those bases are given in \cite{G1,G2}. Kay and Downes-Ward study cycles using digit multiplicities over general lengths in odd and even bases \cite{KDO,KDE}. Thakur treats fixed points over general bases and lengths, proposes the odd-digit base translation, and reports finite computations at eleven digits in base seven \cite[Sections 4 and 5.4]{Thakur}; a symmetric digit-gap formula for fixed-width words, a reduction to a finite map on sorted digit multisets, and base-10 enumeration for lengths up to nine appear in \cite{NS}. Kahramanlar reduced the routine for any number of digits and any base to the ordered opposite-position digit gaps \cite[\S2]{Kah}. Growing-base population limits at lengths five, seven and nine appear in \cite{G3,G5,G4}. We use the leading majorization from \cite[Theorem 1]{G4} and retain its attribution of the convergence argument to Abdulghafor et al.\ \cite[Theorem 3.3 and Remark 3.4]{ASO}.
+
+The set \(S_B\) is where the dynamics changes regime. For \(B\ge3534\), once a path enters \(S_B\), each borrowed pair of digits stays weakly above the next at every later step. Subtraction then becomes a lattice map in the centered coordinates \(6q-B\vct\), where \(\vct=(5,4,3,2,1)\), that does not depend on \(B\) (Section~\ref{sec:bridge}). This map reaches a cycle within \(O(B)\) further steps, and every such cycle lies within \(420\) of \(B\vct/6\) in maximum norm. The threshold \(\lceil(B+1)/7\rceil\) is a sufficient pairing condition, and \(64=384/6\) is the margin that keeps the path paired until capture. The last two assertions of Theorem~\ref{th:main} therefore follow from the first.
+
+The first assertion is proved in the large-base limit. Normalize the gaps to \(g\), with \(\sum g_i=1\), and measure their distance from equality by the energy \(e=\|g-\boldsymbol1/6\|_2^2\). The leading map \(K\), the continuous extension of the large-base limit of \(F_B\) at sources with \(q_5>0\), never increases \(e\) (Lemma~\ref{lem:leading}), and almost every leading orbit enters the ball \(e<1/30\), the largest energy ball on which all gaps are positive (Lemma~\ref{lem:entry}). Inside this ball a scaling limit of the actual path shows that at almost every time nearly all steps are spent near finitely many leading periodic points with one gap profile. There \(K\) loses no energy, so any decrease must come from the integer corrections to \(K\). When the outer gap is below \(1/6\), a certified first-order computation supplies it (Lemma~\ref{lem:ordinary}). Otherwise the cycle lies in the two-cycle family \eqref{eq:two}. There an exact two-step return raises the smallest gap by one unit within every nineteen returns, up to a bounded loss, while the largest gap cannot grow at a positive rate (Lemma~\ref{lem:two}). On one edge of the family two borrowed pairs can exchange order. The exchange shifts one return coordinate by a nonnegative amount, and that shift raises the smallest gap and lowers the largest, so it only helps. Proposition~\ref{prop:restart} turns these local gains into \(de/dt\le-\gamma\sqrt e\) in units of \(B\) subtractions, hence extinction before time \(10080/\sqrt5\).
+
+At nine digits the joint limit laws of the initial differences, the scaled time and the first cyclic word depend on \(B\bmod5\) \cite[Theorem~2]{G4}. At eleven digits the normalized differences of the first cyclic word converge in probability to the same vector through all bases, although exact cycles that never reach \(S_B\) exist in three residue classes (Section~\ref{sec:scope}).
+
+Section~\ref{sec:geometry} sets up the leading map and its majorization, Section~\ref{sec:leading-entry} proves entry into the ball, Section~\ref{sec:drift} gives the two local drift estimates, Section~\ref{sec:stopped} assembles them into Proposition~\ref{prop:restart}, Section~\ref{sec:bridge} passes to random words and the first cyclic word, and Section~\ref{sec:scope} treats exceptional cycles. Lemmas~\ref{lem:catalogue}--\ref{lem:cycles} in the appendices are the computer-assisted steps; Section~\ref{sec:computation} records how each was checked.
+
+\section{Leading and borrowed geometry}\label{sec:geometry}
+
+Write \(x=q/B\), and let
+\begin{gather*}
+ \mathcal D=\{1\ge x_1\ge\cdots\ge x_5\ge0\},\qquad
+ g(x)=(1-x_1,x_1-x_2,\ldots,x_4-x_5,x_5),\\
+ y=g-\tfrac16\boldsymbol 1,\qquad e(x)=\|y\|_2^2.
+\end{gather*}
+Gap indices run from zero to five. The first gap \(g_0\) is also called the outer gap. At fixed \(g_i\), the other five centered gaps sum to \(-(g_i-1/6)\), and Cauchy--Schwarz gives
+\begin{equation}\label{eq:gap-bound}
+ e\ge(6/5)(g_i-1/6)^2 ,
+\end{equation}
+with equality when the other five gaps are equal. Call an integer state \(q\) with \(B>q_1\ge\cdots\ge q_5\ge0\) physical, and call it the source of the subtraction applied to it. We also call a subtraction an update. A source is positive innermost if \(q_5>0\). Put \(s_*=1/30\). By \eqref{eq:gap-bound} and its equality case, \(s_*\) is the largest \(s\) such that every gap is positive on \(\{e<s\}\). We call \(\{e<s_*\}\) the ball and \(\{e=s_*\}\) the sphere. The outer deviation is \(y_0=g_0-1/6\). Put \(\vct=(5,4,3,2,1)\) and \(E_B(q)=B^2e(q/B)\). At \(q_5>0\), the exact digit multiset of the subtraction is
+\begin{equation}\label{eq:digits}
+ B-1,\qquad L_i=q_i-\mathbf1_{i=5},\qquad R_i=B-q_i-\mathbf1_{i>1}
+ \quad (1\le i\le5).
+\end{equation}
+The difference coordinates and borrowed digit formula are given in \cite[Section 2.7]{Thakur}. The coefficient list before borrowing is
+\((q_1,\ldots,q_5,0,-q_5,\ldots,-q_1)\). The borrow starts at the last slot, passes left through the middle and is absorbed at the first positive coefficient nearest the middle. Sorting \eqref{eq:digits} and taking symmetric differences gives \(F_B\). The leading map \(K\) sorts \((1,x_i,1-x_i:1\le i\le5)\) and takes the same differences. Sorting is nonexpansive in maximum norm, so \(K\) is \(2\)-Lipschitz. At a positive innermost source the leading digit errors in integer units all lie in \([-1,0]\). Thus
+\begin{equation}\label{eq:track}
+ \|F_B(q)/B-K(x)\|_\infty\le B^{-1},\qquad
+ \|g(F_B(q)/B)-g(K(x))\|_\infty\le2/B .
+\end{equation}
+
+\begin{lemma}\label{lem:leading}
+For every \(x\in\mathcal D\), \(g(Kx)\prec g(x)\) in the majorization order. The loss \(\delta(x)=e(x)-e(Kx)\) is nonnegative, with equality exactly when the two gap multisets agree. Every leading orbit approaches a periodic orbit of period at most \(H=6!\), and late iterates lie near the points of the limit cycle in a fixed cyclic order.
+\end{lemma}
+\begin{proof}
+Place \(0,x_1,\ldots,x_5\) on the unit circle and give their reflections a second color. In the alternating coloring of the combined sorted list, the gap multisets of both colors are \(g(Kx)\), up to permutation. Indeed with descending digits \(s_0=1,s_1,\ldots,s_{10}\), reflection gives \(s_i+s_{11-i}=1\) for \(i\ge1\). The output gaps are \(s_{10}\) and \(s_{i-1}-s_{i+1}\) for \(1\le i\le5\). The alternate-color partitions use the two parities of the two-step spacings, with equal multisets by reflection. Continuity gives the identity also at ties and boundary points.
+
+The rest of the majorization argument is only sketched here; the full argument is the proof of inequality~(1) in \cite[Section~2]{G4}, taken with \(C=L=1\) and five differences. The length measure of starts of empty open arcs of length \(u\) for a partition with gaps \(h\) is \(\sum_i(h_i-u)_+\), where \((\cdot)_+=\max(\cdot,0)\). An arc containing at least two combined points misses no color after alternation. Shorter occupancies give the same missing-color count before and after. Integrate to obtain the positive-part inequalities, which give majorization by minimizing \(ru+\sum_i(h_i-u)_+\) for the sum of the \(r\) largest gaps. Strict convexity of the square gives the energy criterion.
+
+The ordered upper sums are monotone and bounded, so the sorted gap vector converges. The limit set lies among the finitely many permutations of that vector. Continuity maps the limit set onto itself, thus permutes it. Disjoint neighborhoods of the points of this finite set, and continuity, force late nearest-point labels to follow the permutation. They therefore follow one cycle.
+\end{proof}
+
+Using \eqref{eq:track} and Lemma~\ref{lem:leading}, upper partial sums of the actual normalized gaps increase by at most \(10/B\) in a step. The maximum can increase, and the minimum decrease, by at most \(2/B\). The actual energy increment is at most \(-\delta(x)+20/B\), since on the gap simplex the energy is \(2\)-Lipschitz in gap maximum norm. We use the larger allowance \(20/B\) throughout. The largest digit in \eqref{eq:digits} is \(B-1\) and the smallest is \(\min(q_5-1,B-q_1-\mathbf1_{q_1=q_2})\). Therefore
+\begin{equation}\label{eq:outer}
+ G_0(F_B(q))=\min(G_0(q)+1-\mathbf1_{q_1=q_2},q_5).
+\end{equation}
+In particular the outer normalized gap increases by at most \(1/B\).
+
+\section{Almost-everywhere leading entry}\label{sec:leading-entry}
+
+\begin{lemma}\label{lem:entry}
+Lebesgue-almost every \(x\in\mathcal D\) has some finite iterate \(K^j x\) with \(e(K^jx)<s_*\).
+\end{lemma}
+\begin{proof}
+The minimum leading gap is nondecreasing. For an interior start the limit cycle is interior, and if entry fails it has energy at least \(s_*\). The periodic catalogue in Appendix~\ref{ap:catalogue} gives precisely five such relatively open cells up to cyclic phase. They form a ray, three cells on a triangle, and one isolated orbit. We show that the union of the basins of the points in each description is null.
+
+Use decreasing radii \(r=\sort(|2x_i-1|)_{i=1}^5\). Then \(K(x)=C(r)\), with
+\[
+ C(r)=\tfrac12(1+r_1,r_1+r_2,r_2+r_3,r_3+r_4,r_4+r_5).
+\]
+The next radii are \(\sort(r_1,|r_1+r_2-1|,\ldots,|r_4+r_5-1|)\). The initial fold is nonsingular on each full-dimensional piece and the radius map has absolute determinant one there, by the adjacent-sum triangular matrix followed by a signed permutation. Consequently finite preimages of null sets are null. The first radius is nondecreasing. Local return formulas and their precise tests are given in Appendix~\ref{ap:radii}.
+
+On the ray the four normal offsets have a ten-step return expanding maximum norm by a factor greater than two at every nonzero offset that stays in the local phase neighborhood. For a convergent trajectory, a late offset must already vanish. The ray lies in a single affine line, so its basin is null by the finite-preimage property.
+
+The triangle interior and the two eligible edges share an autonomous return in three normal coordinates \((u,v,w)\), with \(u\ge0\). For \(L=u+w-v\) it is
+\[
+ (u,v,w)\longmapsto (|L|,|v|+w_+-L_+,L-|w|).
+\]
+If a nonzero state has \(L\le0\), its image has \(p=-w\ge u\ge0\) and \(v\ge0\). The image is nonzero because a zero image forces \(L=w=v=u=0\). In this cone the return is \((u,v,p)\mapsto(p+v-u,v,2p+v-u)\). The cone is invariant and \(p\) is nondecreasing, becoming positive if it was zero. Hence a nonzero orbit tending to zero has \(L>0\) throughout. On this branch, setting \(V=-v\) gives
+\[
+ (u,V,w)\longmapsto
+ (u+V+w,\ u+2\min(V,0)+\min(w,0),\ u+V+2\min(w,0)).
+\]
+The map is coordinatewise nondecreasing. For two ordered inputs their new coordinate differences are each at least the old \(u\)-difference. After two steps the \(u\)-difference is at least three times its old value. On any line with \((V,w)\) fixed, therefore, at most one nonzero normal state converges to zero. The stable set is Borel by continuity, and Fubini makes it null. Taking its product with the two tangent coordinates gives a single null set for all limit points of the three cells.
+
+For an orbit tending to the isolated sphere cycle, the first radius at two successive visits to a fixed phase is at most its limiting value and the energy is at least \(s_*\) at both visits. Appendix~\ref{ap:radii} gives the two-section linear predicate obtained by expanding the energy. If arbitrarily small nonzero offsets satisfied the exact conditions, division by their maximum norms would eliminate the quadratic energy error. By continuity and homogeneity of the local return, a unit limit would then satisfy the forbidden predicate. Hence an orbit approaching this cycle hits it in finite time.
+\end{proof}
+
+\section{Local drift for actual subtraction}\label{sec:drift}
+
+\subsection{Negative outer-gap deviation}
+For a leading periodic point \(p\) with positive outer gap and period \(h\), define
+\[
+ w(p)=\lim_{R\to\infty}\limsup_{B\to\infty}
+ \sup_{\substack{q\text{ physical}\\\|q-Bp\|_\infty\le R}}
+ \frac{E_B(F_Bq)-E_B(q)}{B},\qquad
+ W(p)=\sum_{j=0}^{h-1}w(K^jp).
+\]
+All bases occur in the limsup. The computation in Appendix~\ref{ap:work} gives \(W(p)\le -(4/7)h\|y(p)\|_\infty\) at points with \(g_0(p)<1/6\) in the open ball. The individual phase suprema suffice for an upper bound along actual blocks.
+
+\begin{lemma}\label{lem:ordinary}
+For such a phase \(p\), there is a neighborhood and a base threshold in which every physical start \(q/B\) satisfies
+\[
+ E_B(F_B^h q)-E_B(q)\le -\tfrac17 Bh\|y(p)\|_\infty.
+\]
+\end{lemma}
+\begin{proof}
+We prove that the one-step increment divided by \(B\) is at most \(w(p)+\epsilon\) uniformly in a sufficiently small normalized neighborhood. Write \(s,s'\) for the decreasing gap profiles of \(x=q/B\) and \(Kx\), and \(s^0\) for their common profile at \(p\). The upper partial-sum losses \(L_j=\sum_{i\le j}(s_i-s_i')\) are nonnegative. Summation by parts gives
+\[
+ \delta(x)=\sum_{j=1}^5 L_j(s_j+s_j'-s_{j+1}-s_{j+1}').
+\]
+Set \(J=2B\sum_{j=1}^5 L_j(s^0_j-s^0_{j+1})\). At a strict break of \(s^0\) the corresponding coefficient in the last energy sum is at least \(2(1-\theta)(s_j^0-s_{j+1}^0)\) in a small neighborhood. The other summands are nonnegative. Thus \(B\delta(x)\ge(1-\theta)J\).
+
+Let \(R_q=B[g(F_Bq/B)-g(Kx)]\), bounded by \eqref{eq:track}, and let \(A_p=2\langle y(Kp),R_q\rangle\). The actual energy change divided by \(B\) is bounded above by
+\[
+ A_p-(1-\theta)J+O(\|x-p\|_\infty+B^{-1}).
+\]
+Here \(A_p-J\) is the first-order work at offset \(d=q-Bp\): leading digit groups that are strictly separated at \(p\) retain their order near \(p\), and differentiation of the profile energies gives the Abel expression for the leading first-order loss. This work value is at most \(w(p)\) even for a large individual \(d\). To see this, take positive integers \(n_k\to\infty\) with \(n_kp\to0\pmod{\Z^5}\), by simultaneous recurrence on the torus. At base \(B+n_k\) use \(q+\operatorname{round}(n_kp)\), whose offset tends to \(d\). The sources are eventually physical, since \(p\) is interior. Within the fixed strict groups sorting is continuous in the bounded offsets, so the normalized increments tend to \(A_p-J\).
+
+Write \(A_p-(1-\theta)J=(1-\theta)(A_p-J)+\theta A_p\). Boundedness of \(A_p\) gives the required upper bound by choosing \(\theta\) small and then shrinking the neighborhood and increasing the base. Over any fixed number \(j\) of steps near positive leading phases, \eqref{eq:track} gives the shadowing bound \(2^j\|x-p\|_\infty+(2^j-1)/B\). Thus the pointwise upper bounds can be summed over the \(h\) actual steps. Taking \(\epsilon\le3\|y(p)\|_\infty/7\) proves the lemma.
+\end{proof}
+
+\subsection{Nonnegative outer-gap deviation}
+By Appendix~\ref{ap:catalogue}, every noncentral periodic point in the open ball with \(y_0\ge0\) is one phase of a two-cycle with gap vectors
+\begin{equation}\label{eq:two}
+ (A,A,A,D,C,A),\qquad(A,A,C,A,D,A),
+ \quad A=1/6+a,\quad D=1/6+b,\quad C=1-4A-D,
+\end{equation}
+where \(b\ge a\ge0\) and \(3a+2b\le1/6\). We call the first phase canonical. For a positive innermost physical source, define the \(i\)th level as the pair \((L_i,R_{6-i})\) from \eqref{eq:digits}. The paired rule \(P_B\) places \(B-1\) first, sorts within each pair, retains the level order, and takes symmetric differences. It equals \(F_B\) if each pair lies weakly above the next. Leading adjacent slacks, measured as the minimum in one pair minus the maximum in the next, are
+\[
+ (C,1-5A,1-5A,C),\qquad(A,1-3A-2D,1-3A-2D,A)
+\]
+in the two phases. The only possible interlevel ties within the ball occur in the second phase on \(3a+2b=1/6\). There \(D>A\) because \(a=b=1/30\) lies on the sphere. The borrowed comparisons responsible for both ties are \(R_4-L_3\) and \(R_3-L_4\), each equal to \(B-q_3-q_4-1\).
+
+\begin{lemma}\label{lem:two}
+Fix a noncentral cycle \eqref{eq:two} in the open ball. In sufficiently small normalized neighborhoods of its two phases, for all sufficiently large bases, every start near the canonical phase admits a block of \(1520\) actual updates, and every start near the other phase a block of \(1521\) actual updates, that increases the minimum integer gap by at least nineteen. If \(b>a\) and an integer \(M\ge1\) is fixed, every start near the canonical phase admits a block of \(2M\) actual updates, and every start near the other phase a block of \(2M+1\) actual updates, that increases the maximum integer gap by at most one. The neighborhoods and base threshold may depend on \(M\).
+\end{lemma}
+\begin{proof}
+Use centered coordinates \(X=6q-B\vct\). The centered paired map \(\Psi\) is the symmetric-difference map of the list starting with \(-6\), followed by the internally decreasing pairs
+\begin{equation}\label{eq:centered}
+ (X_i-6\mathbf1_{i=5},-X_{6-i}-6\mathbf1_{i<5}),\qquad 1\le i\le5 .
+\end{equation}
+Indeed the two digits in each pair have the same coefficient of \(B\) before centering. The physical classes are \(X_i\equiv iB\pmod6\), preserved by \(\Psi\). This uses the odd-digit base translation of \cite[Theorem 4]{G4}, which proves a guarded form of the translation proposed by Thakur \cite[Remark 4.3]{Thakur}. The adjacent-level condition is imposed whenever we identify this map with actual subtraction.
+
+Appendix~\ref{ap:returns} proves that on the integer lattice, a paired two-step return with its two stated guards loses at most one unit of the gap \(q_4-q_5\), prepares a state for which some prefix of the next nineteen guarded returns gains one unit, and makes \(q_3-q_4\) nonincreasing when the correction denoted \(H_f\) there is zero. The two retained guards are strict at both boundary directions of the canonical family, and \(H_f=0\) holds with a strict margin when \(b>a\). By finite shadowing these statements persist along any prescribed fixed block close to the leading cycle. The canonical minimum is \(q_4-q_5\). When \(b>a\) the canonical maximum is \(q_3-q_4\). The extremal indices persist at the block endpoints. After preparation, greedily take gain-one prefixes, with losses at most eighteen in the last unfinished prefix. For \(N\) returns the total minimum gain is at least \(\lfloor(N-1)/19\rfloor-19\). With \(N=760\) this gives twenty. An aligning step from the other phase costs at most one at either extreme under the paired rule, by the one-unit transfer identity in Appendix~\ref{ap:returns}.
+
+It remains to justify the same comparisons across the endpoint ties. Near a canonical point on the edge the levels remain ordered. At its lower endpoint \(a=0\) the additional equality \(2x_3=1\) stays inside level 3. Near the other phase, the only two possible exchanges across levels have size \(\Delta=(q_3+q_4-B+1)_+\). They occur at ranks \((4,5)\) and \((6,7)\), starting the ranks at zero. The equal changes at opposite ranks 4 and 6 cancel. The change at rank 7 adds \(\Delta\) to the fourth difference. Thus at such an other-phase source
+\begin{equation}\label{eq:edge}
+ F_B(q)=P_B(q)+\Delta(0,0,0,1,0).
+\end{equation}
+The strict comparisons needed for this sort have positive margins at every edge point in the open ball, uniformly on a compact subedge. The six exact sorting predicates in Appendix~\ref{ap:returns} verify the updates and the resulting full return.
+
+In the return coordinates \((\ell,w,p,s,r)\) of Appendix~\ref{ap:returns} (here and in that appendix \(p\) is a return coordinate, not a periodic point), \eqref{eq:edge} adds \(\Delta\) only to the output \(w\). Compare the actual orbit at canonical returns to the paired orbit from the same canonical input. The paired orbit has smaller \(w\) by the cumulative corrections. Decreasing \(w\) preserves both guards and \(H_f=0\), so the remaining four coordinates, whose updates are then independent of \(w\), agree by induction. The actual canonical minimum is increased and the maximum decreased by this difference in \(w\), since \(q_4-q_5=w-r+(B-5\ell)/6\) and \(q_3-q_4=s-w+(B+\ell)/6\). Finite actual shadowing ensures that every strict comparison used in this induction holds, since at both leading phases \(x_5=A>0\). For an initial other-phase point the one-step correction also improves the canonical extrema relative to the paired output. The two block estimates therefore hold across the edge as well as on its strictly paired side.
+\end{proof}
+
+\section{The stopped energy bound}\label{sec:stopped}
+
+\begin{proposition}\label{prop:restart}
+Fix \(0<\eta\le s_*\) and \(T>10080/\sqrt5\). For all sufficiently large \(B\), every physical start with \(e(q/B)\le s_*-\eta\) reaches \(S_B\) within \(TB\) updates. All gaps before and at the hit are at least \(B[1/6-\sqrt{(5/6)(s_*-\eta/2)}]\).
+\end{proposition}
+
+\begin{proof}
+Suppose the proposition fails. Then there are bases \(B_k\to\infty\) and starts \(q_k\) with \(e(q_k/B_k)\le s_*-\eta\) that either miss \(S_{B_k}\) for \(\lfloor TB_k\rfloor\) steps or have a smaller gap before the hit. Stop each path when its energy first reaches \(s_{\rm out}=s_*-\eta/2\), and rescale time by \(B_k\). Along a subsequence the sorted gap profile converges, since it has bounded variation. The fast motion near leading cycles is recorded by occupation measures \(\mu_t\) (Section~\ref{sec:occupation}). Each \(\mu_t\) is \(K\)-invariant, so by Lemma~\ref{lem:leading} it is carried by finitely many leading periodic points with one profile. Lemmas~\ref{lem:ordinary} and~\ref{lem:two}, applied at these points, give \(e'\le-\gamma\sqrt e\) (Section~\ref{sec:blocks}). Hence the limiting energy vanishes before \(T\). The endpoint argument of Section~\ref{sec:extinction} then shows that the paths are never stopped and lie in \(S_{B_k}\) by time \(\lfloor TB_k\rfloor\), a contradiction.
+
+By \eqref{eq:gap-bound}, on \(e\le s_*-u\), for \(u>0\), all gaps have a positive lower bound. Stop the path at the first time \(\tau_B\) when \(e\ge s_{\rm out}=s_*-\eta/2\). All sources before that time are positive innermost. The estimates of Section~\ref{sec:geometry} apply to the crossing update as well. Its excess above \(s_{\rm out}\) is at most \(20/B\), so it too has positive innermost difference for all large \(B\).
+
+\subsection{Occupation measures of the stopped path}\label{sec:occupation}
+Along any sequence of bases tending to infinity and starts with \(e(q/B)\le s_*-\eta\), pass to a subsequence with \(\min(T,\tau_B/B)\to t_*\). The starting margin and the one-step upper allowance give \(t_*\ge\min(T,\eta/40)>0\). On \([0,T]\) let \(x_B(t)=F_B^{\min(\lfloor Bt\rfloor,\tau_B)}(q)/B\), held at the crossing. The sorted upper gap sums and the outer gap have bounded upward variation, hence bounded total variation by their bounded ranges. Helly selection gives a subsequence with strong \(L^1\) and almost-everywhere convergence of the sorted centered profile and outer deviation, to \(\lambda(t)\) and \(\alpha(t)\). In particular the maximum \(b_B\), minimum \(c_B\) and energy \(e_B\) of the centered profile converge in the same senses to \(b,c,e\), all of bounded variation. For \(t\ge u\) we have
+\begin{equation}\label{eq:upper-energy}
+ e_B(t)-e_B(u)\le20(t-u+1/B).
+\end{equation}
+The limit has \(e(0+)\le s_*-\eta\), and \(e(t)-20t\) has a nonincreasing representative. In particular the singular part of \(De\) is nonpositive.
+
+On a further subsequence the bounded functions \(f(x_B(t))\) have weak-* limits for each \(f\) in a countable dense rational vector space in \(C(\mathcal D)\) containing constants. Outside one null set these limits define positive norm-one functionals, and hence probability measures \(\mu_t\) on \(\mathcal D\). Approximation extends convergence against every continuous spatial test and \(L^1\) time weight. Strong convergence of profile and outer gap forces the support of \(\mu_t\) to have profile \(\lambda(t)\), outer deviation \(\alpha(t)\), and energy at most \(s_{\rm out}\), almost everywhere. For example, test the distance from the limiting profile by approximating that profile by simple functions of time.
+
+On any compact time interval in \((0,t_*)\) the paths are eventually unstopped. For Lipschitz \(f\), the error between \(f(Kx_B(j/B))\) and \(f(x_B((j+1)/B))\) is \(O(B^{-1})\). Weighted summation divided by \(B\) telescopes the remaining time shift against smooth compactly supported time weights. Thus \(K_*\mu_t=\mu_t\) almost everywhere before \(t_*\). Invariance forces zero integral of the continuous nonnegative loss \(\delta\), hence zero loss at all forward iterates almost surely. Such an orbit permutes one fixed gap multiset and reaches a cycle within \(H=6!\) steps. Invariance removes the transient states. The periodic set is closed, being the union of \(\Fix(K^h)\) for \(1\le h\le H\), so the support consists of periodic points. The common gap profile makes this support finite.
+
+\subsection{From local blocks to derivatives}\label{sec:blocks}
+Suppose that \(V_B\) converges in the senses above and increases by at most \(A_0/B\) per step, and that every starting point in an open set \(U\) admits a block of at most \(J\) steps decreasing \(V_B\) by at least \(d/B\). Greedily take such blocks in \(U\) and single steps elsewhere. On an interval of \(N\) steps with \(N_{\mathrm{bad}}\) such single steps, the terminal remainder is shorter than \(J\). The increment is at most
+\begin{equation}\label{eq:greedy}
+ -\frac{d}{J}\frac NB+
+ \left(A_0+\frac dJ\right)\frac{N_{\mathrm{bad}}}B+O(B^{-1}).
+\end{equation}
+If instead blocks of lengths from \(J_0\) to \(J\) increase \(V_B\) by at most \(d/B\), the increment is at most \(dN/(J_0B)+A_0N_{\mathrm{bad}}/B+O(B^{-1})\).
+
+At a time with \(\supp\mu_t\subset U\), bound the bad steps by all visits outside \(U\), using a continuous cutoff equal to one there and zero near the support. In the scaling limit the normalized bad count is bounded by the time integral of the cutoff against \(\mu_t\). At Lebesgue times its mean tends to zero as the interval shrinks. Finite unions of rational balls and nested closed rational balls give countably many cutoffs refining every such cover. Differentiation and pointwise convergence at interval endpoints can therefore be imposed on a common full-measure set. The resulting derivatives satisfy \(V'\le-d/J\) and \(V'\le d/J_0\), respectively, at the times in question.
+
+Take a differentiation time with \(e(t)>0\) before the stop. If \(\alpha(t)<0\), Lemma~\ref{lem:ordinary} covers the finite support with good neighborhoods having a common base threshold. Here \(\|y\|_\infty\ge\sqrt e/\sqrt6\) at every supported point. With \(J=H\), \eqref{eq:greedy} gives
+\[
+ e'(t)\le-\gamma\sqrt{e(t)},\qquad \gamma=(7\sqrt6\,720)^{-1}.
+\]
+If \(\alpha(t)\ge0\), the support lies on the two phases of \eqref{eq:two} with \(a=\alpha(t)\) and \(b=b(t)\), and the profile minimum \(c\) is the centered canonical minimum \(-4a-b\); the extrema do not depend on the phase. Invariance gives equal weights to the phases. Apply Lemma~\ref{lem:two} to \(-c_B\) to get \(c'\ge19/1521>1/100\). If \(b>a\), apply its maximum estimate for each fixed \(M\). This gives \(b'\le1/(2M)\) for every \(M\), hence \(b'\le0\).
+
+For any profile with extrema \(b,c\), the four other entries give
+\[
+ e\ge V(b,c)=b^2+c^2+(b+c)^2/4.
+\]
+At these times of two-cycle occupation equality holds. Differentiating the nonnegative difference \(e-V\) at an equality time gives
+\[
+ e'=2(b-a)b'-2(5a+b)c'\le-\frac{2}{100\sqrt6}\sqrt e.
+\]
+When \(b=a\) the maximum term vanishes. The last inequality uses \(e\le6(4a+b)^2\). Both cases give the same bound with coefficient \(\gamma\).
+
+\subsection{Extinction and discrete endpoints}\label{sec:extinction}
+At almost every zero of \(e\), its derivative is zero. Its singular derivative is nonpositive by \eqref{eq:upper-energy}, so \(De\le-\gamma\sqrt e\,dt\) before \(t_*\). In particular \(e\) is nonincreasing. Above any positive level the BV chain rule gives absolutely continuous derivative of \(\sqrt e\) at most \(-\gamma/2\). Monotonicity gives the sign of the singular derivative. Integrating and sending the level to zero gives extinction by \(2\sqrt{s_*-\eta}/\gamma\), provided the stop is later. The upper bound \(2\sqrt{s_*}/\gamma=10080/\sqrt5\) is less than \(T\).
+
+If crossings occurred by \(\lfloor TB\rfloor\) along arbitrarily large bases, extract the preceding limits with \(\tau_B/B\to t_*\). At a crossing the energy is at least \(s_*-\eta/2\). By \eqref{eq:upper-energy} it is eventually at least \(s_*-3\eta/4\) on a sufficiently short fixed interval just before \(t_*\). This contradicts strong convergence to the nonincreasing limit bounded above by \(s_*-\eta\). Thus the entire paths are unstopped through this horizon for all sufficiently large bases. On any new counterexample sequence the limiting energy is zero on a fixed interval before \(T\). A fixed positive energy excess at \(\lfloor TB\rfloor\) would, again by \eqref{eq:upper-energy}, imply a positive lower bound on a preceding subinterval, a contradiction.
+
+In particular at the horizon the discrete energy is at most \(1/2940\) uniformly for large bases. By \eqref{eq:gap-bound} this gives a fixed positive margin above \(1/7\) in every normalized gap, since energy \(1/1470\) is required for a gap equal to \(1/7\). This margin absorbs the ceiling and the additional 64 in \(M_B\), giving a hit of \(S_B\). No crossing before that hit gives exactly the gap bound in Proposition~\ref{prop:restart}. This completes its proof.
+\end{proof}
+
+\section{Original inputs and first cyclic words}\label{sec:bridge}
+
+\subsection{Access probability}\label{sec:access}
+For independent uniform continuous digits, sort the eleven coordinates. Their joint density on the ordered simplex is \(11!\). Change variables to the smallest digit and ten adjacent spacings, with absolute determinant one. Each of the five inner gaps is the sum of two opposite spacings. The corresponding split has interval length \(g_i\), and the smallest digit ranges over an interval of length \(g_0\). Thus the limiting original difference law has density \(11!\prod_{i=0}^5 g_i\) on \(\mathcal D\). To obtain weak convergence through all bases, couple each digit to the corresponding continuous uniform \(U\) by \(\lfloor BU\rfloor\) and divide by \(B\). Conditioning on nonconstant words removes mass \(B^{-10}\).
+
+Fix a desired mass loss \(\epsilon>0\). By Lemma~\ref{lem:entry} and monotonicity of energy, for some fixed \(h\) the leading energy at step \(h\) is below \(s_*\) on original limiting mass greater than \(1-\epsilon\). Exhausting this open sublevel and the strict simplex gives fixed \(\eta,\rho>0\) such that
+\[
+ \{x:\min g(x)>\rho,\ e(K^hx)<s_*-2\eta\}
+\]
+still has mass greater than \(1-\epsilon\). Weak convergence bounds the limiting discrete mass of this open set from below. For every actual start there, leading majorization keeps all leading gaps above \(\rho\). Inductively \eqref{eq:track} gives actual error at most \((2^j-1)/B\) in difference maximum norm through step \(h\), since this bound keeps the innermost difference positive. Energy is \(4\)-Lipschitz in normalized differences, so the actual time-\(h\) state has energy below \(s_*-\eta\) for large \(B\). Apply Proposition~\ref{prop:restart} with \(T=4508\) and count the original \(h\) updates. Since \(h\le B\) eventually for each mass tolerance, \(\limsup_B\Pr_B(\sigma_B>4509B)\le\epsilon\). Let \(\epsilon\downarrow0\). This proves the first assertion of Theorem~\ref{th:main}.
+
+\subsection{Permanent pairing and the word time}
+For a centered vector \(X\) put \(\widehat g(X)=(-X_1,X_1-X_2,\ldots,X_4-X_5,X_5)\) and \(R(X)=-\min\widehat g(X)\). Appendix~\ref{ap:clock} gives
+\begin{equation}\label{eq:clock}
+ R(\Psi X)\le R(X)+12,\qquad
+ R(X)>120\ \Longrightarrow\ \min_{1\le j\le32}R(\Psi^jX)\le R(X)-6
+\end{equation}
+on the physical lattice. Repeated lower hits reach \(R\le120\) within \(32\max(0,\lceil(R(X)-120)/6\rceil)\) updates. Before that visit, intermediate residuals are bounded by the starting residual plus 384. After the visit, the first departure has residual at most 132, and the next lower-hit block has intermediate residuals at most \(132+31\cdot12=504\). Iterate these bounds. In particular every centered cycle lies in \(R\le504\). For a fixed class the six centered gaps are \(6z_i-\beta\) with \(\sum z_i=\beta\) and \(0\le\beta<6\). The bound \(R\le504\) gives at most \(\binom{509}{5}\) possibilities by stars and bars, which bounds the additional time to a cycle after the first visit to \(R\le120\).
+
+The actual gaps are \((B+\widehat g_i(X))/6\). If all are at least \(m\ge1\) and \(7m\ge B+1\), then every borrowed level is weakly above the next. Indeed write the gaps as \(m+h_i\) with \(h_i\ge0\) and \(m\ge \sum h_i+1\). The same-type comparisons of \(L_i,L_{i+1}\) and \(R_{6-i},R_{5-i}\) use one full gap with a shift of at most one. In a cross comparison \(q_i+q_{5-i}-B\), the sum contains seven gaps with multiplicity. In the other comparison \(B-q_{6-i}-q_{i+1}\) the subtracted sum contains five gaps with multiplicity, each at most double. Both differences are at least one before unit borrowing. The leading \(B-1\) and positive innermost condition also hold. In particular \(R\le(B-6)/7\) suffices. At entry to \(S_B\), \(R+384\le(B-6)/7\), and \(504\le(B-6)/7\) when \(B\ge3534\). Thus the envelopes above prove by induction that the actual path stays positively paired and agrees with \(\Psi\). Capture in differences then takes at most \(C_1B+C_0\) further steps for absolute constants \(C_1,C_0\).
+
+A cyclic word has cyclic differences. Conversely, once the differences are cyclic, the next word is cyclic because subtraction depends only on the source differences. If \(T_{\rm diff}\) is the first cyclic difference time from the original word, then \(T_{\rm diff}\le T_B\le T_{\rm diff}+1\), and its first cyclic word projects to a phase of that same terminal difference cycle. The estimate \(-(6-i)R\le X_i\le iR\) follows by summing centered gaps on either side of coordinate \(i\). At every phase of a cycle reached after visiting \(S_B\), it yields \(\|Z_B-\vct/6\|_\infty\le420/B\). On \(\{\sigma_B\le4509B\}\) we also have \(T_B\le (4509+C_1)B+C_0+1\). The complement has vanishing original probability. This gives both the tightness and the convergence in Theorem~\ref{th:main}. Finitely many small bases cause no tightness problem because each word space is finite.
+
+\section{Scope and exceptional cycles}\label{sec:scope}
+
+To obtain the first limit of Theorem~\ref{th:main} with any fixed \(L>10080/\sqrt5\) in place of \(4509\), run the argument of Section~\ref{sec:access} with a fixed \(T\) strictly between \(10080/\sqrt5\) and \(L\), and absorb \(h/B\to0\) at each fixed mass tolerance. A limiting distribution for \(T_B/B\) and the integer first-cycle labels remain open here. For \(B\ge3534\), visiting \(S_B\) ensures permanent positive pairing. The next state can leave \(S_B\) itself. For example, take \(B=7t\), \(t\ge400\), \(M=t+65\) and \(A=B-5M\). The gaps \((A,M,M,M,M,M)\) give next gaps \((M,A+1,M-1,M,M,M)\) by \eqref{eq:digits}.
+
+There are exact cycles with \(\sigma_B=\infty\) for all sufficiently large bases in each class \(0,1,2\pmod5\). One four-cycle at \(B=5m\) starts at \((4m+1,3m,3m-1,2m,m+2)\), and every phase has minimum gap at most two. Appendix~\ref{ap:cycles} records the exact vectors, the full inverse basin in class zero, and the construction in the other two classes. Every phase in the exceptional examples has a gap at most five. A visit to \(S_B\) gives terminal gaps bounded below by \((B-504)/6\). Thus for large bases every word in any of the exceptional basins has \(\sigma_B=\infty\), and by Theorem~\ref{th:main} their full original basin probabilities tend to zero in their respective classes. This rules out a bound valid for every input. Whether exact cycles with \(\sigma_B=\infty\) exist for large bases in the classes \(3\) and \(4\pmod5\) remains an open question.
+
+\section{Computations and verification}\label{sec:computation}
+
+The accompanying command \texttt{bash reproduce.sh} rebuilds the leading catalogue and exact rational optimizations, checks the local return predicates, and reruns the centered lower-hit coverage. The finite predicates are specified in the appendices. The two incremental leading-tree transcripts have 38,937 and 11,937 decisions. Their complete replays agree in Z3 5.4.1 and Yices 2.7.0. A separate exhaustion, with independently generated signs and affine returns, validates all 122,278 rejected rational systems using exact Motzkin witnesses. It also checks all 1,078 archived oriented witnesses, all 268 energy ranges and the 748 work vertex tests. A further exact reduction verifies the affine returns throughout the recorded cells.
+
+The radius predicates and the six adjacent-level predicates have independent encodings. Both solvers were used on the latter, including the independent real-linear encoding. The radius predicates were re-encoded and checked in Yices, with an exact rational linear-programming cross-check of the ray expansion. For the ray return of Appendix~\ref{ap:radii} at unit inputs \(\xi\) with \(c\ge d\), both solvers refute any ten-step norm strictly below \(295/77\), and the rational input \(\xi=(-53,12,-15,77)/77\) attains it, with output \((295,256,57,-295)/77\). The fifty unbounded integer quadrants use one complete dual-solver encoding, supplemented by independent primitive recurrence and whole-word controls. The centered lower-hit tree has complete coverage in a single, independently derived primitive encoding, with both solvers at each of its 97,465 nodes. The primary affine calculation certifies the inverse basin for every \(m\ge20\). An independent reconstruction derives the inverse rule separately, including zero-innermost predecessors, and recovers the same 235 states at \(m=20,21,50,1000,20001\). This and the forward enumeration at eight values of \(m\) below are finite checks of the basin count. Dual-solver agreement tests decisions on shared formulas. The independent catalogue search checks the reduction and exact arithmetic separately. The remaining integer and local linear coverage tests rely on the stated solvers and encodings. Table~\ref{tab:checks} summarizes these checks lemma by lemma.
+
+A separate verification traced the reductions of this paper and checked selected finite obligations
+using separately written exact-arithmetic programs and SMT encodings
+in cvc5 1.4.2 and Yices 2.7.0. Exhaustive enumeration at
+\(m=18,19,20,21,22,23,25,29\) recovered the 235 states of the inverse
+basin of Appendix~\ref{ap:cycles}, with its layers and multiplicities.
+The phase works \(0,2/7,-3/7\) of the boundary orbit were recomputed
+from the definition, and the immediate exit from \(S_B\) was
+confirmed for \(t=400,\ldots,3000\). On denominator grids
+\(N=6,\ldots,90,112,120,126,140\), all high-energy interior periodic
+points found lay in the five listed cells.
+
+The paired-return identity agreed on \(185\,147\) guarded integer
+states. The adjacent-level formulas agreed on \(180\,000\) sources at
+each edge phase, including \(180\,000\) canonical returns, and the
+one-unit transfer identity agreed on \(200\,000\) states. Both solvers
+verified the first assertion of Lemma~\ref{lem:centered} symbolically,
+also with the allowance six in place of twelve. Bisection on the ten-step
+bound bracketed the ray factor \(295/77\), satisfiable at \(295/77\)
+and unsatisfiable \(10^{-9}\) below. The first assertion of Lemma~\ref{lem:quadrant}
+held in all \(419\,626\) qualifying cases of a box of \(2.16\cdot10^9\)
+states. The nineteen-return gain-or-exit conclusion held throughout
+that box and in \(10^8\) random large-coordinate trials. The largest
+lower-hit delay in about \(2.1\cdot10^8\) random states with \(R>120\)
+was 30.
+
+Subtraction of \(461\,060\) uniform nonconstant words at 55 bases
+between 3534 and \(123\,456\,784\), covering both parities and every
+residue modulo five, gave observed maxima of about \(0.161\) for
+\(\sigma_B/B\) and \(0.208\) for \(T_B/B\). The maximum of
+\(B\|Z_B-(5,4,3,2,1)/6\|_\infty\) was 6. The ancillary
+material contains the encodings and logs for these finite checks.
+
+\begin{table}[htbp]
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{3.1cm}>{\raggedright\arraybackslash}p{4.1cm}>{\raggedright\arraybackslash}p{5.95cm}@{}}
+\hline
+Lemma & Finite obligation & Primary check & Independent check\\
+\hline
+\ref{lem:catalogue} & Coverage of both sorting trees; affine returns and energy ranges of the 268 cells & Two incremental tree transcripts (38,937 and 11,937 decisions), with complete replays agreeing in Z3 and Yices; exact rational optimization & Separate exhaustion with independently generated signs and affine returns: all 122,278 rejected systems by exact Motzkin witnesses, all 1,078 oriented witnesses and all 268 energy ranges; exact reduction of the affine returns. Separate: periodic points on finite denominator grids\\
+\ref{lem:work} & 748 work vertex tests in 189 cells & Exact rational vertex tests & The same separate exhaustion checks all 748 vertex tests. Separate: phase works of the boundary orbit\\
+\ref{lem:radii} & Six real-linear predicates & Z3 and Yices & Re-encoding checked in Yices; exact rational linear programming for the ray expansion; both solvers refute any ten-step ray norm below \(295/77\), and a rational input attains it. Separate: bisection bracketing \(295/77\)\\
+\ref{lem:quadrant}, second assertion\(^\dagger\) & Fifty unbounded integer quadrants & One complete encoding, Z3 and Yices & Primitive recurrence and whole-word controls. Separate: gain-or-exit conclusion in a box of \(2.16\cdot10^9\) states and in \(10^8\) random trials\\
+\ref{lem:seam-tests} & Six sorting predicates & Z3 and Yices & Real-linear encoding with ranks from pairwise comparisons, in both solvers. Separate: \(180\,000\) sources at each edge phase\\
+\ref{lem:centered} & First assertion; second assertion, tree coverage\(^\dagger\) (97,465 nodes) & One real-linear query for the first, in Z3 and Yices; one primitive encoding, with Z3 and Yices at every node; exact replay of the feasible witnesses & Separate: symbolic check of the first assertion in cvc5 and Yices, also with allowance six; about \(2.1\cdot10^8\) random states with \(R>120\)\\
+\ref{lem:cycles} & Affine comparisons for the cycles and the inverse basin of 235 states & Exact integer affine calculation for every \(m\) from each stated threshold (\(m\ge20\) in class 0); direct subtraction at individual bases & Independently derived inverse rule, including zero-innermost predecessors, at \(m=20,21,50,1000,20001\)\(^\dagger\). Separate: exhaustive forward enumeration at eight values of \(m\)\(^\dagger\). For the cycles in classes 1 and 2, separate exact iteration for every \(m\) from each threshold to \(599\) and at larger \(m\)\(^\dagger\)\\
+\hline
+\end{tabular}
+\caption{The computer-assisted lemmas and their checks. In the last column, ``Separate'' introduces checks from the separate verification described in this section. A dagger marks independent evidence that consists only of tests at finitely many bases, in finite boxes or on random samples.}
+\label{tab:checks}
+\end{table}
+
+\appendix
+\section{The periodic catalogue}\label{ap:catalogue}
+
+\begin{lemma}\label{lem:catalogue}
+The periodic set of \(K\) is the union over cyclic phases of finitely many relatively open polyhedral cells, on each of which \(K\) is affine. If \(g_0\ge1/6\) and \(e<s_*\), a periodic point is the center or a phase of \eqref{eq:two}. Every periodic point with all gaps positive and \(e\ge s_*\) lies, up to cyclic phase, in one of the following five cells, restricted to \(e\ge s_*\).
+\begin{enumerate}
+\item The fixed ray with centered gaps \(f(-1,1,1,-1,-1,1)\) for \(1/\sqrt{180}\le f<1/6\).
+\item The relative interior of the period-three triangle with gap vertices
+\[
+ (2,4,2,0,3,3)/14,\quad (1,2,1,1,1,2)/8,\quad (1,2,1,1,2,1)/8,
+\]
+and the two open edges incident to the first vertex.
+\item The isolated period-three orbit with one gap phase \((1,1,2,3,1,2)/10\).
+\end{enumerate}
+\end{lemma}
+
+As certificate data, up to cyclic rotation of the sorting word there are 268 guarded periodic cells, of which 192 have all gaps positive, six have positive outer gap and some other zero gap, and seventy have zero outer gap; exactly 191 meet \(e<s_*\), of which 185 also meet \(g_0<1/6\) inside the ball, and of the all-positive cells with energy supremum \(s_*\), 32 have unattained supremum and one attains it.
+
+The encoding starts with sorting faces indexed by the central multiplicity \(x_i=1/2\), decreasing nonzero radii with counts on each side, and whether the largest radius equals \(1\). This gives 791 faces. The circle proof of Lemma~\ref{lem:leading} gives zero loss precisely when there is no pure site of multiplicity at least two and no pair of consecutive pure sites of the same color. Indeed these are exactly the obstructions giving a positive measure of starts of arcs with at least two points of only one color for some arc length. Mixed sites cannot give such an arc. Thus the strictness criterion is constant on each face, including ties and both copies of zero. On the 251 surviving faces the leading gap list is checked to be an affine permutation of the input gaps throughout the face by exact substitution. At ties assign the first available input label. Since \(K(x)_1=\max(x_1,1-x_5)\), the outer gap is constant on periodic points. The 165 stationary faces use a permutation keeping label zero.
+
+In each of the positive- and zero-outer-gap trees the state is a permutation of the six initial gap labels, together with all ancestral guards. For each unrepeated label the tree queries the union of remaining faces. A satisfying point selects a child, whose guard is then excluded from the next sibling query. A final UNSAT certifies coverage. At the first repeated label the allowed orbit repeats the actual state with that label for every point of the guarded region. The initial state is periodic exactly when it equals a state in the recurrent suffix. All suffix positions are tested by equality of actual gap values. In particular coincident gap labels may give earlier physical returns. Six labels bound the number of distinct permutations by \(6!\), so this search has no shorter assumed period bound. It yields 906 and 172 oriented words, or 198 and 70 cyclic words.
+
+The independent search traverses a trie of signs of the homogeneous gap forms for \(x_i-x_j\), \(x_i+x_j-1\), and the two endpoint gaps. At a label repetition from \(t\) to \(t+h\) it tests return at time \(h\) from the source. For a periodic source the period divides \(h\), and conversely a return at \(h\) makes the source periodic. Exact clipping of the nonnegative cone uses its normalized rays, the vertices on \(\sum g_i=1\). Each strict row must be positive on some retained ray, in which case the average of all rays is a joint strict witness. Each infeasibility witness is given by weak rows \(a_j\cdot g\ge0\), a required strict row \(s\cdot g>0\), and nonnegative rational coefficients with \(\sum_j\lambda_j a_j=-s\). When the weak cone has no nonzero ray, use the normalization row \(s=\boldsymbol 1\). Exact fractions verify the identities.
+
+A strictly feasible witness shows that weak guards give the closure by taking segments toward the witness. Exact vertex clipping and projections of the center on all closure faces give the extrema of the squared norm. For the minimum retain feasible orthogonal projections, and for the maximum test all vertices by convexity. Check optimum membership against the original strict guards. For example the triangle and its two edges have energy infima \(5/384,1/48,1/48\) and common supremum \(1/21\), all unattained. For the nonnegative outer-gap test, cut the cells by \(g_0\ge1/6\). For each cell and phase, either all vertices of the cut lie in one and the same orientation of \eqref{eq:two}, and then by convexity so does the whole cut, or the cut is a single point on one of the isolated fixed and two-periodic boundary orbits with representatives \(x=(2,1,1,1,1)/3\) and \(x=(4,2,1,1,1)/5\). Zero gaps imply \(e\ge s_*\) by \eqref{eq:gap-bound}, so the latter isolated points are excluded in the open ball. Direct leading paired subtraction interchanges the two displayed orientations in \eqref{eq:two}.
+
+\section{The phase-work optimization}\label{ap:work}
+
+\begin{lemma}\label{lem:work}
+At a periodic point with \(0<g_0<1/6\), the sum of one-step phase suprema over a return of length \(h\) satisfies
+\[
+ W\le-\tfrac27 h\|g-\boldsymbol 1/6\|_\infty.
+\]
+For \(e<s_*\) the coefficient \(2/7\) can be replaced by \(4/7\).
+\end{lemma}
+
+Write \(q=Bp+d\). At a periodic phase the outer gap is constant, so \(g_5(p)\ge g_0(p)>0\) by \(g_0(Kp)=\min(g_0(p),g_5(p))\). Therefore fixed offsets use the positive-innermost borrow rule for large bases. In each group of leading digits equal at \(p\), sort the residuals of \eqref{eq:digits}. The coefficient of \(B\) in \(\Delta E_B\) is a linear function of these sorted offsets and the source offsets. The \(B^2\) term vanishes because the leading gap profiles agree. The coefficient of the \(i\)th difference offset for a gap profile \(g\) is \(2(g_i-g_{i-1})\), for \(1\le i\le5\). Thus the contribution for the target uses its own profile, and the source contribution is subtracted using the source profile.
+
+In a nonzero radius group of size \(s\) the signed offsets \(d_i\) or \(-d_i\), using the high-side sign, share a fractional part. The reflected group uses their negatives. Both directions of a common translation preserve local sorting and physical order. The linear work is bounded above by positive-source majorization and the bounded digit offsets, even for real offsets. Its slope under common translation is therefore zero. Cap consecutive distinct spacings at one, and translate the smallest value to zero. Every weak sorting and physical guard survives, since all thresholds for differences are \(-1,0,1\). On the ray from the compressed point toward the original one, signed separations grow in their original direction or stay fixed. The work slope is nonpositive by the same upper allowance. The resulting integer grid is \(\{0,\ldots,s-1\}\).
+
+At radius zero, preserve signs and ties. In even bases cap distinct spacings from zero at one. In odd bases send the smallest absolute magnitude to \(1/2\), then cap the successive distinct absolute spacings at one. This preserves the half-integer lattice. A nonzero same-sign separation retains magnitude at least one, and opposite signs have magnitude sum at least one. Hence the weak guards and the nonpositive recession slope argument are valid in both parities. The resulting central grids are the integers in \([-s,s]\) and half-integers in \([-s+1/2,s-1/2]\). Each compressed pattern lifts with bounded offsets at all sufficiently large bases of the required parity, restoring each noncentral group's common fractional part. Only the central group restricts parity. Thus the maximum across grids equals the all-base phase supremum.
+
+The sum of these group maxima is convex on each cell as a maximum of linear forms. The exact test adds \(c h\|g-\boldsymbol 1/6\|_\infty\) to the work sum and checks nonpositivity at all vertices of each closure cut by \(g_0\le1/6\), using the cell's interior formula at its closure vertices. This is a convex function, so these vertex tests suffice. Lower-dimensional strata have their own work formulas. The certificate tests 748 vertices from 189 cells globally. Over the 185 cells meeting both ordinary and ball conditions, full-closure tests succeed with \(c=4/7\). This constant refers to the extension of each cell's work formula and the actual work at points inside the ball. At the outside vertex the extended triangle formula gives \(W=-2/7\), which is equality in the \(4/7\) test, while the boundary itself has extra ties. In differences its actual orbit passes through \((12,8,6,6,3)/14\), \((12,9,5,2,2)/14\), \((12,10,10,7,4)/14\), with phase work \(0,2/7,-3/7\), so the global coefficient \(2/7\) is attained there.
+
+\section{Local radius identities and inequalities}\label{ap:radii}
+
+For a reference radius vector, take the raw rows \((r_1,r_1+r_2-1,\ldots,r_4+r_5-1)\). A signed index means the signed raw offset in that row. At a tie sort offsets within the group in decreasing order, and use absolute value at a zero raw entry. This gives exact homogeneous local offset maps, since the strict groups and nonzero signs are unchanged in a small neighborhood. For input offsets \((a,b,c,d,h)\), the raw offsets are \((a,a+b,b+c,c+d,d+h)\). The signed group words are
+\[
+\begin{array}{@{}ll@{}}
+\text{Ray}&(1),(-5),(2,-4),(-3)\\
+\text{Triangle, phase 1}&(1,-5),(-4),(2),(-3)\\
+\text{Triangle, phase 2}&(1),(2,-5),(3),(-4)\\
+\text{Triangle, phase 3}&(1),(-5),(2,-4),(-3)\\
+\text{Isolated, phase 1}&(1),(2,-5),(3),(4=0)\\
+\text{Isolated, phase 2}&(1,-5),(-4),(2,-3)\\
+\text{Isolated, phase 3}&(1),(2,-5),(-4),(3).
+\end{array}
+\]
+On the zero-radius edge of the triangle, replace phase 2's last entry by \((4=0)\). On the equal-radius edge join phase 1's last two groups as \((2,-3)\). The words follow from the catalogue faces or direct evaluation on their strict rational witnesses. For the ray, \(r_*=(2/3+2f,2/3-2f,1/3,1/3,2f)\), and the first return on \(\xi=(v,c,d,z)=(a+b,c,d,h-a)\) is
+\[
+ F_S(\xi)=(-d-z,\max(v,-c-d),\min(v,-c-d),-v-c).
+\]
+For the triangle, use normals \((u,v,w)=(c-d,a+d+h,2a-c-d-h)\). They vanish on the common affine plane defined in radius coordinates by \(r_3=r_4\), \(r_1+r_4+r_5=1\), and \(2r_1-r_3-r_4-r_5=1\). Along with \(a,b\) they give invertible coordinates. Their return is the map used in Lemma~\ref{lem:entry}.
+
+For the isolated cycle take the first radius section \(r_A=(4,3,3,2,1)/5\) and let \(T_I\) be the three-step offset return from the last three words. The other radius sections are \((4,2,2,1,0)/5\) and \((4,4,2,1,1)/5\). At the first section,
+\[
+ e(C(r_A+x))-s_* =
+ \tfrac1{10}(-b+c+2d+h)+\tfrac14\|(-a,-b,a-c,b-d,c-h,d+h)\|_2^2
+\]
+for \(x=(a,b,c,d,h)\), by expansion of the gaps of \(C(r_A+x)\).
+
+\begin{lemma}\label{lem:radii}
+The following six real-linear counterexample predicates are infeasible; items 1, 2 and 4 are one predicate each, and item 3 is one predicate for each of its three cases:
+\begin{enumerate}
+\item Input offsets preserve the tied radius order at the ray, and one step of its signed word differs on the four normals from \(F_S\).
+\item \(c\ge d\), \(\|\xi\|_\infty=1\), and \(\|F_S^{10}\xi\|_\infty\le2\).
+\item For each of the triangle interior and its two indicated edges, input offsets preserve the tied radius order and the normals after the three signed words differ from \((|L|,|v|+w_+-L_+,L-|w|)\), where \(L=u+w-v\).
+\item \(\|x\|_\infty=1\), \(b\ge c\), and both \(a\le0\) and \(-b+c+2d+h\ge0\) hold at \(x\) and \(T_Ix\).
+\end{enumerate}
+\end{lemma}
+
+Maxima, minima and absolute values are conditional linear expressions. A unit maximum norm imposes a box and a disjunction over its faces. For each identity a disjunction of coordinate mismatches is asserted. Z3 5.4.1 and Yices 2.7.0 both return UNSAT. An independent encoding checks all six in Yices. Exact rational linear programming independently gives ten-step ray expansion at least \(295/77\) in the same norm.
+
+\section{Guarded paired returns and adjacent-level exchanges}\label{ap:returns}
+
+We first record an extremal bound for one paired step, used for alignment. Write \(u=X/6\), set \(u_0=u_6=0\) and \(d_i=u_i+u_{6-i}\). Let \(z_i=\widehat g_i(X)/6\). The following operation on three pairs is majorizing:
+\[
+ (Az)_{2i,2i+1}
+ =\tfrac12\bigl(z_i+z_{5-i}\ \pm (|d_i+1|-|d_{i+1}+1|)\bigr)
+ \quad(0\le i\le2),
+\]
+with plus for index \(2i\). Each output pair has the same sum and at most the input absolute difference by the reverse triangle inequality. Replace the first output pair by
+\((\min(z_5,z_0+1),\ z_0+z_5-\min(z_5,z_0+1))\), obtaining \(Tz\prec z\). Sorting each pair of \eqref{eq:centered} and subtracting opposite ranks gives
+\[
+ z^+=Tz+\operatorname{clip}(d_1,-1,1)(0,-1,1,0,0,0),
+\]
+where \(\operatorname{clip}(d,-1,1)=\max(-1,\min(d,1))\).
+For the interior pairs this follows because the reflected partner entries for a pair with minimum \(m\) and maximum \(M\) are \(-M-1,-m-1\) in \(u\)-units. The two endpoint pairs create the displayed correction, obtained by splitting \(d_1\) at \(-1,1\). Thus a paired step decreases the minimum or increases the maximum by at most one integer gap unit.
+
+For the paired return let
+\[
+ X=(-\ell,-2\ell+6p,-3\ell+6s,6w-4\ell,\ell+6r).
+\]
+All five new coordinates are integral on the physical lattice, with \(B\equiv-\ell\pmod6\). At the canonical leading phase of \eqref{eq:two}, \((\ell,w,p,s,r)/B=(6a,a-b,0,0,0)\). Define
+\begin{align*}
+ C_f&=(-\ell+2s+1)_+,& A_f&=\max(-1,-r),\\
+ J&=(-r-1)_+-(r-1)_+,& K_f&=(r+1)_+,\\
+ H_f&=(w-J-p-1)_+,& t&=s-p-C_f,\\
+ D_f&=\max(A_f-1,t),&
+ E_f&=\max(A_f,t-1)-\max(-t-1,-A_f),\\
+ F_f&=\min(A_f,t-1)+J+1.
+\end{align*}
+The retained guards are \(w-\ell+p\le-1\), \(\ell-2w-2K_f\ge-1\). Under them the two-step paired return is
+\begin{equation}\label{eq:paired-return}
+ (\ell',w',p',s',r')
+ =(\ell-6D_f,w+J-p-4D_f,E_f-2D_f,F_f-3D_f+H_f,-p-K_f+D_f-H_f).
+\end{equation}
+The exact real-linear identity test compares all five coordinates with two applications of the primitive list \eqref{eq:centered} on these guards. Sorting gives first output
+\[
+ (-\ell+6A_f,-2\ell+6J,3\ell-6w-6K_f,
+ 2\ell+6p-6w,\ell+6(p-s+C_f)).
+\]
+The second sort folds the second and fourth internal coordinates, exchanging their reflections if necessary. This is the term \(H_f\) in \eqref{eq:paired-return}. Subtract the two relevant gaps before and after the return to get, in integer-gap units,
+\[
+ \Delta(q_4-q_5)=r+J+K_f+H_f,\qquad
+ \Delta(q_3-q_4)=-C_f-(t-A_f-1)_++H_f .
+\]
+The first summand \(r+J+K_f\) is \(-1,1,r+2\) for \(r\le-1,r=0,r\ge1\), respectively. On the ranges of \(t\) separated by \(A_f\pm1\), \(p'\) is \(t-A_f+3\), \(2(A_f-t)\), and \(A_f-t-1\), respectively. In each case the return prepares \(p'\le2\).
+
+\begin{lemma}\label{lem:quadrant}
+Start the integer recurrence \eqref{eq:paired-return} with \(p\le2\). If the first three returns satisfy both guards and their cumulative changes in \(q_4-q_5\) are all nonpositive, the state after the first return satisfies
+\[
+ \ell\ge-27,\quad w\le2,\quad
+ -2\le p\le2,\quad -4\le b_0=s-p\le-1,\quad -b_0-4\le r\le0.
+\]
+For each of the fifty integer triples \((p,b_0,r)\) here, there is no integer pair \((\ell,w)\) satisfying the displayed bounds and all eighteen successive guard pairs while each of the eighteen cumulative changes remains less than two.
+\end{lemma}
+
+For the first assertion, index the sources of the three returns by
+\(i=0,1,2\), and write \(H_i,D_i\) for \(H_f,D_f\) at source \(i\).
+The first increment is nonpositive only if \(r_0=-z\le-1\) and
+\(H_0\in\{0,1\}\), in which case it is \(H_0-1\). If \(r_1>0\),
+the second increment is at least three, so \(r_1\le0\). Since
+\(K_{f,0}=0\), we have \(r_1=D_0-p_0-H_0\) and
+\[
+ 1\le z\le4,\qquad z-1\le D_0\le p_0+H_0\le3 .
+\]
+
+If \(r_1<0\), the cumulative sum after two returns is
+\(H_0+H_1-2\le0\). Since \(D_1\ge-r_1-1\), a value \(p_1\le-3\)
+would give \(r_2\ge-p_1-r_1-1-H_1\ge1+H_0\). The third increment
+would be at least three and make the total positive. If \(r_1=0\),
+the two-return sum is \(H_0+H_1\), so both folds vanish. Now
+\(D_1\ge-1\) and \(K_{f,1}=1\) give \(r_2\ge-p_1-2\). If
+\(p_1\le-3\), the third increment is positive, again a contradiction.
+Thus \(-2\le p_1\le2\), using the preparation bound for the upper end.
+
+At source zero \(A_f=z\). The three formulas for \(p_1\) give
+\(z-5\le t\le z+1\). With \(t\) integral, substitution in
+\eqref{eq:paired-return} then gives
+\[
+\begin{array}{c|ccc}
+\text{case} & D_0 & p_1 & s_1-p_1\\ \hline
+z-5\le t\le z-1 & z-1 & t-z+3 & -z-1+H_0\\
+t=z             & z   & 0     & -z-1+H_0\\
+t=z+1           & z+1 & -2    & -z-1+H_0 .
+\end{array}
+\]
+Hence \(b_0=s_1-p_1\) lies in \([-4,-1]\), and
+\(r_1\ge z-1-p_0-H_0\ge -b_0-4\).
+
+If \(C_f=0\) at source zero, then \(\ell_0\ge2(p_0+t)+1\).
+If \(C_f>0\), then \(\ell_0=2(p_0+t)+C_f+1\).
+Here \(p_0\ge z-1-H_0\ge-1\) and \(t\ge z-5\ge-4\), so
+\(\ell_0\ge-9\) and \(\ell_1=\ell_0-6D_0\ge-27\).
+Finally \(H_0=(w_0-J-p_0-1)_+\) gives
+\(w_0\le J+p_0+1+H_0\). Since \(J=z-1\le D_0\),
+\[
+ w_1\le 2J+1+H_0-4D_0\le2 .
+\]
+
+For the second assertion instantiate the fifty triples and retain the two unbounded longitudinal variables. Encode the recurrence and guards in integer linear arithmetic with conditional branches for the maxima. Both solvers return UNSAT on every counterexample query. Together with the at-most-one loss at the first return, the lemma gives a gain of at least one within nineteen guarded returns from a prepared state, or a guard exit. At the canonical leading phase both guard margins are strict off the center, and the inequality for \(H_f=0\) is strict if \(b>a\).
+
+\begin{lemma}\label{lem:seam-tests}
+At each of the two phase words of the open edge \(3a+2b=1/6\) and of its lower endpoint \(a=0\), suppose the positive-innermost source and its borrowed digits satisfy all strict comparisons of the respective leading word. The exact subtraction equals \(P_B\) at the canonical phase and \eqref{eq:edge} at the other phase. For a canonical return assume both phase guards, both retained return inequalities at entry and \(H_f=0\). Its exact return agrees with \eqref{eq:paired-return} with \(\Delta\) added to \(w'\) alone, where \(\Delta\) is evaluated at the intermediate point. Its minimum and maximum increments are the two displayed increments with \(H_f=0\), plus and minus \(\Delta\), respectively, for the stated canonical gap indices.
+\end{lemma}
+
+The strict groups for the open edge can be read from the leading difference vectors
+\[
+ (98,76,54,27,22)/120,\qquad (98,76,71,49,22)/120.
+\]
+At the lower endpoint the vectors are \((10,8,6,3,2)/12\) and \((10,8,7,5,2)/12\). Each comparison is affine between the edge endpoints, and none changes sign between them, so its weak order on the open edge is constant and one open-edge representative fixes it. For each case impose physical order and all strict macroscopic comparisons, then sort borrowed digits within tied groups. Compare both one-step outputs, and the full return and its two gap increments, to the claimed formula by asserting a disjunction of mismatches. These give six UNSAT predicates in both Z3 5.4.1 and Yices 2.7.0. An independent encoding assigns ranks by all pairwise comparisons with index tie-breaking. It verifies the same predicates over the reals in both solvers and checks feasibility of the guards.
+
+\section{Centered lower hits}\label{ap:clock}
+
+\begin{lemma}\label{lem:centered}
+For every real \(X\), \(R(\Psi X)\le R(X)+12\). For every \(X\in\Z^5\) with \(X_i\equiv i\beta\pmod6\) for some \(0\le\beta<6\), if \(R(X)>120\) then some \(1\le j\le32\) satisfies \(R(\Psi^jX)\le R(X)-6\).
+\end{lemma}
+
+The first inequality can be checked by imposing \(\widehat g_i(X)\ge m\) for every \(i\), and testing for any output gap below \(m-12\) using the raw primitive sort. Both solvers refute this real-linear query. The one-unit transfer above even gives an allowance of six. The recorded coverage uses twelve.
+
+For the second assertion the six roots choose one minimum \(m_0<-120\) of the source gaps. The exact offset branches distinguish
+\[
+ X_1+X_5\le-7,\quad -6\le X_1+X_5\le5,\quad X_1+X_5\ge6,
+\]
+then \(X_2+X_4\le-7\) or \(\ge-6\), and \(X_3\le-4\) or \(\ge-3\). These integer intervals follow by comparing the paired digits in \eqref{eq:centered}. Inclusive equalities allow either ordering of equal digits. Each node records all ancestral sorting and minimum guards, retaining only states whose minimum has stayed at most \(m_0\). At depth \(d\) the first inequality allows the redundant lower bound \(m_0-12d\) on all current gaps. The coverage query uses the exact primitive map, requires the next minimum to stay at most \(m_0\), and excludes the union of the listed children, each specified by a branch and the earliest index attaining its minimum. UNSAT at each node, including leaves, proves exhaustive coverage. The six maximal node depths are \(24,30,29,29,30,28\), all below 32. All centered gaps have residue \(-\beta\) and the class is preserved, so strict improvement is at least six.
+
+The complete checker reconstructs the affine maps from the lists of digits, using \(X_i=6z_i-\beta(6-i)\) with integers \(z_i\) and \(0\le\beta<6\). It checks every node with Z3 5.4.1 and Yices 2.7.0 in integer linear arithmetic. If Yices does not settle a combined-class query, all six separate class queries must return UNSAT. In the recorded run 38 queries used that split. Exact replay verifies the feasible witnesses independently of the coverage decisions. Symbolic coefficient checks give preservation of each physical class and the finite-base pairing guard in Section~\ref{sec:bridge}.
+
+\section{Exceptional cycles and an exact inverse basin}\label{ap:cycles}
+
+\begin{lemma}\label{lem:cycles}
+For \(B=5m\), \(m\ge20\), the four-cycle below has a complete inverse basin of 235 difference states and original probability at most \(391\cdot11! B^5/(B^{11}-B)\). For \(B=5m+1\) and \(5m+2\), all sufficiently large \(m\) admit the exact cycles specified below. Every phase of the listed cycles has positive innermost difference and minimum full gap at most five.
+\end{lemma}
+
+The four-cycle rows are coefficient and constant vectors of the affine difference states, in orbit order:
+\[
+\begin{array}{cc}
+(4,3,3,2,1)&(1,0,-1,0,2)\\
+(4,3,2,1,1)&(0,0,-2,0,-1)\\
+(4,3,3,2,1)&(1,0,0,1,2)\\
+(4,3,2,1,1)&(0,0,-2,1,-1)
+\end{array}
+\]
+Sort the affine digits of \eqref{eq:digits} by coefficient and then constant. Each actual comparison holds throughout \(m\ge20\), by its slope and value at 20. Taking opposite differences yields the next row. In the following table each initial row is \(m(4,3,2,1,1)\) plus the indicated constant. Iterate the same affine rule for the indicated number of steps.
+\[
+\begin{array}{cccc}
+ B-5m &\text{Initial constant}&\text{Period}&\text{Starting }m\\
+ 1&(1,2,2,4,-1)&8&6\\
+ 1&(1,1,1,3,-1)&8&6\\
+ 1&(0,0,-1,1,-1)&10&4\\
+ 2&(1,1,0,2,-1)&8&4
+\end{array}
+\]
+The affine comparisons hold for every \(m\) at or above the stated threshold. The distinct rows close and each has minimum full gap at most five. The verifier also replays direct positional subtraction at individual bases.
+
+For the complete inverse rule let \(h\) be the number of positive source differences and \(J_0=B-1\). Borrowing leaves \(11-2h\) copies of \(J_0\). For \(h\ge2\), the other digits occur as pairs with sums \(B,B-2\), and \(J_0\), from
+\[
+ (q_1,B-q_1),\quad (q_i,B-q_i-1)\ (2\le i<h),\quad
+ (q_h-1,B-q_h-1).
+\]
+For \(h=1\) the sole pair is \((q_1-1,B-q_1)\). Sort the \(2h\) other digits as \(d_0\ge\cdots\ge d_{2h-1}\). Their opposite sums differ from \(J_0\) by errors \(r_i=d_i+d_{2h-1-i}-J_0\), \(0\le i<h\). Pair each digit with the \(J_0\)-reflection of its original partner. This matching has maximum cost at most one and total absolute cost at most four. Sorted matching minimizes both costs by uncrossing, and counts each mirror error twice. Hence the integral errors have \(|r_i|\le1\), \(\sum|r_i|\le2\), and \(\sum r_i=0\) because the total sum is \(hJ_0\). Enumerate the all-zero row and every row with one \(+1\) and one \(-1\).
+
+For a target, \(h\), and error row, the sorted full output list is forced. Start with the known \(11-2h\) copies of \(J_0\) at the top. Each top digit and target difference gives the opposite bottom digit. Its core mirror sum then gives the top digit \(11-2h\) positions later, permitting the reconstruction to continue. Check range, order, all mirror equations and the target. Choose the original endpoint pairs from the resulting core and choose their direct members. For each remaining complement pair choose its direct member, then sort the middle direct values. Recover \(q_h\) by adding one to the last direct member, including when \(h=1\). Impose the source order, the count of positive differences and the exact forward update. Every predecessor occurs this way, including sources with zero innermost difference.
+
+All operations in the reverse calculation are affine comparisons for \(m\ge20\). A comparison is certified by its slope and value at 20, or rejected if its sign can change. Starting from the four rows the successive layers have sizes \(4,27,31,38,57,36,25,17,0\). The minimum gaps in the resulting 235 states take values \(0,1,2,3\) with multiplicities \(141,48,30,16\). For fixed differences there are exactly \(G_0\prod_{i=1}^5(G_i+1)\) sorted original words, by choosing the smallest digit and splitting each pair of opposite spacings. There are at most \(11!\) digit strings per sorted word. Bound the sorted-word factor by \((\min_iG_i+1)B^5\) and sum the four counts with weights \(1,2,3,4\) to get 391. These exact affine calculations use integer arithmetic and hold for every \(m\ge20\). An independent reconstruction derives the inverse rule separately, checks the inverse closure at \(m=20,21,50,1000,20001\), and compares with direct whole-word subtraction.
+
+\section*{Data availability}
+The ancillary material is archived on Zenodo as version~1.6
+(\href{https://doi.org/10.5281/zenodo.24358476}{doi:10.5281/zenodo.24358476}) and is available in the
+\href{https://github.com/galyavin/kaprekar-dynamics/releases/tag/v1.6}{v1.6 release of the Kaprekar dynamics repository on GitHub}.
+
+\section*{Tools}
+The research, computations and drafting were carried out with substantial assistance from AI systems (OpenAI Codex and Anthropic Claude), under the author's direction and close supervision. The separate verification in Section~\ref{sec:computation} was carried out in the same way, with programs written independently of the primary ones. The computations use Python, C, exact rational arithmetic, SymPy, Z3, Yices and cvc5. The author takes responsibility for the contents.
+
+\begingroup\raggedright
+\begin{thebibliography}{COST}
+\bibitem[ASZT]{ASO}
+R.~Abdulghafor, F.~Shahidi, A.~Zeki and S.~Turaev,
+\emph{Dynamics of doubly stochastic quadratic operators on a finite-dimensional simplex},
+Open Math. \textbf{14} (2016), 509--519.
+\href{https://doi.org/10.1515/math-2016-0045}{doi:10.1515/math-2016-0045}.
+
+\bibitem[COST]{COST}
+E.~Chen, K.~Ono, R.~E.~Schwartz and D.~S.~Thakur,
+\emph{Four-digit Kaprekar dynamics in odd bases},
+J. Integer Seq. \textbf{29} (2026), Article 26.4.7,
+\url{https://cs.uwaterloo.ca/journals/JIS/VOL29/Ono/ono3.pdf};
+\href{https://arxiv.org/abs/2606.20439}{arXiv:2606.20439}.
+
+\bibitem[DZ]{DZ}
+P.~Devlin and T.~Zeng, \emph{Maximum distances in the four-digit Kaprekar process},
+Integers \textbf{21} (2021), Paper A97.
+\href{https://arxiv.org/abs/2010.11756}{arXiv:2010.11756}.
+
+\bibitem[G1]{G1}
+R.~Galyavin, \emph{Cycles of the four-digit Kaprekar map in even bases}, 2026.
+\href{https://doi.org/10.5281/zenodo.24343078}{doi:10.5281/zenodo.24343078}.
+
+\bibitem[G2]{G2}
+R.~Galyavin, \emph{Arrival times for the four-digit Kaprekar map in even bases}, 2026.
+\href{https://doi.org/10.5281/zenodo.24329321}{doi:10.5281/zenodo.24329321}.
+
+\bibitem[G3]{G3}
+R.~Galyavin, \emph{A common arrival-time law for five-digit Kaprekar dynamics}, 2026.
+\href{https://doi.org/10.5281/zenodo.24330159}{doi:10.5281/zenodo.24330159}.
+
+\bibitem[G4]{G4}
+R.~Galyavin, \emph{Majorization in odd-digit Kaprekar dynamics and the nine-digit arrival law}, 2026.
+\href{https://doi.org/10.5281/zenodo.24342270}{doi:10.5281/zenodo.24342270}.
+
+\bibitem[G5]{G5}
+R.~Galyavin, \emph{Seven-digit Kaprekar dynamics: global law, two clocks, parity}, 2026.
+\href{https://doi.org/10.5281/zenodo.24346853}{doi:10.5281/zenodo.24346853}.
+
+\bibitem[Kah]{Kah}
+M.~Kahramanlar, \emph{An ordered-gap simplex reduction for Kaprekar dynamics in arbitrary digit length and base}, preprint (21 July 2026).
+\href{https://doi.org/10.5281/zenodo.21472305}{doi:10.5281/zenodo.21472305}.
+
+\bibitem[KD1]{KDO}
+A.~Kay and K.~Downes-Ward, \emph{Fixed points and cycles of the Kaprekar transformation: 1. Odd bases},
+J. Integer Seq. \textbf{25} (2022), Article 22.6.7.
+\href{https://cs.uwaterloo.ca/journals/JIS/VOL25/Kay/kay5.pdf}{Journal PDF}.
+
+\bibitem[KD2]{KDE}
+A.~Kay and K.~Downes-Ward, \emph{Fixed points and cycles of the Kaprekar transformation: 2. Even bases}, 2024.
+\href{https://arxiv.org/abs/2408.12257}{arXiv:2408.12257}.
+
+\bibitem[NS]{NS}
+Nisarga S, \emph{A General Digit-Gap Framework for Kaprekar Dynamics on Fixed-Width Integers},
+International Journal For Multidisciplinary Research \textbf{8} (2026), no.~3.
+\href{https://doi.org/10.36948/ijfmr.2026.v08i03.82718}{doi:10.36948/ijfmr.2026.v08i03.82718}.
+
+\bibitem[Th]{Thakur}
+D.~S.~Thakur, \emph{Kaprekar phenomena}, in Topics in Number Theory,
+RMS Lecture Notes Series \textbf{26}, Ramanujan Mathematical Society, 2020, 61--70.
+\href{https://www.sas.rochester.edu/mth/sites/dinesh-thakur/kaprekar.pdf}{Author PDF}.
+
+\end{thebibliography}
+\endgroup
+
+
+\end{document}
