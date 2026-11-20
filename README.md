@@ -38,6 +38,10 @@ For a uniformly random eleven-digit word in a growing base B, the joint law of t
 
 For a uniformly random eleven-digit word in a growing base B, couple all bases through eleven uniform real digits. On an entrance event of probability at least 92.9921494990%, the normalized initial differences, the arrival time divided by B and the normalized differences of the first cyclic word have a joint limit along every class of B modulo 12; these laws converge along every class modulo M if and only if 12 divides M. A clock kernel describes the limit: each repeated affine return is charged its limiting duration, and each admissible exit residue has probability equal to the reciprocal of its preimage index in the inherited input lattice. Some rank-one arrivals repeat only with period 66 in B, but the extra factor 11 disappears from the joint law. Convergence on the rest of the inputs is open. The proof uses exact polyhedral and lattice computations.
 
+**Off-centre Kaprekar cycles with positive basin density** (2026), in [`off-centre-cycles/`](off-centre-cycles/) as [PDF](off-centre-cycles/kaprekar-off-centre-cycles.pdf) and [LaTeX source](off-centre-cycles/kaprekar-off-centre-cycles.tex). Archived at Zenodo: [doi:10.5281/zenodo.24399274](https://doi.org/10.5281/zenodo.24399274). Paper record: [doi:10.5281/zenodo.24399342](https://doi.org/10.5281/zenodo.24399342).
+
+For uniformly random words of fixed odd length n in a growing base B, at all 47 strict lengths of folded order 3 to 13 (the least r with 2^r ≡ ±1 mod n), a share of inputs bounded below for all large bases ends on cycles whose peak normalized distance from the centred profile exceeds a fixed bound; at 15 and 17 digits these cycles have period eight. At 45 and 91 digits, cycles of least period 24 and of least period 132 each attract a positive share. At thirteen digits, in bases divisible by 7, a positive share reaches one period-177 cycle near the centre. The proved shares are tiny lower bounds and say nothing about the typical input. The proofs use exact certificates for guarded affine routes, lifted to actual subtraction with exact input weights.
+
 ## Reproducing the results
 
 ```sh
@@ -80,6 +84,11 @@ bash reproduce.sh            # exclusion tree, route verifiers, box matching, re
 ```sh
 cd eleven-digit-law/ancillary
 bash reproduce.sh            # exhaustive geometric and arithmetic replays and frozen panels (about two hours)
+```
+
+```sh
+cd off-centre-cycles/ancillary
+bash reproduce.sh            # primary exact checks and the independent reconstruction (about two minutes)
 ```
 
 Each `ancillary/README.md` gives the expected outputs and versions.

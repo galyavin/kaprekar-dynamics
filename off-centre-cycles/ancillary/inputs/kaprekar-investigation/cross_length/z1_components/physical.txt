@@ -1,0 +1,6 @@
+period1712 reference enters cycle at 41043 return at 41057
+r=8 determinant=1450463814294300 period=14 last=41057 time/L<=47041 loss/L<=18244 spread/L<=14557 coefficient_floors=[0, 0, 0, 0, 0, 0, 0, 0]
+strict n=51 order=8 delta=2/4563 D=7997661360 eta=51!/(54^26*7997661360^25)
+period368 reference enters cycle at 264773 return at 264787
+r=8 determinant=225273027450240 period=14 last=264787 time/L<=269587 loss/L<=115831 spread/L<=82343 coefficient_floors=[0, 0, 0, 0, 0, 0, 0, 0]
+strict n=51 order=8 delta=2/4563 D=50745451536 eta=51!/(54^26*50745451536^25)

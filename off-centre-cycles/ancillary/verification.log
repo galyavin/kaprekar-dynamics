@@ -1,0 +1,210 @@
+Waiting for exclusive compute lock.
+Python 3.13.15
+Apple clang version 21.0.0 (clang-2100.4.1.1)
+Target: arm64-apple-darwin27.2.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+Primary exact certificates
+four positive 4 3 0 177
+one near 16 1 4 179
+bridge 52 1 12 155
+two near 48 1 18 124
+three near 52 1 13 72
+tail 35 8 ((0, 0, 1, -1), (2, 0, 1, 2), (-1, 2, -1, 0), (0, -1, 2, -1), (2, 0, 0, 3), (0, 2, -1, -1), (2, 0, 3, 0), (0, 2, 0, 3)) 10 18
+literal-subtraction lifted itineraries 290 over all base residues mod 18
+four positive 4 3 0 177
+one near 16 1 4 179
+bridge 52 1 12 155
+two near 48 1 18 124
+three near 52 1 13 72
+tail 35 8 ((0, 0, 1, -1), (2, 0, 1, 2), (-1, 2, -1, 0), (0, -1, 2, -1), (2, 0, 0, 3), (0, 2, -1, -1), (2, 0, 3, 0), (0, 2, 0, 3)) 10 18
+Task 155 exact premise replay: 1111013 (3, 4, 6, 8) (9, 6, 2, 10) four repeat counts, guards, and margins
+15-digit exact profile: 47/400 11/80 secondary margins (Fraction(1, 50), Fraction(1, 25), Fraction(1, 50))
+15-digit literal-subtraction lifts: 258 across all bases mod 16, including the exact lower endpoint
+r=12 determinant=132474702395139237297251942400 period=11 last=1053404 time/L<=1618064 loss/L<=809022 spread/L<=205758 coefficient_floors=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Both thirteen-digit certificates reach the same translated cycle.
+Literal fixed-point controls at length 23.
+r=3 determinant=1440 period=2 last=2037 time/L<=2094 loss/L<=311 spread/L<=1924 coefficient_floors=[0, 0, 0]
+r=4 determinant=42120 period=6 last=1102 time/L<=1222 loss/L<=284 spread/L<=835 coefficient_floors=[0, 0, 0, 0]
+r=5 determinant=793152 period=10 last=1562 time/L<=1782 loss/L<=419 spread/L<=947 coefficient_floors=[0, 0, 0, 0, 0]
+strict n=31 order=5 delta=1/512 D=66533376 eta=31!/(34^16*66533376^15)
+strict n=33 order=5 delta=19/10404 D=79569792 eta=33!/(36^17*79569792^16)
+matched n=31, B=33798572032, 1692 literal whole-word updates
+matched n=33, B=91215030816, 1692 literal whole-word updates
+r=6 determinant=149990400 period=5 last=25436 time/L<=26498 loss/L<=9918 spread/L<=10613 coefficient_floors=[0, 0, 0, 0, 0, 0]
+strict n=63 order=6 delta=97/135168 D=5747073024 eta=63!/(66^32*5747073024^31)
+strict n=65 order=6 delta=1/1452 D=6297382080 eta=65!/(68^33*6297382080^32)
+matched n=63, B=23505698439168, 26054 literal whole-word updates
+matched n=65, B=27390122125344, 26054 literal whole-word updates
+r=7 determinant=2184247296 period=14 last=10295 time/L<=10820 loss/L<=4019 spread/L<=3901 coefficient_floors=[0, 0, 0, 0, 0, 0, 0]
+strict n=43 order=7 delta=109/133584 D=717880416 eta=43!/(46^22*717880416^21)
+r=8 determinant=1450463814294300 period=14 last=41099 time/L<=47083 loss/L<=18244 spread/L<=14557 coefficient_floors=[0, 0, 0, 0, 0, 0, 0, 0]
+strict n=51 order=8 delta=2/4563 D=7997661360 eta=51!/(54^26*7997661360^25)
+r=9 determinant=18371092709376000 period=18 last=47649 time/L<=58566 loss/L<=22411 spread/L<=17178 coefficient_floors=[0, 0, 0, 0, 0, 0, 0, 0, 0]
+strict n=57 order=9 delta=11/33640 D=18105855360 eta=57!/(60^29*18105855360^28)
+r=10 determinant=681700171298779738828800 period=20 last=93050 time/L<=142150 loss/L<=64395 spread/L<=25663 coefficient_floors=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+strict n=41 order=10 delta=47/38808 D=9997872192 eta=41!/(44^21*9997872192^20)
+r=11 determinant=79765299697934153318400 period=22 last=346553 time/L<=365572 loss/L<=144048 spread/L<=92554 coefficient_floors=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+r=13 determinant=2394977213217361826414592000 period=26 last=473426 time/L<=495253 loss/L<=223003 spread/L<=101757 coefficient_floors=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+r=13 determinant=2394977213217361826414592000 period=26 last=473426 time/L<=495253 loss/L<=223003 spread/L<=101757 coefficient_floors=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+r=12 determinant=132474702395139237297251942400 period=24 last=954388 time/L<=1519048 loss/L<=760005 spread/L<=193166 coefficient_floors=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+order twelve through 101: [(35, (2,)), (39, (4,)), (45, ()), (91, ())]
+strict length=45 margin=1/624 delta=1/598 D=87262111872 eta=45!/(48^23*87262111872^22)
+strict length=91 margin=1/3102 delta=119/285384 D=867599893776 eta=91!/(94^46*867599893776^45)
+literal length=45 base=2504771659173888 comparisons=84 least physical period=24
+literal length=91 base=247599128085369984 comparisons=84 least physical period=24
+retirement state (1, 0, -1, -2, -3, 6, 9, 6, 2, 2, 1, -1) at 952829
+stage data [{"label":9,"period":12,"repeats":1,"value":-12,"phase":14,"drift":-13},{"label":4,"period":48,"repeats":1,"value":-10,"phase":79,"drift":-28},{"label":0,"period":108,"repeats":1,"value":-2,"phase":203,"drift":-43},{"label":2,"period":192,"repeats":1,"value":-12,"phase":741,"drift":-58},{"label":5,"period":300,"repeats":1,"value":0,"phase":1086,"drift":-30},{"label":10,"period":6144,"repeats":1,"value":-3,"phase":10705,"drift":-1239},{"label":7,"period":2388,"repeats":1,"value":-7,"phase":19000,"drift":-508},{"label":8,"period":1272,"repeats":1,"value":-2,"phase":25671,"drift":-252},{"label":1,"period":5880,"repeats":1,"value":-1,"phase":39454,"drift":-942},{"label":3,"period":3612,"repeats":1,"value":-1,"phase":54236,"drift":-507},{"label":11,"period":7068,"repeats":1,"value":-6,"phase":68664,"drift":-960},{"label":6,"period":537636,"repeats":1,"value":-1,"phase":952829,"drift":-66888}]
+certificate.jsonl reproduced
+archived order=3 triangular determinant=1440 last projected word=42 last drift=30
+archived order=4 triangular determinant=42120 last projected word=52 last drift=27
+archived order=5 triangular determinant=793152 last projected word=130 last drift=54
+archived order=6 triangular determinant=149990400 last projected word=618 last drift=186
+archived order=7 triangular determinant=2184247296 last projected word=70 last drift=14
+archived order=8 triangular determinant=1450463814294300 last projected word=1712 last drift=369
+archived order=9 triangular determinant=18371092709376000 last projected word=8127 last drift=1490
+archived order=10 triangular determinant=681700171298779738828800 last projected word=30010 last drift=4794
+archived order=11 triangular determinant=79765299697934153318400 last projected word=8646 last drift=1282
+archived order=12 triangular determinant=132474702395139237297251942400 last projected word=537636 last drift=66888
+archived order=13 triangular determinant=2394977213217361826414592000 last projected word=130 last drift=14
+order=5 obstructed projection period=20 drift=6
+  exit phase=0 endpoint=0 entry=39 ordinary period=100 cycle loss=36
+  exit phase=1 endpoint=0 entry=9 ordinary period=100 cycle loss=36
+  exit phase=2 endpoint=-3 entry=0 ordinary period=37 cycle loss=12
+  exit phase=2 endpoint=-2 entry=104 ordinary period=100 cycle loss=36
+  exit phase=2 endpoint=-1 entry=237 ordinary period=100 cycle loss=36
+  exit phase=2 endpoint=0 entry=11 ordinary period=100 cycle loss=36
+obstructed order=5 triangular determinant=84672 last projected word=20 last drift=6
+order=7 constructed least terminal period=14 loss=0
+order=9 constructed least terminal period=18 loss=0
+order=10 constructed least terminal period=20 loss=0
+order=12 constructed least terminal period=24 loss=0
+order=13 constructed least terminal period=26 loss=0
+ten-step feeder, affine comparison slopes 11 and exact terminal family
+2048 integer forced-tube transitions, all eight loss masks, three composite fixed states
+rank 5 word lengths 48 48 12 12 6
+fixed suffix preperiod 32 least period 177
+route bounds C, S, D, B0 119 546 17472 3808
+original probability lower bound 275/9651067775204571742208 / B
+route determinant in X/7 84015792
+fixed route clock at zero parameters 3335
+least period 177 peak cycle radius 28
+minimum signed comparison at box origins 0
+C, S, D, B0 22834 5663 90608 365360
+uniform original probability lower bound 3575/1350641342287205909485672071168
+literal subtraction 28120 steps from 8 inputs at base 365365
+Class-0 source X=(90594, 64043, 49868, 17220, 10073, 13923); six slopes=(Fraction(9584, 7), Fraction(169, 21), Fraction(902, 21), Fraction(1192, 21), Fraction(826, 9), Fraction(2063, 63)); first outer key G=(-1988, 1484, 1491, -1974, 315, 322, 350).
+Archived outer key: preperiod=437, period=177, suffix peak R=1988.
+Exact class-0 limiting original mass of this marked cell: 3773279180259731755300995131345652558791147811352345556322576361/3392252763571048539774051887827968000000000000000000000000000000000000000000000000000 (~1.11232e-21)
+Order-eight weights and finite cube experiments
+weights.json reproduced
+physical.txt reproduced
+mixture-panel.json reproduced
+parity.tsv reproduced
+Independent reconstruction
+r=3 det=1440 floors=[0, 0, 0] period=2 budgets=(2094, 311, 1924) sharp=(2037, 299, 1878)
+r=4 det=42120 floors=[0, 0, 0, 0] period=6 budgets=(1222, 284, 835) sharp=(1102, 249, 765)
+r=5 det=793152 floors=[0, 0, 0, 0, 0] period=10 budgets=(1782, 419, 947) sharp=(1562, 357, 833)
+r=6 det=149990400 floors=[0, 0, 0, 0, 0, 0] period=5 budgets=(26498, 9918, 10613) sharp=(25436, 9491, 10287)
+r=7 det=2184247296 floors=[0, 0, 0, 0, 0, 0, 0] period=14 budgets=(10820, 4019, 3901) sharp=(10295, 3823, 3703)
+r=8 det=1450463814294300 floors=[0, 0, 0, 0, 0, 0, 0, 0] period=14 budgets=(47083, 18244, 14557) sharp=(41099, 15910, 12967)
+r=9 det=18371092709376000 floors=[0, 0, 0, 0, 0, 0, 0, 0, 0] period=18 budgets=(58566, 22411, 17178) sharp=(47649, 18039, 14964)
+r=10 det=681700171298779738828800 floors=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0] period=20 budgets=(142150, 64395, 25663) sharp=(93050, 42292, 16785)
+r=11 det=79765299697934153318400 floors=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] period=22 budgets=(365572, 144048, 92554) sharp=(346553, 136004, 89110)
+r=12 det=132474702395139237297251942400 floors=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] period=24 budgets=(1519048, 760005, 193166) sharp=(954388, 477797, 121356)
+r=13 det=2394977213217361826414592000 floors=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] period=26 budgets=(495253, 223003, 101757) sharp=(473426, 212681, 98145)
+r=12 det=132474702395139237297251942400 floors=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] period=11 budgets=(1618064, 809022, 205758) sharp=(1053404, 526814, 133948)
+Complete screen: r=3 strict=[9] excluded=[(7, 'full')]
+Complete screen: r=4 strict=[15, 17] excluded=[]
+Complete screen: r=5 strict=[31, 33] excluded=[(11, 'full')]
+Complete screen: r=6 strict=[21, 63, 65] excluded=[(13, 'full')]
+Complete screen: r=7 strict=[43, 127, 129] excluded=[]
+Complete screen: r=8 strict=[51, 85, 255, 257] excluded=[]
+Complete screen: r=9 strict=[57, 73, 171, 511, 513] excluded=[(19, 'full'), (27, [4])]
+Complete screen: r=10 strict=[41, 93, 205, 341, 1023, 1025] excluded=[(25, [2, 6])]
+Complete screen: r=11 strict=[89, 683, 2047, 2049] excluded=[(23, 'full')]
+Complete screen: r=12 strict=[45, 91, 105, 117, 195, 241, 273, 315, 455, 585, 819, 1365, 4095, 4097] excluded=[(35, [2]), (39, [4])]
+Complete screen: r=13 strict=[2731, 8191, 8193] excluded=[]
+n=9 order=3 margin=1/60 delta=1/200 D=7708000 eta=9!/(12^5*7708000^4)
+n=15 order=4 margin=1/144 delta=1/256 D=7736832 eta=15!/(18^8*7736832^7)
+n=17 order=4 margin=1/180 delta=1/270 D=10886400 eta=17!/(20^9*10886400^8)
+n=31 order=5 margin=1/544 delta=1/512 D=66533376 eta=31!/(34^16*66533376^15)
+  literal: 10 source transitions and terminal 10 at B=66533376007
+n=33 order=5 margin=1/612 delta=19/10404 D=79569792 eta=33!/(36^17*79569792^16)
+  literal: 10 source transitions and terminal 10 at B=79569792007
+n=21 order=6 margin=1/264 delta=13/5808 D=246700608 eta=21!/(24^11*246700608^10)
+n=63 order=6 margin=1/2112 delta=97/135168 D=5747073024 eta=63!/(66^32*5747073024^31)
+  literal: 10 source transitions and terminal 30 at B=5747073024007
+n=65 order=6 margin=1/2244 delta=1/1452 D=6297382080 eta=65!/(68^33*6297382080^32)
+  literal: 10 source transitions and terminal 30 at B=6297382080007
+n=43 order=7 margin=1/1012 delta=109/133584 D=717880416 eta=43!/(46^22*717880416^21)
+  literal: 10 source transitions and terminal 14 at B=717880416007
+n=127 order=7 margin=1/8320 delta=31/133120 D=17258741760 eta=127!/(130^64*17258741760^63)
+n=129 order=7 margin=1/8580 delta=127/557700 D=18078403200 eta=129!/(132^65*18078403200^64)
+n=51 order=8 margin=1/2106 delta=2/4563 D=7997661360 eta=51!/(54^26*7997661360^25)
+  literal: 10 source transitions and terminal 56 at B=7997661360007
+n=85 order=8 margin=1/3784 delta=67/162712 D=23776779136 eta=85!/(88^43*23776779136^42)
+n=255 order=8 margin=1/33024 delta=205/2818048 D=619130781696 eta=255!/(258^128*619130781696^127)
+n=257 order=8 margin=1/33540 delta=69/961480 D=633734543520 eta=257!/(260^129*633734543520^128)
+n=57 order=9 margin=1/3480 delta=11/33640 D=18105855360 eta=57!/(60^29*18105855360^28)
+  literal: 10 source transitions and terminal 18 at B=18105855360007
+n=73 order=9 margin=1/2812 delta=61/104044 D=18669655360 eta=73!/(76^37*18669655360^36)
+n=171 order=9 margin=1/14964 delta=173/1286904 D=231174286944 eta=171!/(174^86*231174286944^85)
+n=511 order=9 margin=1/131584 delta=731/33685504 D=6074035339264 eta=511!/(514^256*6074035339264^255)
+n=513 order=9 margin=1/132612 delta=1469/68162568 D=6145537130880 eta=513!/(516^257*6145537130880^256)
+n=41 order=10 margin=1/924 delta=47/38808 D=9997872192 eta=41!/(44^21*9997872192^20)
+  literal: 10 source transitions and terminal 20 at B=9997872192007
+n=93 order=10 margin=1/4512 delta=17/53016 D=109287606528 eta=93!/(96^47*109287606528^46)
+n=205 order=10 margin=1/21424 delta=431/4413344 D=1137707123072 eta=205!/(208^103*1137707123072^102)
+n=341 order=10 margin=1/58824 delta=839/20117808 D=5188865510592 eta=341!/(344^171*5188865510592^170)
+n=1023 order=10 margin=1/525312 delta=1127/179306496 D=139109207113728 eta=1023!/(1026^512*139109207113728^511)
+n=1025 order=10 margin=1/527364 delta=3389/541075464 D=139926443594112 eta=1025!/(1028^513*139926443594112^512)
+n=89 order=11 margin=1/4140 delta=7/20700 D=214723418400 eta=89!/(92^45*214723418400^44)
+n=683 order=11 margin=1/234612 delta=37/2971752 D=92574270913824 eta=683!/(686^342*92574270913824^341)
+n=2047 order=11 margin=1/2099200 delta=1917/1074790400 D=2485955801907200 eta=2047!/(2050^1024*2485955801907200^1023)
+n=2049 order=11 margin=1/2103300 delta=853/479085000 D=2493252240660000 eta=2049!/(2052^1025*2493252240660000^1024)
+n=45 order=12 margin=1/624 delta=1/598 D=87262111872 eta=45!/(48^23*87262111872^22)
+  literal: 10 source transitions and terminal 24 at B=87262111872007
+n=45 order=12 margin=1/624 delta=1/598 D=92890047744 eta=45!/(48^23*92890047744^22)
+  period-132 literal: B=92890047744009; positive limiting lower bound with same delta, divisor 92890047744
+n=91 order=12 margin=1/3102 delta=119/285384 D=867599893776 eta=91!/(94^46*867599893776^45)
+  literal: 10 source transitions and terminal 24 at B=867599893776007
+n=91 order=12 margin=1/3102 delta=119/285384 D=923554563888 eta=91!/(94^46*923554563888^45)
+  period-132 literal: B=923554563888009; positive limiting lower bound with same delta, divisor 923554563888
+n=105 order=12 margin=1/5724 delta=25/101124 D=1844579423232 eta=105!/(108^53*1844579423232^52)
+n=117 order=12 margin=1/7080 delta=33/139240 D=2539854561600 eta=117!/(120^59*2539854561600^58)
+n=195 order=12 margin=1/19404 delta=373/3803184 D=11562508454112 eta=195!/(198^98*11562508454112^97)
+n=241 order=12 margin=1/29524 delta=15/162382 D=21722102549312 eta=241!/(244^121*21722102549312^120)
+n=273 order=12 margin=1/37812 delta=389/5180244 D=31498950224448 eta=273!/(276^137*31498950224448^136)
+n=315 order=12 margin=1/50244 delta=727/15877104 D=48271762621152 eta=315!/(318^158*48271762621152^157)
+n=455 order=12 margin=1/104424 delta=1207/47617344 D=144779486850432 eta=455!/(458^228*144779486850432^227)
+n=585 order=12 margin=1/172284 delta=1675/100958424 D=306974991681792 eta=585!/(588^293*306974991681792^292)
+n=819 order=12 margin=1/337020 delta=2441/276356400 D=840356148088800 eta=819!/(822^410*840356148088800^409)
+n=1365 order=12 margin=1/934344 delta=4619/1276313904 D=3881765791858752 eta=1365!/(1368^683*3881765791858752^682)
+n=4095 order=12 margin=1/8392704 delta=5713/11458838528 D=104646169866534912 eta=4095!/(4098^2048*104646169866534912^2047)
+n=4097 order=12 margin=1/8400900 delta=17149/34426888200 D=104799578907384000 eta=4097!/(4100^2049*104799578907384000^2048)
+n=2731 order=13 margin=1/3734644 delta=1311/1275380926 D=9129135856118368 eta=2731!/(2734^1366*9129135856118368^1365)
+n=8191 order=13 margin=1/33562624 delta=18937/137472507904 D=247507152900456448 eta=8191!/(8194^4096*247507152900456448^4095)
+n=8193 order=13 margin=1/33579012 delta=37885/275146424328 D=247689012351460224 eta=8193!/(8196^4097*247689012351460224^4096)
+period-eight chart shift=0: det=42120 spreads=[177, 179, 155, 124, 72] suffix_loss=10
+n=15 off-centre: delta=1/200 eta=15!/(11^8*100000^7); 195 literal transitions
+n=17 off-centre: delta=1/200 eta=17!/(11^9*100000^8); 195 literal transitions
+period-eight chart shift=-1: det=42120 spreads=[176, 178, 154, 123, 71] suffix_loss=10
+n=17 section: 1 outside states; contacts=[(208, (1,))]; peak=5/9-(5A+48)/B; 210 literal steps
+r=6 det=224501760 floors=[0, 0, 0, 0, 0, 0] period=- budgets=(5068, 1729, 2181) sharp=(4486, 1514, 1961)
+n=21 section: 17 outside states; contacts=[(1203, (1, 1)), (1206, (1, 0))]; peak=6/11-(6A+276)/B; 1213 literal steps
+n=17 source to capture plus first/last coast blocks and section: 958 literal steps; B=2000123; blocks=73
+n=21 source to capture plus first/last coast blocks and section: 7883 literal steps; B=200000123; blocks=1419
+n=17 wall original-word liminf >= 17!/(11^9*1000000^8)
+n=21 wall original-word liminf >= 21!/(12^11*100000000^10)
+Task 158: det=84015792 C=22834 S=5663 D=90608 period=177 radius numerator=28 3512 literal updates on class 0
+Task 167: det=411848913042 first-outer key=(-1988, 1484, 1491, -1974, 315, 322, 350) preperiod=437 period=177 literal size=986797 B=8960007 mass=3773279180259731755300995131345652558791147811352345556322576361/3392252763571048539774051887827968000000000000000000000000000000000000000000000000000
+r=8 det=1450463814294300 floors=[0, 0, 0, 0, 0, 0, 0, 0] period=14 budgets=(47041, 18244, 14557) sharp=(41057, 15910, 12967)
+n=51 order=8 margin=1/2106 delta=2/4563 D=7997661360 eta=51!/(54^26*7997661360^25)
+Cohort 1712: descent=369; good=194; V=197/11088438305193849600000; vertices=11 simplices=3 covered=197/3756246038344800000; 106 literal steps at B=7997661360011
+r=8 det=225273027450240 floors=[0, 0, 0, 0, 0, 0, 0, 0] period=14 budgets=(269587, 115831, 82343) sharp=(264787, 113790, 81085)
+n=51 order=8 margin=1/2106 delta=2/4563 D=50745451536 eta=51!/(54^26*50745451536^25)
+Cohort 368: descent=66; good=39; V=643703901358114633444077107120707/10584303473669331890415126022076788207622553600000000; vertices=31 simplices=105 covered=643703901358114633444077107120707/20046029306191916459119556859993917059891200000000; 106 literal steps at B=50745451536011
+Whole-cube bounds [6962794364828233724665702948661882202103883/149582850979854109001044716067293839248956144923443200000000, 16620316775539344812835715650945438155880059438806568488009/16620316775539345444560524007477093249884016102604800000000]
+Exact archived residues, weights, and bounds agree.
+All primary checks passed. Independent reconstruction reproduced byte for byte.
