@@ -2,6 +2,8 @@
 
 Research on Kaprekar's routine (repeatedly subtracting the ascending arrangement of a number's digits from the descending one) in arbitrary integer bases.
 
+Author's website: [galyavin.com](https://galyavin.com/).
+
 ## Papers
 
 **Cycles of the four-digit Kaprekar map in even bases** (2026), in [`cycles-even-bases/`](cycles-even-bases/) as [PDF](cycles-even-bases/kaprekar-cycles-even-bases.pdf) and [LaTeX source](cycles-even-bases/kaprekar-cycles-even-bases.tex). Archived at Zenodo: [doi:10.5281/zenodo.24325110](https://doi.org/10.5281/zenodo.24325110); revised 18 November 2026 to credit earlier work (Zenodo [doi:10.5281/zenodo.24343078](https://doi.org/10.5281/zenodo.24343078)). Paper record: [doi:10.5281/zenodo.24358739](https://doi.org/10.5281/zenodo.24358739).
