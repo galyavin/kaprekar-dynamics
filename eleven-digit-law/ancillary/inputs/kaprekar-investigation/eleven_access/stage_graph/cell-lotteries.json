@@ -1,0 +1,7466 @@
+{
+  "center_grid": 300000,
+  "center_q": [
+    252938,
+    203225,
+    152886,
+    101913,
+    50387
+  ],
+  "mod12_to_table": {
+    "0": 0,
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 0,
+    "7": 1,
+    "8": 2,
+    "9": 3,
+    "10": 4,
+    "11": 5
+  },
+  "tables": [
+    {
+      "clock": [
+        {
+          "numerator": [
+            4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "denominator": 48,
+          "weight": "805/1944"
+        },
+        {
+          "numerator": [
+            60,
+            130,
+            -130,
+            65,
+            0,
+            0
+          ],
+          "denominator": 672,
+          "weight": "3037/18144"
+        },
+        {
+          "numerator": [
+            80,
+            130,
+            -130,
+            65,
+            0,
+            0
+          ],
+          "denominator": 792,
+          "weight": "1519/7776"
+        },
+        {
+          "numerator": [
+            160,
+            370,
+            -370,
+            185,
+            0,
+            0
+          ],
+          "denominator": 1848,
+          "weight": "3037/13608"
+        }
+      ],
+      "edge": [
+        {
+          "stage": 1,
+          "period": 5,
+          "ranks": [
+            5,
+            4
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -30,
+            -24,
+            -18,
+            -12,
+            -6
+          ],
+          "distance_numerator": [
+            2,
+            0,
+            -2,
+            0,
+            2,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "1/1"
+        },
+        {
+          "stage": 2,
+          "period": 5,
+          "ranks": [
+            4,
+            3
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 6,
+          "drift": [
+            -30,
+            -42,
+            -36,
+            -12,
+            -6
+          ],
+          "distance_numerator": [
+            -1,
+            1,
+            1,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "1/3"
+        },
+        {
+          "stage": 2,
+          "period": 10,
+          "ranks": [
+            4,
+            3
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 12,
+          "drift": [
+            -60,
+            -84,
+            -72,
+            -24,
+            -12
+          ],
+          "distance_numerator": [
+            -1,
+            1,
+            1,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "2/3"
+        },
+        {
+          "stage": 3,
+          "period": 5,
+          "ranks": [
+            3,
+            2
+          ],
+          "failures": 0,
+          "decrement": 54,
+          "residue_index": 9,
+          "drift": [
+            -30,
+            -24,
+            -18,
+            -12,
+            12
+          ],
+          "distance_numerator": [
+            1,
+            -1,
+            1,
+            1,
+            -6,
+            0
+          ],
+          "distance_denominator": 2,
+          "weight": "1/18"
+        },
+        {
+          "stage": 3,
+          "period": 10,
+          "ranks": [
+            3,
+            2
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 18,
+          "drift": [
+            -60,
+            -48,
+            -36,
+            -24,
+            24
+          ],
+          "distance_numerator": [
+            1,
+            -1,
+            1,
+            1,
+            -6,
+            0
+          ],
+          "distance_denominator": 2,
+          "weight": "2/3"
+        },
+        {
+          "stage": 3,
+          "period": 10,
+          "ranks": [
+            3,
+            2
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 18,
+          "drift": [
+            -60,
+            -48,
+            0,
+            -24,
+            -12
+          ],
+          "distance_numerator": [
+            1,
+            -1,
+            1,
+            1,
+            -6,
+            0
+          ],
+          "distance_denominator": 2,
+          "weight": "5/18"
+        },
+        {
+          "stage": 4,
+          "period": 10,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -60,
+            -84,
+            -18,
+            12,
+            6
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "89/324"
+        },
+        {
+          "stage": 4,
+          "period": 10,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -60,
+            -66,
+            -90,
+            -96,
+            -30
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "5/81"
+        },
+        {
+          "stage": 4,
+          "period": 10,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -60,
+            -66,
+            -36,
+            -60,
+            -66
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "31/324"
+        },
+        {
+          "stage": 4,
+          "period": 20,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 6,
+          "drift": [
+            -120,
+            -168,
+            -36,
+            24,
+            12
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "113/324"
+        },
+        {
+          "stage": 4,
+          "period": 20,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 6,
+          "drift": [
+            -120,
+            -132,
+            -180,
+            -192,
+            -60
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "7/81"
+        },
+        {
+          "stage": 4,
+          "period": 20,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 6,
+          "drift": [
+            -120,
+            -132,
+            -72,
+            -120,
+            -132
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "43/324"
+        },
+        {
+          "stage": 5,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 4,
+          "drift": [
+            -60,
+            -102,
+            -144,
+            -132,
+            -30
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "3/16"
+        },
+        {
+          "stage": 5,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 4,
+          "drift": [
+            -60,
+            -102,
+            0,
+            30,
+            42
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "763/3888"
+        },
+        {
+          "stage": 5,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 4,
+          "drift": [
+            -60,
+            -48,
+            -18,
+            -60,
+            -102
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "157/972"
+        },
+        {
+          "stage": 5,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 8,
+          "drift": [
+            -120,
+            -204,
+            -288,
+            -264,
+            -60
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "5/1944"
+        },
+        {
+          "stage": 5,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 8,
+          "drift": [
+            -120,
+            -204,
+            0,
+            60,
+            84
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "161/3888"
+        },
+        {
+          "stage": 5,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 8,
+          "drift": [
+            -120,
+            -96,
+            -36,
+            -120,
+            -204
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "1597/3888"
+        },
+        {
+          "stage": 6,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 2,
+          "drift": [
+            -36,
+            -72,
+            -48,
+            -24,
+            -12
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "41/1296"
+        },
+        {
+          "stage": 6,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 2,
+          "drift": [
+            -36,
+            -24,
+            0,
+            -36,
+            -24
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "151/2592"
+        },
+        {
+          "stage": 6,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 4,
+          "drift": [
+            -36,
+            -72,
+            -48,
+            -24,
+            -12
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "47/972"
+        },
+        {
+          "stage": 6,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 4,
+          "drift": [
+            -36,
+            -24,
+            0,
+            -36,
+            -24
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "37/648"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 126,
+          "residue_index": 7,
+          "drift": [
+            -66,
+            -132,
+            -90,
+            -48,
+            -24
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "95/864"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 126,
+          "residue_index": 7,
+          "drift": [
+            -66,
+            -42,
+            0,
+            -66,
+            -42
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "185/972"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 126,
+          "residue_index": 7,
+          "drift": [
+            -66,
+            -24,
+            0,
+            24,
+            66
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "13/144"
+        },
+        {
+          "stage": 6,
+          "period": 30,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 180,
+          "residue_index": 5,
+          "drift": [
+            -96,
+            -192,
+            -132,
+            -72,
+            -36
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "1373/7776"
+        },
+        {
+          "stage": 6,
+          "period": 30,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 180,
+          "residue_index": 5,
+          "drift": [
+            -96,
+            -60,
+            0,
+            -96,
+            -60
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "55/2592"
+        },
+        {
+          "stage": 6,
+          "period": 30,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 180,
+          "residue_index": 10,
+          "drift": [
+            -96,
+            -192,
+            -132,
+            -72,
+            -36
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "665/3888"
+        },
+        {
+          "stage": 6,
+          "period": 30,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 180,
+          "residue_index": 10,
+          "drift": [
+            -96,
+            -60,
+            0,
+            -96,
+            -60
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "11/243"
+        },
+        {
+          "stage": 7,
+          "period": 15,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 66,
+          "residue_index": 11,
+          "drift": [
+            -66,
+            -132,
+            -132,
+            -132,
+            -66
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 24,
+          "weight": "1519/7776"
+        },
+        {
+          "stage": 7,
+          "period": 15,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 66,
+          "residue_index": 11,
+          "drift": [
+            -66,
+            -132,
+            -132,
+            -132,
+            -66
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 28,
+          "weight": "3037/13608"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 4,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 30,
+          "weight": "131/324"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 8,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 28,
+          "weight": "433/9072"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 16,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 28,
+          "weight": "869/13608"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 192,
+          "residue_index": 4,
+          "drift": [
+            -96,
+            -96,
+            0,
+            0,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 15,
+          "weight": "19/1944"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 192,
+          "residue_index": 8,
+          "drift": [
+            -96,
+            -96,
+            0,
+            0,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 14,
+          "weight": "433/18144"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 192,
+          "residue_index": 16,
+          "drift": [
+            -96,
+            -96,
+            0,
+            0,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 14,
+          "weight": "869/27216"
+        }
+      ],
+      "gap": [],
+      "states": 22637,
+      "inequalities": 235,
+      "strict_radius": "1/50000"
+    },
+    {
+      "clock": [
+        {
+          "numerator": [
+            5,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "denominator": 54,
+          "weight": "199/7776"
+        },
+        {
+          "numerator": [
+            20,
+            30,
+            -30,
+            15,
+            0,
+            0
+          ],
+          "denominator": 192,
+          "weight": "265/7776"
+        },
+        {
+          "numerator": [
+            20,
+            70,
+            -70,
+            35,
+            0,
+            0
+          ],
+          "denominator": 288,
+          "weight": "977/3888"
+        },
+        {
+          "numerator": [
+            80,
+            70,
+            -70,
+            35,
+            0,
+            0
+          ],
+          "denominator": 648,
+          "weight": "2813/23328"
+        },
+        {
+          "numerator": [
+            140,
+            130,
+            -130,
+            65,
+            0,
+            0
+          ],
+          "denominator": 1152,
+          "weight": "1165/3888"
+        },
+        {
+          "numerator": [
+            250,
+            230,
+            -230,
+            115,
+            0,
+            0
+          ],
+          "denominator": 2052,
+          "weight": "7187/46656"
+        },
+        {
+          "numerator": [
+            280,
+            1010,
+            -1010,
+            505,
+            0,
+            0
+          ],
+          "denominator": 4104,
+          "weight": "287/2592"
+        },
+        {
+          "numerator": [
+            290,
+            1030,
+            -1030,
+            515,
+            0,
+            0
+          ],
+          "denominator": 4212,
+          "weight": "7/1728"
+        }
+      ],
+      "edge": [
+        {
+          "stage": 1,
+          "period": 5,
+          "ranks": [
+            5,
+            4
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -30,
+            -24,
+            -18,
+            -12,
+            -6
+          ],
+          "distance_numerator": [
+            2,
+            0,
+            -2,
+            0,
+            2,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "1/1"
+        },
+        {
+          "stage": 2,
+          "period": 10,
+          "ranks": [
+            4,
+            3
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 12,
+          "drift": [
+            -60,
+            -84,
+            -72,
+            -24,
+            -12
+          ],
+          "distance_numerator": [
+            -1,
+            1,
+            1,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "1/1"
+        },
+        {
+          "stage": 3,
+          "period": 10,
+          "ranks": [
+            3,
+            2
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 18,
+          "drift": [
+            -60,
+            -48,
+            -36,
+            -24,
+            24
+          ],
+          "distance_numerator": [
+            1,
+            -1,
+            1,
+            1,
+            -6,
+            0
+          ],
+          "distance_denominator": 2,
+          "weight": "7/12"
+        },
+        {
+          "stage": 3,
+          "period": 10,
+          "ranks": [
+            3,
+            2
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 18,
+          "drift": [
+            -60,
+            -48,
+            0,
+            -24,
+            -12
+          ],
+          "distance_numerator": [
+            1,
+            -1,
+            1,
+            1,
+            -6,
+            0
+          ],
+          "distance_denominator": 2,
+          "weight": "5/12"
+        },
+        {
+          "stage": 4,
+          "period": 10,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -60,
+            -84,
+            -18,
+            12,
+            6
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "191/648"
+        },
+        {
+          "stage": 4,
+          "period": 10,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -60,
+            -66,
+            -90,
+            -96,
+            -30
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "1/27"
+        },
+        {
+          "stage": 4,
+          "period": 10,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -60,
+            -66,
+            -36,
+            -60,
+            -66
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "23/216"
+        },
+        {
+          "stage": 4,
+          "period": 20,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 6,
+          "drift": [
+            -120,
+            -168,
+            -36,
+            24,
+            12
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "1/3"
+        },
+        {
+          "stage": 4,
+          "period": 20,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 6,
+          "drift": [
+            -120,
+            -132,
+            -180,
+            -192,
+            -60
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "11/162"
+        },
+        {
+          "stage": 4,
+          "period": 20,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 6,
+          "drift": [
+            -120,
+            -132,
+            -72,
+            -120,
+            -132
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "13/81"
+        },
+        {
+          "stage": 5,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 4,
+          "drift": [
+            -60,
+            -102,
+            0,
+            30,
+            42
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "37/1944"
+        },
+        {
+          "stage": 5,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 4,
+          "drift": [
+            -60,
+            -48,
+            -18,
+            -60,
+            -102
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "34/81"
+        },
+        {
+          "stage": 5,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 8,
+          "drift": [
+            -120,
+            -204,
+            -288,
+            -264,
+            -60
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "7/1296"
+        },
+        {
+          "stage": 5,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 8,
+          "drift": [
+            -120,
+            -204,
+            0,
+            60,
+            84
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "133/1944"
+        },
+        {
+          "stage": 5,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 8,
+          "drift": [
+            -120,
+            -96,
+            -36,
+            -120,
+            -204
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "1895/3888"
+        },
+        {
+          "stage": 6,
+          "period": 10,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 54,
+          "residue_index": 1,
+          "drift": [
+            -36,
+            -18,
+            0,
+            -36,
+            -18
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "199/7776"
+        },
+        {
+          "stage": 6,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 54,
+          "residue_index": 1,
+          "drift": [
+            -30,
+            -18,
+            0,
+            -30,
+            -18
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "19/5184"
+        },
+        {
+          "stage": 6,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 2,
+          "drift": [
+            -36,
+            -12,
+            0,
+            12,
+            36
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "265/7776"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 1,
+          "drift": [
+            -60,
+            -120,
+            -84,
+            -48,
+            -24
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "793/7776"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 1,
+          "drift": [
+            -60,
+            -36,
+            0,
+            -60,
+            -36
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "629/7776"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 2,
+          "drift": [
+            -60,
+            -120,
+            -84,
+            -48,
+            -24
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "1259/7776"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 2,
+          "drift": [
+            -60,
+            -36,
+            0,
+            -60,
+            -36
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "137/7776"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 4,
+          "drift": [
+            -84,
+            -168,
+            -120,
+            -72,
+            -36
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "1715/15552"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 4,
+          "drift": [
+            -84,
+            -48,
+            0,
+            -84,
+            -48
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "1621/15552"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 4,
+          "drift": [
+            -84,
+            -36,
+            0,
+            36,
+            84
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "581/7776"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 8,
+          "drift": [
+            -84,
+            -168,
+            -120,
+            -72,
+            -36
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "1/1944"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 8,
+          "drift": [
+            -84,
+            -48,
+            0,
+            -84,
+            -48
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "77/7776"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 162,
+          "residue_index": 3,
+          "drift": [
+            -84,
+            -168,
+            -114,
+            -60,
+            -30
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "161/5184"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 162,
+          "residue_index": 3,
+          "drift": [
+            -84,
+            -54,
+            0,
+            -84,
+            -54
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "947/3888"
+        },
+        {
+          "stage": 7,
+          "period": 10,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 48,
+          "residue_index": 4,
+          "drift": [
+            -48,
+            -96,
+            -96,
+            -96,
+            -48
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 24,
+          "weight": "163/7776"
+        },
+        {
+          "stage": 7,
+          "period": 10,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 48,
+          "residue_index": 4,
+          "drift": [
+            -48,
+            -96,
+            -96,
+            -96,
+            -48
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 36,
+          "weight": "1327/15552"
+        },
+        {
+          "stage": 7,
+          "period": 10,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 48,
+          "residue_index": 4,
+          "drift": [
+            -48,
+            -96,
+            -96,
+            -96,
+            -48
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 48,
+          "weight": "2087/31104"
+        },
+        {
+          "stage": 7,
+          "period": 10,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 4,
+          "drift": [
+            -48,
+            -48,
+            0,
+            0,
+            -48
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 12,
+          "weight": "17/2592"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 2,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 27,
+          "weight": "49/3888"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 2,
+          "drift": [
+            -96,
+            -96,
+            0,
+            96,
+            96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 27,
+          "weight": "23/7776"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 4,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 27,
+          "weight": "1/12"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 4,
+          "drift": [
+            -96,
+            -96,
+            0,
+            96,
+            96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 27,
+          "weight": "253/11664"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 8,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 24,
+          "weight": "17/2592"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 8,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 36,
+          "weight": "731/5184"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 8,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 48,
+          "weight": "1693/10368"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 8,
+          "drift": [
+            -96,
+            -96,
+            0,
+            0,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 36,
+          "weight": "97/3888"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 8,
+          "drift": [
+            -96,
+            -96,
+            0,
+            96,
+            96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 48,
+          "weight": "359/5184"
+        },
+        {
+          "stage": 7,
+          "period": 50,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 228,
+          "residue_index": 19,
+          "drift": [
+            -228,
+            -456,
+            -456,
+            -456,
+            -228
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 27,
+          "weight": "1/8"
+        },
+        {
+          "stage": 7,
+          "period": 50,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 228,
+          "residue_index": 19,
+          "drift": [
+            -228,
+            -456,
+            -456,
+            -456,
+            -228
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 36,
+          "weight": "287/2592"
+        },
+        {
+          "stage": 7,
+          "period": 50,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 228,
+          "residue_index": 19,
+          "drift": [
+            -228,
+            -228,
+            0,
+            0,
+            -228
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 27,
+          "weight": "1355/46656"
+        },
+        {
+          "stage": 7,
+          "period": 50,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 234,
+          "residue_index": 39,
+          "drift": [
+            -234,
+            -468,
+            -468,
+            -468,
+            -234
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 36,
+          "weight": "7/1728"
+        }
+      ],
+      "gap": [],
+      "states": 27726,
+      "inequalities": 219,
+      "strict_radius": "1/50000"
+    },
+    {
+      "clock": [
+        {
+          "numerator": [
+            4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "denominator": 48,
+          "weight": "869/9720"
+        },
+        {
+          "numerator": [
+            20,
+            30,
+            -30,
+            15,
+            0,
+            0
+          ],
+          "denominator": 192,
+          "weight": "737/3888"
+        },
+        {
+          "numerator": [
+            60,
+            130,
+            -130,
+            65,
+            0,
+            0
+          ],
+          "denominator": 672,
+          "weight": "157/432"
+        },
+        {
+          "numerator": [
+            136,
+            350,
+            -350,
+            175,
+            0,
+            0
+          ],
+          "denominator": 1656,
+          "weight": "869/2430"
+        }
+      ],
+      "edge": [
+        {
+          "stage": 1,
+          "period": 5,
+          "ranks": [
+            5,
+            4
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -30,
+            -24,
+            -18,
+            -12,
+            -6
+          ],
+          "distance_numerator": [
+            2,
+            0,
+            -2,
+            0,
+            2,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "1/1"
+        },
+        {
+          "stage": 2,
+          "period": 5,
+          "ranks": [
+            4,
+            3
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 6,
+          "drift": [
+            -30,
+            -42,
+            -36,
+            -12,
+            -6
+          ],
+          "distance_numerator": [
+            -1,
+            1,
+            1,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "1/3"
+        },
+        {
+          "stage": 2,
+          "period": 10,
+          "ranks": [
+            4,
+            3
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 12,
+          "drift": [
+            -60,
+            -84,
+            -72,
+            -24,
+            -12
+          ],
+          "distance_numerator": [
+            -1,
+            1,
+            1,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "2/3"
+        },
+        {
+          "stage": 3,
+          "period": 5,
+          "ranks": [
+            3,
+            2
+          ],
+          "failures": 0,
+          "decrement": 54,
+          "residue_index": 9,
+          "drift": [
+            -30,
+            -24,
+            -18,
+            -12,
+            12
+          ],
+          "distance_numerator": [
+            1,
+            -1,
+            1,
+            1,
+            -6,
+            0
+          ],
+          "distance_denominator": 2,
+          "weight": "1/18"
+        },
+        {
+          "stage": 3,
+          "period": 10,
+          "ranks": [
+            3,
+            2
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 18,
+          "drift": [
+            -60,
+            -48,
+            -36,
+            -24,
+            24
+          ],
+          "distance_numerator": [
+            1,
+            -1,
+            1,
+            1,
+            -6,
+            0
+          ],
+          "distance_denominator": 2,
+          "weight": "2/3"
+        },
+        {
+          "stage": 3,
+          "period": 10,
+          "ranks": [
+            3,
+            2
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 18,
+          "drift": [
+            -60,
+            -48,
+            0,
+            -24,
+            -12
+          ],
+          "distance_numerator": [
+            1,
+            -1,
+            1,
+            1,
+            -6,
+            0
+          ],
+          "distance_denominator": 2,
+          "weight": "5/18"
+        },
+        {
+          "stage": 4,
+          "period": 10,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -60,
+            -84,
+            -18,
+            12,
+            6
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "89/324"
+        },
+        {
+          "stage": 4,
+          "period": 10,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -60,
+            -66,
+            -90,
+            -96,
+            -30
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "5/81"
+        },
+        {
+          "stage": 4,
+          "period": 10,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -60,
+            -66,
+            -36,
+            -60,
+            -66
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "31/324"
+        },
+        {
+          "stage": 4,
+          "period": 20,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 6,
+          "drift": [
+            -120,
+            -168,
+            -36,
+            24,
+            12
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "113/324"
+        },
+        {
+          "stage": 4,
+          "period": 20,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 6,
+          "drift": [
+            -120,
+            -132,
+            -180,
+            -192,
+            -60
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "7/81"
+        },
+        {
+          "stage": 4,
+          "period": 20,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 6,
+          "drift": [
+            -120,
+            -132,
+            -72,
+            -120,
+            -132
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "43/324"
+        },
+        {
+          "stage": 5,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 4,
+          "drift": [
+            -60,
+            -102,
+            -144,
+            -132,
+            -30
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "3/16"
+        },
+        {
+          "stage": 5,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 4,
+          "drift": [
+            -60,
+            -102,
+            0,
+            30,
+            42
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "763/3888"
+        },
+        {
+          "stage": 5,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 4,
+          "drift": [
+            -60,
+            -48,
+            -18,
+            -60,
+            -102
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "157/972"
+        },
+        {
+          "stage": 5,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 8,
+          "drift": [
+            -120,
+            -204,
+            -288,
+            -264,
+            -60
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "5/1944"
+        },
+        {
+          "stage": 5,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 8,
+          "drift": [
+            -120,
+            -204,
+            0,
+            60,
+            84
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "161/3888"
+        },
+        {
+          "stage": 5,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 8,
+          "drift": [
+            -120,
+            -96,
+            -36,
+            -120,
+            -204
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "1597/3888"
+        },
+        {
+          "stage": 6,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 2,
+          "drift": [
+            -36,
+            -72,
+            -48,
+            -24,
+            -12
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "5/162"
+        },
+        {
+          "stage": 6,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 2,
+          "drift": [
+            -36,
+            -24,
+            0,
+            -36,
+            -24
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "115/1944"
+        },
+        {
+          "stage": 6,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 4,
+          "drift": [
+            -36,
+            -72,
+            -48,
+            -24,
+            -12
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "101/1944"
+        },
+        {
+          "stage": 6,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 4,
+          "drift": [
+            -36,
+            -24,
+            0,
+            -36,
+            -24
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "185/3888"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 126,
+          "residue_index": 7,
+          "drift": [
+            -66,
+            -132,
+            -90,
+            -48,
+            -24
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "55/648"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 126,
+          "residue_index": 7,
+          "drift": [
+            -66,
+            -42,
+            0,
+            -66,
+            -42
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "1163/7776"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 126,
+          "residue_index": 7,
+          "drift": [
+            -66,
+            -24,
+            0,
+            24,
+            66
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "1003/7776"
+        },
+        {
+          "stage": 6,
+          "period": 30,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 180,
+          "residue_index": 5,
+          "drift": [
+            -96,
+            -192,
+            -132,
+            -72,
+            -36
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "565/3888"
+        },
+        {
+          "stage": 6,
+          "period": 30,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 180,
+          "residue_index": 5,
+          "drift": [
+            -96,
+            -60,
+            0,
+            -96,
+            -60
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "41/972"
+        },
+        {
+          "stage": 6,
+          "period": 30,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 180,
+          "residue_index": 10,
+          "drift": [
+            -96,
+            -192,
+            -132,
+            -72,
+            -36
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "205/972"
+        },
+        {
+          "stage": 6,
+          "period": 30,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 180,
+          "residue_index": 10,
+          "drift": [
+            -96,
+            -60,
+            0,
+            -96,
+            -60
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "7/144"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 4,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 30,
+          "weight": "869/9720"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 8,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 24,
+          "weight": "737/3888"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 8,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 28,
+          "weight": "689/3888"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 16,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 28,
+          "weight": "181/972"
+        },
+        {
+          "stage": 7,
+          "period": 30,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 138,
+          "residue_index": 23,
+          "drift": [
+            -138,
+            -276,
+            -276,
+            -276,
+            -138
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 30,
+          "weight": "4987/19440"
+        },
+        {
+          "stage": 7,
+          "period": 30,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 138,
+          "residue_index": 23,
+          "drift": [
+            -138,
+            -138,
+            0,
+            138,
+            138
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 30,
+          "weight": "131/1296"
+        }
+      ],
+      "gap": [],
+      "states": 23174,
+      "inequalities": 234,
+      "strict_radius": "1/50000"
+    },
+    {
+      "clock": [
+        {
+          "numerator": [
+            5,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "denominator": 54,
+          "weight": "55/3888"
+        },
+        {
+          "numerator": [
+            20,
+            70,
+            -70,
+            35,
+            0,
+            0
+          ],
+          "denominator": 288,
+          "weight": "809/3888"
+        },
+        {
+          "numerator": [
+            80,
+            70,
+            -70,
+            35,
+            0,
+            0
+          ],
+          "denominator": 648,
+          "weight": "2333/7776"
+        },
+        {
+          "numerator": [
+            80,
+            130,
+            -130,
+            65,
+            0,
+            0
+          ],
+          "denominator": 792,
+          "weight": "61/1728"
+        },
+        {
+          "numerator": [
+            140,
+            130,
+            -130,
+            65,
+            0,
+            0
+          ],
+          "denominator": 1152,
+          "weight": "11963/62208"
+        },
+        {
+          "numerator": [
+            160,
+            590,
+            -590,
+            295,
+            0,
+            0
+          ],
+          "denominator": 2376,
+          "weight": "1093/7776"
+        },
+        {
+          "numerator": [
+            380,
+            370,
+            -370,
+            185,
+            0,
+            0
+          ],
+          "denominator": 3168,
+          "weight": "6817/62208"
+        }
+      ],
+      "edge": [
+        {
+          "stage": 1,
+          "period": 5,
+          "ranks": [
+            5,
+            4
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -30,
+            -24,
+            -18,
+            -12,
+            -6
+          ],
+          "distance_numerator": [
+            2,
+            0,
+            -2,
+            0,
+            2,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "1/1"
+        },
+        {
+          "stage": 2,
+          "period": 10,
+          "ranks": [
+            4,
+            3
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 12,
+          "drift": [
+            -60,
+            -84,
+            -72,
+            -24,
+            -12
+          ],
+          "distance_numerator": [
+            -1,
+            1,
+            1,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "1/1"
+        },
+        {
+          "stage": 3,
+          "period": 10,
+          "ranks": [
+            3,
+            2
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 18,
+          "drift": [
+            -60,
+            -48,
+            -36,
+            -24,
+            24
+          ],
+          "distance_numerator": [
+            1,
+            -1,
+            1,
+            1,
+            -6,
+            0
+          ],
+          "distance_denominator": 2,
+          "weight": "7/12"
+        },
+        {
+          "stage": 3,
+          "period": 10,
+          "ranks": [
+            3,
+            2
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 18,
+          "drift": [
+            -60,
+            -48,
+            0,
+            -24,
+            -12
+          ],
+          "distance_numerator": [
+            1,
+            -1,
+            1,
+            1,
+            -6,
+            0
+          ],
+          "distance_denominator": 2,
+          "weight": "5/12"
+        },
+        {
+          "stage": 4,
+          "period": 10,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -60,
+            -84,
+            -18,
+            12,
+            6
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "191/648"
+        },
+        {
+          "stage": 4,
+          "period": 10,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -60,
+            -66,
+            -90,
+            -96,
+            -30
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "1/27"
+        },
+        {
+          "stage": 4,
+          "period": 10,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -60,
+            -66,
+            -36,
+            -60,
+            -66
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "23/216"
+        },
+        {
+          "stage": 4,
+          "period": 20,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 6,
+          "drift": [
+            -120,
+            -168,
+            -36,
+            24,
+            12
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "1/3"
+        },
+        {
+          "stage": 4,
+          "period": 20,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 6,
+          "drift": [
+            -120,
+            -132,
+            -180,
+            -192,
+            -60
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "11/162"
+        },
+        {
+          "stage": 4,
+          "period": 20,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 6,
+          "drift": [
+            -120,
+            -132,
+            -72,
+            -120,
+            -132
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "13/81"
+        },
+        {
+          "stage": 5,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 4,
+          "drift": [
+            -60,
+            -102,
+            0,
+            30,
+            42
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "37/1944"
+        },
+        {
+          "stage": 5,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 4,
+          "drift": [
+            -60,
+            -48,
+            -18,
+            -60,
+            -102
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "34/81"
+        },
+        {
+          "stage": 5,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 8,
+          "drift": [
+            -120,
+            -204,
+            -288,
+            -264,
+            -60
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "7/1296"
+        },
+        {
+          "stage": 5,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 8,
+          "drift": [
+            -120,
+            -204,
+            0,
+            60,
+            84
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "133/1944"
+        },
+        {
+          "stage": 5,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 8,
+          "drift": [
+            -120,
+            -96,
+            -36,
+            -120,
+            -204
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "1895/3888"
+        },
+        {
+          "stage": 6,
+          "period": 10,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 54,
+          "residue_index": 1,
+          "drift": [
+            -36,
+            -18,
+            0,
+            -36,
+            -18
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "55/3888"
+        },
+        {
+          "stage": 6,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 54,
+          "residue_index": 1,
+          "drift": [
+            -30,
+            -18,
+            0,
+            -30,
+            -18
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "1/2592"
+        },
+        {
+          "stage": 6,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 2,
+          "drift": [
+            -36,
+            -72,
+            -48,
+            -24,
+            -12
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "1/1296"
+        },
+        {
+          "stage": 6,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 2,
+          "drift": [
+            -36,
+            -12,
+            0,
+            12,
+            36
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "179/5184"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 1,
+          "drift": [
+            -60,
+            -120,
+            -84,
+            -48,
+            -24
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "517/5184"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 1,
+          "drift": [
+            -60,
+            -36,
+            0,
+            -60,
+            -36
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "1435/15552"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 2,
+          "drift": [
+            -60,
+            -120,
+            -84,
+            -48,
+            -24
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "19/144"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 2,
+          "drift": [
+            -60,
+            -36,
+            0,
+            -60,
+            -36
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "7/288"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 4,
+          "drift": [
+            -84,
+            -168,
+            -120,
+            -72,
+            -36
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "277/2592"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 4,
+          "drift": [
+            -84,
+            -48,
+            0,
+            -84,
+            -48
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "1675/15552"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 4,
+          "drift": [
+            -84,
+            -36,
+            0,
+            36,
+            84
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "145/1944"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 8,
+          "drift": [
+            -84,
+            -48,
+            0,
+            -84,
+            -48
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "11/864"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 162,
+          "residue_index": 3,
+          "drift": [
+            -84,
+            -168,
+            -114,
+            -60,
+            -30
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "37/1296"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 162,
+          "residue_index": 3,
+          "drift": [
+            -84,
+            -54,
+            0,
+            -84,
+            -54
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "2111/7776"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 2,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 27,
+          "weight": "289/11664"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 2,
+          "drift": [
+            -96,
+            -96,
+            0,
+            96,
+            96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 27,
+          "weight": "197/46656"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 4,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 27,
+          "weight": "95/432"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 4,
+          "drift": [
+            -96,
+            -96,
+            0,
+            96,
+            96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 27,
+          "weight": "5/216"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 8,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 36,
+          "weight": "2957/15552"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 8,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 48,
+          "weight": "5281/31104"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 8,
+          "drift": [
+            -96,
+            -96,
+            0,
+            96,
+            96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 48,
+          "weight": "467/20736"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 192,
+          "residue_index": 8,
+          "drift": [
+            -96,
+            -96,
+            0,
+            0,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 18,
+          "weight": "109/7776"
+        },
+        {
+          "stage": 7,
+          "period": 30,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 132,
+          "residue_index": 11,
+          "drift": [
+            -132,
+            -264,
+            -264,
+            -264,
+            -132
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 24,
+          "weight": "61/1728"
+        },
+        {
+          "stage": 7,
+          "period": 30,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 132,
+          "residue_index": 11,
+          "drift": [
+            -132,
+            -264,
+            -264,
+            -264,
+            -132
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 36,
+          "weight": "391/3888"
+        },
+        {
+          "stage": 7,
+          "period": 30,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 132,
+          "residue_index": 11,
+          "drift": [
+            -132,
+            -264,
+            -264,
+            -264,
+            -132
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 48,
+          "weight": "1565/20736"
+        },
+        {
+          "stage": 7,
+          "period": 30,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 132,
+          "residue_index": 11,
+          "drift": [
+            -132,
+            -132,
+            0,
+            0,
+            -132
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 36,
+          "weight": "289/15552"
+        },
+        {
+          "stage": 7,
+          "period": 30,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 132,
+          "residue_index": 11,
+          "drift": [
+            -132,
+            -132,
+            0,
+            0,
+            -132
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 48,
+          "weight": "1061/31104"
+        },
+        {
+          "stage": 7,
+          "period": 30,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 3,
+          "drift": [
+            -144,
+            -144,
+            0,
+            0,
+            -144
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 27,
+          "weight": "25/5184"
+        },
+        {
+          "stage": 7,
+          "period": 30,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 6,
+          "drift": [
+            -144,
+            -144,
+            0,
+            0,
+            -144
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 27,
+          "weight": "5/216"
+        },
+        {
+          "stage": 7,
+          "period": 30,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 12,
+          "drift": [
+            -144,
+            -144,
+            0,
+            0,
+            -144
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 36,
+          "weight": "61/15552"
+        },
+        {
+          "stage": 7,
+          "period": 30,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 264,
+          "residue_index": 11,
+          "drift": [
+            -132,
+            -132,
+            0,
+            0,
+            -132
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 18,
+          "weight": "37/1728"
+        }
+      ],
+      "gap": [],
+      "states": 24309,
+      "inequalities": 219,
+      "strict_radius": "1/50000"
+    },
+    {
+      "clock": [
+        {
+          "numerator": [
+            4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "denominator": 48,
+          "weight": "503/3240"
+        },
+        {
+          "numerator": [
+            20,
+            30,
+            -30,
+            15,
+            0,
+            0
+          ],
+          "denominator": 192,
+          "weight": "187/864"
+        },
+        {
+          "numerator": [
+            60,
+            130,
+            -130,
+            65,
+            0,
+            0
+          ],
+          "denominator": 672,
+          "weight": "2707/7776"
+        },
+        {
+          "numerator": [
+            280,
+            710,
+            -710,
+            355,
+            0,
+            0
+          ],
+          "denominator": 3384,
+          "weight": "5447/19440"
+        }
+      ],
+      "edge": [
+        {
+          "stage": 1,
+          "period": 5,
+          "ranks": [
+            5,
+            4
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -30,
+            -24,
+            -18,
+            -12,
+            -6
+          ],
+          "distance_numerator": [
+            2,
+            0,
+            -2,
+            0,
+            2,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "1/1"
+        },
+        {
+          "stage": 2,
+          "period": 5,
+          "ranks": [
+            4,
+            3
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 6,
+          "drift": [
+            -30,
+            -42,
+            -36,
+            -12,
+            -6
+          ],
+          "distance_numerator": [
+            -1,
+            1,
+            1,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "1/3"
+        },
+        {
+          "stage": 2,
+          "period": 10,
+          "ranks": [
+            4,
+            3
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 12,
+          "drift": [
+            -60,
+            -84,
+            -72,
+            -24,
+            -12
+          ],
+          "distance_numerator": [
+            -1,
+            1,
+            1,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "2/3"
+        },
+        {
+          "stage": 3,
+          "period": 5,
+          "ranks": [
+            3,
+            2
+          ],
+          "failures": 0,
+          "decrement": 54,
+          "residue_index": 9,
+          "drift": [
+            -30,
+            -24,
+            -18,
+            -12,
+            12
+          ],
+          "distance_numerator": [
+            1,
+            -1,
+            1,
+            1,
+            -6,
+            0
+          ],
+          "distance_denominator": 2,
+          "weight": "1/18"
+        },
+        {
+          "stage": 3,
+          "period": 10,
+          "ranks": [
+            3,
+            2
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 18,
+          "drift": [
+            -60,
+            -48,
+            -36,
+            -24,
+            24
+          ],
+          "distance_numerator": [
+            1,
+            -1,
+            1,
+            1,
+            -6,
+            0
+          ],
+          "distance_denominator": 2,
+          "weight": "2/3"
+        },
+        {
+          "stage": 3,
+          "period": 10,
+          "ranks": [
+            3,
+            2
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 18,
+          "drift": [
+            -60,
+            -48,
+            0,
+            -24,
+            -12
+          ],
+          "distance_numerator": [
+            1,
+            -1,
+            1,
+            1,
+            -6,
+            0
+          ],
+          "distance_denominator": 2,
+          "weight": "5/18"
+        },
+        {
+          "stage": 4,
+          "period": 10,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -60,
+            -84,
+            -18,
+            12,
+            6
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "89/324"
+        },
+        {
+          "stage": 4,
+          "period": 10,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -60,
+            -66,
+            -90,
+            -96,
+            -30
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "5/81"
+        },
+        {
+          "stage": 4,
+          "period": 10,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -60,
+            -66,
+            -36,
+            -60,
+            -66
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "31/324"
+        },
+        {
+          "stage": 4,
+          "period": 20,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 6,
+          "drift": [
+            -120,
+            -168,
+            -36,
+            24,
+            12
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "113/324"
+        },
+        {
+          "stage": 4,
+          "period": 20,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 6,
+          "drift": [
+            -120,
+            -132,
+            -180,
+            -192,
+            -60
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "7/81"
+        },
+        {
+          "stage": 4,
+          "period": 20,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 6,
+          "drift": [
+            -120,
+            -132,
+            -72,
+            -120,
+            -132
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "43/324"
+        },
+        {
+          "stage": 5,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 4,
+          "drift": [
+            -60,
+            -102,
+            -144,
+            -132,
+            -30
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "3/16"
+        },
+        {
+          "stage": 5,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 4,
+          "drift": [
+            -60,
+            -102,
+            0,
+            30,
+            42
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "763/3888"
+        },
+        {
+          "stage": 5,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 4,
+          "drift": [
+            -60,
+            -48,
+            -18,
+            -60,
+            -102
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "157/972"
+        },
+        {
+          "stage": 5,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 8,
+          "drift": [
+            -120,
+            -204,
+            -288,
+            -264,
+            -60
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "5/1944"
+        },
+        {
+          "stage": 5,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 8,
+          "drift": [
+            -120,
+            -204,
+            0,
+            60,
+            84
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "161/3888"
+        },
+        {
+          "stage": 5,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 8,
+          "drift": [
+            -120,
+            -96,
+            -36,
+            -120,
+            -204
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "1597/3888"
+        },
+        {
+          "stage": 6,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 2,
+          "drift": [
+            -36,
+            -72,
+            -48,
+            -24,
+            -12
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "35/972"
+        },
+        {
+          "stage": 6,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 2,
+          "drift": [
+            -36,
+            -24,
+            0,
+            -36,
+            -24
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "455/7776"
+        },
+        {
+          "stage": 6,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 4,
+          "drift": [
+            -36,
+            -72,
+            -48,
+            -24,
+            -12
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "77/1944"
+        },
+        {
+          "stage": 6,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 4,
+          "drift": [
+            -36,
+            -24,
+            0,
+            -36,
+            -24
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "20/243"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 126,
+          "residue_index": 7,
+          "drift": [
+            -66,
+            -132,
+            -90,
+            -48,
+            -24
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "695/7776"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 126,
+          "residue_index": 7,
+          "drift": [
+            -66,
+            -42,
+            0,
+            -66,
+            -42
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "1189/7776"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 126,
+          "residue_index": 7,
+          "drift": [
+            -66,
+            -24,
+            0,
+            24,
+            66
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "823/7776"
+        },
+        {
+          "stage": 6,
+          "period": 30,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 180,
+          "residue_index": 5,
+          "drift": [
+            -96,
+            -192,
+            -132,
+            -72,
+            -36
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "497/2592"
+        },
+        {
+          "stage": 6,
+          "period": 30,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 180,
+          "residue_index": 5,
+          "drift": [
+            -96,
+            -60,
+            0,
+            -96,
+            -60
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "199/7776"
+        },
+        {
+          "stage": 6,
+          "period": 30,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 180,
+          "residue_index": 10,
+          "drift": [
+            -96,
+            -192,
+            -132,
+            -72,
+            -36
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "247/1296"
+        },
+        {
+          "stage": 6,
+          "period": 30,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 180,
+          "residue_index": 10,
+          "drift": [
+            -96,
+            -60,
+            0,
+            -96,
+            -60
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "107/3888"
+        },
+        {
+          "stage": 7,
+          "period": 5,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 24,
+          "residue_index": 2,
+          "drift": [
+            -24,
+            -48,
+            -48,
+            -48,
+            -24
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 24,
+          "weight": "163/1296"
+        },
+        {
+          "stage": 7,
+          "period": 5,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 24,
+          "residue_index": 2,
+          "drift": [
+            -24,
+            -48,
+            -48,
+            -48,
+            -24
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 28,
+          "weight": "5555/54432"
+        },
+        {
+          "stage": 7,
+          "period": 5,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 24,
+          "residue_index": 4,
+          "drift": [
+            -24,
+            -48,
+            -48,
+            -48,
+            -24
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 28,
+          "weight": "95/648"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 4,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 30,
+          "weight": "503/3240"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 8,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 24,
+          "weight": "235/2592"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 8,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 28,
+          "weight": "1111/54432"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 8,
+          "drift": [
+            -96,
+            -96,
+            0,
+            0,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 28,
+          "weight": "1111/54432"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 16,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 28,
+          "weight": "19/648"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 16,
+          "drift": [
+            -96,
+            -96,
+            0,
+            0,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 28,
+          "weight": "19/648"
+        },
+        {
+          "stage": 7,
+          "period": 60,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 282,
+          "residue_index": 47,
+          "drift": [
+            -282,
+            -564,
+            -564,
+            -564,
+            -282
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 30,
+          "weight": "5257/19440"
+        },
+        {
+          "stage": 7,
+          "period": 60,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 564,
+          "residue_index": 47,
+          "drift": [
+            -282,
+            -282,
+            0,
+            0,
+            -282
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 15,
+          "weight": "19/1944"
+        }
+      ],
+      "gap": [],
+      "states": 24728,
+      "inequalities": 236,
+      "strict_radius": "1/50000"
+    },
+    {
+      "clock": [
+        {
+          "numerator": [
+            5,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "denominator": 54,
+          "weight": "25/1296"
+        },
+        {
+          "numerator": [
+            20,
+            30,
+            -30,
+            15,
+            0,
+            0
+          ],
+          "denominator": 192,
+          "weight": "31/1296"
+        },
+        {
+          "numerator": [
+            20,
+            70,
+            -70,
+            35,
+            0,
+            0
+          ],
+          "denominator": 288,
+          "weight": "841/2592"
+        },
+        {
+          "numerator": [
+            65,
+            220,
+            -220,
+            110,
+            0,
+            0
+          ],
+          "denominator": 918,
+          "weight": "11/324"
+        },
+        {
+          "numerator": [
+            80,
+            70,
+            -70,
+            35,
+            0,
+            0
+          ],
+          "denominator": 648,
+          "weight": "4499/15552"
+        },
+        {
+          "numerator": [
+            100,
+            90,
+            -90,
+            45,
+            0,
+            0
+          ],
+          "denominator": 816,
+          "weight": "2329/20736"
+        },
+        {
+          "numerator": [
+            140,
+            130,
+            -130,
+            65,
+            0,
+            0
+          ],
+          "denominator": 1152,
+          "weight": "12241/62208"
+        }
+      ],
+      "edge": [
+        {
+          "stage": 1,
+          "period": 5,
+          "ranks": [
+            5,
+            4
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -30,
+            -24,
+            -18,
+            -12,
+            -6
+          ],
+          "distance_numerator": [
+            2,
+            0,
+            -2,
+            0,
+            2,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "1/1"
+        },
+        {
+          "stage": 2,
+          "period": 10,
+          "ranks": [
+            4,
+            3
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 12,
+          "drift": [
+            -60,
+            -84,
+            -72,
+            -24,
+            -12
+          ],
+          "distance_numerator": [
+            -1,
+            1,
+            1,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "1/1"
+        },
+        {
+          "stage": 3,
+          "period": 10,
+          "ranks": [
+            3,
+            2
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 18,
+          "drift": [
+            -60,
+            -48,
+            -36,
+            -24,
+            24
+          ],
+          "distance_numerator": [
+            1,
+            -1,
+            1,
+            1,
+            -6,
+            0
+          ],
+          "distance_denominator": 2,
+          "weight": "7/12"
+        },
+        {
+          "stage": 3,
+          "period": 10,
+          "ranks": [
+            3,
+            2
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 18,
+          "drift": [
+            -60,
+            -48,
+            0,
+            -24,
+            -12
+          ],
+          "distance_numerator": [
+            1,
+            -1,
+            1,
+            1,
+            -6,
+            0
+          ],
+          "distance_denominator": 2,
+          "weight": "5/12"
+        },
+        {
+          "stage": 4,
+          "period": 10,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -60,
+            -84,
+            -18,
+            12,
+            6
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "191/648"
+        },
+        {
+          "stage": 4,
+          "period": 10,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -60,
+            -66,
+            -90,
+            -96,
+            -30
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "1/27"
+        },
+        {
+          "stage": 4,
+          "period": 10,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 36,
+          "residue_index": 3,
+          "drift": [
+            -60,
+            -66,
+            -36,
+            -60,
+            -66
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "23/216"
+        },
+        {
+          "stage": 4,
+          "period": 20,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 6,
+          "drift": [
+            -120,
+            -168,
+            -36,
+            24,
+            12
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "1/3"
+        },
+        {
+          "stage": 4,
+          "period": 20,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 6,
+          "drift": [
+            -120,
+            -132,
+            -180,
+            -192,
+            -60
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "11/162"
+        },
+        {
+          "stage": 4,
+          "period": 20,
+          "ranks": [
+            2,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 6,
+          "drift": [
+            -120,
+            -132,
+            -72,
+            -120,
+            -132
+          ],
+          "distance_numerator": [
+            1,
+            -3,
+            3,
+            -1,
+            0,
+            0
+          ],
+          "distance_denominator": 1,
+          "weight": "13/81"
+        },
+        {
+          "stage": 5,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 4,
+          "drift": [
+            -60,
+            -102,
+            0,
+            30,
+            42
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "37/1944"
+        },
+        {
+          "stage": 5,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 4,
+          "drift": [
+            -60,
+            -48,
+            -18,
+            -60,
+            -102
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "34/81"
+        },
+        {
+          "stage": 5,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 8,
+          "drift": [
+            -120,
+            -204,
+            -288,
+            -264,
+            -60
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "7/1296"
+        },
+        {
+          "stage": 5,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 8,
+          "drift": [
+            -120,
+            -204,
+            0,
+            60,
+            84
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "133/1944"
+        },
+        {
+          "stage": 5,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 8,
+          "drift": [
+            -120,
+            -96,
+            -36,
+            -120,
+            -204
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 3,
+          "weight": "1895/3888"
+        },
+        {
+          "stage": 6,
+          "period": 10,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 54,
+          "residue_index": 1,
+          "drift": [
+            -36,
+            -18,
+            0,
+            -36,
+            -18
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "25/1296"
+        },
+        {
+          "stage": 6,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 54,
+          "residue_index": 1,
+          "drift": [
+            -30,
+            -18,
+            0,
+            -30,
+            -18
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "7/1296"
+        },
+        {
+          "stage": 6,
+          "period": 10,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 72,
+          "residue_index": 2,
+          "drift": [
+            -36,
+            -12,
+            0,
+            12,
+            36
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "31/1296"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 1,
+          "drift": [
+            -60,
+            -120,
+            -84,
+            -48,
+            -24
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "1735/15552"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 1,
+          "drift": [
+            -60,
+            -36,
+            0,
+            -60,
+            -36
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "49/576"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 2,
+          "drift": [
+            -60,
+            -120,
+            -84,
+            -48,
+            -24
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "545/3888"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 108,
+          "residue_index": 2,
+          "drift": [
+            -60,
+            -36,
+            0,
+            -60,
+            -36
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "7/432"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 4,
+          "drift": [
+            -84,
+            -168,
+            -120,
+            -72,
+            -36
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "821/7776"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 4,
+          "drift": [
+            -84,
+            -48,
+            0,
+            -84,
+            -48
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "1637/15552"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 4,
+          "drift": [
+            -84,
+            -36,
+            0,
+            36,
+            84
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "35/432"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 144,
+          "residue_index": 8,
+          "drift": [
+            -84,
+            -48,
+            0,
+            -84,
+            -48
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "67/3888"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 162,
+          "residue_index": 3,
+          "drift": [
+            -84,
+            -168,
+            -114,
+            -60,
+            -30
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "211/7776"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 162,
+          "residue_index": 3,
+          "drift": [
+            -84,
+            -54,
+            0,
+            -84,
+            -54
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "4037/15552"
+        },
+        {
+          "stage": 6,
+          "period": 20,
+          "ranks": [
+            1,
+            1
+          ],
+          "failures": 0,
+          "decrement": 162,
+          "residue_index": 3,
+          "drift": [
+            -84,
+            -30,
+            0,
+            30,
+            84
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 4,
+          "weight": "5/1944"
+        },
+        {
+          "stage": 7,
+          "period": 10,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 48,
+          "residue_index": 4,
+          "drift": [
+            -48,
+            -96,
+            -96,
+            -96,
+            -48
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 24,
+          "weight": "31/2592"
+        },
+        {
+          "stage": 7,
+          "period": 10,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 48,
+          "residue_index": 4,
+          "drift": [
+            -48,
+            -96,
+            -96,
+            -96,
+            -48
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 36,
+          "weight": "109/1944"
+        },
+        {
+          "stage": 7,
+          "period": 10,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 48,
+          "residue_index": 4,
+          "drift": [
+            -48,
+            -96,
+            -96,
+            -96,
+            -48
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 48,
+          "weight": "413/5184"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 2,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 27,
+          "weight": "179/7776"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 2,
+          "drift": [
+            -96,
+            -96,
+            0,
+            96,
+            96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 27,
+          "weight": "149/15552"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 4,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 27,
+          "weight": "4253/23328"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 4,
+          "drift": [
+            -96,
+            -96,
+            0,
+            96,
+            96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 27,
+          "weight": "1735/23328"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 8,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 24,
+          "weight": "25/3888"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 8,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 36,
+          "weight": "467/1944"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 8,
+          "drift": [
+            -96,
+            -192,
+            -192,
+            -192,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 48,
+          "weight": "923/10368"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 8,
+          "drift": [
+            -96,
+            -96,
+            0,
+            96,
+            96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 24,
+          "weight": "43/7776"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 96,
+          "residue_index": 8,
+          "drift": [
+            -96,
+            -96,
+            0,
+            96,
+            96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 48,
+          "weight": "1747/62208"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 102,
+          "residue_index": 17,
+          "drift": [
+            -102,
+            -204,
+            -204,
+            -204,
+            -102
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 36,
+          "weight": "11/324"
+        },
+        {
+          "stage": 7,
+          "period": 20,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 192,
+          "residue_index": 8,
+          "drift": [
+            -96,
+            -96,
+            0,
+            0,
+            -96
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 18,
+          "weight": "73/2592"
+        },
+        {
+          "stage": 7,
+          "period": 40,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 204,
+          "residue_index": 17,
+          "drift": [
+            -204,
+            -408,
+            -408,
+            -408,
+            -204
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 48,
+          "weight": "2329/31104"
+        },
+        {
+          "stage": 7,
+          "period": 40,
+          "ranks": [
+            1,
+            0
+          ],
+          "failures": 0,
+          "decrement": 204,
+          "residue_index": 17,
+          "drift": [
+            -204,
+            -204,
+            0,
+            0,
+            -204
+          ],
+          "distance_numerator": [
+            -4,
+            10,
+            -10,
+            5,
+            0,
+            0
+          ],
+          "distance_denominator": 48,
+          "weight": "2329/62208"
+        }
+      ],
+      "gap": [],
+      "states": 25847,
+      "inequalities": 220,
+      "strict_radius": "1/50000"
+    }
+  ]
+}

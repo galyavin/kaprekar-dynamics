@@ -1,0 +1,3 @@
+# Frozen marked-clock control
+
+The accepted Task 066 leaf archive predicts the following plateaus for its frozen test F on cohort 0, z=1, r1=17, r mod 6=2. The four held-out bases are 90,000,005, 90,000,011, 90,000,017 and 90,000,023. In this base order, the predictions for r2=603 are 0, 1, 1, 0. For its twelve-shift mate r2=639 they are 1, 0, 0, 1. In every cell use the specified lattice point closest via integer coordinates to the common chart midpoint. Report the actual first word clock from exact whole-word subtraction and its rational F value. The test counts an arithmetic mark on a post-failure checkpoint while holding the earlier repeated-failure class fixed.

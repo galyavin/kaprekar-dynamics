@@ -32,6 +32,10 @@ For a uniformly random eleven-digit string in a growing base B, Kaprekar subtrac
 
 For a uniformly random eleven-digit word in a growing base B, the joint law of the normalized input and the arrival time divided by B depends on the arithmetic of B. A fixed test separates the bases congruent to 0 and 1 modulo 6, so the joint law has no limit through all bases. On a small rectangle of initial gaps the conditional law converges along each class of B modulo 6 to six distinct explicit mixtures of affine clocks, so the joint law converges along no progression whose modulus is not divisible by 6. On a second box the conditional law converges along the classes B ≡ 5 and B ≡ 11 (mod 12) to two distinct explicit laws, whose largest difference on [0,1]-valued tests is 17/7128; hence a system of limits along the classes modulo N would require 12 to divide N. Whether the full joint law converges along the classes modulo 12 is open. The proofs use computer-assisted certificates of affine routes and their lattice weights.
 
+**Eleven-digit Kaprekar arrival laws modulo twelve** (2026), in [`eleven-digit-law/`](eleven-digit-law/) as [PDF](eleven-digit-law/kaprekar-eleven-digit-law.pdf) and [LaTeX source](eleven-digit-law/kaprekar-eleven-digit-law.tex). Archived at Zenodo: [doi:10.5281/zenodo.24396353](https://doi.org/10.5281/zenodo.24396353). Paper record: [doi:10.5281/zenodo.24396437](https://doi.org/10.5281/zenodo.24396437).
+
+For a uniformly random eleven-digit word in a growing base B, couple all bases through eleven uniform real digits. On an entrance event of probability at least 92.9921494990%, the normalized initial differences, the arrival time divided by B and the normalized differences of the first cyclic word have a joint limit along every class of B modulo 12; these laws converge along every class modulo M if and only if 12 divides M. A clock kernel describes the limit: each repeated affine return is charged its limiting duration, and each admissible exit residue has probability equal to the reciprocal of its preimage index in the inherited input lattice. Some rank-one arrivals repeat only with period 66 in B, but the extra factor 11 disappears from the joint law. Convergence on the rest of the inputs is open. The proof uses exact polyhedral and lattice computations.
+
 ## Reproducing the results
 
 ```sh
@@ -69,6 +73,11 @@ bash reproduce.sh            # catalogue, work, local and centered-clock checks 
 ```sh
 cd eleven-digit-selection/ancillary
 bash reproduce.sh            # exclusion tree, route verifiers, box matching, residual routes and guarded coverage (about 13 minutes)
+```
+
+```sh
+cd eleven-digit-law/ancillary
+bash reproduce.sh            # exhaustive geometric and arithmetic replays and frozen panels (about two hours)
 ```
 
 Each `ancillary/README.md` gives the expected outputs and versions.

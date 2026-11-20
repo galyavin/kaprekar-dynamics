@@ -1,0 +1,1727 @@
+{
+  "python": "3.9.6",
+  "controls": 20,
+  "whole_word_steps": 2337895,
+  "results": [
+    {
+      "base": 1000001,
+      "initial_word": [
+        940868,
+        738100,
+        579752,
+        417750,
+        237852,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "whole_word_steps": 114478,
+      "failed_difference_phases": 491,
+      "translation_controls": 4,
+      "first_failure": 14985,
+      "last_failure": 19885,
+      "first_overshoot": 1,
+      "first_remainder": -4,
+      "second_remainder": 601,
+      "second_block_start": 19886,
+      "bridge_start": 81526,
+      "bridge_state": [
+        859342,
+        674781,
+        499999,
+        325215,
+        145697
+      ],
+      "second_block_state": [
+        920982,
+        687109,
+        499999,
+        312887,
+        158025
+      ],
+      "source_time": 83789,
+      "source_state": [
+        857079,
+        678539,
+        503580,
+        321456,
+        174957
+      ],
+      "centered_steps": 30668,
+      "difference_time": 114457,
+      "word_time": 114458,
+      "period": 20,
+      "first_cyclic_centered_state": [
+        -1,
+        -2,
+        9,
+        20,
+        19
+      ],
+      "first_cyclic_difference": [
+        833334,
+        666667,
+        500002,
+        333337,
+        166670
+      ],
+      "first_cyclic_word": [
+        833334,
+        666667,
+        500002,
+        333337,
+        166669,
+        1000000,
+        833330,
+        666663,
+        499998,
+        333333,
+        166667
+      ],
+      "first_cyclic_words_difference": [
+        833333,
+        666665,
+        499997,
+        333330,
+        166665
+      ]
+    },
+    {
+      "base": 1000001,
+      "initial_word": [
+        940833,
+        738100,
+        579787,
+        417715,
+        237852,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "whole_word_steps": 114760,
+      "failed_difference_phases": 491,
+      "translation_controls": 4,
+      "first_failure": 14985,
+      "last_failure": 19885,
+      "first_overshoot": 1,
+      "first_remainder": -4,
+      "second_remainder": 671,
+      "second_block_start": 19886,
+      "bridge_start": 81526,
+      "bridge_state": [
+        859307,
+        674746,
+        499999,
+        325250,
+        145767
+      ],
+      "second_block_state": [
+        920947,
+        687074,
+        499999,
+        312922,
+        158095
+      ],
+      "source_time": 83754,
+      "source_state": [
+        857079,
+        678541,
+        503624,
+        321457,
+        174912
+      ],
+      "centered_steps": 30981,
+      "difference_time": 114735,
+      "word_time": 114736,
+      "period": 24,
+      "first_cyclic_centered_state": [
+        -1,
+        10,
+        15,
+        26,
+        13
+      ],
+      "first_cyclic_difference": [
+        833334,
+        666669,
+        500003,
+        333338,
+        166669
+      ],
+      "first_cyclic_word": [
+        833334,
+        666669,
+        500003,
+        333338,
+        166668,
+        1000000,
+        833331,
+        666662,
+        499997,
+        333331,
+        166667
+      ],
+      "first_cyclic_words_difference": [
+        833333,
+        666666,
+        500000,
+        333331,
+        166665
+      ]
+    },
+    {
+      "base": 1000007,
+      "initial_word": [
+        940848,
+        738105,
+        579763,
+        417745,
+        237854,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "whole_word_steps": 114789,
+      "failed_difference_phases": 489,
+      "translation_controls": 4,
+      "first_failure": 14985,
+      "last_failure": 19865,
+      "first_overshoot": 1,
+      "first_remainder": 0,
+      "second_remainder": 601,
+      "second_block_start": 19871,
+      "bridge_start": 81511,
+      "bridge_state": [
+        859337,
+        674771,
+        500001,
+        325229,
+        145716
+      ],
+      "second_block_state": [
+        920977,
+        687099,
+        500001,
+        312901,
+        158044
+      ],
+      "source_time": 83764,
+      "source_state": [
+        857084,
+        678543,
+        503596,
+        321459,
+        174944
+      ],
+      "centered_steps": 31000,
+      "difference_time": 114764,
+      "word_time": 114765,
+      "period": 24,
+      "first_cyclic_centered_state": [
+        -1,
+        10,
+        15,
+        26,
+        13
+      ],
+      "first_cyclic_difference": [
+        833339,
+        666673,
+        500006,
+        333340,
+        166670
+      ],
+      "first_cyclic_word": [
+        833339,
+        666673,
+        500006,
+        333340,
+        166669,
+        1000006,
+        833336,
+        666666,
+        500000,
+        333333,
+        166668
+      ],
+      "first_cyclic_words_difference": [
+        833338,
+        666670,
+        500003,
+        333333,
+        166666
+      ]
+    },
+    {
+      "base": 1000007,
+      "initial_word": [
+        940849,
+        738105,
+        579762,
+        417746,
+        237854,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "whole_word_steps": 114594,
+      "failed_difference_phases": 489,
+      "translation_controls": 4,
+      "first_failure": 14985,
+      "last_failure": 19865,
+      "first_overshoot": 1,
+      "first_remainder": 0,
+      "second_remainder": 671,
+      "second_block_start": 19871,
+      "bridge_start": 81491,
+      "bridge_state": [
+        859358,
+        674776,
+        500001,
+        325224,
+        145718
+      ],
+      "second_block_state": [
+        920978,
+        687100,
+        500001,
+        312900,
+        158042
+      ],
+      "source_time": 83765,
+      "source_state": [
+        857084,
+        682142,
+        503604,
+        357087,
+        182134
+      ],
+      "centered_steps": 30820,
+      "difference_time": 114585,
+      "word_time": 114586,
+      "period": 8,
+      "first_cyclic_centered_state": [
+        -1,
+        10,
+        15,
+        32,
+        19
+      ],
+      "first_cyclic_difference": [
+        833339,
+        666673,
+        500006,
+        333341,
+        166671
+      ],
+      "first_cyclic_word": [
+        833339,
+        666673,
+        500006,
+        333341,
+        166670,
+        1000006,
+        833335,
+        666665,
+        500000,
+        333333,
+        166668
+      ],
+      "first_cyclic_words_difference": [
+        833338,
+        666669,
+        500002,
+        333332,
+        166665
+      ]
+    },
+    {
+      "base": 1000001,
+      "initial_word": [
+        940854,
+        738100,
+        579755,
+        417747,
+        237852,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "whole_word_steps": 114482,
+      "failed_difference_phases": 490,
+      "translation_controls": 4,
+      "first_failure": 14985,
+      "last_failure": 19875,
+      "first_overshoot": 1,
+      "first_remainder": 7,
+      "second_remainder": 601,
+      "second_block_start": 19876,
+      "bridge_start": 81516,
+      "bridge_state": [
+        859338,
+        674775,
+        499999,
+        325221,
+        145705
+      ],
+      "second_block_state": [
+        920978,
+        687103,
+        499999,
+        312893,
+        158033
+      ],
+      "source_time": 83775,
+      "source_state": [
+        857079,
+        682130,
+        503591,
+        357083,
+        182128
+      ],
+      "centered_steps": 30682,
+      "difference_time": 114457,
+      "word_time": 114458,
+      "period": 24,
+      "first_cyclic_centered_state": [
+        -1,
+        10,
+        15,
+        26,
+        13
+      ],
+      "first_cyclic_difference": [
+        833334,
+        666669,
+        500003,
+        333338,
+        166669
+      ],
+      "first_cyclic_word": [
+        833334,
+        666669,
+        500003,
+        333338,
+        166668,
+        1000000,
+        833331,
+        666662,
+        499997,
+        333331,
+        166667
+      ],
+      "first_cyclic_words_difference": [
+        833333,
+        666666,
+        500000,
+        333331,
+        166665
+      ]
+    },
+    {
+      "base": 1000001,
+      "initial_word": [
+        940855,
+        738100,
+        579754,
+        417748,
+        237852,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "whole_word_steps": 123093,
+      "failed_difference_phases": 490,
+      "translation_controls": 4,
+      "first_failure": 14985,
+      "last_failure": 19875,
+      "first_overshoot": 1,
+      "first_remainder": 7,
+      "second_remainder": 671,
+      "second_block_start": 19876,
+      "bridge_start": 81496,
+      "bridge_state": [
+        859359,
+        674780,
+        499999,
+        325216,
+        145707
+      ],
+      "second_block_state": [
+        920979,
+        687104,
+        499999,
+        312892,
+        158031
+      ],
+      "source_time": 83776,
+      "source_state": [
+        857079,
+        674952,
+        500003,
+        325044,
+        146507
+      ],
+      "centered_steps": 39292,
+      "difference_time": 123068,
+      "word_time": 123069,
+      "period": 24,
+      "first_cyclic_centered_state": [
+        -1,
+        -2,
+        -3,
+        -10,
+        -5
+      ],
+      "first_cyclic_difference": [
+        833334,
+        666667,
+        500000,
+        333332,
+        166666
+      ],
+      "first_cyclic_word": [
+        833334,
+        666667,
+        500000,
+        333332,
+        166665,
+        1000000,
+        833334,
+        666668,
+        500000,
+        333333,
+        166667
+      ],
+      "first_cyclic_words_difference": [
+        833335,
+        666667,
+        500002,
+        333335,
+        166667
+      ]
+    },
+    {
+      "base": 1000007,
+      "initial_word": [
+        940862,
+        738105,
+        579760,
+        417748,
+        237854,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "whole_word_steps": 114779,
+      "failed_difference_phases": 490,
+      "translation_controls": 4,
+      "first_failure": 14985,
+      "last_failure": 19875,
+      "first_overshoot": 1,
+      "first_remainder": 11,
+      "second_remainder": 601,
+      "second_block_start": 19881,
+      "bridge_start": 81521,
+      "bridge_state": [
+        859341,
+        674777,
+        500001,
+        325223,
+        145708
+      ],
+      "second_block_state": [
+        920981,
+        687105,
+        500001,
+        312895,
+        158036
+      ],
+      "source_time": 83778,
+      "source_state": [
+        857084,
+        682129,
+        535619,
+        360670,
+        178540
+      ],
+      "centered_steps": 30976,
+      "difference_time": 114754,
+      "word_time": 114755,
+      "period": 24,
+      "first_cyclic_centered_state": [
+        -1,
+        10,
+        15,
+        26,
+        13
+      ],
+      "first_cyclic_difference": [
+        833339,
+        666673,
+        500006,
+        333340,
+        166670
+      ],
+      "first_cyclic_word": [
+        833339,
+        666673,
+        500006,
+        333340,
+        166669,
+        1000006,
+        833336,
+        666666,
+        500000,
+        333333,
+        166668
+      ],
+      "first_cyclic_words_difference": [
+        833338,
+        666670,
+        500003,
+        333333,
+        166666
+      ]
+    },
+    {
+      "base": 1000007,
+      "initial_word": [
+        940863,
+        738105,
+        579759,
+        417749,
+        237854,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "whole_word_steps": 123098,
+      "failed_difference_phases": 490,
+      "translation_controls": 4,
+      "first_failure": 14985,
+      "last_failure": 19875,
+      "first_overshoot": 1,
+      "first_remainder": 11,
+      "second_remainder": 671,
+      "second_block_start": 19881,
+      "bridge_start": 81501,
+      "bridge_state": [
+        859362,
+        674782,
+        500001,
+        325218,
+        145710
+      ],
+      "second_block_state": [
+        920982,
+        687106,
+        500001,
+        312894,
+        158034
+      ],
+      "source_time": 83779,
+      "source_state": [
+        857084,
+        678546,
+        503588,
+        321457,
+        174949
+      ],
+      "centered_steps": 39310,
+      "difference_time": 123089,
+      "word_time": 123090,
+      "period": 8,
+      "first_cyclic_centered_state": [
+        -1,
+        10,
+        15,
+        32,
+        19
+      ],
+      "first_cyclic_difference": [
+        833339,
+        666673,
+        500006,
+        333341,
+        166671
+      ],
+      "first_cyclic_word": [
+        833339,
+        666673,
+        500006,
+        333341,
+        166670,
+        1000006,
+        833335,
+        666665,
+        500000,
+        333333,
+        166668
+      ],
+      "first_cyclic_words_difference": [
+        833338,
+        666669,
+        500002,
+        333332,
+        166665
+      ]
+    },
+    {
+      "base": 1000001,
+      "initial_word": [
+        940865,
+        738100,
+        579754,
+        417748,
+        237852,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "whole_word_steps": 114703,
+      "failed_difference_phases": 491,
+      "translation_controls": 4,
+      "first_failure": 14985,
+      "last_failure": 19885,
+      "first_overshoot": 1,
+      "first_remainder": 17,
+      "second_remainder": 601,
+      "second_block_start": 19886,
+      "bridge_start": 81526,
+      "bridge_state": [
+        859339,
+        674778,
+        499999,
+        325217,
+        145701
+      ],
+      "second_block_state": [
+        920979,
+        687106,
+        499999,
+        312889,
+        158029
+      ],
+      "source_time": 83786,
+      "source_state": [
+        857079,
+        674955,
+        500002,
+        325043,
+        146504
+      ],
+      "centered_steps": 30892,
+      "difference_time": 114678,
+      "word_time": 114679,
+      "period": 24,
+      "first_cyclic_centered_state": [
+        11,
+        4,
+        15,
+        14,
+        7
+      ],
+      "first_cyclic_difference": [
+        833336,
+        666668,
+        500003,
+        333336,
+        166668
+      ],
+      "first_cyclic_word": [
+        833336,
+        666668,
+        500003,
+        333336,
+        166667,
+        1000000,
+        833332,
+        666664,
+        499997,
+        333332,
+        166665
+      ],
+      "first_cyclic_words_difference": [
+        833335,
+        666669,
+        500000,
+        333332,
+        166667
+      ]
+    },
+    {
+      "base": 1000001,
+      "initial_word": [
+        940866,
+        738100,
+        579753,
+        417749,
+        237852,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "whole_word_steps": 114808,
+      "failed_difference_phases": 491,
+      "translation_controls": 4,
+      "first_failure": 14985,
+      "last_failure": 19885,
+      "first_overshoot": 1,
+      "first_remainder": 17,
+      "second_remainder": 671,
+      "second_block_start": 19886,
+      "bridge_start": 81506,
+      "bridge_state": [
+        859360,
+        674783,
+        499999,
+        325212,
+        145703
+      ],
+      "second_block_state": [
+        920980,
+        687107,
+        499999,
+        312888,
+        158027
+      ],
+      "source_time": 83787,
+      "source_state": [
+        857079,
+        710578,
+        528456,
+        349915,
+        174959
+      ],
+      "centered_steps": 30996,
+      "difference_time": 114783,
+      "word_time": 114784,
+      "period": 24,
+      "first_cyclic_centered_state": [
+        11,
+        -2,
+        3,
+        8,
+        7
+      ],
+      "first_cyclic_difference": [
+        833336,
+        666667,
+        500001,
+        333335,
+        166668
+      ],
+      "first_cyclic_word": [
+        833336,
+        666667,
+        500001,
+        333335,
+        166667,
+        1000000,
+        833332,
+        666665,
+        499999,
+        333333,
+        166665
+      ],
+      "first_cyclic_words_difference": [
+        833335,
+        666669,
+        499999,
+        333332,
+        166666
+      ]
+    },
+    {
+      "base": 1000007,
+      "initial_word": [
+        940857,
+        738105,
+        579760,
+        417747,
+        237854,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "whole_word_steps": 123115,
+      "failed_difference_phases": 245,
+      "translation_controls": 4,
+      "first_failure": 14995,
+      "last_failure": 19875,
+      "first_overshoot": 2,
+      "first_remainder": -4,
+      "second_remainder": 601,
+      "second_block_start": 19876,
+      "bridge_start": 81516,
+      "bridge_state": [
+        859341,
+        674776,
+        500002,
+        325226,
+        145710
+      ],
+      "second_block_state": [
+        920981,
+        687104,
+        500002,
+        312898,
+        158038
+      ],
+      "source_time": 83773,
+      "source_state": [
+        857084,
+        682133,
+        535621,
+        360672,
+        178541
+      ],
+      "centered_steps": 39317,
+      "difference_time": 123090,
+      "word_time": 123091,
+      "period": 24,
+      "first_cyclic_centered_state": [
+        11,
+        4,
+        15,
+        14,
+        7
+      ],
+      "first_cyclic_difference": [
+        833341,
+        666672,
+        500006,
+        333338,
+        166669
+      ],
+      "first_cyclic_word": [
+        833341,
+        666672,
+        500006,
+        333338,
+        166668,
+        1000006,
+        833337,
+        666668,
+        500000,
+        333334,
+        166666
+      ],
+      "first_cyclic_words_difference": [
+        833340,
+        666673,
+        500003,
+        333334,
+        166668
+      ]
+    },
+    {
+      "base": 1000007,
+      "initial_word": [
+        940858,
+        738105,
+        579759,
+        417748,
+        237854,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "whole_word_steps": 114778,
+      "failed_difference_phases": 245,
+      "translation_controls": 4,
+      "first_failure": 14995,
+      "last_failure": 19875,
+      "first_overshoot": 2,
+      "first_remainder": -4,
+      "second_remainder": 671,
+      "second_block_start": 19876,
+      "bridge_start": 81496,
+      "bridge_state": [
+        859362,
+        674781,
+        500002,
+        325221,
+        145712
+      ],
+      "second_block_state": [
+        920982,
+        687105,
+        500002,
+        312897,
+        158036
+      ],
+      "source_time": 83774,
+      "source_state": [
+        857084,
+        678546,
+        503591,
+        321458,
+        174948
+      ],
+      "centered_steps": 30979,
+      "difference_time": 114753,
+      "word_time": 114754,
+      "period": 24,
+      "first_cyclic_centered_state": [
+        -1,
+        10,
+        15,
+        26,
+        13
+      ],
+      "first_cyclic_difference": [
+        833339,
+        666673,
+        500006,
+        333340,
+        166670
+      ],
+      "first_cyclic_word": [
+        833339,
+        666673,
+        500006,
+        333340,
+        166669,
+        1000006,
+        833336,
+        666666,
+        500000,
+        333333,
+        166668
+      ],
+      "first_cyclic_words_difference": [
+        833338,
+        666670,
+        500003,
+        333333,
+        166666
+      ]
+    },
+    {
+      "base": 1000001,
+      "initial_word": [
+        940855,
+        738100,
+        579757,
+        417744,
+        237852,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "whole_word_steps": 114623,
+      "failed_difference_phases": 245,
+      "translation_controls": 4,
+      "first_failure": 14995,
+      "last_failure": 19875,
+      "first_overshoot": 2,
+      "first_remainder": 0,
+      "second_remainder": 601,
+      "second_block_start": 19881,
+      "bridge_start": 81521,
+      "bridge_state": [
+        859334,
+        674772,
+        499998,
+        325222,
+        145709
+      ],
+      "second_block_state": [
+        920974,
+        687100,
+        499998,
+        312894,
+        158037
+      ],
+      "source_time": 83776,
+      "source_state": [
+        857079,
+        674952,
+        500005,
+        325050,
+        146512
+      ],
+      "centered_steps": 30822,
+      "difference_time": 114598,
+      "word_time": 114599,
+      "period": 24,
+      "first_cyclic_centered_state": [
+        -1,
+        10,
+        15,
+        26,
+        13
+      ],
+      "first_cyclic_difference": [
+        833334,
+        666669,
+        500003,
+        333338,
+        166669
+      ],
+      "first_cyclic_word": [
+        833334,
+        666669,
+        500003,
+        333338,
+        166668,
+        1000000,
+        833331,
+        666662,
+        499997,
+        333331,
+        166667
+      ],
+      "first_cyclic_words_difference": [
+        833333,
+        666666,
+        500000,
+        333331,
+        166665
+      ]
+    },
+    {
+      "base": 1000001,
+      "initial_word": [
+        940856,
+        738100,
+        579756,
+        417745,
+        237852,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "whole_word_steps": 123122,
+      "failed_difference_phases": 245,
+      "translation_controls": 4,
+      "first_failure": 14995,
+      "last_failure": 19875,
+      "first_overshoot": 2,
+      "first_remainder": 0,
+      "second_remainder": 671,
+      "second_block_start": 19881,
+      "bridge_start": 81501,
+      "bridge_state": [
+        859355,
+        674777,
+        499998,
+        325217,
+        145711
+      ],
+      "second_block_state": [
+        920975,
+        687101,
+        499998,
+        312893,
+        158035
+      ],
+      "source_time": 83777,
+      "source_state": [
+        857079,
+        710571,
+        528442,
+        349904,
+        174957
+      ],
+      "centered_steps": 39320,
+      "difference_time": 123097,
+      "word_time": 123098,
+      "period": 24,
+      "first_cyclic_centered_state": [
+        -1,
+        10,
+        15,
+        26,
+        13
+      ],
+      "first_cyclic_difference": [
+        833334,
+        666669,
+        500003,
+        333338,
+        166669
+      ],
+      "first_cyclic_word": [
+        833334,
+        666669,
+        500003,
+        333338,
+        166668,
+        1000000,
+        833331,
+        666662,
+        499997,
+        333331,
+        166667
+      ],
+      "first_cyclic_words_difference": [
+        833333,
+        666666,
+        500000,
+        333331,
+        166665
+      ]
+    },
+    {
+      "base": 1000007,
+      "initial_word": [
+        940869,
+        738105,
+        579758,
+        417749,
+        237854,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "whole_word_steps": 117573,
+      "failed_difference_phases": 245,
+      "translation_controls": 4,
+      "first_failure": 14995,
+      "last_failure": 19875,
+      "first_overshoot": 2,
+      "first_remainder": 6,
+      "second_remainder": 601,
+      "second_block_start": 19886,
+      "bridge_start": 81526,
+      "bridge_state": [
+        859343,
+        674780,
+        500002,
+        325220,
+        145704
+      ],
+      "second_block_state": [
+        920983,
+        687108,
+        500002,
+        312892,
+        158032
+      ],
+      "source_time": 83785,
+      "source_state": [
+        857084,
+        682132,
+        503592,
+        357085,
+        182127
+      ],
+      "centered_steps": 33763,
+      "difference_time": 117548,
+      "word_time": 117549,
+      "period": 24,
+      "first_cyclic_centered_state": [
+        11,
+        -2,
+        3,
+        8,
+        7
+      ],
+      "first_cyclic_difference": [
+        833341,
+        666671,
+        500004,
+        333337,
+        166669
+      ],
+      "first_cyclic_word": [
+        833341,
+        666671,
+        500004,
+        333337,
+        166668,
+        1000006,
+        833337,
+        666669,
+        500002,
+        333335,
+        166666
+      ],
+      "first_cyclic_words_difference": [
+        833340,
+        666673,
+        500002,
+        333334,
+        166667
+      ]
+    },
+    {
+      "base": 1000007,
+      "initial_word": [
+        940870,
+        738105,
+        579757,
+        417750,
+        237854,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "whole_word_steps": 114644,
+      "failed_difference_phases": 245,
+      "translation_controls": 4,
+      "first_failure": 14995,
+      "last_failure": 19875,
+      "first_overshoot": 2,
+      "first_remainder": 6,
+      "second_remainder": 671,
+      "second_block_start": 19886,
+      "bridge_start": 81506,
+      "bridge_state": [
+        859364,
+        674785,
+        500002,
+        325215,
+        145706
+      ],
+      "second_block_state": [
+        920984,
+        687109,
+        500002,
+        312891,
+        158030
+      ],
+      "source_time": 83786,
+      "source_state": [
+        857084,
+        674959,
+        500006,
+        325045,
+        146506
+      ],
+      "centered_steps": 30833,
+      "difference_time": 114619,
+      "word_time": 114620,
+      "period": 24,
+      "first_cyclic_centered_state": [
+        -1,
+        10,
+        15,
+        26,
+        13
+      ],
+      "first_cyclic_difference": [
+        833339,
+        666673,
+        500006,
+        333340,
+        166670
+      ],
+      "first_cyclic_word": [
+        833339,
+        666673,
+        500006,
+        333340,
+        166669,
+        1000006,
+        833336,
+        666666,
+        500000,
+        333333,
+        166668
+      ],
+      "first_cyclic_words_difference": [
+        833338,
+        666670,
+        500003,
+        333333,
+        166666
+      ]
+    },
+    {
+      "base": 1000001,
+      "initial_word": [
+        940845,
+        738100,
+        579757,
+        417744,
+        237852,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "whole_word_steps": 123098,
+      "failed_difference_phases": 244,
+      "translation_controls": 4,
+      "first_failure": 14995,
+      "last_failure": 19855,
+      "first_overshoot": 2,
+      "first_remainder": 12,
+      "second_remainder": 601,
+      "second_block_start": 19871,
+      "bridge_start": 81511,
+      "bridge_state": [
+        859334,
+        674770,
+        499998,
+        325224,
+        145711
+      ],
+      "second_block_state": [
+        920974,
+        687098,
+        499998,
+        312896,
+        158039
+      ],
+      "source_time": 83766,
+      "source_state": [
+        857079,
+        674950,
+        500005,
+        325052,
+        146514
+      ],
+      "centered_steps": 39307,
+      "difference_time": 123073,
+      "word_time": 123074,
+      "period": 24,
+      "first_cyclic_centered_state": [
+        11,
+        4,
+        15,
+        14,
+        7
+      ],
+      "first_cyclic_difference": [
+        833336,
+        666668,
+        500003,
+        333336,
+        166668
+      ],
+      "first_cyclic_word": [
+        833336,
+        666668,
+        500003,
+        333336,
+        166667,
+        1000000,
+        833332,
+        666664,
+        499997,
+        333332,
+        166665
+      ],
+      "first_cyclic_words_difference": [
+        833335,
+        666669,
+        500000,
+        333332,
+        166667
+      ]
+    },
+    {
+      "base": 1000001,
+      "initial_word": [
+        940846,
+        738100,
+        579756,
+        417745,
+        237852,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "whole_word_steps": 114481,
+      "failed_difference_phases": 244,
+      "translation_controls": 4,
+      "first_failure": 14995,
+      "last_failure": 19855,
+      "first_overshoot": 2,
+      "first_remainder": 12,
+      "second_remainder": 671,
+      "second_block_start": 19871,
+      "bridge_start": 81491,
+      "bridge_state": [
+        859355,
+        674775,
+        499998,
+        325219,
+        145713
+      ],
+      "second_block_state": [
+        920975,
+        687099,
+        499998,
+        312895,
+        158037
+      ],
+      "source_time": 83767,
+      "source_state": [
+        857079,
+        710569,
+        528438,
+        349900,
+        174955
+      ],
+      "centered_steps": 30689,
+      "difference_time": 114456,
+      "word_time": 114457,
+      "period": 24,
+      "first_cyclic_centered_state": [
+        11,
+        4,
+        15,
+        14,
+        7
+      ],
+      "first_cyclic_difference": [
+        833336,
+        666668,
+        500003,
+        333336,
+        166668
+      ],
+      "first_cyclic_word": [
+        833336,
+        666668,
+        500003,
+        333336,
+        166667,
+        1000000,
+        833332,
+        666664,
+        499997,
+        333332,
+        166665
+      ],
+      "first_cyclic_words_difference": [
+        833335,
+        666669,
+        500000,
+        333332,
+        166667
+      ]
+    },
+    {
+      "base": 1000007,
+      "initial_word": [
+        940829,
+        738105,
+        579787,
+        417720,
+        237854,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "whole_word_steps": 114433,
+      "failed_difference_phases": 244,
+      "translation_controls": 4,
+      "first_failure": 14995,
+      "last_failure": 19855,
+      "first_overshoot": 2,
+      "first_remainder": 17,
+      "second_remainder": 601,
+      "second_block_start": 19871,
+      "bridge_start": 81531,
+      "bridge_state": [
+        859298,
+        674748,
+        500001,
+        325257,
+        145761
+      ],
+      "second_block_state": [
+        920958,
+        687080,
+        500001,
+        312925,
+        158093
+      ],
+      "source_time": 83745,
+      "source_state": [
+        857084,
+        682172,
+        503634,
+        357086,
+        182164
+      ],
+      "centered_steps": 30663,
+      "difference_time": 114408,
+      "word_time": 114409,
+      "period": 24,
+      "first_cyclic_centered_state": [
+        11,
+        4,
+        15,
+        14,
+        7
+      ],
+      "first_cyclic_difference": [
+        833341,
+        666672,
+        500006,
+        333338,
+        166669
+      ],
+      "first_cyclic_word": [
+        833341,
+        666672,
+        500006,
+        333338,
+        166668,
+        1000006,
+        833337,
+        666668,
+        500000,
+        333334,
+        166666
+      ],
+      "first_cyclic_words_difference": [
+        833340,
+        666673,
+        500003,
+        333334,
+        166668
+      ]
+    },
+    {
+      "base": 1000007,
+      "initial_word": [
+        940830,
+        738105,
+        579786,
+        417721,
+        237854,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "whole_word_steps": 114444,
+      "failed_difference_phases": 244,
+      "translation_controls": 4,
+      "first_failure": 14995,
+      "last_failure": 19855,
+      "first_overshoot": 2,
+      "first_remainder": 17,
+      "second_remainder": 671,
+      "second_block_start": 19871,
+      "bridge_start": 81511,
+      "bridge_state": [
+        859319,
+        674753,
+        500001,
+        325252,
+        145763
+      ],
+      "second_block_state": [
+        920959,
+        687081,
+        500001,
+        312924,
+        158091
+      ],
+      "source_time": 83746,
+      "source_state": [
+        857084,
+        674921,
+        500008,
+        325084,
+        146546
+      ],
+      "centered_steps": 30673,
+      "difference_time": 114419,
+      "word_time": 114420,
+      "period": 24,
+      "first_cyclic_centered_state": [
+        11,
+        4,
+        15,
+        14,
+        7
+      ],
+      "first_cyclic_difference": [
+        833341,
+        666672,
+        500006,
+        333338,
+        166669
+      ],
+      "first_cyclic_word": [
+        833341,
+        666672,
+        500006,
+        333338,
+        166668,
+        1000006,
+        833337,
+        666668,
+        500000,
+        333334,
+        166666
+      ],
+      "first_cyclic_words_difference": [
+        833340,
+        666673,
+        500003,
+        333334,
+        166668
+      ]
+    }
+  ]
+}

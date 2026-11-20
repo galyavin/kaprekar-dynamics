@@ -1,0 +1,174 @@
+{
+  "census": {
+    "prefix_index": 132,
+    "label_index": 4752,
+    "primary_index": 28512
+  },
+  "intrinsic_families": 99,
+  "intrinsic_leaves": 6555,
+  "nonempty_pullbacks": 99076,
+  "empty_pullbacks": 0,
+  "nonempty_pullback_types": [
+    {
+      "base_step": 12,
+      "fixed_base_covolume": 54,
+      "count": 677
+    },
+    {
+      "base_step": 12,
+      "fixed_base_covolume": 108,
+      "count": 466
+    },
+    {
+      "base_step": 12,
+      "fixed_base_covolume": 216,
+      "count": 304
+    },
+    {
+      "base_step": 12,
+      "fixed_base_covolume": 324,
+      "count": 7722
+    },
+    {
+      "base_step": 12,
+      "fixed_base_covolume": 432,
+      "count": 8996
+    },
+    {
+      "base_step": 12,
+      "fixed_base_covolume": 486,
+      "count": 13914
+    },
+    {
+      "base_step": 12,
+      "fixed_base_covolume": 648,
+      "count": 22848
+    },
+    {
+      "base_step": 12,
+      "fixed_base_covolume": 864,
+      "count": 29344
+    },
+    {
+      "base_step": 12,
+      "fixed_base_covolume": 972,
+      "count": 14805
+    }
+  ],
+  "cutoff_cohorts_1_and_2": 86496843,
+  "max_depth": 3,
+  "base_modulus": 12,
+  "tested_base_residues": [
+    5,
+    11
+  ],
+  "terminal_clock_error_bounds": [
+    -201680,
+    167
+  ],
+  "graph_error_bounds_by_cohort": {
+    "0": [
+      "-113168491/561",
+      "304721/2244"
+    ],
+    "1": [
+      "-113168491/561",
+      "304721/2244"
+    ],
+    "2": [
+      "-113172421/561",
+      "304361/2244"
+    ]
+  },
+  "graphs": [
+    {
+      "lane": "S",
+      "s": [
+        "-11/324",
+        "-133/162",
+        "-35/81"
+      ],
+      "arm_5_units": "7202",
+      "arm_11_units": "7202",
+      "signed_units": "0",
+      "frozen_test": 0
+    },
+    {
+      "lane": "S",
+      "s": [
+        "-7/408",
+        "-57/68",
+        "-15/34"
+      ],
+      "arm_5_units": "2940",
+      "arm_11_units": "2961",
+      "signed_units": "-21",
+      "frozen_test": 0
+    },
+    {
+      "lane": "S",
+      "s": [
+        "1/576",
+        "-247/288",
+        "-65/144"
+      ],
+      "arm_5_units": "4900",
+      "arm_11_units": "4935",
+      "signed_units": "-35",
+      "frozen_test": 0
+    },
+    {
+      "lane": "M1",
+      "s": [
+        "31/96",
+        "-19/16",
+        "-5/8"
+      ],
+      "arm_5_units": "1328",
+      "arm_11_units": "1328",
+      "signed_units": "0",
+      "frozen_test": 0
+    },
+    {
+      "lane": "M2",
+      "s": [
+        "29/54",
+        "-38/27",
+        "-20/27"
+      ],
+      "arm_5_units": "2688",
+      "arm_11_units": "2700",
+      "signed_units": "-12",
+      "frozen_test": 0
+    },
+    {
+      "lane": "L",
+      "s": [
+        "139/144",
+        "-133/72",
+        "-35/36"
+      ],
+      "arm_5_units": "8741",
+      "arm_11_units": "26032/3",
+      "signed_units": "191/3",
+      "frozen_test": 1
+    },
+    {
+      "lane": "L",
+      "s": [
+        "863/918",
+        "-836/459",
+        "-440/459"
+      ],
+      "arm_5_units": "713",
+      "arm_11_units": "2126/3",
+      "signed_units": "13/3",
+      "frozen_test": 1
+    }
+  ],
+  "difference": {
+    "positive_units": 68,
+    "negative_units": -68,
+    "frozen_test_contrast": "17/7128"
+  }
+}

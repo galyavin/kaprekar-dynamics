@@ -1,0 +1,93 @@
+row 0 leading-entry 9 x 114876005150 79117929028 50179400739 26486570318 17111906707 / 137438953472
+base 192003 status 0 clock 934464043975/6597069766656
+stage 1 elapsed 27877444855/274877906944 length 5 guard  0 0 2 0 0 0 6 decrement 36 lane 24 / 3 lost 0
+incoming  3 0 3 0 3
+  column 6 0 0 0 0
+  column 0 6 0 0 0
+  column 0 0 6 0 0
+  column 0 0 0 6 0
+  column 0 0 0 0 6
+outgoing  3 0 -9 0 3
+  column 6 0 0 0 0
+  column 0 6 0 0 0
+  column 0 0 0 6 0
+  column 0 0 0 0 6
+leading section 31243670585 12212061376 0 -6966363508 385439794 / 137438953472
+stage 2 elapsed 2185707445/412316860416 length 10 guard  0 1 0 1 0 0 -30 decrement 72 lane 6 / 12 lost 0
+incoming  3 0 -9 0 3
+  column 6 0 0 0 0
+  column 0 6 0 0 0
+  column 0 0 0 6 0
+  column 0 0 0 0 6
+outgoing  3 0 -9 -36 3
+  column 6 0 0 0 0
+  column 0 6 0 -6 0
+  column 0 0 0 0 6
+leading section 26872255695 8714929464 0 -8714929464 -488843184 / 137438953472
+stage 3 elapsed 14657451395/549755813888 length 10 guard  1 0 0 0 1 0 -42 decrement 72 lane 6 / 12 lost 0
+incoming  3 0 -9 -36 3
+  column 6 0 0 0 0
+  column 0 6 0 -6 0
+  column 0 0 0 0 6
+outgoing  3 0 -9 -36 -27
+  column 6 0 0 0 -6
+  column 0 6 0 -6 0
+leading section 9772157205 8635388091 0 -8635388091 -9772157205 / 274877906944
+stage 4 elapsed 947307595/412316860416 length 20 guard  1 1 0 -1 -1 0 -60 decrement 108 lane 6 / 6 lost 0
+incoming  3 6 3 0 -3
+  column 6 12 0 -12 -6
+  column 0 0 6 12 6
+outgoing  3 6 21 36 15
+  column 6 12 12 12 6
+leading section 7877542015 15755084030 15755084030 15755084030 7877542015 / 274877906944
+stage 5 elapsed 39387710075/6597069766656 length 20 guard  -3 9 -1 -4 -4 0 12 decrement 96 lane 72 / 16 lost 0
+incoming  3 6 15 24 9
+  column 6 12 12 12 6
+outgoing  69 138 147 156 75
+leading section 0 0 0 0 0 / 1
+base 192005 status 0 clock 1971813207535/14018773254144
+stage 1 elapsed 27877444855/274877906944 length 5 guard  0 0 2 0 0 0 6 decrement 36 lane 24 / 3 lost 0
+incoming  5 4 3 2 1
+  column 6 0 0 0 0
+  column 0 6 0 0 0
+  column 0 0 6 0 0
+  column 0 0 0 6 0
+  column 0 0 0 0 6
+outgoing  5 4 -9 2 1
+  column 6 0 0 0 0
+  column 0 6 0 0 0
+  column 0 0 0 6 0
+  column 0 0 0 0 6
+leading section 31243670585 12212061376 0 -6966363508 385439794 / 137438953472
+stage 2 elapsed 2185707445/412316860416 length 10 guard  0 1 0 1 0 0 -30 decrement 72 lane 12 / 12 lost 0
+incoming  5 4 -9 2 1
+  column 6 0 0 0 0
+  column 0 6 0 0 0
+  column 0 0 0 6 0
+  column 0 0 0 0 6
+outgoing  5 4 -9 -34 1
+  column 6 0 0 0 0
+  column 0 6 0 -6 0
+  column 0 0 0 0 6
+leading section 26872255695 8714929464 0 -8714929464 -488843184 / 137438953472
+stage 3 elapsed 14657451395/549755813888 length 10 guard  1 0 0 0 1 0 -42 decrement 72 lane 6 / 12 lost 0
+incoming  5 4 -9 -34 1
+  column 6 0 0 0 0
+  column 0 6 0 -6 0
+  column 0 0 0 0 6
+outgoing  5 4 -9 -34 -29
+  column 6 0 0 0 -6
+  column 0 6 0 -6 0
+leading section 9772157205 8635388091 0 -8635388091 -9772157205 / 274877906944
+stage 4 elapsed 947307595/549755813888 length 20 guard  -10 -2 13 10 5 0 -72 decrement 144 lane 36 / 8 lost 0
+incoming  5 4 -15 14 19
+  column 6 0 0 6 0
+  column 0 6 0 0 6
+outgoing  5 -2 -15 14 13
+  column 6 0 0 6 0
+leading section 15565622511 0 0 15565622511 0 / 549755813888
+stage 5 elapsed 25942704185/4672924418048 length 40 guard  6 -8 3 2 1 0 -210 decrement 204 lane 78 / 34 lost 0
+incoming  5 22 21 38 25
+  column 6 12 12 12 6
+outgoing  71 154 153 170 91
+leading section 0 0 0 0 0 / 1

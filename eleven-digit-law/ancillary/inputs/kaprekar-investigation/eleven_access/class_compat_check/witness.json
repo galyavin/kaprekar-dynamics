@@ -1,0 +1,79 @@
+{
+  "edges": [
+    {
+      "rank": 4,
+      "shorts": 0,
+      "word_length": 5,
+      "unpaired_phases": 0,
+      "remainder": 6,
+      "index": 3,
+      "decrement": 36,
+      "guard_base_coefficient": 0
+    },
+    {
+      "rank": 3,
+      "shorts": 0,
+      "word_length": 10,
+      "unpaired_phases": 0,
+      "remainder": 0,
+      "index": 2,
+      "decrement": 12,
+      "guard_base_coefficient": 1
+    },
+    {
+      "rank": 2,
+      "shorts": 0,
+      "word_length": 10,
+      "unpaired_phases": 1,
+      "remainder": 36,
+      "index": 11,
+      "decrement": 66,
+      "guard_base_coefficient": -1
+    },
+    {
+      "rank": 2,
+      "shorts": 5,
+      "word_length": 10,
+      "unpaired_phases": 0,
+      "remainder": 18,
+      "index": 12,
+      "decrement": 144,
+      "guard_base_coefficient": 0
+    },
+    {
+      "rank": 1,
+      "shorts": 30,
+      "word_length": 20,
+      "unpaired_phases": 0,
+      "remainder": 18,
+      "index": 7,
+      "decrement": 126,
+      "guard_base_coefficient": 0
+    }
+  ],
+  "source_vertices": 18,
+  "source_mass": "137073667649085083209714809990783625474924658575141962390191273931148930999625282334775355282769003643276243530557339043002699285535930449/59103332206658015671868864531355160395453021166527476597376548060493168045803185595725512429856817353157439003823903410875434292183040000000000000",
+  "lane_index": 5544,
+  "direct_source_mass": "137073667649085083209714809990783625474924658575141962390191273931148930999625282334775355282769003643276243530557339043002699285535930449/327668873753712038884840984961833009232391549347228330255855582447374123645932860942702240911126195405904841837199720509893407715862773760000000000000",
+  "centered_period": 66,
+  "arrival": [
+    0,
+    6,
+    1,
+    6,
+    6,
+    0,
+    -6,
+    -6,
+    6,
+    18,
+    -6,
+    -30,
+    -24,
+    66,
+    66,
+    0,
+    -66,
+    -66
+  ]
+}

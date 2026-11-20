@@ -1,0 +1,28 @@
+FORECAST.md: OK
+run.py: OK
+model.cpp: OK
+physical.cpp: OK
+local.cpp: OK
+summarize.py: OK
+exact.py: OK
+../r2_routes/diagnostic.cpp: OK
+../stage_graph/graph.cpp: OK
+holdout waiting for the exclusive compute window
+holdout acquired the exclusive compute window
+120 independent physical clock and entry comparisons, 79 accelerated, 8892190 exact updates skipped
+holdout 27000 to 31499
+holdout 31500 to 35999
+holdout 22500 to 26999
+holdout 13500 to 17999
+holdout 18000 to 22499
+holdout 9000 to 13499
+holdout 4500 to 8999
+holdout 0 to 4499
+local 3584 to 4095
+local 512 to 1023
+local 1536 to 2047
+local 2560 to 3071
+local 0 to 511
+local 2048 to 2559
+local 3072 to 3583
+local 1024 to 1535

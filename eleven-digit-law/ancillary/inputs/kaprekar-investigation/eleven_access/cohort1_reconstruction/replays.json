@@ -1,0 +1,4397 @@
+{
+  "pairs": [
+    {
+      "base": 1224005,
+      "labels": [
+        [
+          2,
+          16,
+          605
+        ],
+        [
+          1,
+          15,
+          605
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 101235,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 44775,
+        "source": [
+          1151991,
+          903584,
+          709911,
+          510580,
+          291160
+        ],
+        "word_time": 146011
+      },
+      "right": {
+        "checkpoint_time": 101235,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 44775,
+        "source": [
+          1151996,
+          903588,
+          709914,
+          510582,
+          291161
+        ],
+        "word_time": 146011
+      },
+      "shift": 6,
+      "witness": [
+        0,
+        -4,
+        0
+      ]
+    },
+    {
+      "base": 1224005,
+      "labels": [
+        [
+          1,
+          12,
+          625
+        ],
+        [
+          2,
+          13,
+          613
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 100715,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 44991,
+        "source": [
+          1151735,
+          903714,
+          710001,
+          510814,
+          291269
+        ],
+        "word_time": 145707
+      },
+      "right": {
+        "checkpoint_time": 100775,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 44911,
+        "source": [
+          1151720,
+          903679,
+          710026,
+          510796,
+          291231
+        ],
+        "word_time": 145687
+      },
+      "shift": 6,
+      "witness": [
+        -3,
+        35,
+        8
+      ]
+    },
+    {
+      "base": 1224005,
+      "labels": [
+        [
+          2,
+          2,
+          639
+        ],
+        [
+          1,
+          2,
+          603
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 100405,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 39494,
+        "source": [
+          1151384,
+          903135,
+          709534,
+          510997,
+          290759
+        ],
+        "word_time": 139900
+      },
+      "right": {
+        "checkpoint_time": 100435,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 39454,
+        "source": [
+          1151379,
+          903119,
+          709548,
+          510988,
+          290740
+        ],
+        "word_time": 139890
+      },
+      "shift": 6,
+      "witness": [
+        -1,
+        16,
+        2
+      ]
+    },
+    {
+      "base": 1224005,
+      "labels": [
+        [
+          1,
+          12,
+          649
+        ],
+        [
+          1,
+          12,
+          661
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 99905,
+        "cycle": [
+          -1,
+          -2,
+          -3,
+          -16,
+          -11
+        ],
+        "period": 24,
+        "remaining_difference_steps": 45881,
+        "source": [
+          1151557,
+          903641,
+          709917,
+          511430,
+          291322
+        ],
+        "word_time": 145787
+      },
+      "right": {
+        "checkpoint_time": 99905,
+        "cycle": [
+          -1,
+          -2,
+          -3,
+          -16,
+          -11
+        ],
+        "period": 24,
+        "remaining_difference_steps": 45881,
+        "source": [
+          1151567,
+          903648,
+          709925,
+          511434,
+          291323
+        ],
+        "word_time": 145787
+      },
+      "shift": 12,
+      "witness": [
+        1,
+        -7,
+        0
+      ]
+    },
+    {
+      "base": 1224005,
+      "labels": [
+        [
+          1,
+          6,
+          639
+        ],
+        [
+          1,
+          6,
+          603
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 99730,
+        "cycle": [
+          -1,
+          -2,
+          -3,
+          -16,
+          -11
+        ],
+        "period": 24,
+        "remaining_difference_steps": 45581,
+        "source": [
+          1151218,
+          903689,
+          709796,
+          511160,
+          291271
+        ],
+        "word_time": 145312
+      },
+      "right": {
+        "checkpoint_time": 99760,
+        "cycle": [
+          -1,
+          -2,
+          -3,
+          -16,
+          -11
+        ],
+        "period": 24,
+        "remaining_difference_steps": 45541,
+        "source": [
+          1151218,
+          903677,
+          709814,
+          511154,
+          291253
+        ],
+        "word_time": 145302
+      },
+      "shift": 12,
+      "witness": [
+        -1,
+        12,
+        2
+      ]
+    },
+    {
+      "base": 1224005,
+      "labels": [
+        [
+          2,
+          17,
+          645
+        ],
+        [
+          2,
+          17,
+          609
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 100100,
+        "cycle": [
+          5,
+          -2,
+          9,
+          14,
+          19
+        ],
+        "period": 20,
+        "remaining_difference_steps": 40524,
+        "source": [
+          1151837,
+          903285,
+          709374,
+          511614,
+          290882
+        ],
+        "word_time": 140625
+      },
+      "right": {
+        "checkpoint_time": 100130,
+        "cycle": [
+          5,
+          -2,
+          9,
+          14,
+          19
+        ],
+        "period": 20,
+        "remaining_difference_steps": 40484,
+        "source": [
+          1151837,
+          903273,
+          709392,
+          511608,
+          290864
+        ],
+        "word_time": 140615
+      },
+      "shift": 12,
+      "witness": [
+        -2,
+        12,
+        4
+      ]
+    },
+    {
+      "base": 1224011,
+      "labels": [
+        [
+          1,
+          -2,
+          627
+        ],
+        [
+          2,
+          -2,
+          627
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 100105,
+        "cycle": [
+          17,
+          10,
+          21,
+          14,
+          1
+        ],
+        "period": 24,
+        "remaining_difference_steps": 40645,
+        "source": [
+          1151604,
+          903199,
+          709481,
+          511599,
+          290748
+        ],
+        "word_time": 140751
+      },
+      "right": {
+        "checkpoint_time": 100105,
+        "cycle": [
+          17,
+          10,
+          21,
+          14,
+          1
+        ],
+        "period": 24,
+        "remaining_difference_steps": 40645,
+        "source": [
+          1151609,
+          903203,
+          709485,
+          511602,
+          290749
+        ],
+        "word_time": 140751
+      },
+      "shift": 6,
+      "witness": [
+        0,
+        -4,
+        0
+      ]
+    },
+    {
+      "base": 1224011,
+      "labels": [
+        [
+          1,
+          12,
+          633
+        ],
+        [
+          2,
+          13,
+          669
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 99670,
+        "cycle": [
+          -1,
+          -2,
+          -3,
+          -16,
+          -11
+        ],
+        "period": 24,
+        "remaining_difference_steps": 46401,
+        "source": [
+          1151581,
+          903642,
+          709622,
+          511534,
+          291275
+        ],
+        "word_time": 146072
+      },
+      "right": {
+        "checkpoint_time": 99700,
+        "cycle": [
+          -1,
+          -2,
+          -3,
+          -16,
+          -11
+        ],
+        "period": 24,
+        "remaining_difference_steps": 46361,
+        "source": [
+          1151576,
+          903626,
+          709637,
+          511526,
+          291256
+        ],
+        "word_time": 146062
+      },
+      "shift": 6,
+      "witness": [
+        -2,
+        16,
+        4
+      ]
+    },
+    {
+      "base": 1224011,
+      "labels": [
+        [
+          2,
+          3,
+          605
+        ],
+        [
+          1,
+          3,
+          641
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 100175,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 39525,
+        "source": [
+          1151311,
+          903302,
+          709811,
+          511136,
+          290965
+        ],
+        "word_time": 139701
+      },
+      "right": {
+        "checkpoint_time": 100205,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 39485,
+        "source": [
+          1151306,
+          903286,
+          709825,
+          511127,
+          290946
+        ],
+        "word_time": 139691
+      },
+      "shift": 6,
+      "witness": [
+        -1,
+        16,
+        4
+      ]
+    },
+    {
+      "base": 1224011,
+      "labels": [
+        [
+          1,
+          12,
+          649
+        ],
+        [
+          1,
+          12,
+          661
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 100645,
+        "cycle": [
+          5,
+          10,
+          21,
+          32,
+          13
+        ],
+        "period": 8,
+        "remaining_difference_steps": 39768,
+        "source": [
+          1151784,
+          903063,
+          709887,
+          511534,
+          290771
+        ],
+        "word_time": 140414
+      },
+      "right": {
+        "checkpoint_time": 100645,
+        "cycle": [
+          5,
+          10,
+          21,
+          32,
+          13
+        ],
+        "period": 8,
+        "remaining_difference_steps": 39768,
+        "source": [
+          1151794,
+          903070,
+          709895,
+          511538,
+          290772
+        ],
+        "word_time": 140414
+      },
+      "shift": 12,
+      "witness": [
+        0,
+        -7,
+        0
+      ]
+    },
+    {
+      "base": 1224011,
+      "labels": [
+        [
+          1,
+          -3,
+          609
+        ],
+        [
+          1,
+          -3,
+          645
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 100495,
+        "cycle": [
+          5,
+          -2,
+          9,
+          14,
+          19
+        ],
+        "period": 20,
+        "remaining_difference_steps": 46279,
+        "source": [
+          1152013,
+          903367,
+          709373,
+          511178,
+          290997
+        ],
+        "word_time": 146775
+      },
+      "right": {
+        "checkpoint_time": 100525,
+        "cycle": [
+          5,
+          -2,
+          9,
+          14,
+          19
+        ],
+        "period": 20,
+        "remaining_difference_steps": 46239,
+        "source": [
+          1152013,
+          903355,
+          709391,
+          511172,
+          290979
+        ],
+        "word_time": 146765
+      },
+      "shift": 12,
+      "witness": [
+        -1,
+        12,
+        4
+      ]
+    },
+    {
+      "base": 1224011,
+      "labels": [
+        [
+          2,
+          6,
+          617
+        ],
+        [
+          2,
+          6,
+          653
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 100835,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 50067,
+        "source": [
+          1151859,
+          903267,
+          709914,
+          511229,
+          290912
+        ],
+        "word_time": 150903
+      },
+      "right": {
+        "checkpoint_time": 100865,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 50027,
+        "source": [
+          1151859,
+          903255,
+          709932,
+          511223,
+          290894
+        ],
+        "word_time": 150893
+      },
+      "shift": 12,
+      "witness": [
+        -1,
+        12,
+        4
+      ]
+    },
+    {
+      "base": 1224017,
+      "labels": [
+        [
+          1,
+          3,
+          653
+        ],
+        [
+          2,
+          3,
+          653
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 100515,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 39784,
+        "source": [
+          1151589,
+          903396,
+          710008,
+          511161,
+          291065
+        ],
+        "word_time": 140300
+      },
+      "right": {
+        "checkpoint_time": 100515,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 39784,
+        "source": [
+          1151594,
+          903400,
+          710012,
+          511164,
+          291066
+        ],
+        "word_time": 140300
+      },
+      "shift": 6,
+      "witness": [
+        0,
+        -4,
+        0
+      ]
+    },
+    {
+      "base": 1224017,
+      "labels": [
+        [
+          1,
+          11,
+          643
+        ],
+        [
+          2,
+          10,
+          625
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 99845,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 51880,
+        "source": [
+          1151942,
+          903281,
+          709463,
+          511911,
+          291079
+        ],
+        "word_time": 151726
+      },
+      "right": {
+        "checkpoint_time": 99955,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 51720,
+        "source": [
+          1151897,
+          903192,
+          709516,
+          511865,
+          290987
+        ],
+        "word_time": 151676
+      },
+      "shift": 6,
+      "witness": [
+        -7,
+        89,
+        8
+      ]
+    },
+    {
+      "base": 1224017,
+      "labels": [
+        [
+          1,
+          6,
+          665
+        ],
+        [
+          2,
+          7,
+          629
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 100422,
+        "cycle": [
+          -1,
+          -2,
+          -3,
+          -10,
+          -5
+        ],
+        "period": 24,
+        "remaining_difference_steps": 39729,
+        "source": [
+          1151310,
+          903060,
+          709860,
+          511197,
+          290729
+        ],
+        "word_time": 140152
+      },
+      "right": {
+        "checkpoint_time": 100452,
+        "cycle": [
+          -1,
+          -2,
+          -3,
+          -10,
+          -5
+        ],
+        "period": 24,
+        "remaining_difference_steps": 39689,
+        "source": [
+          1151305,
+          903044,
+          709875,
+          511189,
+          290710
+        ],
+        "word_time": 140142
+      },
+      "shift": 6,
+      "witness": [
+        -1,
+        16,
+        4
+      ]
+    },
+    {
+      "base": 1224017,
+      "labels": [
+        [
+          2,
+          13,
+          649
+        ],
+        [
+          2,
+          13,
+          661
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 101290,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 39113,
+        "source": [
+          1152020,
+          903330,
+          709955,
+          510906,
+          290918
+        ],
+        "word_time": 140404
+      },
+      "right": {
+        "checkpoint_time": 101290,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 39113,
+        "source": [
+          1152030,
+          903337,
+          709963,
+          510910,
+          290919
+        ],
+        "word_time": 140404
+      },
+      "shift": 12,
+      "witness": [
+        0,
+        -7,
+        0
+      ]
+    },
+    {
+      "base": 1224017,
+      "labels": [
+        [
+          2,
+          4,
+          623
+        ],
+        [
+          2,
+          4,
+          659
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 101165,
+        "cycle": [
+          5,
+          -2,
+          9,
+          14,
+          19
+        ],
+        "period": 20,
+        "remaining_difference_steps": 49856,
+        "source": [
+          1151919,
+          903111,
+          709909,
+          511105,
+          290762
+        ],
+        "word_time": 151022
+      },
+      "right": {
+        "checkpoint_time": 101195,
+        "cycle": [
+          5,
+          -2,
+          9,
+          14,
+          19
+        ],
+        "period": 20,
+        "remaining_difference_steps": 49816,
+        "source": [
+          1151919,
+          903099,
+          709927,
+          511099,
+          290744
+        ],
+        "word_time": 151012
+      },
+      "shift": 12,
+      "witness": [
+        -1,
+        12,
+        2
+      ]
+    },
+    {
+      "base": 1224017,
+      "labels": [
+        [
+          2,
+          -2,
+          641
+        ],
+        [
+          2,
+          -2,
+          605
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 99745,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 40981,
+        "source": [
+          1151635,
+          903244,
+          709547,
+          511771,
+          291021
+        ],
+        "word_time": 140727
+      },
+      "right": {
+        "checkpoint_time": 99775,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 40941,
+        "source": [
+          1151635,
+          903232,
+          709565,
+          511765,
+          291003
+        ],
+        "word_time": 140717
+      },
+      "shift": 12,
+      "witness": [
+        -1,
+        12,
+        2
+      ]
+    },
+    {
+      "base": 1224023,
+      "labels": [
+        [
+          1,
+          -3,
+          653
+        ],
+        [
+          2,
+          -3,
+          653
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 100950,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 39435,
+        "source": [
+          1151898,
+          903158,
+          709654,
+          510952,
+          290845
+        ],
+        "word_time": 140386
+      },
+      "right": {
+        "checkpoint_time": 100950,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 39435,
+        "source": [
+          1151903,
+          903162,
+          709658,
+          510955,
+          290846
+        ],
+        "word_time": 140386
+      },
+      "shift": 6,
+      "witness": [
+        0,
+        -4,
+        0
+      ]
+    },
+    {
+      "base": 1224023,
+      "labels": [
+        [
+          2,
+          13,
+          667
+        ],
+        [
+          1,
+          15,
+          655
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 100120,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 44059,
+        "source": [
+          1151947,
+          903524,
+          709701,
+          511451,
+          291334
+        ],
+        "word_time": 144180
+      },
+      "right": {
+        "checkpoint_time": 100195,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 43959,
+        "source": [
+          1151927,
+          903476,
+          709732,
+          511425,
+          291283
+        ],
+        "word_time": 144155
+      },
+      "shift": 6,
+      "witness": [
+        -4,
+        48,
+        5
+      ]
+    },
+    {
+      "base": 1224023,
+      "labels": [
+        [
+          2,
+          5,
+          625
+        ],
+        [
+          1,
+          5,
+          613
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 99040,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 51456,
+        "source": [
+          1151431,
+          903807,
+          709395,
+          511592,
+          291476
+        ],
+        "word_time": 150497
+      },
+      "right": {
+        "checkpoint_time": 99080,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 51396,
+        "source": [
+          1151416,
+          903772,
+          709419,
+          511573,
+          291438
+        ],
+        "word_time": 150477
+      },
+      "shift": 6,
+      "witness": [
+        -2,
+        35,
+        6
+      ]
+    },
+    {
+      "base": 1224023,
+      "labels": [
+        [
+          2,
+          13,
+          649
+        ],
+        [
+          2,
+          13,
+          661
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 100870,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 45589,
+        "source": [
+          1151947,
+          903248,
+          709711,
+          511032,
+          290953
+        ],
+        "word_time": 146460
+      },
+      "right": {
+        "checkpoint_time": 100870,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 45589,
+        "source": [
+          1151957,
+          903255,
+          709719,
+          511036,
+          290954
+        ],
+        "word_time": 146460
+      },
+      "shift": 12,
+      "witness": [
+        0,
+        -7,
+        0
+      ]
+    },
+    {
+      "base": 1224023,
+      "labels": [
+        [
+          1,
+          -2,
+          645
+        ],
+        [
+          1,
+          -2,
+          609
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 100247,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 46562,
+        "source": [
+          1151844,
+          903203,
+          709687,
+          511744,
+          290869
+        ],
+        "word_time": 146810
+      },
+      "right": {
+        "checkpoint_time": 100277,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 46522,
+        "source": [
+          1151844,
+          903191,
+          709705,
+          511738,
+          290851
+        ],
+        "word_time": 146800
+      },
+      "shift": 12,
+      "witness": [
+        -1,
+        12,
+        4
+      ]
+    },
+    {
+      "base": 1224023,
+      "labels": [
+        [
+          2,
+          8,
+          671
+        ],
+        [
+          2,
+          8,
+          635
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 100750,
+        "cycle": [
+          -1,
+          -2,
+          -3,
+          -10,
+          -5
+        ],
+        "period": 24,
+        "remaining_difference_steps": 39511,
+        "source": [
+          1151692,
+          903338,
+          709981,
+          510912,
+          291127
+        ],
+        "word_time": 140262
+      },
+      "right": {
+        "checkpoint_time": 100780,
+        "cycle": [
+          -1,
+          -2,
+          -3,
+          -10,
+          -5
+        ],
+        "period": 24,
+        "remaining_difference_steps": 39471,
+        "source": [
+          1151692,
+          903326,
+          709999,
+          510906,
+          291109
+        ],
+        "word_time": 140252
+      },
+      "shift": 12,
+      "witness": [
+        -2,
+        12,
+        2
+      ]
+    },
+    {
+      "base": 1224029,
+      "labels": [
+        [
+          1,
+          1,
+          613
+        ],
+        [
+          2,
+          1,
+          613
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 100925,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 45031,
+        "source": [
+          1151753,
+          903409,
+          709996,
+          510907,
+          291012
+        ],
+        "word_time": 145957
+      },
+      "right": {
+        "checkpoint_time": 100925,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 45031,
+        "source": [
+          1151758,
+          903413,
+          710000,
+          510910,
+          291013
+        ],
+        "word_time": 145957
+      },
+      "shift": 6,
+      "witness": [
+        1,
+        -4,
+        0
+      ]
+    },
+    {
+      "base": 1224029,
+      "labels": [
+        [
+          2,
+          -4,
+          611
+        ],
+        [
+          1,
+          -4,
+          647
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 99980,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 44434,
+        "source": [
+          1151844,
+          903450,
+          709510,
+          511670,
+          291059
+        ],
+        "word_time": 144415
+      },
+      "right": {
+        "checkpoint_time": 100010,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 44394,
+        "source": [
+          1151839,
+          903434,
+          709524,
+          511661,
+          291040
+        ],
+        "word_time": 144405
+      },
+      "shift": 6,
+      "witness": [
+        -1,
+        16,
+        2
+      ]
+    },
+    {
+      "base": 1224029,
+      "labels": [
+        [
+          1,
+          14,
+          629
+        ],
+        [
+          2,
+          15,
+          665
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 99780,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 40570,
+        "source": [
+          1151357,
+          903379,
+          709425,
+          511366,
+          290916
+        ],
+        "word_time": 140351
+      },
+      "right": {
+        "checkpoint_time": 99810,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 40530,
+        "source": [
+          1151352,
+          903363,
+          709440,
+          511358,
+          290897
+        ],
+        "word_time": 140341
+      },
+      "shift": 6,
+      "witness": [
+        -1,
+        16,
+        4
+      ]
+    },
+    {
+      "base": 1224029,
+      "labels": [
+        [
+          1,
+          12,
+          649
+        ],
+        [
+          1,
+          12,
+          661
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 99150,
+        "cycle": [
+          -1,
+          -2,
+          -3,
+          -16,
+          -11
+        ],
+        "period": 24,
+        "remaining_difference_steps": 46831,
+        "source": [
+          1151500,
+          903686,
+          709416,
+          511592,
+          291448
+        ],
+        "word_time": 145982
+      },
+      "right": {
+        "checkpoint_time": 99150,
+        "cycle": [
+          -1,
+          -2,
+          -3,
+          -16,
+          -11
+        ],
+        "period": 24,
+        "remaining_difference_steps": 46831,
+        "source": [
+          1151510,
+          903693,
+          709424,
+          511596,
+          291449
+        ],
+        "word_time": 145982
+      },
+      "shift": 12,
+      "witness": [
+        0,
+        -7,
+        0
+      ]
+    },
+    {
+      "base": 1224029,
+      "labels": [
+        [
+          1,
+          13,
+          631
+        ],
+        [
+          1,
+          13,
+          667
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 100335,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 40763,
+        "source": [
+          1152044,
+          903225,
+          709323,
+          511331,
+          291041
+        ],
+        "word_time": 141099
+      },
+      "right": {
+        "checkpoint_time": 100365,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 40723,
+        "source": [
+          1152044,
+          903213,
+          709341,
+          511325,
+          291023
+        ],
+        "word_time": 141089
+      },
+      "shift": 12,
+      "witness": [
+        -1,
+        12,
+        2
+      ]
+    },
+    {
+      "base": 1224029,
+      "labels": [
+        [
+          1,
+          10,
+          611
+        ],
+        [
+          1,
+          10,
+          647
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 99815,
+        "cycle": [
+          5,
+          10,
+          15,
+          20,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 40912,
+        "source": [
+          1151626,
+          903139,
+          709532,
+          511766,
+          290919
+        ],
+        "word_time": 140728
+      },
+      "right": {
+        "checkpoint_time": 99845,
+        "cycle": [
+          5,
+          10,
+          15,
+          20,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 40872,
+        "source": [
+          1151626,
+          903127,
+          709550,
+          511760,
+          290901
+        ],
+        "word_time": 140718
+      },
+      "shift": 12,
+      "witness": [
+        -1,
+        12,
+        4
+      ]
+    },
+    {
+      "base": 1224035,
+      "labels": [
+        [
+          2,
+          7,
+          659
+        ],
+        [
+          1,
+          6,
+          659
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 100675,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 39800,
+        "source": [
+          1151793,
+          903333,
+          709769,
+          511166,
+          290924
+        ],
+        "word_time": 140476
+      },
+      "right": {
+        "checkpoint_time": 100675,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 39800,
+        "source": [
+          1151798,
+          903337,
+          709772,
+          511168,
+          290925
+        ],
+        "word_time": 140476
+      },
+      "shift": 6,
+      "witness": [
+        0,
+        -4,
+        0
+      ]
+    },
+    {
+      "base": 1224035,
+      "labels": [
+        [
+          1,
+          15,
+          601
+        ],
+        [
+          2,
+          16,
+          637
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 100220,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 49493,
+        "source": [
+          1151371,
+          903575,
+          709799,
+          510808,
+          291223
+        ],
+        "word_time": 149714
+      },
+      "right": {
+        "checkpoint_time": 100250,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 49453,
+        "source": [
+          1151366,
+          903559,
+          709814,
+          510800,
+          291204
+        ],
+        "word_time": 149704
+      },
+      "shift": 6,
+      "witness": [
+        -1,
+        16,
+        2
+      ]
+    },
+    {
+      "base": 1224035,
+      "labels": [
+        [
+          2,
+          -4,
+          607
+        ],
+        [
+          1,
+          -4,
+          643
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 100100,
+        "cycle": [
+          5,
+          10,
+          15,
+          20,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 40722,
+        "source": [
+          1151730,
+          903255,
+          709311,
+          511418,
+          290864
+        ],
+        "word_time": 140823
+      },
+      "right": {
+        "checkpoint_time": 100130,
+        "cycle": [
+          5,
+          10,
+          15,
+          20,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 40682,
+        "source": [
+          1151725,
+          903239,
+          709325,
+          511409,
+          290845
+        ],
+        "word_time": 140813
+      },
+      "shift": 6,
+      "witness": [
+        -2,
+        16,
+        2
+      ]
+    },
+    {
+      "base": 1224035,
+      "labels": [
+        [
+          2,
+          13,
+          649
+        ],
+        [
+          2,
+          13,
+          661
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 99630,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 51232,
+        "source": [
+          1151855,
+          903701,
+          709517,
+          511510,
+          291484
+        ],
+        "word_time": 150863
+      },
+      "right": {
+        "checkpoint_time": 99630,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 51232,
+        "source": [
+          1151865,
+          903708,
+          709525,
+          511514,
+          291485
+        ],
+        "word_time": 150863
+      },
+      "shift": 12,
+      "witness": [
+        0,
+        -7,
+        0
+      ]
+    },
+    {
+      "base": 1224035,
+      "labels": [
+        [
+          1,
+          8,
+          661
+        ],
+        [
+          1,
+          8,
+          649
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 99440,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 50856,
+        "source": [
+          1151601,
+          903815,
+          709708,
+          511499,
+          291547
+        ],
+        "word_time": 150297
+      },
+      "right": {
+        "checkpoint_time": 99510,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 50766,
+        "source": [
+          1151591,
+          903784,
+          709736,
+          511483,
+          291510
+        ],
+        "word_time": 150277
+      },
+      "shift": 12,
+      "witness": [
+        -2,
+        31,
+        9
+      ]
+    },
+    {
+      "base": 1224035,
+      "labels": [
+        [
+          1,
+          2,
+          607
+        ],
+        [
+          1,
+          2,
+          643
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 99540,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 50390,
+        "source": [
+          1151466,
+          903766,
+          709731,
+          511264,
+          291534
+        ],
+        "word_time": 149931
+      },
+      "right": {
+        "checkpoint_time": 99570,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 50350,
+        "source": [
+          1151466,
+          903754,
+          709749,
+          511258,
+          291516
+        ],
+        "word_time": 149921
+      },
+      "shift": 12,
+      "witness": [
+        -1,
+        12,
+        2
+      ]
+    },
+    {
+      "base": 2400017,
+      "labels": [
+        [
+          1,
+          -1,
+          603
+        ],
+        [
+          2,
+          -1,
+          603
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 196565,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 97724,
+        "source": [
+          2257759,
+          1771605,
+          1391502,
+          1001721,
+          570824
+        ],
+        "word_time": 294290
+      },
+      "right": {
+        "checkpoint_time": 196565,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 97724,
+        "source": [
+          2257764,
+          1771609,
+          1391506,
+          1001724,
+          570825
+        ],
+        "word_time": 294290
+      },
+      "shift": 6,
+      "witness": [
+        0,
+        -4,
+        0
+      ]
+    },
+    {
+      "base": 2400017,
+      "labels": [
+        [
+          2,
+          12,
+          627
+        ],
+        [
+          1,
+          14,
+          663
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 195700,
+        "cycle": [
+          5,
+          -2,
+          9,
+          14,
+          19
+        ],
+        "period": 20,
+        "remaining_difference_steps": 79006,
+        "source": [
+          2257635,
+          1770775,
+          1391057,
+          1003049,
+          570180
+        ],
+        "word_time": 274707
+      },
+      "right": {
+        "checkpoint_time": 195745,
+        "cycle": [
+          5,
+          -2,
+          9,
+          14,
+          19
+        ],
+        "period": 20,
+        "remaining_difference_steps": 78946,
+        "source": [
+          2257625,
+          1770746,
+          1391078,
+          1003033,
+          570148
+        ],
+        "word_time": 274692
+      },
+      "shift": 6,
+      "witness": [
+        -3,
+        29,
+        6
+      ]
+    },
+    {
+      "base": 2400017,
+      "labels": [
+        [
+          2,
+          -2,
+          633
+        ],
+        [
+          1,
+          -2,
+          669
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 196585,
+        "cycle": [
+          11,
+          -2,
+          9,
+          8,
+          -5
+        ],
+        "period": 24,
+        "remaining_difference_steps": 77790,
+        "source": [
+          2257707,
+          1770974,
+          1391777,
+          1002665,
+          570271
+        ],
+        "word_time": 274376
+      },
+      "right": {
+        "checkpoint_time": 196615,
+        "cycle": [
+          11,
+          -2,
+          9,
+          8,
+          -5
+        ],
+        "period": 24,
+        "remaining_difference_steps": 77750,
+        "source": [
+          2257702,
+          1770958,
+          1391791,
+          1002656,
+          570252
+        ],
+        "word_time": 274366
+      },
+      "shift": 6,
+      "witness": [
+        -2,
+        16,
+        2
+      ]
+    },
+    {
+      "base": 2400017,
+      "labels": [
+        [
+          2,
+          1,
+          613
+        ],
+        [
+          2,
+          1,
+          625
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 196195,
+        "cycle": [
+          5,
+          -2,
+          9,
+          14,
+          19
+        ],
+        "period": 20,
+        "remaining_difference_steps": 78861,
+        "source": [
+          2258645,
+          1771768,
+          1391324,
+          1002410,
+          571365
+        ],
+        "word_time": 275057
+      },
+      "right": {
+        "checkpoint_time": 196195,
+        "cycle": [
+          5,
+          -2,
+          9,
+          14,
+          19
+        ],
+        "period": 20,
+        "remaining_difference_steps": 78861,
+        "source": [
+          2258655,
+          1771775,
+          1391332,
+          1002414,
+          571366
+        ],
+        "word_time": 275057
+      },
+      "shift": 12,
+      "witness": [
+        0,
+        -7,
+        0
+      ]
+    },
+    {
+      "base": 2400017,
+      "labels": [
+        [
+          1,
+          11,
+          609
+        ],
+        [
+          1,
+          11,
+          645
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 196715,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 79125,
+        "source": [
+          2258507,
+          1770941,
+          1391502,
+          1003028,
+          570469
+        ],
+        "word_time": 275841
+      },
+      "right": {
+        "checkpoint_time": 196745,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 79085,
+        "source": [
+          2258507,
+          1770929,
+          1391520,
+          1003022,
+          570451
+        ],
+        "word_time": 275831
+      },
+      "shift": 12,
+      "witness": [
+        -1,
+        12,
+        2
+      ]
+    },
+    {
+      "base": 2400017,
+      "labels": [
+        [
+          1,
+          16,
+          613
+        ],
+        [
+          1,
+          16,
+          625
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 196510,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 90881,
+        "source": [
+          2258830,
+          1771515,
+          1391744,
+          1003048,
+          571091
+        ],
+        "word_time": 287392
+      },
+      "right": {
+        "checkpoint_time": 196530,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 90861,
+        "source": [
+          2258840,
+          1771522,
+          1391752,
+          1003052,
+          571092
+        ],
+        "word_time": 287392
+      },
+      "shift": 12,
+      "witness": [
+        0,
+        -7,
+        2
+      ]
+    },
+    {
+      "base": 2400023,
+      "labels": [
+        [
+          1,
+          2,
+          609
+        ],
+        [
+          2,
+          2,
+          609
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 197660,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 76348,
+        "source": [
+          2258297,
+          1772155,
+          1392060,
+          1001027,
+          571257
+        ],
+        "word_time": 274009
+      },
+      "right": {
+        "checkpoint_time": 197660,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 76348,
+        "source": [
+          2258302,
+          1772159,
+          1392064,
+          1001030,
+          571258
+        ],
+        "word_time": 274009
+      },
+      "shift": 6,
+      "witness": [
+        0,
+        -4,
+        0
+      ]
+    },
+    {
+      "base": 2400023,
+      "labels": [
+        [
+          2,
+          6,
+          667
+        ],
+        [
+          1,
+          7,
+          643
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 196960,
+        "cycle": [
+          5,
+          10,
+          21,
+          32,
+          13
+        ],
+        "period": 8,
+        "remaining_difference_steps": 78582,
+        "source": [
+          2258230,
+          1771082,
+          1391503,
+          1002188,
+          570577
+        ],
+        "word_time": 275543
+      },
+      "right": {
+        "checkpoint_time": 196990,
+        "cycle": [
+          5,
+          10,
+          21,
+          32,
+          13
+        ],
+        "period": 8,
+        "remaining_difference_steps": 78542,
+        "source": [
+          2258225,
+          1771064,
+          1391518,
+          1002178,
+          570556
+        ],
+        "word_time": 275533
+      },
+      "shift": 6,
+      "witness": [
+        -1,
+        18,
+        2
+      ]
+    },
+    {
+      "base": 2400023,
+      "labels": [
+        [
+          2,
+          1,
+          667
+        ],
+        [
+          1,
+          1,
+          631
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 196995,
+        "cycle": [
+          5,
+          10,
+          15,
+          20,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 85242,
+        "source": [
+          2258504,
+          1771777,
+          1392008,
+          1002569,
+          570906
+        ],
+        "word_time": 282238
+      },
+      "right": {
+        "checkpoint_time": 197025,
+        "cycle": [
+          5,
+          10,
+          15,
+          20,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 85202,
+        "source": [
+          2258499,
+          1771761,
+          1392022,
+          1002560,
+          570887
+        ],
+        "word_time": 282228
+      },
+      "shift": 6,
+      "witness": [
+        -1,
+        16,
+        2
+      ]
+    },
+    {
+      "base": 2400023,
+      "labels": [
+        [
+          1,
+          1,
+          649
+        ],
+        [
+          1,
+          1,
+          661
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 197220,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 76674,
+        "source": [
+          2258001,
+          1771705,
+          1392047,
+          1001447,
+          571050
+        ],
+        "word_time": 273895
+      },
+      "right": {
+        "checkpoint_time": 197220,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 76674,
+        "source": [
+          2258011,
+          1771712,
+          1392055,
+          1001451,
+          571051
+        ],
+        "word_time": 273895
+      },
+      "shift": 12,
+      "witness": [
+        1,
+        -7,
+        0
+      ]
+    },
+    {
+      "base": 2400023,
+      "labels": [
+        [
+          2,
+          16,
+          643
+        ],
+        [
+          2,
+          16,
+          607
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 195700,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 98758,
+        "source": [
+          2257284,
+          1771398,
+          1391771,
+          1002777,
+          570572
+        ],
+        "word_time": 294459
+      },
+      "right": {
+        "checkpoint_time": 195730,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 98718,
+        "source": [
+          2257284,
+          1771386,
+          1391789,
+          1002771,
+          570554
+        ],
+        "word_time": 294449
+      },
+      "shift": 12,
+      "witness": [
+        -1,
+        12,
+        2
+      ]
+    },
+    {
+      "base": 2400023,
+      "labels": [
+        [
+          1,
+          2,
+          667
+        ],
+        [
+          1,
+          2,
+          631
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 195415,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 100198,
+        "source": [
+          2258429,
+          1771821,
+          1391158,
+          1002798,
+          571472
+        ],
+        "word_time": 295614
+      },
+      "right": {
+        "checkpoint_time": 195445,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 100158,
+        "source": [
+          2258429,
+          1771809,
+          1391176,
+          1002792,
+          571454
+        ],
+        "word_time": 295604
+      },
+      "shift": 12,
+      "witness": [
+        -1,
+        12,
+        2
+      ]
+    },
+    {
+      "base": 2400029,
+      "labels": [
+        [
+          1,
+          -2,
+          633
+        ],
+        [
+          2,
+          -2,
+          633
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 195390,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 78323,
+        "source": [
+          2257228,
+          1771092,
+          1391466,
+          1002548,
+          570740
+        ],
+        "word_time": 273714
+      },
+      "right": {
+        "checkpoint_time": 195390,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 78323,
+        "source": [
+          2257233,
+          1771096,
+          1391470,
+          1002551,
+          570741
+        ],
+        "word_time": 273714
+      },
+      "shift": 6,
+      "witness": [
+        0,
+        -4,
+        0
+      ]
+    },
+    {
+      "base": 2400029,
+      "labels": [
+        [
+          2,
+          9,
+          629
+        ],
+        [
+          1,
+          11,
+          647
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 196435,
+        "cycle": [
+          -1,
+          -2,
+          -3,
+          -10,
+          -5
+        ],
+        "period": 24,
+        "remaining_difference_steps": 80418,
+        "source": [
+          2258839,
+          1771212,
+          1391298,
+          1003601,
+          570428
+        ],
+        "word_time": 276854
+      },
+      "right": {
+        "checkpoint_time": 196490,
+        "cycle": [
+          -1,
+          -2,
+          -3,
+          -10,
+          -5
+        ],
+        "period": 24,
+        "remaining_difference_steps": 80348,
+        "source": [
+          2258829,
+          1771183,
+          1391319,
+          1003585,
+          570396
+        ],
+        "word_time": 276839
+      },
+      "shift": 6,
+      "witness": [
+        -2,
+        29,
+        7
+      ]
+    },
+    {
+      "base": 2400029,
+      "labels": [
+        [
+          2,
+          4,
+          635
+        ],
+        [
+          1,
+          4,
+          671
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 196087,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 98296,
+        "source": [
+          2258491,
+          1772188,
+          1391895,
+          1002269,
+          571821
+        ],
+        "word_time": 294384
+      },
+      "right": {
+        "checkpoint_time": 196117,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 98256,
+        "source": [
+          2258486,
+          1772172,
+          1391909,
+          1002260,
+          571802
+        ],
+        "word_time": 294374
+      },
+      "shift": 6,
+      "witness": [
+        -1,
+        16,
+        4
+      ]
+    },
+    {
+      "base": 2400029,
+      "labels": [
+        [
+          2,
+          13,
+          649
+        ],
+        [
+          2,
+          13,
+          661
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 196520,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 77853,
+        "source": [
+          2257696,
+          1770738,
+          1391883,
+          1002772,
+          570302
+        ],
+        "word_time": 274374
+      },
+      "right": {
+        "checkpoint_time": 196520,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 77853,
+        "source": [
+          2257706,
+          1770745,
+          1391891,
+          1002776,
+          570303
+        ],
+        "word_time": 274374
+      },
+      "shift": 12,
+      "witness": [
+        0,
+        -7,
+        0
+      ]
+    },
+    {
+      "base": 2400029,
+      "labels": [
+        [
+          2,
+          10,
+          619
+        ],
+        [
+          2,
+          10,
+          655
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 196640,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 78802,
+        "source": [
+          2258700,
+          1771550,
+          1391648,
+          1003000,
+          570841
+        ],
+        "word_time": 275443
+      },
+      "right": {
+        "checkpoint_time": 196670,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 78762,
+        "source": [
+          2258700,
+          1771538,
+          1391666,
+          1002994,
+          570823
+        ],
+        "word_time": 275433
+      },
+      "shift": 12,
+      "witness": [
+        -1,
+        12,
+        2
+      ]
+    },
+    {
+      "base": 2400029,
+      "labels": [
+        [
+          1,
+          9,
+          611
+        ],
+        [
+          1,
+          9,
+          647
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 195730,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 78729,
+        "source": [
+          2258046,
+          1772131,
+          1391763,
+          1002314,
+          571602
+        ],
+        "word_time": 274460
+      },
+      "right": {
+        "checkpoint_time": 195760,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 78689,
+        "source": [
+          2258046,
+          1772119,
+          1391781,
+          1002308,
+          571584
+        ],
+        "word_time": 274450
+      },
+      "shift": 12,
+      "witness": [
+        -1,
+        12,
+        2
+      ]
+    },
+    {
+      "base": 2400035,
+      "labels": [
+        [
+          1,
+          7,
+          643
+        ],
+        [
+          2,
+          6,
+          631
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 196440,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 98053,
+        "source": [
+          2258392,
+          1772215,
+          1391628,
+          1001884,
+          571500
+        ],
+        "word_time": 294494
+      },
+      "right": {
+        "checkpoint_time": 196440,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 98053,
+        "source": [
+          2258397,
+          1772221,
+          1391631,
+          1001888,
+          571503
+        ],
+        "word_time": 294494
+      },
+      "shift": 6,
+      "witness": [
+        0,
+        -6,
+        0
+      ]
+    },
+    {
+      "base": 2400035,
+      "labels": [
+        [
+          1,
+          8,
+          645
+        ],
+        [
+          2,
+          6,
+          645
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 196365,
+        "cycle": [
+          5,
+          -2,
+          9,
+          14,
+          19
+        ],
+        "period": 20,
+        "remaining_difference_steps": 90609,
+        "source": [
+          2258613,
+          1771838,
+          1391324,
+          1002493,
+          571096
+        ],
+        "word_time": 286975
+      },
+      "right": {
+        "checkpoint_time": 196430,
+        "cycle": [
+          5,
+          -2,
+          9,
+          14,
+          19
+        ],
+        "period": 20,
+        "remaining_difference_steps": 90519,
+        "source": [
+          2258593,
+          1771798,
+          1391351,
+          1002473,
+          571053
+        ],
+        "word_time": 286950
+      },
+      "shift": 6,
+      "witness": [
+        -3,
+        40,
+        9
+      ]
+    },
+    {
+      "base": 2400035,
+      "labels": [
+        [
+          1,
+          16,
+          625
+        ],
+        [
+          2,
+          17,
+          613
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 196620,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 79177,
+        "source": [
+          2258909,
+          1771324,
+          1390978,
+          1002602,
+          570837
+        ],
+        "word_time": 275798
+      },
+      "right": {
+        "checkpoint_time": 196660,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 79117,
+        "source": [
+          2258894,
+          1771289,
+          1391003,
+          1002584,
+          570799
+        ],
+        "word_time": 275778
+      },
+      "shift": 6,
+      "witness": [
+        -2,
+        35,
+        6
+      ]
+    },
+    {
+      "base": 2400035,
+      "labels": [
+        [
+          2,
+          13,
+          613
+        ],
+        [
+          2,
+          13,
+          625
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 195540,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 80869,
+        "source": [
+          2258255,
+          1771212,
+          1390979,
+          1003788,
+          570317
+        ],
+        "word_time": 276410
+      },
+      "right": {
+        "checkpoint_time": 195540,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 80869,
+        "source": [
+          2258265,
+          1771219,
+          1390987,
+          1003792,
+          570318
+        ],
+        "word_time": 276410
+      },
+      "shift": 12,
+      "witness": [
+        1,
+        -7,
+        0
+      ]
+    },
+    {
+      "base": 2400035,
+      "labels": [
+        [
+          1,
+          3,
+          621
+        ],
+        [
+          1,
+          3,
+          657
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 196360,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 90793,
+        "source": [
+          2258043,
+          1770761,
+          1390903,
+          1002471,
+          570268
+        ],
+        "word_time": 287154
+      },
+      "right": {
+        "checkpoint_time": 196390,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 90753,
+        "source": [
+          2258043,
+          1770749,
+          1390921,
+          1002465,
+          570250
+        ],
+        "word_time": 287144
+      },
+      "shift": 12,
+      "witness": [
+        -1,
+        12,
+        4
+      ]
+    },
+    {
+      "base": 2400035,
+      "labels": [
+        [
+          2,
+          17,
+          645
+        ],
+        [
+          2,
+          17,
+          609
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 195385,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 77794,
+        "source": [
+          2257309,
+          1771965,
+          1391763,
+          1001880,
+          571508
+        ],
+        "word_time": 273180
+      },
+      "right": {
+        "checkpoint_time": 195415,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 77754,
+        "source": [
+          2257309,
+          1771953,
+          1391781,
+          1001874,
+          571490
+        ],
+        "word_time": 273170
+      },
+      "shift": 12,
+      "witness": [
+        -1,
+        12,
+        4
+      ]
+    },
+    {
+      "base": 2400041,
+      "labels": [
+        [
+          1,
+          -1,
+          651
+        ],
+        [
+          2,
+          -1,
+          651
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 196800,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 97576,
+        "source": [
+          2258154,
+          1771691,
+          1391931,
+          1001935,
+          571135
+        ],
+        "word_time": 294377
+      },
+      "right": {
+        "checkpoint_time": 196800,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 97576,
+        "source": [
+          2258159,
+          1771695,
+          1391935,
+          1001938,
+          571136
+        ],
+        "word_time": 294377
+      },
+      "shift": 6,
+      "witness": [
+        0,
+        -4,
+        0
+      ]
+    },
+    {
+      "base": 2400041,
+      "labels": [
+        [
+          2,
+          4,
+          667
+        ],
+        [
+          1,
+          4,
+          631
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 196385,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 78067,
+        "source": [
+          2257494,
+          1771034,
+          1391884,
+          1002693,
+          570298
+        ],
+        "word_time": 274453
+      },
+      "right": {
+        "checkpoint_time": 196415,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 78027,
+        "source": [
+          2257489,
+          1771018,
+          1391898,
+          1002684,
+          570279
+        ],
+        "word_time": 274443
+      },
+      "shift": 6,
+      "witness": [
+        -1,
+        16,
+        2
+      ]
+    },
+    {
+      "base": 2400041,
+      "labels": [
+        [
+          1,
+          13,
+          663
+        ],
+        [
+          2,
+          14,
+          627
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 196307,
+        "cycle": [
+          17,
+          10,
+          21,
+          14,
+          1
+        ],
+        "period": 24,
+        "remaining_difference_steps": 99238,
+        "source": [
+          2258887,
+          1772156,
+          1391766,
+          1002691,
+          571585
+        ],
+        "word_time": 295546
+      },
+      "right": {
+        "checkpoint_time": 196337,
+        "cycle": [
+          17,
+          10,
+          21,
+          14,
+          1
+        ],
+        "period": 24,
+        "remaining_difference_steps": 99198,
+        "source": [
+          2258882,
+          1772140,
+          1391781,
+          1002683,
+          571566
+        ],
+        "word_time": 295536
+      },
+      "shift": 6,
+      "witness": [
+        -1,
+        16,
+        4
+      ]
+    },
+    {
+      "base": 2400041,
+      "labels": [
+        [
+          1,
+          12,
+          613
+        ],
+        [
+          1,
+          12,
+          625
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 197895,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 88629,
+        "source": [
+          2258739,
+          1771548,
+          1392019,
+          1001792,
+          570863
+        ],
+        "word_time": 286525
+      },
+      "right": {
+        "checkpoint_time": 197895,
+        "cycle": [
+          -1,
+          10,
+          15,
+          26,
+          13
+        ],
+        "period": 24,
+        "remaining_difference_steps": 88629,
+        "source": [
+          2258749,
+          1771555,
+          1392027,
+          1001796,
+          570864
+        ],
+        "word_time": 286525
+      },
+      "shift": 12,
+      "witness": [
+        0,
+        -7,
+        0
+      ]
+    },
+    {
+      "base": 2400041,
+      "labels": [
+        [
+          1,
+          1,
+          629
+        ],
+        [
+          1,
+          1,
+          665
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 196810,
+        "cycle": [
+          5,
+          -2,
+          9,
+          14,
+          19
+        ],
+        "period": 20,
+        "remaining_difference_steps": 98436,
+        "source": [
+          2257827,
+          1770866,
+          1391668,
+          1002389,
+          570271
+        ],
+        "word_time": 295247
+      },
+      "right": {
+        "checkpoint_time": 196840,
+        "cycle": [
+          5,
+          -2,
+          9,
+          14,
+          19
+        ],
+        "period": 20,
+        "remaining_difference_steps": 98396,
+        "source": [
+          2257827,
+          1770854,
+          1391686,
+          1002383,
+          570253
+        ],
+        "word_time": 295237
+      },
+      "shift": 12,
+      "witness": [
+        -1,
+        12,
+        4
+      ]
+    },
+    {
+      "base": 2400041,
+      "labels": [
+        [
+          1,
+          12,
+          643
+        ],
+        [
+          1,
+          12,
+          607
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 195790,
+        "cycle": [
+          -7,
+          -14,
+          -9,
+          -22,
+          -17
+        ],
+        "period": 8,
+        "remaining_difference_steps": 98346,
+        "source": [
+          2257536,
+          1771440,
+          1391890,
+          1002557,
+          570965
+        ],
+        "word_time": 294137
+      },
+      "right": {
+        "checkpoint_time": 195820,
+        "cycle": [
+          -7,
+          -14,
+          -9,
+          -22,
+          -17
+        ],
+        "period": 8,
+        "remaining_difference_steps": 98306,
+        "source": [
+          2257536,
+          1771428,
+          1391908,
+          1002551,
+          570947
+        ],
+        "word_time": 294127
+      },
+      "shift": 12,
+      "witness": [
+        -1,
+        12,
+        2
+      ]
+    },
+    {
+      "base": 2400047,
+      "labels": [
+        [
+          2,
+          10,
+          665
+        ],
+        [
+          1,
+          9,
+          665
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 198097,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 78299,
+        "source": [
+          2258806,
+          1770854,
+          1391941,
+          1002545,
+          570130
+        ],
+        "word_time": 276397
+      },
+      "right": {
+        "checkpoint_time": 198097,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 78299,
+        "source": [
+          2258811,
+          1770858,
+          1391944,
+          1002547,
+          570131
+        ],
+        "word_time": 276397
+      },
+      "shift": 6,
+      "witness": [
+        0,
+        -4,
+        0
+      ]
+    },
+    {
+      "base": 2400047,
+      "labels": [
+        [
+          2,
+          14,
+          607
+        ],
+        [
+          1,
+          16,
+          619
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 197000,
+        "cycle": [
+          11,
+          4,
+          21,
+          14,
+          1
+        ],
+        "period": 24,
+        "remaining_difference_steps": 97309,
+        "source": [
+          2257644,
+          1771125,
+          1391593,
+          1001625,
+          570437
+        ],
+        "word_time": 294310
+      },
+      "right": {
+        "checkpoint_time": 197125,
+        "cycle": [
+          11,
+          4,
+          21,
+          14,
+          1
+        ],
+        "period": 24,
+        "remaining_difference_steps": 97149,
+        "source": [
+          2257614,
+          1771058,
+          1391634,
+          1001589,
+          570367
+        ],
+        "word_time": 294275
+      },
+      "shift": 6,
+      "witness": [
+        -5,
+        67,
+        8
+      ]
+    },
+    {
+      "base": 2400047,
+      "labels": [
+        [
+          2,
+          3,
+          657
+        ],
+        [
+          1,
+          3,
+          621
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 198275,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 97928,
+        "source": [
+          2258886,
+          1771197,
+          1391468,
+          1001652,
+          570347
+        ],
+        "word_time": 296204
+      },
+      "right": {
+        "checkpoint_time": 198305,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 97888,
+        "source": [
+          2258881,
+          1771181,
+          1391482,
+          1001643,
+          570328
+        ],
+        "word_time": 296194
+      },
+      "shift": 6,
+      "witness": [
+        -1,
+        16,
+        4
+      ]
+    },
+    {
+      "base": 2400047,
+      "labels": [
+        [
+          1,
+          12,
+          649
+        ],
+        [
+          1,
+          12,
+          661
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 197555,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 76684,
+        "source": [
+          2258566,
+          1772168,
+          1392019,
+          1001148,
+          571468
+        ],
+        "word_time": 274240
+      },
+      "right": {
+        "checkpoint_time": 197555,
+        "cycle": [
+          11,
+          4,
+          15,
+          14,
+          7
+        ],
+        "period": 24,
+        "remaining_difference_steps": 76684,
+        "source": [
+          2258576,
+          1772175,
+          1392027,
+          1001152,
+          571469
+        ],
+        "word_time": 274240
+      },
+      "shift": 12,
+      "witness": [
+        0,
+        -7,
+        0
+      ]
+    },
+    {
+      "base": 2400047,
+      "labels": [
+        [
+          2,
+          11,
+          609
+        ],
+        [
+          2,
+          11,
+          645
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 196067,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 78113,
+        "source": [
+          2257989,
+          1771547,
+          1391865,
+          1002439,
+          571195
+        ],
+        "word_time": 274181
+      },
+      "right": {
+        "checkpoint_time": 196097,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 78073,
+        "source": [
+          2257989,
+          1771535,
+          1391883,
+          1002433,
+          571177
+        ],
+        "word_time": 274171
+      },
+      "shift": 12,
+      "witness": [
+        -1,
+        12,
+        4
+      ]
+    },
+    {
+      "base": 2400047,
+      "labels": [
+        [
+          2,
+          14,
+          619
+        ],
+        [
+          2,
+          14,
+          655
+        ]
+      ],
+      "left": {
+        "checkpoint_time": 197575,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 83721,
+        "source": [
+          2257608,
+          1770734,
+          1391913,
+          1001697,
+          570058
+        ],
+        "word_time": 281297
+      },
+      "right": {
+        "checkpoint_time": 197605,
+        "cycle": [
+          -1,
+          10,
+          15,
+          32,
+          19
+        ],
+        "period": 8,
+        "remaining_difference_steps": 83681,
+        "source": [
+          2257608,
+          1770722,
+          1391931,
+          1001691,
+          570040
+        ],
+        "word_time": 281287
+      },
+      "shift": 12,
+      "witness": [
+        -1,
+        12,
+        4
+      ]
+    }
+  ],
+  "seed": 88816641
+}

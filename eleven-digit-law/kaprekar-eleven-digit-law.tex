@@ -1,0 +1,1233 @@
+\documentclass[11pt,reqno]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amssymb,array,booktabs}
+\usepackage[margin=1.15in]{geometry}
+\setlength{\emergencystretch}{1.3em}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Eleven-digit Kaprekar arrival laws modulo twelve},pdfauthor={Rustem Galyavin}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\calY}{\mathcal Y}
+\newcommand{\vct}{\mathbf v}
+\newcommand{\cen}{c_*}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\T}{T_B}
+\newcommand{\ZB}{Z_B}
+\newcommand{\Id}{\mathrm{Id}}
+\newcommand{\Zhat}{\widehat{\Z}}
+
+\title[Eleven-digit Kaprekar arrival laws]{Eleven-digit Kaprekar arrival laws modulo twelve}
+\author{Rustem Galyavin}
+\thanks{\href{mailto:rustem@galyavin.com}{rustem@galyavin.com}. ORCID \href{https://orcid.org/0009-0006-6875-9170}{0009-0006-6875-9170}.}
+\date{20 November 2026}
+\subjclass[2020]{11A63, 37P99, 60B10}
+\keywords{Kaprekar map, arrival time, weak convergence, digit differences, lattice index}
+\begin{document}
+\raggedbottom
+\begin{abstract}
+Choose an eleven-digit word uniformly in base \(B\), allowing leading zeros and
+excluding constant words. Let \(T_B\) be the number of Kaprekar subtractions
+to the first cyclic word. Couple all bases through eleven uniform real digits.
+On the event that the leading orbit of their ordered differences enters a
+five-phase open chamber, an event of probability at least
+\(92.9921494990\%\), the normalized initial digit differences, \(T_B/B\), and
+the normalized differences of the first cyclic word have a joint weak limit
+along every base class modulo twelve. For a positive integer \(M\), these
+measures converge along every class modulo \(M\) if and only if twelve
+divides \(M\). A clock kernel describes the limit by charging each repeated
+affine return its limiting duration and giving each admissible exit residue
+a probability equal to the reciprocal of its preimage index in the inherited
+input lattice. Although some rank-one arrivals repeat only with period
+sixty-six in \(B\), the extra factor eleven disappears from the joint law.
+The proof uses exact polyhedral and lattice computations.
+\end{abstract}
+\maketitle
+
+\section{The entrant law}
+
+A Kaprekar subtraction takes the difference between the decreasing and
+increasing rearrangements of the digits. Keep all eleven slots, and count time
+zero if the original word is already cyclic. For sorted digits
+\(d_1\ge\cdots\ge d_{11}\), the difference vector has entries
+\(q_i=d_i-d_{12-i}\), \(1\le i\le5\). Write \(q_B\) for this vector at time
+zero, \(\T\) for first cyclic-word time, and \(\ZB\) for the difference vector
+of that word divided by \(B\). The observable thus records the first cyclic
+word through its five differences.
+
+Couple all bases by drawing eleven independent uniform digits from \([0,1)\)
+and flooring their products with \(B\). Write \(y\) for their real ordered
+differences and put
+\[
+ \calY=\{1\ge y_1\ge\cdots\ge y_5\ge0\},\qquad
+ w(y)=11!\prod_{i=0}^5g_i(y),
+\]
+\[
+ g(y)=(1-y_1,y_1-y_2,\ldots,y_4-y_5,y_5).
+\]
+We write \(m(A)=\int_A w(y)\,dy\) for the real-input probability. Let \(K\)
+sort \(1,y_i,1-y_i\) and take the five symmetric differences. To describe the
+open chamber \(\Pi\), put
+\[
+ L(y)=(y_1,y_1-y_5,y_2-y_5,y_2-y_4,y_3-y_4).
+\]
+At each of \(y,Ly,\ldots,L^4y\), require positive gaps and the strict order
+\[
+ 1>y_1>1-y_5>y_2>1-y_4>\cdots>y_5>1-y_1 .
+\]
+On this chamber \(K=L\), and on gaps \(L\) permutes the last five entries by
+\((g_1,g_2,g_3,g_4,g_5)\mapsto(g_5,g_1,g_4,g_2,g_3)\) with \(g_0\) fixed.
+In particular \(K^5y=y\) there. Set
+\[
+ D=\{y:K^j y\in\Pi\text{ for some }j\ge0\},\qquad
+ \vct=(5,4,3,2,1),\qquad \cen=\vct/6.
+\]
+The event \(\{y\in D\}\) is defined by the coupled real digits, not by the
+base-\(B\) word. The terms used in the next definition are fixed in
+Section~\ref{sec:routes}.
+
+\begin{definition}[Clock kernel]
+A compatible residue system \(\beta\in\Zhat\) gives one residue of \(B\)
+modulo every positive integer, consistent under reduction. For \(y\in D\)
+off the null walls of Section~\ref{sec:passage}, let \(j(y)\) be the least
+\(j\) with \(K^jy\in\Pi\), and let \(\omega\) be Haar-uniform on
+\(\Zhat^{\,5}\), independent of \(y\); it plays the role of the residue of
+the original integer input. From the entrance chart of \(y\), follow the
+physical route of Section~\ref{sec:routes}. At a translating return of
+\(\ell\) updates whose winning guard \(G\) has decrement \(s>0\), read the
+exit residue \(G\bmod s\) from \((\beta,\omega)\) and add \(\ell\alpha/s\)
+to the clock, where \(\alpha=\lim G/B\); bounded primitive switches add
+nothing. Let \(\tau_\eta\) be the clock at the first visited section of
+leading radius less than \(\eta\). Then \(\tau_\eta\) is nondecreasing as
+\(\eta\downarrow0\), and \(\tau_{\eta'}\le\tau_\eta+(16/3)\eta\) for
+\(\eta'<\eta\) (Section~\ref{sec:kernel}). Put
+\(\tau=\lim_{\eta\downarrow0}\tau_\eta\) and let \(Q_\beta(y,\cdot)\) be
+the law of \(\tau\). For \(r\in\Z/12\Z\), let \(Q_r=Q_\beta\) with \(\beta\)
+the integer representative \(0\le r<12\).
+\end{definition}
+
+\begin{theorem}\label{th:main}
+For each \(r\in\Z/12\Z\), as \(B\to\infty\) through \(B\equiv r\pmod{12}\),
+\[
+ \Prob\bigl(y\in D,\ (q_B/B,\T/B,\ZB)\in\cdot
+       \,\bigm|\,\text{nonconstant word}\bigr)
+ \ \Longrightarrow\
+ \one_D(y)w(y)\,dy\,Q_r(y,dt)\,\delta_{\cen}(dz)
+\]
+weakly as finite measures, with \(Q_r\) the clock kernel defined above.
+Consequently, for a positive integer \(M\), these measures converge along
+every residue class modulo \(M\) if and only if \(12\mid M\).
+\end{theorem}
+
+\begin{proposition}\label{prop:mass}
+Let \(E_3\) require that at time three both end gaps are at least \(1/8\), the
+sum of the three smallest gaps is at most \(3/8\), and the largest gap is at
+least \(1/4\). Then
+\[
+ \begin{split}
+ m(E_3)&\le 0.65165187185\%,\\
+ m(D)&\ge 1-\frac{5124467}{80621568}-m(E_3)\ge 92.9921494990\%.
+ \end{split}
+\]
+The probabilities are relative to the original eleven independent digits.
+\end{proposition}
+
+\cite[Theorem~1]{G6} proves tightness of \(\T/B\) and convergence in probability
+of \(\ZB\) on the whole input population. \cite[Theorem~4]{G7} proves two
+different laws on a box of original mass about \(8.5\cdot10^{-14}\), and that any
+common modulus for the full joint law must be divisible by twelve; whether
+that law converges along the classes modulo twelve is left open there.
+Theorem~\ref{th:main} supplies a system of joint limits on an entrance event
+of mass at least \(92.99\%\), with smallest common modulus exactly twelve.
+
+The divisibility in \cite{G7} does not by itself give minimality here,
+because the measures of Theorem~\ref{th:main} test only inputs in \(D\). The
+midpoint of the box \(V\) of \cite[Theorem~4]{G7} is a strict interior point
+of \(\Pi\), and the comparison of classes \(5\) and \(11\) there gives the
+factor four; we recompute it with the kernels \(Q_r\). The six laws of
+\cite[Theorem~2]{G7}, which force divisibility by six there, live on a
+rectangle that is not contained in \(\Pi\) at time zero. Rather than transport them
+through an entry prefix, we compare classes \(9\) and \(5\) on a small cube
+inside \(\Pi\) (Lemma~\ref{lem:local}).
+
+\emph{Why the base residue enters.} After entry into \(\Pi\) the integer
+orbit spends almost all of its time in translating returns: a fixed word of
+\(\ell\) subtractions moves the state by a fixed integer vector and is
+repeated while all its guards hold. A guard \(G\) with decrement \(s\) fails
+after \(1+\lfloor G/s\rfloor\) copies. Since \(G=\alpha B+O(1)\) is an
+integral affine function of \(B\) and of the input, the return contributes
+\(\ell\alpha/s\) to \(T_B/B\), while the exit state depends on \(G\bmod s\),
+that is, on the residues of \(B\) and of the input. Averaging over inputs
+turns each admissible residue into a weight, the reciprocal of its lattice
+index. The proof has four steps. (i) After at most six macroscopic returns
+the direction space has rank one (Lemma~\ref{lem:ingress}). (ii) The outer rank-one graph is finite and acyclic, and each inner arrow
+contracts the leading radius by a factor at most \(251/256\), so every
+positive collar is reached. At a fixed section in the \(\eta\)-collar,
+capture still ahead takes at most \((16/3)\eta B+O(1)\) further updates;
+if capture has occurred, the section follows it by \(O_{\rm record}(1)\)
+updates (Section~\ref{sec:passage}).
+(iii) On paired states the centred dynamics does not depend on \(B\)
+\cite[Theorem~4]{G4}, so one modulus governs every depth
+(Section~\ref{sec:onemod}). (iv) The periods that occur are \(6\), \(12\)
+and \(66\), and the factor eleven cancels because the period-\(66\) returns
+end at the centre with a leading duration that does not depend on the
+phase (Section~\ref{sec:eleven}). Steps (i), (ii) and (iv) rest on finite
+exact certificates (Appendix~\ref{ap:certificates} and
+Section~\ref{sec:verification}).
+
+Devlin and Zeng \cite[Theorem~1.1]{DZ} determine maximum distances to the
+four-digit fixed point. Four-digit cycle classifications include
+\cite{G1,COST}, and Kay and Downes-Ward \cite{KDE} classify families of
+fixed points and cycles in even bases through arithmetic modulo \(B-1\).
+Thakur \cite[Section~2.7]{Thakur} gives the borrowed digit representation
+used below. Dahl \cite{Dahl} studies gap-based transition statistics at
+fixed base ten. Growing-base arrival laws for four, five, seven and nine
+slots appear in \cite{G2,G3,G5,G4}. We use the odd-length majorization
+theorem of \cite{G4}, the leading and finite estimates of \cite{G6}, and
+the local clock laws of \cite{G7}.
+
+\section{Exact finite routes and their weights}\label{sec:routes}
+
+\emph{Terminology.} \emph{Physical} refers to the exact integer orbit of
+the difference update \(F_B\) at a finite base; \emph{leading} refers to its
+limit after division by \(B\), governed by \(K\), the continuous extension
+of the large-base limit of \(F_B/B\) \cite[Section~2]{G6}. A \emph{cyclic
+word} lies on a cycle of the Kaprekar map, and \emph{capture} is arrival at
+the first cyclic word, at time \(T_B\). A \emph{root} is a class of
+\(B\bmod6\); it fixes the entrance lattice \(X_i\equiv iB\pmod6\) of
+Section~\ref{sec:entry}. \emph{Ingress} is the entry into \(\Pi\). A
+\emph{primitive update} is one subtraction on a fixed sorting branch. A
+translating return (Section~\ref{sec:returns}) is \emph{macroscopic} when
+its number of copies grows linearly in \(B\), and a \emph{primitive switch}
+is a primitive update outside the complete copies of such returns. The
+\emph{rank} is the dimension of the real direction space \(V\) of the
+current affine sheet. A \emph{compatible base progression} is an arithmetic
+progression of bases on which all congruences of a record are consistent.
+A \emph{section} is a rank-one sheet with an interval of leading positions
+(Section~\ref{sec:collar}); it is \emph{inner} if it lies strictly inside
+\(R(X)/B<1/7\) and \emph{outer} otherwise, and a \emph{collar} is a region
+\(R(X)/B<\eta\). The \emph{permanent region} is
+\(\{\min G\ge\lceil(B+1)/7\rceil+64\}\), in which a paired state stays
+paired for \(B\ge3534\) \cite[Section~6]{G6}.
+
+\subsection{Borrowing and entry}\label{sec:entry}
+The twelve spacings of eleven uniform order statistics have constant
+density \(11!\). The six gaps are sums of pairs of spacings. Integrating
+over the six splits gives \(w\). For integers put \(G=B g(q/B)\).
+The number of sorted words of differences \(q\) is
+\[
+ (B-q_1)\prod_{i=1}^5(q_i-q_{i+1}+1),\qquad q_6=0.
+\]
+A tie fixes one part of a split and gives at most \(O(B^5)\) choices.
+Consequently the number of ordered words is \(B^6w(q/B)+O(B^5)\),
+uniformly on strict input cells. The sample space has \(B^{11}-B\)
+nonconstant words. On the common real input the conditioning changes
+probabilities by \(O(B^{-10})\), and \(\|q_B/B-y\|_\infty<1/B\).
+
+Let \(F_B\) denote the exact difference update. At positive height
+\(h=\#\{i:q_i>0\}\), the digit to the right is \(B-q_1\); the other
+negative columns give \(B-q_i-1\) for \(2\le i\le h\). The \(11-2h\)
+middle columns give \(B-1\), and the positive columns give \(q_i\) for
+\(i<h\) and \(q_h-1\) at the innermost positive column. Sort this full
+list to compute \(F_B\). For \(h=5\) the five borrowed levels, following
+the singleton \(B-1\), are
+\[
+ \bigl(q_i-\one_{i=5},\ B-q_{6-i}-\one_{i<5}\bigr),
+       \qquad i=1,\ldots,5.
+\]
+We say a state is paired when each level lies weakly above the next.
+Full sorting is always used to define the numerical update. We fix a
+deterministic order for equal digits. The weak paired comparison is
+recorded separately from the tie-resolved sorting comparisons.
+
+Each strict leading branch is unimodular. Indeed for
+\(r_1>\cdots>r_5>0\) the sorted magnitudes of \(2y_i-1\), the output is
+\[
+ K(y)=\tfrac12(1+r_1,r_1+r_2,r_2+r_3,r_3+r_4,r_4+r_5).
+\]
+The derivative of the magnitude ordering is twice a signed permutation,
+and the adjacent-sum matrix divided by two cancels the factor two in
+each dimension. On a compact subset of any strict finite entry prefix,
+the physical branches have the same derivative and bounded offsets.
+Thus the affine entry map sends the unrestricted original integer
+lattice onto the full entrance lattice before imposing the transported
+cell. In centered coordinates \(X=6q-B\vct\), this lattice is
+\(X_i\equiv iB\pmod6\). Proper leading walls are null, including their
+finite leading preimages. Each entry chart retains its own original
+position and density.
+
+Put
+\[
+ R(X)=-\min(-X_1,X_1-X_2,\ldots,X_4-X_5,X_5),\qquad
+ e(y)=\sum_{i=0}^5(g_i(y)-1/6)^2 .
+\]
+Then \(\min G=(B-R(X))/6\). The closure of \(\Pi\) has 77 vertices,
+and its only maximizer of \(e\) is the boundary gap vector
+\((0,1/5,1/5,1/5,1/5,1/5)\), of energy \(1/30\)
+(Lemma~\ref{lem:ingress}). On compact subsets of strict entry charts, \cite[Section~5]{G6} gives
+\(q_5>0\) (height five) until entry into the permanent paired region, and
+permanent positive pairing gives \(q_5>0\) thereafter. This supplies the
+hypothesis for all five borrowed levels.
+
+\subsection{Repeated returns and residue splits}\label{sec:returns}
+A chart records an open polyhedral set of original normalized inputs,
+a compatible affine lattice \(q_0\in p_B+\Lambda\) of original integer
+inputs, and the state \(X=Mq_0+B\mathbf b+c\). A \emph{guard} is an integer affine
+inequality \(G_i(X,B)\ge0\) specifying a primitive branch, pulled back to
+the start of the proposed return. An integer strict comparison uses a
+unit offset. A certified word of \(\ell\) primitive updates fixes the
+leading chart. Its exact affine map translates this sheet by a
+nonzero integer vector \(d\), and its linear part \(A\) satisfies
+\(Ad=d\); we call it a \emph{translating return}. Every complete copy
+then advances by \(d\), provided its
+guards hold. The guard with state row \(a_i\) changes by \(a_i d\) per
+copy. The number of complete copies is
+\[
+ 1+\left\lfloor\min_{s_i>0}\frac{G_i(X,B)}{s_i}\right\rfloor,
+ \qquad s_i=-a_i d .
+\]
+After this translation the next primitive phases are read at the exact
+state, including any valid partial copy before the first failed guard.
+Full sorting permits a return word to contain unpaired steps. When
+two time forms tie identically on the chart, their difference
+annihilates its variations and its leading base coefficient cancels.
+Compare their physical intercepts. A nonidentical leading tie is a
+proper original wall.
+
+On a cell where \(G\) wins with decrement \(s>0\), let
+\(\alpha=\lim G/B\) and \(j=G\bmod s\). The allowed residues form one coset
+of the image of \(a_G M\Lambda\) in \(\Z/s\Z\), where \(a_G\) is the
+state row of \(G\). For \(\nu=\gcd(s,a_G M\Lambda)\), each of the \(s/\nu\)
+possible residues has preimage of relative index \(s/\nu\). The exit
+is obtained after \(1+(G-j)/s\) copies. A choice of residue restricts the
+original input lattice to that preimage, sometimes called a \emph{lane}.
+Subsequent congruences are imposed on this preimage, even when its
+image in the state space loses rank. Their relative probabilities
+are the reciprocals of the corresponding indices. The scaled duration
+of the return is \(\ell\alpha/s\). Each bounded sequence of primitive
+switches between returns has zero limiting duration.
+
+For a finite route, clear denominators in all affine charts and
+congruences. On each compatible base progression a leaf is an
+original cell \(P\) and an original affine lattice of index \(I\).
+For any bounded continuous test of its stopped marks, weighted Riemann
+sums give the contribution
+\begin{equation}\label{eq:transfer}
+ I^{-1}\int_P w(y) f(y,S(y),z(y))\,dy ,
+\end{equation}
+where \(S,z\) are the limiting elapsed time and the limiting marker
+being carried. A fundamental parallelepiped scaled by \(1/B\) has
+volume \(I/B^5\), and the point weights are \(B^{-5}w+O(B^{-6})\).
+One can trim collars of proper walls first. The integer branches and
+affine formulas then hold uniformly on the remaining compact sets.
+Original cells stay marked when their images overlap or coincide.
+
+\section{Rank passage and approximation of the first cyclic time}\label{sec:passage}
+
+\subsection{Access to every collar}\label{sec:collar}
+An exit with state guard row \(a_G\) has derivative
+\(H=\Id+d a_G/s\). Since \(a_G d=-s\), its kernel is exactly \(\R d\).
+A residue split preserves the real incoming direction space \(V\), so
+the rank drops by one precisely when \(d\in V\). The six-root ingress
+calculation (Lemma~\ref{lem:ingress}) gives the rank histories
+\[
+ 54321,\qquad 543221,\qquad 5432221,
+\]
+through first rank one, where the digits list ranks after successive
+macroscopic exits, including ingress. The total number of primitive
+switches through ingress to rank one is at most 230 on even roots
+and 246 on odd roots. Rank-two returns can preserve rank, and the
+calculation includes unpaired primitive phases.
+
+At rank one write the sheet as
+\[
+ X=p+kT+n\ell_0 u,\qquad B=b+kP,
+\]
+with primitive integer tangent \(u\). Choose an integral row \(c_0\)
+with \(c_0u=1\), and put \(N=\Id-uc_0\). The exact normal equation is
+\(NX=(NT/P)B+Np-bNT/P\). Since \(N(6\Z^5)=6(\Z^5\cap\ker c_0)\),
+the least compatible normal base shift preserving the physical phase
+is \(6\operatorname{lcm}_i\operatorname{den}((NT/P)_i)\).
+For coverage one may enlarge the tangent to the full physical
+tangent \(6u\Z\) on this sheet. Equation~\eqref{eq:transfer} still
+uses the inherited lattice.
+
+A rank-one section is a normal sheet with an interval of leading
+positions. Call \(R(X)/B<\eta\) a terminal collar, with
+\(0<\eta<1/7\). Sections strictly inside \(R(X)/B<1/7\) are permanent
+for sufficiently large bases on compact subsets, because then
+\(\min G>\lceil(B+1)/7\rceil+64\). The exact rank-one graphs of
+Lemma~\ref{lem:lines} are finite, their outer subgraphs are acyclic,
+and an inner successor stays inner or reaches the centre. The leading
+lines are homogeneous about \(X/B=0\); the interior part of a line is
+enlarged to its full open half-ray in \(R(X)/B<1/7\). Periodicity of
+its leading seed transfers by positive dilation in that paired region,
+and the guards are verified on the enlarged interval. Outer intervals
+retain their actual locations.
+
+By \cite[Section~6 and Appendix~E]{G6}, until the first \(R\le120\)
+a lower hit by at least six units occurs within 32 updates, the
+intermediate overshoot is at most 384, and after that hit \(R\le504\).
+Consequently in the permanent region,
+\[
+ R_t\le\max(504,R_0-6\lfloor t/32\rfloor+384).
+\]
+An inner arrow of positive scaled duration \(\Delta\) thus satisfies
+\(r'\le\max(0,r-3\Delta/16)\) for leading radii. Its certified exact
+minimum ratio \(\Delta/r\) is \(5/48\), giving
+\(r'\le(251/256)r\). Finite outer passage and inner contraction give
+access to every positive collar after finitely many returns. The
+exceptional walls over all finite records form a countable union of
+original null sets. A proper wall in a projected chart pulls back
+to a proper wall because the projection has full rank in its
+retained coordinates.
+
+\subsection{The section stop may follow capture}
+Let \(S_B\) be the physical time of a fixed certified section strictly
+inside a collar of radius \(\eta\). For large bases on a compact
+margin, the remaining number of updates until capture, if capture
+is ahead, is at most
+\begin{equation}\label{eq:forward}
+ 32\max(0,\lceil(R-120)/6\rceil)+\binom{509}{5}+1
+ \ \le\ (16/3)\eta B+O(1).
+\end{equation}
+Indeed, after the first hit of \(R\le120\), the orbit stays in
+\(R\le504\). In this envelope the six centered gap offsets, after adding
+504, are nonnegative integers summing to \(6\cdot504\). Their common
+residue modulo six gives at most \(\binom{509}{5}\) possible states.
+The extra update passes from a cyclic difference vector to a cyclic
+word, since the next word is a function of that vector.
+
+If capture precedes \(S_B\), the eventual cycle lies in that
+envelope because the orbit has a later permanent section. Every
+same-phase state on the cycle has \(\|X\|_\infty\le2520\). Consecutive
+same-phase states in a certified block are separated by its nonzero
+integral displacement \(d\). In a coordinate with \(d_i\ne0\) there
+are at most 5041 consecutive such points after capture. Complete
+blocks, bounded switches and the incomplete last block therefore
+give only \(O_{\text{record}}(1)\) possible updates after capture.
+This proves the two sides of the comparison
+\begin{equation}\label{eq:two-sided}
+ S_B-O_{\text{record}}(1)\le T_B\le S_B+(16/3)\eta B+O(1).
+\end{equation}
+The argument permits the first physical visit to the collar to
+occur within an earlier repeated word.
+
+\subsection{The clock kernel and weak convergence}\label{sec:kernel}
+We check that the clock kernel of Section~1 is well defined. Fix a
+compatible system \(\beta\), a real input in \(D\) off the null walls,
+and its first strict leading entry prefix. Use the chronological
+physical guards and draw every allowed remainder with the conditional
+index rule of Section~\ref{sec:returns}. This defines consistent finite
+cylinders because the children partition the parent coset. Equivalently
+take a single Haar-uniform element \(\omega\) of \(\Zhat^{\,5}\),
+independent of \(y\), for the original residue and read its successive
+finite quotients. Declare a section with leading state zero terminal.
+For \(\eta\downarrow0\), stop at the first visited section with leading
+radius less than \(\eta\). The chronological clock forms at these stops
+are nondecreasing. When a deeper stop follows one in the
+\(\eta\)-collar, lift the two records on the same original chart and use
+\eqref{eq:two-sided} at both stops. On dividing by \(B\) and taking the
+compatible limit, the additional elapsed time is at most
+\((16/3)\eta\). The limit is therefore finite and measurable. Its law
+for each such \(y\) is the kernel \(Q_\beta(y,dt)\) of Section~1. This
+definition continues to arbitrarily small collars, with no fixed cap on
+entry time or number of returns.
+
+Take a sequence of bases that is eventually in the class
+\(\beta\bmod m\) for every fixed \(m\). Fix a bounded Lipschitz test and
+let \(D_J=\bigcup_{j=0}^J K^{-j}(\Pi)\).
+The finite entrance prefix costs at most \(J/B\). Under the common
+real-input coupling, the omitted mass of \(D\setminus D_J\) is at most
+\(m(D\setminus D_J)/(1-B^{-10})\), uniformly over bases. Fix a collar
+radius away from atoms of the section radii and take finitely
+many disjoint first-stop cylinders on
+\(D_J\) that omit mass at most \(\varepsilon\) more. These can be trimmed
+to compact strict subcells at arbitrarily small cost. Their finite
+physical and limiting contributions agree asymptotically by
+\eqref{eq:transfer}. Comparison with their total original mass also
+bounds the limsup mass omitted in the finite-base measures. This
+argument avoids any requirement on the boundary of \(D\).
+
+On the retained cylinders the scaled clock error is at most
+\((16/3)\eta+o(1)\), and \(\ZB\) converges to \(\cen\) by the cycle
+envelope, or by \cite[Theorem~1]{G6}. The error in a bounded Lipschitz
+test is bounded by its Lipschitz constant times the clock error,
+plus twice its supremum norm times the omitted mass, plus a term
+tending to zero. Exhaust the entry prefixes and let \(\varepsilon\)
+and \(\eta\) tend to zero. This yields fine-sequence weak convergence
+to \(\one_D(y)w(y)\,dy\,Q_\beta(y,dt)\,\delta_{\cen}(dz)\), with mass
+\(m(D)\).
+
+\section{The modulus of the joint law}\label{sec:classes}
+
+\subsection{One modulus at all depths}\label{sec:onemod}
+Before the first permanent section there are finitely many post-entry
+record types. Indeed the passage to rank one has bounded length in
+returns and primitive switches, and the rank-one outer graph is finite
+and acyclic. Each return has finitely many guard and residue choices.
+Strict leading entry prefixes of arbitrary length introduce no period:
+their integral affine maps fill the same six entrance lattices.
+For a homogeneous rank-one arrival, \(NT=0\) and \(T=\tau u\).
+The least multiple of \(P\) restoring the full centered coset is
+\[
+ P_{\rm cent}=P\ell_0/\gcd(\ell_0,\tau).
+\]
+
+\begin{lemma}[Centred autonomy]\label{lem:autonomy}
+\textup{(a)} On paired states the exact update, written in
+\(X=6q-B\vct\), is a map \(X\mapsto\Psi(X)\) that does not depend on \(B\)
+\cite[Theorem~4]{G4}; see \cite[Section~2]{G7} for the eleven-digit formula.
+\textup{(b)} Consider a rank-one return certified by Lemma~\ref{lem:lines},
+with homogeneous incoming line and with outgoing leading interval whose
+affine hull contains zero, or with central endpoint. Write its winning guard
+as \(a_GX+b_GB+c_G\) with decrement \(s>0\). Then \(b_G=0\), and a
+competing guard \(H\) tied identically in leading time has
+\(b_H/s_H=b_G/s=0\). Hence the exit residue \(G\bmod s\) is a function of the
+centred state alone.
+\end{lemma}
+
+\begin{proof}
+(a) In centered units the two digits in borrowed level \(i\) have
+common base coefficient \(v_i\), and offsets
+\(X_i-6\one_{i=5}\) and \(-X_{6-i}-6\one_{i<5}\). On a paired state the
+singleton and the five levels occur in a fixed order, so the centered
+output depends only on these offsets. This uses pairing only, not
+permanence. At the outer sections, which need not be permanent, pairing
+is supplied by the continuation argument in the proof of
+Proposition~\ref{prop:onemod}.
+
+(b) The leading exit satisfies \(a_G x'=-b_G\), where
+\(x'=\lim X'/B\). The affine hull of the outgoing interval or its
+central point contains zero, so \(b_G=0\). A competing guard \(H\)
+tied identically in leading time has \(b_H/s_H=b_G/s=0\), by evaluating
+the common form at zero on the homogeneous incoming line. Every section of
+Lemma~\ref{lem:lines} lies on a homogeneous leading line
+(Section~\ref{sec:collar}), so its certified returns satisfy the hypothesis. The intercept
+comparison uses the exact normal offset.
+\end{proof}
+
+\begin{proposition}[One modulus at all depths]\label{prop:onemod}
+Let \(P_*\) be a common multiple of the compatibility periods of all leaves
+through first rank one, including central leaves, and of the centred
+periods \(P_{\rm cent}\) of all first rank-one arrivals; there are finitely
+many. Fix a class \(B=B_0+kP_*\), \(k\ge0\), and an arrival record with chart
+\(X=Mq_0+B\mathbf b+c\) and admissible original inputs \(q_0\in p_B+\Lambda\)
+(Section~\ref{sec:returns}). The pairs \((B,q_0)\) allowed by the record's
+unrestricted congruences form an affine lattice in \(\Z\times\Z^5\). There
+are a vector \((P_*,a)\) of its direction lattice, an admissible origin
+\(p_0\) at \(B_0\), and \(\sigma\in\Lambda\) such that, writing the
+admissible original inputs at \(B_0+kP_*\) as \(q_0=p_0+k(a-\sigma)+\mu\)
+with \(\mu\in\Lambda\), the centred state at first rank-one arrival is
+\(M(p_0+\mu)+B_0\mathbf b+c\), independent of \(k\). No original indices change; the original cell,
+position and elapsed prefix are read at the actual \(q_0\). At every collar
+depth, each later residue split pulls back to the same congruence on the
+free coordinate \(\mu\) for all \(B\) in the class.
+\end{proposition}
+
+\begin{proof}
+In the chart \(X=Mq_0+B\mathbf b+c\) of Section~\ref{sec:returns} at
+first rank-one arrival, the original integer input satisfies
+\(q_0\in p_B+\Lambda\). On an arrival record the unrestricted joint
+congruences in \((B,q_0)\) form an affine lattice whose base projection
+contains the progression \(B_0+kP_*\). Choose an integral lift
+\((P_*,a)\) in its direction lattice. The admissible original cosets are
+then \(p_0+ka+\Lambda\), where \(p_0\) is an admissible origin at \(B_0\),
+and the centered displacement of these origins is
+\(\Delta_a=Ma+P_*\mathbf b\). Since \(P_*\) is a multiple of the compatibility
+periods and of \(P_{\rm cent}\), the centered coset \(Mp_B+B\mathbf b+c+M\Lambda\) is restored after
+\(P_*\) (here \(M\Lambda\) is the inherited tangent lattice \(\ell_0u\Z\) of
+Section~\ref{sec:collar}), so \(\Delta_a\in M\Lambda\); choose
+\(\sigma\in\Lambda\) with \(M\sigma=\Delta_a\). Writing
+\(q_0=p_0+k(a-\sigma)+\mu\) with \(\mu\in\Lambda\) gives
+\(X=M(p_0+\mu)+B_0\mathbf b+c\) for every \(k\). In this free coordinate the centered state and every subsequent
+autonomous congruence are independent of \(k\). The change of origin
+preserves every original index, so at each fixed depth the weighted Riemann
+sum in \eqref{eq:transfer} retains the original position and the prefix
+clock as marks. (Holding \(q_0\) fixed instead need not give an admissible
+input at the new base.)
+
+The paired argument starts at first rank one. At the leading
+exit of a long return, the endpoints of its last complete copy have
+the same limit because they differ by \(d/B\). The exit is then
+periodic for \(K\), by continuity. Bounded switches follow phases
+of that orbit, and the next long word covers a period with paired
+phases by Lemma~\ref{lem:lines}. Each adjacent interlevel slack has a
+positive central value. Its zero set on a homogeneous line is
+proper, and the same is true of the zero-inner guard. Thus the
+first short update is strictly interlevel paired away from a proper
+wall. The corresponding leading branch is homogeneous about the
+centre and has unimodular derivative. It sends a nonzero interval
+to a homogeneous line of nonzero variation. Induct through the
+short prefix. This gives paired continuation at positive rank-one
+radii, including the outer sections.
+
+By Lemma~\ref{lem:autonomy}, the paired centered map does not depend on
+\(B\), and every later winning guard has \(b_G=0\). Every later
+congruence therefore pulls back on the same original free lattice, so
+one modulus suffices for every collar depth.
+\end{proof}
+
+\subsection{The disappearance of the factor eleven}\label{sec:eleven}
+The compatibility and centered periods at first rank one are
+\((6,6),(6,12),(12,12),(6,66)\)
+(Lemma~\ref{lem:periods}). Compatibility through the first rank-one
+arrival, including its original residue splits, uses only six and
+twelve. The centered period divides 132. On a twelve-class with
+\(P_{\rm cent}\mid12\) the normalized original marks and the entire
+clock suffix agree by the construction of Proposition~\ref{prop:onemod} applied to
+these records with \(P_*=12\); its proof uses only the periods of the record
+at hand. A change of
+representative within a fixed progression changes a matched input
+by a bounded translation over a fixed shift, and changes the
+physical elapsed prefix by only a bounded number of updates.
+The parametrization on the whole progression gives equality of
+the marked limiting weights at every fixed depth.
+
+For \(P_{\rm cent}=66\), the eleven refined classes over a twelve-class
+have the same normal sheet and different tangent phases. On every
+relevant strict interval the first rank-one macroscopic return is
+terminal. This assertion is checked with the full physical tangent,
+which contains all eleven phases. The short route and winning guard
+are determined by the leading interval and, in structural ties,
+the common normal offset. The return's leading duration is
+\(\ell\alpha/s\) in every phase. Its final remainders move the actual
+endpoint only within a bounded centered set. The section comparison
+controls first capture if it occurs within that return. Summing
+the final remainder probabilities restores the full incoming
+weight, at the same original position and with the same total
+clock. Thus the factor eleven disappears even jointly with the
+original position and elapsed time.
+
+There are 3,248 period-66 arrivals in each even root and none in the
+odd roots. Their 49 normal lines per even root give 98 sections
+after the split at the permanence boundary. One explicit example
+has \(B=6k\) and
+\[
+ X=(6,18,-6,-30,-24)+\lambda(1,1,0,-1,-1),\qquad \lambda\equiv6k\pmod{66}.
+\]
+On compact subintervals of \(0<\lambda/B<3/14\), for sufficiently
+large \(B\), 26 switches carry this line, independently of \(B\), to the
+line
+\[
+ X'=(-102,-192,-192,-180,-90)+\lambda(1,2,2,2,1)
+\]
+with the same parameter \(\lambda\). A fifteen-update word then
+translates \(X'\) by \(-66(1,2,2,2,1)\), that is,
+\(\lambda\mapsto\lambda-66\). The largest lower threshold among its
+numerical sorting guards is \(\lambda=156\), with equality allowed
+because interchanging equal digits leaves the update unchanged.
+All eleven phases therefore have scaled suffix duration
+\(5(\lambda/B)/22\), even in this example with decrement 66.
+
+The projection arguments give equality of the \emph{whole} measures
+\(\one_D(y)w(y)\,dy\,Q_\beta(y,dt)\,\delta_{\cen}(dz)\) for all compatible
+\(\beta\) having the same residue \(r\bmod12\). This is why \(Q_r\) may be
+defined, as in Section~1, from the fine system of the integer
+representative \(0\le r<12\); the equality determines its conditional law
+up to \(w\,dy\)-null sets. Every divergent sequence in this class has a
+subsequence eventually fixed modulo \(j!\) for every \(j\), by diagonal
+extraction. Applying this to any sequence violating convergence for a
+bounded Lipschitz test proves convergence on the entire class.
+
+\subsection{Minimality}
+Use the bounded clock reader \(\varphi(t)=\min(1,\max(0,t))\) in two local
+comparisons. Let \(y_*=(\vct+x_*)/6\) be the centre of the paired cube of
+Lemma~\ref{lem:local}. Then
+\[
+ \int\varphi\,dQ_9(y_*,\cdot)-\int\varphi\,dQ_5(y_*,\cdot)
+ =\frac{314485453}{201016442880000}>0 .
+\]
+At the midpoint \(y_V\) of the box of \cite[Theorem~4]{G7},
+\[
+ \int\varphi\,dQ_5(y_V,\cdot)-\int\varphi\,dQ_{11}(y_V,\cdot)
+ =\frac{248292553}{13819880448000}>0 .
+\]
+The neighborhoods have strict initial entry, constant residue
+weights and affine clock branches. Thus each comparison persists
+on a positive-weight open set. Multiply \(\varphi\) by a nonnegative
+continuous spatial bump with compact support in that set. The support
+lies inside \(\Pi\), so the comparison concerns \(D\) on the coupled
+input. Its integral distinguishes the corresponding joint laws.
+
+Let \(M\) be a positive integer. If \(4\nmid M\), then
+\(\gcd(M,12)\mid6\), so every \(M\)-class \(a\equiv5\pmod{\gcd(M,12)}\)
+contains infinitely many bases congruent to 5 and infinitely many
+congruent to 11 modulo twelve, and the measures do not converge along
+it. If \(3\nmid M\), then \(\gcd(M,12)\mid4\), and every \(M\)-class
+\(a\equiv1\pmod{\gcd(M,12)}\) contains infinitely many bases congruent
+to 9 and infinitely many congruent to 5 modulo twelve. Hence convergence
+along every class modulo \(M\) forces \(12\mid M\). Conversely, if
+\(12\mid M\), each class modulo \(M\) lies in one class modulo twelve,
+along which the measures converge. This completes the proof of
+Theorem~\ref{th:main}.
+
+\section{Original mass of the entrance event}\label{sec:mass}
+
+The odd-length majorization theorem of \cite{G4} gives
+\(g(Ky)\prec g(y)\). Hence the sum of the \(k\) smallest gaps is
+nondecreasing for every \(k\), and the largest gap is nonincreasing.
+Every leading orbit converges by phases to a periodic orbit
+\cite[Lemma~2]{G6}. Almost every orbit enters the invariant open ball
+\(e<1/30\) by \cite[Section~3]{G6}. Its limit remains strictly inside that
+ball. The periodic catalogue there has 191 cells up to cyclic
+phase, as in \cite[Appendix~A]{G6}. Lemma~\ref{lem:basins} reduces
+the possible destinations of the non-entrants, up to a null set, to
+the centre, a family of two-cycles denoted Two, and the period-three
+family in \eqref{eq:family}. Two has gap phases \((A,A,A,F,C,A)\)
+and \((A,A,C,A,F,A)\), with \(A=1/6+\zeta_1\), \(F=1/6+\zeta_2\),
+\(C=1-4A-F\), \(\zeta_2\ge\zeta_1\ge0\) and \(3\zeta_1+2\zeta_2\le1/6\),
+restricted to the open ball.
+
+Since \(K(y)_1=\max(y_1,1-y_5)\), the first difference, also called
+the anchor, is nondecreasing. At the centre and Two it is at most
+\(5/6\). Put \(\theta_1\le\cdots\le\theta_5\) for the ordered values of
+\(\min(y_i,1-y_i)\), the folded lows. The formula for \(K\) gives
+\[
+ (K^2y)_1=\max(1-\theta_1,\theta_4+\theta_5).
+\]
+The necessary second-step constraint at cutoff \(U\) is
+\(\theta_1\ge1-U\), \(\theta_4+\theta_5\le U\). Exact integration
+(Lemma~\ref{lem:integrals}) gives probabilities
+\(5124467/80621568\) at \(U=5/6\) and
+\(3882730875/17179869184\) at \(U=7/8\).
+All three possible non-entrant destinations have first
+difference at most \(7/8\), so the latter figure alone gives
+\(m(D)\ge77.3995317809\%\).
+
+The remaining three-cycle has successive phases
+\begin{equation}\label{eq:family}
+ \begin{gathered}
+ (7/8,3/4,5/8,\chi,1/4),\\
+ (7/8,5/8,1/2,3/8,5/8-\chi),\\
+ (7/8,\chi+1/4,\chi,1/4,1/8).
+ \end{gathered}
+\end{equation}
+Here \(3/8<\chi<1/2\). Their common gap multiset is
+\(\{1/8,1/8,1/8,1/4,5/8-\chi,\chi-1/4\}\).
+An orbit tending to this family has all first differences at most
+\(7/8\). Applying the first-difference formula to the next step
+gives both end gaps at least \(1/8\) at time three. Majorization
+gives the two other constraints defining \(E_3\) because the
+limiting sum of the three smallest gaps is \(3/8\) and the
+limiting largest gap is \(1/4\). This includes trajectories
+switching between nearby sorting branches. By the union bound,
+\[
+ m(D^c)\le \Prob((K^2y)_1\le5/6)+m(E_3).
+\]
+The last exact integration of Lemma~\ref{lem:integrals} yields
+the numerical bound in Proposition~\ref{prop:mass}, with
+directed rounding. The exact lower bound is
+\(92.9921494990216668\ldots\%\).
+
+For comparison, direct integration through step four gives
+\(13.3940217689768\ldots\%\), hence the downward bound
+\(13.3940217689\%\). Disjoint certified boxes of first entry
+at steps 5 through 19 add exactly
+\(16984163369908523775525/604462909807314587353088\) in
+original weight. This gives the earlier-entry lower bound
+\(16.2038159009\%\). The stronger bound above uses the
+non-entrant union directly.
+
+\section{Scope and finite-scale evidence}\label{sec:scope}
+
+\emph{Conditioning, observable and quantifier.} Theorem~\ref{th:main}
+concerns the unnormalized measures obtained by restricting to
+\(\{y\in D\}\), of limiting mass \(m(D)\); the conditional law given
+entrance is obtained by dividing by this mass. The event concerns the
+real digits that couple all bases. To substitute the word event
+\(q_B/B\in D\) it would suffice that the two indicators disagree with
+probability tending to zero; the estimate \(\|q_B/B-y\|_\infty<1/B\) gives
+this if \(m(\partial D)=0\), which is not proved here.
+Section~\ref{sec:kernel} works directly with the coupled event. The theorem gives no rate of convergence. The twelve
+limits are not claimed to be pairwise distinct: Section~\ref{sec:classes}
+separates only class 9 from class 5 and class 5 from class 11, each on a
+small neighbourhood. The kernel \(Q_r\) is explicit only locally, as a
+finite mixture of affine clocks (Table~\ref{tab:cube} and
+\cite[Table~2]{G7}); globally it is the law of an infinite random route.
+Internal labels may change under twelve-shifts without changing the
+measure. For example on the box of \cite{G7} two equal-weight checkpoint
+residues, 603 and 639, exchange under such a shift and give the same
+pooled measure.
+
+The common modulus in Theorem~\ref{th:main} is a property of the
+\emph{joint} law on \(D\). Whether the clock marginal on \(D\)
+retains that modulus remains open. In four of the twelve classes the
+clock has an explicit bound, which is not used for
+Theorem~\ref{th:main}.
+
+\begin{proposition}\label{prop:fourlift}
+Let \(r\in\{3,5,9,11\}\). For \(w\,dy\)-almost every \(y\in D\), the
+kernel \(Q_r(y,\cdot)\) is supported in \([0,(6Y_1-5)/3]\subset[0,1/3)\),
+where \(Y=K^{j(y)}y\) is the entrance point.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+The certified decrease of the leading centered first coordinate per unit
+scaled time is at least six through rank three and at least three at
+ranks two and one. These minima, \(6,6,6,3,3\) at ranks five through one,
+were checked exhaustively on the primary cover for roots 3 and 5 modulo
+six, which are the four lifts (Section~\ref{sec:verification}). Bounded
+switches preserve the leading first coordinate because they follow a
+periodic orbit whose first coordinate is nondecreasing. The terminal
+value in centered coordinates is zero. Summing from the entrance
+\(Y\in\Pi\), where the first centered coordinate is \(6Y_1-5\), gives
+\(0\le t\le(6Y_1-5)/3<1/3\).
+\end{proof}
+
+A prospective physical experiment near base \(3.072\cdot10^6\)
+used 36,000 independent real inputs shared across its arms. It measured
+the clipped clock \(\varphi(T_B/B)\) times the indicator for leading entry by
+step 500 and physical capture within the run. The equally weighted
+class-3 minus class-5 comparison, pooling the shifts by 12, was
+\(2.54\cdot10^{-4}\), with paired pointwise 95\% interval
+\([2.23,2.86]\cdot10^{-4}\). This is finite-base evidence concerning
+the clock marginal. The local tests used for minimality integrate
+against spatial weights and give no spatially integrated sign.
+
+Separately, in 30,000,000 independent draws the leading-map experiment
+had seven unresolved grid trajectories at step \(2^{20}\).
+Allowing all 28 ambiguous draws from the grid-to-continuum comparison
+gives at most 35 surviving real draws at that horizon. The
+one-sided 95\% binomial upper confidence bound for the real-input
+survival probability at that horizon is \(1.54681\cdot10^{-6}\).
+Since \(D^c\) lies in that survival event, this gives the statistical
+lower statement \(m(D)\ge1-1.55\cdot10^{-6}\) at 95\% confidence.
+Proposition~\ref{prop:mass} is the deterministic bound.
+
+The full joint law on \(D^c\) is open. For leading inputs tending to
+the centre, the same finite leading shadowing and centered clock
+estimate give scaled time zero and terminal mark \(\cen\). The
+weight of this basin is unknown. Whether the leading basin of Two has
+positive weight is not settled here; a law on that basin would need a
+transfer to the physical return sheets. The measure of the switching
+basin of \eqref{eq:family} is also open.
+
+\section{Computations and verification}\label{sec:verification}
+
+From a fresh copy of the ancillary directory, run
+\texttt{bash reproduce.sh}. The script verifies the input hashes,
+runs in a private tree and compares exact results with the supplied
+records. The box leaf stream is regenerated and checked by SHA-256.
+Arithmetic uses integers and rational fractions. The verification
+environment uses Python~3.9.6, Clang~21.0.0, SymPy~1.14.0, and
+Yices~2.7.0 for the singular-ray linear query. The two-solver
+centered-clock checks are those of \cite[Appendix~E]{G6}. The
+empirical readers in Section~\ref{sec:scope} use their frozen sample plans.
+
+\begin{center}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}L{.25\textwidth}L{.33\textwidth}L{.36\textwidth}@{}}
+\toprule
+Result & Main check & Separate coverage \\
+\midrule
+Finite routes and weights &
+Exact guards, residue indices, cube and box controls &
+Separate borrowed reader and source-lattice controls \\
+Rank passage (Lemma~\ref{lem:ingress}) &
+Six-root inherited charts &
+Separate clipping, reader and lattice transport \\
+Collar access (Lemma~\ref{lem:lines}) &
+Six normal-sheet graphs &
+Independent closure at all six roots \\
+Arithmetic (Lemma~\ref{lem:periods}) &
+All ingress periods and exceptional returns &
+A separate lattice traversal and a separate physical audit \\
+Local separations (Lemma~\ref{lem:local}) &
+Exact cube clocks and full box weights &
+Separate lattice reductions and local means \\
+Basin exclusions (Lemma~\ref{lem:basins}) &
+Exact normal and guard-cone exclusions &
+Separate unpaired sorting and elimination, using earlier inputs \\
+Mass integrals (Lemma~\ref{lem:integrals}) &
+Exact inversion and density integration &
+Separate anchor and three-step integrations \\
+Four-lift clock bound (Proposition~\ref{prop:fourlift}) &
+First-coordinate drift on the primary cover &
+Separate graph closure \\
+Physical panels &
+Frozen original-word experiments &
+Direct-subtraction controls \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\appendix
+\section{Finite geometric and arithmetic certificates}\label{ap:certificates}
+
+\begin{lemma}\label{lem:ingress}
+The closure of \(\Pi\) has 77 vertices, and its only maximizer of the
+energy is the gap vector \((0,1,1,1,1,1)/5\), with \(e=1/30\). Fix a root. Off a finite
+union of proper walls, \(\Pi\) is partitioned into finitely many leaves,
+each an open polyhedral cell \(C\) together with a coset of finite index
+in the entrance lattice, obtained by the residue splits along its route,
+with the following property. For each leaf and each compact
+\(\mathcal K\subset C\) there is \(B_0(\mathcal K)\) such that, for
+\(B\ge B_0(\mathcal K)\) on the leaf's recorded compatible base progression
+in that root, every integer state on the leaf's coset (the image of
+\(p_B+\Lambda\) under the entry chart) on that progression whose normalized position lies in \(\mathcal K\) follows the leaf's
+certified record to first rank one: at most six macroscopic translating
+returns, each with its recorded winning guard and exit residue; at most
+230 primitive switches in the even roots and 246 in the odd roots; and
+rank history \(54321\), \(543221\) or \(5432221\). Over the six roots the
+partition has 22,110 third exits and 1,292,015 inherited first rank-one
+arrivals.
+\end{lemma}
+
+For the chamber check, impose the fifteen within-level and the
+adjacent interlevel rows of the five unrolled phases on the gap
+simplex. Enumerate vertices by exact clipping and evaluate the convex
+energy at every vertex. The physical route traversal starts with
+the resulting open cell and one root coset. Its worklist retains
+the uncovered side of each proper cut. A rational interior point
+proposes a word. The verifier checks all of its primitive sorting
+and interlevel rows, checks that the affine word fixes the full
+leading chart and translates the incoming sheet, and retains only
+the subcell certified by these rows. Strict rows and structural
+equalities are read with the integer offsets described in
+Section~\ref{sec:routes}. For each leading first winner, it clips by
+all competing time rows and takes each allowed integer residue
+with its exact exit map. On rank-two cells, projecting to two
+independent coordinates and taking the exact convex hull leaves
+the same leading cell. The inherited lattice remains unchanged
+by the coordinate choice. Exhaustion of the worklist supplies
+coverage. Interior witnesses, short allowances and word-length
+allowances are search parameters. Coverage follows from the
+complete checked partition and the absence of unfinished cells.
+The uniformity in \(B\) on compact subcells is that of
+Section~\ref{sec:routes}.
+
+\begin{lemma}\label{lem:lines}
+Fix a root. Every inherited first rank-one arrival of
+Lemma~\ref{lem:ingress} lies on a homogeneous leading line. Enlarge each
+arithmetic tangent to the full physical tangent on the same normal sheet,
+enlarge each inner nonzero interval to its whole half-ray in
+\(R(X)/B<1/7\), and keep outer intervals at their actual positions. Off
+proper walls the resulting sections split into finitely many strict
+intervals forming a finite directed graph with the following property.
+For each strict interval \(J\) and compact \(\mathcal K\subset J\) there is
+\(B_0(\mathcal K)\) such that, for \(B\ge B_0(\mathcal K)\) on the
+section's compatible progression, every physical state on the sheet with
+leading position in \(\mathcal K\) follows a bounded short segment and then
+a certified paired translating return of positive scaled duration, whose
+exit, for each exit residue, lies in a recorded successor section or at
+the centre. Each outer subgraph is acyclic, each inner arrow ends in an
+inner section or at the centre, and the minimum of inner scaled duration
+divided by incoming radius is \(5/48\) in each graph.
+\end{lemma}
+
+The independent graph counts are as follows. The short bound here
+concerns one rank-one transition, separate from the ingress bound.
+\[
+\begin{array}{c|rrrrrr}
+  \text{root}&0&1&2&3&4&5\\ \hline
+  \text{sections}&26409&38997&26409&38994&26403&38977\\
+  \text{edges}&164139&210713&164355&210756&164103&210528
+\end{array}
+\]
+Use exact interval cuts to certify each chronological word and each
+possible leading winner. Iterate all successors until no untested
+outer interval or inner half-ray remains. On the inner rays the
+duration and radius are homogeneous, so their ratio is checked on
+one positive point of each certified arm. Deleting all outer
+vertices of indegree zero leaves zero outer vertices. The
+independent odd-root rerun allows up to 250 short updates and
+reaches actual maxima 172, 171 and 169 at roots 1, 3 and 5.
+
+\begin{lemma}\label{lem:periods}
+All inherited compatibility periods through first rank one are 6 or
+12. The pairs of incoming progression and centered period at first rank
+one are \((6,6),(6,12),(12,12),(6,66)\). Each even root has exactly
+3,248 arrivals of centered period 66, all with history \(543221\), and
+the odd roots have none. Their 49 normal lines per even root give 98
+canonical sections after the permanence split. On each strict interval
+of these sections, read on the full physical tangent, every possible
+first winning guard gives a first macroscopic return whose leading
+endpoint is the centre.
+\end{lemma}
+
+Use an integral primitive tangent to compute the normal period and
+the exact full centered period by the divisibility tests in
+Section~\ref{sec:classes}. The independent ordinary-difference
+implementation checks restoration of \(6T_q-P\vct\) by the
+centered tangent lattice when \(T_q\) is the ordinary base-step
+translation. It tests parallelism before computing the period.
+For the exceptional sections re-read all possible first winners
+on the full physical sheet. In root 0 the decrements are 66 on 56
+sections, 96 on 30 and 192 on 12. In root 2 the decrement is 96 on
+all 98 sections. In root 4 the decrement is 24 on 70 sections and
+96 on 28. The degree-one witness in Section~\ref{sec:eleven} is
+checked by sorting the eleven symbolic borrowed digits on its
+stated interval.
+
+\begin{lemma}\label{lem:local}
+Put \(x_*=(2938,3225,2886,1913,387)/50000\) and \(y_*=(\vct+x_*)/6\). On
+the paired cube \(\|x-x_*\|_\infty<1/100000\), where \(x=X/B\) for the
+centered original input \(X=6q_B-B\vct\), every input has strict initial
+entry, and for \(r=9\) and \(r=5\) the kernel \(Q_r\) is the finite mixture
+of affine clocks in Table~\ref{tab:cube}. At \(y_*\) the clipped clock
+means are \(240752004653/23648993280000\) for class 9 and
+\(74402820149/7309688832000\) for class 5. On the box of
+\cite[Theorem~4]{G7} the class-5 and class-11 means at the midpoint are
+\(210475357/1784592000\) and \(108644858137/921325363200\). Both centres
+are strict interior points of \(\Pi\), with finite affine clock mixtures
+on neighborhoods.
+\end{lemma}
+
+\begin{table}[htbp]
+\centering
+\renewcommand{\arraystretch}{1.1}
+\(\begin{array}{rrr|ll|l}
+ n_1&n_4&d&\text{class }9&\text{class }5&t(x_*)\\ \hline
+ 80&35&648&2333/7776&4499/15552&4343/432000\\
+ 100&45&816&0&2329/20736&82079/8160000\\
+ 140&65&1152&11963/62208&12241/62208&12883/1280000\\
+ 380&185&3168&6817/62208&0&21277/2112000\\
+ 20&15&192&0&31/1296&781/76800\\
+ 80&65&792&61/1728&0&26897/2640000\\
+ 5&5&54&55/3888&25/1296&1843/180000\\
+ 65&110&918&0&11/324&7933/765000\\
+ 20&35&288&809/3888&841/2592&3321/320000\\
+ 160&295&2376&1093/7776&0&16459/1584000
+\end{array}\)
+\caption{Clock profiles on the cube of Lemma~\ref{lem:local}:
+\(t(x)=(n_1x_1+n_4(2x_2-2x_3+x_4))/d\), with their weights in classes 9
+and 5. Each weight column sums to one. At \(x_*\),
+\(x_1=1469/25000\) and \(2x_2-2x_3+x_4=2591/50000\).}\label{tab:cube}
+\end{table}
+
+For the cube, verify every return and terminal leaf by the affine
+guard inequalities at the vertices and the residue splits on the
+inherited lattice. At both interior points every time in the cited
+mixture is between zero and one. Thus the evaluations are sums of
+the rational weights times the affine clock values. The box means can
+be recomputed from \cite[Table~2]{G7} at the midpoint. As a separate
+box control, the first three pinned variables carry index 132 and
+the next two congruences carry indices 36 and 6. Each marked
+partner has conditional weight \(1/28512\). This check retains the
+full affine time coefficients before pooling the two partners.
+
+\section{Basin and integration certificates}
+
+\begin{lemma}\label{lem:basins}
+Among the 191 cells of the periodic catalogue in the open energy ball,
+every cell other than \(\Pi\), the centre, Two and the family
+\eqref{eq:family} has a null basin under the original density.
+Consequently almost every original input either reaches \(\Pi\) in
+finite time or tends by phases to the centre, to Two, or to
+\eqref{eq:family}.
+\end{lemma}
+
+There are 30 wholly strictly interlevel-paired catalogue families,
+including the three possibilities \(\Pi\), the centre and Two.
+For the other 27, verify the null-basin conditions after
+a late tail is contracted about equal gaps by \(1/8\).
+The contraction carries strict interlevel pairing to
+\(\min_i g_i>1/7\) and preserves the within-level comparison signs.
+In this region the paired return
+checks exclude 18 regular boundary cells and nine other cells.
+For the 18 regular boundary cells, work in the frame that
+removes the cyclic permutation \(L\). Each tied comparison has
+a row \(\ell_i\) and adds \(v_i\max(0,-\ell_i)\) in this frame,
+with \(\ell_i(v_i)=2\). In each cell one row is nonnegative on
+every active correction direction. After its scheduled comparison
+this row is nonnegative and thereafter nondecreasing. A
+convergent tail forces it to vanish on a fixed proper hyperplane.
+In three of the nine other cells, allowing a signed reference
+permutation gives the same monotone-row test. The fixed ray
+has ordered radii \((2/3+2f,2/3-2f,1/3,1/3,2f)\), whose distinct
+levels keep their order for \(0<f<1/6\). The verified ten-step
+normal expansion from \cite[Section~3]{G6} therefore applies
+throughout the ray. The remaining five cells have the following
+fixed-chart checks.
+\begin{itemize}
+\item On the edge \(\zeta_1=0\) of Two (the zero-anchor edge), the late
+  normal variables \((x,y,z)\) follow \((y+(-z)_+,|z|,x-z)\). The anchor
+  offset loses \((-z)_+\) each return, where \(u_+=\max(u,0)\).
+  Only one initial anchor value can converge for each fixed
+  normal state, so the basin is null by Fubini.
+\item On the edge \(\zeta_1=\zeta_2>0\) of Two (the positive-anchor edge),
+  a nonnegative four-dimensional normal state that survives has a size
+  \(W\). The survivor volume for \(W\le R\) is at most
+  \(2R^4\). On the eight three-return branches, each of
+  determinant of absolute value one, the bounds for the
+  ratio of the new size to the old size are
+  \(3/5,2/3,3/8,1/2,5/13,2/3,3/8,1/2\).
+  Their fourth powers sum to less than one, making surviving
+  volume zero by iterating the bounds.
+\item In one period-three cell the same argument uses three
+  first-return branches of determinant of absolute value one,
+  ratios \(2/3,3/4,1/2\) and the sum of their cubes
+  \(1457/1728\). In another, three normal variables determine
+  all decrements of a fourth variable; slicing in that
+  fourth variable gives nullity. In the last, use gap
+  offsets \(\gamma\) and normals \(x=\gamma_2-\gamma_0\),
+  \(y=\gamma_4-\gamma_3\), \(z=\gamma_4+\gamma_5-\gamma_0-\gamma_1\), and
+  \(\kappa=\gamma_1+\gamma_4-2\gamma_0\).
+  Then \(f=x-y+z+\kappa\) and the forms
+  \(f,f-x,f+(\kappa-z)/2\) must remain nonpositive because
+  they are nondecreasing and tend to zero. With \(f=-1\),
+  the 64 two-return sign cylinders are infeasible. By
+  homogeneity a convergent tail must have \(f=0\).
+\end{itemize}
+Conjugation by the contraction on the paired tail and inverse
+leading branches preserve nullity. An orbit converging to a
+point of the open chamber reaches it in finite time.
+
+Of the 161 other cells, 71 admit finite unrestricted phase-labelled
+normal covector sets and four have earlier local normal-map
+exclusions. Three of the four earlier cases use the triangle's
+normal return from \cite[Section~3]{G6}. The fourth has period
+three and normal coordinates \(u=y_2+y_5-1\),
+\(v=y_1-y_3-y_5\), and \(z=2y_1+y_5-2\).
+The phase comparisons give, with \(k=v+u_+\),
+\[
+ (u',v',z')=(z-u_+-k,\ |u|+2\max(k,0),\ z+2\max(-k,0)-u_+).
+\]
+After one return \(v\ge0\), and thereafter \(v'\ge2v\).
+If \(v_3=0\), backwards substitution gives \(u=v=z=0\)
+at the starting section. Thus a convergent tail must hit the
+normal plane. Another 74 close by finite guarded covector sets,
+nine by joint anchor and majorization inequalities, and two by
+transverse noncontraction. The remaining cell is the family
+\eqref{eq:family}, indexed 181 in the catalogue. The cone check
+regenerates signs and orders of the folded digits on each phase.
+For a phase Jacobian \(A\), branch cone \(Gx>0\), and target entry
+\((u,C)\) of a normal row and cone, test whether
+\(Gx>0,\ Ax\in C\) is feasible. If so, the source certificate
+contains the row \(\pm uA\) with a cone containing that preimage.
+The 74 guarded families use 8,130 such entries. The normal
+rows annihilate the tangents of the whole limit cell. On a
+convergent tail the successive values of a seed row tend to zero
+and range over a finite set of row values on the first offset.
+One value must be zero. The corresponding hyperplane is
+independent of the chosen limit point because the row annihilates
+the tangent. Taking finite preimages preserves nullity. For
+the nine inequality exclusions, the necessary upper constraints
+on the first difference and the sums of smallest gaps rule out
+every sufficiently long guarded word. For each noncontraction
+check, some return within the certified bound (six or three
+returns) has transverse norm at least that of the source.
+Iteration excludes convergence from nonzero transverse norm.
+
+\begin{lemma}\label{lem:integrals}
+For the original input density \(w\), the two probabilities for
+\((K^2y)_1\) at cutoffs \(5/6\) and \(7/8\) are the fractions in
+Section~\ref{sec:mass}. The three-step event \(E_3\) has weight
+at most \(0.65165187185\%\), rounded up. The disjoint prefix
+integrations through step four and on the first-entry boxes at
+steps 5--19 have the weights in Section~\ref{sec:mass}.
+\end{lemma}
+
+For the anchor integrals, use the 32 original folded inverse
+branches with unit absolute Jacobian. Order the five folded lows
+and integrate the sum of the 32 products of six original gaps,
+multiplied by \(11!\). Split at \(\theta_5=U/2\) before taking polynomial
+antiderivatives under \(\theta_1\ge1-U\), \(\theta_4+\theta_5\le U\).
+At \(U=1\) this gives exactly one. For the three-step event,
+stratify by the unordered index triple of the three smallest
+gaps and the index of the largest. This gives 60 candidate cells.
+Their boundaries pull back to null sets. Invert a step to
+recover the ordered lows from output differences \(q'\) by
+\(\theta_i=1-q'_i-\theta_{i-1}\), \(\theta_0=0\). Clip each inverse to
+the image and retain every admissible mask at each of three
+steps. The affine inverse branches have unit absolute Jacobian.
+There are 25 cells after image clipping, 23 of positive weight,
+and 31,648 original inverse paths counted with multiplicity.
+
+The independent integral triangulates these domains by coning
+faces. For barycentric coordinates \(\xi\) on the standard
+five-simplex, the integral of \(\langle z,\xi\rangle^6\) is
+\((6!/11!)h_6(z)\), where \(h_6\) is the complete homogeneous
+symmetric polynomial of degree six. This follows from the
+monomial factorial integral on the simplex. Polarize to recover
+the product of the six affine gap forms. Retain all inverse
+histories with their multiplicities. The two integrations agree
+exactly on every cell before the directed decimal rounding.
+For the earlier entrance estimates, invert the strict chamber
+through four steps and integrate its nested preimages, then
+use disjoint folded boxes with all phase signs certified and
+first entry between steps 5 and 19.
+
+\section*{Data availability}
+The ancillary files accompanying this paper contain the source programs,
+the rational certificates, the output manifests and the replay script used
+in Section~\ref{sec:verification}, with the reproduction command. They are
+archived on Zenodo as version~1.8
+(\href{https://doi.org/10.5281/zenodo.24396353}{doi:10.5281/zenodo.24396353}) and are available in the
+\href{https://github.com/galyavin/kaprekar-dynamics/releases/tag/v1.8}{v1.8 release of the Kaprekar dynamics repository on GitHub}.
+
+\section*{Tools}
+The research, computations and drafting were carried out with substantial
+assistance from AI systems (OpenAI Codex and Anthropic Claude), under the
+author's direction and close supervision. The separate verification in
+Section~\ref{sec:verification} was carried out in the same way, with programs
+written independently of the primary ones. The computations use Python,
+C, C++, SymPy and Yices. The author takes responsibility for the contents.
+
+\begingroup
+\raggedright
+\begin{thebibliography}{COST}
+\bibitem[COST]{COST}
+E.~Chen, K.~Ono, R.~E.~Schwartz and D.~S.~Thakur,
+\emph{Four-digit Kaprekar dynamics in odd bases},
+J. Integer Seq. \textbf{29} (2026), Article 26.4.7.
+\href{https://arxiv.org/abs/2606.20439}{arXiv:2606.20439}.
+
+\bibitem[Dahl]{Dahl}
+C.~D.~Dahl, \emph{Coarse-grained drift fields and attractor-basin entropy
+in Kaprekar's routine}, Entropy \textbf{28} (2026), Article 92.
+\href{https://doi.org/10.3390/e28010092}{doi:10.3390/e28010092}.
+
+\bibitem[DZ]{DZ}
+P.~Devlin and T.~Zeng, \emph{Maximum distances in the four-digit
+Kaprekar process}, Integers \textbf{21} (2021), Paper A97.
+\href{https://arxiv.org/abs/2010.11756}{arXiv:2010.11756}.
+
+\bibitem[G1]{G1}
+R.~Galyavin, \emph{Cycles of the four-digit Kaprekar map in even bases}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358739}{doi:10.5281/zenodo.24358739}.
+
+\bibitem[G2]{G2}
+R.~Galyavin, \emph{Arrival times for the four-digit Kaprekar map in even bases}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358744}{doi:10.5281/zenodo.24358744}.
+
+\bibitem[G3]{G3}
+R.~Galyavin, \emph{A common arrival-time law for five-digit Kaprekar dynamics}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358746}{doi:10.5281/zenodo.24358746}.
+
+\bibitem[G4]{G4}
+R.~Galyavin, \emph{Majorization in odd-digit Kaprekar dynamics and the nine-digit arrival law}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358748}{doi:10.5281/zenodo.24358748}.
+
+\bibitem[G5]{G5}
+R.~Galyavin, \emph{Seven-digit Kaprekar dynamics: global law, two clocks, parity}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358752}{doi:10.5281/zenodo.24358752}.
+
+\bibitem[G6]{G6}
+R.~Galyavin, \emph{Linear-time access for eleven-digit Kaprekar dynamics}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358476}{doi:10.5281/zenodo.24358476}.
+
+\bibitem[G7]{G7}
+R.~Galyavin, \emph{Arithmetic selection of arrival times in eleven-digit Kaprekar dynamics}, 2026.
+\href{https://doi.org/10.5281/zenodo.24371697}{doi:10.5281/zenodo.24371697}.
+
+\bibitem[KD2]{KDE}
+A.~Kay and K.~Downes-Ward, \emph{Fixed points and cycles of the Kaprekar
+transformation: 2. Even bases}, 2024.
+\href{https://arxiv.org/abs/2408.12257}{arXiv:2408.12257}.
+
+\bibitem[Th]{Thakur}
+D.~S.~Thakur, \emph{Kaprekar phenomena}, in Topics in Number Theory,
+RMS Lecture Notes Series \textbf{26}, Ramanujan Mathematical Society, 2020,
+61--70. \href{https://www.sas.rochester.edu/mth/sites/dinesh-thakur/kaprekar.pdf}{Author PDF}.
+\end{thebibliography}
+\endgroup
+\end{document}

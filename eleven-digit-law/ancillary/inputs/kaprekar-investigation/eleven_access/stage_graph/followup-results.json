@@ -1,0 +1,112 @@
+{
+  "48001": {
+    "actual_n": 5000,
+    "graph_n": 5000,
+    "actual_bulk": 5000,
+    "graph_bulk": 4999,
+    "actual_no_entry": 0,
+    "actual_censored": 0,
+    "actual_failures": 0,
+    "actual_failure_mechanisms": {},
+    "actual_failure_rows": [],
+    "graph_failures": 1,
+    "graph_failure_stage": {
+      "3": 1
+    },
+    "graph_residual": {},
+    "graph_residual_examples": [],
+    "graph_complete_stage_counts": {
+      "7": 257,
+      "5": 2437,
+      "6": 2305,
+      "8": 1
+    },
+    "graph_rank_preserving_counts": {
+      "2": 257,
+      "0": 2437,
+      "1": 2305,
+      "3": 1
+    },
+    "graph_maximum_bounded_steps": 257,
+    "bulk_mean_actual": 0.08945485302389533,
+    "bulk_mean_graph": 0.08779337538237732,
+    "bulk_quantiles_actual": [
+      0.06124872398491698,
+      0.08970646444865732,
+      0.11766421532884731,
+      0.13670548530238955
+    ],
+    "bulk_quantiles_graph": [
+      0.06012714697059588,
+      0.08759150999678779,
+      0.11565772224381969,
+      0.13631924160335984
+    ],
+    "mean_discrepancy": 0.0016614776415180225,
+    "cdf_discrepancy": 0.04291306261252251,
+    "mixed_moment_discrepancies": [
+      0.0016416057117181557,
+      0.0012954335631780857,
+      0.001046300088558096,
+      0.0007279280862353749,
+      0.0003282474960396779
+    ],
+    "terminal_centered_coordinate_max": 32,
+    "pass": true
+  },
+  "48007": {
+    "actual_n": 5000,
+    "graph_n": 5000,
+    "actual_bulk": 5000,
+    "graph_bulk": 4999,
+    "actual_no_entry": 0,
+    "actual_censored": 0,
+    "actual_failures": 0,
+    "actual_failure_mechanisms": {},
+    "actual_failure_rows": [],
+    "graph_failures": 1,
+    "graph_failure_stage": {
+      "3": 1
+    },
+    "graph_residual": {},
+    "graph_residual_examples": [],
+    "graph_complete_stage_counts": {
+      "7": 257,
+      "5": 2437,
+      "6": 2305,
+      "8": 1
+    },
+    "graph_rank_preserving_counts": {
+      "2": 257,
+      "0": 2437,
+      "1": 2305,
+      "3": 1
+    },
+    "graph_maximum_bounded_steps": 257,
+    "bulk_mean_actual": 0.08949423625721249,
+    "bulk_mean_graph": 0.08779337538237732,
+    "bulk_quantiles_actual": [
+      0.06117857812402358,
+      0.08950778011539984,
+      0.1174828670818839,
+      0.1372716478846835
+    ],
+    "bulk_quantiles_graph": [
+      0.06012714697059588,
+      0.08759150999678779,
+      0.11565772224381969,
+      0.13631924160335984
+    ],
+    "mean_discrepancy": 0.001700860874835177,
+    "cdf_discrepancy": 0.0432995799159832,
+    "mixed_moment_discrepancies": [
+      0.0016766929989763617,
+      0.0013260273378475043,
+      0.0010657071129740719,
+      0.0007455334342419272,
+      0.00034015111719928334
+    ],
+    "terminal_centered_coordinate_max": 27,
+    "pass": true
+  }
+}

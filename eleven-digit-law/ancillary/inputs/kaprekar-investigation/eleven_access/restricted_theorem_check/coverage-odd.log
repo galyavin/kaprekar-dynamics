@@ -1,0 +1,63 @@
+ranks progress 5 2500 151
+ranks progress 3 2500 116
+ranks progress 1 2500 173
+ranks progress 3 5000 99
+ranks progress 1 5000 107
+ranks progress 5 5000 107
+ranks progress 1 7500 179
+ranks progress 3 7500 150
+ranks progress 5 7500 123
+ranks progress 5 10000 129
+ranks progress 1 10000 139
+ranks progress 3 10000 129
+ranks progress 1 12500 106
+ranks progress 5 12500 126
+ranks progress 3 12500 88
+ranks progress 5 15000 113
+ranks progress 3 15000 113
+ranks progress 1 15000 75
+ranks progress 5 17500 42
+ranks progress 3 17500 88
+ranks progress 1 17500 42
+ranks progress 1 20000 54
+ranks progress 5 20000 106
+ranks progress 3 20000 106
+ranks progress 5 22500 23
+ranks progress 1 22500 35
+ranks progress 3 22500 46
+ranks progress 5 25000 37
+ranks progress 3 25000 33
+ranks progress 1 25000 54
+ranks closed 5 [(('arrivals', 5, 4, 3, 2, 1), 103940), (('arrivals', 5, 4, 3, 2, 2, 1), 103590), (('arrivals', 5, 4, 3, 2, 2, 2, 1), 45030), (('exits', 5), 10), (('exits', 5, 4), 195), (('exits', 5, 4, 3), 3855), (('exits', 5, 4, 3, 2), 19537), (('exits', 5, 4, 3, 2, 2), 17453), (('exits', 5, 4, 3, 2, 2, 2), 7656), (('max shorts', 5), 0), (('max shorts', 5, 4), 0), (('max shorts', 5, 4, 3), 45), (('max shorts', 5, 4, 3, 2), 78), (('max shorts', 5, 4, 3, 2, 2), 73), (('max shorts', 5, 4, 3, 2, 2, 2), 50), (('period', 2, 5, False), 178), (('period', 2, 10, False), 9505), (('period', 2, 20, False), 15938), (('period', 3, 5, False), 50), (('period', 3, 10, False), 1000), (('period', 3, 10, True), 15), (('period', 3, 20, False), 585), (('period', 3, 20, True), 15), (('period', 4, 5, False), 5), (('period', 4, 10, False), 40), (('period', 5, 5, False), 1), (('reads', 5), 1), (('reads', 5, 4), 45), (('reads', 5, 4, 3), 1665), (('reads', 5, 4, 3, 2), 11301), (('reads', 5, 4, 3, 2, 2), 10492), (('reads', 5, 4, 3, 2, 2, 2), 3828)]
+line ingress 5 37786 41736
+ranks closed 3 [(('arrivals', 5, 4, 3, 2, 1), 103940), (('arrivals', 5, 4, 3, 2, 2, 1), 103667), (('arrivals', 5, 4, 3, 2, 2, 2, 1), 45093), (('exits', 5), 10), (('exits', 5, 4), 195), (('exits', 5, 4, 3), 3855), (('exits', 5, 4, 3, 2), 19537), (('exits', 5, 4, 3, 2, 2), 17459), (('exits', 5, 4, 3, 2, 2, 2), 7656), (('max shorts', 5), 0), (('max shorts', 5, 4), 0), (('max shorts', 5, 4, 3), 45), (('max shorts', 5, 4, 3, 2), 78), (('max shorts', 5, 4, 3, 2, 2), 73), (('max shorts', 5, 4, 3, 2, 2, 2), 50), (('period', 2, 5, False), 178), (('period', 2, 10, False), 9491), (('period', 2, 20, False), 15952), (('period', 3, 5, False), 50), (('period', 3, 10, False), 1000), (('period', 3, 10, True), 15), (('period', 3, 20, False), 585), (('period', 3, 20, True), 15), (('period', 4, 5, False), 5), (('period', 4, 10, False), 40), (('period', 5, 5, False), 1), (('reads', 5), 1), (('reads', 5, 4), 45), (('reads', 5, 4, 3), 1665), (('reads', 5, 4, 3, 2), 11301), (('reads', 5, 4, 3, 2, 2), 10492), (('reads', 5, 4, 3, 2, 2, 2), 3828)]
+line ingress 3 37804 41746
+ranks closed 1 [(('arrivals', 5, 4, 3, 2, 1), 103940), (('arrivals', 5, 4, 3, 2, 2, 1), 103517), (('arrivals', 5, 4, 3, 2, 2, 2, 1), 44832), (('exits', 5), 10), (('exits', 5, 4), 195), (('exits', 5, 4, 3), 3855), (('exits', 5, 4, 3, 2), 19537), (('exits', 5, 4, 3, 2, 2), 17457), (('exits', 5, 4, 3, 2, 2, 2), 7656), (('max shorts', 5), 0), (('max shorts', 5, 4), 0), (('max shorts', 5, 4, 3), 45), (('max shorts', 5, 4, 3, 2), 78), (('max shorts', 5, 4, 3, 2, 2), 73), (('max shorts', 5, 4, 3, 2, 2, 2), 50), (('period', 2, 5, False), 178), (('period', 2, 10, False), 9540), (('period', 2, 20, False), 15903), (('period', 3, 5, False), 50), (('period', 3, 10, False), 1000), (('period', 3, 10, True), 15), (('period', 3, 20, False), 585), (('period', 3, 20, True), 15), (('period', 4, 5, False), 5), (('period', 4, 10, False), 40), (('period', 5, 5, False), 1), (('reads', 5), 1), (('reads', 5, 4), 45), (('reads', 5, 4, 3), 1665), (('reads', 5, 4, 3, 2), 11301), (('reads', 5, 4, 3, 2, 2), 10492), (('reads', 5, 4, 3, 2, 2, 2), 3828)]
+line ingress 1 37818 41786
+line progress 5 5000 38196 37146
+line progress 1 5000 38225 37193
+line progress 3 5000 38216 37158
+line progress 5 10000 38254 32204
+line progress 1 10000 38278 32246
+line progress 3 10000 38275 32217
+line progress 5 15000 38254 27204
+line progress 1 15000 38352 27320
+line progress 3 15000 38275 27217
+line progress 5 20000 38484 22434
+line progress 1 20000 38484 22452
+line progress 3 20000 38489 22431
+line progress 5 25000 38828 17778
+line progress 3 25000 38848 17790
+line progress 1 25000 38841 17809
+line progress 5 30000 38845 12795
+line progress 3 30000 38865 12807
+line progress 1 30000 38856 12824
+line progress 1 35000 38997 7965
+line progress 3 35000 38994 7936
+line progress 5 35000 38977 7927
+line progress 3 40000 38994 2936
+line progress 5 40000 38977 2927
+line progress 1 40000 38997 2965
+line closed 3 38994 210756 outer remainder 0 minimum 5/48 Counter({'reads': 42936, ('period', 20): 33373, ('period', 10): 6220, ('period', 30): 2530, ('period', 50): 813, 'shorts': 171})
+line closed 5 38977 210528 outer remainder 0 minimum 5/48 Counter({'reads': 42927, ('period', 20): 33497, ('period', 10): 7329, ('period', 40): 1966, 'shorts': 169, ('period', 50): 135})
+line closed 1 38997 210713 outer remainder 0 minimum 5/48 Counter({'reads': 42965, ('period', 20): 32554, ('period', 10): 8049, ('period', 50): 2362, 'shorts': 172})

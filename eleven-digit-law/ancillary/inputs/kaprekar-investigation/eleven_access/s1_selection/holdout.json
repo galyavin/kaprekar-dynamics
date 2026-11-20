@@ -1,0 +1,1825 @@
+{
+  "rows": 36000,
+  "model_subpanel_rows": 12000,
+  "hashes": {
+    "holdout-000000.txt": "00690cc48a87899b5c69913e162fbe675cce15945e27ebdcad0155246e34b057",
+    "holdout-004500.txt": "07de12b0cb7316f58beb90d166d618c0df2c757430c92d5ad53e07f44bed8575",
+    "holdout-009000.txt": "9b7b7a4f0003b6fe6c6f47b14fffb80bf5464233c44cb31cfac37f04bc1cb4a3",
+    "holdout-013500.txt": "0fd1b16d981b2bab639807f121b057b91f2855253d395128499e62276e6f7597",
+    "holdout-018000.txt": "555b952ad131645e6f87377750a0f66c24daf4abb0c89a1ff6d9dacb5271cfcb",
+    "holdout-022500.txt": "1746e2fc21827eda9cde416fe4a2a662c3bc3dcdbd1b4bc4594f6b31c089ebbf",
+    "holdout-027000.txt": "729fb6b46b85573339e0fb80b87b0d1cc1e0ff246050a43c22de7c2f21c583c1",
+    "holdout-031500.txt": "c9b0db4f312fca27eeaa3a28f6d527c50bdc75e930a3182142e0ed123290ae52"
+  },
+  "leading_entry_by_cap": {
+    "count": 36000,
+    "denominator": 36000,
+    "Wilson95": [
+      0.9998933041957455,
+      0.9999999999999999
+    ]
+  },
+  "arm_reports": {
+    "3": {
+      "flags": {
+        "leading_cap": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "uncaptured": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "strict_never": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "five_never": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "strict_late": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "five_late": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "strict_interlevel": {
+          "count": 5,
+          "denominator": 36000,
+          "Wilson95": [
+            5.932644439907164e-05,
+            0.0003251174999096282
+          ]
+        },
+        "strict_zero": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "five_interlevel": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "five_zero": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "other_model_stop": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        }
+      },
+      "overlaps": {
+        "five_never,strict_late": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "none": {
+          "count": 35993,
+          "denominator": 36000,
+          "Wilson95": [
+            0.9995986505436946,
+            0.9999058062559748
+          ]
+        },
+        "strict_interlevel": {
+          "count": 3,
+          "denominator": 36000,
+          "Wilson95": [
+            2.8341249104639875e-05,
+            0.00024500343918231046
+          ]
+        },
+        "strict_interlevel,five_interlevel": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "strict_late,five_late": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        }
+      },
+      "accelerated": 32261,
+      "skipped_updates": 9259352080,
+      "fallback": 3739,
+      "model_status": {
+        "0": 12000,
+        "6": 24000
+      }
+    },
+    "5": {
+      "flags": {
+        "leading_cap": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "uncaptured": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "strict_never": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "five_never": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "strict_late": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "five_late": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "strict_interlevel": {
+          "count": 3,
+          "denominator": 36000,
+          "Wilson95": [
+            2.8341249104639875e-05,
+            0.00024500343918231046
+          ]
+        },
+        "strict_zero": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "five_interlevel": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "five_zero": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "other_model_stop": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        }
+      },
+      "overlaps": {
+        "none": {
+          "count": 35995,
+          "denominator": 36000,
+          "Wilson95": [
+            0.9996748825000903,
+            0.9999406735556009
+          ]
+        },
+        "strict_interlevel": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "strict_interlevel,five_interlevel": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "strict_late,five_late": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "strict_never,five_late": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        }
+      },
+      "accelerated": 34544,
+      "skipped_updates": 9864072195,
+      "fallback": 1456,
+      "model_status": {
+        "0": 12000,
+        "6": 24000
+      }
+    },
+    "9": {
+      "flags": {
+        "leading_cap": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "uncaptured": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "strict_never": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "five_never": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "strict_late": {
+          "count": 5,
+          "denominator": 36000,
+          "Wilson95": [
+            5.932644439907164e-05,
+            0.0003251174999096282
+          ]
+        },
+        "five_late": {
+          "count": 4,
+          "denominator": 36000,
+          "Wilson95": [
+            4.320976275021939e-05,
+            0.0002856845535476057
+          ]
+        },
+        "strict_interlevel": {
+          "count": 3,
+          "denominator": 36000,
+          "Wilson95": [
+            2.8341249104639875e-05,
+            0.00024500343918231046
+          ]
+        },
+        "strict_zero": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "five_interlevel": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "five_zero": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "other_model_stop": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        }
+      },
+      "overlaps": {
+        "five_never": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "none": {
+          "count": 35991,
+          "denominator": 36000,
+          "Wilson95": [
+            0.999524892753912,
+            0.9998684647897358
+          ]
+        },
+        "strict_interlevel": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "strict_interlevel,five_interlevel": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "strict_late": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "strict_late,five_late": {
+          "count": 4,
+          "denominator": 36000,
+          "Wilson95": [
+            4.320976275021939e-05,
+            0.0002856845535476057
+          ]
+        }
+      },
+      "accelerated": 32227,
+      "skipped_updates": 9263892305,
+      "fallback": 3773,
+      "model_status": {
+        "6": 36000
+      }
+    },
+    "11": {
+      "flags": {
+        "leading_cap": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "uncaptured": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "strict_never": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "five_never": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "strict_late": {
+          "count": 4,
+          "denominator": 36000,
+          "Wilson95": [
+            4.320976275021939e-05,
+            0.0002856845535476057
+          ]
+        },
+        "five_late": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "strict_interlevel": {
+          "count": 3,
+          "denominator": 36000,
+          "Wilson95": [
+            2.8341249104639875e-05,
+            0.00024500343918231046
+          ]
+        },
+        "strict_zero": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "five_interlevel": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "five_zero": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "other_model_stop": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        }
+      },
+      "overlaps": {
+        "five_never,strict_late": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "none": {
+          "count": 35993,
+          "denominator": 36000,
+          "Wilson95": [
+            0.9995986505436946,
+            0.9999058062559748
+          ]
+        },
+        "strict_interlevel": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "strict_interlevel,five_interlevel": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "strict_late": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "strict_late,five_late": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        }
+      },
+      "accelerated": 34528,
+      "skipped_updates": 9869203690,
+      "fallback": 1472,
+      "model_status": {
+        "6": 36000
+      }
+    },
+    "15": {
+      "flags": {
+        "leading_cap": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "uncaptured": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "strict_never": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "five_never": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "strict_late": {
+          "count": 3,
+          "denominator": 36000,
+          "Wilson95": [
+            2.8341249104639875e-05,
+            0.00024500343918231046
+          ]
+        },
+        "five_late": {
+          "count": 3,
+          "denominator": 36000,
+          "Wilson95": [
+            2.8341249104639875e-05,
+            0.00024500343918231046
+          ]
+        },
+        "strict_interlevel": {
+          "count": 3,
+          "denominator": 36000,
+          "Wilson95": [
+            2.8341249104639875e-05,
+            0.00024500343918231046
+          ]
+        },
+        "strict_zero": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "five_interlevel": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "five_zero": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "other_model_stop": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        }
+      },
+      "overlaps": {
+        "none": {
+          "count": 35994,
+          "denominator": 36000,
+          "Wilson95": [
+            0.9996363934233828,
+            0.9999236130042976
+          ]
+        },
+        "strict_interlevel": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "strict_interlevel,five_interlevel": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "strict_late,five_late": {
+          "count": 3,
+          "denominator": 36000,
+          "Wilson95": [
+            2.8341249104639875e-05,
+            0.00024500343918231046
+          ]
+        }
+      },
+      "accelerated": 32323,
+      "skipped_updates": 9287419175,
+      "fallback": 3677,
+      "model_status": {
+        "0": 12000,
+        "6": 24000
+      }
+    },
+    "17": {
+      "flags": {
+        "leading_cap": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "uncaptured": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "strict_never": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "five_never": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "strict_late": {
+          "count": 4,
+          "denominator": 36000,
+          "Wilson95": [
+            4.320976275021939e-05,
+            0.0002856845535476057
+          ]
+        },
+        "five_late": {
+          "count": 4,
+          "denominator": 36000,
+          "Wilson95": [
+            4.320976275021939e-05,
+            0.0002856845535476057
+          ]
+        },
+        "strict_interlevel": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "strict_zero": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "five_interlevel": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "five_zero": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "other_model_stop": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        }
+      },
+      "overlaps": {
+        "none": {
+          "count": 35994,
+          "denominator": 36000,
+          "Wilson95": [
+            0.9996363934233828,
+            0.9999236130042976
+          ]
+        },
+        "strict_interlevel,five_interlevel": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "strict_late,five_late": {
+          "count": 4,
+          "denominator": 36000,
+          "Wilson95": [
+            4.320976275021939e-05,
+            0.0002856845535476057
+          ]
+        }
+      },
+      "accelerated": 34557,
+      "skipped_updates": 9868908330,
+      "fallback": 1443,
+      "model_status": {
+        "0": 12000,
+        "6": 24000
+      }
+    },
+    "0": {
+      "flags": {
+        "leading_cap": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "uncaptured": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "strict_never": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "five_never": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "strict_late": {
+          "count": 5,
+          "denominator": 36000,
+          "Wilson95": [
+            5.932644439907164e-05,
+            0.0003251174999096282
+          ]
+        },
+        "five_late": {
+          "count": 5,
+          "denominator": 36000,
+          "Wilson95": [
+            5.932644439907164e-05,
+            0.0003251174999096282
+          ]
+        },
+        "strict_interlevel": {
+          "count": 4,
+          "denominator": 36000,
+          "Wilson95": [
+            4.320976275021939e-05,
+            0.0002856845535476057
+          ]
+        },
+        "strict_zero": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "five_interlevel": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "five_zero": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "other_model_stop": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        }
+      },
+      "overlaps": {
+        "none": {
+          "count": 35991,
+          "denominator": 36000,
+          "Wilson95": [
+            0.999524892753912,
+            0.9998684647897358
+          ]
+        },
+        "strict_interlevel": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "strict_interlevel,five_interlevel": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "strict_late,five_late": {
+          "count": 5,
+          "denominator": 36000,
+          "Wilson95": [
+            5.932644439907164e-05,
+            0.0003251174999096282
+          ]
+        }
+      },
+      "accelerated": 35041,
+      "skipped_updates": 10141770570,
+      "fallback": 959,
+      "model_status": {
+        "0": 12000,
+        "6": 24000
+      }
+    },
+    "1": {
+      "flags": {
+        "leading_cap": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "uncaptured": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "strict_never": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "five_never": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "strict_late": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "five_late": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "strict_interlevel": {
+          "count": 4,
+          "denominator": 36000,
+          "Wilson95": [
+            4.320976275021939e-05,
+            0.0002856845535476057
+          ]
+        },
+        "strict_zero": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "five_interlevel": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "five_zero": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        },
+        "other_model_stop": {
+          "count": 0,
+          "denominator": 36000,
+          "Wilson95": [
+            0,
+            0.00010669580425432607
+          ]
+        }
+      },
+      "overlaps": {
+        "none": {
+          "count": 35995,
+          "denominator": 36000,
+          "Wilson95": [
+            0.9996748825000903,
+            0.9999406735556009
+          ]
+        },
+        "strict_interlevel": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "strict_interlevel,five_interlevel": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "strict_late,five_late": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        }
+      },
+      "accelerated": 25131,
+      "skipped_updates": 7194801625,
+      "fallback": 10869,
+      "model_status": {
+        "0": 12000,
+        "6": 24000
+      }
+    }
+  },
+  "pairs": {
+    "3-5": {
+      "leading_score": {
+        "estimate": 0.0002549522184905617,
+        "halftime": 6.118350681554609e-05,
+        "CI": [
+          0.0001937687116750156,
+          0.0003161357253061078
+        ]
+      },
+      "strict_score": {
+        "estimate": 0.00025647974964150555,
+        "halftime": 4.470514747535039e-05,
+        "CI": [
+          0.00021177460216615515,
+          0.0003011848971168559
+        ]
+      },
+      "five_score": {
+        "estimate": 0.0002522544581766012,
+        "halftime": 4.489127504456804e-05,
+        "CI": [
+          0.00020736318313203315,
+          0.00029714573322116923
+        ]
+      },
+      "value": {
+        "estimate": 0.0002549522184905617,
+        "halftime": 4.4577170035519305e-05,
+        "CI": [
+          0.0002103750484550424,
+          0.00029952938852608103
+        ]
+      },
+      "cohort_overlaps": {
+        "(True, (False, False, False, 0, 0, 0), (False, False, False, 0, 0, 0))": {
+          "count": 11997,
+          "denominator": 36000,
+          "Wilson95": [
+            0.32839875355587556,
+            0.33813682949484314
+          ]
+        },
+        "(True, (False, False, False, 0, 0, 6), (False, False, False, 0, 0, 6))": {
+          "count": 23996,
+          "denominator": 36000,
+          "Wilson95": [
+            0.6616680368464741,
+            0.6714075327067309
+          ]
+        },
+        "(True, (False, False, False, 0, 0, 6), (False, True, False, 0, 0, 6))": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "(True, (False, False, False, 1, 0, 0), (False, False, False, 0, 0, 0))": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "(True, (False, False, False, 1, 0, 0), (False, False, False, 1, 0, 0))": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "(True, (False, False, False, 1, 0, 6), (False, False, False, 0, 0, 6))": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "(True, (False, False, False, 1, 1, 6), (False, False, False, 1, 1, 6))": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "(True, (False, False, True, 0, 0, 0), (False, False, False, 0, 0, 0))": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        }
+      },
+      "model_subpanel": {
+        "estimate": 0.0002301303097214935,
+        "halftime": 7.529640873426519e-05,
+        "CI": [
+          0.00015483390098722832,
+          0.00030542671845575867
+        ]
+      },
+      "physical_minus_model_subpanel": {
+        "estimate": 4.8403082318515533e-05,
+        "halftime": 0.00010755713425214419,
+        "CI": [
+          -5.915405193362866e-05,
+          0.00015596021657065973
+        ]
+      }
+    },
+    "15-17": {
+      "leading_score": {
+        "estimate": 0.0002537806832620809,
+        "halftime": 6.087163341801474e-05,
+        "CI": [
+          0.00019290904984406616,
+          0.0003146523166800957
+        ]
+      },
+      "strict_score": {
+        "estimate": 0.0002537806832620809,
+        "halftime": 4.43499448535234e-05,
+        "CI": [
+          0.00020943073840855753,
+          0.0002981306281156043
+        ]
+      },
+      "five_score": {
+        "estimate": 0.0002537806832620809,
+        "halftime": 4.43499448535234e-05,
+        "CI": [
+          0.00020943073840855753,
+          0.0002981306281156043
+        ]
+      },
+      "value": {
+        "estimate": 0.0002537806832620809,
+        "halftime": 4.43499448535234e-05,
+        "CI": [
+          0.00020943073840855753,
+          0.0002981306281156043
+        ]
+      },
+      "cohort_overlaps": {
+        "(True, (False, False, False, 0, 0, 0), (False, False, False, 0, 0, 0))": {
+          "count": 11999,
+          "denominator": 36000,
+          "Wilson95": [
+            0.32845410024289634,
+            0.33819258206384417
+          ]
+        },
+        "(True, (False, False, False, 0, 0, 6), (False, False, False, 0, 0, 6))": {
+          "count": 23998,
+          "denominator": 36000,
+          "Wilson95": [
+            0.6617237892252977,
+            0.6714628795839291
+          ]
+        },
+        "(True, (False, False, False, 1, 0, 0), (False, False, False, 0, 0, 0))": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "(True, (False, False, False, 1, 1, 6), (False, False, False, 1, 1, 6))": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        }
+      },
+      "model_subpanel": {
+        "estimate": 0.0002301303097214935,
+        "halftime": 7.529640873426519e-05,
+        "CI": [
+          0.00015483390098722832,
+          0.00030542671845575867
+        ]
+      },
+      "physical_minus_model_subpanel": {
+        "estimate": 3.0051387643614813e-06,
+        "halftime": 0.00010983292779703404,
+        "CI": [
+          -0.00010682778903267256,
+          0.00011283806656139552
+        ]
+      }
+    },
+    "3-9": {
+      "leading_score": {
+        "estimate": 1.7597721484921558e-05,
+        "halftime": 6.160725492177266e-05,
+        "CI": [
+          -4.4009533436851106e-05,
+          7.920497640669422e-05
+        ]
+      },
+      "strict_score": {
+        "estimate": 1.7597721484921558e-05,
+        "halftime": 4.488590505851233e-05,
+        "CI": [
+          -2.728818357359077e-05,
+          6.248362654343389e-05
+        ]
+      },
+      "five_score": {
+        "estimate": 1.528817075410749e-05,
+        "halftime": 4.522961479972873e-05,
+        "CI": [
+          -2.994144404562124e-05,
+          6.051778555383622e-05
+        ]
+      },
+      "value": {
+        "estimate": 1.7597721484921558e-05,
+        "halftime": 4.488590505851233e-05,
+        "CI": [
+          -2.728818357359077e-05,
+          6.248362654343389e-05
+        ]
+      },
+      "cohort_overlaps": {
+        "(True, (False, False, False, 0, 0, 0), (False, False, False, 0, 0, 6))": {
+          "count": 11997,
+          "denominator": 36000,
+          "Wilson95": [
+            0.32839875355587556,
+            0.33813682949484314
+          ]
+        },
+        "(True, (False, False, False, 0, 0, 6), (False, False, False, 0, 0, 6))": {
+          "count": 23996,
+          "denominator": 36000,
+          "Wilson95": [
+            0.6616680368464741,
+            0.6714075327067309
+          ]
+        },
+        "(True, (False, False, False, 0, 0, 6), (False, False, True, 0, 0, 6))": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "(True, (False, False, False, 1, 0, 0), (False, False, False, 0, 0, 6))": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "(True, (False, False, False, 1, 0, 0), (False, False, False, 1, 0, 6))": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "(True, (False, False, False, 1, 0, 6), (False, False, False, 0, 0, 6))": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "(True, (False, False, False, 1, 1, 6), (False, False, False, 1, 1, 6))": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "(True, (False, False, True, 0, 0, 0), (False, False, False, 0, 0, 6))": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        }
+      }
+    },
+    "5-11": {
+      "leading_score": {
+        "estimate": -3.50132947075088e-05,
+        "halftime": 6.0237910927989655e-05,
+        "CI": [
+          -9.525120563549846e-05,
+          2.5224616220480853e-05
+        ]
+      },
+      "strict_score": {
+        "estimate": -3.654082585845264e-05,
+        "halftime": 4.3989193742968814e-05,
+        "CI": [
+          -8.053001960142145e-05,
+          7.448367884516172e-06
+        ]
+      },
+      "five_score": {
+        "estimate": -3.2882524342428554e-05,
+        "halftime": 4.408487741753849e-05,
+        "CI": [
+          -7.696740175996703e-05,
+          1.1202353075109933e-05
+        ]
+      },
+      "value": {
+        "estimate": -3.50132947075088e-05,
+        "halftime": 4.388822638291748e-05,
+        "CI": [
+          -7.890152109042628e-05,
+          8.87493167540868e-06
+        ]
+      },
+      "cohort_overlaps": {
+        "(True, (False, False, False, 0, 0, 0), (False, False, False, 0, 0, 6))": {
+          "count": 11999,
+          "denominator": 36000,
+          "Wilson95": [
+            0.32845410024289634,
+            0.33819258206384417
+          ]
+        },
+        "(True, (False, False, False, 0, 0, 6), (False, False, False, 0, 0, 6))": {
+          "count": 23995,
+          "denominator": 36000,
+          "Wilson95": [
+            0.6616401606855833,
+            0.671379859239611
+          ]
+        },
+        "(True, (False, False, False, 0, 0, 6), (False, False, False, 1, 0, 6))": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "(True, (False, False, False, 0, 0, 6), (False, False, True, 0, 0, 6))": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "(True, (False, False, False, 1, 0, 0), (False, False, False, 0, 0, 6))": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "(True, (False, False, False, 1, 1, 6), (False, False, False, 1, 1, 6))": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "(True, (False, True, False, 0, 0, 6), (False, False, False, 0, 0, 6))": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        }
+      }
+    },
+    "3-15": {
+      "leading_score": {
+        "estimate": -2.7755436015464152e-05,
+        "halftime": 6.163514565962447e-05,
+        "CI": [
+          -8.939058167508863e-05,
+          3.387970964416032e-05
+        ]
+      },
+      "strict_score": {
+        "estimate": -2.7755436015464152e-05,
+        "halftime": 4.4906225733614926e-05,
+        "CI": [
+          -7.266166174907908e-05,
+          1.7150789718150774e-05
+        ]
+      },
+      "five_score": {
+        "estimate": -3.045319632942467e-05,
+        "halftime": 4.5215273204793403e-05,
+        "CI": [
+          -7.566846953421807e-05,
+          1.4762076875368734e-05
+        ]
+      },
+      "value": {
+        "estimate": -2.7755436015464152e-05,
+        "halftime": 4.4906225733614926e-05,
+        "CI": [
+          -7.266166174907908e-05,
+          1.7150789718150774e-05
+        ]
+      },
+      "cohort_overlaps": {
+        "(True, (False, False, False, 0, 0, 0), (False, False, False, 0, 0, 0))": {
+          "count": 11997,
+          "denominator": 36000,
+          "Wilson95": [
+            0.32839875355587556,
+            0.33813682949484314
+          ]
+        },
+        "(True, (False, False, False, 0, 0, 6), (False, False, False, 0, 0, 6))": {
+          "count": 23997,
+          "denominator": 36000,
+          "Wilson95": [
+            0.6616959130263785,
+            0.6714352061548373
+          ]
+        },
+        "(True, (False, False, False, 1, 0, 0), (False, False, False, 0, 0, 0))": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "(True, (False, False, False, 1, 0, 0), (False, False, False, 1, 0, 0))": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "(True, (False, False, False, 1, 0, 6), (False, False, False, 0, 0, 6))": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "(True, (False, False, False, 1, 1, 6), (False, False, False, 1, 1, 6))": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "(True, (False, False, True, 0, 0, 0), (False, False, False, 0, 0, 0))": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        }
+      },
+      "model_subpanel": {
+        "estimate": 0.0,
+        "halftime": 0.0,
+        "CI": [
+          0.0,
+          0.0
+        ]
+      },
+      "physical_minus_model_subpanel": {
+        "estimate": -4.4018690853922515e-05,
+        "halftime": 7.857677706485266e-05,
+        "CI": [
+          -0.00012259546791877518,
+          3.455808621093015e-05
+        ]
+      }
+    },
+    "5-17": {
+      "leading_score": {
+        "estimate": -2.8926971243944943e-05,
+        "halftime": 6.0840355410615076e-05,
+        "CI": [
+          -8.976732665456002e-05,
+          3.191338416667013e-05
+        ]
+      },
+      "strict_score": {
+        "estimate": -3.0454502394888783e-05,
+        "halftime": 4.4427161189268937e-05,
+        "CI": [
+          -7.488166358415772e-05,
+          1.3972658794380154e-05
+        ]
+      },
+      "five_score": {
+        "estimate": -2.8926971243944943e-05,
+        "halftime": 4.4327156276555584e-05,
+        "CI": [
+          -7.325412752050053e-05,
+          1.540018503261064e-05
+        ]
+      },
+      "value": {
+        "estimate": -2.8926971243944943e-05,
+        "halftime": 4.4327156276555584e-05,
+        "CI": [
+          -7.325412752050053e-05,
+          1.540018503261064e-05
+        ]
+      },
+      "cohort_overlaps": {
+        "(True, (False, False, False, 0, 0, 0), (False, False, False, 0, 0, 0))": {
+          "count": 11999,
+          "denominator": 36000,
+          "Wilson95": [
+            0.32845410024289634,
+            0.33819258206384417
+          ]
+        },
+        "(True, (False, False, False, 0, 0, 6), (False, False, False, 0, 0, 6))": {
+          "count": 23997,
+          "denominator": 36000,
+          "Wilson95": [
+            0.6616959130263785,
+            0.6714352061548373
+          ]
+        },
+        "(True, (False, False, False, 1, 0, 0), (False, False, False, 0, 0, 0))": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "(True, (False, False, False, 1, 1, 6), (False, False, False, 1, 1, 6))": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        },
+        "(True, (False, True, False, 0, 0, 6), (False, False, False, 0, 0, 6))": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        }
+      },
+      "model_subpanel": {
+        "estimate": 0.0,
+        "halftime": 0.0,
+        "CI": [
+          0.0,
+          0.0
+        ]
+      },
+      "physical_minus_model_subpanel": {
+        "estimate": -8.941663440807657e-05,
+        "halftime": 7.755304865057778e-05,
+        "CI": [
+          -0.00016696968305865434,
+          -1.1863585757498785e-05
+        ]
+      }
+    },
+    "0-1": {
+      "leading_score": {
+        "estimate": 0.001180545813598527,
+        "halftime": 4.7526282951812376e-05,
+        "CI": [
+          0.0011330195306467146,
+          0.0012280720965503393
+        ]
+      },
+      "strict_score": {
+        "estimate": 0.001180545813598527,
+        "halftime": 3.4626769640488016e-05,
+        "CI": [
+          0.0011459190439580388,
+          0.001215172583239015
+        ]
+      },
+      "five_score": {
+        "estimate": 0.001180545813598527,
+        "halftime": 3.4626769640488016e-05,
+        "CI": [
+          0.0011459190439580388,
+          0.001215172583239015
+        ]
+      },
+      "value": {
+        "estimate": 0.001180545813598527,
+        "halftime": 3.4626769640488016e-05,
+        "CI": [
+          0.0011459190439580388,
+          0.001215172583239015
+        ]
+      },
+      "cohort_overlaps": {
+        "(True, (False, False, False, 0, 0, 0), (False, False, False, 0, 0, 0))": {
+          "count": 11999,
+          "denominator": 36000,
+          "Wilson95": [
+            0.32845410024289634,
+            0.33819258206384417
+          ]
+        },
+        "(True, (False, False, False, 0, 0, 6), (False, False, False, 0, 0, 6))": {
+          "count": 23997,
+          "denominator": 36000,
+          "Wilson95": [
+            0.6616959130263785,
+            0.6714352061548373
+          ]
+        },
+        "(True, (False, False, False, 1, 0, 0), (False, False, False, 1, 0, 0))": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "(True, (False, False, False, 1, 0, 6), (False, False, False, 1, 0, 6))": {
+          "count": 1,
+          "denominator": 36000,
+          "Wilson95": [
+            4.903476688295286e-06,
+            0.00015734195557690552
+          ]
+        },
+        "(True, (False, False, False, 1, 1, 6), (False, False, False, 1, 1, 6))": {
+          "count": 2,
+          "denominator": 36000,
+          "Wilson95": [
+            1.5235469381740885e-05,
+            0.0002025595908943347
+          ]
+        }
+      },
+      "model_subpanel": {
+        "estimate": 0.0012342649025268437,
+        "halftime": 6.185339777917932e-05,
+        "CI": [
+          0.0011724115047476644,
+          0.001296118300306023
+        ]
+      },
+      "physical_minus_model_subpanel": {
+        "estimate": -6.493181699429584e-06,
+        "halftime": 8.153102064809511e-05,
+        "CI": [
+          -8.802420234752469e-05,
+          7.503783894866552e-05
+        ]
+      }
+    }
+  },
+  "pooled_3_minus_5": {
+    "estimate": 0.0002543664508763213,
+    "halftime": 3.123667574330743e-05,
+    "CI": [
+      0.0002231297751330139,
+      0.00028560312661962873
+    ]
+  },
+  "forecast": {
+    "separated": true,
+    "equality": true,
+    "parity": true
+  }
+}

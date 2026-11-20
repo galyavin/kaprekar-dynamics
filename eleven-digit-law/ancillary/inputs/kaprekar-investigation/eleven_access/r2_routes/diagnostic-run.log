@@ -1,0 +1,15 @@
+PROTOCOL.md: OK
+diagnostic.cpp: OK
+check_physical.cpp: OK
+summarize.py: OK
+run.py: OK
+../stage_graph/graph.cpp: OK
+168 complete independent schoolbook clocks and 487520 individual difference transitions agreed
+finished vectors 52500 to 59999
+finished vectors 37500 to 44999
+finished vectors 0 to 7499
+finished vectors 30000 to 37499
+finished vectors 22500 to 29999
+finished vectors 45000 to 52499
+finished vectors 7500 to 14999
+finished vectors 15000 to 22499
