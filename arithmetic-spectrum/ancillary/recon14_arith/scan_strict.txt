@@ -1,0 +1,4 @@
+strict 17
+strict 41
+p < 1000000000, p = 1 mod 8 primes 12711220, folded index two 4754058
+largest first obstruction 449, first prime attaining it 700411841

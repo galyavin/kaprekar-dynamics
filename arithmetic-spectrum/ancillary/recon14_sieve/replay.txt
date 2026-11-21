@@ -1,0 +1,30 @@
+t=3: 131 primes, 153439 literal/quotient rows matched
+  Classes (strict, scarred, zero, unknown)
+  initial (15, 48, 63, 5)
+  final   (15, 53, 63, 0)
+  p=   7..1599: 24/30 nonzero
+  p=1601..4999: 22/41 nonzero
+  p=5001..9999: 22/60 nonzero
+  Input | model | exact-index primes | divisible-index primes
+      7 | 6561/6561 | 131/131 | 200/200
+     11 | 6561/6561 | 131/131 | 200/200
+     19 | 6561/6561 | 130/130 | 199/199
+     23 | 6523/6561 | 129/129 | 198/198
+    101 | 817/1024 | 109/127 | 158/195
+    301 | 572/1024 | 75/120 | 107/184
+   1001 | 404/1024 | 41/94 | 60/154
+t=4: 86 primes, 98008 literal/quotient rows matched
+  Classes (strict, scarred, zero, unknown)
+  initial (46, 24, 16, 0)
+  final   (46, 24, 16, 0)
+  p=   7..1599: 18/19 nonzero
+  p=1601..4999: 24/31 nonzero
+  p=5001..9999: 28/36 nonzero
+  Input | model | exact-index primes | divisible-index primes
+      7 | 65536/65536 | 86/86 | 143/143
+     11 | 65536/65536 | 86/86 | 143/143
+     19 | 65536/65536 | 86/86 | 143/143
+     23 | 65536/65536 | 86/86 | 143/143
+    101 | 981/1024 | 82/83 | 138/140
+    301 | 865/1024 | 69/78 | 116/132
+   1001 | 684/1024 | 47/62 | 86/109

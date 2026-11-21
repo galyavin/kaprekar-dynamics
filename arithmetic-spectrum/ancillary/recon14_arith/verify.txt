@@ -1,0 +1,8 @@
+walk: 7 <= p < 6000, 780 primes, 447 full-orbit, 542905 secondary rows
+index-two conversion: all primes 7 <= p < 20000
+quadratic: p < 20000, 218 primes, 514764 secondary rows, 218 class numbers, 68 weak, strict [17, 41]
+sieve: input 15, nonpositive 29, nonnegative 1, all zero 1, one-sided 29/32
+CRT: 32 sign patterns, each with 180 reduced classes modulo 120120
+sieve: input 31, nonpositive 798, nonnegative 1, all zero 1, one-sided 798/1024
+sieve: input 47, nonpositive 12055, nonnegative 1, all zero 1, one-sided 12055/16384
+Artin constant lower bound: 1163866139/3250630656 > 1/3

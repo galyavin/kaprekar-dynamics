@@ -1,0 +1,44 @@
+Lock acquired 2026-11-21T04:57:13+00:00
+Generate and replay: 20.05 seconds (cap: 2700)
+columns: strict scarred full-orbit zero unknown | scarred-tie scarred-relation
+verified 5061 panel rows; 797 overlap rows
+index two: 123 class numbers; 231515 secondary rows
+low-orbit composites: 581 checked; strict lengths [9, 15, 21]
+census primes 226 134 701 160 5 131 3
+census composites 2281 1490 0 0 0 1415 75
+census 7–1599 377 256 146 17 1 253 3
+census 1601–4999 849 559 235 56 1 538 21
+census 5001–9999 1281 809 320 87 3 755 54
+census P1 0 0 701 0 0 0 0
+census P2 2 45 0 68 0 45 0
+census P3-5 77 79 0 92 5 76 3
+census P6+ 147 10 0 0 0 10 0
+census C2-3 3 570 0 0 0 570 0
+census C4-12 659 883 0 0 0 809 74
+census C13+/2 400 10 0 0 0 10 0
+census C13+/3+ 1219 27 0 0 0 26 1
+10001 P1 0 0 4 0 0 0 0
+10001 P2 0 0 0 4 0 0 0
+10001 P3-5 1 0 0 3 0 0 0
+10001 P6+ 3 1 0 0 0 1 0
+10001 C2-3 0 4 0 0 0 4 0
+10001 C4-12 3 1 0 0 0 0 1
+10001 C13+/2 4 0 0 0 0 0 0
+10001 C13+/3+ 4 0 0 0 0 0 0
+90001 P1 0 0 4 0 0 0 0
+90001 P2 0 2 0 2 0 2 0
+90001 P3-5 0 1 0 3 0 1 0
+90001 P6+ 4 0 0 0 0 0 0
+90001 C2-3 0 4 0 0 0 4 0
+90001 C4-12 1 3 0 0 0 3 0
+90001 C13+/2 3 1 0 0 0 1 0
+90001 C13+/3+ 4 0 0 0 0 0 0
+census exact P t=2 2 45 0 68 0 45 0
+census exact C t=2 1 16 0 0 0 16 0
+census exact P t=3 15 48 0 63 5 48 0
+census exact C t=3 2 554 0 0 0 554 0
+census exact P t=4 46 24 0 16 0 22 2
+census exact C t=4 18 167 0 0 0 167 0
+census exact P t=5 16 7 0 13 0 6 1
+census exact C t=5 42 286 0 0 0 269 17
+unknown [(811, 'no exact classification within candidate limits'), (3343, 'no exact classification within candidate limits'), (6967, 'no exact classification within candidate limits'), (8167, 'no exact classification within candidate limits'), (9931, 'no exact classification within candidate limits')]

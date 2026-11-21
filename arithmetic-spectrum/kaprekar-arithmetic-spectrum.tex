@@ -1,0 +1,717 @@
+\documentclass[11pt,reqno]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.08in]{geometry}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={The arithmetic spectrum of Kaprekar lengths},pdfauthor={Rustem Galyavin}}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\F}{\mathbb F}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\EE}{\mathbb E}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\Li}{\operatorname{Li}}
+\newcommand{\file}[1]{\nolinkurl{#1}}
+
+\title[The arithmetic spectrum of Kaprekar lengths]{The arithmetic spectrum of Kaprekar lengths}
+\author{Rustem Galyavin}
+\thanks{\href{mailto:rustem@galyavin.com}{rustem@galyavin.com}. ORCID \href{https://orcid.org/0009-0006-6875-9170}{0009-0006-6875-9170}.}
+\date{21 November 2026}
+\subjclass[2020]{11A63,11L40,11R45,37P99}
+\keywords{Kaprekar map, folded doubling, character sums, Artin's conjecture}
+
+\begin{document}
+\raggedbottom
+\begin{abstract}
+At fixed odd length \(n\ge7\), the author's earlier work \cite{G10} reduced the existence of macroscopic Kaprekar cycles lying entirely in the chamber \(C\) (positive pairing, no secondary breach) to the nonvanishing of a polyhedral cone \(W_n\) of gap profiles invariant under folded doubling. We compute this cone from the arithmetic of \(n\). At a prime \(p\), \(W_p\) is linearly isomorphic to the dual cone of an alternating walk on the cosets of \(\langle-1,2\rangle\) in \(\F_p^\times\), so \(W_p=\{0\}\) exactly when the walk surrounds the origin. When \(\langle-1,2\rangle\) has index two, the walk is an affine image of the alternating Legendre partial sum, whose final tested value is \(1-h(-4p)\). For each fixed index, the primes \(p\le x\) of that index with \(W_p\ne\{0\}\) number \(o(\pi(x))\) unconditionally, where \(\pi(x)\) counts all primes; the proof is a Chebotarev transfer from a random completely multiplicative function with values in a cyclic group. Assuming the Riemann hypothesis for the relevant Kummer fields, these primes have relative density zero within each index, and \(W_p=\{0\}\) for a density-one set of primes; at such \(p\) every cycle lying in \(C\) has absolute radius \(O_p(1)\), uniformly in the base. Cycles that leave \(C\) are not addressed. By contrast, every odd composite length has \(W_n\ne\{0\}\) \cite{G10}; we give explicit chamber fixed points at every base of a progression, and show that among odd composites with two or three folded orbits only \(9\), \(15\) and \(21\) are strict. Exact certificates classify all odd lengths \(7\le n<10^4\), and \(17\) and \(41\) are the only strict index-two primes below \(10^9\).
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+The Kaprekar map rearranges a word's digits in decreasing and increasing order, subtracts the second number from the first, and pads the result with leading zeros. We fix the word length \(n\) and let the integer base \(B\) grow. The question is whether some cycle in a specified chamber can stay a positive normalized distance from the centre. Throughout, \(n=2k+1\ge7\) and \(m=k+1\).
+
+For decreasingly sorted digits \(a_1,\ldots,a_n\), put \(q_i=a_i-a_{n+1-i}\) and
+\[
+ g=(B-q_1,q_1-q_2,\ldots,q_{k-1}-q_k,q_k).
+\]
+The gap vector of a word has integer entries summing to \(B\), with \(g_0\ge1\) and \(g_j\ge0\) for \(j>0\). These conditions suffice for a word to realize it, by placing the digits \(q_i=\sum_{j=i}^k g_j\) in the first \(k\) positions and zeros elsewhere. A gap state is \emph{physical} at base \(B\) if some word realizes it; these are exactly the integral vectors just described, and the gap state determines the successor word \cite[Section~2]{G10}. The normalized centred profile has \(g_j/B=1/m\). The \emph{phases} of a cycle are its successive states. For a cycle the normalized peak radius is
+\[
+ Z_B=\max_{\text{phases }q}\max_{1\le i\le k}
+       \left|q_i/B-(m-i)/m\right|.
+\]
+A macroscopic family has \(Z_B\ge\delta>0\) on bases tending to infinity, at the same length. Its absolute peak radius is \(BZ_B\).
+
+For \(q_k>0\), the subtraction output has singleton \(B-1\) and pairs at levels \(i=1,\ldots,k\),
+\[
+ (q_i-\mathbf 1_{i=k},\ B-q_{k+1-i}-\mathbf 1_{i<k}).
+\]
+There is \emph{positive pairing} when \(q_k>0\) and every digit of each level is at least every digit of the next. Put \(I=\lfloor m/2\rfloor\) and define
+\[
+ d_i(g)=\sum_{j=0}^{i-1}(g_{k-j}-g_j)\qquad(1\le i\le I).
+\]
+The comparison \(d_1\) is \emph{primary} and the others are \emph{secondary}. The \emph{chamber} \(C\) consists of physical gap states with positive pairing and \(d_i(g)\ge-1\) for the secondary comparisons \(2\le i\le I\) (no secondary breach). A chamber-contained cycle has all its phases in \(C\).
+
+Folded doubling is the permutation \(P\) fixing slot \(0\) and carrying the value in \(1\le j\le k\) to \(\min(2j,n-2j)\). The \emph{folded order} \(r(n)\) is the orbit size of slot 1, or the least \(r\ge1\) satisfying \(2^r\equiv\pm1\pmod n\). The \emph{folded index} \(t(n)\) counts positive-slot orbits. Call slot 0 the \emph{anchor} and the orbit of slot 1 the \emph{root orbit}. Write \(J\) for the anchor together with the root orbit, and let
+\[
+\begin{aligned}
+ U_n&=\{w\in\R^m:\ \sum_j w_j=0,\ Pw=w,\ w\text{ constant on }J\},\\
+ W_n&=\{w\in U_n:d_i(w)\ge0\ (2\le i\le I)\}.
+\end{aligned}
+\]
+The length is \emph{full-orbit} if \(t(n)=1\), \emph{strict} if a profile in \(W_n\) makes every secondary comparison positive, and \emph{scarred} if \(W_n\ne\{0\}\) but the length is not strict. A length with \(t(n)>1\) and \(W_n=\{0\}\) is a \emph{zero-cone} length. The \emph{arithmetic spectrum} of the title is the partition of the odd lengths \(n\ge7\) into full-orbit, zero-cone, scarred and strict lengths. We call a non-full-orbit length \emph{forced-tie} when some secondary comparison vanishes identically on \(U_n\). A forced tie is a condition on the rows before imposing the inequalities.
+
+The chamber criterion \cite[Theorem~1]{G10} gives the following equivalence. A nonzero \(W_n\) yields physical chamber fixed points with a common positive normalized radius on an unbounded base progression. A zero \(W_n\) gives the bound \(BZ_B=O_n(1)\) for every chamber-contained cycle, uniformly in \(B\) and in the cycle period. The criterion says nothing about cycles that leave \(C\). The construction uses sufficiently small rational perturbations of the centred gaps. We recall the sufficient pairing guard and use an explicit perturbation in Section~\ref{sec:comp}.
+
+The main arithmetic results are as follows.
+\begin{itemize}
+\item On an invariant profile every secondary row is an alternating partial sum of the profile in slot order (Lemma~\ref{lem:rows}). Hence at every prime length \(p\), \(W_p\) is linearly isomorphic to the dual cone of an alternating walk on the cosets of \(\langle-1,2\rangle\), and \(W_p=\{0\}\) exactly when the walk surrounds the origin (Theorem~\ref{th:walk}). At index two the walk is one-dimensional, an affine image of the alternating Legendre sum. The classical quarter-interval class-number formula fixes the orientation, and strictness implies \((3/p)=-1\) (Theorem~\ref{th:quadratic}).
+\item For each fixed folded index \(t\), the number of prime lengths \(p\le x\) of that index with \(W_p\ne\{0\}\) is \(o(\pi(x))\) unconditionally, with \(\pi(x)\) counting all primes. This is not a relative statement within the index-\(t\) stratum, which is not known to have positive density without GRH. Under the indicated Dedekind-zeta RH, the index-\(t\) stratum has positive prime density, so its internal exceptional fraction tends to zero. A separate GRH tail bound gives \(W_p=\{0\}\) for a density-one set of all primes, and hence absolute radius \(O_p(1)\) for every cycle lying in \(C\) at those lengths; cycles that leave \(C\) are not covered (Theorem~\ref{th:sieve}).
+\item Every odd composite length has \(W_n\ne\{0\}\) \cite[Section~3]{G10}. Theorem~\ref{th:composite} makes the resulting chamber fixed points explicit at every base \(B=s(m^2+c)\), where \(c=\lfloor k/\ell\rfloor\) for a prime \(\ell\mid n\), and shows that among odd composites with at most three orbits exactly \(9\), \(15\) and \(21\) are strict, the others having a forced tie.
+\item Exact certificates classify every odd length \(7\le n<10^4\). Exhaustive modular tests give \(17\) and \(41\) as the only strict index-two primes below \(10^9\) (Proposition~\ref{prop:census}, computer-assisted).
+\end{itemize}
+Thus, for macroscopic cycles lying in \(C\), composite and prime lengths behave oppositely: every odd composite length carries them, while at each fixed folded index the prime lengths carrying them number \(o(\pi(x))\), and under GRH almost every prime length carries none.
+
+\subsection*{Related work}
+Yamagami and Matsui give cycle counts and lengths in base three \cite{YM18}; their use of orders of 2 up to sign is described in \cite[Section~2]{KD1}. Their later work treats fixed-point formulas \cite{YM19}. In fixed odd bases, Kay and Downes-Ward use subgroups and cosets in fixed-base cycle classifications, with modulus \(n-2\) or a divisor for the primitive base-three cycles \cite[Sections~2, 3 and~5; Definition~1 and Theorem~2]{KD1}. For even bases they use the least exponent giving \(2^\sigma\equiv\pm1\pmod{B-1}\) \cite[Definition~7 and Theorem~9]{KD2}. For four digits in odd bases \(B>3\), Chen, Ono, Schwartz and Thakur conjugate the map in an attracting region to projective doubling modulo the base \cite[Theorem~1]{COST}. Thakur discusses Kaprekar phenomena at other bases and lengths \cite{Thakur}. The order used here is that of the gap permutation modulo the length itself. Doubling and signed orders also enter the different dynamics of binary Ducci sequences \cite{BS,CST}.
+
+Devlin and Zeng treat the four-digit fixed point and its basin \cite{DZ}. Earlier work on cycles and arrival laws at particular lengths includes \cite{G1,G2,G3,G5,G6,G7,G8}. The odd-length gap coordinates and majorization come from \cite{G4}. The strict-profile construction and specific positive basin bounds are in \cite{G9}. The chamber criterion, the full-orbit obstruction and the composite construction, which gives \(W_n\ne\{0\}\) at every odd composite length, are from \cite{G10}. Other work treats parametric digit differences \cite{Nuez}, coarse-grained drift \cite{Dahl}, two-cycles in base ten \cite{Mayne}, or Kaprekar graphs as examples for a graph statistic \cite{Csikos}.
+
+For ordinary Legendre partial sums, the primes all of whose partial sums are nonnegative have density zero by Baker and Montgomery's theorem on real zeros of Fekete polynomials \cite{BM} (see \cite[p.~866]{CGPS}), as observed by Kalmynin \cite[Theorem~1]{Kal}. Kalmynin obtains the bound \(\ll x/(\log x\,(\log\log x)^{c-o(1)})\) with \(c\approx0.0368\) by comparing finite Legendre prefixes with a random multiplicative model \cite[Theorems~2--3]{Kal}. At folded index two our qualitative result (Proposition~\ref{prop:quadratic}) also follows from known inputs in two ways: from Aymone's oscillation estimate \cite{Aymone} with Kalmynin's prefix transfer, or from Baker and Montgomery's theorem on logarithmic derivatives with Elliott's value distribution (Appendix~\ref{app:bm}). We make no priority claim at index two and obtain no rate. The new parts are the following: the prime walk connecting the chamber cone to character sums (Theorem~\ref{th:walk}); for index \(t\ge3\), two-sided oscillation, simultaneously for all normals and under finite conditioning, for a random completely multiplicative function with values in a cyclic group (Lemma~\ref{lem:random}), transferred through Kummer extensions in which the radicals at primes dividing \(t\) need not be independent (Section~\ref{sec:sieve}); the conditional all-prime chamber theorem (Theorem~\ref{th:sieve}(3)); and the classification of composites with at most three folded orbits (Theorem~\ref{th:composite}).
+
+Among related results on random multiplicative functions and character sums, Aymone, Heap and Zhao prove sign changes for the partial sums of a random multiplicative function supported on squarefree integers \cite{AHZ}, and Aymone proves them for completely multiplicative random signs \cite[Theorem~2]{Aymone}. Angelo and Xu treat the harmonic sums \(\sum f(n)/n\) of the completely multiplicative model, in connection with a conjecture of Tur\'an \cite{AX}. Kucheriaviy studies positivity of the partial sums of completely multiplicative random signs conditioned on their values at small primes, and the corresponding problems for the Legendre symbol \cite{Kuch}. Klurman, Lamzouri and Munsch treat sign changes of short character sums and real zeros of Fekete polynomials over fundamental discriminants \cite[Theorems~1.2 and~1.4]{KLM}. These concern ordinary or harmonic sums of real-valued functions; the rows here are alternating sums, with cyclic-group labels at higher index. The conditional index densities and the conditional tail bound use the Artin-type results of \cite{Hooley,Moree,HKMS,JPS}.
+
+\section{Folded orbits and the prime walk}\label{sec:prime}
+For any odd \(d>1\) write \(H_d=\langle-1,2\rangle\le(\Z/d\Z)^\times\) and \(\iota(d)=[(\Z/d\Z)^\times:H_d]\). For \(d\mid n\), the slots with \(\gcd(j,n)=n/d\) correspond by division by \(n/d\) to unit classes modulo \(d\) up to sign. Hence the folded orbits in that layer are the cosets of \(H_d\), each of size \(r(d)\). In particular
+\begin{equation}\label{eq:orbit-count}
+ t(n)=\sum_{\substack{d\mid n\\d>1}}\iota(d).
+\end{equation}
+In binary cyclotomic-coset language, the orbits are unions of a coset for multiplication by 2 and its negative (reciprocal) coset. The two cosets may coincide. For example, for an \(n\)-th root of unity \(\zeta\) in an algebraic closure of \(\F_2\), the exponents of the Frobenius orbit of \(\zeta^j\) form the coset for multiplication by 2, and those for its inverse form the negative coset.
+
+Hilton and Pedersen call the folded order \(r(d)\) the quasi-order of 2 modulo \(d\), and \(\iota(d)\) is their number of coaches for \(d\), which counts the folded orbits of the unit layer \cite[\S17.2]{HPbook}\cite{HP,OEIS}. A \emph{one-coach prime} is thus a prime \(p\) with \(H_p=\F_p^\times\), that is, a full-orbit prime. Equation \eqref{eq:orbit-count} gives the additional contributions of nonunit layers. A composite cannot be full-orbit because it has a nonunit layer. For a prime \(p\), the map \(a\mapsto a^2\) identifies the quotient by \(\{\pm1\}\) with the squares. Thus, with \([\F_p^\times:\langle4\rangle]\) the residual index of 4,
+\begin{equation}\label{eq:residual}
+ r(p)=\ord_p(4),\qquad 2t(p)=[\F_p^\times:\langle4\rangle].
+\end{equation}
+For prime lengths \(p\ge7\), full orbit is equivalent to membership in OEIS A216371, the one-coach primes. For related signed orders in finite-field iteration, Vasiga and Shallit obtain cycle lengths for \(x\mapsto x^2-2\) by taking the least doubling exponent up to sign on the odd order of the associated multiplicative parameter \cite[Theorem~12 and Corollary~15]{VS}.
+
+The following identity is the hinge of the paper: on an invariant profile, the secondary rows are alternating partial sums.
+
+\begin{lemma}[Alternating rows]\label{lem:rows}
+Let \(n=2k+1\ge7\) and let \(w\in\R^m\) satisfy \(Pw=w\). For \(1\le i\le I\),
+\[
+ d_i(w)=\sum_{j=0}^{i-1}(w_{2j+1}-w_j)
+       =\sum_{b=0}^{2i-1}(-1)^{b+1}w_b .
+\]
+\end{lemma}
+\begin{proof}
+For \(0\le j<i\le I\) we have \(4j+1\le 2k-1\), so \(2j+1\le k\). Hence folded doubling carries the high slot \(k-j\) to \(n-2(k-j)=2j+1\), and the low slot \(j>0\) to \(2j\). Invariance gives \(w_{k-j}=w_{2j+1}\) and \(w_j=w_{2j}\). The first form is \cite[Section~3]{G10}; the second follows by replacing \(w_j\) with \(w_{2j}\).
+\end{proof}
+
+\begin{theorem}[Prime walk]\label{th:walk}
+Let \(p=2k+1\ge7\) be prime, \(G_p=\F_p^\times/H_p\) and \(e=H_p\). Let \(\mathbf e_c\) \((c\ne e)\) be the standard basis of \(\R^{G_p\setminus\{e\}}\), and put
+\[
+ V(N)=\sum_{b=1}^{N}(-1)^{b+1}\mathbf e_{[b]}\qquad(1\le N\le k),
+\]
+where \([b]\) is the coset of \(b\) and \(\mathbf e_{[b]}:=0\) when \(b\in H_p\). Write \(w\in U_p\) as \(a\) on \(J\) and as \(a+u_c\) on the slots \(j\) with \([j]=c\ne e\). Then \(w\mapsto u\) is a linear isomorphism \(U_p\to\R^{G_p\setminus\{e\}}\), and \(d_i(w)=\langle u,V(2i-1)\rangle\) for \(1\le i\le I\). It therefore carries \(W_p\) onto the dual cone
+\[
+ \{u:\ \langle u,V(2i-1)\rangle\ge0\ \ (2\le i\le I)\}.
+\]
+In particular \(W_p=\{0\}\) if and only if the points \(V(2i-1)\), \(2\le i\le I\), positively span \(\R^{G_p\setminus\{e\}}\), that is, \(0\) is an interior point of their convex hull; we then say that the walk \emph{surrounds the origin}. Equivalently, \(W_p\ne\{0\}\) exactly when these points lie in a closed half-space through zero with a nonzero normal. The length \(p\) is strict if and only if they lie in an open half-space through zero. At index one \(\R^{G_p\setminus\{e\}}=0\), so \(W_p=\{0\}\) and \(p\) is not strict.
+\end{theorem}
+\begin{proof}
+For \(c\ne e\), the slots \(j\) with \([j]=c\) form one folded orbit of size \(r(p)\), and the root orbit consists of the slots in \(e\). So an invariant profile constant on \(J\) is determined by \(a\) and \(u=(u_c)_{c\ne e}\), and its zero-sum condition \(ma+r(p)\sum_{c\ne e}u_c=0\) determines \(a\) from \(u\). Set \(u_e=0\). By Lemma~\ref{lem:rows}, \(d_i(w)=\sum_{b=0}^{2i-1}(-1)^{b+1}w_b\). The constant \(a\) cancels from the \(2i\) alternating terms and the anchor carries no offset, so
+\[
+ d_i(w)=\sum_{b=1}^{2i-1}(-1)^{b+1}u_{[b]}=\langle u,V(2i-1)\rangle .
+\]
+A finitely generated cone has trivial dual cone exactly when it is the whole space, which happens exactly when \(0\) is an interior point of the convex hull of its generators. The open half-space statement is the definition of strictness in these coordinates. At index one the space of normals has dimension zero, and there is a secondary row because \(p\ge7\).
+\end{proof}
+
+\section{Index two and the quadratic line}
+For \(p\equiv1\pmod8\), write \(b_p=(p-1)/4\), \(\chi=(\cdot/p)\), \(S(N)=\sum_{a\le N}\chi(a)\), and
+\[
+ F(i)=S(2i-1)-2S(i-1)=\sum_{a\le 2i-1}(-1)^{a+1}\chi(a)\qquad(1\le i\le b_p),
+\]
+the second form because \(\chi(2)=1\). Here \(k\equiv0\pmod4\), so \(I=k/2=b_p\). Put \(\tilde\chi(0)=1\) and \(\tilde\chi(j)=\chi(j)\) for \(j\ge1\). The centred character profile
+\[
+ w_\chi=\tfrac12\big((k+1)\tilde\chi-1\big)
+\]
+lies in \(U_p\): it is invariant and constant on \(J\) because \(\chi(2)=\chi(-1)=1\), and it has zero sum because \(S(k)=0\) by evenness. We call \(\R w_\chi\) the \emph{quadratic line}.
+
+\begin{theorem}[Index-two identities]\label{th:quadratic}
+An odd prime has folded index two exactly when \(p\equiv1\pmod8\) and \(\ord_p(2)=(p-1)/2\). At such a prime \(U_p=\R w_\chi\), where \(w_\chi\) equals \(k/2\) on \(J\) and \(-k/2-1\) elsewhere. Its rows satisfy
+\[
+ d_i(w_\chi)=\tfrac{k+1}{2}\big(F(i)-1\big),\qquad
+ F(b_p)=1-h(-4p).
+\]
+Thus \(W_p=\R_{\ge0}(-w_\chi)\) if \(\max_{2\le i\le b_p}F(i)\le1\), and \(W_p=\{0\}\) otherwise. Strictness is equivalent to \(\max_{2\le i\le b_p}F(i)\le-1\), and entails \(\chi(3)=-1\).
+\end{theorem}
+\begin{proof}
+If \(t(p)=2\), then \(H_p\) is the subgroup of squares, so the quadratic supplementary laws give \(p\equiv1\pmod8\). For \(d=\ord_p(2)\), the order of \(H_p\) is \(d\) for even \(d\) and \(2d\) for odd \(d\). It equals \(k\), a multiple of 4, so \(d=k\). The converse follows by the same order formula. At index two \(U_p\) is one-dimensional and contains \(w_\chi\), whose values on the two orbits are as stated. By Lemma~\ref{lem:rows}, \(d_i(w_\chi)=\frac12\sum_{b=0}^{2i-1}(-1)^{b+1}\big((k+1)\tilde\chi(b)-1\big)\). The constants cancel and \(\tilde\chi(0)=1\), which gives the row formula. This holds on the quadratic line at every \(p\equiv1\pmod8\).
+
+Dirichlet's quarter-interval formula gives \(h(-4p)=2S(b_p)\) (Appendix~\ref{app:class} and \cite[(5)]{WC}); see \cite{Berndt,JM} for related interval sums. Evenness gives \(S(k)=0\), while \(\chi(k)=\chi(-1/2)=1\) and \(\chi(b_p)=\chi(-1/4)=1\). Thus \(S(k-1)-2S(b_p-1)=1-2S(b_p)\). These endpoint calculations also hold on the quadratic line at every \(p\equiv1\pmod8\). The class number is positive and \(b_p\ge2\), so \(d_{b_p}(w_\chi)<0\) selects the orientation \(-w_\chi\). The feasibility and strictness conditions follow, as \(F(i)\) is odd and \(F(2)=\chi(3)\).
+\end{proof}
+
+In the coordinates of Theorem~\ref{th:walk}, the nonsquare coset \(c\) is the only coset other than \(e\), and \(\mathbf 1_{[b]=c}=(1-\chi(b))/2\) for \(b\ge1\). Since \(\sum_{b\le2i-1}(-1)^{b+1}=1\), this gives
+\[
+ V(2i-1)=\tfrac12\big(1-F(i)\big),
+\]
+and \(w_\chi\) has \(u_c=-(k+1)\). At index two the walk of Theorem~\ref{th:walk} is thus one-dimensional, an affine image of the alternating Legendre sum \(F\).
+
+\subsection*{The doubling step and the quadratic-line sieve}
+Proposition~\ref{prop:quadratic} below is the case \(t=2\) of Theorem~\ref{th:sieve}(1), extended to the quadratic line in the whole progression \(1\bmod8\); we give it first because the mechanism is visible with signs. At index greater than two, meeting the quadratic line is only a sufficient condition for \(W_p\ne\{0\}\), so the extension says nothing more about \(W_p\). Both sieves turn on the following step. When the label of 2 is trivial, an alternating sum as in Lemma~\ref{lem:rows} is a doubling difference \(Q(2j+1)-2Q(j)\) of the centred partial sums \(Q\), and a one-sided bound on such differences propagates along \(j\mapsto2j+1\).
+
+\begin{lemma}[Doubling]\label{lem:doubling}
+Let \(Q:\Z_{\ge0}\to\R\) satisfy \(Q(2^ab-1)/2^a\to0\) as \(a\to\infty\) for each integer \(b\ge1\), and put \(D(j+1)=Q(2j+1)-2Q(j)\) for \(j\ge0\). If \(D\ge-C\) on \(\Z_{\ge1}\), then \(Q\le C\) everywhere. If \(D\le C\) on \(\Z_{\ge1}\), then \(Q\ge-C\) everywhere.
+\end{lemma}
+\begin{proof}
+Iterating \(j\mapsto2j+1\) reaches \(2^a(j+1)-1\) after \(a\) steps. If \(D\ge-C\), then \(Q(2^a(j+1)-1)\ge2^aQ(j)-(2^a-1)C\). Divide by \(2^a\) and let \(a\to\infty\). The second assertion is the first applied to \(-Q\).
+\end{proof}
+
+\begin{proposition}[Quadratic-line sieve]\label{prop:quadratic}
+Among primes \(p\equiv1\pmod8\), the fraction for which the quadratic line meets \(W_p\) in a nonzero profile tends to zero, unconditionally. In particular the number of index-two primes \(p\le x\) with a nonzero \(W_p\) is \(o(\pi(x))\).
+\end{proposition}
+\begin{proof}
+Let \(f\) be the random model of Section~\ref{sec:sieve} with \(t=2\). Thus \(G=\{\pm1\}\), and \(f\) is completely multiplicative with independent fair signs at the primes, conditioned on \(f(2)=1\). Put \(Q(j)=1+\sum_{a\le j}f(a)\) and \(D_i=\sum_{a\le2i-1}(-1)^{a+1}f(a)-1\). As \(f(2)=1\), \(D_{j+1}=Q(2j+1)-2Q(j)\), and \(D_1=0\). For \(h\) equal to 1 off the identity, the quantities of Lemma~\ref{lem:random} are \(Q_h=-Q/2\) and \(D_h(i)=-D_i/2\). By Lemma~\ref{lem:random}, proved in Section~\ref{sec:sieve} and Appendix~\ref{app:random}, almost surely \(D_i\) is unbounded on both sides, so the probability that \(D_i\) is one-sided for \(2\le i\le L\) tends to zero as \(L\) grows.
+
+Alternatively, for \(S_f(y)=\sum_{a\le y}f(a)\), Aymone's estimates for completely multiplicative random signs \cite[\S3.2, (5)--(6) at \(\alpha=0\)]{Aymone} state that the signed Mellin integral of \(S_f(y)y^{-\sigma-1}\) has size \((2\sigma-1)^{-1/2+o(1)}\) as \(\sigma\downarrow1/2\), whereas the absolute integral is \(\gg_f(2\sigma_j-1)^{-0.99}\) along some sequence \(\sigma_j\downarrow1/2\), almost surely. If \(S_f\) were bounded below by \(-C\), the difference of the absolute and signed integrals would be at most \(2C/\sigma\). So \(Q\) is unbounded below, also after conditioning. With the growth bound \(S_f(y)=O_{f,\epsilon}(y^{1/2+\epsilon})\) of Appendix~\ref{app:random}, Lemma~\ref{lem:doubling} with \(C=0\) excludes both \(D_i\ge0\) for all \(i\), since \(Q(0)=1\), and \(D_i\le0\) for all \(i\).
+
+For fixed \(L\) and \(p>4L\), weak feasibility on the line (a nonzero point of the line in \(W_p\)) requires one-sidedness of the same rows with \(f=\chi\), by the row formula of Theorem~\ref{th:quadratic}. For primes \(p\equiv1\pmod8\), reciprocity identifies the signs at odd primes \(q\le 2L-1\) with \((p/q)\). The Chinese remainder theorem and the prime number theorem in progressions of the fixed modulus \(8\prod_{3\le q\le2L-1,\ q\ {\rm prime}}q\) give the independent fair-sign law at those odd primes, with \(\chi(2)=1\). This is the finite-prefix transfer used for ordinary sums in \cite[Theorems~2--3]{Kal}, and the case \(t=2\) of the transfer in Section~\ref{sec:sieve}. Take the prime limit first, then increase \(L\). On index two the line is all of \(U_p\).
+\end{proof}
+
+\section{The fixed-index sieve and the prime-density theorem}\label{sec:sieve}
+Let
+\[
+\begin{aligned}
+ N_t(x)&=\#\{7\le p\le x:\ p\text{ prime},\ t(p)=t,\ W_p\ne\{0\}\},\\
+ T_t(x)&=\#\{7\le p\le x:\ p\text{ prime},\ t(p)=t\}.
+\end{aligned}
+\]
+
+\begin{theorem}\label{th:sieve}
+The following assertions have distinct hypotheses.
+\begin{enumerate}
+\item For every fixed \(t\ge2\), unconditionally \(N_t(x)=o(\pi(x))\). At \(t=1\) there are no exceptions.
+\item Fix \(t\ge1\). Assume RH for the Dedekind zeta functions of
+\(\Q(\zeta_{2ta},4^{1/(2ta)})\) for positive squarefree \(a\). Then
+\(T_t(x)\sim\delta(4,2t)\pi(x)\), where \(\delta(4,2t)>0\) is the constant \eqref{eq:delta}, and \(N_t(x)/T_t(x)\to0\). At \(t=2\) the density is \(A/4\), where \(A=\prod_{\ell\ {\rm prime}}(1-1/(\ell(\ell-1)))\).
+\item Assume RH for the Dedekind zeta functions of \(\Q(\zeta_a,2^{1/a})\) for every positive integer \(a\). Then \(W_p=\{0\}\) for a density-one set of primes. At each such length, \(BZ_B=O_p(1)\) for all chamber-contained cycles, uniformly in the base. Cycles that leave \(C\) are not covered.
+\end{enumerate}
+\end{theorem}
+
+Part (1) bounds \(N_t(x)\) against all primes. The primes that split completely in \(\Q(\zeta_{2t},2^{1/t})\) have positive density, so (1) is equivalent to \(N_t(x)=o(\#\{p\le x:\ p\text{ splits completely in }\Q(\zeta_{2t},2^{1/t})\})\). Without GRH the exact stratum is not known to have positive density, so (1) is not a relative statement within it; part (2) supplies one under RH.
+
+\subsection*{The random walk}
+Let \(G\) be cyclic of order \(t\ge2\), with identity \(e\), and draw \(f(q)\) independently and uniformly in \(G\) at the primes \(q\). Extend \(f\) completely multiplicatively. We will condition on \(f(2)=e\) and permit any fixed finite prescription of other prime labels. These prescriptions are positive-probability events. For a real \(h\) on \(G\) with \(h(e)=0\), define
+\[
+ D_h(i)=\sum_{a\le 2i-1}(-1)^{a+1}h(f(a)).
+\]
+On the exact index-\(t\) stratum, identify \(G\) with \(G_p\) and use the labels \(f(a)=[a]\). Then \(D_h(i)=\langle h,V(2i-1)\rangle\), with \(h\) restricted to \(G_p\setminus\{e\}\), and by Theorem~\ref{th:walk}, \(W_p\ne\{0\}\) exactly when some nonzero \(h\) has \(D_h(i)\ge0\) for \(2\le i\le I\). The following simultaneous form handles the continuum of possible supporting normals.
+
+\begin{lemma}\label{lem:random}
+Almost surely, under each allowed prescription, \(D_h(i)\) is unbounded on both sides for every nonzero real \(h\) with \(h(e)=0\). Consequently the probability that some nonzero \(h\) has \(D_h(i)\ge0\) for all \(2\le i\le L\) tends to zero as \(L\to\infty\).
+\end{lemma}
+\begin{proof}
+Let \(m_h\) be the mean of \(h\), and \(Q_h(j)=\sum_{a\le j}h(f(a))-(j+1)m_h\), the centred partial sum with the anchor counted as the label \(e\). Appendix~\ref{app:random} proves, on one event for all \(h\), that \(Q_h(j)\) is unbounded on both sides and \(Q_h(j)=O_{h,f,\epsilon}(j^{1/2+\epsilon})\) for \(j\ge1\). Since \(f(2)=e\),
+\[
+ D_h(j+1)=Q_h(2j+1)-2Q_h(j).
+\]
+If \(D_h\) were bounded below, Lemma~\ref{lem:doubling} would bound \(Q_h\) above; if \(D_h\) were bounded above, it would bound \(Q_h\) below. Both contradict the two-sided unboundedness. The sets of unit normals with \(D_h(i)<0\) are open and cover the unit sphere. Compactness gives a finite subcover for each sample on the probability-one event. The finite-cutoff survival events decrease to a null event.
+\end{proof}
+
+\subsection*{Unconditional transfer at fixed index}
+Fix \(t\ge2\). Except at primes dividing \(2t\), the condition \(t\mid t(p)\) means that the index-\(t\) subgroup of \(\F_p^\times\) contains \(-1\) and 2. These two requirements are respectively \(2t\mid p-1\) and that 2 be a \(t\)-th power. They are equivalent to splitting completely in \(B_t=\Q(\zeta_{2t},2^{1/t})\). On the exact index-\(t\) stratum the quotient by that subgroup is exactly \(G_p\).
+
+Let \(\mathcal S_t\) be the odd primes dividing \(t\), and \(\mathcal Q_L\) the odd primes in the fixed prefix \(1,\ldots,2L-1\) outside \(\mathcal S_t\). Set
+\[
+ B_t'=B_t(q^{1/t}:q\in\mathcal S_t),\qquad K_{t,L}=B_t'(q^{1/t}:q\in\mathcal Q_L).
+\]
+These are Galois over \(\Q\). When adjoining a free radical \(q^{1/t}\), the previously formed field is unramified at \(q\), since the discriminants of the generating cyclotomic and radical polynomials are supported at primes dividing \(2t\) and the previous radicands. With normalized valuation \(v(q)=1\), \(X^t-q\) is Eisenstein. Thus \([K_{t,L}:B_t']=t^{|\mathcal Q_L|}\). The multipliers \(\sigma(q^{1/t})/q^{1/t}\) identify \(\operatorname{Gal}(K_{t,L}/B_t')\) with \(\mu_t^{\mathcal Q_L}\), where \(\mu_t\) is the group of \(t\)-th roots of unity. In \(\operatorname{Gal}(K_{t,L}/B_t)\), every restriction fibre over \(\operatorname{Gal}(B_t'/B_t)\) runs once through all the free multiplier tuples. The uniform law therefore gives independent uniform labels at \(\mathcal Q_L\) and a fixed finite joint law at \(\mathcal S_t\), compatible as \(L\) increases. It gives the label \(e\) at 2. Dependence at \(\mathcal S_t\) can occur. At \(t=6\), \(3^{1/2}=\zeta_{12}+\zeta_{12}^{-1}\) is already in \(B_6\), so the multiplier of \(3^{1/6}\) has cube 1.
+
+At a prime split in \(B_t\) and unramified in \(K_{t,L}\), choose an arithmetic Frobenius over \(p\). Its multiplier at \(q\) reduces to \(q^{(p-1)/t}\), thereby labelling the quotient of order \(t\). Conjugating Frobenius acts on all multipliers by the same automorphism of \(\mu_t\), which only permutes the coordinates in the half-space test. The surviving Frobenius elements are thus a union of rational conjugacy classes. Unconditional Chebotarev for the fixed finite extension \(K_{t,L}/\Q\) \cite[Theorems~1.3--1.4]{LO} gives the density of these survivors as \(\rho_{t,L}/[B_t:\Q]\), where \(\rho_{t,L}\) is the random survival probability for the prescribed mixture at \(\mathcal S_t\). For \(p>4L\) of exact index \(t\), the prefix is available and every prime counted in \(N_t(x)\) must survive it. Hence
+\[
+ \limsup_{x\to\infty}\frac{N_t(x)}{\pi(x)}
+ \le \frac{\rho_{t,L}}{[B_t:\Q]}.
+\]
+The prime limit holds \(t,L\) fixed. Lemma~\ref{lem:random}, applied under each of the finitely many prescriptions at \(\mathcal S_t\), sends the right-hand side to zero. This proves part (1) of Theorem~\ref{th:sieve}.
+
+\subsection*{Conditional fraction within a fixed index}
+By \eqref{eq:residual} the folded index \(t\) is residual index \(u=2t\) for 4. Under the zeta hypothesis in part (2), the near-primitive-root theorem gives the density
+\begin{equation}\label{eq:delta}
+ \delta(4,u)=\sum_{a\ge1}\frac{\mu(a)}{[\Q(\zeta_{ua},4^{1/(ua)}):\Q]},
+\end{equation}
+with the precise zeta family from \cite[Theorem~3.1 at progression modulus \(1\)]{HKMS}. In Moree's positive-base formula \cite[Theorems~2--3 and (4)--(5)]{Moree}, the base is \(4=2^2\), the quadratic discriminant is 8, and the factor multiplying the positive Euler product \(A(4,u)\) is \(1+E_2(8)\). For \(2\)-part \(u_2=2,4,\) or \(\ge8\), the corresponding \(E_2(8)\) is \(0,-1/3,\) or \(1\). Every even \(u\) therefore has positive density. At \(u=4\) the product is \(A(4,4)=3A/8\), giving \(\delta(4,4)=A/4\). Division of part (1) by this positive-density denominator proves the relative statement.
+
+\subsection*{Conditional conclusion over all primes}
+Write \(\operatorname{ind}_2(p)=[\F_p^\times:\langle2\rangle]\) for the ordinary index of 2. Then \(t(p)\le\operatorname{ind}_2(p)\). For the group \(\langle2\rangle\) over \(\Q\), J\"arviniemi--Perucca--Sgobba \cite[Theorem~8 and Proposition~9]{JPS} show under GRH that the natural density of primes with \(\operatorname{ind}_2(p)\le T\) tends to one. Here the auxiliary extension is \(\Q/\Q\), the Frobenius restriction is trivial, and the set of allowed indices is initially all positive integers. The hypothesis in part (3) suffices for this rank-one instance, as also verified directly in Appendix~\ref{app:tail}. For every \(T\),
+\[
+ \#\{7\le p\le x:W_p\ne\{0\}\}\le
+       \sum_{2\le t\le T}N_t(x)+\#\{p\le x:\operatorname{ind}_2(p)>T\}.
+\]
+The finite sum has prime density zero by part (1). After the prime limit, let \(T\to\infty\) and apply the tail bound. The chamber conclusion follows from \cite[Theorem~1]{G10}; like that theorem, it concerns only cycles lying in \(C\). This proves part (3).
+
+\section{Composites with two or three folded orbits}\label{sec:comp}
+
+\begin{theorem}\label{th:composite}
+Every odd composite length has \(W_n\ne\{0\}\) \cite[Section~3]{G10}. Of those with \(t(n)\le3\), exactly \(9,15,21\) are strict. Every other composite in these two strata has a forced tie. The strata are as follows, for odd primes \(p,q\).
+\[
+\begin{array}{cll}
+\toprule
+t(n)& n & \text{Membership conditions}\\ \midrule
+2 & p^2 & \iota(p)=1,\quad 2^{p-1}\not\equiv1\pmod{p^2}\\
+3 & p^3 & \iota(p)=1,\quad 2^{p-1}\not\equiv1\pmod{p^2}\\
+3 & pq,\ p\ne q &
+ \begin{gathered}
+ \iota(p)=\iota(q)=1,\quad \gcd(r(p),r(q))=1,\\[-2pt]
+ 2^{\Lambda}\equiv\varepsilon\pmod p,\quad 2^{\Lambda}\equiv-\varepsilon\pmod q
+ \end{gathered}\\
+\bottomrule
+\end{array}
+\]
+Here \(\Lambda=\operatorname{lcm}(r(p),r(q))\) and \(\varepsilon\in\{\pm1\}\). For every odd composite \(n\) and prime \(\ell\mid n\), let \(c=\lfloor k/\ell\rfloor\). There is a chamber fixed point with \(Z_B\ge c/[m(m^2+c)]\) at every base \(B=s(m^2+c)\), \(s\) a positive integer.
+\end{theorem}
+\begin{proof}
+By \eqref{eq:orbit-count}, \(t(n)\ge\tau(n)-1\), where \(\tau\) is the number of divisors, so the listed shapes exhaust \(t(n)\le3\). For \(p^2\), reduction modulo \(p\) gives \(\iota(p^2)/\iota(p)\in\{1,p\}\), since the kernel on the unit groups has order \(p\). The sum of the two indices can be at most 3 only if both are 1. For \(p^3\) and \(pq\) there are three layers, and the three indices must all be 1.
+
+Put \(a=\ord_p(2)\). Since \(p\nmid(p-1)/a\), the test \(2^{p-1}\not\equiv1\bmod p^2\) is equivalent to \(2^a\not\equiv1\bmod p^2\). If \(2^a=1+py\) with \(p\nmid y\), the order at \(p^2\) grows by \(p\), and \(2^{ap}\equiv1+p^2y\bmod p^3\) gives another factor \(p\). When the first lift does not grow, neither does \(H_{p^2}\): the presence of the unique involution is governed by the unchanged parity of the order. In the growing case this parity also stays fixed, so the indices at \(p^2\) and \(p^3\) equal \(\iota(p)\).
+
+For \(pq\), put \(\Lambda=\operatorname{lcm}(r(p),r(q))\). Its first global signed return is at \(\Lambda\) if the two local signs at \(\Lambda\) agree, and at \(2\Lambda\) if they differ. With \(\iota(p)=\iota(q)=1\), the index at \(pq\) is \(2r(p)r(q)/r(pq)\). This is \(2\gcd(r(p),r(q))\) in the first case and \(\gcd(r(p),r(q))\) in the second. This proves the classification of the strata.
+
+On invariant vectors Lemma~\ref{lem:rows} gives
+\[
+ d_i(w)=\sum_{j=0}^{i-1}(w_{2j+1}-w_j).
+\]
+In each of the classified strata the units form a single orbit, the root orbit, whose value equals the anchor. When \(3\nmid n\), the second row is \(w_3-w_0=0\). For \(3\mid n\) outside \(9,15,21\), the possibilities are \(27\) and \(3q\) with \(q\ge11\). Row 4 is in range and equals \(w_5+w_7-w_0-w_2=0\) because \(2,5,7\) are units. In the three remaining lengths, centre the indicator of the positive nonunit slots. Its secondary rows are respectively \((1)\), \((1,2,1)\), and \((1,1,1,2)\), by substitution in the same formula. These are strict profiles.
+
+For any odd composite, we recall the construction of \cite[Section~3]{G10}. Let \(u_j\) mark the positive multiples of the fixed prime divisor \(\ell\) in the slots. The folded permutation preserves it. The anchor and root orbit have value zero. In the row sum a positive contribution occurs at \(j=(\ell-1)/2+b\ell\), and a negative contribution at \(j=(b+1)\ell\), \(b\ge0\). They alternate, starting with a positive contribution. Thus \(d_i(u)\in\{0,1\}\), and \(u-(c/m)\mathbf1\) gives a nonzero member of \(W_n\).
+
+For the physical fixed points, take \(g_j=s(m+u_j)\) in base \(B=s(m^2+c)\). The gaps sum to \(B\). They satisfy the sufficient pairing guard \((m+1)\min_jg_j\ge B+1\) from \cite[Section~2]{G10}, since the excess above \(B\) is \(s(m-c)\ge1\). Also \(Pg=g\), \(d_1(g)=0\), and all secondary rows are nonnegative. The paired update \cite[Lemma~4]{G10} then has zero sorting and borrowing corrections and the gap state returns. A gap vector determines the next word, so that word is itself fixed. The largest difference gives \(q_1/B-(m-1)/m=c/[m(m^2+c)]\), as required.
+\end{proof}
+
+\begin{proposition}\label{prop:composite-count}
+Let \(C_t(X)\) count the odd composite lengths \(7\le n\le X\) with \(t(n)=t\). The strict fraction in the composite \(t=2\) stratum is \(1/C_2(X)\) for \(X\ge9\), and in the composite \(t=3\) stratum it is \(2/C_3(X)\) for \(X\ge21\). These fractions tend to zero if their respective strata are infinite. Under RH for the Dedekind zeta functions of
+\(\Q(\zeta_8,\zeta_{2a},2^{1/(2a)})\) for positive squarefree \(a\),
+\[
+ \liminf_{X\to\infty}\frac{C_3(X)\log X}{X}\ \ge\ \frac{A}{6}.
+\]
+Under the hypothesis of Theorem~\ref{th:sieve}(2) at \(t=2\), the strict fraction in the full \(t=2\) stratum of odd lengths also tends to zero.
+\end{proposition}
+\begin{proof}
+The fractions follow from Theorem~\ref{th:composite}. For the lower bound, take primes \(p>7\) with \(p\equiv7\bmod8\) and \(\ord_p(2)=(p-1)/2\). Their half-order \(r(p)\) is odd, and at that exponent 2 is \(1\bmod p\) and \(-1\bmod3\). They give \(t(3p)=3\) by the product criterion. Hu--Kim--Moree--Sha \cite[Theorem~3.1 and \S4.3, Case III]{HKMS} give the density of this progression and ordinary index as
+\[
+ \frac14\sum_{a\ {\rm odd}}\frac{\mu(a)}{a\varphi(a)}
+ =\frac14\prod_{\ell>2\ {\rm prime}}\left(1-\frac1{\ell(\ell-1)}\right)=\frac A2.
+\]
+Pass from \(p\le X/3\) to \(3p\). For the last assertion the strict fraction is at most \((1+N_2(X))/(C_2(X)+T_2(X))\), which tends to zero using Theorem~\ref{th:sieve}(1)--(2). A positive lower prime density of the denominator suffices for this estimate.
+\end{proof}
+
+\section{Computations and verification}\label{sec:verification}
+
+\begin{proposition}[Finite census and scan; computer-assisted]\label{prop:census}
+The exact classification for \(7\le n<10^4\) odd is
+\[
+\begin{array}{lrrrr}
+\toprule
+ & \text{Strict} & \text{Scarred} & \text{Full-orbit}
+       & \text{Zero-cone}\\
+\midrule
+\text{Primes} & 226 & 139 & 701 & 160\\
+\text{Composites} & 2281 & 1490 & 0 & 0\\
+\text{All lengths} & 2507 & 1629 & 701 & 160\\
+\text{Index-two primes alone} & 2 & 45 & 0 & 68\\
+\bottomrule
+\end{array}
+\]
+The only strict lengths among the \(4{,}754{,}058\) folded index-two primes below \(10^9\) are \(17\) and \(41\). For each remaining index-two prime below \(10^9\), the least row \(i\ge2\) with \(F(i)\ge1\), which excludes strictness by Theorem~\ref{th:quadratic}, is at most 449. The first prime at which it equals 449 is \(700{,}411{,}841\).
+\end{proposition}
+\begin{proof}
+By computation. The census entries are exact certificates of the types in Appendix~\ref{app:cert}, replayed in exact arithmetic by the ancillary bundle. The index-two scan is an exhaustive exact computation by two independently written programs. The checks are listed below and in the ancillary README.
+\end{proof}
+
+The following list describes the exact certificates, independently written checks, and control computations. The asymptotic proofs use none of the finite counts.
+\begin{enumerate}
+\item \emph{Census below \(10^4\).} The certificate replay of Appendix~\ref{app:cert} covers all \(4{,}997\) lengths and agrees with an earlier census on all \(797\) overlapping lengths. Supplemental planar certificates classify \(811,3343,6967,8167,9931\) as scarred. Two independent prime replay programs regenerate literal rows and coset walks at indices three and four, check the finite prefix conclusions, and verify the five supplemented classifications. The second matches \(153{,}439\) rows at index three and \(98{,}008\) at index four, and uses exact rational feasibility implemented in the bundle.
+\item \emph{Index-two scan.} One program tests the exact order of 4 and updates the alternating Legendre rows using \(F(i)-F(i-1)=\chi(2i-1)-\chi(i-1)\). An independent program checks the exact order of 2 and builds the literal slot rows with Jacobi symbols, testing both orientations. Both exhaust the primes at the stated bound and obtain the same classification and the same maximum of this least excluding row.
+\item \emph{Algebraic controls.} An independent program matches the literal and quotient walk at 780 primes below \(6000\), and checks \(218\) index-two class numbers and \(514{,}764\) corresponding secondary rows below \(20{,}000\). It computes the class numbers by reduced forms and by the weighted Dirichlet formula. It checks sign-prefix counts and one residue-class transfer by finite enumeration. Independently, the low-orbit analysis is replayed by enumerating all \(333\) odd composites through \(1001\) and checking the three strict witnesses, the identically vanishing row on all \(149\) basis vectors of \(U_n\) for the \(78\) non-strict low-orbit composites among them (\(7\) at \(t=2\) with one basis vector each, \(71\) at \(t=3\) with two), and \(453\) literal base-\(B\) fixed points.
+\end{enumerate}
+From the paper folder run \texttt{bash ancillary/reproduce.sh}. The bundle checks its SHA-256 inputs and reproduces the exact checks and both scans. It records the tool versions and checks rational arithmetic with no external solver. The verification environment and resource requirements are in the ancillary README.
+
+\section{Scope and open questions}
+The following questions remain open. (i) Unconditionally, is \(\#\{p\le x:W_p\ne\{0\}\}=o(\pi(x))\)? This needs a tail bound over large folded indices. (ii) Unconditionally, is \(N_t(x)=o(T_t(x))\) at each fixed \(t\ge2\)? (iii) Is the set of strict primes of each folded index \(t\ge2\) finite? At index two, are \(17\) and \(41\) the only ones? The scan supplies only the finite range. (iv) Does a rate of Kalmynin's type hold for \(N_t(x)\)? (v) What is the density of strict lengths among all odd lengths? Even in the low-orbit composite families, the infinitude of the square stratum requires further arithmetic input.
+
+The dynamical memory question asks whether, at every strict length, the basin of cycles above some fixed positive normalized radius has a positive lower share of uniform original words through all sufficiently large integer bases, with companion vanishing statements for non-strict lengths \cite[Section~7]{G10}. There are specific positive-share theorems \cite{G9}. Here the chamber criterion addresses existence and absolute radius, and the arithmetic does not determine population shares or exclude cycles outside \(C\).
+
+\appendix
+
+\section{The classical quarter-interval formula}\label{app:class}
+For \(p\equiv1\pmod8\), \(-4p\) is a fundamental discriminant and the quadratic field has two roots of unity. Its class number is
+\[
+ h(-4p)=-\frac{1}{4p}\sum_{a=1}^{4p}a\chi_4(a)\chi(a)
+\]
+by Dirichlet's finite formula \cite[\S11, case VI, p.~152]{Dirichlet1840}. Here \(\chi_4\) is the nontrivial character modulo 4. Pairing \(a\) with \(a+2p\) changes the sign of the character on odd \(a\) and gives \(\tfrac12\sum_{a=1}^{2p}\chi_4(a)\chi(a)\). Put \(b=b_p\). Since \(4^{-1}\equiv-b\bmod p\), the summands with \(a\equiv1\) and \(a\equiv3\bmod4\) give character sums over \([-b,b]\) and \([b+1,3b]\), respectively. They partition the residue classes, and the first sum is \(2S(b)\). Hence \(h(-4p)=2S(b)\), the interval formula stated by Williams \cite[(5)]{WC} with attribution to Dirichlet.
+
+\section{The Baker--Montgomery route at index two}\label{app:bm}
+For ordinary Legendre partial sums, nonnegativity forces positivity of the Fekete polynomial by Abel summation. This is the implication used in \cite[Theorem~1]{Kal} from the result of Baker and Montgomery, stated for primes in \cite[p.~866]{CGPS}. For the alternating inequalities the polynomial instead satisfies an inhomogeneous inequality with a doubling argument. A count of real zeros gives neither an amplitude estimate nor the required simultaneous information at the two arguments. The stronger logarithmic-derivative theorem of Baker and Montgomery can be used with Elliott's value distribution as follows.
+
+Let \(\chi=(\cdot/p)\) for \(p\equiv1\bmod8\), let \(P_p(z)=\sum_{a=1}^{p-1}\chi(a)z^a\), and set \(T_p(z)=P_p(z)/(1-z^p)\) for \(|z|<1\). Write \(\widetilde S(N)=\sum_{a\le N}(-1)^{a+1}\chi(a)\), so that \(\widetilde S(2i-1)=F(i)\). If the quadratic line meets \(W_p\) away from zero, the endpoint calculation in Theorem~\ref{th:quadratic} gives \(\widetilde S(2i-1)=F(i)\le1\) for all tested rows, including \(i=1\). Since \(\chi(p-a)=\chi(a)\), we have \(\widetilde S(p-1)=0\) and \(\widetilde S(p-1-N)=\widetilde S(N)\) for \(0\le N<p\). Reflection preserves the parity of \(N\), so every odd prefix through \(p-1\) is at most 1 and every even prefix is at most 2. As \(\widetilde S(N+p)=-\widetilde S(N)\), Abel summation gives, for \(0<x<1\),
+\[
+ T_p(x)-2T_p(x^2)
+ =-T_p(-x)=\frac{1-x}{1+x^p}\sum_{N=0}^{p-1} \widetilde S(N)x^N\le2.
+\]
+The first identity uses \(\chi(2)=1\). This inequality and its iteration below are the analytic form of the doubling step of Lemma~\ref{lem:doubling}. We have \(P_p(1)=P_p'(1)=0\), by the full-period sum and evenness. Thus \(T_p(1^-)=0\). Iterating the inequality from \(x^{1/2^a}\) down to \(x\) gives \(T_p(x^{1/2^a})+2\le 2^a(T_p(x)+2)\). Letting \(a\to\infty\) shows \(T_p(x)\ge-2\).
+
+The Mellin identity is
+\[
+ \Gamma(s)L(s,\chi)=\int_0^\infty T_p(e^{-u})u^{s-1}\,du
+ \qquad(s>0).
+\]
+It follows by termwise integration for \(s>1\) and continuation using the double zero of \(P_p\) at 1. The integrand factor is at least \(-2\), and for \(u\ge1\) its absolute value is at most \(1/(e^u-1)\). Hence \(L(s,\chi)\) has a universal constant lower bound on \(1/2\le s\le3/4\). Differentiation inserts \(\log u\). For \(u<1\), using the lower bound \(-2\) for \(T_p\) bounds the derivative integral from above, and the geometric majorant again handles \(u\ge1\). Thus \((\Gamma L)'(s)\) has a universal upper bound. There are constants \(M,C\) such that, for a prime satisfying the chamber inequalities (\(F(i)\le1\) for \(1\le i\le b_p\)) and any \(s\in[1/2,3/4]\) with \(|L(s,\chi)|>M\), one has \(L(s,\chi)>1\) and \(L'/L(s,\chi)\le C\).
+
+Baker and Montgomery \cite[pp.~23--24]{BM} prove the following for prime discriminants, that is, discriminants \(D\) with \(|D|\) prime. Put \(s_j=1/2+\exp(-4^j)\); retain \(L'/L(s_j,\chi_D)\) when \(|L'/L(s_j,\chi_D)|>1/(s_j-1/2)\), and replace the other values by zero. Then, among prime discriminants \(|D|\le x\), the upper proportion with fewer than \(R/300000\) sign changes among the retained values with \(j\le R\) tends to zero as \(R\to\infty\), the limit in \(x\) being taken first. For \(p\equiv1\bmod8\) the prime discriminant \(D=p\) has \(\chi_D=\chi\). Elliott \cite[Theorem~1 and pp.~331, 333]{Elliott} gives, for each fixed \(j\), the limiting distribution of \(|L(s_j,(\cdot/p))|\) over all odd prime moduli \(p\), normalized by \(\pi(x)\); this population is larger than the progression \(1\bmod8\), on which \(\chi(2)=1\) identically. In the product on p.~321, the absolute value belongs inside the logarithm, as in the proof on pp.~331 and 333. The limit law is the law of \(U_j=\prod_q(1-X_q q^{-s_j})^{-1}\), over all primes \(q\) including 2, with independent fair signs \(X_q\). This law is continuous, and
+\[
+ \EE\,U_j^{-1/2}
+ \le \prod_q\frac{\sqrt{1-q^{-s_j}}+\sqrt{1+q^{-s_j}}}{2}
+ \le \exp\!\left(-c\sum_q q^{-2s_j}\right)
+\]
+by Fatou's lemma and the one-factor bound for \(0\le q^{-s_j}\le 1/\sqrt2\). The prime sum is \(4^j+O(1)\). Put
+\[
+ \mathcal{X}_j(x)=\{p\le x:\ p\text{ odd prime},\ |L(s_j,(\cdot/p))|\le M\}.
+\]
+Elliott's theorem computes \(\lim_x|\mathcal{X}_j(x)|/\pi(x)=\PP(U_j\le M)\le\sqrt M\,\EE\,U_j^{-1/2}\), by Markov's inequality, and these limits are summable in \(j\).
+
+Choose \(J\) large enough that \(1/(s_J-1/2)>C\). For finite \(R\) with \(R/300000>J+1\), a prime in the progression \(1\bmod8\) outside the Baker--Montgomery exceptional set must have a positive retained value at some \(J\le j\le R\). Indeed, at most \(J\) of its sign changes occur between consecutive nonzero retained values whose earlier index is below \(J\), so some sign change has both indices in \([J,R]\), and retained values of both signs occur there. It can then satisfy the chamber inequalities only if it lies in \(\mathcal{X}_j(x)\) for some \(J\le j\le R\), since \((\cdot/p)=\chi\) on the progression. Hence the number of primes \(p\le x\) in the progression satisfying the chamber inequalities is at most the number of Baker--Montgomery exceptions with \(|D|\le x\) plus \(\sum_{j=J}^R|\mathcal{X}_j(x)|\). Divide by \(\pi(x)\) and take the upper limit in \(x\): the result is at most the Baker--Montgomery upper proportion plus \(\sum_{j\ge J}\PP(U_j\le M)\). Let \(R\to\infty\) and then \(J\to\infty\). This gives upper density zero among all primes. Only now divide by the count of primes \(p\le x\) in the progression, which is asymptotic to \(\pi(x)/4\); this proves Proposition~\ref{prop:quadratic} by a second route.
+
+\section{Simultaneous oscillation of the centred sums}\label{app:random}
+Use the random model of Section~\ref{sec:sieve} before conditioning. For a nontrivial character \(\chi\) of \(G\), set \(X_\chi(q)=\chi(f(q))\),
+\(S_\chi(y)=\sum_{a\le y}\chi(f(a))\). If the order of \(\chi\) is \(d\), the correlation of the terms at \(a,b\) is 1 if they have the same \(d\)-free part and 0 otherwise. Thus
+\[
+ \EE |S_\chi(N)|^2 =
+ \sum_{\substack{v\le N\\v\ d\text{-free}}}
+       \lfloor(N/v)^{1/d}\rfloor^2\le N(1+\log N).
+\]
+A prefix of \([1,2^k]\) splits into at most \(k+1\) disjoint dyadic blocks. Its squared sum is at most \(k+1\) times the sum of squared block sums over all the dyadic partitions of this interval. At each partition the expected sum of squares is bounded by \(\EE|S_\chi(2^k)|^2\), by nonnegativity of the correlations. The expected squared maximal prefix is \(O((k+1)^3 2^k)\). Markov and Borel--Cantelli give \(S_\chi(y)=O_{f,\epsilon}(y^{1/2+\epsilon})\) almost surely, simultaneously for all the nontrivial characters and all \(\epsilon>0\).
+
+In \(\Re s>1/2\), write
+\[
+ \mathcal L_\chi(s)=\sum_q\sum_{a\ge1}\frac{X_\chi(q)^a}{a q^{as}},
+ \qquad \mathcal F_\chi(s)=\exp\mathcal L_\chi(s).
+\]
+The terms with \(a\ge2\) converge absolutely, locally uniformly. The first-order series converges almost surely at each fixed real \(s>1/2\) by independence, mean zero and the summable variances. A countable sequence of such \(s\) approaching \(1/2\) and partial summation give almost-sure local uniform convergence in the half-plane. The Mellin identity \(\mathcal F_\chi(s)/s=\int_1^\infty S_\chi(y)y^{-s-1}\,dy\) holds first by the absolutely convergent Euler product for \(\Re s>1\), then by analyticity and the maximal bound.
+
+Write \(h=m_h+\sum_{\chi\ne1}c_\chi\chi\) in the Fourier basis of \(G\), and \(S_h^0(y)=\sum_{a\le y}(h(f(a))-m_h)\). The Mellin transform of the centred sums is
+\[
+ M_h(s)=\int_1^\infty S_h^0(y)y^{-s-1}\,dy
+       =s^{-1}\sum_{\chi\ne1}c_\chi\mathcal F_\chi(s).
+\]
+If \(S_h^0\ge-C\), then
+\begin{equation}\label{eq:mellin-bound}
+ |M_h(\sigma+i\tau)|\le M_h(\sigma)+2C/\sigma
+ \qquad(\sigma>1/2)
+\end{equation}
+by \(|v|\le v+2C\) for \(v\ge-C\).
+
+Take \(\delta_j=e^{-j^2}\), \(\sigma_j=1/2+\delta_j\), and \(b_j=\sum_q q^{-2\sigma_j}\). The prime series \(\mathcal P(w)=\sum_q q^{-w}\) satisfies
+\begin{equation}\label{eq:prime-sum}
+ \mathcal P(1+z)=\log(1/z)+c+o(1)\quad(\Re z>0,\ z\to0),
+ \qquad b_j=j^2+O(1).
+\end{equation}
+This follows from the simple pole of \(\zeta\) and subtraction of the absolutely convergent higher-prime-power terms from \(\log\zeta\).
+
+\subsection*{Nonreal characters}
+Let \(\mathcal C\) contain one representative of each nonreal conjugate pair and fix \(\eta\in\mathcal C\). Under every finite prescription of the prime labels, the vector
+\begin{equation}\label{eq:joint-gaussian}
+ \left(
+    \big(b_j^{-1/2}\Re\mathcal L_\chi(\sigma_j)\big)_{\chi\in\mathcal C},
+    \Im\mathcal L_\eta(\sigma_j)\bmod 2\pi
+ \right)
+\end{equation}
+converges in law to independent centred normal coordinates of variance \(1/2\) and an independent uniform angle. Here are the characteristic function details. Test by \(\exp(i a\cdot z+i l\theta)\) with \(l\in\Z\). At \(l=0\), character orthogonality makes the covariance of \((\Re X_\chi)_{\chi\in\mathcal C}\) equal to half the identity. In the normalized real coordinates the second-order terms vanish in probability because they are centered at unfixed primes and have bounded total second moment. The higher powers are bounded in absolute value, and fixed-prime contributions vanish too. Independence and Taylor expansion of the first-order contributions give \(\exp(-\|a\|^2/4)\), with total cubic error \(O_a(b_j^{-3/2}\sum_q q^{-3/2})\).
+
+For \(l\ne0\), fix a large prime cutoff \(Y\) containing the prescribed primes. Keep the full phase below it. In the phase above \(Y\), the second-order terms have \(L^2\) norm \(O((\sum_{q>Y}q^{-2})^{1/2})\) and the terms of order at least three are \(O(\sum_{q>Y}q^{-3/2})\), uniformly in \(j\). Discard them temporarily, together with the terms of order at least two in the normalized real coordinates. Since \(|e^{iu}-e^{iv}|\le|u-v|\) for real \(u,v\), the second moments of the centred quadratic terms and the absolute summability from degree three onward show that this changes the expectation of the joint test by at most
+\[
+ O_{a,\Pi}(b_j^{-1/2})
+ +O_l\Big(\big(\textstyle\sum_{q>Y}q^{-2}\big)^{1/2}+\sum_{q>Y}q^{-3/2}\Big).
+\]
+This bounds the actual joint test, although the angle and the real coordinates use the same labels. By independence, the truncated expectation is the expectation of a head factor, carrying the full phase and the linear real terms below \(Y\), of modulus at most one, times the tail factors \(\EE e^{i q^{-\sigma_j} V_j}\), where
+\[
+ V_j=b_j^{-1/2}a\cdot(\Re X_\chi)_{\chi\in\mathcal C}+l\,\Im X_\eta .
+\]
+The variables are uniformly bounded and have variance at least \(l^2/2\), since \(\Im X_\eta\) is uncorrelated with the real coordinates. With an independent copy \(V'_j\), the squared modulus of each factor is \(\EE\cos(q^{-\sigma_j}(V_j-V'_j))\). For sufficiently large \(Y\) this is at most \(1-c_l q^{-2\sigma_j}\) by \(1-\cos u\gg u^2\) for \(|u|\le1\). At each fixed \(Y\), the product and the first error term tend to zero as \(j\to\infty\). Then let \(Y\to\infty\) to remove the second error term. The real coordinates are tight by their second moments, and the Fourier limits establish \eqref{eq:joint-gaussian}.
+
+We use the following consequence of finite conditioning. Suppose events \(E_j\) have \(\limsup_j\PP(E_j\mid \Pi)\ge c>0\) under every finite prescription \(\Pi\), with the same \(c\). Then \(\PP(\limsup_j E_j\mid \Pi)\ge c\) for each \(\Pi\). The inequality \(\PP(E^c\cap \Pi)\le(1-c)\PP(\Pi)\) for \(E=\limsup_j E_j\) extends first by addition to the cylinder algebra, then by a monotone class argument to every event of the sigma field in place of \(\Pi\). Taking the event \(E^c\) in place of \(\Pi\) shows \(\PP(E)=1\).
+
+For each \(\eta\) and each arc in a countable base, \eqref{eq:joint-gaussian} gives positive limiting probability, the same under every prescription, that the normalized real coordinate for \(\eta\) exceeds 1 and every other coordinate by more than 1, and its phase lies in the arc. The limiting boundaries have measure zero. Almost surely each such event occurs infinitely often, simultaneously over \(\eta\) and the arcs. If \(h\) has a nonzero coefficient at \(\eta\) and zero coefficients on nontrivial real characters, choose arcs on which \(\Re(c_\eta e^{i\theta})\) is above \(|c_\eta|/2\) and below \(-|c_\eta|/2\). The \(\eta,\bar\eta\) pair dominates the other pairs on the corresponding subsequences, since \(|\mathcal F_\eta|\ge e^{\sqrt{b_j}}\) and the competing moduli are smaller by a factor at least \(e^{\sqrt{b_j}}\). Consequently \(M_h(\sigma_j)\) is unbounded on both sides, so \(S_h^0\) is too.
+
+\subsection*{The nontrivial real character}
+When \(t\) is even, let \(\lambda\) be the nontrivial real character. Put \(s_j=\sigma_j+2i\delta_j\). At both \(s_j\) and \(\sigma_j\), each first-order prime series has second moment \(b_j\) and hence is \(o(b_j)\) almost surely by \(\sum_j b_j^{-1}<\infty\) and Borel--Cantelli. For \(\lambda\), the second-order real part is \(b_j/2+O(1)\) by \eqref{eq:prime-sum}. For any nonreal character the second-order term also is \(o(b_j)\) almost surely by its bounded second moment. Higher terms are bounded. Thus
+\(\Re\mathcal L_\lambda=b_j/2+o(b_j)\) and \(\Re\mathcal L_\chi=o(b_j)\) for each other nontrivial character at both arguments.
+
+Let \(R_j=\log|\mathcal F_\lambda(s_j)|-\log\mathcal F_\lambda(\sigma_j)\). Its first-order part is
+\[
+ \sum_q X_\lambda(q)q^{-\sigma_j}
+                   \big(\cos(2\delta_j\log q)-1\big).
+\]
+The maximal absolute coefficient tends to zero, since each coefficient at a fixed prime tends to zero and the rest are bounded by \(2q^{-1/2}\). The variance tends to \(\log 2-\frac14\log 5>0\). Indeed, for \(\delta=\delta_j\) it equals
+\[
+ \tfrac32\mathcal P(1+2\delta)
+ -2\Re\mathcal P(1+(2-2i)\delta)
+ +\tfrac12\Re\mathcal P(1+(2-4i)\delta),
+\]
+which has the stated limit by \eqref{eq:prime-sum}. A finite prescription changes the variance and the mean by \(o(1)\). Since the sum of the cubed coefficients in absolute value is bounded by the maximal coefficient times the bounded variance, the characteristic function converges to that of a centred Gaussian. The deterministic second-order real difference tends to \(-\frac14\log 5\), by applying \eqref{eq:prime-sum} to
+\(\tfrac12\Re(\mathcal P(1+(2-4i)\delta)-\mathcal P(1+2\delta))\).
+The higher-term differences vanish by dominated convergence. Thus \(R_j\) tends in distribution to the same nondegenerate Gaussian under any finite prescription, and the cylinder argument gives \(R_j>\log 2\) infinitely often almost surely.
+
+On this event, for every \(h\) with \(c_\lambda\ne0\) we have
+\[
+ |M_h(\sigma_j)|\to\infty,\qquad
+ \frac{|M_h(s_j)|}{|M_h(\sigma_j)|}=(1+o(1))e^{R_j}.
+\]
+The quadratic term dominates at both arguments and \(\sigma_j/|s_j|\to1\). Along the subsequence with \(R_j>\log2\), this violates \eqref{eq:mellin-bound}, even with \(M_h(\sigma_j)\) there replaced by its absolute value. Applying the bound to \(-h\) also rules out a uniform upper bound on \(S_h^0\). The events were chosen before \(h\). Every nonzero \(h\) with \(h(e)=0\) has a nontrivial Fourier coefficient, so this and the nonreal argument prove the two-sided centred-sum claim simultaneously. All the probability-one statements survive the prescribed finite conditioning.
+
+\section{Zeta hypotheses for the rank-one tail}\label{app:tail}
+Set \(\mathcal K_a=\Q(\zeta_a,2^{1/a})\). The asserted RH for the zeta functions of these fields implies, by \cite[Theorem~2]{Moree} and \cite[Theorem~3.1 at modulus 1]{HKMS}, the ordinary residual-index densities
+\[
+ d_v=\sum_{a\ge1}\frac{\mu(a)}{[\mathcal K_{va}:\Q]}.
+\]
+To see that their sum is one, let \(b=[\mathcal K_a:\Q(\zeta_a)]\), which is the order of the group of multipliers on \(2^{1/a}\). Then \(b\mid a\) and \(2^{1/(a/b)}\in\Q(\zeta_a)\). If \(a/b>2\), the field generated by this real radical is not normal over \(\Q\): its Eisenstein polynomial has nonreal roots. Since a subfield of an abelian Galois extension is normal, \(a/b\le2\). Thus \([\mathcal K_a:\Q]\ge a\varphi(a)/2\). The double sum of absolute values is bounded by \(2\sum_m\tau(m)/(m\varphi(m))\), which is finite by the Euler product whose local tails are \(O(\ell^{-2})\). Absolute rearrangement gives
+\[
+ \sum_{v\ge1}d_v
+   =\sum_{m\ge1}\frac{\sum_{a\mid m}\mu(a)}{[\mathcal K_m:\Q]}=1.
+\]
+The density of \(\operatorname{ind}_2(p)\le T\) is \(\sum_{v\le T}d_v\) for fixed \(T\), giving the stated tail with exactly this RH family.
+
+\section{Certificates for the census}\label{app:cert}
+Choose the representative of each orbit by the least unused slot and label the orbit of 1 first. Subtract the common anchor value from all slots. The remaining coefficients are \(x\in\R^{t-1}\). A unique translation enforces zero sum. Each row \(v_i\in\Z^{t-1}\) is the difference of the two slot-count vectors, with the first coordinate omitted. The exact replay verifies the following certificates.
+\begin{itemize}
+\item A strict witness is an integer vector \(x\) with every \(v_i\cdot x\ge1\).
+\item A scarred witness is a nonzero integer vector \(x\) with every \(v_i\cdot x\ge0\), together with a zero row or a relation \(\sum_i c_i v_i=0\) on selected rows with positive integral coefficients. The relation prevents simultaneous strict positivity.
+\item For a zero cone at index greater than one, a positive relation whose rows span the normal space forces their inner products to vanish at any feasible \(x\). The replay tests full rank modulo \(65521\), which implies full rank over \(\Q\).
+\item At \(t=1\) the normal space has dimension zero.
+\end{itemize}
+The five supplemental cases use the planar form of the scarred certificate: a nonzero feasible vector (a boundary ray, perpendicular to a nonzero row) together with an identically zero secondary row, which excludes strictness. For the index-three and index-four independent check, a compact rational feasibility search tests the finite inequalities for the same walk. Finite exhaustive and sampled random-prefix counts in the ancillary results are controls for the transfer and carry no asymptotic weight.
+
+\section*{Tools}
+The research, computations and drafting were carried out with substantial assistance from AI systems (OpenAI Codex and Anthropic Claude), under the author's direction and close supervision. Certificate candidates were found with NumPy and SciPy and checked exactly with Python, C and C++. The document was typeset in AMS-\LaTeX. The author takes responsibility for the contents.
+
+\begingroup\raggedright
+\begin{thebibliography}{HKMS}
+
+\bibitem[AHZ]{AHZ}
+M.~Aymone, W.~Heap and J.~Zhao, \emph{Sign changes of the partial sums of a random multiplicative function},
+Bull. Lond. Math. Soc. \textbf{55} (2023), 78--89.
+\href{https://arxiv.org/abs/2103.05413}{arXiv:2103.05413}.
+
+\bibitem[AX]{AX}
+R.~Angelo and M.~Xu, \emph{On a Tur\'an conjecture and random multiplicative functions},
+Quart. J. Math. \textbf{74} (2023), 767--777.
+\href{https://arxiv.org/abs/2205.05822}{arXiv:2205.05822}.
+
+\bibitem[A]{Aymone}
+M.~Aymone, \emph{Sign changes of the partial sums of a random multiplicative function II},
+C. R. Math. \textbf{362} (2024), 895--901.
+\href{https://doi.org/10.5802/crmath.615}{doi:10.5802/crmath.615}.
+
+\bibitem[B]{Berndt}
+B.~C.~Berndt, \emph{Classical theorems on quadratic residues},
+L'Enseignement Math. \textbf{22} (1976), 261--304.
+\href{https://www.e-periodica.ch/cntmng?pid=ens-001\%3A1976\%3A22\%3A\%3A110}{ETH archive}.
+
+\bibitem[BM]{BM}
+R.~C.~Baker and H.~L.~Montgomery, \emph{Oscillations of quadratic \(L\)-functions},
+in Analytic Number Theory, Progress in Mathematics \textbf{85}, Birkh\"auser, 1990, 23--40.
+\href{https://doi.org/10.1007/978-1-4612-3464-7_3}{doi:10.1007/978-1-4612-3464-7\_3}.
+
+\bibitem[BS]{BS}
+F.~Breuer and I.~E.~Shparlinski, \emph{Lower bounds for periods of Ducci
+sequences}, Bull. Aust. Math. Soc. \textbf{102} (2020), 31--38.
+\href{https://doi.org/10.1017/S0004972719001187}{doi:10.1017/S0004972719001187}.
+
+\bibitem[CGPS]{CGPS}
+B.~Conrey, A.~Granville, B.~Poonen and K.~Soundararajan, \emph{Zeros of Fekete polynomials},
+Ann. Inst. Fourier \textbf{50} (2000), 865--889.
+\href{https://doi.org/10.5802/aif.1776}{doi:10.5802/aif.1776}.
+
+\bibitem[COST]{COST}
+E.~Chen, K.~Ono, R.~E.~Schwartz and D.~S.~Thakur,
+\emph{Four-digit Kaprekar dynamics in odd bases},
+J. Integer Seq. \textbf{29} (2026), Article 26.4.7.
+\href{https://cs.uwaterloo.ca/journals/JIS/VOL29/Ono/ono3.pdf}{JIS Article 26.4.7}.
+
+\bibitem[CS]{Csikos}
+E.~Csikos, \emph{A continuous multi-component measure of directed acyclicity (DAG-ness)}, 2026.
+\href{https://arxiv.org/abs/2606.22205}{arXiv:2606.22205}.
+
+\bibitem[CST]{CST}
+N.~J.~Calkin, J.~G.~Stevens and D.~M.~Thomas,
+\emph{A characterization for the length of cycles of the \(n\)-number
+Ducci game}, Fibonacci Quart. \textbf{43} (2005), 53--59.
+\href{https://doi.org/10.1080/00150517.2005.12428392}{doi:10.1080/00150517.2005.12428392}.
+
+\bibitem[Dahl]{Dahl}
+C.~D.~Dahl, \emph{Coarse-grained drift fields and attractor-basin entropy
+in Kaprekar's routine}, Entropy \textbf{28} (2026), Article 92.
+\href{https://doi.org/10.3390/e28010092}{doi:10.3390/e28010092}.
+
+\bibitem[Di]{Dirichlet1840}
+P.~G.~L.~Dirichlet, \emph{Recherches sur diverses applications de l'analyse infinit\'esimale \`a la th\'eorie des nombres. Seconde partie},
+J. Reine Angew. Math. \textbf{21} (1840), 134--155.
+\href{https://doi.org/10.1515/crll.1840.21.134}{doi:10.1515/crll.1840.21.134}.
+
+\bibitem[DZ]{DZ}
+P.~Devlin and T.~Zeng, \emph{Maximum distances in the four-digit
+Kaprekar process}, Integers \textbf{21} (2021), Paper A97.
+\href{https://math.colgate.edu/~integers/v97/v97.pdf}{INTEGERS Article A97}.
+
+\bibitem[El]{Elliott}
+P.~D.~T.~A.~Elliott, \emph{On the distribution of the values of quadratic \(L\)-series in the half-plane \(\sigma>1/2\)},
+Invent. Math. \textbf{21} (1973), 319--338.
+\href{https://doi.org/10.1007/BF01418793}{doi:10.1007/BF01418793}.
+
+\bibitem[G1]{G1}
+R.~Galyavin, \emph{Cycles of the four-digit Kaprekar map in even bases}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358739}{doi:10.5281/zenodo.24358739}.
+
+\bibitem[G10]{G10}
+R.~Galyavin, \emph{Macroscopic cycles in odd-length Kaprekar dynamics: a chamber criterion and a residue-transfer rule}, 2026.
+\href{https://doi.org/10.5281/zenodo.24408723}{doi:10.5281/zenodo.24408723}.
+
+\bibitem[G2]{G2}
+R.~Galyavin, \emph{Arrival times for the four-digit Kaprekar map in even bases}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358744}{doi:10.5281/zenodo.24358744}.
+
+\bibitem[G3]{G3}
+R.~Galyavin, \emph{A common arrival-time law for five-digit Kaprekar dynamics}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358746}{doi:10.5281/zenodo.24358746}.
+
+\bibitem[G4]{G4}
+R.~Galyavin, \emph{Majorization in odd-digit Kaprekar dynamics and the nine-digit arrival law}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358748}{doi:10.5281/zenodo.24358748}.
+
+\bibitem[G5]{G5}
+R.~Galyavin, \emph{Seven-digit Kaprekar dynamics: global law, two clocks, parity}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358752}{doi:10.5281/zenodo.24358752}.
+
+\bibitem[G6]{G6}
+R.~Galyavin, \emph{Linear-time access for eleven-digit Kaprekar dynamics}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358756}{doi:10.5281/zenodo.24358756}.
+
+\bibitem[G7]{G7}
+R.~Galyavin, \emph{Arithmetic selection of arrival times in eleven-digit Kaprekar dynamics}, 2026.
+\href{https://doi.org/10.5281/zenodo.24371745}{doi:10.5281/zenodo.24371745}.
+
+\bibitem[G8]{G8}
+R.~Galyavin, \emph{Eleven-digit Kaprekar arrival laws modulo twelve}, 2026.
+\href{https://doi.org/10.5281/zenodo.24396437}{doi:10.5281/zenodo.24396437}.
+
+\bibitem[G9]{G9}
+R.~Galyavin, \emph{Off-centre Kaprekar cycles with positive basin density}, 2026.
+\href{https://doi.org/10.5281/zenodo.24399342}{doi:10.5281/zenodo.24399342}.
+
+\bibitem[HKMS]{HKMS}
+S.~Hu, M.-S.~Kim, P.~Moree and M.~Sha, \emph{Irregular primes with respect to Genocchi numbers and Artin's primitive root conjecture},
+J. Number Theory \textbf{205} (2019), 59--80.
+\href{https://arxiv.org/abs/1809.08431}{arXiv:1809.08431}.
+
+\bibitem[H]{Hooley}
+C.~Hooley, \emph{On Artin's conjecture}, J. Reine Angew. Math. \textbf{225} (1967), 209--220.
+\href{https://doi.org/10.1515/crll.1967.225.209}{doi:10.1515/crll.1967.225.209}.
+
+\bibitem[HP]{HP}
+P.~Hilton and J.~Pedersen, \emph{Folding regular star polygons and number theory},
+Math. Intelligencer \textbf{7}, no.~1 (1985), 15--26.
+\href{https://doi.org/10.1007/BF03023001}{doi:10.1007/BF03023001}.
+
+\bibitem[HPB]{HPbook}
+P.~Hilton and J.~Pedersen, \emph{A Mathematical Tapestry: Demonstrating the Beautiful Unity of Mathematics},
+Cambridge University Press, 2010, Chapters 7 and 17.
+\href{https://doi.org/10.1017/CBO9780511777004}{Cambridge University Press}.
+
+\bibitem[JM]{JM}
+W.~Johnson and K.~J.~Mitchell, \emph{Symmetries for sums of the Legendre symbol},
+Pacific J. Math. \textbf{69} (1977), 117--124.
+\href{https://doi.org/10.2140/pjm.1977.69.117}{doi:10.2140/pjm.1977.69.117}.
+
+\bibitem[JPS]{JPS}
+O.~J\"arviniemi, A.~Perucca and P.~Sgobba, \emph{Unified treatment of Artin-type problems II},
+Res. Number Theory \textbf{11} (2025), Article 42.
+Theorem and proposition numbers cited here follow \href{https://arxiv.org/abs/2211.15614v1}{arXiv:2211.15614v1}.
+
+\bibitem[K]{Kal}
+A.~B.~Kalmynin, \emph{Quadratic characters with positive partial sums},
+Mathematika \textbf{69} (2023), 90--99.
+Numbering cited here follows \href{https://arxiv.org/abs/2105.06910v2}{arXiv:2105.06910v2}.
+
+\bibitem[KD1]{KD1}
+A.~Kay and K.~Downes-Ward, \emph{Fixed points and cycles of the Kaprekar
+transformation: 1. Odd bases}, J. Integer Seq. \textbf{25} (2022),
+Article 22.6.7.
+\href{https://cs.uwaterloo.ca/journals/JIS/VOL25/Kay/kay5.html}{cs.uwaterloo.ca/journals/JIS/VOL25/Kay/kay5.html}.
+
+\bibitem[KD2]{KD2}
+A.~Kay and K.~Downes-Ward, \emph{Fixed points and cycles of the Kaprekar
+transformation: 2. Even bases}, 2024.
+\href{https://arxiv.org/abs/2408.12257}{arXiv:2408.12257}.
+
+\bibitem[KLM]{KLM}
+O.~Klurman, Y.~Lamzouri and M.~Munsch, \emph{Sign changes of short character sums and real zeros of Fekete polynomials}.
+\href{https://arxiv.org/abs/2403.02195}{arXiv:2403.02195}, 2024.
+
+\bibitem[Ku]{Kuch}
+P.~Kucheriaviy, \emph{Positivity of partial sums of a random multiplicative function and corresponding problems for the Legendre symbol}, 2026.
+\href{https://arxiv.org/abs/2510.25691v3}{arXiv:2510.25691v3}.
+
+\bibitem[LO]{LO}
+J.~C.~Lagarias and A.~M.~Odlyzko, \emph{Effective versions of the Chebotarev density theorem},
+in Algebraic Number Fields, Academic Press, 1977, 409--464.
+
+\bibitem[MSV]{Mayne}
+R.~Mayne, Q.~Shapiro and C.~A.~Van Cott, \emph{There and back again with Kaprekar 2-cycles}, 2026.
+\href{https://arxiv.org/abs/2608.22564}{arXiv:2608.22564}.
+
+\bibitem[M]{Moree}
+P.~Moree, \emph{Near-primitive roots},
+Funct. Approx. Comment. Math. \textbf{48} (2013), 133--145.
+\href{https://arxiv.org/abs/1112.5090}{arXiv:1112.5090}.
+
+\bibitem[N]{Nuez}
+F.~Nuez, \emph{Symmetries in generalized Kaprekar's routine},
+Symmetry \textbf{14} (2022), Article 37.
+\href{https://doi.org/10.3390/sym14010037}{doi:10.3390/sym14010037}.
+
+\bibitem[OEIS]{OEIS}
+The OEIS Foundation, \emph{The On-Line Encyclopedia of Integer Sequences},
+\href{https://oeis.org/A003558}{A003558},
+\href{https://oeis.org/A135303}{A135303},
+\href{https://oeis.org/A216371}{A216371}.
+
+\bibitem[T]{Thakur}
+D.~S.~Thakur, \emph{Kaprekar phenomena}, Proceedings of the Ropar Conference,
+Ramanujan Mathematical Society Lecture Notes Series \textbf{26} (2019), 1--10.
+\href{https://people.math.rochester.edu/faculty/dthakur2/kaprekar.pdf}{Author's copy}.
+
+\bibitem[VS]{VS}
+T.~Vasiga and J.~Shallit, \emph{On the iteration of certain quadratic maps over \(\mathrm{GF}(p)\)},
+Discrete Math. \textbf{277} (2004), 219--240.
+\href{https://cs.uwaterloo.ca/~tmjvasig/papers/newvasiga.pdf}{Author's copy}.
+
+\bibitem[W]{WC}
+K.~S.~Williams, \emph{On the quadratic residues (mod \(p\)) in the interval \((0,p/4)\)},
+Canad. Math. Bull. \textbf{26} (1983), 123--124.
+\href{https://doi.org/10.4153/CMB-1983-020-5}{doi:10.4153/CMB-1983-020-5}.
+
+\bibitem[YM18]{YM18}
+A.~Yamagami and Y.~Matsui, \emph{On 3-adic Kaprekar loops},
+JP J. Algebra Number Theory Appl. \textbf{40} (2018), no.~6, 957--1028.
+\href{https://doi.org/10.17654/NT040060957}{doi:10.17654/NT040060957}.
+
+\bibitem[YM19]{YM19}
+A.~Yamagami and Y.~Matsui, \emph{On some formulas for Kaprekar constants},
+Symmetry \textbf{11} (2019), Article 885.
+\href{https://doi.org/10.3390/sym11070885}{doi:10.3390/sym11070885}.
+
+\end{thebibliography}\endgroup
+\end{document}

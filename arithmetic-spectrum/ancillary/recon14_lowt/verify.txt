@@ -1,0 +1,8 @@
+strict n=9: orbits=[(1, 2, 4), (3,)], secondary rows=(1,)
+strict n=15: orbits=[(1, 2, 4, 7), (3, 6), (5,)], secondary rows=(1, 2, 1)
+strict n=21: orbits=[(1, 2, 4, 8, 5, 10), (3, 6, 9), (7,)], secondary rows=(1, 1, 1, 2)
+index lift at p=1093: 3 -> 3279
+odd composites through 1001: 333; t=2: 8; t=3: 73
+forced d_2: 52; forced d_4: 26; basis checks: 149
+prime-divisor indicators: 704; literal physical fixed-point checks: 453
+progression controls p up to 333 with p>7: [23, 47, 71, 79, 103, 167, 191, 199, 239, 263, 271, 311]

@@ -46,6 +46,10 @@ For uniformly random words of fixed odd length n in a growing base B, at all 47 
 
 For every odd word length at least seven, an exact criterion decides when macroscopic Kaprekar cycles can exist inside the chamber of positive pairing: a nonzero gap profile invariant under folded doubling and satisfying weak inequalities. When folded doubling has one orbit on the nonzero slots, a macroscopic cycle must lose pairing or breach a secondary comparison by an amount proportional to the base within two folded turns. A residue-transfer rule, valid at every odd length, gives exact limiting weights for exit residues of certified routes by an inherited lattice index. The length 1069 lies outside the natural three-way classification of lengths. No population share beyond earlier work is claimed.
 
+**The arithmetic spectrum of Kaprekar lengths** (2026), in [`arithmetic-spectrum/`](arithmetic-spectrum/) as [PDF](arithmetic-spectrum/kaprekar-arithmetic-spectrum.pdf) and [LaTeX source](arithmetic-spectrum/kaprekar-arithmetic-spectrum.tex). Archived at Zenodo: [doi:10.5281/zenodo.24419764](https://doi.org/10.5281/zenodo.24419764). Paper record: [doi:10.5281/zenodo.24419878](https://doi.org/10.5281/zenodo.24419878).
+
+Which odd word lengths can host macroscopic Kaprekar cycles inside the chamber of positive pairing is decided by the arithmetic of the length. At a prime length the question reduces to whether an alternating walk of incomplete character sums on the cosets of ⟨−1, 2⟩ surrounds the origin; at index two it is a Legendre walk ending at 1 − h(−4p). Unconditionally, at each fixed index, prime lengths admitting such cycles have density zero; under the Riemann hypothesis for the relevant Kummer fields, almost every prime length admits none. Every odd composite length admits them, with explicit fixed points; among composites with two or three folded orbits only 9, 15 and 21 are strict. Exact certificates classify every odd length below 10⁴. Basin mass and cycles leaving the chamber are not decided.
+
 ## Reproducing the results
 
 ```sh
@@ -98,6 +102,11 @@ bash reproduce.sh            # primary exact checks and the independent reconstr
 ```sh
 cd macroscopic-cycles/ancillary
 bash reproduce.sh            # exact certificates, independent checks and evidence totals (about four minutes)
+```
+
+```sh
+cd arithmetic-spectrum/ancillary
+bash reproduce.sh            # census certificates, independent checks and both index-two scans below 10^9
 ```
 
 Each `ancillary/README.md` gives the expected outputs and versions.

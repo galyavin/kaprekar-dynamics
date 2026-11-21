@@ -1,0 +1,23 @@
+STRICT 17 (orientation D>0)
+STRICT 41 (orientation D>0)
+N=1000000000 mode=0  index-2 primes 17<=p<=N: 4754058
+  below 6000: 75 index-2 primes
+  below 20000: 218 index-2 primes
+  below 30000: 319 index-2 primes
+  below 200000: 1687 index-2 primes
+  below 1000000: 7353 index-2 primes
+  below 30000000: 173810 index-2 primes
+  bin [0, 6000): idx2=75 strict=2
+  bin [6000, 30000): idx2=244 strict=0
+  bin [30000, 150000): idx2=996 strict=0
+  bin [150000, 300000): idx2=1118 strict=0
+  bin [300000, 600000): idx2=2189 strict=0
+  bin [600000, 1000000): idx2=2731 strict=0
+  bin [1000000, 2000000): idx2=6522 strict=0
+  bin [2000000, 3000000): idx2=6399 strict=0
+  bin [3000000, 10000000): idx2=41825 strict=0
+  bin [10000000, 30000000): idx2=111711 strict=0
+  bin [30000000, 100000000): idx2=365244 strict=0
+  bin [100000000, 1000000000): idx2=4215004 strict=0
+  largest row index deciding non-strictness: 449 (at p=700411841)
+./idx2scan 1000000000 0  17.51s user 0.60s system 98% cpu 18.360 total
