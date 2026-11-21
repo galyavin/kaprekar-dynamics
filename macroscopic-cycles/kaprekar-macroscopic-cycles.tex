@@ -1,0 +1,521 @@
+\documentclass[11pt,reqno]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.08in]{geometry}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Macroscopic cycles in odd-length Kaprekar dynamics},pdfauthor={Rustem Galyavin}}
+\setlength{\emergencystretch}{1.5em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\file}[1]{\nolinkurl{#1}}
+\title[Macroscopic Kaprekar cycles]{Macroscopic cycles in odd-length Kaprekar dynamics: a chamber criterion and a residue-transfer rule}
+\author{Rustem Galyavin}
+\thanks{\href{mailto:rustem@galyavin.com}{rustem@galyavin.com}. ORCID \href{https://orcid.org/0009-0006-6875-9170}{0009-0006-6875-9170}.}
+\date{20 November 2026}
+\subjclass[2020]{11A63,37P99}
+\keywords{Kaprekar map, folded doubling, periodic orbits, lattice index}
+\begin{document}
+\raggedbottom
+\begin{abstract}
+For every odd length at least seven, we give an exact criterion for the existence of macroscopic Kaprekar cycles inside the chamber with positive pairing and no secondary breach. The criterion is feasibility of a nonzero zero-sum gap profile that is invariant under folded doubling, constant on the orbit of the first slot together with the anchor, and satisfies weak linear inequalities. Such a profile gives fixed points at positive normalized distance from the centre on an unbounded base progression. In its absence every cycle contained in the chamber has bounded absolute radius. When folded doubling has just one orbit on the nonzero slots, at some source phase in the two folded turns preceding a maximum of gap energy, a macroscopic cycle fails positive pairing or has a secondary breach of depth proportional to the base. Both results concern actual subtraction, as opposed to an autonomous model of the gap dynamics. We also give a residue-transfer rule for the exit residues of certified routes on affine charts of original words, with weights conditional on the chart cell. It identifies their joint support and, on base progressions with a stable support translate, their exact limiting weights by an inherited lattice index.
+\end{abstract}
+\maketitle
+
+\section{Introduction and main results}
+For an integer base \(B\ge2\), the Kaprekar map on length-\(n\) words subtracts the digits in increasing order from the digits in decreasing order, using leading zeros to keep the length fixed. Throughout the first part let \(n=2k+1\ge7\) and \(m=k+1\). If \(a_1\ge\cdots\ge a_n\) are the sorted digits, put \(q_i=a_i-a_{n+1-i}\) and
+\[
+ g=(B-q_1,q_1-q_2,\ldots,q_{k-1}-q_k,q_k).
+\]
+These gaps sum to \(B\). The centred profile has every normalized gap equal to \(1/m\). Set
+\[
+ \mathcal R_B(q)=\max_{1\le i\le k}\left|q_i/B-(m-i)/m\right|,
+ \qquad Z_B=\max_{q\text{ on the cycle}}\mathcal R_B(q).
+\]
+Here \(Z_B=Z_B(\gamma)\) depends on the cycle \(\gamma\) as well as on \(B\); we suppress \(\gamma\) from the notation. Thus \(BZ_B\) is the absolute peak radius of the cycle. A \emph{macroscopic family} is a sequence of cycles \(\gamma_s\) at bases \(B_s\to\infty\) with \(Z_{B_s}(\gamma_s)\ge\delta\) for a fixed \(\delta>0\). For uniform original ordered nonconstant words, a terminal cycle is the cycle eventually visited, and its basin probability is its share of those \(B^n-B\) words.
+
+\subsection*{Conventions}
+A gap vector is \emph{physical} at base \(B\) if some length-\(n\) word in base \(B\) has it. Section~\ref{sec:energy} shows that every integral gap vector with \(g_0\ge1\), \(g_j\ge0\) and sum \(B\) is physical, and that the gap state determines the successor word. All cycles below are cycles of the actual map on physical states. An autonomous model, by contrast, iterates a gap formula without checking that it agrees with subtraction (Appendix~\ref{app:ball}). If \(q_k>0\), subtracting gives the singleton digit \(B-1\) and, at level \(i\), the pair of digits
+\begin{equation}\label{eq:pairs}
+ \big(q_i-\mathbf 1_{i=k},\ B-q_{k+1-i}-\mathbf 1_{i<k}\big),
+ \qquad 1\le i\le k .
+\end{equation}
+\emph{Positive pairing} means \(q_k>0\) and that the levels in \eqref{eq:pairs} are weakly decreasing: every digit of level \(i\) is at least every digit of level \(i+1\), ties allowed.
+
+Let \(P\) fix slot 0 and send slot \(j>0\) to \(f_n(j)=\min(2j,n-2j)\). It acts on gap vectors by \((Pg)_{f_n(j)}=g_j\), so the gap in slot \(j\) moves to slot \(f_n(j)\). This is multiplication by 2 on sign classes modulo \(n\). Write \(J\) for slot 0 together with the orbit of 1. Call the gaps in \(J\) the root gaps and slot 0 the anchor. The nonzero part of \(J\) has length \(r\), the \emph{folded order}, the least \(r>0\) with \(2^r\equiv\pm1\pmod n\). It ends at \(k\) before returning to 1. Call the length \emph{full-orbit} if \(r=k\), that is, if the orbit of 1 contains every nonzero slot. Define
+\[
+ p_0=\lfloor m/2\rfloor,\qquad
+ d_i(g)=\sum_{j=m-i}^{m-1}g_j-\sum_{j=0}^{i-1}g_j
+ \quad(1\le i\le p_0).
+\]
+The first comparison is primary and the others are secondary. The breach depth of row \(i\) is \((-1-d_i(g))_+\), where \(x_+=\max(x,0)\). Let the \emph{chamber} \(C\) be the set of physical states with positive pairing and no secondary breach, that is, \(d_i\ge-1\) for \(2\le i\le p_0\). A cycle lies in \(C\) if all its phases do. Write
+\[
+ W_n=\{w\in\R^m:\textstyle\sum_j w_j=0,\ Pw=w,\ w\text{ constant on }J,\
+                      d_i(w)\ge0\ (2\le i\le p_0)\},
+\]
+where constancy on \(J\) includes the anchor. A length is \emph{strict} if \(W_n\) contains a profile with every secondary comparison positive (Section~\ref{sec:lengths}).
+
+\begin{theorem}[Chamber criterion]\label{th:chamber}
+For each odd \(n\ge7\), the following statements are equivalent.
+\begin{enumerate}
+\item \(W_n\ne\{0\}\).
+\item On an unbounded sequence of bases there are fixed points in \(C\) whose normalized radii are bounded below by a positive constant.
+\item There are cycles lying entirely in \(C\) with arbitrarily large absolute peak radius.
+\end{enumerate}
+If \(W_n=\{0\}\), then \(BZ_B=O_n(1)\) on every cycle contained in \(C\).
+\end{theorem}
+
+\begin{theorem}[Full-orbit breach]\label{th:breach}
+Fix a full-orbit length \(n\ge7\). On any physical cycle, choose a phase maximizing \(\sum_j(g_j-B/m)^2\). Among the \(2r\) source phases (two folded turns) immediately preceding it, counted cyclically, either some phase fails positive pairing or
+\[
+ BZ_B\le K_n(1+H),\qquad
+ H=\max_{\substack{\text{source phases in the window}\\2\le i\le p_0}}(-1-d_i(g))_+ ,
+\]
+where \(K_n\) depends only on \(n\). In particular, if \(Z_B\ge\delta>0\), positive pairing throughout the window requires a secondary breach of depth at least \(\delta B/K_n-1\).
+\end{theorem}
+
+Theorems \ref{th:chamber} and \ref{th:breach} apply to terminal points without a bound on the time to the cycle or on its period.
+
+\emph{Idea of proof.} By Lemma~\ref{lem:update}, on a positively paired state the update is \(g^+=Pg+a+ev\): folded doubling, a correction \(a\) from sorting within each pair, and a borrowing term with \(e=\sgn d_1\). The sorting correction cannot raise the gap energy, since \(2\langle Pg,a\rangle+\|a\|_2^2\le0\) by \eqref{eq:cancel}. The borrowing work is controlled by the anchor differences \(b_t=(P^tg)_k-g_0\). Summed over one folded turn it is at most \(-2\sum|b_t|\) plus an error \(O_n(D)\), where \(D\ge1\) bounds the size of the correction. The turn sum controls the slots in the orbit of 1. During the first turn slot 1 resets the primary difference, and slot \(k\) inherits that bound, giving \(D=O_n(1+H)\) on the last turn. At full orbit every rotating slot passes through slot 1 and every nonzero slot occurs in the last-turn energy sum. At proper orbit the chamber argument uses the energy about the mean on \(J\). For Theorem~\ref{th:chamber}, a cycle in \(C\) has no secondary correction. The sum of the gaps outside \(J\) either falls by the primary breach at every step, which forces that breach to vanish on a cycle, or these gaps are permuted exactly. The same estimate on \(J\) then bounds the root diameter. Rescaling cycles with unbounded radius gives a zero-sum limit \(u\), constant on \(J\), whose folded turn \(P^tu\) has nonnegative secondary comparisons. Their average lies in \(W_n\). If \(W_n=\{0\}\), these comparisons are nonnegative with zero average, so they vanish on every phase. The new value at slot \(j\) is then the old value at slot \(\lfloor j/2\rfloor\), which forces \(u=0\).
+
+The third result concerns original words rather than cycles, and is not derived from Theorems \ref{th:chamber} and~\ref{th:breach}. Fix an odd \(n\ge3\). An affine source chart (Section~\ref{sec:transfer}) consists of original integer coordinates \(u\) in a coset \(p_B+L\), with fixed direction lattice \(L\) and \(p_B\) affine along a base progression, and a cell of normalized positions \(u/B\) carrying a limiting density. A route on the chart is guard-certified if all its branch inequalities and stated successors hold there; the current state is then \(X=Mu+Bb+c\). A query reduces finitely many integral affine forms \(G_i(X,B)=a_iX+b_iB+c_i\) modulo fixed positive integers \(s_i\).
+
+\begin{theorem}[Residue transfer]\label{th:transfer}
+Fix an odd \(n\ge3\), an affine source chart with direction lattice \(L\), a finite guard-certified route on it with current state \(X=Mu+Bb+c\), and a query \((G_i,s_i)_i\). Put
+\[
+ \phi:L\longrightarrow\textstyle\prod_i\Z/s_i\Z,\quad \phi(v)=(a_iMv\bmod s_i)_i,
+ \qquad I=\operatorname{im}\phi,\quad K=\ker\phi,
+\]
+so that \(|I|=[L:K]\). Along an incoming base progression the following hold.
+\begin{enumerate}
+\item The residue vectors \((G_i(X,B)\bmod s_i)_i\) of the points of \(p_B+L\) form a translate \(c_B+I\), where \(c_B\) is periodic in \(B\) along the progression.
+\item Uniformly over labels \(\lambda\), the probability that the residue vector equals \(\lambda\), conditional on the source cell, is \(\mathbf 1[\lambda\in c_B+I]/|I|+o(1)\). For every bounded continuous \(f\), conditional on the cell,
+\[
+ \mathbb E_B\big[f(u/B)\mathbf 1_{R_B=\lambda}\big]=|I|^{-1}\mathbf 1_{\lambda\in c_B+I}\,\mathbb E_B[f(u/B)]+o(1),
+\]
+uniformly in \(\lambda\), where \(R_B\) denotes the residue vector. For a nonnegative \(f\) with positive limiting cell integral, dividing by \(\mathbb E_B[f(u/B)]\) gives \(\mathbf 1_{\lambda\in c_B+I}/|I|+o(1)\), uniformly in \(\lambda\).
+\item The support is \emph{stable} on a progression if the coset \(c_B+I\) is constant there. Every progression splits into finitely many stable ones. On a stable progression each fixed supported label has limiting conditional weight \(1/|I|\), and each fixed unsupported label has limit zero.
+\item Along a path with successive residue restrictions, the indices telescope to the index of the final direction lattice in the initial one, on that leaf's original cell. The uniform leading joint law factors into its marginals exactly when \(I\) is the product of its coordinate projections.
+\end{enumerate}
+\end{theorem}
+
+Theorem~\ref{th:transfer} gives conditional weights on verified finite routes. No population share beyond the earlier work \cite{G9} is claimed.
+
+Section~\ref{sec:energy} proves Theorems \ref{th:chamber} and~\ref{th:breach}. Section~\ref{sec:lengths} computes \(W_n\) from the arithmetic of \(n\). Its main example is the prime \(n=1069\), where the cone is trivial even though the folded orbit is proper and no secondary row vanishes identically. Section~\ref{sec:transfer} proves Theorem~\ref{th:transfer} and applies it to four physical routes. Sections \ref{sec:mass} and~\ref{sec:period} give tools for later population work: an entrance-charging identity, a conditional transport criterion at strict lengths, Presburger definability of the bases that carry a given period, and a radius gap for odd periods at thirteen digits. Section~\ref{sec:scope} discusses scope and states two conjectures, and Section~\ref{sec:verify} lists the computations. Appendix~\ref{app:ball} records a nine-digit comparison in which uniform autonomous starts and physical originals have different limiting support.
+
+
+\subsection*{Related work}
+Yamagami and Matsui give formulas for the numbers and lengths of base-three cycles \cite{YM}. Kay and Downes-Ward use multiplicative subgroups and cosets in their fixed-base classifications \cite[Sections~3--4]{KDO}\cite[Theorem~5(c), Definition~7 and Theorem~9]{KDE}. For odd bases \(B>3\), Chen, Ono, Schwartz and Thakur show that four-digit orbits from nonconstant words enter a forward-invariant region within three iterations, and conjugate the map on that region to doubling on unordered pairs of distinct nonzero projective residue classes modulo \(B\) \cite[Theorem~1]{COST}. In the present paper the modulus of the gap permutation is the word length. Devlin and Zeng determine the maximum finite distance to the four-digit fixed point and investigate its basin \cite[Theorems~1--2]{DZ}. The even-base four-digit cycle and arrival results are in \cite{G1,G2}, and the five- and seven-digit arrival laws are in \cite{G3,G5}. Dahl uses empirical Markov transitions to study drift in coarse digit-gap coordinates \cite[Sections~2--3]{Dahl}.
+
+In the Ducci game, adjacent differences on binary vectors give iteration of a linear map. The order of 2 modulo the length and the condition that a power of 2 equals \(-1\) also enter period bounds for Ducci sequences \cite[Theorem~1.1]{BS}\cite[Propositions~2.3--2.5]{CST}\cite[Corollary~3 and Theorem~2]{Ehrlich}. The folded order \(r\) is the order of 2 in \((\Z/n\Z)^\times/\{\pm1\}\), so it is determined by these same two data. Here it arises as the cycle length of a permutation of gap slots, and no Ducci result is used. Ludington Furno studies the eventual cycles of iterated adjacent integer differences \cite{Ludington}. Alwani and Vivaldi prove full-density periodicity or escape in an invertible lattice family derived from a piecewise affine twist map \cite[Theorem~1]{AV}. Their density is taken over lattice starts of that map. The density here is inherited from original words and restricted to specified physical routes.
+
+The gap coordinates and leading majorization are from \cite{G4}. The exact paired update in \(C\), strict profile construction, and previously known positive lower basin bounds are in \cite{G9}. At eleven digits, \cite{G6} proves high-probability access and terminal centring, \cite{G7} first separates the scaled joint arrival laws by arithmetic class, and \cite{G8} gives the modulo-twelve law on a specified entrance event. We extend their use of lattice indices to simultaneous exit queries on arbitrary certified finite routes.
+
+\emph{Contributions.} The classifications above fix the base, and the four-digit results fix the length at four. Here the odd length \(n\) is fixed and \(B\to\infty\). Against \cite{G9}, Theorem~\ref{th:chamber} extends the strict-profile construction to the weak cone and proves the converse: a trivial cone bounds the absolute radius of every cycle in \(C\). Theorem~\ref{th:breach} gives a quantitative breach at full-orbit lengths. Theorem~\ref{th:transfer} puts residue transfer in lattice-index form, extending the eleven-digit computations of \cite{G6,G7,G8} to arbitrary certified routes. Proposition~\ref{prop:support} is an application of Presburger arithmetic \cite{GS,BGW}, not a new method.
+
+\section{Exact subtraction and the energy estimate}\label{sec:energy}
+Every integral gap vector with \(g_0\ge1\), \(g_j\ge0\), and sum \(B\) is physical. Indeed, the word with largest digits \(q_1,\ldots,q_k\) and all remaining digits zero realizes it. The subtraction is \(\sum_{i=1}^k q_i(B^{n-i}-B^{i-1})\), so the gap state determines the successor word, and the least periods of a gap cycle and its corresponding word cycle agree.
+
+If \(q_k>0\), subtracting gives the singleton digit \(B-1\) and the paired levels \eqref{eq:pairs}. The singleton is largest. The two same-column comparisons of adjacent pairs have lower bound \(\min_jg_j-1\). The other comparisons are sums of \(m+1\) prefix or suffix gap terms, minus \(B\) and with offset at least \(-1\). Hence
+\begin{equation}\label{eq:guard}
+ (m+1)\min_jg_j\ge B+1
+\end{equation}
+is sufficient for positive pairing.
+
+\begin{lemma}[Paired update]\label{lem:update}
+Put \(d_0=h_0=0\), \(h_i=(-1-d_i)_+\), \(e=\sgn d_1\), and \(v=(1,-2,1,0,\ldots)\). On every positively paired state,
+\begin{equation}\label{eq:update}
+ g^+=Pg+a+ev,\qquad (a_{2i-2},a_{2i-1})=(-\Delta h_i,\Delta h_i),
+\end{equation}
+where \(\Delta h_i=h_i-h_{i-1}\), with zero correction in the unmatched final slot if \(m\) is odd. In addition,
+\begin{equation}\label{eq:cancel}
+ 2\langle Pg,a\rangle+\|a\|_2^2
+ =2\sum_{i=1}^{p_0}\Delta h_i\,\Delta(d_i+h_i)\le0.
+\end{equation}
+\end{lemma}
+\begin{proof}
+In the last pair replace \((q_k-1,B-q_1)\) provisionally by \((q_k,B-q_1-1)\), and take the maximum and minimum within each level. The gaps in slots \(2i-2,2i-1\) have sum \(g_{i-1}+g_{m-i}\) and difference \(|1+d_{i-1}|-|1+d_i|\). To see this, use \(\max(x,y)=(x+y+|x-y|)/2\), \(\min(x,y)=(x+y-|x-y|)/2\) in the symmetric differences of the ordered levels. The unmatched middle gap of the input, if present, goes to the final slot. The last pair retains its sum under restoration. The first gap changes from \(\min(g_0,g_k+1)\) to \(\min(g_k,g_0+1)\), a change of \(e\) on integer gaps. The smaller digit of the last pair therefore increases by \(e\) and the larger decreases by \(e\). Consequently the first two symmetric differences change by \(-e,e\), and the next two gaps change by \(-2e,e\). Substituting \(|1+d|=1+d+2(-1-d)_+\) into the provisional expression gives \eqref{eq:update}, since the paired coordinates of \(Pg\) are \(g_{i-1},g_{m-i}\). Their difference in the opposite order is \(\Delta d_i\), giving \eqref{eq:cancel}. The functions \(h(d)\) and \(d+h(d)=\max(d,-1)\) have opposite monotonicity.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{th:breach}]
+Assume positive pairing throughout the window. The primary part of \(a\) is \(h_1(-1,1,1,-1,0,\ldots)\). The secondary part vanishes in slots 0 and 1 and has sup norm at most \(2H\). Thus
+\[
+  g_1^+-g_0^+=z-3\sgn z+2(-1-z)_+\ge-2,\qquad z=g_k-g_0,
+\]
+on integers. Every other rotating difference from the anchor falls by at most \(1+2H\) relative to its predecessor. The primary contribution relative to the anchor is \(2h_1\) at slot 2, zero at slot 3, and \(h_1\) elsewhere among these slots. Here the full-orbit hypothesis is used: since \(r=k\), the orbit of 1 contains every nonzero slot, so every rotating slot has passed through slot 1 after \(r\) steps. For the bound on \(h_1\) it suffices to track slot \(k\in J\). On the last \(r\) updates this gives \(h_1\le1+(r-1)(1+2H)\). With \(M=r(1+2H)\) and \(D=M+2\), one has \(\|a\|_\infty\le M\), \(\|g^+-Pg\|_\infty\le D\) there.
+
+Let \(g\) be the first gap vector of the last turn and \(g_t\) the vector after \(t\) more updates. Set \(b_t=(P^tg)_k-g_0\) with cyclic subscripts modulo \(r\). The difference between \(g_t\) and \(P^tg\) has sup norm at most \(tD\). Since \(P(k)=1\), \(P(1)=2\), the signed work on the permuted vector satisfies
+\[
+ 2e_t\langle Pg_t,v\rangle\le -4|b_t|+2|b_{t-1}|+12tD.
+\]
+Indeed the exact left side is \(-4|(g_t)_k-(g_t)_0|+2e_t((g_t)_1-(g_t)_0)\). Also \(2e_t\langle a,v\rangle\le8M\) and \(e_t^2\|v\|_2^2\le6\). Sum using \eqref{eq:cancel}. The full-orbit hypothesis enters again here: as \(t\) runs through one turn, \((P^tg)_k\) runs through every nonzero slot of \(g\), so the cyclic sum of \(-4|b_t|+2|b_{t-1}|\) is \(-2\sum_{j>0}|g_j-g_0|\). For \(V=\sum_j(g_j-B/m)^2\) the final phase maximizes \(V\), so
+\[
+ 0\le V_{\rm end}-V_{\rm start}
+ \le -2\sum_{j>0}|g_j-g_0|+6Dr(r-1)+r(8M+6).
+\]
+Centring minimizes the Euclidean norm over common translations, so \(\sqrt{V_{\rm start}}\le\sum_{j>0}|g_j-g_0|\), and \(\sqrt{V_{\rm end}}\le\sqrt{V_{\rm start}}+r\sqrt m D\). At each phase \(B\mathcal R_B(q)\le\sqrt{mV}\) by the suffix-sum formula and Cauchy--Schwarz. As \(V_{\rm end}\) maximizes \(V\), \(BZ_B\le\sqrt{mV_{\rm end}}\). Using \(\sqrt m\le m\), \(M\le2r(1+H)\) and \(D\le(2r+2)(1+H)\), the theorem therefore holds with
+\[
+ K_n=m\big[3(2r+2)r(r-1)+r(8r+3)+r(2r+2)\big].
+\]
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{th:chamber}]
+If \(W_n\ne\{0\}\), the rational inequalities defining the cone give a nonzero rational vector \(w\) therein. Choose a sufficiently small positive rational \(\epsilon\) so that \(\pi=\mathbf1/m+\epsilon w\) satisfies \((m+1)\min\pi>1\). For all sufficiently large multiples of its denominator, \(g=B\pi\) satisfies \eqref{eq:guard}, \(e=h_i=0\) and \(Pg=g\). These fixed points have constant positive normalized radius and unbounded absolute radius.
+
+On a cycle contained in \(C\), all secondary \(h_i\) vanish. If slot 3 is outside \(J\), the sum of the complementary gaps decreases by \(h_1\) at every update. Periodicity forces \(h_1=0\) at every phase. If slot 3 lies in \(J\), the entire correction is supported on \(J\). Thus the complement permutes exactly and the sum on \(J\) is constant. The two-turn argument of Theorem~\ref{th:breach}, namely the bound on the primary breach over the first turn, the cancellation \eqref{eq:cancel}, and the borrowing-work bound summed over a folded turn, applies on \(J\) with \(H=0\), taking a maximum of the energy on \(J\) about its own mean. The cancellation holds there since the corrections are supported there. The sum of \(|b_t|\) now runs over \(J\setminus\{0\}\). The last-turn bound then controls the maximum centred energy on \(J\), so the diameter of the gaps on \(J\) is uniformly bounded at every phase.
+
+Suppose that the absolute peaks are unbounded. Centre the vectors by \(B/m\) and divide each cycle by its maximum centred sup norm. This norm tends to infinity along a subsequence, because \(n\) is fixed and differences are suffix sums. At maximizing phases a further subsequence converges to a zero-sum \(u\) of sup norm one, constant on \(J\). The corrections are bounded by the root diameter bound and \eqref{eq:update}, so the next \(r\) limit phases are given by \(P^t u\). Since \(P^r=I\) on all slots, their average is in \(W_n\). If \(W_n=\{0\}\), this average is zero. Each secondary comparison is nonnegative on every one of these phases and has zero average, so it is zero on every phase, and the primary comparison is zero by equality on \(J\). Taking successive differences gives equality of each mirror pair. On such a vector the new value at slot \(j\) is the old value at slot \(\lfloor j/2\rfloor\), also for an unmatched final slot. After \(\lceil\log_2m\rceil\) iterations all values equal the old anchor. The limiting phases repeat after \(r\), so this iteration is valid even across a return. Invertibility and zero sum give \(u=0\), which contradicts its sup norm one.
+\end{proof}
+
+\section{Arithmetic of the length}\label{sec:lengths}
+Call a length \emph{strict} if there is a profile in \(W_n\) with every secondary comparison positive. Equivalently, after adding the constant gap profile and scaling the perturbation down, there is a positive invariant normalized gap profile with these strict inequalities. A non-full-orbit length is \emph{forced-tie} if some secondary row vanishes identically on the space of invariant profiles constant on \(J\). Full-orbit lengths are exactly the primes \(n\) for which \(\langle 2,-1\rangle=(\Z/n\Z)^\times\). Indeed the orbit of 1 consists of units, and at a composite length some nonzero sign classes are nonunits. For a specified folded order \(r\), candidates are the odd divisors of \(2^r-1\) or \(2^r+1\), filtered by the exact order. On an invariant gap vector,
+\begin{equation}\label{eq:prefix}
+ d_i(w)=\sum_{j=0}^{i-1}(w_{2j+1}-w_j),
+\end{equation}
+because \(f_n(k-j)=2j+1\) in this range. Thus one can compute the rows by subtracting prefix orbit counts from odd-index orbit counts. The constant vector contributes zero. Assign an independent offset to each orbit outside \(J\), then subtract the mean to obtain the zero-sum space. Testing the weak cone or strict inequalities reduces to rational linear feasibility on this space.
+
+At every odd composite \(n\), let \(p\) be an odd prime divisor and assign weight one at the positive multiples of \(p\) and zero elsewhere. It is invariant and constant on \(J\). The index test in \eqref{eq:prefix} counts \(j\equiv(p-1)/2\pmod p\) with a plus sign and positive multiples of \(p\) with a minus sign. Each complete period of length \(p\), apart from the excluded index zero, balances the two contributions. Starting at index 0, the excess is always zero or one. Subtracting the mean gives a nonzero element of \(W_n\). For folded orders \(3\) through \(13\), the published length screen gives five full-orbit lengths, 47 strict lengths and four forced-tie lengths \cite[Section~4.2]{G9}.
+
+
+For every \(a\ge4\), both \(2^a-1\) and \(2^a+1\) are strict and have folded order \(a\). In the minus case the orbit of 1 consists of the powers of two through \(2^{a-2}\) and the slot \(2^{a-1}-1\). In the plus case it consists of the powers of two through \(2^{a-1}\). In each case the final slot maps back to 1. Give weight zero on \(J\) and one off \(J\), then subtract the mean. The first \(i\) slots contain at least two elements of \(J\) for every secondary row, and the last \(i\) slots contain just \(k\), except at the largest row in the minus case. There the suffix contains \(k\) and \(2^{a-2}\), while the prefix also contains slot 2. Thus all secondary rows are positive. When \(a\equiv1\pmod4\) and \(a\ge5\), the nearby length \(2^a+3\) is forced-tie. It is composite because it is a multiple of 5, and \(2^a\equiv-3\pmod{2^a+3}\) places slot 3 and its predecessor \(k-1\) in \(J\). Hence \(d_2\) vanishes on every invariant root-equal profile.
+
+\begin{proposition}\label{prop:1069}
+The prime length \(1069\) is neither full-orbit, strict nor forced-tie, and \(W_{1069}=\{0\}\). For each \(s\ge2\), the length \(1069^s\) has folded order \(178\cdot1069^{s-1}\), has a nonzero weak cone, and is forced-tie: its secondary row \(d_{534}\) vanishes identically. At \(s=2\) the identically zero secondary rows are exactly \(d_{534}\), \(d_{1070}\) and \(d_{1603}\).
+\end{proposition}
+\begin{proof}
+The finite orbit and row computations of Appendix~\ref{app:finite} give three orbits of size 178 at \(1069\), with representatives \(1,3,7\). Let \(x,y\) be the offsets at 3 and 7 from the weight at 1. The rows
+\[
+ d_2=x,\quad d_3=2x,\quad d_{31}=-3x,\quad
+ d_4=x+y,\quad d_{34}=-x-y
+\]
+force both offsets to vanish on \(W_{1069}\), even though all 266 secondary rows are individually nonzero.
+
+Put \(p=1069\). The modular checks give \(2^{178}\equiv-1\pmod p\), with no earlier folded return, and \(2^{356}\equiv1+417p\pmod{p^2}\). Expanding powers of \(1+up^j\) for \(p\nmid u\) shows that raising to \(p\) increases the valuation of its difference from 1 by one, and raising to an exponent prime to \(p\) preserves it. Hence 2 has order \(356p^{s-1}\) modulo \(p^s\). Its subgroup contains the unique involution \(-1\), and is the full inverse image of its reduction modulo \(p\), by the sizes of these subgroups. The five displayed rows keep their coefficients on the unit-orbit offsets at every power, since they involve only 0 and units below \(p\). For row 534, the odd indices \(1,3,\ldots,1067\) give a representative of every nonzero sign class modulo \(p\). The prefix \(0,\ldots,533\) has the same total weight as \(1,\ldots,534\), because 534 is in the root unit orbit and shares its weight with 0. Both sums therefore agree on every eligible invariant vector. The composite construction gives \(W_{p^s}\ne\{0\}\). At \(s=2\), the six orbit coefficients (three orbits of units and three of multiples of 1069) are updated successively for all 285,689 secondary rows; the zero indices are 534, 1070 and 1603 (Appendix~\ref{app:finite}).
+\end{proof}
+
+\section{Residue transfer on a certified route}\label{sec:transfer}
+In this section take any fixed odd \(n\ge3\). An affine source chart specifies original integer coordinates \(u\) in a coset \(p_B+L\), with fixed direction lattice \(L\) and a representative \(p_B\) affine on an incoming base progression. It also specifies a bounded Jordan-measurable cell of normalized positions \(u/B\), in relative coordinates if the source has lower dimension. Take the measure to be given by lattice Riemann sums with a common nonnegative Riemann-integrable density of positive integral on the cell. For \(d=\operatorname{rank}L\) the point weights have the form \(B^{-d}\rho(u/B)+r_B(u)\) with \(\sum_u|r_B(u)|=o(1)\) over the chart. Restricting to a finite-index coset keeps the same point weights. For uniform original words in the full difference space, this density is \(n!\prod_{j=0}^k(g_j/B)\) at mesh \(1/B\). Indeed \(g_0\) choices for the smallest digit and the positive splits of each \(g_i\), followed by \(n!\) orderings, give the distinct-digit count. When all \(g_i\ge2\) for \(i\ge1\), each \(g_i\) has \(g_i-1\) positive splits. A smaller gap allows zero distinct-digit realizations. Repeated digits have original probability \(O_n(B^{-1})\). A source of lower dimension takes its relative density as a hypothesis. A lower-dimensional current image is measured by its preimages in the original chart.
+
+On a chart of a route, the current physical state has the form \(X=Mu+B b+c\), integral on the admissible lattice, with possible rational coefficients and rank loss. An itinerary is \emph{guard-certified} when all its inequalities for borrowing, sorting and branch changes, and the stated successors on those branches, hold on the specified integer domain. A guard is an affine comparison giving such a branch. In exact integer tests, strictness is enforced by subtracting one from the slack. A query consists of finitely many integer-valued guards or other integral affine forms \(G_i(X,B)=a_iX+b_iB+c_i\), reduced modulo fixed positive integers \(s_i\).
+
+We now prove Theorem~\ref{th:transfer}; its density \(\rho\) and cell are those just described, and its weights are conditional on the source cell.
+
+\begin{proof}[Proof of Theorem~\ref{th:transfer}]
+Translation of \(p_B+L\) to \(L\) gives the stated support translate, and \(I\cong L/K\) gives \(|I|=[L:K]\). Every fiber of a supported value is a coset of \(K=\ker\phi\). Its fundamental volume is \([L:K]\) times that of the parent, so the two Riemann sums on the same cell with the common density converge in that ratio. For a bounded continuous test \(f\) of original position, the sum of \(f(u/B)\) over a fiber therefore equals \([L:K]^{-1}\) times its sum over the parent coset, up to \(o(1)\). The scaled fundamental cells of either lattice have mesh \(O(B^{-1})\), uniformly over their translates. Each supported value thus has the stated weight up to \(o(1)\), and the displayed expectation identity holds, uniformly over labels, which is item~(2). Dividing by \(\mathbb E_B[f(u/B)]\) is legitimate only when its limit is positive. For a fixed label the stable-support qualification is necessary: \(B\bmod 2\) alone gives index one, with an alternating unique label. The offsets are affine along the incoming progression and integral where queried, so \(c_B\) is periodic along it. Refining by finitely many base classes makes the support translate stable, and the same procedure applied to each child works throughout a specified finite route.
+
+The measure of a child retains the preimage lattice \(K\), even if multiple original positions have the same current image. For \(L=L_0\supseteq\cdots\supseteq L_t\) the product of inverse conditional indices is \([L:L_t]^{-1}\). For disjoint children sharing a mark, add their probabilities after restricting to their original cells. Rank zero gives one state-dependent residue at each fixed base. Each marginal is uniform on its own support translate, so the uniform leading product law agrees with the leading joint law precisely when the two supports coincide. Finite-cell counts can have boundary errors even when the leading law factors. For a scalar query the index is \(s/\gcd(s,aML)\). For several queries, if \(A\) consists of the guard values on a basis of \(L\) and \(D=\operatorname{diag}(s_i)\), the joint index is \(\det(D)/[\Z^\ell:A\Z^{\operatorname{rank}L}+D\Z^\ell]\), with \(\ell\) the number of queries.
+\end{proof}
+
+\subsection{Complete copies and the first failed phase}
+Use the full borrowed digit list, including zero trailing differences. If the positive height is \(h\), meaning \(q_h>0\) and all following differences are zero, the digit list before sorting is
+\[
+ q_1,\ldots,q_{h-1},q_h-1,\quad
+ \underbrace{B-1,\ldots,B-1}_{n-2h},\quad
+ B-q_h-1,\ldots,B-q_2-1,B-q_1 .
+\]
+For \(h=1\) the last block is just \(B-q_1\), and at height zero the result is zero. This follows from the right-to-left borrow. A fixed height and a fixed sorting permutation with a tie convention make the exact update affine. This permits words with unpaired phases as well.
+
+Suppose a complete word of length \(\ell\) acts on its incoming sheet by \(X\mapsto X+d\), with linear part fixing \(d\). Pull all guards back to the start of the word. The slack at copy \(j\) is \(G_i-js_i\), where \(s_i=-a_id\). With initial slacks nonnegative and at least one falling guard, the first failed copy starts after
+\[
+ N=1+\min_{s_i>0}\lfloor G_i/s_i\rfloor
+\]
+complete copies. A set of equal leading deadlines given by nonidentical affine forms in the original relative space has measure zero. Outside vanishing collars of that wall, the ordering is uniform on compact cells. If two leading forms coincide identically on the original relative space, compare their exact remaining intercepts. This also treats structural ties of primitive guards after rank loss. At \(X+Nd\) replay the partial copy in primitive order to identify the first failed phase and all failures there. A tie of copy counts can split into different first failed phases. The changed successor requires its own guard checks.
+
+On a residue child \(j=G_i\bmod s_i\) of a minimizing guard, \(N=1+(G_i-j)/s_i\) is affine. The exit maps the inherited lattice to \((\mathrm{Id}+da_i/s_i)MK\) before bounded switches. The operator kills the line of \(d\); it drops the image rank by one exactly when that line was present in the image span. A falling word adds scaled clock time \(\ell\lim (G_i/B)/s_i\) at the specified original position; a bounded partial copy or switch adds zero in the scaled limit. These facts permit the next applications of Theorem~\ref{th:transfer} on the exact original child cosets.
+
+For example, \(X=(u,2u)\), \(d=(-2,-4)\) and guards \(u,2u+1\) give only the residue pairs \((0,1),(1,3)\) modulo \((2,4)\). Each has weight \(1/2\); multiplication of marginal weights would assign \(1/4\) to each of four pairs.
+
+\subsection{Physical instances}
+\textit{Nine digits.} At each normalized original position on the separating route of \cite[Sections~4.2--4.4]{G4}, the limiting conditional clock and terminal law has four atoms. Over an original cell one integrates these position-dependent laws. The weights of the moving-terminal atom in the base classes \(0,1,2,3,4\) modulo five are
+\[
+ 11/48,\quad29/128,\quad29/144,\quad107/576,\quad233/1152 .
+\]
+For one guard the incoming generator is \((4,8,7,6)\), on which the guard takes value 5, and the decrement is 24. The index is 24, and the pushed-forward kernel generator is \(18(2,4,6,3)\). This factor matters at the next split.
+
+\textit{Eleven digits.} On the strict control route for class 6 modulo twelve in the exact reconstruction of \cite[Sections~2.2--4]{G8}, the eight indices are \(3,2,12,18,4,6,5,4\). The first seven selected residues \(5,1,5,9,16,5,6\) have combined conditional weight \(1/155520\). The last exit has residues \(1,5,9,13\) of equal conditional weight and common \emph{normalized} endpoint \((5,4,3,2,1)/6\) in the ordinary differences. The exact centred endpoints differ (Appendix~\ref{app:finite}). The last leading clock increment is common to all four.
+
+\textit{Seventeen-digit isolated wall.} On an isolated-wall section assume the root offsets are \((0,0,1,-2)\), pairing and the other wall inequalities hold through the stated return, and its relative source lattice admits \(\delta c=1\) at fixed base, for the low offset \(c\), with one high offset decreasing by one. The guard \(c-29\) falls by 27, so conditional on such a chart each of the 27 section labels \(c_*=2,\ldots,28\) has weight \(1/27\). The section replay gives twenty entries with certified returns of length eight and five with certified returns of length twelve, with offsets 2 and 16 unresolved. At fifteen digits, under the analogous assumption, the corresponding guard is \(c-22\), the decrement is 21, and the section replay of the 21 entries gives five certified returns of length six and sixteen of length eight.
+
+\textit{Seventeen-digit corner.} Take anchor \(A\) and offsets \((0,0,0,1,-2)\) in slots \((0,1,2,4,8)\), and offsets \((c+u+v+4,c+u,c+v,c)\) in slots \((3,5,6,7)\). Here \(B=9A+4c+2u+2v+3\). Use the relative chart
+\[
+ 1/500<c/B<1/250,\qquad 1/100<u/B,v/B<1/90.
+\]
+The nominal paired word has length 244, and shifts the root slots by 12 and the complementary slots by \(-15\). Its effective slacks are \(G_2=c-28,G_4=2c-56\), with decrements 27 and 54. The unit direction \((\delta c,\delta u,\delta v,\delta A)=(1,-2,0,0)\) gives joint labels \((j,2j)\), \(0\le j<27\), of weight \(1/27\). At the first failed copy \(c_*=1+j\). Replay gives 19 first failures of \(d_2\) alone, five of \(d_4\) alone, and three simultaneous failures. Their weights are \(19/27,5/27,1/9\). The relative chart can use the uniform relative lattice measure. Its weights are conditional through the first changed successor.
+
+\section{Original mass and transported sources}\label{sec:mass}
+
+\begin{lemma}[Entrance-charging lemma]\label{lem:entrance}
+Let \(X_T\) be the physical state of an original word at fixed time \(T\). On a specified set of states \(\Omega_B\) suppose an autonomous model assigns a cycle-invariant fate. Let \(E\) be the event that \(X_T\in\Omega_B\) and that its trajectory agrees with the physical updates from time \(T\) through one full turn of the model's terminal cycle. A trajectory without certified capture is omitted from \(E\). If \(D_A\) is the model's set with fate \(A\), then
+\[
+ \PP_B(A)=\sum_{x\in D_A}\PP_B(X_T=x,E)+\PP_B(A\cap E^c).
+\]
+The joint weights \(\PP_B(X_T=x,E)\) therefore give a lower bound, and adding \(\PP_B(E^c)\) gives an upper bound.
+\end{lemma}
+
+This identity follows by conditioning on \(E\) and its complement. For a mark involving first entry time or phase, the prefix up to time \(T\) must also be recorded if capture may have occurred by then.
+
+Before any first visit to \(q_k=0\), the distribution after a fixed \(T\) has point weights at most \(2n!6^{kT}B^{-k}\). To see this, at time zero there are at most \(n!B^{k+1}\) originals over any difference state, using weak spacing splits and the choice of the smallest digit. At an update with \(q_k>0\) each borrowed digit is its leading value or one less, relative to \(B\) and the complementary digits \(q_i,B-q_i\). Sorting preserves that one-sided bound coordinatewise, so the symmetric differences are within one of the leading vector. If \(r_1\ge\cdots\ge r_k\) order the leading complementary maxima, the latter vector is
+\[
+ (r_1,r_1+r_2-B,\ldots,r_{k-1}+r_k-B).
+\]
+Given the actual successor there are at most three choices for each successive \(r_i\), once its predecessor has been chosen. The maxima determine the source up to at most \(2^k\) complementary choices and reordering. Thus an image has at most \(6^k\) predecessors of positive height \(k\). Iterate this bound for histories avoiding the zero-inner face. That face has \(O_n(B^{k-1})\) points, so the weight charged to a first visit by time \(T\) is \(O_{n,T}(B^{-1})\). This gives upper domination by constant times counting measure divided by \(B^k\) at a fixed head, with the stated omission. A lower bound from a marginal that does not enforce future agreement must subtract the additional omitted probability of Lemma~\ref{lem:entrance}.
+
+For the strict source reduction, list the nonzero part of \(J\) in folded order and let \(x\) be its gap vector relative to the anchor. At a strict length, \(d_2(\pi)=\pi_{k-1}-\pi_0>0\), hence \(k-1\) and its image 3 are outside \(J\). In \(C\) the exact relative update is
+\begin{equation}\label{eq:root}
+ T_r(x)=(z-3e+2h,\ x_1+2h,\ x_2-e+h,\ldots,x_{r-1}-e+h),\quad
+ (z,e,h)=(x_r,\sgn x_r,(-1-x_r)_+).
+\end{equation}
+The root sum in absolute gaps increases by \(h\). The complement permutes with an additional \(-h\) at slot 3.
+
+\begin{proposition}[Strict source transport]\label{prop:source}
+Fix a folded order \(r\). Suppose that for all sufficiently large integers \(L\), at least \(c_rL^r\) distinct integer roots in \([-L,L]^r\) satisfy
+\[
+ \sup_{t\ge0}\|T_r^t x\|_\infty\le C_rL,\qquad
+ \sum_{t\ge0}(-1-(T_r^t x)_r)_+\le C_rL,
+\]
+with constants \(c_r,C_r>0\). Then every strict length of order \(r\) has positive lower basin probability at a fixed positive threshold for \(Z_B\), through all sufficiently large bases.
+\end{proposition}
+\begin{proof}
+Choose a rational strict profile near the constant one with a positive pairing margin. For each allowed root choose the anchor and all but one complementary gap independently over intervals of length \(L\) around their values in \(B\pi\). The last gap enforces sum \(B\). The root mean moves by at most the cumulative loss divided by \(r+1\), and the complement differs from its unperturbed permutation by at most the cumulative loss. The full path stays within \(O_n(L)\) of \(B\pi\). Take \(L=\lfloor B/D_n\rfloor\) with \(D_n\) a sufficiently large constant, so positive pairing, secondary slack and a positive normalized radius persist throughout. Each orbit is physical. The root repeats eventually and the cumulative loss bound forces zero loss on its eventual cycle. There are \(\Omega_n(L^k)\) distinct original gap states, each with \(\Omega_n(B^{k+1})\) distinct-digit originals by the count of Section~\ref{sec:transfer}. Divide by \(B^n-B\). The argument permits the selected roots to follow different trajectories and reach different cycles.
+\end{proof}
+Appendix~\ref{app:ball} verifies the hypothesis for \(r=3\) by three independent insertions. At that order the strict length is nine, already covered by \cite{G9}. The proposition also applies to any other order for which the stated root bounds can be proved.
+
+\section{Period support and a thirteen-digit radius gap}\label{sec:period}
+
+\begin{proposition}[Fixed-period support]\label{prop:support}
+For every fixed length and least period, the set of integer bases carrying a physical cycle of that least period is Presburger-definable and ultimately periodic. The same construction allows restrictions on base congruences, specified pairing failures, and the peak radius numerator. In particular, whether arbitrarily large bases \(B\equiv6\pmod7\) carry a thirteen-digit cycle of least period 177 can be decided by finite integer-linear branch queries.
+\end{proposition}
+\begin{proof}
+Process the signed subtraction columns from least to most significant. For incoming borrow \(c\in\{0,1\}\) and signed digit difference \(a\), choose \(a-c\ge0\), emitting \(a-c\), or \(a-c<0\), emitting \(a-c+B\); these choices determine the next borrow. Sort the digits by a finite permutation case distinction and take differences. Every branch is integer affine in the differences and \(B\). Unroll \(p\) steps for prescribed candidate period \(p\). Impose return at \(p\), and nonreturn at \(p/\ell\) for each prime \(\ell\mid p\). All constraints use addition and comparisons on integers. A desired peak numerator \(\max_{t,i}|m q_i(t)-(m-i)B|\) at odd length is also expressible using finitely many affine tests. Projection and the semilinear characterization of Presburger sets yield ultimate periodicity in the single variable \(B\) \cite[Theorem~1.3]{GS}. Here the base is itself an integer variable in ordinary Presburger arithmetic. Parametric Presburger arithmetic permits polynomial parameter coefficients and gives more general quasi-polynomial results \cite[Theorem~1.15]{BGW}\cite[Theorems~1.2 and~1.5]{BGWS}.
+
+For cofinality on a base class, use \(B=7u+6\) and fix all branch choices, including the witnesses of any failed pairing or distinct state. The branch is a rational polyhedron \(Az\le b\). It has unbounded integer bases exactly when it has an integer seed and a base-increasing integer recession direction \(d\) with \(Ad\le0\). The forward direction follows because the rational recession cone of a branch with unbounded base objective contains an improving ray, which can be scaled to integers. The converse uses \(z+td\). For the unpaired class-6 query one can rotate a failure to phase zero and impose nonreturn at 3 and 59. Whether such a branch exists remains a separate question.
+\end{proof}
+
+\begin{proposition}[Fixed odd periods at thirteen digits]\label{prop:gap}
+For each fixed odd \(p\) there is a constant \(C_p\) such that every physical thirteen-digit cycle of least period \(p\) satisfies
+\[
+ Z_B\le C_p/B\quad\text{or}\quad Z_B>(1-7/B)/112 .
+\]
+\end{proposition}
+\begin{proof}
+For an unpaired phase, put \(G=7g-B\mathbf1\), \(R=-\min G\), and \(X_i=7q_i-(7-i)B\). The sufficient condition \eqref{eq:guard} reads \(B\ge8R+7\). Its failure gives \(R>(B-7)/8\); also \(R\le2\|X\|_\infty\) by the gap difference formula. This gives the second inequality.
+
+For a sequence of fully paired cycles with unbounded absolute peaks, subtract the mean and divide their gaps by the maximum centred gap norm on the cycle. At a maximizing phase compactness gives a nonzero limit fixed after \(p\) steps of the continuous homogeneous paired map \(F\). It is obtained from \eqref{eq:update} by replacing \((-1-d_i)_+\) with \((-d_i)_+\) and omitting the borrowing term. Its energy decreases by \(2\sum_{i=1}^2(-d_i d_{i+1})_+\). The exact balancer \(Pg+a\) is within a bounded distance of \(F(g)\) in centred coordinates, and by \eqref{eq:cancel} its energy cannot increase. On a homogeneous cycle, zero loss implies that each pair of gaps is kept or swapped, so the multiset is fixed. The anchor becomes the minimum of its own value and the last gap, and is constant on a cycle.
+
+The finite lemma in Appendix~\ref{app:odd} enumerates those homogeneous circuits and their feasible sign patterns. A nonzero regular circuit, one on which \(F=P\), has nonnegative anchor differences \(b_t\) in each folded turn. Its signed borrowing work divided by two is bounded above by \(-2b_t+b_{t-1}\), even when the limiting primary comparison is tied. Its sum over six phases is strictly negative. For nine singular circuits the finite lemma supplies strictly negative signed work over the whole leading circuit, uniformly over permitted borrowing signs at ties. These strict inequalities transfer to sufficiently large approximants of the limiting orbit, since leading nonzero signs persist and the remaining borrowing square is \(O(1)\). Repeating a decreasing block around the physical cycle is impossible. More explicitly, one can take a number of updates divisible by both the block length and \(p\); the limiting block signs and work bounds then apply at each repetition.
+
+For the remaining certified drift types, in centred gaps \(y=g-(B/7)\mathbf1\) set \(z=d_1\), \(P_i=(1+d_i)_+\) and
+\[
+ W_2=3y_0+y_1+y_3+y_6,\qquad W_3=W_2-y_4.
+\]
+Substitution in \eqref{eq:update} gives \(\Delta W_i=P_i-f(z)\), where \(f(z)=-2z-1\) for \(z<0\), \(f(0)=1\), and \(f(z)=z\) for \(z>0\). In particular the drift loses at least one unit when the indicated comparison \(d_i\le-1\), for \(i=2\) or 3. Each such circuit has the required comparison strictly negative in every phase, so every step of nearby large approximants has this loss. The sole nonzero remaining homogeneous circuit has least period two, which cannot divide odd \(p\). This excludes an unbounded fully paired sequence.
+\end{proof}
+Thirteen is a full-orbit length (\(r=k=6\)), so Theorem~\ref{th:breach} also applies there. Proposition~\ref{prop:gap} is a different statement with an independent proof: for odd least period it excludes intermediate radii outright.
+
+\section{Scope and open questions}\label{sec:scope}
+At \(W_n=\{0\}\), cycles contained in \(C\) contribute zero to \(\PP_B(Z_B>\delta)\) once the base is large, for each fixed \(\delta>0\). Proposition~\ref{prop:ball} gives a nine-digit example where uniform autonomous starts and physical originals produce different limiting support. The paired exterior fixed family at twenty-three digits in \cite[Section~7]{G9} violates a secondary comparison with depth growing linearly in the base. The existence of a fixed point or even an entire family with a macroscopic radius leaves its basin probability open. Likewise, at full-orbit lengths the witness window restricts which cycles can carry macroscopic mass, while estimating their preimages from original words is a separate problem.
+
+The transfer theorem supplies conditional weights for verified finite routes. Entrance coverage, termination, exhaustion of longer routes, and compatibility across all basins are needed for an original population law. A corner contact through a first changed successor still needs a certified continuation before it identifies first absorption. Uniform counts on an autonomous region also require an entrance-charge argument.
+
+\begin{conjecture}[Strictness and survival]
+For every odd \(n\ge7\), strictness is equivalent to the existence of \(\delta>0\) with \(\liminf_{B\to\infty}\PP_B(Z_B>\delta)>0\), the limit inferior taken over all bases. At a non-strict length, \(\PP_B(Z_B>\delta)\to0\) for every fixed \(\delta>0\).
+\end{conjecture}
+
+\begin{conjecture}[Seventeen-digit kernel]
+At seventeen digits and cutoff \(\delta=10^{-3}\), the joint off-centre measure of original position on each class of some finite base modulus has a limit given by certified physical return and exit choices. Modulus nine is a candidate, allowing the class totals to agree. The magnitude forecast is a share between \(0.70\) and \(0.90\) on each class.
+\end{conjecture}
+
+At cutoff \(Z_B>10^{-3}\), an earlier cross-length census at seventeen digits (its counts are in the supplement) found off-centre counts 1428/1800, 1902/2304, and 1866/2304 (\(79.3\%\), \(82.6\%\), and \(81.0\%\)) on 18 consecutive bases starting at 111,000, 1,111,000, and 11,110,000, respectively. The held-out kernel panels (also in the supplement) used 2,048 original words per base and 36,864 per scale. At bases \(90,000\)--\(90,017\) and \(1,080,000\)--\(1,080,017\) they found 29,264 and 29,690 off-centre outcomes. A contact is a positively paired phase with some \(|d_i|\le20\) for \(i\ge2\). The first opportunity is the first such phase from step 20 through entry at the first cyclic word, inclusive. It counts as absorbing when that entry occurs within 1,024 further steps and before eight consecutive contact-free phases. The rule credited \(750/29,264\) and \(246/29,690\) of the off-centre outcomes. The separate wall-section panels at bases \(90,000\), \(1,080,000\), and \(10,800,000\) gave terminal off-centre counts \(3225/4096\), \(3264/4096\), and \(1652/2048\). The first-episode off-centre share, measured over all sampled originals, depends on the contact-free gap used to separate episodes. These are numerical observations at finite bases, not theorems. An all-base lower bound of \(0.10\) for the seventeen-digit original share at cutoff \(10^{-3}\) remains open. The all-base positive lower bounds in \cite{G9} supply the population conclusions used here.
+
+\section{Computations and verification}\label{sec:verify}
+The chamber criterion, the breach theorem, entrance charging, strict source transport, fixed-period definability, and the index formula have analytic proofs. Literal subtraction checks of the guarded update, the entrance identity and representative cycles are included as controls. The following additional steps use exact computation.
+
+\begin{enumerate}
+\item Appendix~\ref{app:finite} tests the \(1069\) orbit and row data and modular witnesses used in Proposition~\ref{prop:1069}. An independent reconstruction with separately written programs, included in the ancillary files (\file{rc11_reconstruction}), computes the orbits and the rows and checks literal fixed points at \(1069^2\). A further ancillary checker (\file{check_rows.py}) updates the six orbit coefficients successively for all 285,689 secondary rows at \(1069^2\); the zero indices are 534, 1070 and 1603.
+\item Appendix~\ref{app:odd} supplies the finite lemma used for the thirteen-digit gap. The same independent reconstruction enumerates the rank circuits independently of the original enumeration, using integer Fourier--Motzkin elimination.
+\item Appendix~\ref{app:ball} supplies the order-three certificate for the uniform autonomous-ball result. The independent reconstruction recomputes the insertion vectors from the reference orbit and checks physical lifts in every base coset. The opposing physical support bound is the released law of \cite[Theorem~2]{G4}.
+\item The nine-digit, eleven-digit and corner instances in Section~\ref{sec:transfer} are replayed from physical guards, with congruences computed on the actual chart lattices. The isolated-wall instances are section replays under the chart assumptions stated there. A second independent reconstruction with separately written programs, also included in the ancillary files (\file{grc_reconstruction}), compiles the words of \cite{G4} and \cite{G8}, replays the isolated-wall sections by literal updates at representative points and checks all 27 joint labels through the first changed corner successor. These computations also distinguish the common normalized endpoint from the distinct centred endpoints in the eleven-digit example.
+\item The seventeen-digit observations in Section~\ref{sec:scope} are finite evidence. The archived panels or exact count tables are supplied with a check of the reported totals.
+\end{enumerate}
+
+From a fresh copy of the paper folder run \texttt{bash ancillary/reproduce.sh}. From inside the ancillary folder run \texttt{bash reproduce.sh}. This checks the SHA-256 inputs and runs the exact scripts and evidence tabulation. The scripts use Python integers and rational arithmetic, including an in-bundle exact elimination routine. They require no external solver. The released theorems used as inputs have their own supplements.
+
+\appendix
+\section{Thirteen-digit homogeneous circuits}\label{app:odd}
+Write a \emph{rank word} by replacing each of the seven centred gaps by its rank among the distinct gaps, starting at zero. Multiplicities are part of the data. For a fixed rank word each comparison and every work term of sum-zero coefficients is a linear form in the positive widths between consecutive ranks. At a zero-loss update with constant anchor, the first pair keeps its order and requires \(d_1\ge0\). For each of the two other pairs, keep its order if the adjacent comparisons are both nonnegative, or swap it if they are both nonpositive. If both choices are allowed, the two gaps in that pair are equal. The last slot receives the middle input gap. This describes every possible edge of a homogeneous cycle.
+
+\begin{lemma}[Finite circuit check]\label{lem:circuits}
+The admissible circuits of rank words have least-period counts
+\[
+\begin{array}{c|rrrrrrrr}
+ \text{period}&1&2&3&4&5&6&7&8\\
+ \midrule
+ \text{circuits}&7&8&6&1&3&789&1&2 .
+\end{array}
+\]
+They consist of the origin, 795 nonzero regular circuits with all \(d_i\ge0\), and 21 singular circuits. Of the singular circuits, eight have strict \(d_2<0\) and the separated top slots \(\{0,1,3,6\}\) at every phase, one has strict \(d_2<0\) with top slots \(\{0,1,3,4,6\}\), and two have strict \(d_3<0\) at every phase. Nine others have signed work
+\[
+ 2\sum_t e_t\langle F(y_t),v\rangle\le-\operatorname{span}(y_0),
+ \qquad \operatorname{span}(y_0)=\max_j(y_0)_j-\min_j(y_0)_j ,
+\]
+for every choice of \(e_t\in[-1,1]\) at a primary tie, with the prescribed sign at non-ties. The final circuit consists of the two rank words \texttt{1101011} and \texttt{1111001}.
+\end{lemma}
+For reproduction, enumerate all 47,293 surjective rank words, grouped by ordered multiplicity. Keep edges whose weak sign constraints and positive widths are feasible, and delete vertices that lack a predecessor or successor until stable. Traverse simple returning paths starting at their least word, intersecting all edge constraints before recording the return. This suffices because the multiset is invariant, so a repeated rank word gives an identical state. Conversely each feasible circuit gives an actual centred vector by choosing its widths and subtracting the mean. Exact elimination uses primitive integer rows, and feasibility with finitely many strict homogeneous constraints is tested by scaling them all to margin one. For the work inequalities test every choice \(e_t=\pm1\) at ties, since a linear form is maximized at a vertex of the sign cube. This procedure checks all 27 admissible singular sign patterns. The executable enumeration is \file{rc11_reconstruction/cones.py}.
+
+\section{Finite orbit and route certificates}\label{app:finite}
+For Proposition~\ref{prop:1069}, the checker \file{rc11_reconstruction/physical.py} verifies primality by trial division. Starting at the least unused positive sign representative, it records successive values of \(f_n\) until returning and assigns the orbit label to each slot. Subtract the first \(i\) labels from the last \(i\) labels as formal indicator sums to check each of the 266 secondary rows. The checker also computes the two modular powers in the proof. At the square, the ancillary checker \file{check_rows.py} updates the six orbit coefficients successively for all 285,689 secondary rows and obtains the zero indices 534, 1070 and 1603. For the eleven-digit instance, the last exact centred endpoints \(X_i=6q_i-(6-i)B\) are
+\[
+\begin{array}{c|rrrrr}
+\text{remainder}&\multicolumn{5}{c}{X}\\
+\midrule
+1&12&12&30&42&24\\
+5&36&60&78&90&48\\
+9&60&108&126&138&72\\
+13&84&156&174&186&96
+\end{array}
+\]
+and the normalized differences have the same limit in all four cases.
+
+For the seventeen-digit corner, the nominal recursion from \eqref{eq:update} with secondary \(h_i=0\) verifies all 244 slot-offset rows and bounds their integer offsets by 15 in absolute value. The stated chart yields \(10(A-15)>B+1\) for \(B\ge100,000\), securing positive pairing through the final partial copy. Row \(d_3\), and rows \(d_2,d_4\) outside phase \(0\pmod4\), have a positive \(u\) or \(v\) margin dominating their bounded offsets. At phases \(0\pmod4\) the minimum \(d_2\) is \(c-29\) at phase 228 and the minimum \(d_4\) is \(2c-57\) at phase 240. The simultaneous failures occur at \((c_*,t)=(8,100),(26,228),(27,228)\). At the fresh base 175379 the independent reconstruction verifies all 125,199 updates by whole-integer subtraction, including the first changed successor of each tested representative.
+
+\section{The nine-digit uniform-ball comparison}\label{app:ball}
+Consider the autonomous map of centred gaps, obtained by using the paired formula \eqref{eq:update} without the physical pairing guard, on the residue lattice \(5g-B\mathbf1\) at nine digits. Let \(R=-\min_j(5g_j-B)\). A ball is the set of integer states on that coset with \(R\le\rho(B)\). Changing to a virtual base \(V\equiv B\pmod5\) leaves the centred lattice and the autonomous update unchanged.
+
+\begin{proposition}\label{prop:ball}
+If \(\rho(B)/B\to c>1/6\), then a positive lower fraction of the uniform ball starts reaches a cycle all of whose phases have reported first normalized difference greater than \(5/6+\eta\) for some \(\eta>0\). Here the reported value is \(4/5+(q_1-4V/5)/B\) for a lift at virtual base \(V\). For physical original words at base \(B\), the corresponding closed tail for the first cyclic state has probability tending to zero.
+\end{proposition}
+\begin{proof}
+At this length \(J=\{0,1,2,4\}\) and the remaining slot is 3. On the root map \eqref{eq:root} the integer source \((16,7,17)\) reaches a two-cycle after 28 updates with total loss five and zero recurrent loss. The half-open intervals \([0,3),[3,9),[12,21)\) have reverse displacements \((4,4,4),(5,0,6),(5,0,0)\), expressed in initial cyclic labels. Their determinant is 120. Along the reference prefix through the end of each interval, whenever a label has a nonzero coefficient in the corresponding displacement, it is read positively. These are the finite checks in \file{rc11_reconstruction/physical.py}. Thus any pending nonnegative sum of these vectors rotates through the reference steps and leaves their borrow corrections unchanged. In repeating an interval, its length is a full number of folded turns and each extra copy removes one copy of its reverse displacement before resuming the reference. This follows inductively using the same read condition on the repeated interval. Independent numbers of insertions in \([0,L)\) give \(L^3\) distinct roots with displacement and total loss \(O(L)\) throughout. In particular the root hypothesis of Proposition~\ref{prop:source} holds for \(r=3\); this uses only the insertion construction, not the virtual base chosen below.
+
+Choose \(a\in(1/6,c)\), \(L=\lfloor\epsilon B\rfloor\) for sufficiently small fixed \(\epsilon\), and a virtual base \(V\equiv B\pmod5\) with \(V/B\) sufficiently large. Place the four root gaps within \(O(L)\) of \((V-aB)/5\), choosing the anchor over \(L\) integers. Slot 3 enforces total \(V\). Throughout the lifted orbit the secondary slack is \(aB+O(L)\), and the initial radius is \(aB+O(L)\). These states are within the ball and the lift satisfies positive pairing. There are \(L^4\) such states among \(O(B^4)\) ball states. Every terminal phase reports \(4/5+a/5+O(\epsilon)>5/6+\eta\) for suitable \(\eta>0\). The physical limit in every base class modulo five has first-cyclic-state support at \(q_1/B\le5/6\) by \cite[Theorem~2 and its terminal tables]{G4}. Hence the physical closed tail has limiting probability zero on the union of these classes.
+\end{proof}
+
+\section*{Data availability}
+The accompanying supplement contains the exact checks, source digests and finite measurement inputs. It is
+archived on Zenodo as version~1.10
+(\href{https://doi.org/10.5281/zenodo.24408684}{doi:10.5281/zenodo.24408684}) and is available in the
+\href{https://github.com/galyavin/kaprekar-dynamics/releases/tag/v1.10}{v1.10 release of the Kaprekar dynamics repository on GitHub}.
+
+\section*{Tools}
+The research, computations and drafting were carried out with substantial assistance from AI systems (OpenAI Codex and Anthropic Claude), under the author's direction and close supervision. The independent reconstructions cited in the verification section were carried out in the same way, with programs written independently of the primary ones. Exact calculations used Python, and the document was typeset in AMS-LaTeX. The author takes responsibility for the contents.
+
+\begingroup\raggedright\begin{thebibliography}{BGW2}
+\bibitem[AV]{AV}
+F.~Alwani and F.~Vivaldi, \emph{Nonlinear rotations on a lattice},
+\href{https://arxiv.org/abs/1709.08904}{arXiv:1709.08904}, 2017.
+
+\bibitem[BGW1]{BGW}
+T.~Bogart, J.~Goodrick and K.~Woods, \emph{Parametric Presburger arithmetic:
+logic, combinatorics, and quasi-polynomial behavior},
+Discrete Anal. (2017), Paper 4.
+\href{https://arxiv.org/abs/1608.08520}{arXiv:1608.08520}.
+
+\bibitem[BGW2]{BGWS}
+T.~Bogart, J.~Goodrick and K.~Woods,
+\emph{Periodic behavior in families of numerical and affine semigroups via
+parametric Presburger arithmetic},
+\href{https://arxiv.org/abs/1911.09136}{arXiv:1911.09136}, 2019.
+
+\bibitem[BS]{BS}
+F.~Breuer and I.~E.~Shparlinski, \emph{Lower bounds for periods of Ducci
+sequences}, Bull. Aust. Math. Soc. \textbf{102} (2020), 31--38.
+\href{https://doi.org/10.1017/S0004972719001187}{doi:10.1017/S0004972719001187}.
+
+\bibitem[COST]{COST}
+E.~Chen, K.~Ono, R.~E.~Schwartz and D.~S.~Thakur,
+\emph{Four-digit Kaprekar dynamics in odd bases},
+J. Integer Seq. \textbf{29} (2026), Article 26.4.7.
+\href{https://cs.uwaterloo.ca/journals/JIS/VOL29/Ono/ono3.pdf}{JIS Article 26.4.7}.
+
+\bibitem[CST]{CST}
+N.~J.~Calkin, J.~G.~Stevens and D.~M.~Thomas,
+\emph{A characterization for the length of cycles of the \(n\)-number
+Ducci game}, Fibonacci Quart. \textbf{43} (2005), 53--59.
+\href{https://doi.org/10.1080/00150517.2005.12428392}{doi:10.1080/00150517.2005.12428392}.
+
+\bibitem[Dahl]{Dahl}
+C.~D.~Dahl, \emph{Coarse-grained drift fields and attractor-basin entropy
+in Kaprekar's routine}, Entropy \textbf{28} (2026), Article 92.
+\href{https://doi.org/10.3390/e28010092}{doi:10.3390/e28010092}.
+
+\bibitem[DZ]{DZ}
+P.~Devlin and T.~Zeng, \emph{Maximum distances in the four-digit
+Kaprekar process}, Integers \textbf{21} (2021), Paper A97.
+\href{https://math.colgate.edu/~integers/v97/v97.pdf}{INTEGERS Article A97}.
+
+\bibitem[Ehr]{Ehrlich}
+A.~Ehrlich, \emph{Periods in Ducci's \(n\)-number game of differences},
+Fibonacci Quart. \textbf{28} (1990), 302--305.
+\href{https://www.fq.math.ca/Scanned/28-4/ehrlich.pdf}{Fibonacci Quarterly scan}.
+
+\bibitem[G1]{G1}
+R.~Galyavin, \emph{Cycles of the four-digit Kaprekar map in even bases}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358739}{doi:10.5281/zenodo.24358739}.
+
+\bibitem[G2]{G2}
+R.~Galyavin, \emph{Arrival times for the four-digit Kaprekar map in even bases}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358744}{doi:10.5281/zenodo.24358744}.
+
+\bibitem[G3]{G3}
+R.~Galyavin, \emph{A common arrival-time law for five-digit Kaprekar dynamics}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358746}{doi:10.5281/zenodo.24358746}.
+
+\bibitem[G4]{G4}
+R.~Galyavin, \emph{Majorization in odd-digit Kaprekar dynamics and the nine-digit arrival law}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358748}{doi:10.5281/zenodo.24358748}.
+
+\bibitem[G5]{G5}
+R.~Galyavin, \emph{Seven-digit Kaprekar dynamics: global law, two clocks, parity}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358752}{doi:10.5281/zenodo.24358752}.
+
+\bibitem[G6]{G6}
+R.~Galyavin, \emph{Linear-time access for eleven-digit Kaprekar dynamics}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358756}{doi:10.5281/zenodo.24358756}.
+
+\bibitem[G7]{G7}
+R.~Galyavin, \emph{Arithmetic selection of arrival times in eleven-digit Kaprekar dynamics}, 2026.
+\href{https://doi.org/10.5281/zenodo.24371745}{doi:10.5281/zenodo.24371745}.
+
+\bibitem[G8]{G8}
+R.~Galyavin, \emph{Eleven-digit Kaprekar arrival laws modulo twelve}, 2026.
+\href{https://doi.org/10.5281/zenodo.24396437}{doi:10.5281/zenodo.24396437}.
+
+\bibitem[G9]{G9}
+R.~Galyavin, \emph{Off-centre Kaprekar cycles with positive basin density}, 2026.
+\href{https://doi.org/10.5281/zenodo.24399342}{doi:10.5281/zenodo.24399342}.
+
+\bibitem[GS]{GS}
+S.~Ginsburg and E.~H.~Spanier, \emph{Semigroups, Presburger formulas, and
+languages}, Pacific J. Math. \textbf{16} (1966), 285--296.
+\href{https://doi.org/10.2140/pjm.1966.16.285}{doi:10.2140/pjm.1966.16.285}.
+
+\bibitem[KD1]{KDO}
+A.~Kay and K.~Downes-Ward, \emph{Fixed points and cycles of the Kaprekar
+transformation: 1. Odd bases}, J. Integer Seq. \textbf{25} (2022),
+Article 22.6.7.
+\href{https://cs.uwaterloo.ca/journals/JIS/VOL25/Kay/kay5.html}{cs.uwaterloo.ca/journals/JIS/VOL25/Kay/kay5.html}.
+
+\bibitem[KD2]{KDE}
+A.~Kay and K.~Downes-Ward, \emph{Fixed points and cycles of the Kaprekar
+transformation: 2. Even bases}, 2024.
+\href{https://arxiv.org/abs/2408.12257}{arXiv:2408.12257}.
+
+\bibitem[LF]{Ludington}
+A.~Ludington Furno, \emph{Cycles of differences of integers},
+J. Number Theory \textbf{13} (1981), 255--261.
+\href{https://doi.org/10.1016/0022-314X(81)90008-1}{doi:10.1016/0022-314X(81)90008-1}.
+
+\bibitem[YM]{YM}
+A.~Yamagami and Y.~Matsui, \emph{On 3-adic Kaprekar loops},
+JP J. Algebra Number Theory Appl. \textbf{40} (2018), no.~6, 957--1028.
+\href{https://doi.org/10.17654/NT040060957}{doi:10.17654/NT040060957}.
+
+\end{thebibliography}\endgroup
+\end{document}

@@ -42,6 +42,10 @@ For a uniformly random eleven-digit word in a growing base B, couple all bases t
 
 For uniformly random words of fixed odd length n in a growing base B, at all 47 strict lengths of folded order 3 to 13 (the least r with 2^r ≡ ±1 mod n), a share of inputs bounded below for all large bases ends on cycles whose peak normalized distance from the centred profile exceeds a fixed bound; at 15 and 17 digits these cycles have period eight. At 45 and 91 digits, cycles of least period 24 and of least period 132 each attract a positive share. At thirteen digits, in bases divisible by 7, a positive share reaches one period-177 cycle near the centre. The proved shares are tiny lower bounds and say nothing about the typical input. The proofs use exact certificates for guarded affine routes, lifted to actual subtraction with exact input weights.
 
+**Macroscopic cycles in odd-length Kaprekar dynamics: a chamber criterion and a residue-transfer rule** (2026), in [`macroscopic-cycles/`](macroscopic-cycles/) as [PDF](macroscopic-cycles/kaprekar-macroscopic-cycles.pdf) and [LaTeX source](macroscopic-cycles/kaprekar-macroscopic-cycles.tex). Archived at Zenodo: [doi:10.5281/zenodo.24408684](https://doi.org/10.5281/zenodo.24408684). Paper record: [doi:10.5281/zenodo.24408723](https://doi.org/10.5281/zenodo.24408723).
+
+For every odd word length at least seven, an exact criterion decides when macroscopic Kaprekar cycles can exist inside the chamber of positive pairing: a nonzero gap profile invariant under folded doubling and satisfying weak inequalities. When folded doubling has one orbit on the nonzero slots, a macroscopic cycle must lose pairing or breach a secondary comparison by an amount proportional to the base within two folded turns. A residue-transfer rule, valid at every odd length, gives exact limiting weights for exit residues of certified routes by an inherited lattice index. The length 1069 lies outside the natural three-way classification of lengths. No population share beyond earlier work is claimed.
+
 ## Reproducing the results
 
 ```sh
@@ -89,6 +93,11 @@ bash reproduce.sh            # exhaustive geometric and arithmetic replays and f
 ```sh
 cd off-centre-cycles/ancillary
 bash reproduce.sh            # primary exact checks and the independent reconstruction (about two minutes)
+```
+
+```sh
+cd macroscopic-cycles/ancillary
+bash reproduce.sh            # exact certificates, independent checks and evidence totals (about four minutes)
 ```
 
 Each `ancillary/README.md` gives the expected outputs and versions.

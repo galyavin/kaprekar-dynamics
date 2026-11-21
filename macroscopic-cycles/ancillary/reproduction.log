@@ -1,0 +1,244 @@
+Fresh standalone copy. Command: bash reproduce.sh
+Python 3.9.6
+inputs/kaprekar-investigation/cross_length/grc/check_corner.py: OK
+inputs/kaprekar-investigation/cross_length/grc/check_instances.py: OK
+inputs/kaprekar-investigation/cross_length/grc_reconstruction/instances.py: OK
+inputs/kaprekar-investigation/cross_length/grc_reconstruction/physical.py: OK
+inputs/kaprekar-investigation/cross_length/grc_reconstruction/transport.py: OK
+inputs/kaprekar-investigation/cross_length/ker17/holdout-counts.json: OK
+inputs/kaprekar-investigation/cross_length/rc11_reconstruction/cones.py: OK
+inputs/kaprekar-investigation/cross_length/rc11_reconstruction/physical.py: OK
+inputs/kaprekar-investigation/cross_length/s17_sect/panel-1080000.tsv.gz: OK
+inputs/kaprekar-investigation/cross_length/s17_sect/panel-10800000.tsv.gz: OK
+inputs/kaprekar-investigation/cross_length/s17_sect/panel-90000.tsv.gz: OK
+inputs/kaprekar-investigation/cross_length/s17_share/wall_kernel.py: OK
+inputs/kaprekar-investigation/cross_length/x1_terminal_map/raw/n17-s1.tsv.gz: OK
+inputs/kaprekar-investigation/cross_length/x1_terminal_map/raw/n17-s2.tsv.gz: OK
+inputs/kaprekar-investigation/cross_length/x1_terminal_map/raw/n17-s3.tsv.gz: OK
+inputs/kaprekar-investigation/eleven_access/restricted_theorem_check/check_controls.py: OK
+inputs/kaprekar-investigation/eleven_access/restricted_theorem_check/cover_exact.py: OK
+inputs/kaprekar-investigation/eleven_access/restricted_theorem_check/exact_model.py: OK
+inputs/kaprekar-investigation/nine_a_facet.py: OK
+inputs/kaprekar-investigation/nine_aa.py: OK
+inputs/kaprekar-investigation/nine_aaa.py: OK
+inputs/kaprekar-investigation/nine_aaa_terminals.json: OK
+inputs/kaprekar-investigation/nine_aab.py: OK
+inputs/kaprekar-investigation/nine_aab_certificates.json: OK
+inputs/kaprekar-investigation/nine_aab_terminals.json: OK
+inputs/kaprekar-investigation/nine_ab.py: OK
+inputs/kaprekar-investigation/nine_b_facet.py: OK
+inputs/kaprekar-investigation/nine_b_facet_checks.py: OK
+inputs/kaprekar-investigation/nine_b_routes.py: OK
+inputs/kaprekar-investigation/nine_bb.py: OK
+inputs/kaprekar-investigation/nine_bbb.py: OK
+inputs/kaprekar-investigation/nine_core_test_points.json: OK
+inputs/kaprekar-investigation/nine_entry.py: OK
+inputs/kaprekar-investigation/nine_kernel.py: OK
+inputs/kaprekar-investigation/nine_kernel_results.json: OK
+inputs/kaprekar-investigation/nine_lattice.py: OK
+inputs/kaprekar-investigation/nine_phase.py: OK
+inputs/kaprekar-investigation/nine_phase_checks.py: OK
+inputs/kaprekar-investigation/nine_releases.py: OK
+inputs/kaprekar-investigation/nine_releases_certificates.json: OK
+inputs/kaprekar-investigation/nine_releases_checks.py: OK
+inputs/kaprekar-investigation/odd_affine.py: OK
+inputs/kaprekar-investigation/odd_gap.py: OK
+KER17-PANEL-DIGESTS.tsv: OK
+README.md: OK
+recompute.py: OK
+reproduce.sh: OK
+check_rows.py: OK
+check_evidence.py: OK
+rank words 47293; locally feasible graph survivors 4835
+circuits by period: [(1, 7), (2, 8), (3, 6), (4, 1), (5, 3), (6, 789), (7, 1), (8, 2)]
+circuits by certificate: [('W3', 2), ('energy', 9), ('exception', 1), ('origin', 1), ('regular', 795), ('top five', 1), ('top four', 8)] ; singular sign patterns 27
+177-dividing leading circuits: [('origin', 1), ('strict anchor', 5), ('tied fixed', 5), ('tied triple', 2)]
+(1, 1, 1, 4) top four 2: 3303123 3323103
+(1, 1, 1, 4) top four 2: 3303213 3313203
+(1, 1, 1, 4) top four 1: 3313023 3323013
+(1, 1, 5) W3 1: 2212022 2222012
+(1, 2, 3, 1) energy 2: 1102223 1312022 1232012 1221032 1223201
+(1, 2, 4) top four 2: 2202112 2212102
+(1, 2, 4) top four 1: 2212012
+(1, 5, 1) energy 2: 1102111 1111012 1211101
+(1, 6) W3 1: 1111011
+(2, 1, 4) top four 1: 2202012 2212002
+(2, 1, 4) top four 1: 2202102
+(2, 3, 2) energy 1: 0012112 0201112 0221011 0121021 0112201 0110122 0212110
+(2, 5) exception 1: 1101011 1111001
+(2, 5) top five 1: 1101101
+(3, 3, 1) energy 2: 0001112 0201011 0121001 0110021 0112100
+(3, 4) energy 1: 0001111 0101011 0111001 0110011 0111100
+(3, 4) top four 1: 1101001
+(4, 1, 2) energy 1: 0002021 0102002 0210002 0220010 0012020 0002102 0200012 0221000
+(4, 3) energy 1: 0001011 0101001 0110001 0110010 0011010 0001101 0100011 0111000
+(5, 2) energy 1: 0001001 0100001 0110000 0001010
+(6, 1) energy 1: 0000001 0100000 0001000
+n=7 B=4: 20 words by differences, 2 paired, max positive-inner fiber 3, cycles [(1, 2)], in C 1, max first q/B 3/4
+n=7 B=8: 120 words by differences, 28 paired, max positive-inner fiber 5, cycles [(1, 2), (4, 1), (7, 1)], in C 1, max first q/B 7/8
+n=7 B=13: 455 words by differences, 146 paired, max positive-inner fiber 6, cycles [(1, 1), (2, 2), (12, 1)], in C 1, max first q/B 11/13
+n=7 B=24: 2600 words by differences, 1012 paired, max positive-inner fiber 8, cycles [(1, 2), (19, 1)], in C 1, max first q/B 5/6
+n=9 B=4: 35 words by differences, 1 paired, max positive-inner fiber 4, cycles [(1, 4)], in C 1, max first q/B 3/4
+n=9 B=8: 330 words by differences, 26 paired, max positive-inner fiber 6, cycles [(1, 2), (4, 1), (5, 2)], in C 0, max first q/B 7/8
+n=9 B=13: 1820 words by differences, 301 paired, max positive-inner fiber 8, cycles [(1, 1), (5, 3)], in C 0, max first q/B 12/13
+n=9 B=24: 17550 words by differences, 2926 paired, max positive-inner fiber 14, cycles [(1, 3), (7, 1), (27, 1)], in C 1, max first q/B 11/12
+n=11 B=4: 56 words by differences, 2 paired, max positive-inner fiber 5, cycles [(1, 4), (3, 1)], in C 0, max first q/B 3/4
+n=11 B=8: 792 words by differences, 68 paired, max positive-inner fiber 8, cycles [(1, 1), (2, 1), (4, 1), (6, 1)], in C 0, max first q/B 7/8
+n=11 B=13: 6188 words by differences, 819 paired, max positive-inner fiber 12, cycles [(1, 1), (14, 1)], in C 0, max first q/B 12/13
+n=11 B=24: 98280 words by differences, 16588 paired, max positive-inner fiber 22, cycles [(1, 3), (11, 1), (16, 1)], in C 1, max first q/B 11/12
+n=13 B=4: 84 words by differences, 1 paired, max positive-inner fiber 6, cycles [(1, 6)], in C 0, max first q/B 3/4
+n=13 B=8: 1716 words by differences, 52 paired, max positive-inner fiber 12, cycles [(1, 1), (5, 1), (9, 1)], in C 0, max first q/B 7/8
+n=13 B=13: 18564 words by differences, 1372 paired, max positive-inner fiber 20, cycles [(1, 1), (2, 1), (10, 2)], in C 0, max first q/B 12/13
+n=13 B=6: 462 words by differences, 10 paired, max positive-inner fiber 10, cycles [(1, 3), (2, 2)], in C 0, max first q/B 5/6
+n=13 B=14: 27132 words by differences, 1372 paired, max positive-inner fiber 22, cycles [(1, 2), (3, 1), (17, 1)], in C 1, max first q/B 13/14
+n=13 B=20: 177100 words by differences, 11385 paired, max positive-inner fiber 30, cycles [(1, 1), (52, 1)], in C 0, max first q/B 19/20
+entrance n=7 B=4 T=2: covered 9240/16380, fixed-period mass 16380/16380, covered and fixed 9240/16380
+entrance n=9 B=5 T=2: covered 444870/1953120, fixed-period mass 1953120/1953120, covered and fixed 444870/1953120
+entrance n=11 B=6 T=2: covered 63285090/362797050, fixed-period mass 76994500/362797050, covered and fixed 63285090/362797050
+entrance n=13 B=7 T=2: covered 15332456568/96889010400, fixed-period mass 26213536050/96889010400, covered and fixed 15332456568/96889010400
+thirteen-digit boundary control B=8: 3 defective pairings
+thirteen-digit boundary control B=48: 28 defective pairings
+thirteen-digit boundary control B=104: 105 defective pairings
+23-digit fixed barrier B=355: H=2, absolute peak 3/2
+23-digit fixed barrier B=781: H=3, absolute peak 11/4
+23-digit fixed barrier B=7171: H=48, absolute peak 98/3
+13-digit class-0 control B=840: preperiod 32, period 177, peak numerator 35
+13-digit class-0 control B=847: preperiod 32, period 177, peak numerator 35
+13-digit class-0 control B=1400: preperiod 32, period 177, peak numerator 35
+13-digit even-period F control B=4953: period 4, peak R 270
+13-digit even-period F control B=5001: period 8, peak R 276
+13-digit even-period F control B=480153: period 4, peak R 25020
+13-digit even-period F control B=480201: period 8, peak R 25026
+9-digit finite physical tail B=24: cyclic q=(22, 17, 11, 5), period 27
+n=1069^2 exact whole-word fixed point B=305689369, peak 570846/174665097348589
+n=1069^2 exact whole-word fixed point B=611378738, peak 570846/174665097348589
+n=1069: three 178-orbits, 266 nonzero secondary rows; its square forces row 534
+order 3 source (16, 7, 17): preperiod 28, period 2, loss 5, insertion determinant 120
+9-digit coset 0: three literal lifts, minimum reported terminal q1/B 100229/120000
+9-digit coset 1: three literal lifts, minimum reported terminal q1/B 100229/120001
+9-digit coset 2: three literal lifts, minimum reported terminal q1/B 100229/120002
+9-digit coset 3: three literal lifts, minimum reported terminal q1/B 100229/120003
+9-digit coset 4: three literal lifts, minimum reported terminal q1/B 100229/120004
+[G4] base mod 5: 0 moving-terminal weight 11/48
+[G4] base mod 5: 1 moving-terminal weight 29/128
+[G4] base mod 5: 2 moving-terminal weight 29/144
+[G4] base mod 5: 3 moving-terminal weight 107/576
+[G4] base mod 5: 4 moving-terminal weight 233/1152
+[G4] matched exact kernel tables: 5
+[G8] guard, speed, coefficients, index, residues: (2, 0, -2, 2, -2, -1, 3) 6 (2, 0, -2, 2, -2) 3 (1, 3, 5)
+rank control 1 0 5 0 (-30, -24, -18, -12, -6) 36 5 4
+[G8] guard, speed, coefficients, index, residues: (0, -2, 0, 1, 1, 1, -2) 2 (1, -2, -1, 2) 2 (0, 1)
+rank control 2 0 10 0 (-60, -48, -72, -60, -48) 12 1 3
+[G8] guard, speed, coefficients, index, residues: (2, 0, -2, 0, 2, -1, -17) 24 (0, 2, -6) 12 (1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23)
+rank control 3 0 20 1 (-120, -108, -144, -120, -96) 144 5 2
+[G8] guard, speed, coefficients, index, residues: (2, -1, -1, 2, -1, -1, -10) 18 (0, -7) 18 (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17)
+rank control 4 8 10 0 (-60, -48, 0, -24, -12) 108 9 2
+[G8] guard, speed, coefficients, index, residues: (2, -1, -1, 2, -1, -1, -16) 24 (0, 66) 4 (4, 10, 16, 22)
+rank control 5 18 20 0 (-120, -96, -36, -120, -204) 144 16 2
+[G8] guard, speed, coefficients, index, residues: (-1, 2, -1, 0, 0, 0, -7) 6 (1, 132) 6 (0, 1, 2, 3, 4, 5)
+rank control 6 8 10 0 (-60, -84, -72, -96, -48) 36 5 1
+[G8] guard, speed, coefficients, index, residues: (7, 0, 2, -7, 3, -5, -13) 30 (6,) 5 (0, 6, 12, 18, 24)
+rank control 7 25 30 0 (-96, -60, 0, -96, -60) 180 6 1
+[G8] guard, speed, coefficients, index, residues: (3, -1, 1, -1, 0, -2, -17) 16 (4,) 4 (1, 5, 9, 13)
+rank control 8 82 20 0 (-96, -192, -192, -192, -96) 96 None 0
+rank control strict source half-width 128349/2015850320 mass lower bound 83777809061006633212613842474483908235904770145328324750250770645576705192353667551049118122315566346883/43783733728982169114556353398745828987170823405827003909428318671544979220518312638627946051896663384856752456639237324800000000
+[G8] selected path indices: [3, 2, 12, 18, 4, 6, 5, 4]
+isolated-wall section: 15 section range: (1, 21) index: 21 admitted: 1 period weights: {6: '5/21', 8: '16/21'} period-eight signature weight: 3/7 unresolved: ()
+isolated-wall section: 17 section range: (2, 28) index: 27 admitted: 25/27 period weights: {None: '2/27', 8: '20/27', 12: '5/27'} period-eight signature weight: 13/27 unresolved: (2, 16)
+joint support (j, 2j), 0 <= j < 27; index 27
+section c= 1 phase=  0 walls=(4,)   d2= -1 d4= -4
+section c= 2 phase=  0 walls=(4,)   d2=  0 d4= -2
+section c= 3 phase= 16 walls=(4,)   d2= -1 d4= -5
+section c= 4 phase= 16 walls=(4,)   d2=  0 d4= -3
+section c= 5 phase= 44 walls=(2,)   d2= -2 d4= -1
+section c= 6 phase= 72 walls=(2,)   d2= -2 d4=  0
+section c= 7 phase= 84 walls=(2,)   d2= -2 d4= -1
+section c= 8 phase=100 walls=(2, 4) d2= -5 d4= -2
+section c= 9 phase=100 walls=(2,)   d2= -4 d4=  0
+section c=10 phase=100 walls=(2,)   d2= -3 d4=  2
+section c=11 phase=100 walls=(2,)   d2= -2 d4=  4
+section c=12 phase=112 walls=(2,)   d2= -2 d4=  3
+section c=13 phase=116 walls=(2,)   d2= -5 d4=  2
+section c=14 phase=116 walls=(2,)   d2= -4 d4=  4
+section c=15 phase=116 walls=(2,)   d2= -3 d4=  6
+section c=16 phase=116 walls=(2,)   d2= -2 d4=  8
+section c=17 phase=128 walls=(2,)   d2= -4 d4=  6
+section c=18 phase=128 walls=(2,)   d2= -3 d4=  8
+section c=19 phase=128 walls=(2,)   d2= -2 d4= 10
+section c=20 phase=156 walls=(2,)   d2= -2 d4=  5
+section c=21 phase=172 walls=(2,)   d2= -3 d4=  3
+section c=22 phase=172 walls=(2,)   d2= -2 d4=  5
+section c=23 phase=200 walls=(2,)   d2= -3 d4= -1
+section c=24 phase=200 walls=(2,)   d2= -2 d4=  1
+section c=25 phase=224 walls=(4,)   d2=  2 d4= -3
+section c=26 phase=228 walls=(2, 4) d2= -3 d4= -4
+section c=27 phase=228 walls=(2, 4) d2= -2 d4= -2
+joint weights: {(2,): '19/27', (2, 4): '1/9', (4,): '5/27'}
+literal base 100003 {(2,): 19, (2, 4): 3, (4,): 5} including failure updates
+literal base 1000003 {(2,): 19, (2, 4): 3, (4,): 5} including failure updates
+tied-guard support [(0, 1), (1, 3)] joint weight 1/2 product marginal weight 1/4
+whole-word digit compiler controls across all heights 1274
+[G4] base class 0 children after three exits [4, 40, 960] weights 11/48 5/48 137/288 55/288
+[G4] base class 1 children after three exits [4, 40, 960] weights 29/128 5/48 47/96 23/128
+[G4] base class 2 children after three exits [4, 40, 960] weights 29/144 5/48 607/1152 193/1152
+[G4] base class 3 children after three exits [4, 40, 960] weights 107/576 5/48 69/128 197/1152
+[G4] base class 4 children after three exits [4, 40, 960] weights 233/1152 5/48 73/144 215/1152
+[G8] exit 1 prefix 0 rank 4 index 3 residues [1, 3, 5]
+[G8] exit 2 prefix 0 rank 3 index 2 residues [0, 1]
+[G8] exit 3 prefix 0 rank 2 index 12 residues [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23]
+[G8] exit 4 prefix 8 rank 2 index 18 residues [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+[G8] exit 5 prefix 18 rank 2 index 4 residues [4, 10, 16, 22]
+[G8] exit 6 prefix 8 rank 1 index 6 residues [0, 1, 2, 3, 4, 5]
+[G8] exit 7 prefix 25 rank 1 index 5 residues [0, 6, 12, 18, 24]
+[G8] exit 8 prefix 82 rank 0 index 4 residues [1, 5, 9, 13]
+[G8] exact centered exits [(1, (12, 12, 30, 42, 24)), (5, (36, 60, 78, 90, 48)), (9, (60, 108, 126, 138, 72)), (13, (84, 156, 174, 186, 96))]
+isolated wall 15 each weight 1/21 repeat counts {6: 5, 8: 16} unresolved []
+isolated wall 17 each weight 1/27 repeat counts {8: 20, 12: 5} unresolved [2, 16]
+corner residue  0 copies 19 phase   0 walls (4,)
+corner residue  1 copies 19 phase   0 walls (4,)
+corner residue  2 copies 19 phase  16 walls (4,)
+corner residue  3 copies 19 phase  16 walls (4,)
+corner residue  4 copies 19 phase  44 walls (2,)
+corner residue  5 copies 19 phase  72 walls (2,)
+corner residue  6 copies 19 phase  84 walls (2,)
+corner residue  7 copies 19 phase 100 walls (2, 4)
+corner residue  8 copies 19 phase 100 walls (2,)
+corner residue  9 copies 19 phase 100 walls (2,)
+corner residue 10 copies 19 phase 100 walls (2,)
+corner residue 11 copies 19 phase 112 walls (2,)
+corner residue 12 copies 19 phase 116 walls (2,)
+corner residue 13 copies 19 phase 116 walls (2,)
+corner residue 14 copies 18 phase 116 walls (2,)
+corner residue 15 copies 18 phase 116 walls (2,)
+corner residue 16 copies 18 phase 128 walls (2,)
+corner residue 17 copies 18 phase 128 walls (2,)
+corner residue 18 copies 18 phase 128 walls (2,)
+corner residue 19 copies 18 phase 156 walls (2,)
+corner residue 20 copies 18 phase 172 walls (2,)
+corner residue 21 copies 18 phase 172 walls (2,)
+corner residue 22 copies 18 phase 200 walls (2,)
+corner residue 23 copies 18 phase 200 walls (2,)
+corner residue 24 copies 18 phase 224 walls (4,)
+corner residue 25 copies 18 phase 228 walls (2, 4)
+corner residue 26 copies 18 phase 228 walls (2, 4)
+corner fresh base 175379 literal steps 125199 counts {(4,): 5, (2,): 19, (2, 4): 3}
+simultaneous stopped offset, phase, margins and successors: [(8, 100, (-4, -5, 1821, -2), (18668, 18673, 18668, 18670, 18674, 20492, 22342, 20521, 18671)), (26, 228, (-1, -3, 1825, -4), (18667, 18669, 18668, 18671, 18672, 20496, 22345, 20522, 18669)), (27, 228, (-1, -2, 1827, -2), (18667, 18669, 18669, 18671, 18671, 20498, 22346, 20519, 18669))]
+1069: orbit sizes {1: 178, 3: 178, 7: 178}, 266 nonzero rows, witnesses {2: (1, 0), 3: (2, 0), 4: (1, 1), 31: (-3, 0), 34: (-1, -1)}
+1069^2: root size 190282, d_534 vanishes, five unit-offset rows unchanged
+[G4] BB -> AB: guard image size 24, each exit weight 1/24, inherited exit direction (36, 72, 108, 54)
+17-digit corner: B=130243, 98115 literal updates, counts {(2,): 19, (2, 4): 3, (4,): 5}, weights {(2,): Fraction(19, 27), (2, 4): Fraction(1, 9), (4,): Fraction(5, 27)}, simultaneous [(8, 100), (26, 228), (27, 228)]
+9-digit C fixed point: B=1505, gaps=(258, 258, 258, 473, 258), q=(1247, 989, 731, 258), d_2=215, radius=3/35, word=(1247, 989, 731, 257, 1504, 1246, 773, 515, 258), integer=32838806835563501055959385408
+n=1069, positive orbits (first, size)=[(1, 178), (3, 178), (7, 178)]
+secondary rows=266, zero indices=[]
+n=1142761, positive orbits (first, size)=[(1, 190282), (3, 190282), (7, 190282), (1069, 178), (3207, 178), (7483, 178)]
+secondary rows=285689, zero indices=[534, 1070, 1603]
+Early panel 1: 1428/1800 off-centre
+Early panel 2: 1902/2304 off-centre
+Early panel 3: 1866/2304 off-centre
+Held-out panel 90000: 29264/36864 off-centre, 750/29264 early
+Held-out panel 1080000: 29690/36864 off-centre, 246/29690 early
+Section panel 90000: 3225/4096 off-centre; first-episode counts (1393, 1663, 1702, 1639)
+Section panel 1080000: 3264/4096 off-centre; first-episode counts (1262, 1510, 1516, 1446)
+Section panel 10800000: 1652/2048 off-centre; first-episode counts (627, 759, 760, 738)
+PASS: P10 exact certificates, independent checks and evidence totals.
+Exit status: 0. Elapsed: 134.96 seconds.
