@@ -1,0 +1,7 @@
+Literal rank states: 4946, paired: 580, chamber updates: 321
+Folded side words at 7: paired 80, chamber 40
+Folded side words at 9: paired 200, chamber 100
+Folded side words at 11: paired 800, chamber 240
+Literal fixed-gap pairs: 4. Literal reflected siblings: 7.
+Five-digit leading coefficient: 10. Seven-digit disjoint shells: [4, 10, 18].
+Loss-free root cycle visits: 114. Closed physical entries: 118, guard-surviving: 2. Translation controls passed.

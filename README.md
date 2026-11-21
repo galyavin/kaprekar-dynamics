@@ -50,6 +50,10 @@ For every odd word length at least seven, an exact criterion decides when macros
 
 Which odd word lengths can host macroscopic Kaprekar cycles inside the chamber of positive pairing is decided by the arithmetic of the length. At a prime length the question reduces to whether an alternating walk of incomplete character sums on the cosets of ⟨−1, 2⟩ surrounds the origin; at index two it is a Legendre walk ending at 1 − h(−4p). Unconditionally, at each fixed index, prime lengths admitting such cycles have density zero; under the Riemann hypothesis for the relevant Kummer fields, almost every prime length admits none. Every odd composite length admits them, with explicit fixed points; among composites with two or three folded orbits only 9, 15 and 21 are strict. Exact certificates classify every odd length below 10⁴. Basin mass and cycles leaving the chamber are not decided.
 
+**Capture times, radius bounds and periodic roots in odd-length Kaprekar dynamics** (2026), in [`capture-times/`](capture-times/) as [PDF](capture-times/kaprekar-capture-times.pdf) and [LaTeX source](capture-times/kaprekar-capture-times.tex). Archived at Zenodo: [doi:10.5281/zenodo.24421912](https://doi.org/10.5281/zenodo.24421912). Paper record: [doi:10.5281/zenodo.24422109](https://doi.org/10.5281/zenodo.24422109).
+
+Inside the chamber of positive pairing, the gaps on the folded orbit of slot 1 evolve by an integer recurrence of order r (the folded order), and this recurrence is the clock: the probability of staying in the chamber and being captured by gap time T is O(((T+1)/B)^(k−d)), with k − d = r at strict lengths and a matching lower bound at the 47 strict lengths of orders 3–13. Every wholly positively paired cycle has peak radius at most 2/k + 6/B. The loss-free periodic points of the recurrence with period dividing 2r are classified by a fixed finite graph, and an exact full-rank construction extends positive off-centre basin density to all twelve lengths of folded order 15.
+
 ## Reproducing the results
 
 ```sh
@@ -107,6 +111,11 @@ bash reproduce.sh            # exact certificates, independent checks and eviden
 ```sh
 cd arithmetic-spectrum/ancillary
 bash reproduce.sh            # census certificates, independent checks and both index-two scans below 10^9
+```
+
+```sh
+cd capture-times/ancillary
+bash reproduce.sh            # exact replays of the capture, entrance, root-map and order-15 certificates (about a minute)
 ```
 
 Each `ancillary/README.md` gives the expected outputs and versions.

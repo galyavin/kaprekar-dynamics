@@ -1,0 +1,26 @@
+Graph has 21 nominal states, 13 on closed walks.
+Transfer counts agree with the formula at orders 3 through 80.
+r= 3 marked words=   9   cycles by least period 1:1 2:1 6:1
+r= 4 marked words=  25   cycles by least period 1:1 8:3
+r= 5 marked words=  33   cycles by least period 1:1 2:1 10:3
+r= 6 marked words=  81   cycles by least period 1:1 4:2 12:6
+r= 7 marked words= 129   cycles by least period 1:1 2:1 14:9
+r= 8 marked words= 289   cycles by least period 1:1 16:18
+r= 9 marked words= 513   cycles by least period 1:1 2:1 6:1 18:28
+r=10 marked words=1089   cycles by least period 1:1 4:2 20:54
+r=11 marked words=2049   cycles by least period 1:1 2:1 22:93
+r=12 marked words=4225   cycles by least period 1:1 8:3 24:175
+r=13 marked words=8193   cycles by least period 1:1 2:1 26:315
+Replayed 16635 marked words and 12758 alternative predecessors.
+Exhaustive ternary sign enumeration agrees at orders 3 through 9.
+Six-block family: 168 words at orders 7 and 9 through 67.
+LC3(9) plus one six-block agrees with the registered order-15 lock at phase zero.
+Outside-period control r= 4 period= 6 root=(0, -2, -2, -1)
+Outside-period control r= 6 period= 5 root=(0, 0, 2, -1, 2, -1)
+Outside-period control r= 8 period=14 root=(0, -2, 2, -3, 2, -3, -2, -1)
+Outside-period control r= 9 period= 8 root=(0, 0, 2, -1, 0, 2, -1, 2, -1)
+Outside-period control r=10 period= 9 root=(0, 0, 2, -1, 2, -1, 2, -1, 2, -1)
+Outside-period control r=10 period= 3 root=(0, 0, 2, -1, 0, 2, -1, 0, 2, -1)
+Outside-period control r=11 period=10 root=(0, 0, 0, 2, -1, 2, -1, 2, -1, 2, -1)
+Outside-period control r=11 period=13 root=(-1, -1, 1, -2, -1, 1, -2, -1, 1, -2, -1)
+Label drift identity agrees on 3000 exact label displacements.

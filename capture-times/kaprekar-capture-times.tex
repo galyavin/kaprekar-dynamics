@@ -1,0 +1,1874 @@
+\documentclass[11pt]{amsart}
+\usepackage{mathtools,amssymb,hyperref}
+\hypersetup{pdftitle={Capture times, radius bounds and periodic roots in odd-length Kaprekar dynamics},pdfauthor={Rustem Galyavin},hidelinks}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem*{corollary*}{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem*{remark}{Remark}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\ord}{ord}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\C}{\mathcal C}
+\title[Capture times and periodic roots]{Capture times, radius bounds and periodic roots in odd-length Kaprekar dynamics}
+\author{Rustem Galyavin}
+\date{21 November 2026}
+\thanks{\href{mailto:rustem@galyavin.com}{rustem@galyavin.com}. ORCID \href{https://orcid.org/0009-0006-6875-9170}{0009-0006-6875-9170}.}
+\subjclass[2020]{11A63, 37E15, 60C05}
+\keywords{Kaprekar map, folded doubling, capture time, basin probability, finite automaton}
+\raggedbottom
+\addtolength{\textheight}{\baselineskip}
+\begin{document}
+\begin{abstract}
+For the Kaprekar map in base \(B\) at a fixed odd length
+\(n=2k+1\ge7\), a folded doubling permutation of order \(r\) governs
+capture into cycles contained in a chamber defined by digit-pairing
+inequalities. At strict lengths the \(r\) gaps on the folded orbit of
+slot 1, measured from an anchor gap, evolve in the chamber by an
+autonomous integer recurrence whose transient is the time to a cycle.
+The probability that a start lies in the chamber, stays there and enters
+such a cycle by gap time \(T\le B\) is \(O_n(((T+1)/B)^{k-d})\), where
+\(d\) is the dimension of the cone of centred gap profiles that are
+constant on the anchor and the folded orbit of slot 1 and satisfy the
+secondary chamber comparisons at every folded phase. At strict lengths
+\(k-d=r\). At the 47 strict lengths of orders 3 through 13 a matching
+lower bound holds for \(0\le T\le c_nB\), with peak radius bounded away
+from zero. Every wholly positively paired cycle has normalized peak
+radius at most \(2/k+6/B\). For this root recurrence we classify the
+loss-free periodic points of period dividing \(2r\) by a fixed finite
+graph. An exact full-rank construction extends positive off-centre basin
+density to all twelve lengths of folded order 15.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+
+The Kaprekar map sorts the digits of a word in descending and ascending
+order and subtracts the second number from the first. We keep leading
+zeros and sample ordered nonconstant words uniformly. In odd length
+\(n=2k+1\), the \(k\) differences of opposite sorted digits determine
+the next word. The gaps between these differences have a particularly
+simple update where the borrowed digits can be sorted in pairs. The
+permutation part of the update is doubling on residues modulo \(n\)
+identified with their negatives. Its order is the least \(r>0\) with
+\(2^r\equiv\pm1\pmod n\). The corrections to the permutation determine
+the time to a cycle.
+
+The mechanism is as follows. Inside the chamber \(\C\), the full-height
+gap vectors whose borrowed digits sort in pairs with no secondary
+comparison below \(-1\) (Section~\ref{sec:setup}), every correction to
+folded doubling falls on the slots
+\(S=\{0\}\cup\operatorname{orb}_P(1)\cup\operatorname{orb}_P(3)\), and
+the gaps outside \(S\) are only permuted. Call a length \emph{strict} if
+it admits a folded-doubling-invariant centred profile, constant on the
+root slots \(\{0\}\cup\operatorname{orb}_P(1)\), with every secondary
+comparison strictly positive. At a strict length the \(r\) root gaps
+measured from the anchor gap \(g_0\) form a relative root
+\(x\in\Z^r\). It evolves autonomously by the integer map \(T_r\) of
+\cite[Section~2.2]{G9} and \cite[Section~5]{G10}
+(equation~\eqref{eq:root}). Three facts make \(r\) the clock.
+(i) Let \(K\) be the cone of centred gap profiles that are constant on
+the root slots and satisfy the secondary comparisons at all \(r\)
+rotated phases, and let \(d=\dim\operatorname{span}K\). States on
+chamber cycles lie in a bounded tube around \(B\one/m+K\)
+(Lemma~\ref{lem:tube}). After the first folded turn every chamber step
+differs from the permutation by a bounded kick, so a start captured
+inside the chamber by gap time \(T\) lies at time \(r\) within
+\(O_n(T+1)\) of \(B\one/m+\operatorname{span}K\). This tube has
+codimension \(k-d\), and bounded numbers of preimages account for the
+initial turn, whose kicks can be large. This gives the exponent
+\(k-d\) for \emph{chamber capture}, that is, for starts whose orbit up
+to and including its first cycle lies in the chamber. At a strict
+length \(k-d=r\). Root equality alone gives codimension \(r\), which can miss
+constraints. At 25 digits, for example, the rotated secondary comparisons force one further equality,
+which reduces the cone to a ray, so \(k-d=11\) while \(r=10\)
+(Theorem~\ref{th:clock}). (ii) At a strict
+length the gap time from a permanent chamber entrance to the first cycle
+equals the transient of \(T_r\) (Theorem~\ref{th:entrance}), and a
+finite guard test decides whether a nominal chamber path stays in the
+chamber (Theorem~\ref{th:guards}). (iii) Families of \(L^r\) roots whose
+transient, spread and loss are \(O(L)\) give the matching lower bound at
+the 47 strict lengths of orders 3 through 13
+(Theorem~\ref{th:clock}(3)). With \(L\) proportional to \(B\) they give
+positive basin mass. We construct such a family at order 15
+(Lemma~\ref{lem:cert15}, Theorem~\ref{th:order15}), extending orders
+3--13 of \cite{G9}. The clock stops at loss-free periodic points of
+\(T_r\). Those of period dividing \(2r\) are classified by one finite
+graph (Theorem~\ref{th:graph}), which also gives their one-step
+entrances (Proposition~\ref{prop:doors}).
+
+The remaining results mark the chamber's reach. Wholly paired cycles
+have normalized peak radius at most \(2/k+6/B\)
+(Theorem~\ref{th:radius}). Hence the cut \(\delta_n\) in
+Theorem~\ref{th:clock}(3), and the cut produced by the chamber
+construction behind Theorem~\ref{th:order15}, are at most \(2/k\).
+In the large-base limit the share of starts that begin in \(\C\), leave
+it, and exceed a fixed radius cut at some time up to and including their
+first state outside \(\C\) decays exponentially in \(n\) when
+\(r=o(n)\) (Theorem~\ref{th:entrance}). Starts that stay in \(\C\)
+forever have peak at most \(2/k+6/B\), so for large bases none of them
+exceeds a fixed cut above \(2/k\). At zero-cone lengths a macroscopic cycle
+must lose pairing, or breach a secondary comparison by order \(B\), near
+its energy maximum (Theorem~\ref{th:breach}). Digit replication gives
+macroscopic fixed points with zero differences, outside the paired
+regime, whose directly replicated inputs have negligible original mass
+(Proposition~\ref{prop:replicate}). In the large-base limit only a
+fraction \((5/8)^{\lfloor(n-1)/4\rfloor}\) of words is positively paired,
+and the capture power \(r\) also governs a sector of initially unpaired
+starts that enter the chamber in one step (Theorem~\ref{th:sibling}).
+Appendix~\ref{app:tails} shows that the chamber exponent does not govern
+the full arrival law: at seven digits \(k-d=3\), while the full law has
+small-time tail at least \(ct^3\log(1/t)\).
+Section~\ref{sec:open} gives the scope of the results and the remaining
+population questions.
+
+\subsection*{Related work}
+
+Kay and Downes-Ward use digit multiplicities for fixed points and cycles
+in odd and even bases, with modular doubling in the families of
+Sections~2 and~5 of the odd-base paper \cite{KDO} and Section~2.2 of the
+even-base paper \cite{KDE}. In the odd-base Theorem~7(ii) and
+Corollary~8(ii), choosing both scales equal to the replication factor
+gives replication on primitive-to-primitive transitions and on primitive
+cycles, respectively \cite{KDO}. The proof of their even-base
+Theorem~2(a) uses cancellation of the same exceptional borrowed digits
+\cite{KDE}. The criterion below gives necessity and sufficiency for
+arbitrary digit multisets in any base. Walden determines the seven- and
+nine-digit Kaprekar constants, in the sense of fixed points reached from
+every nonconstant word, and shows that there are none with 15, 21, 27 or
+33 digits \cite{Walden}. Chen, Ono, Schwartz and Thakur give a conjugacy
+to projective doubling modulo the base on a forward-invariant region for
+four digits in odd bases greater than three \cite[Theorem~1]{COST}.
+Dahl studies convergence and projected gap
+dynamics at fixed decimal lengths \cite[Sections~2--3]{Dahl}.
+Devlin and Zeng give four-digit basin and maximum-distance results
+\cite[Theorems~1--2]{DZ}. Further cycle and arrival results in even
+bases are in \cite{G1,G2}. Thakur records the difference coordinates and borrowed digits, and
+discusses base translations for cycles \cite[Section~2.7 and Remark~4.3]{Thakur}.
+We use the full limiting laws at five and seven digits \cite{G3,G5}, and the gap majorization and exact base
+covariance of \cite{G4}. At eleven digits, \cite{G6,G7,G8} treat
+access, arithmetic selection and an entrant law.
+The paired chamber update, strict profiles and full-rank source
+constructions come from \cite{G9,G10}. The latter gives the chamber
+criterion and the full-orbit case of the breach bound, while \cite{G11}
+studies the arithmetic of the invariant cone.
+
+The sign feedback in the recurrence is analogous to the use of quantized
+feedback in sigma--delta modulation \cite[Section~3.2, equation~(31)]{DD}.
+For the one-bit modulators they study, Reefman, Reiss, Janssen and
+Sandler test periodic output words by state-space closure and quantizer
+inequalities. For the architectures with a dc pole, their balance
+condition equates average input and output \cite[Sections~II--III,
+equations~(5), (9) and (15), and Appendix~A]{RRJS}. The same authors
+extend this description to feedback modulators \cite{RRJS2}, and Perez
+Gonzalez and Reiss separate dc idle tones from long and short limit
+cycles in simulations \cite{PGR}. Akiyama and Peth\H{o} show that a
+discretized rotation of the integer lattice has infinitely many periodic
+orbits \cite{AP}. We use none of these results; the comparison is an
+analogy. Here the feedback is ternary, the recurrence has an integer
+loss term, and its period-\(2r\) closure gives opposite signs across the
+two turns. That specific identity yields the finite graph and the count
+proved below.
+
+\emph{Contributions.} From \cite{G9,G10} we use the paired update
+\cite[Lemma~4]{G10}, the root map \(T_r\) \cite[Section~2.2]{G9},
+\cite[Section~5]{G10}, the retirement construction
+\cite[Section~4]{G9}, the chamber criterion \cite[Theorem~1]{G10},
+strict source transport \cite[Proposition~7]{G10}, and the strict family
+at \(2^a\pm1\) and the composite vector \cite[Section~3]{G10}; from
+\cite{G4} we use majorization and the paired covariance. New here, as
+far as we know for Kaprekar dynamics, are the cone \(K\) with the
+capture exponent \(k-d\), the breach bound at zero-cone lengths that are
+not full-orbit, the paired radius ceiling, the replication criterion
+(special cases of which are in \cite{KDO,KDE}), the initial pairing
+limits and reflected entrances, the entrance comparison and the
+exceedance bound for initial chamber segments, the read recurrence with phase balance and the guard test, the
+periodic root graph with its corollaries, and the order-15 records.
+
+\section{Gap coordinates and original measure}\label{sec:setup}
+
+For descending sorted digits \(a_1\ge\cdots\ge a_n\) put
+\[
+ \begin{aligned}
+ q_i&=a_i-a_{n+1-i}\quad(1\le i\le k),\\
+ g&=(B-q_1,q_1-q_2,\ldots,q_{k-1}-q_k,q_k).
+ \end{aligned}
+\]
+Thus \(g_0\ge1\), \(g_j\ge0\) for \(j\ge1\), and \(\sum_jg_j=B\).
+These conditions characterize the physical gap vectors. For example,
+one may realize the differences by putting all the smaller digits and
+the middle digit at zero. We write \(g_t\) for the vector at time \(t\)
+and \((g_t)_j\) for a coordinate. Let
+\[
+ R(g)=\max_{1\le i\le k}|q_i/B-(m-i)/m|,\qquad m=k+1,
+\]
+and let \(Z_B\) be the maximum of \(R\) over all phases of the first cycle.
+A positive threshold independent of \(B\) marks a macroscopic radius.
+The next numerical word is \(\sum_{i=1}^k q_i(B^{n-i}-B^{i-1})\).
+Consequently the gap and word cycles have the same least period. The
+first cyclic word occurs at the first cyclic gap time or one step later.
+
+Let \(\theta\) be the number of positive differences, called the height.
+For \(\theta>0\), column subtraction gives a provisional multiset of
+\(n-2\theta\) copies of \(B-1\) and the pairs \(q_i,B-1-q_i\) for
+\(i\le\theta\).
+The exact multiset decreases \(q_\theta\) by one and increases the reflected
+digit \(B-1-q_1\) by one. These are the innermost direct column reached
+by the borrow and the rightmost column, respectively. At height zero
+the output is the all-zero word.
+
+From now on \(n\ge7\) is odd unless specified otherwise. At full
+height \(\theta=k\) the singleton \(B-1\) is followed by two columns
+\[
+ A_i=q_i-\one_{i=k},\qquad C_i=B-q_{m-i}-\one_{i<k}\quad(1\le i\le k).
+\]
+Positive pairing means \(q_k>0\) and
+\(\min(A_i,C_i)\ge\max(A_{i+1},C_{i+1})\) for every \(i<k\).
+Write
+\[
+ \begin{gathered}
+ p_0=\lfloor m/2\rfloor,\qquad 1\le i\le p_0,\\
+ d_i(g)=\sum_{j=m-i}^{m-1}g_j-\sum_{j=0}^{i-1}g_j,\qquad
+ h_i=(-1-d_i(g))_+ .
+ \end{gathered}
+\]
+We use \(d_0=h_0=0\). The chamber \(\C\) consists of positively
+paired gaps with \(h_i=0\) for \(i\ge2\).
+The permutation \(P\) sends slot \(j>0\) to \(\min(2j,n-2j)\) and
+fixes 0. It has order \(r\) because the orbit of 1 has that order
+and \(2^r\equiv\pm1\pmod n\) also fixes every other slot. Write
+\(J=\{0\}\cup\operatorname{orb}_P(1)\). We have \(P(k)=1\) and
+\(P(k-1)=3\).
+
+\begin{lemma}[Paired update {\cite[Lemma~4]{G10}}]\label{lem:update}
+On a positively paired source,
+\[
+ g^+=Pg+a+ev,\qquad e=\sgn(d_1(g)),\qquad v=(1,-2,1,0,\ldots),
+\]
+where \(a\) has successive pairs \((-\Delta h_i,\Delta h_i)\),
+\(\Delta h_i=h_i-h_{i-1}\), and an unmatched last entry zero if \(m\) is odd.
+In \(\C\) this gives
+\begin{equation}\label{eq:Cupdate}
+ g^+=Pg+ev+h_1(-1,1,1,-1,0,\ldots).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+We recall the argument of \cite[Section~2]{G10}.
+For the provisional calculation replace the last pair by
+\((q_k,B-1-q_1)\). Keep the given level order, taking the larger and
+smaller entries within each pair.
+The sum of the two resulting gaps in slots \(2i-2,2i-1\)
+is \(g_{i-1}+g_{m-i}\), and their difference (first minus second)
+is \(|1+d_{i-1}|-|1+d_i|\). The unmatched gap is \(g_{k/2}\). Since
+\(|1+d_i|=1+d_i+2h_i\), the resulting gaps are \(Pg+a\).
+Restoring the last level changes its maximum and minimum by
+\(-e,e\), respectively, since on integers
+\(\min(g_k,g_0+1)-\min(g_0,g_k+1)=e\).
+This changes the first two differences by \(-e,e\) and the gap
+vector by \(ev\).
+\end{proof}
+
+Let \(\PP_{n,B}\) denote original probability on the \(B^n-B\)
+ordered nonconstant words. The distinct-digit multiplicity of a positive
+gap vector is \(n!g_0\prod_{j=1}^k(g_j-1)\).
+The smallest digit has \(g_0\) choices and each pair of opposite
+sorted spacings has \(g_j-1\) positive splits. Weak splits give the upper
+bound \(n!g_0\prod_{j=1}^k(g_j+1)\) on all realizations.
+Thus the weight of a state is \(O_n(B^{-k})\), and it is
+\(\asymp_n B^{-k}\) uniformly on a fixed compact subset of the
+open normalized simplex. Coupling the original digits to independent
+uniforms on \([0,1]\) by flooring \(BU\) shows that the normalized gaps
+converge to \(\mathrm{Dirichlet}(2,\ldots,2)\). Indeed the \(n+1=2m\)
+real spacings, including both end spacings, are uniform on their simplex.
+Summing spacings in opposite pairs gives the density
+\(n!\prod_{j=0}^ku_j\) of the normalized gap vector \(u\). Conditioning
+on nonconstancy has asymptotically no effect.
+
+\emph{Terms.} Slot 0 is the \emph{anchor}, and the gaps in \(J\) are
+the \emph{root gaps}. The comparison \(d_1\) is the \emph{primary} row
+and the \(d_i\) with \(i\ge2\) are the \emph{secondary} rows; \(h_i\) is
+the \emph{breach} of row \(i\). Thus \(\C\) consists of the positively
+paired gaps with no secondary breach. A length is \emph{strict} if some
+folded-doubling-invariant centred profile, constant on \(J\), has every
+secondary row strictly positive (Section~\ref{sec:clock}). A
+\emph{chamber cycle} is a cycle all of whose phases lie in \(\C\). A
+\emph{permanent chamber entrance} of an orbit is a time \(t_e\) with
+\(g_t\in\C\) for all \(t\ge t_e\). The \emph{nominal} path of a chamber
+state iterates \eqref{eq:Cupdate} without checking agreement with
+subtraction. Its \emph{guards} are the inequalities for physical gaps,
+full height, positive pairing and \(h_i=0\) for \(i\ge2\).
+\emph{Marked} capture is capture into a cycle with \(Z_B\) above a
+stated cut. The \emph{lifetime norm} of a path \(x(t)\) in \(\Z^r\) is
+\(\sup_t\|x(t)\|_\infty\).
+
+\section{The capture exponent and the breach bound}\label{sec:clock}
+
+In the zero-sum gap space define the rational cones
+\[
+ K=\{u:u_j=u_0\ (j\in J),\quad
+ d_i(P^t u)\ge0\ (2\le i\le p_0,\ 0\le t<r)\}.
+\]
+Let \(W=K\cap\operatorname{Fix}(P)\). Set \(d=\dim\operatorname{span}K\) and
+\(d_f=\dim\operatorname{span}W\). A length is \emph{strict} if
+\(W\) contains a direction with every secondary row strictly positive.
+Equivalently there is a normalized invariant profile \(\pi\), constant
+on \(J\), with those positive slacks. By mixing with the uniform
+profile one can take \(\pi\) sufficiently close to it that all homogeneous
+pairing comparisons have positive margin. Indeed, for uniform gaps the
+two unborrowed columns coincide at every level and successive levels
+differ by \(1/m\).
+
+Let \(A_B(T)\) consist of starts in \(\C\) which stay there and enter
+a cycle contained in \(\C\) by gap time \(T\).
+Thus \(A_B(0)\) requires the initial gap to lie on such a cycle.
+
+\begin{theorem}[Dimension and capture time]\label{th:clock}
+At fixed odd length \(n\ge7\), the following hold.
+\begin{enumerate}
+\item For all integers \(0\le T\le B\),
+\(\PP_{n,B}(A_B(T))\ll_n ((T+1)/B)^{k-d}\).
+The same bound holds, with a constant depending also on \(j\), for
+starts whose gaps from time \(j\) on stay in \(\C\) and enter a cycle
+contained in \(\C\) by gap time \(j+T\).
+\item In each class modulo \(m\) containing a base with a chamber cycle,
+\(\PP_{n,B}(A_B(0))\asymp_n B^{d-k}\) for large bases in the class.
+At strict lengths \(k-d=r\). In particular at \(n=2^a\pm1\), \(a\ge4\),
+the exponent is \(a\).
+\item At each of the 47 strict lengths of folded orders 3 through 13
+in \cite{G9}, there exist \(\delta_n,c_n>0\) such that for all
+large integer bases and \(0\le T\le c_n B\),
+\[
+ \PP_{n,B}(A_B(T),Z_B>\delta_n)\asymp_n ((T+1)/B)^r.
+\]
+\item Fix a numerical-word time \(T\ge1\). With arbitrary prefixes,
+the probability of reaching a chamber cycle by that time is
+\(O_{n,T}(B^{d-k})\).
+For fixed points the corresponding exponent is \(d_f-k\).
+If \(d>0\), for sufficiently small \(\delta>0\) the probability of
+reaching by that time a chamber cycle of peak \(Z_B>\delta\) has the
+matching lower order on the base multiples of the positive
+generator of \(\{\sum_j a_j:a\in
+(\R\one+\operatorname{span}K)\cap\Z^m\}\).
+For fixed points replace \(K,d\) by \(W,d_f\).
+The generator is 1 at strict or composite lengths. At 17 digits the
+respective probability exponents are \(-4,-7\).
+\item At 25 digits \(K\) is a ray and \(k-d=11\), while \(r=10\).
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+The exponent concerns chamber capture only. Seven is a full-orbit length
+(\(J\) contains every slot), so \(K=\{0\}\) and \(k-d=3\). Thus (1)
+gives \(\PP_{7,B}(A_B(\lfloor tB\rfloor))\ll t^3\) for
+\(B^{-1}\le t\le1\), while the full arrival law satisfies
+\(F_{7,\beta}(t)\ge ct^3\log(1/t)\) (Proposition~\ref{prop:tails}). For
+small \(t\), in the large-base limit, most orbits captured by time
+\(tB\) are therefore not chamber-resident from the start. For arbitrary
+prefixes we prove only the fixed-time statement (4), the statement in
+(1) after a fixed number of unconstrained steps, and the one-step sector
+of Theorem~\ref{th:sibling}.
+\end{remark}
+
+\begin{theorem}[Breach at a zero invariant cone]\label{th:breach}
+Fix an odd length with \(W=\{0\}\), and choose a phase of a physical
+cycle maximizing \(V(g)=\|g-B\one/m\|_2^2\). In the preceding
+\(2r\) source phases, counted cyclically, either some source fails
+positive pairing or
+\[
+ BZ_B\le C_n(1+H),
+ \qquad H=\max_{\text{those phases},\ 2\le i\le p_0} h_i .
+\]
+Here \(C_n\) depends only on \(n\).
+In particular a cycle of radius at least \(\delta>0\) that pairs
+through the window requires \(H\ge\delta B/C_n-1\).
+\end{theorem}
+
+At full-orbit lengths, where \(J\) contains every slot, this is
+\cite[Theorem~2]{G10}. The new cases are the lengths with \(W=\{0\}\)
+that are not full-orbit, such as 229, 283 and 1069
+(Section~\ref{sec:verify}). The energy estimate is that of \cite{G10}.
+The cone-residual bound and orbit averaging carry its control from the
+root slots to all slots.
+
+\begin{proof}[Energy estimate and proof of Theorem~\ref{th:breach}]
+In any \(2r\) consecutive positively paired steps with secondary
+breaches bounded by \(H\), let \(g\) be the midpoint and set
+\(u=g-B\one/m\). Write \(z=g_k-g_0\) at an arbitrary source.
+The next slot 1, relative to the anchor, is
+\(z-3\sgn z+2(-1-z)_+\ge-2\).
+An update of any other relative slot decreases its permuted value
+by at most \(1+2H\), since the primary correction is nonnegative
+there and the secondary correction vanishes at the anchor.
+The slot feeding \(k\) passes through slot 1 within one turn.
+As in the proof of \cite[Theorem~2]{G10}, following slot \(k\in J\)
+over the last \(r\) updates gives \(h_1\le1+(r-1)(1+2H)\) there.
+Hence on the last turn the primary correction and the total defect
+from \(P\) are \(O_n(1+H)\). If the last turn starts at \(g\), at
+its phase \(t\) the state differs from \(P^t g\) by \(O_n(1+H)\).
+
+By the paired update the sorting work is
+\[
+ 2\langle Pg,a\rangle+\|a\|_2^2
+   =2\sum_i\Delta h_i\,\Delta(d_i+h_i)\le0,
+\]
+since \(h_i=(-1-d_i)_+\) is nonincreasing in \(d_i\) while
+\(d_i+h_i\) is nondecreasing. The signed borrowing work against
+\(Pg\) is \(-4|g_k-g_0|+2e(g_1-g_0)\).
+Along the ideal last-turn permutation put \(b_t=(P^tg)_k-g_0\).
+Because \(P(k)=1\), the signed work is at most
+\(-4|b_t|+2|b_{t-1}|+O_n(1+H)\), with indices taken cyclically.
+The sorting-borrowing cross term and borrowing square are also
+\(O_n(1+H)\) per step. Summing gives
+\begin{equation}\label{eq:work}
+ V_{\rm end}-V_{\rm mid}\le -2\sum_{j\in J\setminus\{0\}}
+ |u_j-u_0|+O_n(1+H).
+\end{equation}
+The secondary violations \([-d_i(P^tu)]_+\) are likewise
+\(O_n(1+H)\) by the last-turn comparison.
+
+For the cones used here, distance to the cone is at most a fixed
+constant times the sum of absolute equality residuals and negative
+parts of the required inequalities. This is Hoffman's error bound for
+linear inequalities \cite{Hoffman52}; we include the short argument for
+these cones. Subdivide the
+zero-sum space by the signs of those linear forms and the coordinates.
+On each cone the residual sum is a nonnegative linear form. The
+vertices of its intersection with the unit \(\ell^1\) sphere
+generate the cone. In a nonnegative expansion discard the generators
+having positive residual. The retained sum satisfies all constraints,
+and the discarded norm is at most a constant times the residual sum.
+The constant is finite because the collection of generators is finite.
+This argument also applies after including the equalities \(Pu=u\).
+
+Averaging the orbit of a point of \(K\) gives a point of \(W\).
+If the average is zero then every rotated secondary row vanishes
+because all are nonnegative. The primary row vanishes by root equality.
+The zero rows give reflected pairs of equal gaps at each rotated phase.
+On such vectors the value at slot \(j\) after applying \(P\)
+is the previous value at \(\lfloor j/2\rfloor\). After
+\(\lceil\log_2m\rceil\) phases it is constant, so invertibility
+and zero sum give \(u=0\). Thus \(K=\{0\}\) if and only if
+\(W=\{0\}\). This is the orbit-averaging argument in the proof of
+\cite[Theorem~1]{G10}.
+
+If the window ends at a global energy maximum, its last-turn work
+is nonnegative. Equation~\eqref{eq:work} and the secondary residual
+bounds give \(\dist(u,K)=O_n(1+H)\). The endpoint differs
+from the midpoint by \(O_n(1+H)\) because \(P^r=I\).
+At \(K=\{0\}\) the endpoint has centred norm \(O_n(1+H)\),
+and \(BZ_B\le \sqrt{mV_{\rm end}}\) by the suffix sums and maximality.
+\end{proof}
+
+\begin{lemma}[Cyclic tube and bounded preimages]\label{lem:tube}
+Every state on a cycle in \(\C\) lies within \(O_n(1)\) of
+\(B\one/m+K\). For fixed points the same holds with \(W\).
+Every target gap vector, including those reached from sources of
+height below \(k\), has at most
+\(1+\sum_{\theta=1}^k3^\theta(2\theta)!\) gap predecessors.
+\end{lemma}
+
+\begin{proof}
+The first claim is the root-diameter step in the proof of
+\cite[Theorem~1]{G10}, followed by the cone residual bound.
+In the chamber, if slot 3 is outside \(J\), the complementary sum
+decreases by \(h_1\) each step. On a cycle this forces \(h_1=0\).
+If 3 belongs to \(J\), all corrections already act there. Thus
+on a chamber cycle the complementary gaps permute and the sum on \(J\)
+is preserved. Hence along the cycle \(V\) and the energy on \(J\) about
+its own mean differ by a constant, and they have the same maximizing
+phases. When \(3\in J\), the primary correction is bounded on the last
+turn by the slot-1 reset over the preceding turn.
+The last-turn work calculation with \(H=0\) applies
+to the energy on \(J\) around its own mean, with the same terms because
+the corrections are supported there. Choose a maximum of this energy
+as the endpoint. Nonnegative work bounds the midpoint anchor
+differences on \(J\), and the endpoint is within \(O_n(1)\) of the
+midpoint. Maximality then gives a bounded root diameter at every
+phase. All kicks on the cycle are bounded, and every phase is within
+one bounded turn of its ideal permutation. The cone residual bound
+gives the first claim. A fixed point also has \(Pu-u=O_n(1)\),
+giving the claim for \(W\).
+
+For the inverse count fix a positive height \(\theta\) and let
+\(a=n-2\theta\ge1\). The \(2\theta\)-digit borrowed core has a matching
+into pairs whose sums differ from \(B-1\) by at most one.
+This also holds when both borrow corrections affect one pair.
+Lowering one element of a multiset by one lowers exactly one entry of
+its sorted list by one, and raising one element raises exactly one
+entry. So the sorted core is a reflection-symmetric list with one entry
+lowered and one raised. In the descending output list \(z\), fix its
+first \(a\) entries to \(B-1\). Hence
+\(z_{a+i}+z_{n+1-i}=B-1+\varepsilon_i\) with
+\(\varepsilon_i\in\{-1,0,1\}\); guess these \(\theta\) mirror errors.
+From the target differences derive successively
+\[
+ z_{n+1-i}=z_i-q_i',\qquad
+ z_{a+i}=B-1+\varepsilon_i-z_{n+1-i}\quad(1\le i\le\theta).
+\]
+The needed \(z_i\) is already known since \(a\ge1\).
+Placing the core digits in the borrowed positions uses at most
+\((2\theta)!\) permutations. This recovers the positive differences
+from their direct digits. Height zero adds at most one predecessor.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{th:clock}, upper bounds and static lower bounds]
+After the first \(r\) chamber sources all defects from \(P\)
+are \(O_n(1)\) by the slot-1 reset in the energy proof. If the
+path first enters its cycle after time \(r\), reverse the
+permutation and sum the defects from that entry back to time \(r\).
+The space \(\operatorname{span}K\) is \(P\)-invariant, so the
+time-\(r\) state is within \(O_n(T+1)\) of
+\(B\one/m+\operatorname{span}K\). If entry is earlier, the
+state at time \(r\) is already in the cyclic tube. Bounded
+fundamental cells in the sum-\(B\) lattice give a point count
+\(O_n(B^d(T+1)^{k-d})\) by thickening in parallel and normal
+directions. The inverse count through the first \(r\) steps, and
+the original gap weights, prove the first bound in (1). Applied from
+time \(j\), with the inverse count through the first \(j+r\) steps, the
+same argument gives the prefix statement in (1), with a constant
+depending also on \(j\).
+
+For (2), take a seed \((g_s)\) at base \(b\). At base
+\(B=b+mL\), perturb phase \(s\) by \(L\one+P^s w\), with
+integral \(w\in K\) and \(\|w\|_\infty\le\epsilon L\).
+The uniform translation increases every interlevel margin by \(L\),
+as in the exact covariance of \cite[Section~6]{G4}.
+The remaining perturbation, of size \(O_n(\epsilon L)\), leaves the
+primary row unchanged and increases or preserves every secondary
+row. Thus the paired correction remains unchanged and the translated
+phases close after a common multiple of the seed period and \(r\).
+A fixed relative box in the cone dilates to \(\gg_n L^d\)
+integral points, each with gap weight \(\asymp_n B^{-k}\).
+If \(d>0\) the box can avoid zero so the cycles have a fixed
+positive peak bound, since suffix sums give a norm on the zero-sum
+space. The same cutoff can be used over the finitely many seeded
+classes. If \(d=0\) the uniform translation alone suffices.
+At strict lengths the open cone relative to the root-equal plane
+has dimension \(k-r\). Such lengths have seeds in every class:
+round a near-uniform strict invariant profile with common root
+rounding and adjust the sum at a complementary slot, keeping the
+slacks in all rotations for large \(B\). For \(2^a+1\) the orbit of 1 consists of the powers of two
+through \(2^{a-1}\). For \(2^a-1\) the last slot is
+\(2^{a-1}-1\) in place of \(2^{a-1}\). Both orbits have
+length \(a\). Assigning weight zero on \(J\) and one elsewhere
+makes each secondary row positive. The prefix contains at
+least two root-or-anchor slots and the suffix only one, except
+at the longest minus-case row where the prefix contains at
+least three and the suffix contains two. This is the strict family of \cite[Section~3]{G10}.
+
+For (4), at time \(T\) the gap is already cyclic. The tube count
+is \(O_n(B^d)\), or \(O_n(B^{d_f})\) for fixed points. The number
+of preimages under \(T\) steps is bounded uniformly in \(B\) by
+Lemma~\ref{lem:tube}. For the lower bound let
+\(S_0=\R\one+\operatorname{span}K\) and let \(b\) be the generator
+in the statement. At each multiple of \(b\), integral points of
+\(S_0\) in the sum-\(B\) plane form a translate of the full
+zero-sum lattice in \(\operatorname{span}K\).
+A dilated box in a small relative cone slice away from zero gives
+\(\gg_n B^d\) such gaps near the uniform vector. Their rotations
+pair, the corrections vanish, and each original at such a gap
+maps to a cyclic word in one step. The fixed-point proof uses \(W\).
+
+At a strict length \(S_0\) contains a unit vector in a
+complementary slot. For the fixed subspace the sums include
+\(r+1\) from \(J\) and the sizes of the complementary orbits,
+which divide \(r\). For an odd composite and a proper divisor
+\(1<\gamma<n\), the vector \(v_\gamma(j)=\one_{j>0,\ \gamma\mid j}\) is
+invariant and zero on \(J\) (for prime \(\gamma\) this is the vector of
+\cite[Section~3]{G10}). The images under \(P\) of the last \(i\) slots
+are \(1,3,\ldots,2i-1\). Counting multiples of \(\gamma\) gives
+\[
+ d_i(v_\gamma)=\one_{(i-1)\bmod\gamma\,\ge(\gamma-1)/2}.
+\]
+So \(v_\gamma-\overline v_\gamma\one\in W\). The integer sums for the
+fixed span with constants include \(m\) and, using \(\gamma=n/\ell\),
+all \((\ell-1)/2\) for primes \(\ell\mid n\). Their gcd is 1:
+any prime dividing all the latter gives \(n\equiv1\pmod{2q}\)
+for that prime \(q\), and hence cannot divide \(m\).
+The same conclusion holds for the larger space.
+At length 17 the complement is one orbit with four slots,
+so \(d=4,d_f=1,k=8\).
+
+At length 25 only slots 5 and 10 lie outside \(J\).
+Let their offsets from the root be \(x,y\). The secondary rows
+are \(0,y,y,y,y-x\), and a turn exchanges the two offsets at its
+first step. Thus \(K\) is the ray \(x=y\ge0\) with zero sum.
+Take every gap equal to \((B-2t)/13\) except for an additional
+\(t\) at 5 and 10, with \(t\) near \(B/400\) and
+\(2t\equiv B\pmod{13}\). This is a fixed gap with positive
+macroscopic radius at every sufficiently large base.
+\end{proof}
+
+\subsection{Marked lower bound}\label{sec:transport}
+
+At a strict length slot \(k-1\) is outside \(J\):
+on an invariant root-equal profile \(d_2=g_{k-1}-g_0\),
+and it must be positive. Thus slot 3 is also outside \(J\).
+List the nonzero root slots in orbit order as \(j_1,\ldots,j_r\),
+with \(j_r=k\), and put \(x_i=g_{j_i}-g_0\).
+In the chamber, \eqref{eq:Cupdate} gives the autonomous root map of
+\cite[Section~2.2]{G9} (see also \cite[Section~5]{G10}):
+\begin{equation}\label{eq:root}
+ \begin{gathered}
+ T_r(x)=(z-3e+2h,\ x_1+2h,\ x_2-e+h,\ldots,x_{r-1}-e+h),\\
+ z=x_r,\qquad e=\sgn z,\qquad h=(-1-z)_+ .
+ \end{gathered}
+\end{equation}
+We call \(x\) the relative root and \(h\) its loss. The absolute
+sum on \(J\) increases by \(h\), while the complement permutes with
+a subtraction of \(h\) in slot 3. A root path is loss-free
+when \(h=0\) at every step.
+
+The finite records of \cite[Appendix~B]{G9} give the following
+input to the proof. Appendix~\ref{app:retirement} explains how
+a finite record gives the uniform family.
+\begin{lemma}[Full-rank source records of orders 3--13]\label{lem:p9}
+For each \(3\le r\le13\) and integer \(L\ge1\), the supplied
+integer records for \eqref{eq:root} give \(L^r\) distinct starts.
+Their time through a loss-free terminal return, lifetime spread
+\[
+ \sup_t\bigl[\max(0,x_1(t),\ldots,x_r(t))-\min(0,x_1(t),\ldots,x_r(t))\bigr]
+\]
+and total loss are bounded respectively
+by \(C_{r,\mathrm{time}}L,C_{r,\mathrm{sp}}L,C_{r,\mathrm{loss}}L\)
+for constants independent of \(L\).
+The associated length records give strict profiles for all 47
+strict lengths in that order range.
+\end{lemma}
+
+\begin{proof}[Proof of Theorem~\ref{th:clock}(3)]
+This is the strict source transport of \cite[Proposition~7]{G10} with
+the time budget of Lemma~\ref{lem:p9} tracked.
+Fix a near-uniform strict invariant profile \(\pi\) and take
+\(L=\lfloor T/(2C_{r,\mathrm{time}})\rfloor\) for
+\(T\ge4C_{r,\mathrm{time}}\).
+For each relative start \(x\), choose the anchor in an interval
+of \(\lfloor\epsilon B\rfloor\) integers starting at
+\(\lfloor B\pi_0-\sum_i x_i/(r+1)\rfloor\).
+Choose all but one complementary gap independently over intervals
+of the same size starting at their profile floors.
+The last gap enforces the sum \(B\), at every integer base.
+This gives \(\gg_n B^{k-r}\) choices for each root start.
+Along the nominal chamber trajectory the mean on \(J\) changes
+by total loss divided by \(r+1\), and all complementary errors
+from pure permutation are bounded by total loss. Together with
+the spread budget this keeps the trajectory within
+\(O_n(1+\epsilon B+T)\) of \(B\pi\).
+Small enough \(\epsilon,c_n>0\) preserve positive gaps, pairing,
+secondary slacks and a positive radius cut when \(T\le c_n B\).
+Thus the nominal trajectory is physical. At root cycle entry the
+root sum is constant thereafter, and the complement permutes
+without losses. The absolute gaps are recurrent from that
+entry, with a return at a common multiple of the root period
+and \(r\).
+
+The interior starts have total original weight
+\(\gg_n (L/B)^r\).
+For bounded smaller \(T\), the static marked construction works
+in every class and gives the same order, after reducing the
+common cut and constant. The upper bound is (1).
+\end{proof}
+
+\section{Radius bounds on paired paths}\label{sec:radius}
+
+\begin{theorem}[Paired radius and original prefix]\label{th:radius}
+If the next \(N\) source states starting at \(g\) are positively
+paired, then \(R(g)\le2^{-N}+2/k+6/B\).
+Thus every wholly positively paired cycle satisfies
+\(Z_B\le2/k+6/B\), even with secondary breaches.
+Along lengths \(n\equiv3\pmod6\) the order \(1/k\) is sharp up to
+constants.
+For each \(0<\epsilon<1/2\) and \(\delta>0\),
+\[
+ \lim_{\substack{n\to\infty\\n\text{ odd}}}\limsup_{B\to\infty}
+ \PP_{n,B}\!\left(\max_{0\le t\le\lfloor(1/2-\epsilon)\log_3 n\rfloor}
+ R(g_t)>\delta\right)=0.
+\]
+\end{theorem}
+
+\begin{proof}
+For \(\mu=k^{-1}\sum_i\delta_{q_i/B}\) let \(D(\mu)\) be the
+uniform CDF discrepancy. The target \(j/(k+1)\) of the \(j\)-th
+increasing atom lies between its empirical left and right
+ranks, so \(R\le D\le R+1/k\). At a tie the extreme ranks of
+the tied block give the two CDF bounds used here.
+
+An allowance \((u,v)\) between two measures means that each CDF
+at \(x\) is at most the other at \(x+u\) plus \(v\).
+Allowances compose by addition and bound the discrepancy
+difference by \(u+v\). Let \(s(x)=1-x\), \(L(x)=|2x-1|\), and
+\(Q\nu=\tfrac12((S_-)_\#\nu+(S_+)_\#\nu)\) with
+\(S_\pm(y)=(1\pm y)/2\), where \(\#\) denotes pushforward.
+Then \(QL_\#\mu=(\mu+s_\#\mu)/2\) and \(D(Q\nu)\le D(\nu)/2\).
+For the latter the CDF on either half is half an affine
+function of the original CDF at \(1-2x\) or \(2x-1\),
+using a left limit on the decreasing branch.
+Define \(b(q)\) as the least vertical allowance comparing
+\(\mu\) with its reflection at horizontal allowance \(2/B\).
+The allowance between \(\mu\) and \(QL_\#\mu\) is therefore
+\((2/B,b(q)/2)\).
+
+To compare with the actual successor, sort \(L(q_i/B)\) in
+descending order as \(d_1',\ldots,d_k'\), and put \(d'_0=1\).
+The symmetric differences of the sorted ideal digits
+\(1,q_i/B,1-q_i/B\) are \((d'_{i-1}+d'_i)/2\).
+They interlace the \(d'_i\), giving vertical allowance \(1/k\).
+If \(z\) differences vanish, form the true borrowed digits from
+the ideal list by replacing \(z\) low zero-pair members with
+\(1-1/B\) and changing the other matched digits by at most
+\(1/B\). In descending order every new rank \(j\) is between
+the old ranks \(j+z,j-z\) up to \(1/B\), using just the side
+available when a rank falls outside the list.
+Subtracting the resulting outer and inner bounds puts the new
+difference at rank \(i\) between the old differences at
+\(i+z,i-z\) up to \(2/B\). Thus \(L_\#\mu\) and the successor
+\(\mu^+\) have allowance \((2/B,(z+1)/k)\).
+At height zero the same bound holds because its vertical part
+exceeds one. Consequently
+\[
+ D(\mu)\le\tfrac12 D(\mu^+)
+       +\tfrac12\big(b(q)+z/k+1/k\big)+3/B.
+\]
+For a positively paired source each threshold separates the
+two borrowed column counts by at most one, since only one level
+can straddle the threshold. Each column is within \(1/B\) of
+its ideal list, so \(b(q)\le1/k\) and \(z=0\).
+Iteration proves the radius bound. For a general path it yields
+\[
+ R(g_t)\le2^{-N}+\max_{t\le j<t+N}\{b(q(j))+z_j/k\}+1/k+6/B.
+\]
+If \(R(g_t)>\delta\) and the sum of the three explicit error
+terms is at most \(\delta/2\), the window contains a source
+with \(b(q)>\delta/4\) or \(z/k>\delta/4\).
+
+Finally \(D(L_\#\mu)\le2D(\mu)\), since the preimage of a
+CDF interval is a closed interval of corresponding uniform
+length. The allowance and \(z/k\le D(\mu)\) give
+\(D(\mu^+)\le3D(\mu)+1/k+2/B\).
+If the original uniforms have empirical discrepancy at most
+\(a\), their order statistics are within \(a+1/n\) of
+\(j/(n+1)\). Rounding gives \(D(\mu_0)\le2a+2/n+1/k+1/B\).
+By the Dvoretzky--Kiefer--Wolfowitz inequality with Massart's
+constant \cite[p.~1269]{Massart}, the exceptional probability
+is at most \(2e^{-2na^2}/(1-B^{1-n})\) under original sampling.
+With \(a=n^{-1/2+\epsilon/2}\), iteration up to the stated horizon
+proves the iterated limit.
+\end{proof}
+
+The window estimate in the proof gives the following quantitative form
+for arbitrary paths.
+
+\begin{corollary*}[Window form]
+For a difference vector \(q\) let \(\mu_q=k^{-1}\sum_i\delta_{q_i/B}\),
+and let \(b(q)\) be the least \(v\ge0\) such that, for every \(x\), the
+CDF of each of \(\mu_q\) and its reflection under \(x\mapsto1-x\) at
+\(x\) is at most the other at \(x+2/B\) plus \(v\). Let \(\delta>0\) and
+\(N\ge1\) satisfy \(2^{-N}+1/k+6/B\le\delta/2\). If \(R(g_t)>\delta\) on
+an arbitrary path, then some \(j\) with \(t\le j<t+N\) has
+\(b(q(j))>\delta/4\) or more than \(\delta k/4\) zero differences.
+\end{corollary*}
+
+\begin{proof}
+This is the window estimate at the end of the third paragraph of the
+preceding proof, where \(z_j\) is the number of zero differences at
+source \(j\).
+\end{proof}
+
+For sharpness take \(n=6v+3\ge9\) and
+\(g_j=2L+L\one_{j>0,\ 3\mid j}\), at \(B=(2m+v)L\).
+This invariant profile is constant on \(J\), and counting
+multiples of 3 as in Section~\ref{sec:clock} gives
+\(d_i/L\in\{0,1\}\) and \(d_1=0\).
+The unborrowed digits within each level differ by \(d_i\)
+(using \(d_{m-i}=d_i\)), and each column drops by at least
+\(2L\) between levels. The pairing margins after borrowing
+are at least \(L-1\). All corrections in \eqref{eq:Cupdate}
+vanish and the profile is fixed. Its radius is
+\(3v/[m(2m+v)]\sim3/(7m)\), attained at the third difference.
+
+\begin{proposition}[Digit replication]\label{prop:replicate}
+For any length, use its \(\lfloor n/2\rfloor\) differences
+of opposite sorted digits. At any base and replication
+factor \(s\ge2\), repeating every digit \(s\) times commutes with the sorted
+multiset update exactly at height zero or when \(q_1+q_\theta=B\).
+A cycle lifts phase by phase with its least period exactly
+when every phase meets this condition. Every odd composite
+\(N\ge9\) has at least \(\tau(N)\) nonconstant fixed points
+for all sufficiently large bases in one progression, with
+\(\tau(N)-1\) of them above a fixed positive radius cut,
+where \(\tau(N)\) counts positive divisors.
+The original mass of exactly replicated inputs from length
+\(n<N\) is \(O_N(B^{n-N})\).
+\end{proposition}
+
+\begin{proof}
+The provisional multiplicities in the borrowed list scale by
+\(s\). The exact corrections change the number of digits
+at least \(t\) by \(\one_{t=B-q_1}-\one_{t=q_\theta}\), for
+\(1\le t<B\). Replication scales neither exceptional threshold
+when it precedes subtraction, so the two orders differ by
+\(1-s\) times this threshold defect. Threshold counts determine
+the multiset. If the defect is nonzero, the resulting counts
+at the two exceptional thresholds are not divisible by \(s\),
+precluding a replicated successor. At height zero both
+outputs are zero. Injectivity preserves the period of the
+multiset cycle, and applying the numerical update to each
+predecessor realizes the lifted words with that same period.
+
+For each proper divisor \(1<n<N\), write \(m_n=(n+1)/2\) and
+take \(B=m_n A\). The multiset
+\[
+ A-1,A,2A-1,2A,\ldots,(m_n-1)A-1,(m_n-1)A,B-1
+\]
+has \(q_i=(m_n-i)A\) and reproduces itself under the borrowed
+update since the corrections cancel. The equal-gap fixed point at
+\(B=m_n\) generates this family at \(B=m_nA\) by the paired covariance
+of \cite[Theorem~4 and Section~6]{G4}.
+Its \(s=N/n\) replicate has \((s-1)/2\) trailing zero
+differences, giving distinct off-centre fixed points for
+distinct divisors. Add the uniform-gap fixed point at \(N\)
+and the nonconstant paired fixed profile from a small positive
+multiple of \(v_\gamma-\overline v_\gamma\one\) at length \(N\).
+The latter has only positive differences and is distinct from
+all replicated families and from the centre. A common multiple
+of the profile denominators and the \(m_n\) gives the progression.
+There are at most \(O_N(B^n)\) ordered words in a replicated
+locus, even allowing all permutations. The mass bound follows.
+\end{proof}
+
+In particular, at \(n=4^a-1\), \(a\ge2\), choose \(L\) even
+in the paired sharpness example. At the same base the replicated
+three-digit fixed point has radius exactly \((n-3)/[2(n+1)]\), attained
+at the first difference, which tends to \(1/2\) as \(a\to\infty\).
+Its directly replicated original mass is \(O_n(B^{3-n})\).
+
+\section{Original pairing and chamber entrance}\label{sec:entrance}
+
+\begin{theorem}[Initial pairing and reflected entrances]\label{th:sibling}
+At odd length \(n\ge5\) the all-base limit of the original
+positive-pairing probability is
+\((5/8)^{\lfloor(n-1)/4\rfloor}\).
+The initial chamber probabilities at 7, 9 and 11 digits
+tend to \(5/16\), \(25/128\) and \(15/128\), respectively.
+At each of the 47 strict lengths in \cite{G9}, the
+probability that the initial gap is not positively paired, that the
+gaps lie in \(\C\) from gap time one on, and that the orbit is captured
+with \(Z_B>\delta_n\) by gap time \(T+1\) is
+\(\asymp_n((T+1)/B)^r\) for \(T_0(n)\le T\le c_nB\).
+Here \(\delta_n\) and \(c_n\) may be smaller than in
+Theorem~\ref{th:clock}, and \(T_0(n)\) is a further constant.
+\end{theorem}
+
+\begin{proof}
+Under the limiting gap density, the prefix sums
+\(L_i=\sum_{j<i}g_j\) in normalized coordinates have the law
+of the even order statistics of \(n\) auxiliary uniform
+points, and \(R_i=1-L_{m-i}\) are the reflected suffix sums.
+The continuum borrowed levels are \(1-L_i,1-R_i\).
+With cross-list ties of probability zero, pairing holds
+exactly when the two counting functions differ by at most
+one at every threshold. A gap of two in the counts means
+the \((i+1)\)-st arrival from one side preceded the \(i\)-th
+from the other, precisely a level overlap.
+
+Reveal the uniform points in increasing distance to the
+nearer end of the unit interval, recording independent fair
+left and right labels. Up to the midpoint the two counts
+after \(a\) left and \(b\) right choices are
+\(\lfloor a/2\rfloor,\lfloor b/2\rfloor\).
+Reflection gives the counts beyond the midpoint as
+\(m-1-\lfloor b/2\rfloor,m-1-\lfloor a/2\rfloor\).
+After \(4j+1\) revealed points only \(a-b=\pm1\) is
+allowed. From unit counts at those two states, the next
+three additions give counts \((1,2,1)\), \((1,3,3,1)\), \((4,6,4)\)
+in increasing order of allowed differences. The fourth
+gives \((10,10)\). So the survival probability is multiplied
+by \(10/16\) per block. The optional final two additions
+have no deletion.
+For the chamber also require \(L_i<R_i\) for
+\(2\le i\le m-2\), using \(d_{m-i}=d_i\).
+In the side-word recurrence put \(c_{0,0}=1\) and
+\(c_{a,b}=c_{a-1,b}+c_{a,b-1}\) at valid positive-length
+prefixes. Delete a prefix if the floor counts differ by more
+than one, or if
+\(\lfloor a/2\rfloor<i\le\lfloor b/2\rfloor\) for any such
+\(i\). A failure beyond the midpoint corresponds to the
+failure at \(m-i\) below it. The totals at 7, 9 and 11 are
+40, 100 and 240 out of \(2^n\). Rounding and borrowing
+have bounded integer errors, so the continuum rules give
+the all-base limits.
+
+At full positive height each interior difference \(v\) gives
+the unordered borrowed pair \(\{v,B-1-v\}\).
+Reflecting any subset of interior differences, resorting,
+and keeping within the endpoints therefore gives identical
+successor gaps and hence the same second numerical word.
+Each reflected source has its own original multiplicity.
+
+Use the interior starts constructed for the marked lower
+bound in Section~\ref{sec:transport}. Their strict profile
+can be chosen close to uniform, with all gaps, level
+separations and \(d_2\) bounded below by positive multiples
+of \(B\). Replace \(q_{k-1}\) by \(y=B-1-q_{k-1}\).
+Since \(q_2-y=d_2+1\) and the original levels 2 and 3
+are separated, \(y\) lies strictly between \(q_2\) and \(q_3\)
+with margins of order \(B\). The new third difference is
+\(y\), so reflection there recovers the original tuple.
+The endpoints are preserved since these strict lengths
+have \(k\ge4\). All gaps still have size comparable to \(B\).
+Above a threshold between the original levels 2 and 3,
+the four borrowed digits, aside from the singleton, now
+consist of three from one column and one from the other.
+This is incompatible with positive pairing. The common
+successor gives permanent chamber residence from time one
+and the same marked terminal fate. The injective reflection
+and original weights give the lower bound. The upper
+bound is the prefix statement in Theorem~\ref{th:clock}(1)
+with \(j=1\).
+\end{proof}
+
+\begin{theorem}[Entrance peak and clock]\label{th:entrance}
+Let \(S=\{0\}\cup\operatorname{orb}_P(1)\cup\operatorname{orb}_P(3)\),
+and for an entrance gap \(g\) put
+\[
+ U(g)=\sum_{j\in S}g_j/B,\qquad
+ D_P(g)=\max_{0\le t<r} R(P^t g).
+\]
+At a permanent chamber entrance,
+\(|Z_B-D_P(g)|\le U(g)\).
+At a strict length the gap time from that entrance to the
+first cycle equals the transient of its relative root.
+For an original start with \(g_0\in\C\), let \(\tau\le\infty\) be the
+first time with \(g_\tau\notin\C\); when \(\tau<\infty\), \(g_\tau\) is
+the image of the last chamber source. If \(|S|/m\le\delta/3\) and
+\(0<\delta<1\), then
+\[
+ \limsup_{B\to\infty}
+ \PP_{n,B}\Bigl\{g_0\in\C,\ \tau<\infty,\
+ \max_{0\le t\le\tau}R(g_t)>\delta\Bigr\}
+ \le (2kr+1)e^{-2n\delta^2/9}.
+\]
+This decays exponentially as \(n\to\infty\) with
+\(r=o(n)\), including \(n=2^a\pm1\). The hypothesis gives
+\(\delta\ge3|S|/(k+1)>2/k\), since \(k\ge3\), so by
+Theorem~\ref{th:radius} the permanent terminal event
+\(\{g_t\in\C\ \text{for all }t\ge0,\ Z_B>\delta\}\) is empty for
+\(B>6/(\delta-2/k)\).
+\end{theorem}
+
+\begin{proof}
+All corrections in \eqref{eq:Cupdate} are supported on
+the invariant set \(S\). The physical and permuted gaps
+agree off \(S\) while the chamber update applies and are
+nonnegative with equal total on \(S\). Each suffix sum
+can therefore change by at most \(BU(g)\) relative to the
+permuted gaps. Over any \(r\) successive terminal times
+the reference phases visit a full folded turn. This
+proves the peak estimate, including each finite step
+through the image of the last chamber source.
+
+At a strict length a root recurring from time \(a\)
+with period \(\ell\) on a permanent path must be loss-free
+thereafter. Positive loss per period would eventually
+make the complementary sum negative. With no losses,
+the absolute root sum and its relative coordinates determine
+its gaps, and the complement simply permutes. Thus the
+full gap returns after \(\lcm(\ell,r)\) steps from time \(a\).
+Any gap return implies a root return. If the entrance is the
+first permanent one, no earlier gap lies on a chamber cycle.
+
+Under the limiting original gap law, the sum of any fixed
+\(j\) slots has distribution \(\mathrm{Beta}(2j,2m-2j)\)
+for \(0<j<m\), equivalently the \(2j\)-th order statistic
+of \(n\) uniforms. The binomial tail bounds
+\cite[Theorem~2]{Hoeffding} give
+\[
+ \PP\{X-j/m>v\},\quad \PP\{X-j/m<-v\}\le e^{-2nv^2},
+\]
+since \((2j-1)/n<j/m<2j/n\).
+The empty and full sums are deterministic. Apply this with
+\(v=\delta/3\) to the \(kr\) rotated suffixes and to \(S\).
+Except for the union of the tails, \(D_P\le\delta/3\)
+and \(U\le2\delta/3\). The original gaps converge under
+rounding and the relevant interior threshold boundaries
+have limiting measure zero. This proves the asserted bounds.
+\end{proof}
+
+For a chamber terminal cycle let \(g_e\) be its first permanent
+entrance, and let \(E\) be the event that \(g_e\) exists. For
+\(\eta>0\) the comparison with \(D_P(g_e)\) gives the joint bounds
+\[
+ \begin{aligned}
+ \PP_{n,B}(E,\ Z_B>\delta)
+   &\le\PP_{n,B}(E,\ D_P(g_e)>\delta-\eta)+\epsilon_\eta,\\
+ \PP_{n,B}(E,\ Z_B>\delta)
+   &\ge\PP_{n,B}(E,\ D_P(g_e)>\delta+\eta)-\epsilon_\eta,
+ \end{aligned}
+\]
+with \(\epsilon_\eta=\PP_{n,B}(E,\ U(g_e)>\eta)\). Conditional
+probabilities given \(E\) would require dividing the error by
+\(\PP_{n,B}(E)\).
+Let \(t_e\) be the first permanent entrance time, so that \(g_e=g_{t_e}\). If \(q_k(g_t)>0\) for
+\(0\le t<t_e\), then integer gap majorization \cite[Theorem~1]{G4} gives
+\(U(g_e)\le L_s(g_0)+2t_e/B\), where \(L_s\) sums the
+\(s=|S|\) largest normalized gaps. A full-height suffix of only
+\(\ell\) sources gives \(U(g_e)\le L_s(g_{t_e-\ell})+2\ell/B\) instead.
+Full height is needed already for the underlying rank-one estimate: at
+\(n=9\), \(B=1000\) the source \(q=(675,671,336,0)\), with gaps
+\((325,4,335,336,0)\), has successor gaps \((326,3,7,652,12)\), so the
+largest gap rises from 336 to 652 in one step, violating largest-gap
+majorization. (There \(S\) is the full slot set, so \(U=L_5=1\).)
+A union over the
+\(\binom ms\) subsets in the beta bound shows that
+\(L_s(g_0)\) tends to zero in probability in the iterated
+base-then-length limit for \(s=o(m)\).
+In particular the entrance error is small for prefixes of
+\(o(B)\) full-height steps in those limits. Estimating \(D_P\) at
+arbitrary entrances requires its own access analysis.
+
+\section{The integer root recurrence}\label{sec:root}
+
+The autonomous map \eqref{eq:root} is defined on \(\Z^r\)
+for each \(r\ge3\). If \(y_t=x_r(t)\) is the read at
+time \(t\), put \(e_t=\sgn y_t\) and \(h_t=(-1-y_t)_+\).
+Following that coordinate around a turn gives
+\begin{equation}\label{eq:reads}
+ y_{t+r}-y_t=-3e_t+2h_t+2h_{t+1}
+       +\sum_{j=2}^{r-1}(h_{t+j}-e_{t+j}).
+\end{equation}
+The first \(r\) reads access the initial slots in order
+\(r,r-1,\ldots,1\). Each read equals its initial coordinate
+plus corrections determined by preceding reads. Subtracting
+these corrections in order recovers the initial vector.
+This is an integer bijection conjugating \(T_r\) to the
+shift on consecutive reads with recurrence \eqref{eq:reads}.
+In particular the least periods of the read word and state
+orbit agree.
+
+\begin{proposition}[Phase balance]\label{prop:balance}
+On any loss-free root cycle of least period \(p\), the read
+signs sum to zero in every class modulo \(\gcd(p,r)\).
+\end{proposition}
+\begin{proof}
+Let \(d_*=\gcd(p,r)\), and let \(E_c\) be the sum of signs
+at phases in class \(c\) modulo \(d_*\). Summing
+\eqref{eq:reads} over that class, the left side cancels and
+the loss-free right side gives
+\[
+ 0=2E_c-E_{c+1}+(r/d_*)\sum_j E_j .
+\]
+The last term comes from a full turn of shifts. Summing in
+\(c\) shows the total sign sum vanishes. Hence
+\(E_{c+1}=2E_c\) cyclically, forcing every \(E_c=0\).
+\end{proof}
+
+\begin{theorem}[Physical guard certificate]\label{th:guards}
+Fix a strict length. Suppose the nominal relative root
+path at a chamber entry has transient \(a\) and loss-free
+terminal period \(\ell\). Continue the nominal full gaps by
+\eqref{eq:Cupdate}. The visit remains permanently in
+\(\C\) if and only if the physical gap, height, pairing and
+secondary guards pass at source phases
+\(0,\ldots,a+\lcm(\ell,r)-1\).
+For an integral invariant vector \(w\) constant on \(J\),
+translate \((g,B)\) by \(s(w,\sum_j w_j)\).
+The gap-sum identity is preserved by the translation, the nominal
+reads are unchanged and the guard values
+vary affinely with \(s\). All sufficiently large integer
+\(s\) pass the finite test exactly when every slope is
+nonnegative and every zero-slope guard already holds.
+A positive near-uniform secondary-strict \(w\) can be
+chosen with strictly positive slopes for all gap, height,
+interlevel pairing and secondary inequalities.
+\end{theorem}
+
+\begin{proof}
+After the root transient, all losses vanish. The full
+nominal gaps then repeat after a common multiple of the
+root and permutation periods, by conservation of the
+root sum. The finite test checks exactly the sources
+through the first such return, and hence every source
+thereafter. If the physical visit stays in the chamber,
+its update agrees with the nominal one, so the same
+guards are necessary. The same repeated block gives
+the actual peak.
+
+The translated nominal trajectory is \(g_t+sw\) at every
+time because the primary row, and hence the sign and loss,
+are unchanged while \(Pw=w\). Write every tested inequality
+as an affine integer form \(G\ge0\). Its translated value is
+\(G(g_t,B)+sG_{\mathrm{hom}}(w,\sum_jw_j)\).
+This proves the slope criterion and gives a computable
+threshold for each positive slope. A rational strict
+invariant profile can be mixed with uniform gaps and
+cleared of denominators. Close enough to uniform, the
+physical gaps, full height and interlevel comparisons
+have positive slopes. Strictness gives positive slopes
+for the secondary rows. The resulting physical periods
+have a peak converging to the positive radius of
+\(w/\sum_jw_j\).
+
+Secondary strictness by itself can fail pairing.
+At \(n=9\) and base 50, translate uniform gaps of size 10
+by \(w=(1,1,1,10,1)\), with the base increased by \(14s\).
+The vector is invariant, constant on \(J=\{0,1,2,4\}\)
+and \(d_2(w)=9\). The nominal root stays zero. Along
+this ray the second reflected level minus the third
+direct level is \(B_s-2q_3-1=9-8s\), so pairing fails
+for integers \(s\ge2\).
+\end{proof}
+
+\section{A graph for periods dividing \texorpdfstring{\(2r\)}{2r}}
+\label{sec:graph}
+
+\begin{theorem}[Periodic root graph]\label{th:graph}
+Let \(G\) be the directed graph on the 21 states
+\((u,e)\in\{-3,\ldots,3\}\times\{-1,0,1\}\) with an edge
+\((u,e)\to(u-2e,f)\) whenever \(u-2e\in[-3,3]\) and \(f\le u\) if
+\(e=1\), \(f\ge u\) if \(e=-1\), \(f=u\) if \(e=0\). For \(r\ge3\) call
+\(x\in\Z^r\) \emph{covered} if it is a loss-free periodic point of
+\(T_r\) with \(T_r^{2r}x=x\), that is, of least period dividing \(2r\).
+Let \(y_t\) be the read of \(T_r^tx\), \(e_t=\sgn y_t\) and
+\(u_t=\sum_{j=0}^{r-1}e_{t+j}\). The map
+\(x\mapsto(u_t,e_t)_{0\le t\le r}\) is a bijection from covered points
+onto the length-\(r\) walks in \(G\) that end at \((-u_0,-e_0)\). Its
+inverse sets \(y_t=1+u_t-e_{t+1}\), \(-1\) or \(0\) according as
+\(e_t=1\), \(-1\) or \(0\), for \(0\le t<r\), and recovers \(x\) from
+these reads. Exactly 13 states of \(G\) occur on such walks across all
+orders. All covered reads lie in \([-1,5]\). The number of covered
+points, or read words with a specified initial phase, is
+\[
+ \begin{cases}
+ 2^r+1,&r\text{ odd},\\
+ (2^{r/2}+1)^2,&r\text{ even}.
+ \end{cases}
+\]
+A cycle of least period \(p\) contributes \(p\) points.
+\end{theorem}
+
+\begin{proof}
+On a loss-free path put \(u_t=\sum_{j=0}^{r-1}e_{t+j}\).
+Equation~\eqref{eq:reads} becomes
+\begin{equation}\label{eq:lossfree}
+ y_{t+r}-y_t=-2e_t+e_{t+1}-u_t .
+\end{equation}
+If \(y_{t+2r}=y_t\), Proposition~\ref{prop:balance} gives
+\(e_{t+r}=-e_t\): for least period \(p\mid2r\), a class
+modulo \(\gcd(p,r)\) has either one phase, with zero sign, or
+two phases separated by \(r\).
+Thus \(u_{t+r}=-u_t\) and \(u_{t+1}=u_t-2e_t\).
+For \(e_t=1\), the opposite read is \(-1\), so
+\(y_t=1+u_t-e_{t+1}\), requiring \(u_t\ge e_{t+1}\).
+For \(e_t=-1\), \(y_t=-1\) and the opposite read is
+\(1-u_t+e_{t+1}\), requiring \(u_t\le e_{t+1}\).
+For \(e_t=0\) both reads are zero and \(u_t=e_{t+1}\).
+These conditions also suffice for the paired reads.
+
+At a positive maximum of \(u\), the previous step cannot
+be a decrease. A stationary step has \(|u|\le1\).
+An increase starts at \(u\le e_{t+1}\le1\), so reaches
+at most 3. Antisymmetry gives \(|u|\le3\).
+These are the states of \(G\), and its edges from \((u,e)\) go to
+\((u-2e,f)\) in that set with
+\begin{equation}\label{eq:edge}
+ \begin{array}{c|ccc}
+ e&1&-1&0\\ \hline
+ \text{condition}&u\ge f&u\le f&u=f
+ \end{array}
+\end{equation}
+The involution \(\iota(u,e)=(-u,-e)\) preserves the graph.
+A covered root orbit determines a walk to its opposite state.
+Conversely follow such a walk by its image under \(\iota\).
+The \(r\) updates of the first coordinate give
+\(u_0=\sum_{j=0}^{r-1}e_j\), and the same identity holds
+starting at every phase. Assign each positive read its
+value \(1+u_t-e_{t+1}\), each negative read \(-1\), and
+each zero read 0. Equation~\eqref{eq:edge} ensures that
+these values lie in \([-1,5]\) and satisfy
+\eqref{eq:lossfree}. The read bijection gives the stated
+inverse.
+
+To count the walks, decompose the graph into components.
+For odd \(u\) write
+\(A=(1,1),\ B'=(1,0),\ C'=(1,-1),\ D=(3,1)\)
+and use a bar for the image under \(\iota\).
+The edges are
+\[
+ A\to\bar A,\overline{B'},\overline{C'},\quad
+ B'\to A,\quad C'\to D,\quad D\to A,B',C',
+\]
+together with their images under \(\iota\).
+Among the even states on closed walks, a nonzero central
+state \((0,e)\) goes to its distinct outer state \((-2e,-e)\). An outer
+state goes to either nonzero central state, and also has an edge to
+\((0,0)\), which has only its loop. These are the 13 states on closed
+walks. The eight remaining nominal states have no outgoing edges. In
+the full graph, a nonzero central state also has an edge to the
+dead-end state \((-2e,0)\). The odd component and the four-state
+nonzero even component are strongly connected and
+preserved by \(\iota\), so each of their states occurs
+on some walk to its opposite of length at least 3.
+
+For the adjacency matrix \(M\) with rows indexed by
+sources, the count is \(\tr(M^r\iota)\), where \(\iota\) also
+denotes the permutation matrix. On the odd component use
+functions satisfying \(f(\iota(s))=\epsilon f(s)\), with
+\(\epsilon=\pm1\). On the coordinates \(A,B',C',D\) the
+matrix is
+\[
+ M_\epsilon=\begin{pmatrix}
+ \epsilon&\epsilon&\epsilon&0\\
+ 1&0&0&0\\0&0&0&1\\1&1&1&0
+ \end{pmatrix},
+ \qquad
+ \det(\lambda I-M_\epsilon)=\lambda^2
+ (\lambda^2-\epsilon\lambda-\epsilon-1).
+\]
+The difference of the two power traces is \(2^r\).
+In the nonzero even component each step switches classes.
+For \(r=2q\), two steps give one walk from each state to
+each of the two states in its own class. This contributes
+\(4\cdot2^{q-1}=2^{q+1}\). For odd \(r\) it contributes
+zero. The remaining state contributes one.
+\end{proof}
+
+The period condition is essential. For example, at \(r=8\)
+the read word
+\[
+ (-1,-1,-1,5,-1,5,0,1,1,-1,1,-1,1,0)
+\]
+satisfies \eqref{eq:lossfree} modulo 14 and has least period
+14, which does not divide 16.
+
+\begin{proposition}[Six-step insertion]\label{prop:six}
+For \(r=7\) and every \(r\ge9\), the map \(T_r\) has a loss-free cycle
+of least period \(2r\), given by the construction in the proof. The
+certified order-15 cycle of Lemma~\ref{lem:cert15} is one of them.
+\end{proposition}
+
+\begin{proof}
+We construct, for each odd core order \(r_0\ge7\), each even core order
+\(r_0\ge10\), and each \(j\ge0\), a cycle of least period \(2r\) at
+\(r=r_0+6j\), by inserting \(j\) of the six-step blocks below in each
+turn of the core; \(j=0\) already gives every order in the statement.
+The certified order-15 cycle is the order-9 core with one six-step block
+in each turn.
+Represent the two turns by a pair of read words \(U,V\).
+The order-7 and order-10 seeds, both starting at graph
+state \((1,-1)\), are
+\[
+\begin{array}{r|l|l}
+r_0&U&V\\ \hline
+7&(-1,3,3,-1,1,1,-1)&(1,-1,-1,3,-1,-1,5)\\
+10&(-1,3,3,-1,0,3,-1,-1,3,1)&(1,-1,-1,2,0,-1,1,1,-1,-1).
+\end{array}
+\]
+The successive first-turn window sums are
+\[
+ (1,3,1,-1,1,-1,-3)\quad\text{and}\quad
+ (1,3,1,-1,1,1,-1,1,3,1).
+\]
+Substitution in \eqref{eq:edge} verifies the words,
+including the joins.
+After three edges the first turn is at \((-1,-1)\).
+There the two-edge loop with signs \((-,+)\) reads
+\((-1,3)\), and its opposite loop reads \((3,-1)\).
+Repeating these loops gives the cores of each indicated
+order. There is also a six-edge loop at \((1,-1)\)
+with successive sums \((1,3,1,-1,1,-1)\) and signs
+\((-,+,+,-,+,-)\). It and its opposite read
+\[
+ \begin{aligned}
+ b_U&=(-1,3,3,-1,3,-1), & b_V&=(1,-1,-1,3,-1,1).
+ \end{aligned}
+\]
+Prefixing these loops preserves the endpoints of the two
+walks and therefore their joins.
+The odd seed has exactly one 5 and the even seed exactly
+one 2. These markers stay unique under both insertions,
+so the word of length \(2r\) has no smaller period.
+At \(r_0=9,j=1\) the first \(r\) reads recover the phase
+\((2,2,1,0,3,0,3,2,-1,0,3,0,3,2,-1)\) of the order-15 record.
+\end{proof}
+
+The restriction to \(r=7\) and \(r\ge9\) belongs to the construction,
+not to the graph. Enumerating the graph walks shows that such roots also
+exist at orders 3--6 and 8; at \(r=8\), for example, there are 18 cycles
+of least period 16 (Section~\ref{sec:verify}).
+
+\begin{proposition}[Two possible final entries]\label{prop:doors}
+A positive-time first entry into a cycle of
+Theorem~\ref{th:graph} is loss-free on its last step.
+The two possible unordered pairs of cyclic and entering
+reads at the same target are \(\{0,3\}\) and \(\{-1,5\}\).
+Each phase whose predecessor on the cycle has one of
+these reads has exactly one off-cycle one-step predecessor.
+\end{proposition}
+\begin{proof}
+Given the last coordinate \(y\) of a predecessor, its
+other slots are recovered uniquely from target slots
+\(2,\ldots,r\) using \eqref{eq:root}. The first target
+slot is \(1-y\) for \(y\le-2\), 2 for \(y=-1\), 0 for
+\(y=0\), and \(y-3\) for \(y\ge1\). Values written to the first slot
+from covered reads lie in \([-2,2]\) and have only loss-free preimages.
+The only multiple inverse values are 0 and 2 and their
+two reads are the claimed pairs. Each phase on a cycle
+has exactly one predecessor on that cycle.
+\end{proof}
+
+\section{Off-centre basin probability at order 15}
+\label{sec:order15}
+
+\begin{theorem}[Order-15 survival]\label{th:order15}
+For each of the twelve lengths
+\[
+ \begin{gathered}
+ 99,151,217,331,993,1057,2979,3641,4681,10923,32767,32769 ,
+ \end{gathered}
+\]
+there is \(\delta_n>0\) with
+\(\liminf_{B\to\infty}\PP_{n,B}(Z_B>\delta_n)>0\),
+through all integer bases. These are all lengths of
+folded order 15 and all are strict.
+\end{theorem}
+
+\begin{lemma}[Order-15 reference records]\label{lem:cert15}
+The four integer records supplied with the paper satisfy
+the insertion conditions in Appendix~\ref{app:retirement}.
+Each reaches the same loss-free period-30 root with first phase
+\[
+ (2,2,1,0,3,0,3,2,-1,0,3,0,3,2,-1).
+\]
+The fourth record has determinant of absolute value
+\[1957661336689015451135390789227234983936000.\]
+For every integer \(L\ge795308\) it yields at least
+\(795308^{-15}L^{15}\) distinct roots in \([-L,L]^{15}\).
+Their lifetime norm \(\sup_t\|x(t)\|_\infty\) is at most \(L\), their
+displacement from the start is at most \(2L\) in maximum norm, and
+their total loss is at most \((1933060/397654)L\).
+\end{lemma}
+
+\begin{proof}[Proof of Theorem~\ref{th:order15}]
+The candidate lengths divide \(2^{15}-1=7\cdot31\cdot151\)
+or \(2^{15}+1=3^2\cdot11\cdot331\).
+The divisors at least 7 of lower folded order are
+\(7,9,11,31,33\). For eleven of the remaining lengths,
+take integer offsets zero on \(J\) and one elsewhere.
+At 99, take zero on \(J\) and offsets
+\((1,1,1,0,2,3)\) on the orbits with least positive
+slots \((3,5,9,11,15,33)\), respectively.
+In each case the offsets \(w_j\) are invariant and
+all secondary rows have minimum slack one. This is
+the finite check in Section~\ref{sec:verify}.
+Let \(b=1+\sum_jw_j\), \(Q=mb+\sum_jw_j\), and
+\(\pi_j=(b+w_j)/Q\). This normalized profile is
+secondary-strict with \((m+1)\min_j\pi_j-1=1/Q\).
+The latter inequality gives a positive homogeneous interlevel margin at
+\(\pi\), which persists under sufficiently small normalized
+perturbations. In fact for
+the unborrowed profile the largest entry of level
+\(i+1\) is at most \(1-(i+1)\min_j\pi_j\), while
+the smallest of level \(i\) is at least
+\((m-i)\min_j\pi_j\). The normalized radius of the
+profile is positive.
+
+By Lemma~\ref{lem:cert15} the hypotheses of strict source transport
+\cite[Proposition~7]{G10} hold at \(r=15\): for every \(L\ge795308\)
+there are at least \(795308^{-15}L^{15}\) distinct roots in
+\([-L,L]^{15}\) whose lifetime norm and total loss are at most
+\((1933060/397654)L\). That proposition gives the conclusion at every
+strict length of folded order 15, through all sufficiently large integer
+bases, with no congruence restriction on \(B\). Its proof takes
+\(L=\lfloor B/D_n\rfloor\) for a sufficiently large constant \(D_n\),
+lets the anchor and all but one complementary slot vary over
+\(\gg_nL\) integers around \(B\pi\), for a rational strict profile
+\(\pi\) with a positive pairing margin such as the one above, and uses
+the root norm and loss bounds to keep every nominal gap within
+\(O_n(L+1)\) of \(B\pi\). All guards then hold, and the resulting
+cycles have peak bounded away from zero. These cycles lie in \(\C\), so
+by Theorem~\ref{th:radius} the cut obtained in this way satisfies
+\(\delta_n\le2/k\); at \(n=32767\) this is about \(1.2\cdot10^{-4}\).
+\end{proof}
+
+\section{Scope and open questions}\label{sec:open}
+
+The growing-time exponent in Theorem~\ref{th:clock}
+is a chamber-capture exponent. For arbitrary prefixes
+Theorem~\ref{th:clock} gives the fixed-word-time bound (4) and, in (1),
+a fixed number of unconstrained initial steps followed by chamber
+residence; the one-step entrance theorem covers a specified permanent
+chamber event. The
+peak estimate gives an observable at a permanent entrance,
+whose original distribution still has to be determined.
+The paired radius bound allows all secondary comparison
+failures. Its large-length consequences use iterated
+limits, with the base tending to infinity separately at
+each length. The zero-cone bound locates a failure of
+pairing or a deep breach near an energy maximum. It gives
+no estimate of the original probability of reaching that
+window. Replication and the periodic root graph give the
+existence of the corresponding cycles, with no weights. The positive
+basin construction uses full rank, linear lifetime bounds and exact
+guard margins. The order-15 result extends the positive-length list of
+\cite{G9}. The unrestricted distribution of terminal periods and the
+size of the off-centre share at general fixed length remain open.
+
+\subsection*{Macroscopic mass and strictness}
+
+The strictness and survival conjecture of \cite[Section~7]{G10}
+asks that, at strict odd lengths \(n\ge7\), there be a cut
+\(\delta>0\) with \(\liminf_B\PP_{n,B}(Z_B>\delta)>0\) over
+all bases, and that at non-strict lengths the probability
+tend to zero at every fixed positive cut.
+If the class limits of the peak distribution exist, set
+\[
+ d_\beta=\lim_{a\downarrow0}\ 
+  \lim_{\substack{B\to\infty\\B\equiv\beta\pmod m}}
+  \PP_{n,B}(Z_B>a)
+\]
+through continuity cuts \(a>0\). In that formulation the
+conjecture asks for \(\min_\beta d_\beta>0\) at strict
+lengths and \(\max_\beta d_\beta=0\) at non-strict lengths.
+Theorem~\ref{th:order15} establishes the original all-base
+lower statement at order 15 without requiring class limits.
+
+\subsection*{Terminal labels and the peak law}
+
+At fixed odd length \(n\ge3\), put
+\(v_*=(k,k-1,\ldots,1)\) and \(X=mq-Bv_*\).
+For \(\beta=B\bmod m\), bounded offsets lie in
+\(\Lambda_\beta=\{X\in\Z^k:X\equiv-\beta v_*\pmod m\}\).
+Write the exact paired covariance of \cite[Theorem~4 and Section~6]{G4}
+in base-free form as \(\Phi_k(X)=mF_B((X+Bv_*)/m)-Bv_*\), where \(F_B\)
+is the difference update and \(B\equiv\beta\pmod m\) is sufficiently
+large. The shift \((B,q)\mapsto(B+m,q+v_*)\) of \cite{G4} preserves both
+\(X\) and the successor offset. For each fixed offset, the leading
+interlevel margins imply positive pairing at sufficiently large base. A
+cycle of fixed offset vectors is therefore a physical cycle throughout a
+sufficiently large part of its class, and every family with the same
+fixed physical offset cycle gives that label. The gcd conclusion of
+\cite[Theorem~4]{G4} assumes a fixed Jordan-measurable conditioning
+region of positive limiting weight in the strict simplex, all but
+vanishing conditional mass with entirely paired difference orbits, and
+proper joint limits along every class of a finite modulus \(M\); it then
+asserts that the limits depend only on the base modulo \(\gcd(M,m)\).
+
+It is open at general fixed length whether the original
+probability of each exact bounded-offset cycle label
+converges in each base class, and whether the physical
+all-phase peak distribution converges, with a chamber or
+exterior mark where the chamber is defined. The limiting
+individual cycle weights, if they exist, form a
+subprobability. Identifying its missing mass with
+\(d_\beta\) requires the additional exclusion of
+intermediate radii. One must control the band
+\(K_0<BZ_B\), \(Z_B\le a\) by taking the class base
+limit first, then \(a\downarrow0\) through continuity
+cuts, and \(K_0\to\infty\). Finiteness of the
+positive-weight support is a separate question.
+A joint arrival law also requires the original
+position, arrival time and entry phase to be retained.
+
+\subsection*{Transfer in the folded order}
+
+The six-step family constructs least-period-\(2r\) roots explicitly at
+order 7 and every order from 9. Enumerating the graph walks shows that
+such roots also exist at orders 3--6 and 8 (Section~\ref{sec:verify}).
+To obtain positive basin mass at the strict lengths of a given folded
+order \(r\) by \cite[Proposition~7]{G10}, it suffices to exhibit at least \(c_rL^r\) distinct roots in
+\([-L,L]^r\) for every sufficiently large \(L\), with lifetime norm and
+total loss \(O_r(L)\). Their terminal cycles may differ. A transfer construction valid across
+unbounded orders is open. An immediate predecessor or
+a single guarded trajectory supplies a smaller set of
+sources than this estimate.
+
+\section{Computations and verification}\label{sec:verify}
+
+From a fresh copy of the ancillary directory run
+\texttt{bash reproduce.sh}. The command verifies SHA-256
+hashes of the inputs and compares the output of four
+standard-library Python replays to their recorded exact
+outputs. The replay was checked with CPython 3.13.15 and uses exact integer
+and rational arithmetic. The computational inputs to the theorems are
+as follows.
+
+\begin{enumerate}
+\item \emph{Marked capture at orders 3--13.}
+\texttt{recon14\_physical/verify.py} independently reads the
+strict profiles from \cite{G9} and three archived JSONL
+datasets. It checks their 47 profile margins, exact
+orders and peaks, and the full-rank source records of
+Lemma~\ref{lem:p9}. The reference trajectories, terminal
+periods, ray signs, rank, and time, spread and loss
+coefficients are recomputed from integer updates.
+The same data enter Theorem~\ref{th:sibling}.
+The replay also gives finite literal controls for
+the paired update, bounded inverses, the 25-digit ray
+seeds and replication. On the two complementary orbit offsets
+parametrizing \(W\) at \(n=229,283,1069\), the replay finds three
+comparison rows spanning dimension two with a strictly positive linear
+combination equal to zero. Nonnegative slacks therefore force both
+offsets to vanish, and orbit averaging gives \(K=\{0\}\).
+
+\item \emph{Order 15.}
+\texttt{recon\_root15/replay.py} checks the two frozen
+JSONL inputs and reconstructs the four reference
+paths and insertion records of Lemma~\ref{lem:cert15}
+in 11,240,158 updates. It uses the slot update and
+checks the resulting reads against \eqref{eq:reads}.
+It verifies each first nonpositive read, the
+predecessor intervals and their return on retired
+coordinates, the triangular determinants, the common
+first period-30 entry and the lifetime budgets.
+It enumerates the folded-order-15 lengths and checks
+all comparison slacks and the positive peak of the
+normalized witnesses in Theorem~\ref{th:order15}.
+
+\item \emph{Independent finite controls.}
+\texttt{recon15/check.py} checks the radius allowances,
+counts of valid side words, reflected entrances, the
+small-time geometry, the recurrence and the guard
+translation against literal or exact examples.
+\texttt{recon\_carriers/verify.py} checks the graph counts
+at orders 3 through 80, its covered read words and one-step
+predecessors through order 13, and ternary sign words
+through order 9. (The replay output calls these words marked words.) It records the
+least periods of all covered read words
+through order 13: cycles of least period \(2r\) occur at every order
+from 3 to 13, for example 18 of them at order 8. It also checks the
+six-step construction
+and the example of period 14 at order 8. The general
+rank, probability, graph and guard results follow from
+the written arguments. The arrival laws themselves
+are the results of \cite{G3,G5}.
+\end{enumerate}
+
+\appendix
+\section{From a finite reference path to many starts}
+\label{app:retirement}
+
+Here is the insertion argument underlying the two full-rank
+replays. It is the retirement construction of
+\cite[Section~4, Lemma~7, and Appendix~B]{G9}.
+Let \(S_r\) rotate the last slot to the first. Label the
+coordinates by their original slots and follow those
+labels through successive rotations.
+In a reference path \(x(t)\), each insertion interval
+\([s_i,t_i)\) has length divisible by \(r\) and lies before
+the terminal cycle. The intervals are ordered and disjoint.
+A label is called retired after its first nonpositive read.
+The ray
+\[
+ u_i=S_r^{-s_i}(x(s_i)-x(t_i))
+\]
+has nonnegative entries, vanishes on labels read
+nonpositively before \(t_i\), and has positive entry on
+the label that retires next. In retirement row order
+the columns \(u_i\) thus form a lower triangular matrix
+with positive diagonal. The complete reference cycle
+return is loss-free. The finite records verify these
+properties directly.
+
+Take the start \(x(0)+\sum_i a_i u_i\) with
+\(0\le a_i<M\) integral. In any prefix before the
+interval for a still unconsumed ray, that ray is zero
+on every label whose read is nonpositive. At positive
+reads, adding remaining copies keeps the read positive.
+Therefore the sign and loss stay those of the reference
+and the perturbation is transported by \(S_r\).
+During interval \(i\), one traversal from the
+state perturbed by \(S_r^{s_i}p\) ends at
+\(x(s_i)+S_r^{s_i}(p-u_i)\).
+Insert \(a_i\) such traversals before proceeding along
+the reference interval. At each inserted traversal
+the same sign argument applies to the remaining rays.
+Induction removes all added copies and reaches the
+reference terminal cycle. The determinant gives \(M^r\)
+distinct starts.
+
+Reference time through a complete terminal return,
+plus the sum of the interval lengths, bounds the
+time coefficient after multiplication by \(M\).
+The reference total loss plus the sum of the interval
+losses likewise bounds the loss coefficient. The
+reference lifetime norm plus the sum of ray norms bounds
+the norm coefficient. The spread bound uses the same
+argument with the range including zero, which is
+subadditive. This proves the family in Lemma~\ref{lem:p9}
+by taking \(M=L\).
+
+For the fourth order-15 record the reference lifetime
+maximum norm is 256429 and the sum of ray norms is
+141225. The reference loss is 1256253 and the intervals
+have total loss 676807. The time through one terminal
+return is 2428969, and the intervals have total length
+1308120. The resulting norm, loss and time coefficients
+are 397654, 1933060 and 3737089, respectively. Take
+\(M=\lfloor L/397654\rfloor\). For \(L\ge795308\),
+\(M\ge L/795308\). The lifetime norm is at most \(L\)
+and the displacement from each start is at most \(2L\).
+This gives the bounds of Lemma~\ref{lem:cert15}.
+
+\section{Small-time tails of the arrival laws}\label{app:tails}
+
+Write \(F_5\) for the limiting distribution function of
+normalized first cyclic-word time at five digits and
+\(F_{7,\beta}\) for the corresponding seven-digit
+distribution function along base parity \(\beta\).
+These are the original-word laws of \cite{G3,G5}.
+
+\begin{proposition}[Small-time tails]\label{prop:tails}
+As \(t\downarrow0\),
+\[
+ F_5(t)=10t^2+O(t^3),\qquad
+ F_{7,\beta}(t)\ge c t^3\log(1/t)\quad(\beta=0,1)
+\]
+for a common \(c>0\) in the second bound. In particular
+\(F_{7,\beta}(t)/t^3\) is unbounded at zero for each parity.
+\end{proposition}
+
+\begin{proof}[Five digits]
+In original differences \((x,y)\), \(0<y<x<1\), the
+density is \(120(1-x)y(x-y)\). The initial fold
+\cite[Section~1.4]{G3} has four sheets with values of
+\((U,V)\) equal to
+\[
+ (1-y,1-x-y),\quad (1-y,x-y),\quad
+ (x,x-y),\quad (x,x+y-1)
+\]
+in the regions \(x<1/2\), \(x\ge1/2,\ x+y<1\),
+\(x+y\ge1,\ y<1/2\), and \(y\ge1/2\), respectively.
+The shear gives \(w=V-j(1-U)\), with
+\(j=\max(0,\lceil(V-1/2)/(1-U)\rceil)\).
+The clock is \(2/3\) times the range of \(0,A,C'\),
+where \(A=U+w-1\) and \(C'=2U-w-1\).
+For \(h=3t/2\), its sublevel is the hexagon
+\(|A|,|C'|,|A-C'|\le h\).
+It drives \((U,w)\) to \((2/3,1/3)\), so \(U<3/4\)
+for small \(t\). Each sheet satisfies \(V\le2U-1\),
+which gives \(j=0\) there.
+
+The four inverse fold centres are
+\[
+ (1/3,1/3),\quad (2/3,1/3),\quad (2/3,1/3),\quad (2/3,2/3).
+\]
+The fold Jacobians have absolute value one, and the
+\((U,w)\)-to-\((A,C')\) Jacobian has absolute value three.
+At the interior centre the middle two sheets each take
+the \(C'\ge0\) half of the hexagon: on them
+\(C'=1-x-y\) and \(C'=x+y-1\), respectively.
+The full hexagon has area \(3h^2\).
+The two half-hexagons therefore contribute total
+original area \(h^2\) at density \(40/9+O(t)\).
+On the two outer sheets, \(x-y=O(t)\) and the area
+is \(O(t^2)\), so their mass is \(O(t^3)\).
+This gives \((40/9)h^2=10t^2\) as the leading term.
+\end{proof}
+
+\begin{proof}[Seven digits]
+In the ordered absolute radii \((a,b,c)\) the leading
+map of \cite[Sections~1 and~3]{G5} is
+\[
+ H(a,b,c)=\ord(a,|a+b-1|,|b+c-1|).
+\]
+Use \(v=a-b,\ w=a+b+c-1\). On the branch
+\(0<c<b<a<1/2,\ 2a+b>1,\ w>0\) the largest radius
+is preserved and the other coordinates update by
+\((v,w)\mapsto(w,v-w)\).
+Indeed \(a+b,b+c<1\) and the second largest
+output is \(1-b-c<a\).
+The inverse on \((v,w)\) is \(M(v,w)=(v+w,v)\)
+of determinant \(-1\).
+
+Take the box \(1/2-2\epsilon<a<1/2-\epsilon\),
+\(\epsilon<v,w<5\epsilon/4\), and its \(j\)-fold
+inverse boxes for \(0\le j\le\lfloor\log_2(1/(128\epsilon))\rfloor\),
+with \(0<\epsilon\le1/1024\). All of the inverse steps
+have \(0<v,w\le5/512\). With
+\(b=a-v,\ c=1-2a+v+w\), these bounds keep the paths
+on the stated branch. Each box has volume
+\(\epsilon^3/16\). Their \(v\)-intervals are contained in
+\((F_{j+2}\epsilon,5F_{j+2}\epsilon/4)\), where
+\(F_1=F_2=1\) are the Fibonacci numbers.
+Successive ratios are at least \(3/2\), so the boxes
+are pairwise disjoint.
+
+Map back to original differences by
+\(\xi=((1+a)/2,(1+c)/2,(1-b)/2)\),
+an affine inverse of the initial ordered-radius fold
+with absolute determinant \(1/8\) in these coordinates.
+All four original normalized gaps exceed \(1/8\).
+Thus each inverse box contributes mass \(\gg\epsilon^3\).
+Through the target step these orbits have largest
+radius below \(1/2\), whereas the entrance core in
+\cite[Theorem~1]{G5} requires \(a\ge1/2\).
+The original \(\xi\) is also outside that core because
+its first difference is below \(3/4\).
+At the target the corresponding differences
+\(\tfrac12(1+a,a+b,b+c)\) lie within \(8\epsilon\)
+of \((3/4,1/2,1/4)\), so the gaps lie within
+\(16\epsilon\) of \(1/4\).
+The continuous majorization of \cite[Theorem~1]{G4}
+keeps all later gaps within this interval.
+By \cite[Proposition~3 and Theorem~1]{G5}, almost every source enters
+the core and reaches the canonical phase, whose differences thus
+lie within \(48\epsilon\) of centre.
+Both clock functions in either row of that law vanish
+at centre and have gradient of \(\ell^1\)-norm at most
+two. Both parities therefore place the full box mass
+in \([0,96\epsilon]\).
+Summing the disjoint boxes and taking \(\epsilon=t/96\)
+gives the lower bound.
+\end{proof}
+
+\section*{Tools}
+The research, computations and drafting were carried out with substantial assistance from AI systems (OpenAI Codex and Anthropic Claude), under the author's direction and close supervision.
+The exact replays use Python, and the paper was typeset in AMS-\LaTeX\ with Tectonic.
+The author takes responsibility for the contents.
+
+\begin{thebibliography}{RRJS2}
+\raggedright
+\bibitem[AP]{AP}
+S. Akiyama and A. Peth\H{o},
+\emph{Discretized rotation has infinitely many periodic orbits},
+Nonlinearity \textbf{26} (2013), 871--880.
+\href{https://doi.org/10.1088/0951-7715/26/3/871}{doi:10.1088/0951-7715/26/3/871};
+\href{https://arxiv.org/abs/1206.3868}{arXiv:1206.3868}.
+
+\bibitem[COST]{COST}
+E. Chen, K. Ono, R. E. Schwartz and D. S. Thakur,
+\emph{Four-digit Kaprekar dynamics in odd bases},
+J. Integer Seq. \textbf{29} (2026), Article 26.4.7.
+\href{https://cs.uwaterloo.ca/journals/JIS/VOL29/Ono/ono3.pdf}{Article 26.4.7}.
+
+\bibitem[Dahl]{Dahl}
+C. D. Dahl, \emph{Coarse-grained drift fields and attractor-basin entropy in Kaprekar's routine},
+Entropy \textbf{28} (2026), Article 92.
+\href{https://doi.org/10.3390/e28010092}{doi:10.3390/e28010092}.
+
+\bibitem[DD]{DD}
+I. Daubechies and R. DeVore,
+\emph{Approximating a bandlimited function using very coarsely quantized data:
+a family of stable sigma-delta modulators of arbitrary order},
+Ann. of Math. (2) \textbf{158} (2003), 679--710.
+\href{https://doi.org/10.4007/annals.2003.158.679}{doi:10.4007/annals.2003.158.679}.
+
+\bibitem[DZ]{DZ}
+P. Devlin and T. Zeng, \emph{Maximum distances in the four-digit Kaprekar process},
+Integers \textbf{21} (2021), Article A97.
+\href{https://math.colgate.edu/~integers/v97/v97.pdf}{Article A97}.
+
+\bibitem[G1]{G1}
+R. Galyavin, \emph{Cycles of the four-digit Kaprekar map in even bases}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358739}{doi:10.5281/zenodo.24358739}.
+
+\bibitem[G2]{G2}
+R. Galyavin, \emph{Arrival times for the four-digit Kaprekar map in even bases}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358744}{doi:10.5281/zenodo.24358744}.
+
+\bibitem[G3]{G3}
+R. Galyavin, \emph{A common arrival-time law for five-digit Kaprekar dynamics}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358746}{doi:10.5281/zenodo.24358746}.
+
+\bibitem[G4]{G4}
+R. Galyavin, \emph{Majorization in odd-digit Kaprekar dynamics and the nine-digit arrival law}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358748}{doi:10.5281/zenodo.24358748}.
+
+\bibitem[G5]{G5}
+R. Galyavin, \emph{Seven-digit Kaprekar dynamics: global law, two clocks, parity}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358752}{doi:10.5281/zenodo.24358752}.
+
+\bibitem[G6]{G6}
+R. Galyavin, \emph{Linear-time access for eleven-digit Kaprekar dynamics}, 2026.
+\href{https://doi.org/10.5281/zenodo.24358756}{doi:10.5281/zenodo.24358756}.
+
+\bibitem[G7]{G7}
+R. Galyavin, \emph{Arithmetic selection of arrival times in eleven-digit Kaprekar dynamics}, 2026.
+\href{https://doi.org/10.5281/zenodo.24371745}{doi:10.5281/zenodo.24371745}.
+
+\bibitem[G8]{G8}
+R. Galyavin, \emph{Eleven-digit Kaprekar arrival laws modulo twelve}, 2026.
+\href{https://doi.org/10.5281/zenodo.24396437}{doi:10.5281/zenodo.24396437}.
+
+\bibitem[G9]{G9}
+R. Galyavin, \emph{Off-centre Kaprekar cycles with positive basin density}, 2026.
+\href{https://doi.org/10.5281/zenodo.24399342}{doi:10.5281/zenodo.24399342}.
+
+\bibitem[G10]{G10}
+R. Galyavin, \emph{Macroscopic cycles in odd-length Kaprekar dynamics: a chamber criterion and a residue-transfer rule}, 2026.
+\href{https://doi.org/10.5281/zenodo.24408723}{doi:10.5281/zenodo.24408723}.
+
+\bibitem[G11]{G11}
+R. Galyavin, \emph{The arithmetic spectrum of Kaprekar lengths}, 2026.
+\href{https://doi.org/10.5281/zenodo.24419878}{doi:10.5281/zenodo.24419878}.
+
+\bibitem[H]{Hoeffding}
+W. Hoeffding, \emph{Probability inequalities for sums of bounded random variables},
+J. Amer. Statist. Assoc. \textbf{58} (1963), 13--30.
+\href{https://doi.org/10.1080/01621459.1963.10500830}{doi:10.1080/01621459.1963.10500830}.
+
+\bibitem[Hof]{Hoffman52}
+A. J. Hoffman, \emph{On approximate solutions of systems of linear
+inequalities}, J. Research Nat. Bur. Standards \textbf{49} (1952),
+263--265.
+\href{https://nvlpubs.nist.gov/nistpubs/jres/049/4/V49.N04.A05.pdf}{NIST copy}.
+
+\bibitem[KD1]{KDO}
+A. Kay and K. Downes-Ward, \emph{Fixed points and cycles of the Kaprekar
+transformation: 1. Odd bases},
+J. Integer Seq. \textbf{25} (2022), Article 22.6.7.
+\href{https://cs.uwaterloo.ca/journals/JIS/VOL25/Kay/kay5.html}{Article 22.6.7}.
+
+\bibitem[KD2]{KDE}
+A. Kay and K. Downes-Ward, \emph{Fixed points and cycles of the Kaprekar
+transformation: 2. Even bases}, 2024.
+\href{https://arxiv.org/abs/2408.12257}{arXiv:2408.12257}.
+
+\bibitem[M]{Massart}
+P. Massart, \emph{The tight constant in the Dvoretzky--Kiefer--Wolfowitz inequality},
+Ann. Probab. \textbf{18} (1990), 1269--1283.
+\href{https://doi.org/10.1214/aop/1176990746}{doi:10.1214/aop/1176990746}.
+
+\bibitem[PGR]{PGR}
+E. Perez Gonzalez and J. D. Reiss,
+\emph{Idle tone behavior in sigma delta modulation},
+Audio Engineering Society 122nd Convention, Vienna, 2007,
+Convention Paper 7108.
+\href{https://joshreiss.github.io/documents/2007/PerezReiss-AES122.pdf}{Author's copy}.
+
+\bibitem[RRJS]{RRJS}
+D. Reefman, J. Reiss, E. Janssen and M. Sandler,
+\emph{Description of limit cycles in sigma--delta modulators},
+IEEE Trans. Circuits Syst. I Regul. Pap. \textbf{52} (2005), 1211--1223.
+\href{https://doi.org/10.1109/TCSI.2005.849134}{doi:10.1109/TCSI.2005.849134}.
+
+\bibitem[RRJS2]{RRJS2}
+D. Reefman, J. D. Reiss, E. Janssen and M. Sandler,
+\emph{Description of limit cycles in feedback sigma delta modulators},
+Audio Engineering Society 117th Convention, San Francisco, 2004,
+Convention Paper 6280.
+\href{https://joshreiss.github.io/documents/2004/ReefmanReiss-AES117-2004.pdf}{Author's copy}.
+
+\bibitem[T]{Thakur}
+D. S. Thakur, \emph{Kaprekar phenomena},
+Proc. Ropar Conf., RMS Lecture Notes Ser. \textbf{26} (2019), 1--10.
+\href{https://people.math.rochester.edu/faculty/dthakur2/kaprekar.pdf}{Author's copy}.
+
+\bibitem[W]{Walden}
+B. L. Walden, \emph{Searching for Kaprekar's constants: algorithms and
+results}, Int. J. Math. Math. Sci. \textbf{2005} (2005), no.~18,
+2999--3004.
+\href{https://doi.org/10.1155/IJMMS.2005.2999}{doi:10.1155/IJMMS.2005.2999}.
+\end{thebibliography}
+\end{document}

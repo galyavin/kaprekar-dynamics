@@ -1,0 +1,24 @@
+Paired-update and two-turn work controls: 441 literal paths
+25: ray on slots 5 and 10, 13 base classes checked with exact seeds and feeders
+P9 strict profiles: 47 all rational margins, correct peaks and orders
+Retirement r=3: period 2, clock/loss/spread (2094, 311, 1924)
+Retirement r=4: period 6, clock/loss/spread (1222, 284, 835)
+Retirement r=5: period 10, clock/loss/spread (1782, 419, 947)
+Retirement r=6: period 5, clock/loss/spread (26498, 9918, 10613)
+Retirement r=7: period 14, clock/loss/spread (10820, 4019, 3901)
+Retirement r=8: period 14, clock/loss/spread (47083, 18244, 14557)
+Retirement r=9: period 18, clock/loss/spread (58566, 22411, 17178)
+Retirement r=10: period 20, clock/loss/spread (142150, 64395, 25663)
+Retirement r=11: period 22, clock/loss/spread (365572, 144048, 92554)
+Retirement r=13: period 26, clock/loss/spread (495253, 223003, 101757)
+Retirement r=12: period 24, clock/loss/spread (1519048, 760005, 193166)
+Retirement r=12 shifted: period 11, clock/loss/spread (1618064, 809022, 205758)
+P9 logical budgets and 15/17 literal lifts in every base residue passed
+Fixed-prefix inversion including shorter heights: 11216 source states, max fiber 24
+Zero-cone certificate n=229, r=38: ((3, 11, 15), ((1, 1), (-1, 0), (1, -1)), (1, 2, 1))
+Zero-cone certificate n=283, r=47: ((2, 7, 15), ((1, 0), (-1, 4), (0, -1)), (1, 1, 4))
+Zero-cone certificate n=1069, r=178: ((2, 5, 34), ((1, 0), (1, 2), (-1, -1)), (1, 1, 2))
+23-digit full-orbit control: paired exterior fixed points, linear breach
+Replication factors 2 and 3: 11397 multisets each, 2823 commuting
+Replicated nonfixed numerical cycles checked phasewise: 1
+Odd composite same-base divisor coexistence: 10 literal fixtures
