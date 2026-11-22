@@ -1,0 +1,19 @@
+certificate SHA-256 ca6b3592f959a4efc8533e0b73be208de682dee3da085c1ca6555df6a7058ec6
+read-coordinate determinant 5779085723146507793742893652480
+stage  1  new [8]                       K  0  guards 24 min slack   0  exact reads      0/0       forced reads     12/12    
+stage  2  new [4]                       K  0  guards 23 min slack  32  exact reads      4/0       forced reads     44/48    
+stage  3  new [10]                      K  0  guards 44 min slack 265  exact reads     70/0       forced reads    350/420   
+stage  4  new [9, 21]                   K  0  guards 42 min slack  56  exact reads    576/0       forced reads   1728/2304  
+stage  5  new [20]                      K  0  guards 38 min slack  54  exact reads    668/167     forced reads   1336/1837  
+stage  6  new [16]                      K 15  guards 36 min slack  58  exact reads    228/114     forced reads    456/570   
+stage  7  new [5, 22]                   K  0  guards 34 min slack  39  exact reads    480/360     forced reads    960/1080  
+stage  8  new [0, 12, 17]               K  1  guards 30 min slack 2582  exact reads   3875/3100    forced reads   5425/6200  
+stage  9  new [1, 13]                   K  1  guards 24 min slack 3206  exact reads  20532/20532   forced reads  20532/20532 
+stage 10  new [2, 14]                   K 11  guards 20 min slack 2039  exact reads  27006/27006   forced reads  19290/19290 
+stage 11  new [6, 18]                   K  1  guards 16 min slack 1087  exact reads 270936/270936  forced reads 135468/135468
+stage 12  new [3, 7, 11, 15, 19, 23]    K  1  guards 12 min slack   0  exact reads 941265/941265  forced reads 313755/313755
+release (-1, 0, 2, 2, 0, 11, -1, 2, 7, 2, 0, -1); first entry 30428; least period 11; transient export 26526
+all-scale upper bounds: spread 1334114 L; export 2940551 L; time 3785731 L
+root orbit [1, 2, 4, 8, 16, 3, 6, 12, 11, 13, 9, 17], complementary orbits [[5, 10, 15], [7, 14]], root-only rows [1, 2]
+d rows ['0', '0', '1/275', '2/275', '2/275', '1/275', '1/275', '1/275', '1/275'], pairing slack 2/1045, radius 1/198, D 116446195800
+word bound 2.170140224479e-182

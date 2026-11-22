@@ -54,6 +54,8 @@ Which odd word lengths can host macroscopic Kaprekar cycles inside the chamber o
 
 Inside the chamber of positive pairing, the gaps on the folded orbit of slot 1 evolve by an integer recurrence of order r (the folded order), and this recurrence is the clock: the probability of staying in the chamber and being captured by gap time T is O(((T+1)/B)^(k−d)), with k − d = r at strict lengths and a matching lower bound at the 47 strict lengths of orders 3–13. Every wholly positively paired cycle has peak radius at most 2/k + 6/B. The loss-free periodic points of the recurrence with period dividing 2r are classified by a fixed finite graph, and an exact full-rank construction extends positive off-centre basin density to all twelve lengths of folded order 15.
 
+**Correction to Conjecture 10 of *Macroscopic cycles in odd-length Kaprekar dynamics*** (22 November 2026), in [`conjecture10-correction/`](conjecture10-correction/) as [PDF](conjecture10-correction/kaprekar-conjecture10-correction.pdf) and [LaTeX source](conjecture10-correction/kaprekar-conjecture10-correction.tex), with its evidence in `conjecture10-correction/ancillary/`. Conjecture 10 (Strictness and survival) is false at n = 35. Archived at Zenodo: [doi:10.5281/zenodo.24432008](https://doi.org/10.5281/zenodo.24432008). The paper records of P10, P11 and P12 carry the note as version 2.
+
 ## Reproducing the results
 
 ```sh

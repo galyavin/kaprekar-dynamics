@@ -1,0 +1,1 @@
+**Correction (22 November 2026).** The restatement (Section 9) of Conjecture 10 of *Macroscopic cycles in odd-length Kaprekar dynamics* is false at n = 35. See [`conjecture10-correction/`](../conjecture10-correction/) and the Zenodo record version 1.13, [doi:10.5281/zenodo.24432008](https://doi.org/10.5281/zenodo.24432008). No theorem of this paper depends on the conjecture.

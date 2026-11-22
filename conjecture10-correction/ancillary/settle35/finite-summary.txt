@@ -1,0 +1,24 @@
+Root cube L / N / censored / positive recurrent export / budgeted / zero export outside budgets
+64 96 94 1 1 0
+128 96 95 0 1 0
+256 96 94 0 2 0
+512 96 78 11 7 0
+1024 96 67 21 8 0
+2048 96 0 90 6 0
+4096 96 0 86 10 0
+Falling criterion False low share floor 4/288 high share ceiling 91/288
+Box35 200000 autonomous root 24 24 0 0 0
+  literal resolved=0 censored=24 all_C=0 all_Cstar=0 above_C_1/1000=0 above_C_1/200=0 uninterrupted_above_C_1/1000=0 height_fail=0 pair_fail=0 other_row_fail=5 leave_Cstar=5 return_Cstar=5 admitted_row_breach=24 return_C_after_row_breach=24 leave_C=24 return_C=24 entries_outside_C=10 literal_steps_compared=242769
+  entire-box original weight interval 4.221461025132e-46 4.234628370958e-46
+Box35 2000003 autonomous root 24 24 0 0 0
+  literal resolved=0 censored=24 all_C=0 all_Cstar=0 above_C_1/1000=0 above_C_1/200=0 uninterrupted_above_C_1/1000=0 height_fail=0 pair_fail=0 other_row_fail=1 leave_Cstar=1 return_Cstar=1 admitted_row_breach=24 return_C_after_row_breach=24 leave_C=24 return_C=24 entries_outside_C=10 literal_steps_compared=2455187
+  entire-box original weight interval 2.898617122418e-46 2.899519976318e-46
+Box35 20000000 autonomous root 24 0 22 2 0
+  literal resolved=2 censored=22 all_C=2 all_Cstar=2 above_C_1/1000=2 above_C_1/200=2 uninterrupted_above_C_1/1000=2 height_fail=0 pair_fail=0 other_row_fail=0 leave_Cstar=0 return_Cstar=0 admitted_row_breach=24 return_C_after_row_breach=24 leave_C=24 return_C=24 entries_outside_C=16 literal_steps_compared=22654773
+  entire-box original weight interval 2.790439223870e-46 2.790526127582e-46
+  hit 15 entry 76225 period 66 exact peak numerator 9584668 root h2 64890 label exports at 5,7,10,14,15 21170 0 21480 0 22240
+  hit 20 entry 50416 period 66 exact peak numerator 9633448 root h2 49497 label exports at 5,7,10,14,15 16066 0 16587 0 16844
+Length 97 centre control resolved=1 censored=0 all_C=1 all_Cstar=1 above_C_1/1000=1 above_C_1/200=0 uninterrupted_above_C_1/1000=1 height_fail=0 pair_fail=0 other_row_fail=0 leave_Cstar=0 return_Cstar=0 admitted_row_breach=0 return_C_after_row_breach=0 leave_C=0 return_C=0 entries_outside_C=0 literal_steps_compared=1
+Length 97 random box resolved=3 censored=21 all_C=3 all_Cstar=3 above_C_1/1000=0 above_C_1/200=0 uninterrupted_above_C_1/1000=0 height_fail=0 pair_fail=0 other_row_fail=22 leave_Cstar=22 return_Cstar=22 admitted_row_breach=24 return_C_after_row_breach=24 leave_C=24 return_C=24 entries_outside_C=12 literal_steps_compared=1738284
+Length 119 centre control resolved=1 censored=0 all_C=1 all_Cstar=1 above_C_1/1000=1 above_C_1/200=0 uninterrupted_above_C_1/1000=1 height_fail=0 pair_fail=0 other_row_fail=0 leave_Cstar=0 return_Cstar=0 admitted_row_breach=0 return_C_after_row_breach=0 leave_C=0 return_C=0 entries_outside_C=0 literal_steps_compared=1
+Length 119 random box resolved=0 censored=24 all_C=0 all_Cstar=0 above_C_1/1000=0 above_C_1/200=0 uninterrupted_above_C_1/1000=0 height_fail=0 pair_fail=0 other_row_fail=24 leave_Cstar=24 return_Cstar=24 admitted_row_breach=24 return_C_after_row_breach=24 leave_C=24 return_C=24 entries_outside_C=14 literal_steps_compared=3458

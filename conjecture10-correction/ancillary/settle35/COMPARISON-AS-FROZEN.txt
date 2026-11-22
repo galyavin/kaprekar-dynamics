@@ -1,0 +1,12 @@
+# Frozen comparison at lengths 97 and 119
+
+Use the invariant rational profile (pi_j=1/m+(w_j-ar w)/1000), with (w=0) on the anchor and root orbit. At 97 the one complementary orbit has weight 1. At 119 the complementary orbits with representatives 3, 7, 17 and 21 have weights 1, 1, 1 and 2. The exact orbit and geometry calculation is in `comparison_geometry.py`.
+
+| Length | Base | Half-width | Random draw IDs | SplitMix64 seed | Forward cap |
+|---:|---:|---:|---:|---:|---:|
+| 97 | 256025000 | 256 | 0–23 | 970256 | 262144 |
+| 119 | 256020000 | 256 | 0–23 | 1190256 | 262144 |
+
+The base in each row is a multiple of the profile denominator. Each non-anchor gap independently ranges over the (513) integers within 256 of its centre (Bpi_j). The anchor sets the exact integer sum. Both profiles and their entire source boxes have positive height and pairing. Their homogeneous pairing margins are (731/49000) and (661/60000). With half-width (L) the borrowed margins are at least (B) times those margins minus (2kL+1). Every (d_i) varies from its centre by at most (mL). At 97 only (d_2) has zero centre secondary margin. It is root-only. At 119 only (d_8) does, and it involves complementary gaps, so we admit its breach purely for reporting exits from the other guards. The full-chamber fraction counts all 24 draws at each length. The exact rank of the pinning equation from the (d_8) rotations is 23 as reconstructed in the governing Astra review. Any literal path can change guards after entry.
+
+The separate positive visibility controls are the exact centre vectors, with no offsets. The paired law predicts an exact fixed point in (C) at both centres. The predicted peak is (33/9800) at 97 and (1/250) at 119. Verify one literal return and score strict cuts (1/1000) and (1/200) on all samples. The primary result is the count of literal detected cycles entirely in (C) above (1/1000), among all draws. Report complete censoring and entry risks. A finite null at this budget does not resolve transfer.

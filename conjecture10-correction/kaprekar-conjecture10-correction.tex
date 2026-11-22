@@ -1,0 +1,81 @@
+\documentclass[11pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\hypersetup{pdftitle={Correction to Conjecture 10 of Macroscopic cycles in odd-length Kaprekar dynamics},pdfauthor={Rustem Galyavin},hidelinks}
+\newtheorem*{theorem*}{Theorem}
+\newcommand{\PP}{\mathbb{P}}
+\title[Correction to Conjecture 10]{Correction to Conjecture 10 of \emph{Macroscopic cycles in odd-length Kaprekar dynamics}}
+\author{Rustem Galyavin}
+\thanks{\href{mailto:rustem@galyavin.com}{rustem@galyavin.com}. ORCID \href{https://orcid.org/0009-0006-6875-9170}{0009-0006-6875-9170}.}
+\date{22 November 2026}
+\begin{document}
+\maketitle
+
+\noindent This note concerns:
+\begin{itemize}
+\item R.~Galyavin, \emph{Macroscopic cycles in odd-length Kaprekar dynamics: a chamber criterion and a residue-transfer rule} (2026), doi:10.5281/zenodo.24408723, Conjecture~10 (Strictness and survival), Section~7, p.~12;
+\item its restatement in R.~Galyavin, \emph{Capture times, radius bounds and periodic roots in odd-length Kaprekar dynamics} (2026), doi:10.5281/zenodo.24422109, Section~9, paragraph ``Macroscopic mass and strictness'', p.~22.
+\end{itemize}
+We call these papers P10 and P12. A summary of the conjecture in Section~7 of P11, \emph{The arithmetic spectrum of Kaprekar lengths}, is also affected; see below.
+
+\section*{The conjecture as stated}
+\begin{quote}
+For every odd \(n\ge7\), strictness is equivalent to the existence of \(\delta>0\) with \(\liminf_{B\to\infty}\PP_B(Z_B>\delta)>0\), the limit inferior taken over all bases. At a non-strict length, \(\PP_B(Z_B>\delta)\to0\) for every fixed \(\delta>0\).
+\end{quote}
+
+\section*{It is false at \(n=35\)}
+Notation is that of P10, Section~1 (p.~2); here \(n=35\), \(k=17\), \(m=18\) and \(p_0=9\). The chamber \(C\) is the set of physical states with positive pairing and \(d_i\ge-1\) for \(2\le i\le9\); a cycle lies in \(C\) if all its phases do. \(Z_B\) is the peak normalized radius \(\max_q\max_i|q_i/B-(m-i)/m|\) over the phases \(q\) of the eventual cycle.
+
+\medskip\noindent\textbf{Length 35 is not strict.} Folded doubling has order \(r=12\) at \(n=35\), and
+\[
+J=\{0,1,2,3,4,6,8,9,11,12,13,16,17\}.
+\]
+The secondary comparison \(d_2(g)=g_{16}+g_{17}-g_0-g_1\) uses only slots of \(J\). So it vanishes on every profile constant on \(J\), and no profile in \(W_{35}\) has every secondary comparison positive. This is the case \(a=5\) of the forced-tie lengths \(2^a+3\) in P10, Section~3 (p.~7). The other secondary comparisons \(d_3,\ldots,d_9\) are all positive on the invariant profile equal to \(3/55\) on \(J\) and \(16/275\) off \(J\). Conjecture~10 therefore predicts decay at~35.
+
+\begin{theorem*}
+Let \(B\ge 232{,}892{,}391{,}600\) be an integer, and let \(\PP_{35,B}\) be the uniform probability on the \(B^{35}-B\) nonconstant ordered 35-digit words in base~\(B\) (leading zeros allowed). Then
+\begin{multline*}
+\PP_{35,B}\{\text{the eventual cycle lies in }C\text{ and }Z_B>1/396\}\\
+\ge\frac{35!}{(232{,}892{,}391{,}600)^{17}\cdot 38^{18}}\approx2.17\cdot10^{-182}.
+\end{multline*}
+\end{theorem*}
+
+The bound is uniform in \(B\) and needs no congruence condition. It comes from an explicit family and does not estimate the share. In that family every phase of the eventual cycle has radius above \(1/396\), while the path breaches \(d_2\) before it enters \(C\). The theorem concerns \(n=35\) only.
+
+\medskip\noindent\textbf{What fails.} By the theorem, \(\liminf_{B\to\infty}\PP_{35,B}(Z_B>1/396)>0\), although 35 is not strict. Hence:
+\begin{itemize}
+\item the equivalence in Conjecture~10 is false: a positive \(\liminf\) at a fixed cut does not imply strictness;
+\item its second sentence is false: at \(n=35\), \(\PP_{35,B}(Z_B>\delta)\) does not tend to \(0\) for any \(\delta\le1/396\).
+\end{itemize}
+The restatement in P12 fails in the same way, including its form \(\max_\beta d_\beta=0\) whenever those class limits exist. Its summary in R.~Galyavin, \emph{The arithmetic spectrum of Kaprekar lengths} (2026), doi:10.5281/zenodo.24419878, Section~7, p.~11, is affected in the same way.
+
+The converse implication, from strictness to a positive \(\liminf\) at some fixed cut, is not affected. It is proved at the 47 strict lengths of folded orders 3--13 (R.~Galyavin, \emph{Off-centre Kaprekar cycles with positive basin density}, 2026, doi:10.5281/zenodo.24399342) and at the twelve lengths of folded order~15 (P12, Theorem~15). It is open in general.
+
+\medskip\noindent\textbf{Proof (outline).} Put \(D=116{,}446{,}195{,}800\) and \(L=\lfloor B/D\rfloor\); the threshold \(2D\) guarantees \(L\ge B/(2D)\). The proof is modelled on the full-rank root construction behind P12, Theorem~15, and on the source transport of P10, Proposition~7, adapted to a length where \(d_2\) uses only root slots.
+\begin{itemize}
+\item While positive pairing and \(d_3,\ldots,d_9\ge-1\) hold, the 12 root gaps measured from the anchor evolve by a closed integer map, independent of \(B\) and of the other gaps. A breach of \(d_2\) adds \(h_2=(-1-d_2)_+\) to the root sum and subtracts it from the complementary gap arriving in slot~5.
+\item An exact certificate gives, for every \(L\ge1\), \(L^{12}\) distinct relative roots. Their root spread and total transfer \(h_2\) are at most fixed multiples of \(L\), and each reaches a root cycle of least period 11 with \(h_2=0\) at every phase (\(h_1\) need not vanish).
+\item Each root lifts to \(L^5\) physical gap states, by choosing the anchor and four complementary gaps. Along the whole orbit, positive pairing and \(d_3,\ldots,d_9\ge-1\) hold. The eventual cycle lies in \(C\) because \(h_2=0\) on it, and each of its phases has radius at least \(1/264\).
+\item The \(L^{17}\) gap states are distinct, and each has at least \(35!\,(B/38)^{18}\) ordered original words. Dividing by \(B^{35}-B\) gives the bound.
+\end{itemize}
+The full proof, the exact certificate, an independent reconstruction, the \(c(n)\) certificates used below and literal-subtraction controls at five bases are in version~1.13 of the record \emph{Kaprekar dynamics: papers, verification code and data} (concept doi:10.5281/zenodo.24325109, all versions), released with this note, and in the v1.13 release of \href{https://github.com/galyavin/kaprekar-dynamics}{github.com/galyavin/kaprekar-dynamics}.
+
+\section*{What is unaffected}
+No theorem, proposition or lemma of either paper assumes Conjecture~10, and none conflicts with the theorem above. This includes the chamber criterion, the full-orbit breach theorem and residue transfer of P10 (Theorems~1--3), and the dimension and capture-time theorem and the paired radius bound of P12 (Theorems~2 and~6). Only Conjecture~10 and its restatement in P12 change.
+
+\section*{An open question}
+At 35 the only obstruction to strictness is \(d_2\), which uses only root slots. Such a comparison vanishes on every profile constant on \(J\), so it restricts no complementary gap. Its breach only moves \(h_2\) between the roots and one complementary gap, much as the primary comparison \(d_1\), which strictness does not constrain, does at strict lengths. The comparisons that restrict macroscopic profiles are those with a complementary slot.
+
+Let \(K\) be the cone of P12, Section~3 (p.~6): the centred profiles \(u\), constant on \(J\), with \(d_i(P^tu)\ge0\) for \(2\le i\le p_0\) and \(0\le t<r\). The centred profiles constant on \(J\) form a space of dimension \(k-r\); let \(c(n)=(k-r)-\dim\operatorname{span}K\) be the codimension of \(K\) in it.
+
+\medskip\noindent\textbf{Question.} Let \(n\ge7\) be odd. Is there \(\delta>0\) with \(\liminf_{B\to\infty}\PP_B(Z_B>\delta)>0\), the limit inferior taken over all bases, if and only if \(r<k\) and \(c(n)=0\)?
+
+\medskip Strict lengths have \(r<k\) and \(c(n)=0\), and \(c(35)=0\). So an affirmative answer conflicts with Conjecture~10 exactly at the non-strict lengths with \(r<k\) and \(c(n)=0\). At each of these, 3 lies in the orbit of 1 and \(d_2\) uses only root slots, as at~35. Below \(10^4\) there are 274 such lengths, 94 of them prime. Length 35 is the only one at which either prediction has been decided.
+
+\section*{Tools}
+The research, computations and drafting were carried out with substantial assistance from AI systems, under the author's direction. The certificates were checked in exact integer arithmetic and reconstructed independently.
+
+\end{document}
